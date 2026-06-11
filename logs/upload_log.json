@@ -84,5 +84,19 @@
     "status": "failed",
     "error": "API 오류 400: {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AcjNzYqCa6WdmCoaKmQyjPG\"}}",
     "timestamp": "2026-06-11T17:07:42.060512+00:00"
+  },
+  {
+    "id": "post_20260612_article_trust_ko",
+    "status": "uploaded",
+    "post_id": "18105520879805886",
+    "post_url": "https://www.instagram.com/p/DZdFNIBFdu2/",
+    "timestamp": "2026-06-11T17:43:11.946535+00:00"
+  },
+  {
+    "id": "post_20260612_article_trust_en",
+    "status": "uploaded",
+    "post_id": "18087636176384107",
+    "post_url": "https://www.instagram.com/p/DZdFOlblekW/",
+    "timestamp": "2026-06-11T17:43:23.605040+00:00"
   }
 ]
