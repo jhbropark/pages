@@ -36,7 +36,16 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-GRAPH_API_BASE = "https://graph.facebook.com/v19.0"
+# 토큰 종류에 따라 API 호스트가 다릅니다.
+# - "Instagram 로그인이 포함된 API" 토큰(IGAA...)  → graph.instagram.com
+# - Facebook 로그인 기반 토큰(EAA...)              → graph.facebook.com
+def _resolve_api_base(token: str) -> str:
+    if token.startswith("IG"):
+        return "https://graph.instagram.com/v23.0"
+    return "https://graph.facebook.com/v23.0"
+
+
+GRAPH_API_BASE = "https://graph.facebook.com/v23.0"
 
 
 # ---------------------------------------------------------------------------
@@ -175,12 +184,17 @@ def build_full_caption(caption: str, hashtags: list[str]) -> str:
 
 
 def run() -> None:
-    user_id = os.environ.get("INSTAGRAM_USER_ID")
-    access_token = os.environ.get("INSTAGRAM_ACCESS_TOKEN")
+    # 복사/붙여넣기 시 섞여 들어간 공백·줄바꿈 제거
+    user_id = os.environ.get("INSTAGRAM_USER_ID", "").strip()
+    access_token = os.environ.get("INSTAGRAM_ACCESS_TOKEN", "").strip()
 
     if not user_id or not access_token:
         logger.error("환경 변수 INSTAGRAM_USER_ID 또는 INSTAGRAM_ACCESS_TOKEN이 설정되지 않았습니다.")
         sys.exit(1)
+
+    global GRAPH_API_BASE
+    GRAPH_API_BASE = _resolve_api_base(access_token)
+    logger.info("API 호스트: %s (토큰 접두사: %s...)", GRAPH_API_BASE, access_token[:4])
 
     queue = load_queue()
     now = datetime.now(tz=timezone.utc)
