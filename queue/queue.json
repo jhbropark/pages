@@ -1,6 +1,24 @@
 {
   "items": [
     {
+      "id": "post_20260612_decision_question_test",
+      "status": "pending",
+      "topic": "기술을 보여주기 전에 질문부터 설계해야 하는 이유",
+      "pillar_id": "science_communication",
+      "image_url": "https://jhbropark.github.io/pages/images/post_20260612_decision_question_test.jpg",
+      "caption": "좋은 과학 콘텐츠는 ‘무엇을 보여줄까’보다 ‘고객이 무엇을 결정해야 할까’에서 시작합니다.\n\n변화·기전·근거를 고객의 질문 순서로 설계할 때 기술은 비로소 선택의 이유가 됩니다.\n\n지금 가장 설명하기 어려운 것은 무엇인가요? 댓글 또는 DM으로 알려주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#바이오마케팅",
+        "#메디컬콘텐츠",
+        "#브랜드전략",
+        "#bbbbbeauty"
+      ],
+      "scheduled_time": "2026-06-12T02:45:00+09:00",
+      "created_at": "2026-06-12T02:45:00+09:00",
+      "generated_by": "codex-decision-question-test"
+    },
+    {
       "id": "post_20260612_article_trust_ko",
       "status": "uploaded",
       "topic": "과학적 정확성을 고객 신뢰로 전환하는 방법",

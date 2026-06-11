@@ -1,6 +1,24 @@
 {
   "items": [
     {
+      "id": "linkedin_20260612_decision_question_test",
+      "status": "pending",
+      "topic": "기술을 보여주기 전에 질문부터 설계해야 하는 이유",
+      "pillar_id": "science_communication",
+      "commentary": "좋은 메디컬·바이오 콘텐츠는 ‘무엇을 보여줄 것인가’에서 시작하지 않습니다.\n\n먼저 정해야 할 것은 고객이 콘텐츠를 본 뒤 어떤 판단을 내려야 하는가입니다.\n\n신제품 론칭을 준비할 때 많은 팀이 성분 구조, 임상 그래프, 작용 기전, 특허 정보를 한 화면에 담으려 합니다. 각각은 중요한 근거지만, 고객의 질문 순서와 맞지 않으면 전문성은 전달되어도 선택의 이유는 남지 않습니다.\n\nbbbb.beauty는 제작 전에 네 가지 질문을 먼저 설계합니다.\n\n▪ CHANGE: 고객이 가장 먼저 이해해야 할 변화는 무엇인가?\n▪ MECHANISM: 그 변화를 만드는 핵심 과정은 무엇인가?\n▪ EVIDENCE: 어떤 승인된 근거가 설명을 신뢰하게 하는가?\n▪ DECISION: 이 이해가 어떤 상담, 비교, 구매 판단으로 이어져야 하는가?\n\n이 순서가 명확해지면 3D/MoA의 장면 수, 카메라의 초점, 임상 데이터의 등장 시점, 인터랙션의 깊이가 자연스럽게 결정됩니다. 반대로 질문이 정리되지 않은 상태에서 비주얼부터 만들면 정보는 많아지지만 메시지는 흐려질 수 있습니다.\n\n과학적 정확성은 반드시 지켜야 합니다. 그러나 B2B 콘텐츠의 성과는 정확한 정보를 고객의 의사결정 구조로 번역할 때 만들어집니다.\n\nScience to Message, Beauty to Experience.\n기술은 정확하게, 메시지는 쉽게.\n\n현재 준비 중인 프로젝트에서 고객이 내려야 할 가장 중요한 결정은 무엇인가요? 댓글로 한 문장을 남기거나, DM으로 **QUESTION**을 보내주시면 초기 기획 질문을 공유하겠습니다.\n\n프로젝트 문의: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#바이오마케팅",
+        "#메디컬콘텐츠",
+        "#브랜드전략"
+      ],
+      "image_url": "https://jhbropark.github.io/pages/images/linkedin/post_20260612_decision_question_test.jpg",
+      "alt_text": "Deep Navy 배경에 변화, 기전, 근거, 의사결정을 연결한 원형 정보 구조와 중앙 질문 기호를 배치한 bbbb.beauty 카드.",
+      "scheduled_time": "2026-06-12T02:45:00+09:00",
+      "created_at": "2026-06-12T02:45:00+09:00",
+      "generated_by": "codex-decision-question-test"
+    },
+    {
       "id": "linkedin_20260611_strategy_test",
       "status": "uploaded",
       "topic": "임상 그래프가 읽히지 않는 이유는 데이터가 부족해서가 아닙니다",
