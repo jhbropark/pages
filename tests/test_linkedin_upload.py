@@ -3,7 +3,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 
 MODULE_PATH = Path(__file__).parents[1] / "scripts" / "linkedin_upload.py"
@@ -13,6 +13,18 @@ SPEC.loader.exec_module(linkedin_upload)
 
 
 class LinkedInUploadTests(unittest.TestCase):
+    def test_resolve_person_author_urn_from_userinfo(self):
+        response = MagicMock()
+        response.read.return_value = json.dumps({"sub": "person123"}).encode("utf-8")
+        response.__enter__.return_value = response
+        with patch.object(
+            linkedin_upload.urllib.request,
+            "urlopen",
+            return_value=response,
+        ):
+            author = linkedin_upload.resolve_person_author_urn("token")
+        self.assertEqual(author, "urn:li:person:person123")
+
     def test_validate_item_accepts_image_post(self):
         item = {
             "commentary": "과학을 고객의 언어로 번역합니다.",

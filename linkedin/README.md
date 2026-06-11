@@ -7,9 +7,11 @@
 
 1. [LinkedIn Developer Portal](https://www.linkedin.com/developers/apps)에서 앱을
    생성합니다.
-2. 개인 프로필 게시라면 Products에서 `Share on LinkedIn`을 활성화하고
-   `w_member_social` 권한으로 OAuth 토큰을 발급합니다.
-3. 회사 페이지 게시라면 Community Management API 접근과
+2. 개인 프로필 게시라면 Products에서 아래 두 제품을 활성화합니다.
+   - `Share on LinkedIn`
+   - `Sign In with LinkedIn using OpenID Connect`
+3. `openid`, `profile`, `w_member_social` 권한으로 OAuth 토큰을 발급합니다.
+4. 회사 페이지 게시라면 Community Management API 접근과
    `w_organization_social` 권한이 필요합니다. 인증한 사용자는 해당 페이지의
    관리자 또는 콘텐츠 관리자여야 합니다.
 
@@ -18,8 +20,9 @@
 저장소 `Settings > Secrets and variables > Actions`에 등록합니다.
 
 - `LINKEDIN_ACCESS_TOKEN`: OAuth 2.0 사용자 액세스 토큰
-- `LINKEDIN_AUTHOR_URN`:
-  - 개인 프로필: `urn:li:person:{PERSON_ID}`
+- `LINKEDIN_AUTHOR_URN`: 개인 프로필에서는 생략할 수 있습니다. 업로더가
+  OpenID Connect의 `userinfo`에서 개인 ID를 자동 확인합니다.
+  - 개인 프로필 수동 지정: `urn:li:person:{PERSON_ID}`
   - 회사 페이지: `urn:li:organization:{ORGANIZATION_ID}`
 
 토큰은 만료될 수 있으므로 만료 전에 교체해야 합니다.
