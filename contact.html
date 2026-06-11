@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081426">
+  <meta name="description" content="bbbb.beauty 메디컬·바이오 비주얼 프로젝트 문의">
+  <meta property="og:title" content="Start a Project | bbbb.beauty">
+  <meta property="og:description" content="복잡한 과학을 고객이 이해하고 신뢰할 수 있는 경험으로 번역합니다.">
+  <title>Start a Project | bbbb.beauty</title>
+  <style>
+    :root {
+      --navy: #081426;
+      --navy-soft: #101f35;
+      --beige: #f8f6f2;
+      --aqua: #0ea5e9;
+      --muted: #a8bac8;
+      color-scheme: dark;
+      font-family: "Noto Sans KR", "Pretendard", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--beige);
+      background:
+        radial-gradient(circle at 85% 10%, rgba(14, 165, 233, .16), transparent 30rem),
+        linear-gradient(145deg, #06101f, var(--navy));
+      min-height: 100vh;
+    }
+    main {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 72px 0 96px;
+    }
+    header {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 56px;
+    }
+    .eyebrow {
+      color: var(--aqua);
+      font-size: .78rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 720px;
+      margin: 18px 0;
+      font-size: clamp(2.5rem, 6vw, 5.6rem);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
+    .intro {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .principle {
+      border-left: 2px solid var(--aqua);
+      padding: 8px 0 8px 24px;
+      color: #d9e6ed;
+      line-height: 1.8;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .card {
+      border: 1px solid rgba(248, 246, 242, .12);
+      border-radius: 24px;
+      background: rgba(16, 31, 53, .72);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .2);
+      padding: clamp(24px, 4vw, 42px);
+      backdrop-filter: blur(18px);
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+    .description {
+      margin: 0 0 28px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    label {
+      display: block;
+      margin: 18px 0 8px;
+      color: #dce8ee;
+      font-size: .9rem;
+    }
+    select, input, textarea {
+      width: 100%;
+      border: 1px solid rgba(168, 186, 200, .25);
+      border-radius: 12px;
+      color: var(--beige);
+      background: rgba(5, 15, 29, .72);
+      font: inherit;
+      padding: 13px 14px;
+      outline: none;
+    }
+    select:focus, input:focus, textarea:focus {
+      border-color: var(--aqua);
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, .12);
+    }
+    textarea {
+      min-height: 238px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    button, .button {
+      min-height: 48px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #03111e;
+      background: var(--aqua);
+      font: 600 .92rem/1 inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .secondary {
+      border-color: rgba(248, 246, 242, .18);
+      color: var(--beige);
+      background: transparent;
+    }
+    .channel {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      padding: 20px 0;
+      border-top: 1px solid rgba(248, 246, 242, .1);
+    }
+    .channel:first-of-type { border-top: 0; }
+    .channel strong { display: block; margin-bottom: 5px; }
+    .channel span { color: var(--muted); font-size: .9rem; }
+    .channel .button { margin-left: auto; padding: 0 18px; white-space: nowrap; }
+    .status {
+      min-height: 24px;
+      margin-top: 12px;
+      color: #7dd3fc;
+      font-size: .86rem;
+    }
+    footer {
+      margin-top: 56px;
+      color: #748b9d;
+      text-align: center;
+      font-size: .84rem;
+      letter-spacing: .08em;
+    }
+    @media (max-width: 760px) {
+      main { padding-top: 48px; }
+      header, .grid { grid-template-columns: 1fr; }
+      header { gap: 18px; }
+      .actions { grid-template-columns: 1fr; }
+      .channel { align-items: flex-start; flex-wrap: wrap; }
+      .channel .button { width: 100%; margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <div class="eyebrow">Science to Message, Beauty to Experience.</div>
+        <h1>복잡한 기술을<br>고객의 경험으로.</h1>
+      </div>
+      <div class="principle">
+        3D/MoA, 메디컬 애니메이션, 브랜드 필름, AR·인터랙티브 콘텐츠의
+        목적과 활용 환경을 먼저 이해합니다.
+      </div>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>프로젝트 브리프 만들기</h2>
+        <p class="description">
+          네 가지 항목을 선택하면 첫 상담에 필요한 메시지가 만들어집니다.
+          복사한 뒤 원하는 채널로 보내주세요.
+        </p>
+
+        <label for="service">필요한 콘텐츠</label>
+        <select id="service">
+          <option>3D/MoA·과학 시각화</option>
+          <option>2D 메디컬 애니메이션</option>
+          <option>다큐멘터리·브랜드 필름</option>
+          <option>AR·인터랙티브 콘텐츠</option>
+          <option>교육·학회 콘텐츠</option>
+          <option>아직 정하지 못함</option>
+        </select>
+
+        <label for="purpose">주요 목적</label>
+        <select id="purpose">
+          <option>신제품 론칭</option>
+          <option>글로벌 학회·전시</option>
+          <option>영업·바이어 미팅</option>
+          <option>교육·트레이닝</option>
+          <option>IR·투자 유치</option>
+          <option>브랜드 리뉴얼</option>
+        </select>
+
+        <label for="schedule">목표 일정</label>
+        <select id="schedule">
+          <option>1개월 이내</option>
+          <option>1~3개월</option>
+          <option>3~6개월</option>
+          <option>6개월 이후</option>
+          <option>일정 협의 필요</option>
+        </select>
+
+        <label for="challenge">가장 어려운 점</label>
+        <input id="challenge" maxlength="120" placeholder="예: 독자 성분의 작용 기전을 쉽게 설명하기">
+
+        <div class="actions">
+          <button id="generate" type="button">브리프 생성</button>
+          <button id="copy" class="secondary" type="button">문의 문구 복사</button>
+        </div>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+      </div>
+
+      <div class="card">
+        <h2>대화 시작하기</h2>
+        <p class="description">
+          생성된 브리프를 확인한 뒤 편한 채널로 보내주세요.
+        </p>
+        <textarea id="brief" aria-label="생성된 프로젝트 브리프"></textarea>
+
+        <div class="channel">
+          <div>
+            <strong>Instagram DM</strong>
+            <span>@bbbb.beauty_official</span>
+          </div>
+          <a class="button" href="https://ig.me/m/bbbb.beauty_official" target="_blank" rel="noopener">DM 열기</a>
+        </div>
+
+        <div class="channel">
+          <div>
+            <strong>LinkedIn</strong>
+            <span>im jay · CMO at bbbb.beauty</span>
+          </div>
+          <a class="button secondary" href="https://www.linkedin.com/in/im-jay-974408415/" target="_blank" rel="noopener">프로필 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>bbbb.beauty · 기술은 정확하게, 메시지는 쉽게.</footer>
+  </main>
+
+  <script>
+    const service = document.querySelector("#service");
+    const purpose = document.querySelector("#purpose");
+    const schedule = document.querySelector("#schedule");
+    const challenge = document.querySelector("#challenge");
+    const brief = document.querySelector("#brief");
+    const status = document.querySelector("#status");
+
+    function buildBrief() {
+      brief.value = [
+        "안녕하세요. bbbb.beauty 프로젝트 상담을 요청합니다.",
+        "",
+        `· 필요한 콘텐츠: ${service.value}`,
+        `· 주요 목적: ${purpose.value}`,
+        `· 목표 일정: ${schedule.value}`,
+        `· 가장 어려운 점: ${challenge.value.trim() || "상담 후 정리하고 싶습니다."}`,
+        "",
+        "관련 포트폴리오와 적합한 제작 방향을 안내받고 싶습니다."
+      ].join("\n");
+      status.textContent = "브리프가 생성되었습니다. 내용을 확인한 뒤 복사해 주세요.";
+    }
+
+    async function copyBrief() {
+      if (!brief.value.trim()) buildBrief();
+      try {
+        await navigator.clipboard.writeText(brief.value);
+        status.textContent = "문의 문구를 복사했습니다. DM 또는 LinkedIn으로 보내주세요.";
+      } catch {
+        brief.select();
+        document.execCommand("copy");
+        status.textContent = "문의 문구를 복사했습니다.";
+      }
+    }
+
+    document.querySelector("#generate").addEventListener("click", buildBrief);
+    document.querySelector("#copy").addEventListener("click", copyBrief);
+    buildBrief();
+  </script>
+</body>
+</html>

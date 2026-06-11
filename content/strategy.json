@@ -3,8 +3,8 @@
   "objectives": {
     "primary": "B2B 브랜드 의사결정권자에게 bbbb.beauty를 메디컬·바이오 전문 크리에이티브 에이전시로 각인시키고 비주얼 솔루션 및 외주 제작 상담 문의로 연결한다.",
     "secondary": "과학 커뮤니케이션의 기준을 교육하고 메디컬·바이오 비주얼 트렌드를 선도하는 신뢰를 형성한다.",
-    "linkedin_action": "포트폴리오 확인, 제안서 또는 RFP 요청, 미팅 및 DM 문의",
-    "instagram_action": "프로필 방문, 비주얼 무드 확인, 저장 및 공유"
+    "linkedin_action": "댓글로 과제 공유, DM 키워드 전송, 포트폴리오 확인, 제안서 또는 RFP 요청, 미팅 문의",
+    "instagram_action": "댓글로 선택 응답, DM 키워드 전송, 프로필 링크 방문, 저장·공유·동료 태그"
   },
   "audience": {
     "industries": [
@@ -122,8 +122,33 @@
     "Framework: 적용 가능한 세 가지 판단 기준",
     "Application: 적합한 3D/MOA·다큐멘터리·AR·교육 콘텐츠 형식",
     "Positioning: bbbb.beauty가 정확성과 프리미엄 비주얼을 결합하는 방식",
-    "CTA: 포트폴리오 확인, DM, RFP 또는 프로젝트 미팅 유도"
+    "CTA: 답하기 쉬운 댓글 질문, 게시물별 DM 키워드, 프로필 링크, 저장·공유, RFP 또는 프로젝트 미팅 중 최소 세 가지 행동 유도"
   ],
+  "conversion_system": {
+    "principle": "모든 게시물은 전문성 전달로 끝내지 않고 고객이 즉시 선택하고 대화를 시작할 수 있는 다음 행동을 제공한다.",
+    "required_cta_count": 3,
+    "required_cta_types": [
+      "답하기 쉬운 댓글 질문 또는 A/B 선택",
+      "게시물 주제와 연결된 DM 키워드",
+      "프로필 링크 또는 포트폴리오 확인"
+    ],
+    "optional_cta_types": [
+      "프로젝트 진단 또는 미팅 요청",
+      "RFP·제안서 요청",
+      "저장",
+      "동료 태그 또는 공유"
+    ],
+    "dm_keyword_rule": "키워드는 2~6자의 기억하기 쉬운 한국어 명사로 만들고, 전송 시 받을 자료나 다음 단계를 명확히 약속한다.",
+    "comment_rule": "예/아니오보다 A/B 선택, 숫자 선택, 현재 과제 한 단어처럼 10초 안에 답할 수 있는 질문을 사용한다.",
+    "response_sla": "댓글과 DM은 영업일 기준 1일 이내 응답한다.",
+    "contact": {
+      "website_url": "https://jhbropark.github.io/pages/contact.html",
+      "portfolio_url": "",
+      "inquiry_email": "",
+      "meeting_url": "",
+      "note": "실제 공개 주소가 확정되면 값을 입력한다. 빈 값은 게시물에 출력하지 않는다."
+    }
+  },
   "channels": {
     "instagram": {
       "caption_max_chars": 220,
@@ -136,7 +161,7 @@
         "min": 5,
         "max": 7
       },
-      "cta": "프로필 링크 방문, 저장 또는 공유",
+      "cta": "댓글 질문 + DM 키워드 + 프로필 링크를 필수로 넣고 저장·공유·동료 태그 중 하나를 추가",
       "publish_time_kst": "19:00"
     },
     "linkedin": {
@@ -156,7 +181,7 @@
         "min": 3,
         "max": 4
       },
-      "cta": "DM 문의 또는 댓글의 포트폴리오 링크 안내",
+      "cta": "댓글 질문 + DM 키워드 + 프로필/포트폴리오 링크를 필수로 넣고 RFP·미팅 요청 중 하나를 추가",
       "publish_time_kst": "09:00"
     }
   },
