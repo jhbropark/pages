@@ -196,6 +196,12 @@ def run() -> None:
     GRAPH_API_BASE = _resolve_api_base(access_token)
     logger.info("API 호스트: %s (토큰 접두사: %s...)", GRAPH_API_BASE, access_token[:4])
 
+    # INSTAGRAM_USER_ID에 숫자 ID 대신 사용자명이 들어 있으면 API가 인식하지 못합니다.
+    # 토큰 소유자 본인 계정을 가리키는 "me"로 대체합니다.
+    if not user_id.isdigit():
+        logger.warning("INSTAGRAM_USER_ID('%s')가 숫자 ID가 아니므로 'me'로 대체합니다.", user_id)
+        user_id = "me"
+
     queue = load_queue()
     now = datetime.now(tz=timezone.utc)
     pending = [item for item in queue["items"] if item.get("status") == "pending"]
