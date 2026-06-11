@@ -1,0 +1,8 @@
+[
+  {
+    "id": "post_001",
+    "status": "failed",
+    "error": "API 오류 400: {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"AjR0tWEuw6sttPvppce7SQH\"}}",
+    "timestamp": "2026-06-11T10:30:00.322989+00:00"
+  }
+]
