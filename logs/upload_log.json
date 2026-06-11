@@ -104,5 +104,11 @@
     "status": "failed",
     "error": "API 오류 400: {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"ASt1fxasr3LB7V03YyyvvXx\"}}",
     "timestamp": "2026-06-11T18:11:33.006171+00:00"
+  },
+  {
+    "id": "post_20260612_decision_question_test",
+    "status": "failed",
+    "error": "API 오류 400: {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AT3Rvsz0-0mX448LZ5FLQ1R\"}}",
+    "timestamp": "2026-06-11T18:13:31.617598+00:00"
   }
 ]
