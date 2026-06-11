@@ -16,5 +16,12 @@
     "status": "failed",
     "error": "API 오류 400: {\"error\":{\"message\":\"Media ID is not available\",\"type\":\"OAuthException\",\"code\":9007,\"error_subcode\":2207027,\"is_transient\":false,\"error_user_title\":\"Cannot Publish\",\"error_user_msg\":\"The media is not ready for publishing, please wait for a moment\",\"fbtrace_id\":\"AkCEE84Ilbu5LxDthMGGovo\"}}",
     "timestamp": "2026-06-11T11:07:55.463232+00:00"
+  },
+  {
+    "id": "post_001",
+    "status": "uploaded",
+    "post_id": "18196456783368152",
+    "post_url": "https://www.instagram.com/p/DZcjVSGkYCL/",
+    "timestamp": "2026-06-11T12:47:15.339207+00:00"
   }
 ]
