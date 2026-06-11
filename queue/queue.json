@@ -96,7 +96,7 @@
     },
     {
       "id": "post_20260612_style_01",
-      "status": "pending",
+      "status": "uploaded",
       "topic": "투명함의 기술",
       "pillar_id": "3d_moa",
       "image_url": "https://jhbropark.github.io/pages/images/post_20260612_style_01.jpg",
@@ -111,11 +111,14 @@
       ],
       "scheduled_time": "2026-06-12T00:00:00+09:00",
       "created_at": "2026-06-12T00:10:00+09:00",
-      "generated_by": "codex-visual-style-series"
+      "generated_by": "codex-visual-style-series",
+      "post_id": "18046399112563473",
+      "post_url": "https://www.instagram.com/p/DZc1UMClGw-/",
+      "uploaded_at": "2026-06-11T15:24:20.753908+00:00"
     },
     {
       "id": "post_20260612_style_02",
-      "status": "pending",
+      "status": "uploaded",
       "topic": "새로운 연구실",
       "pillar_id": "visual_trends",
       "image_url": "https://jhbropark.github.io/pages/images/post_20260612_style_02.jpg",
@@ -130,11 +133,14 @@
       ],
       "scheduled_time": "2026-06-12T00:00:00+09:00",
       "created_at": "2026-06-12T00:10:00+09:00",
-      "generated_by": "codex-visual-style-series"
+      "generated_by": "codex-visual-style-series",
+      "post_id": "17976303260882137",
+      "post_url": "https://www.instagram.com/p/DZc1VmZFKqM/",
+      "uploaded_at": "2026-06-11T15:24:32.542739+00:00"
     },
     {
       "id": "post_20260612_style_03",
-      "status": "pending",
+      "status": "uploaded",
       "topic": "미시 세계의 영화",
       "pillar_id": "3d_moa",
       "image_url": "https://jhbropark.github.io/pages/images/post_20260612_style_03.jpg",
@@ -149,11 +155,14 @@
       ],
       "scheduled_time": "2026-06-12T00:00:00+09:00",
       "created_at": "2026-06-12T00:10:00+09:00",
-      "generated_by": "codex-visual-style-series"
+      "generated_by": "codex-visual-style-series",
+      "post_id": "18039707255641907",
+      "post_url": "https://www.instagram.com/p/DZc1XBlFOft/",
+      "uploaded_at": "2026-06-11T15:24:44.194613+00:00"
     },
     {
       "id": "post_20260612_style_04",
-      "status": "pending",
+      "status": "uploaded",
       "topic": "데이터는 더 적게",
       "pillar_id": "interactive_ar",
       "image_url": "https://jhbropark.github.io/pages/images/post_20260612_style_04.jpg",
@@ -168,7 +177,10 @@
       ],
       "scheduled_time": "2026-06-12T00:00:00+09:00",
       "created_at": "2026-06-12T00:10:00+09:00",
-      "generated_by": "codex-visual-style-series"
+      "generated_by": "codex-visual-style-series",
+      "post_id": "17854798746678833",
+      "post_url": "https://www.instagram.com/p/DZc1YbvlBZd/",
+      "uploaded_at": "2026-06-11T15:24:54.674300+00:00"
     }
   ]
 }
