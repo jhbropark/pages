@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Instagram 콘텐츠 자동 생성 스크립트
+Instagram + LinkedIn 이중 언어 콘텐츠 자동 생성 스크립트
 
 1. content/topics.json에서 오늘의 주제를 선택
 2. Claude API로 B2B 캡션 + 해시태그 + 이미지 헤드라인 생성
-3. Pillow로 메디컬 크리에이티브 브랜드 카드 생성 (images/)
-4. queue/queue.json에 pending 항목 추가
+3. 한국어·영어 이미지 카드 생성 (images/)
+4. Instagram 한국어 큐와 LinkedIn 한국어→영어 쌍 큐에 추가
 
 필요한 환경 변수:
   ANTHROPIC_API_KEY - Claude API 키
@@ -24,6 +24,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 REPO_ROOT = Path(__file__).parent.parent
 TOPICS_FILE = REPO_ROOT / "content" / "topics.json"
 QUEUE_FILE = REPO_ROOT / "queue" / "queue.json"
+LINKEDIN_QUEUE_FILE = REPO_ROOT / "linkedin" / "queue.json"
 IMAGES_DIR = REPO_ROOT / "images"
 
 KST = timezone(timedelta(hours=9))
@@ -34,6 +35,8 @@ KOREAN_FONT_CANDIDATES = [
     "C:/Windows/Fonts/NotoSansKR-VF.ttf",
     "C:/Windows/Fonts/malgunbd.ttf",
     "C:/Windows/Fonts/malgun.ttf",
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
     "/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf",
     "/usr/share/fonts/truetype/nanum/NanumGothic.ttf",
     "/usr/share/fonts/truetype/nanum/NanumMyeongjoBold.ttf",
@@ -91,6 +94,31 @@ CONTENT_SCHEMA = {
             "type": "string",
             "description": "DM 키워드를 보내면 제공할 체크리스트·진단 질문·가이드. 35자 이내",
         },
+        "english_image_headline": {
+            "type": "string",
+            "maxLength": 34,
+            "description": "English image headline. Maximum 34 characters, concise and premium.",
+        },
+        "linkedin_ko": {
+            "type": "string",
+            "description": "LinkedIn 한국어 칼럼. 공백 제외 800~1500자. 마지막에 댓글 질문, DM 키워드와 문의 허브 안내 포함",
+        },
+        "linkedin_en": {
+            "type": "string",
+            "description": "English LinkedIn essay, 1200~2600 characters. Start with 'English version' and end with a question, the same DM keyword, and the contact hub.",
+        },
+        "linkedin_ko_hashtags": {
+            "type": "array",
+            "items": {"type": "string"},
+            "minItems": 3,
+            "maxItems": 4,
+        },
+        "linkedin_en_hashtags": {
+            "type": "array",
+            "items": {"type": "string"},
+            "minItems": 3,
+            "maxItems": 4,
+        },
     },
     "required": [
         "caption",
@@ -99,6 +127,11 @@ CONTENT_SCHEMA = {
         "comment_question",
         "dm_keyword",
         "dm_offer",
+        "english_image_headline",
+        "linkedin_ko",
+        "linkedin_en",
+        "linkedin_ko_hashtags",
+        "linkedin_en_hashtags",
     ],
     "additionalProperties": False,
 }
@@ -126,7 +159,12 @@ def generate_text(topic: str, brand_guide: str) -> dict:
                     "자연스럽게 드러나게 하세요. 소비자용 피부관리 팁은 작성하지 마세요. "
                     "반드시 고객이 댓글과 DM으로 쉽게 대화를 시작할 수 있는 장치를 만드세요. "
                     "댓글 질문은 A/B 선택이나 한 단어 답변처럼 부담이 없어야 하며, "
-                    "DM 키워드에는 받을 자료나 다음 단계를 구체적으로 연결하세요."
+                    "DM 키워드에는 받을 자료나 다음 단계를 구체적으로 연결하세요. "
+                    "같은 주제의 LinkedIn 한국어판과 영어판도 작성하세요. "
+                    "영어판은 번역투가 아닌 글로벌 B2B 의사결정자를 위한 자연스러운 "
+                    "에세이로 쓰고 첫 줄에 'English version'을 표시하세요. "
+                    "두 언어판은 같은 주장, 질문, DM 키워드, 문의 허브 "
+                    "https://jhbropark.github.io/pages/contact.html 을 사용하세요."
                 ),
             }
         ],
@@ -164,6 +202,21 @@ def validate_generated_content(content: dict) -> list[str]:
     hashtags = content.get("hashtags", [])
     if not 5 <= len(hashtags) <= 7:
         errors.append("해시태그는 5~7개여야 합니다.")
+    ko_count = len("".join(content.get("linkedin_ko", "").split()))
+    if not 800 <= ko_count <= 1500:
+        errors.append(f"LinkedIn 한국어 본문은 공백 제외 800~1500자여야 합니다: {ko_count}자")
+    en_count = len(content.get("linkedin_en", "").strip())
+    if not 1200 <= en_count <= 2600:
+        errors.append(f"LinkedIn 영어 본문은 1200~2600자여야 합니다: {en_count}자")
+    if not content.get("linkedin_en", "").lstrip().startswith("English version"):
+        errors.append("LinkedIn 영어 본문은 'English version'으로 시작해야 합니다.")
+    if keyword and keyword not in content.get("linkedin_ko", ""):
+        errors.append("LinkedIn 한국어 본문에 DM 키워드가 없습니다.")
+    if keyword and keyword not in content.get("linkedin_en", ""):
+        errors.append("LinkedIn 영어 본문에 DM 키워드가 없습니다.")
+    for field in ("linkedin_ko_hashtags", "linkedin_en_hashtags"):
+        if not 3 <= len(content.get(field, [])) <= 4:
+            errors.append(f"{field}는 3~4개여야 합니다.")
     return errors
 
 
@@ -171,10 +224,15 @@ def validate_generated_content(content: dict) -> list[str]:
 # 3. 템플릿 이미지 생성 (Deep Navy + Soft Beige + Aqua Blue)
 # ---------------------------------------------------------------------------
 
-def _load_font(size: int) -> ImageFont.FreeTypeFont:
+def _load_font(size: int, variation: str = "Regular") -> ImageFont.FreeTypeFont:
     for path in KOREAN_FONT_CANDIDATES:
         if Path(path).exists():
-            return ImageFont.truetype(path, size)
+            loaded = ImageFont.truetype(path, size)
+            try:
+                loaded.set_variation_by_name(variation)
+            except (AttributeError, OSError):
+                pass
+            return loaded
     for path in FALLBACK_FONT_CANDIDATES:
         if Path(path).exists():
             return ImageFont.truetype(path, size)
@@ -227,8 +285,8 @@ def generate_image(headline: str, output_path: Path, seed: int) -> None:
     text_color = (248, 246, 242)
     sub_color = (14, 165, 233)
 
-    headline_font = _load_font(70)
-    brand_font = _load_font(30)
+    headline_font = _load_font(70, "Regular")
+    brand_font = _load_font(30, "Medium")
 
     def center_text(y: float, text: str, font: ImageFont.FreeTypeFont, fill) -> None:
         bbox = d.textbbox((0, 0), text, font=font)
@@ -281,6 +339,20 @@ def add_to_queue(item: dict) -> None:
         f.write("\n")
 
 
+def add_linkedin_pair(items: list[dict]) -> None:
+    """LinkedIn 큐에 한국어→영어 순서의 한 쌍을 추가합니다."""
+    if [item.get("language") for item in items] != ["ko", "en"]:
+        raise ValueError("LinkedIn 언어쌍은 ko, en 순서여야 합니다.")
+    if len({item.get("pair_id") for item in items}) != 1:
+        raise ValueError("LinkedIn 언어쌍은 같은 pair_id를 사용해야 합니다.")
+    with open(LINKEDIN_QUEUE_FILE, encoding="utf-8") as f:
+        queue = json.load(f)
+    queue["items"].extend(items)
+    with open(LINKEDIN_QUEUE_FILE, "w", encoding="utf-8") as f:
+        json.dump(queue, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
+
 # ---------------------------------------------------------------------------
 # 메인
 # ---------------------------------------------------------------------------
@@ -308,9 +380,15 @@ def main() -> None:
     print(f"헤드라인: {content['image_headline']}")
 
     IMAGES_DIR.mkdir(exist_ok=True)
-    image_filename = f"{post_id}.jpg"
-    print("템플릿 이미지 생성 중...")
+    image_filename = f"{post_id}_ko.jpg"
+    english_image_filename = f"{post_id}_en.jpg"
+    print("한국어·영어 템플릿 이미지 생성 중...")
     generate_image(content["image_headline"], IMAGES_DIR / image_filename, seed=now_kst.timetuple().tm_yday)
+    generate_image(
+        content["english_image_headline"],
+        IMAGES_DIR / english_image_filename,
+        seed=now_kst.timetuple().tm_yday,
+    )
 
     scheduled = compute_scheduled_time(now_kst, schedule_time)
     add_to_queue({
@@ -324,7 +402,43 @@ def main() -> None:
         "created_at": now_kst.isoformat(),
         "generated_by": "claude-opus-4-8",
     })
-    print(f"큐에 추가 완료: {post_id} (예약: {scheduled.isoformat()})")
+    linkedin_scheduled = compute_scheduled_time(now_kst, "09:00")
+    pair_id = f"linkedin_{now_kst:%Y%m%d}"
+    common = {
+        "pair_id": pair_id,
+        "status": "pending",
+        "topic": topic,
+        "scheduled_time": linkedin_scheduled.isoformat(),
+        "created_at": now_kst.isoformat(),
+        "generated_by": "claude-opus-4-8",
+        "dm_keyword": content["dm_keyword"],
+    }
+    add_linkedin_pair([
+        {
+            **common,
+            "id": f"{pair_id}_ko",
+            "language": "ko",
+            "pair_order": 1,
+            "commentary": content["linkedin_ko"],
+            "hashtags": content["linkedin_ko_hashtags"],
+            "image_url": f"{PAGES_BASE_URL}/images/{image_filename}",
+            "alt_text": f"bbbb.beauty 한국어 카드: {content['image_headline']}",
+        },
+        {
+            **common,
+            "id": f"{pair_id}_en",
+            "language": "en",
+            "pair_order": 2,
+            "commentary": content["linkedin_en"],
+            "hashtags": content["linkedin_en_hashtags"],
+            "image_url": f"{PAGES_BASE_URL}/images/{english_image_filename}",
+            "alt_text": f"bbbb.beauty English card: {content['english_image_headline']}",
+        },
+    ])
+    print(
+        f"큐에 추가 완료: Instagram 1개 + LinkedIn 언어쌍 2개 "
+        f"(예약: {linkedin_scheduled.isoformat()})"
+    )
 
 
 if __name__ == "__main__":

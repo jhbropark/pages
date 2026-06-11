@@ -69,6 +69,45 @@ class LinkedInUploadTests(unittest.TestCase):
             finally:
                 linkedin_upload.QUEUE_FILE = original_path
 
+    def test_language_pair_is_sorted_korean_then_english(self):
+        items = [
+            {
+                "id": "pair_en",
+                "pair_id": "pair",
+                "language": "en",
+                "pair_order": 2,
+                "scheduled_time": "2026-06-12T09:00:00+09:00",
+            },
+            {
+                "id": "pair_ko",
+                "pair_id": "pair",
+                "language": "ko",
+                "pair_order": 1,
+                "scheduled_time": "2026-06-12T09:00:00+09:00",
+            },
+        ]
+        ordered = linkedin_upload.sort_pending_items(items)
+        self.assertEqual([item["language"] for item in ordered], ["ko", "en"])
+
+    def test_english_waits_until_korean_is_uploaded(self):
+        korean = {
+            "pair_id": "pair",
+            "language": "ko",
+            "status": "pending",
+        }
+        english = {
+            "pair_id": "pair",
+            "language": "en",
+            "status": "pending",
+        }
+        self.assertFalse(
+            linkedin_upload.english_pair_is_ready(english, [korean, english])
+        )
+        korean["status"] = "uploaded"
+        self.assertTrue(
+            linkedin_upload.english_pair_is_ready(english, [korean, english])
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

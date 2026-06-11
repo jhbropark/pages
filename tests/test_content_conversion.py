@@ -24,6 +24,15 @@ class ContentConversionTests(unittest.TestCase):
             "comment_question": "A 정확성 / B 몰입감, 무엇이 더 필요한가요?",
             "dm_keyword": "MOA",
             "dm_offer": "기술 시각화 진단 질문을 보내드립니다.",
+            "english_image_headline": "TURN TECHNOLOGY INTO EXPERIENCE",
+            "linkedin_ko": ("기술을 고객의 언어로 번역합니다. " * 70) + "MOA",
+            "linkedin_en": (
+                "English version\n\n"
+                + ("We translate complex science into a clear customer experience. " * 25)
+                + "MOA"
+            ),
+            "linkedin_ko_hashtags": ["#과학커뮤니케이션", "#바이오마케팅", "#브랜드전략"],
+            "linkedin_en_hashtags": ["#ScienceCommunication", "#BiotechMarketing", "#BrandStrategy"],
         }
 
     def test_caption_contains_three_conversion_paths(self):

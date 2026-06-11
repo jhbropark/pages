@@ -229,6 +229,35 @@ def build_commentary(item: dict) -> str:
     return f"{commentary}\n\n{hashtags}" if hashtags else commentary
 
 
+def sort_pending_items(items: list[dict]) -> list[dict]:
+    """예약 시각과 언어쌍 순서(한국어→영어)로 정렬합니다."""
+    return sorted(
+        items,
+        key=lambda item: (
+            item.get("scheduled_time", ""),
+            item.get("pair_id", item.get("id", "")),
+            int(item.get("pair_order", 0)),
+        ),
+    )
+
+
+def english_pair_is_ready(item: dict, queue_items: list[dict]) -> bool:
+    """영어판은 같은 쌍의 한국어판이 성공한 뒤에만 게시합니다."""
+    if item.get("language") != "en":
+        return True
+    pair_id = item.get("pair_id")
+    korean = next(
+        (
+            candidate
+            for candidate in queue_items
+            if candidate.get("pair_id") == pair_id
+            and candidate.get("language") == "ko"
+        ),
+        None,
+    )
+    return korean is not None and korean.get("status") == "uploaded"
+
+
 def run() -> None:
     access_token = os.environ.get("LINKEDIN_ACCESS_TOKEN", "").strip()
     author_urn = os.environ.get("LINKEDIN_AUTHOR_URN", "").strip()
@@ -250,7 +279,9 @@ def run() -> None:
 
     queue = load_queue()
     now = datetime.now(tz=timezone.utc)
-    pending = [item for item in queue.get("items", []) if item.get("status") == "pending"]
+    pending = sort_pending_items(
+        [item for item in queue.get("items", []) if item.get("status") == "pending"]
+    )
     logger.info("LinkedIn 업로드 대기 항목: %d개", len(pending))
 
     uploaded_count = 0
@@ -259,6 +290,13 @@ def run() -> None:
         scheduled_time = item.get("scheduled_time", "")
         if not scheduled_time or not is_due(scheduled_time, now):
             logger.info("[%s] 아직 예약 시간이 아닙니다: %s", item_id, scheduled_time)
+            continue
+
+        if not english_pair_is_ready(item, queue.get("items", [])):
+            logger.warning(
+                "[%s] 한국어 대응 게시물이 아직 성공하지 않아 영어판을 보류합니다.",
+                item_id,
+            )
             continue
 
         errors = validate_item(item)

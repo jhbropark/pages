@@ -22,6 +22,13 @@ CARDS = [
     ("04", "데이터는 더 적게", "DATA MINIMALISM UX"),
 ]
 
+ENGLISH_CARDS = [
+    ("01", "THE ART OF TRANSPARENCY", "HYPER-SILICO TRANSPARENCY"),
+    ("02", "THE NEW LAB", "NEO-LAB AESTHETIC"),
+    ("03", "CINEMA AT MICRO SCALE", "MICRO-CINEMATOGRAPHY"),
+    ("04", "LESS DATA, MORE CLARITY", "DATA MINIMALISM UX"),
+]
+
 
 def font(size: int, variation: str = "Regular") -> ImageFont.FreeTypeFont:
     result = ImageFont.truetype(str(FONT), size=size)
@@ -43,7 +50,14 @@ def draw_tracking_text(
         x += draw.textlength(character, font=text_font) + tracking
 
 
-def render(source: Path, number: str, title: str, english: str) -> Path:
+def render(
+    source: Path,
+    number: str,
+    title: str,
+    english: str,
+    *,
+    language: str = "ko",
+) -> Path:
     image = Image.open(source).convert("RGB").resize((1080, 1080), Image.Resampling.LANCZOS)
     image = ImageEnhance.Contrast(image).enhance(1.025)
     overlay = Image.new("RGBA", image.size, (0, 0, 0, 0))
@@ -61,7 +75,8 @@ def render(source: Path, number: str, title: str, english: str) -> Path:
     )
     draw.rounded_rectangle((165, 64, 173, 244), radius=4, fill=(*AQUA, 255))
 
-    title_font = font(48, "Regular")
+    title_size = 48 if language == "ko" else 39
+    title_font = font(title_size, "Regular")
     meta_font = font(15, "Light")
     brand_font = font(20, "Medium")
 
@@ -93,18 +108,24 @@ def render(source: Path, number: str, title: str, english: str) -> Path:
     )
 
     result = Image.alpha_composite(image.convert("RGBA"), overlay).convert("RGB")
-    output = ROOT / "images" / "revisions" / f"post_20260612_style_{number}_v2.jpg"
+    suffix = "_en" if language == "en" else ""
+    output = (
+        ROOT
+        / "images"
+        / "revisions"
+        / f"post_20260612_style_{number}_v2{suffix}.jpg"
+    )
     output.parent.mkdir(parents=True, exist_ok=True)
     result.save(output, "JPEG", quality=95, optimize=True, progressive=True)
     return output
 
 
-def contact_sheet(paths: list[Path]) -> Path:
+def contact_sheet(paths: list[Path], filename: str, heading: str) -> Path:
     background = Image.new("RGB", (1710, 1330), (9, 17, 30))
     draw = ImageDraw.Draw(background)
     heading_font = font(30)
     label_font = font(17)
-    draw.text((55, 34), "bbbb.beauty  |  Typography & Grid-Safe Revision", font=heading_font, fill=BEIGE)
+    draw.text((55, 34), heading, font=heading_font, fill=BEIGE)
 
     for index, path in enumerate(paths):
         source = Image.open(path).convert("RGB")
@@ -122,7 +143,7 @@ def contact_sheet(paths: list[Path]) -> Path:
         draw.rectangle((x + 540, y, x + 810, y + 360), outline=AQUA, width=2)
         draw.text((x + 540, y + 370), "INSTAGRAM GRID 3:4", font=label_font, fill=(175, 205, 220))
 
-    output = ROOT / "images" / "revisions" / "visual-style-v2-review.jpg"
+    output = ROOT / "images" / "revisions" / filename
     background.save(output, "JPEG", quality=94, optimize=True)
     return output
 
@@ -135,8 +156,21 @@ def main() -> None:
         render(source, *card)
         for source, card in zip(args.sources, CARDS, strict=True)
     ]
-    review = contact_sheet(outputs)
-    for output in [*outputs, review]:
+    english_outputs = [
+        render(source, *card, language="en")
+        for source, card in zip(args.sources, ENGLISH_CARDS, strict=True)
+    ]
+    review = contact_sheet(
+        outputs,
+        "visual-style-v2-review.jpg",
+        "bbbb.beauty  |  Korean Typography & Grid-Safe Revision",
+    )
+    english_review = contact_sheet(
+        english_outputs,
+        "visual-style-v2-en-review.jpg",
+        "bbbb.beauty  |  English Typography & Grid-Safe Revision",
+    )
+    for output in [*outputs, *english_outputs, review, english_review]:
         print(output)
 
 
