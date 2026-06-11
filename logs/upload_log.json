@@ -4,5 +4,11 @@
     "status": "failed",
     "error": "API 오류 400: {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"AjR0tWEuw6sttPvppce7SQH\"}}",
     "timestamp": "2026-06-11T10:30:00.322989+00:00"
+  },
+  {
+    "id": "post_001",
+    "status": "failed",
+    "error": "API 오류 400: {\"error\":{\"message\":\"Unsupported post request. Object with ID 'bbbb.beauty_official' does not exist, cannot be loaded due to missing permissions, or does not support this operation\",\"type\":\"IGApiException\",\"code\":100,\"error_subcode\":33,\"fbtrace_id\":\"AMLvcV6Py6z2C9VvjRZbTl-\"}}",
+    "timestamp": "2026-06-11T10:45:09.629724+00:00"
   }
 ]
