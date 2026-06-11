@@ -1,3 +1,12 @@
 {
-  "items": []
+  "items": [
+    {
+      "id": "post_001",
+      "status": "pending",
+      "image_url": "https://이미지주소/photo.jpg",
+      "caption": "게시물 본문 내용을 여기에 작성하세요",
+      "hashtags": ["#뷰티", "#스킨케어", "#bbbb"],
+      "scheduled_time": "2026-06-12T09:00:00+09:00"
+    }
+  ]
 }
