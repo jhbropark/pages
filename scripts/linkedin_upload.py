@@ -65,6 +65,27 @@ def _request_json(
         raise RuntimeError(f"LinkedIn API 오류 {exc.code}: {body}") from exc
 
 
+def delete_post(access_token: str, post_urn: str) -> None:
+    encoded = urllib.parse.quote(post_urn, safe="")
+    request = urllib.request.Request(
+        f"{API_BASE}/posts/{encoded}",
+        method="DELETE",
+        headers={
+            **_headers(access_token),
+            "X-RestLi-Method": "DELETE",
+        },
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=45) as response:
+            if response.status != 204:
+                raise RuntimeError(
+                    f"LinkedIn 게시물 삭제 실패: HTTP {response.status}"
+                )
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"LinkedIn 게시물 삭제 오류 {exc.code}: {body}") from exc
+
+
 def _download_image(image_url: str) -> tuple[bytes, str]:
     request = urllib.request.Request(
         image_url,
@@ -279,6 +300,36 @@ def run() -> None:
 
     queue = load_queue()
     now = datetime.now(tz=timezone.utc)
+    delete_pending = [
+        item
+        for item in queue.get("items", [])
+        if item.get("status") == "delete_pending"
+    ]
+    for item in delete_pending:
+        item_id = item.get("id", "unknown")
+        post_urn = item.get("post_urn", "")
+        if not post_urn:
+            item["status"] = "delete_failed"
+            item["error"] = "삭제할 post_urn이 없습니다."
+            continue
+        try:
+            logger.info("[%s] 기존 LinkedIn 게시물 삭제 중...", item_id)
+            delete_post(access_token, post_urn)
+            item["status"] = "deleted"
+            item["deleted_at"] = datetime.now(tz=timezone.utc).isoformat()
+            append_log(
+                {
+                    "id": item_id,
+                    "status": "deleted",
+                    "post_urn": post_urn,
+                    "timestamp": item["deleted_at"],
+                }
+            )
+        except Exception as exc:
+            item["status"] = "delete_failed"
+            item["error"] = str(exc)
+            logger.error("[%s] 삭제 실패: %s", item_id, exc)
+
     pending = sort_pending_items(
         [item for item in queue.get("items", []) if item.get("status") == "pending"]
     )

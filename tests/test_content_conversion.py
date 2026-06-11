@@ -27,8 +27,7 @@ class ContentConversionTests(unittest.TestCase):
             "english_image_headline": "TURN TECHNOLOGY INTO EXPERIENCE",
             "linkedin_ko": ("기술을 고객의 언어로 번역합니다. " * 70) + "MOA",
             "linkedin_en": (
-                "English version\n\n"
-                + ("We translate complex science into a clear customer experience. " * 25)
+                ("We translate complex science into a clear customer experience. " * 25)
                 + "MOA"
             ),
             "linkedin_ko_hashtags": ["#과학커뮤니케이션", "#바이오마케팅", "#브랜드전략"],
