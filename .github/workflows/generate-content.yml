@@ -1,0 +1,57 @@
+name: Instagram 콘텐츠 자동 생성
+
+on:
+  # 매일 06:00 KST (21:00 UTC) — 생성 후 PR 검토 시간을 확보
+  schedule:
+    - cron: "0 21 * * *"
+  # 수동 실행 허용
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v6
+
+      - name: Python 설정
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: 한글 폰트 설치
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-nanum
+
+      - name: 의존성 설치
+        run: pip install --quiet anthropic Pillow
+
+      - name: 콘텐츠 생성
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/generate_content.py
+
+      - name: 검토용 PR 생성
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "feat: 자동 생성 콘텐츠 추가 (${{ github.run_id }})"
+          title: "🤖 오늘의 Instagram 콘텐츠 — 검토 후 머지해 주세요"
+          body: |
+            자동 생성된 Instagram 콘텐츠입니다.
+
+            **검토 방법:**
+            1. Files changed 탭에서 이미지(`images/`)와 캡션(`queue/queue.json`) 확인
+            2. 마음에 들면 **Merge** → 예약 시간에 자동 게시됩니다
+            3. 수정이 필요하면 이 브랜치에서 직접 편집 후 머지
+            4. 게시하지 않으려면 PR을 **Close**
+
+            ---
+            🤖 generate-content 워크플로우가 자동 생성한 PR입니다.
+          branch: auto-content/${{ github.run_id }}
+          delete-branch: true
+          labels: auto-content
