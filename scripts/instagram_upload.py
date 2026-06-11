@@ -11,6 +11,7 @@ Meta Graph API를 사용하여 예약된 콘텐츠를 Instagram에 자동 게시
 import json
 import os
 import sys
+import time
 import logging
 from datetime import datetime, timezone
 from pathlib import Path
@@ -112,16 +113,51 @@ def create_media_container(user_id: str, access_token: str, image_url: str, capt
     return result["id"]
 
 
+def wait_for_container_ready(creation_id: str, access_token: str, timeout: int = 120) -> None:
+    """미디어 컨테이너의 이미지 처리가 끝날 때까지 대기합니다."""
+    params = urllib.parse.urlencode({"fields": "status_code", "access_token": access_token})
+    url = f"{GRAPH_API_BASE}/{creation_id}?{params}"
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        try:
+            with urllib.request.urlopen(url, timeout=30) as resp:
+                status = json.loads(resp.read()).get("status_code", "")
+        except urllib.error.HTTPError:
+            status = ""
+        if status == "FINISHED":
+            return
+        if status == "ERROR":
+            raise RuntimeError("미디어 컨테이너 처리 실패 (status_code=ERROR)")
+        logger.info("미디어 처리 대기 중... (status=%s)", status or "unknown")
+        time.sleep(5)
+    raise RuntimeError(f"미디어 컨테이너가 {timeout}초 내에 준비되지 않았습니다.")
+
+
 def publish_media(user_id: str, access_token: str, creation_id: str) -> str:
-    """미디어 컨테이너를 게시하고 게시물 ID를 반환합니다."""
-    result = _api_post(
-        f"{user_id}/media_publish",
-        {
-            "creation_id": creation_id,
-            "access_token": access_token,
-        },
-    )
-    return result["id"]
+    """미디어 컨테이너를 게시하고 게시물 ID를 반환합니다.
+
+    이미지 처리가 끝나기 전에 게시하면 9007(Media ID is not available)이
+    발생하므로 짧은 간격으로 몇 차례 재시도합니다.
+    """
+    last_error: Exception | None = None
+    for attempt in range(5):
+        if attempt:
+            time.sleep(10)
+            logger.info("게시 재시도 %d/4...", attempt)
+        try:
+            result = _api_post(
+                f"{user_id}/media_publish",
+                {
+                    "creation_id": creation_id,
+                    "access_token": access_token,
+                },
+            )
+            return result["id"]
+        except RuntimeError as exc:
+            last_error = exc
+            if "9007" not in str(exc) and "not ready" not in str(exc):
+                raise
+    raise last_error
 
 
 def get_post_permalink(post_id: str, access_token: str) -> str:
@@ -241,6 +277,9 @@ def run() -> None:
         try:
             logger.info("[%s] 미디어 컨테이너 생성 중...", item_id)
             creation_id = create_media_container(user_id, access_token, item["image_url"], full_caption)
+
+            logger.info("[%s] 미디어 처리 완료 대기 중...", item_id)
+            wait_for_container_ready(creation_id, access_token)
 
             logger.info("[%s] 게시 중...", item_id)
             post_id = publish_media(user_id, access_token, creation_id)
