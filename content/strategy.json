@@ -1,0 +1,250 @@
+{
+  "version": 1,
+  "objectives": {
+    "primary": "B2B 브랜드 의사결정권자에게 bbbb.beauty를 메디컬·바이오 전문 크리에이티브 에이전시로 각인시키고 비주얼 솔루션 및 외주 제작 상담 문의로 연결한다.",
+    "secondary": "과학 커뮤니케이션의 기준을 교육하고 메디컬·바이오 비주얼 트렌드를 선도하는 신뢰를 형성한다.",
+    "linkedin_action": "포트폴리오 확인, 제안서 또는 RFP 요청, 미팅 및 DM 문의",
+    "instagram_action": "프로필 방문, 비주얼 무드 확인, 저장 및 공유"
+  },
+  "audience": {
+    "industries": [
+      "더마코스메틱",
+      "제약",
+      "바이오테크",
+      "필러·보톡스 등 의료기기",
+      "하이엔드 뷰티"
+    ],
+    "roles": [
+      "CMO",
+      "브랜드 매니저",
+      "마케팅 팀장",
+      "R&D 연구소장",
+      "홍보·커뮤니케이션 디렉터"
+    ],
+    "company_stages": [
+      "신제품 출시 준비",
+      "글로벌 진출 준비",
+      "학회·전시회 참가 준비",
+      "투자 유치 및 IR",
+      "글로벌 수출 계약 준비"
+    ],
+    "pain_points": [
+      "독자 성분과 임상 데이터가 어려워 상세페이지와 광고에서 읽히지 않는다.",
+      "일반 영상 프로덕션이 의학적 구조와 작용기전을 이해하지 못해 소통 비용이 커진다.",
+      "과학적 정확성과 하이엔드 브랜드 영상미를 동시에 충족할 파트너를 찾기 어렵다."
+    ],
+    "decision_criteria": [
+      "의학적·과학적 고증의 정확성",
+      "시네마틱 프리미엄 비주얼",
+      "트렌디한 디지털 UX 및 AR 기술력",
+      "R&D와 마케팅 언어를 연결하는 커뮤니케이션 역량"
+    ]
+  },
+  "positioning": {
+    "role": "복잡한 메디컬·바이오 기술을 고객이 직관적으로 이해하고 신뢰할 수 있는 프리미엄 비주얼과 인터랙티브 콘텐츠로 번역한다.",
+    "outcome": "과학과 브랜드 사이의 이해의 벽을 허물어 기술력을 고객의 신뢰와 선택으로 연결한다.",
+    "differentiators": [
+      "박사급 인력의 고증을 통한 의학적 정확성",
+      "영화 아티스트가 참여하는 시네마틱 프리미엄 비주얼",
+      "3D/MOA, 다큐멘터리, AR, 교육 콘텐츠를 결합하는 통합 제작 역량"
+    ],
+    "required_message": "Science to Message, Beauty to Experience. 기술은 정확하게, 메시지는 쉽게.",
+    "banned_value_language": [
+      "업계 최저가",
+      "가성비 영상",
+      "빠른 납기 보장"
+    ]
+  },
+  "pillars": [
+    {
+      "id": "science_communication",
+      "name": "과학 커뮤니케이션 인사이트",
+      "weight": 25,
+      "purpose": "어려운 기술을 고객 언어로 번역하는 메시징 기준과 트렌드"
+    },
+    {
+      "id": "moa_craft",
+      "name": "3D/MOA 제작 노하우",
+      "weight": 20,
+      "purpose": "작용기전 고증, 시각화, 라이팅 및 디렉팅 비하인드"
+    },
+    {
+      "id": "industry_solution",
+      "name": "산업별 문제 해결",
+      "weight": 20,
+      "purpose": "더마·제약·바이오·의료기기의 문제를 콘텐츠로 푸는 방법"
+    },
+    {
+      "id": "methodology",
+      "name": "프로젝트 과정·방법론",
+      "weight": 15,
+      "purpose": "의학 고증부터 프리미엄 결과물까지의 제작 워크플로우"
+    },
+    {
+      "id": "portfolio",
+      "name": "서비스·포트폴리오",
+      "weight": 10,
+      "purpose": "3D/MOA, AR, 다큐멘터리, 교육 콘텐츠 쇼케이스"
+    },
+    {
+      "id": "philosophy",
+      "name": "회사 관점·철학",
+      "weight": 10,
+      "purpose": "bbbb.beauty의 관점, 장인정신, 과학과 아름다움에 대한 태도"
+    }
+  ],
+  "pillar_cycle_20_posts": [
+    "science_communication",
+    "moa_craft",
+    "industry_solution",
+    "methodology",
+    "science_communication",
+    "portfolio",
+    "moa_craft",
+    "industry_solution",
+    "philosophy",
+    "science_communication",
+    "methodology",
+    "moa_craft",
+    "industry_solution",
+    "science_communication",
+    "portfolio",
+    "methodology",
+    "moa_craft",
+    "industry_solution",
+    "philosophy",
+    "science_communication"
+  ],
+  "content_framework": [
+    "Hook: 고객의 현업 문제나 의사결정 질문",
+    "Tension: 기존 설명 방식이 실패하는 구조적 이유",
+    "Insight: bbbb.beauty의 과학 커뮤니케이션 관점",
+    "Framework: 적용 가능한 세 가지 판단 기준",
+    "Application: 적합한 3D/MOA·다큐멘터리·AR·교육 콘텐츠 형식",
+    "Positioning: bbbb.beauty가 정확성과 프리미엄 비주얼을 결합하는 방식",
+    "CTA: 포트폴리오 확인, DM, RFP 또는 프로젝트 미팅 유도"
+  ],
+  "channels": {
+    "instagram": {
+      "caption_max_chars": 220,
+      "carousel_cards": {
+        "min": 4,
+        "max": 6
+      },
+      "tone": "정중하고 미래지향적인 합니다체",
+      "hashtags": {
+        "min": 5,
+        "max": 7
+      },
+      "cta": "프로필 링크 방문, 저장 또는 공유",
+      "publish_time_kst": "19:00"
+    },
+    "linkedin": {
+      "body_chars": {
+        "min": 800,
+        "max": 1500,
+        "exclude_spaces": true
+      },
+      "tone": "이성적이고 통찰력 있는 경영자·CMO 어조",
+      "paragraph_max_lines": 3,
+      "allowed_list_markers": [
+        "💡",
+        "▪",
+        "🌐"
+      ],
+      "hashtags": {
+        "min": 3,
+        "max": 4
+      },
+      "cta": "DM 문의 또는 댓글의 포트폴리오 링크 안내",
+      "publish_time_kst": "09:00"
+    }
+  },
+  "compliance": {
+    "approved_evidence": [
+      "SCI급 국제 학술지",
+      "등록 특허 공보",
+      "공인 임상시험 기관의 인간 적용 시험 결과",
+      "파트너사가 제공하고 공개를 승인한 R&D 데이터와 성분 가이드"
+    ],
+    "portfolio_rule": "공식 출시 제품 및 사전 승인된 공개 자료만 사용하며 NDA와 클라이언트 RA 검수를 따른다.",
+    "banned_medical_claim_examples": [
+      "피부 재생 완벽 보장",
+      "아토피 완치"
+    ],
+    "banned_superlatives": [
+      "국내 최초",
+      "세계 유일"
+    ],
+    "case_study_rule": "실제 승인된 출처가 없으면 고객사, 전환율, 매출, 미팅 성사율, 펀딩 성과를 만들지 않는다. 가상 사례는 반드시 가상 시나리오 또는 검토 프레임이라고 명시하며 실제 성과처럼 서술하지 않는다.",
+    "reviewers": [
+      "bbbb.beauty 메디컬 고증 자문위원",
+      "클라이언트 규제과학·RA 담당자"
+    ]
+  },
+  "visual_system": {
+    "colors": {
+      "deep_navy": {
+        "hex": "#1E293B",
+        "ratio": 60
+      },
+      "soft_beige": {
+        "hex": "#F8F6F2",
+        "ratio": 30
+      },
+      "aqua_blue": {
+        "hex": "#0EA5E9",
+        "ratio": 10
+      }
+    },
+    "preferred": [
+      "시네마틱 매크로 라이팅",
+      "하이퍼 리얼리스틱 분자·세포·피부 장벽",
+      "투명하고 수분감 있는 텍스처",
+      "테크니컬 기기 목업"
+    ],
+    "avoid": [
+      "밝고 쨍한 색조 메이크업 이미지",
+      "장난감 같은 저품질 3D 모델",
+      "의학적 구조를 왜곡하는 장식적 시각화"
+    ],
+    "headline_max_chars": 12,
+    "logo_positions": [
+      "우측 상단",
+      "하단 중앙"
+    ],
+    "references": [
+      "SkinCeuticals의 테크니컬 비주얼",
+      "The Ordinary의 기술 중심 비주얼",
+      "글로벌 메디컬 애니메이션 스튜디오"
+    ]
+  },
+  "operations": {
+    "publish_days": [
+      "TU",
+      "TH"
+    ],
+    "draft_days": [
+      "MO",
+      "WE"
+    ],
+    "draft_time_kst": "06:00",
+    "approval_deadline_kst": "15:00",
+    "reviewers": [
+      "CMO Jay Im",
+      "브랜드 에디터"
+    ],
+    "kpis": {
+      "quantitative": [
+        "인바운드 DM·이메일 문의",
+        "웹사이트 CTR",
+        "저장 수",
+        "공유 수"
+      ],
+      "qualitative": [
+        "제약·바이오 BM 및 임원진의 일촌 신청",
+        "타겟 업계 댓글과 대화의 질"
+      ]
+    }
+  }
+}
