@@ -71,6 +71,25 @@
       "post_id": "18096029495227030",
       "post_url": "https://www.instagram.com/p/DZcqkUKFU7m/",
       "uploaded_at": "2026-06-11T13:50:26.555017+00:00"
+    },
+    {
+      "id": "post_20260611_strategy_test",
+      "status": "pending",
+      "topic": "임상 그래프가 읽히지 않는 이유는 데이터가 부족해서가 아닙니다",
+      "pillar_id": "science_communication",
+      "image_url": "https://jhbropark.github.io/pages/images/post_20260611_strategy_test.jpg",
+      "caption": "임상 데이터가 많아도 고객의 이해 순서가 없으면 기술력은 기억되지 않습니다.\n\n① 고객이 체감할 변화\n② 변화를 만드는 핵심 기전\n③ 이를 뒷받침하는 근거\n\nbbbb.beauty는 과학적 정확성을 유지하며 데이터를 이해 가능한 비주얼 경험으로 번역합니다. 저장해 다음 콘텐츠 기획에 활용하세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#바이오마케팅",
+        "#더마코스메틱",
+        "#메디컬콘텐츠",
+        "#3D애니메이션",
+        "#bbbbbeauty"
+      ],
+      "scheduled_time": "2026-06-11T23:50:00+09:00",
+      "created_at": "2026-06-11T23:54:06+09:00",
+      "generated_by": "codex-strategy-test"
     }
   ]
 }
