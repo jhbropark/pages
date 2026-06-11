@@ -182,6 +182,15 @@
         "max": 4
       },
       "cta": "댓글 질문 + DM 키워드 + 프로필/포트폴리오 링크를 필수로 넣고 RFP·미팅 요청 중 하나를 추가",
+      "language_pair": {
+        "required": true,
+        "order": [
+          "ko",
+          "en"
+        ],
+        "rule": "모든 주제는 한국어 본문·한국어 이미지 게시 후 동일 주제의 영어 본문·영어 이미지를 연속 발행한다. 두 게시물은 같은 pair_id와 CTA 키워드를 사용한다.",
+        "english_label": "English version"
+      },
       "publish_time_kst": "09:00"
     }
   },
