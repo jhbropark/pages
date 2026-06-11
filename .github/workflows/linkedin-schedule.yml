@@ -1,0 +1,41 @@
+name: LinkedIn 예약 업로드
+
+on:
+  schedule:
+    - cron: "30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Python 설정
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: LinkedIn 예약 업로드 실행
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
+          LINKEDIN_API_VERSION: "202605"
+        run: python scripts/linkedin_upload.py
+
+      - name: 변경사항 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add linkedin/queue.json
+          if [ -f logs/linkedin_upload_log.json ]; then
+            git add logs/linkedin_upload_log.json
+          fi
+          git diff --cached --quiet || git commit -m "chore: LinkedIn 업로드 결과 저장 [skip ci]"
+          git push
