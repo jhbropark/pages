@@ -93,6 +93,82 @@
       "post_id": "18106951237960830",
       "post_url": "https://www.instagram.com/p/DZcy364ILIU/",
       "uploaded_at": "2026-06-11T15:03:02.144222+00:00"
+    },
+    {
+      "id": "post_20260612_style_01",
+      "status": "pending",
+      "topic": "투명함의 기술",
+      "pillar_id": "3d_moa",
+      "image_url": "https://jhbropark.github.io/pages/images/post_20260612_style_01.jpg",
+      "caption": "성분의 움직임은 설명보다 먼저 보여야 합니다.\n\n투명한 캡슐, 수분감 있는 장벽, 정교한 빛의 굴절로 보이지 않는 작용 기전을 직관적인 경험으로 번역합니다.\n\nScience to Message, Beauty to Experience.",
+      "hashtags": [
+        "#3D애니메이션",
+        "#MOA",
+        "#더마코스메틱",
+        "#메디컬콘텐츠",
+        "#과학커뮤니케이션",
+        "#bbbbbeauty"
+      ],
+      "scheduled_time": "2026-06-12T00:00:00+09:00",
+      "created_at": "2026-06-12T00:10:00+09:00",
+      "generated_by": "codex-visual-style-series"
+    },
+    {
+      "id": "post_20260612_style_02",
+      "status": "pending",
+      "topic": "새로운 연구실",
+      "pillar_id": "visual_trends",
+      "image_url": "https://jhbropark.github.io/pages/images/post_20260612_style_02.jpg",
+      "caption": "과학적 신뢰가 반드시 차갑게 보여야 하는 것은 아닙니다.\n\nDeep Navy의 정밀함에 Soft Beige의 온도를 더해, 연구의 전문성과 뷰티 브랜드의 감성을 하나의 장면에 담습니다.\n\nScience to Message, Beauty to Experience.",
+      "hashtags": [
+        "#브랜드디자인",
+        "#바이오마케팅",
+        "#더마코스메틱",
+        "#메디컬콘텐츠",
+        "#비주얼커뮤니케이션",
+        "#bbbbbeauty"
+      ],
+      "scheduled_time": "2026-06-12T00:00:00+09:00",
+      "created_at": "2026-06-12T00:10:00+09:00",
+      "generated_by": "codex-visual-style-series"
+    },
+    {
+      "id": "post_20260612_style_03",
+      "status": "pending",
+      "topic": "미시 세계의 영화",
+      "pillar_id": "3d_moa",
+      "image_url": "https://jhbropark.github.io/pages/images/post_20260612_style_03.jpg",
+      "caption": "정보를 보여주는 것과 시선을 붙잡는 것은 다릅니다.\n\n하나의 세포에 초점을 맞추고 주변을 과감히 흐려, 미시 세계에 서사와 긴장감을 만듭니다. 과학도 영화처럼 기억될 수 있습니다.\n\nScience to Message, Beauty to Experience.",
+      "hashtags": [
+        "#마이크로시네마",
+        "#3D애니메이션",
+        "#메디컬필름",
+        "#과학시각화",
+        "#바이오콘텐츠",
+        "#bbbbbeauty"
+      ],
+      "scheduled_time": "2026-06-12T00:00:00+09:00",
+      "created_at": "2026-06-12T00:10:00+09:00",
+      "generated_by": "codex-visual-style-series"
+    },
+    {
+      "id": "post_20260612_style_04",
+      "status": "pending",
+      "topic": "데이터는 더 적게",
+      "pillar_id": "interactive_ar",
+      "image_url": "https://jhbropark.github.io/pages/images/post_20260612_style_04.jpg",
+      "caption": "데이터가 많을수록 이해가 깊어지는 것은 아닙니다.\n\n필요한 순간에 필요한 정보만 반응하도록 설계해, 복잡한 피부 구조와 수치를 직관적인 인터랙티브 경험으로 바꿉니다.\n\nScience to Message, Beauty to Experience.",
+      "hashtags": [
+        "#인터랙티브콘텐츠",
+        "#AR콘텐츠",
+        "#의료기기마케팅",
+        "#UX디자인",
+        "#과학교육",
+        "#bbbbbeauty"
+      ],
+      "scheduled_time": "2026-06-12T00:00:00+09:00",
+      "created_at": "2026-06-12T00:10:00+09:00",
+      "generated_by": "codex-visual-style-series"
     }
   ]
 }
