@@ -66,19 +66,40 @@ CONTENT_SCHEMA = {
     "properties": {
         "caption": {
             "type": "string",
-            "description": "Instagram 게시물 본문. 300~600자, 한국어, 줄바꿈 포함, 해시태그 제외",
+            "description": "Instagram 핵심 본문. 80~120자, 한국어, 해시태그와 CTA 제외",
         },
         "hashtags": {
             "type": "array",
             "items": {"type": "string"},
-            "description": "한국어/영어 해시태그 8~12개, 각각 #으로 시작",
+            "minItems": 5,
+            "maxItems": 7,
+            "description": "핵심 한국어/영어 해시태그 5~7개, 각각 #으로 시작",
         },
         "image_headline": {
             "type": "string",
             "description": "이미지 카드에 들어갈 핵심 문구. 한국어 10~24자, 전문적이고 명료하게",
         },
+        "comment_question": {
+            "type": "string",
+            "description": "10초 안에 답할 수 있는 A/B 선택 또는 한 단어 댓글 질문. 35자 이내",
+        },
+        "dm_keyword": {
+            "type": "string",
+            "description": "DM으로 보낼 2~6자의 기억하기 쉬운 대문자 영문 또는 한국어 키워드",
+        },
+        "dm_offer": {
+            "type": "string",
+            "description": "DM 키워드를 보내면 제공할 체크리스트·진단 질문·가이드. 35자 이내",
+        },
     },
-    "required": ["caption", "hashtags", "image_headline"],
+    "required": [
+        "caption",
+        "hashtags",
+        "image_headline",
+        "comment_question",
+        "dm_keyword",
+        "dm_offer",
+    ],
     "additionalProperties": False,
 }
 
@@ -102,7 +123,10 @@ def generate_text(topic: str, brand_guide: str) -> dict:
                     "실무적인 관점이나 판단 기준을 주는 Instagram 게시물을 작성해 주세요. "
                     "복잡한 과학을 쉽게 전달하되 전문성을 낮추지 말고, "
                     "서비스를 과도하게 광고하기보다 bbbb.beauty의 관점과 역량이 "
-                    "자연스럽게 드러나게 하세요. 소비자용 피부관리 팁은 작성하지 마세요."
+                    "자연스럽게 드러나게 하세요. 소비자용 피부관리 팁은 작성하지 마세요. "
+                    "반드시 고객이 댓글과 DM으로 쉽게 대화를 시작할 수 있는 장치를 만드세요. "
+                    "댓글 질문은 A/B 선택이나 한 단어 답변처럼 부담이 없어야 하며, "
+                    "DM 키워드에는 받을 자료나 다음 단계를 구체적으로 연결하세요."
                 ),
             }
         ],
@@ -110,6 +134,37 @@ def generate_text(topic: str, brand_guide: str) -> dict:
     )
     text = next(b.text for b in response.content if b.type == "text")
     return json.loads(text)
+
+
+def build_conversion_caption(content: dict) -> str:
+    """핵심 본문과 다중 CTA를 Instagram 길이 안에서 조합합니다."""
+    return (
+        f"{content['caption'].strip()}\n\n"
+        f"댓글: {content['comment_question'].strip()}\n"
+        f"DM “{content['dm_keyword'].strip()}”: {content['dm_offer'].strip()}\n"
+        "프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요."
+    )
+
+
+def validate_generated_content(content: dict) -> list[str]:
+    errors = []
+    keyword = content.get("dm_keyword", "").strip()
+    question = content.get("comment_question", "").strip()
+    offer = content.get("dm_offer", "").strip()
+    caption = build_conversion_caption(content)
+
+    if not question:
+        errors.append("댓글 질문이 없습니다.")
+    if not 2 <= len(keyword) <= 6:
+        errors.append("DM 키워드는 2~6자여야 합니다.")
+    if not offer:
+        errors.append("DM 제공 자료가 없습니다.")
+    if len(caption) > 220:
+        errors.append(f"CTA 포함 캡션이 220자를 초과합니다: {len(caption)}자")
+    hashtags = content.get("hashtags", [])
+    if not 5 <= len(hashtags) <= 7:
+        errors.append("해시태그는 5~7개여야 합니다.")
+    return errors
 
 
 # ---------------------------------------------------------------------------
@@ -246,6 +301,10 @@ def main() -> None:
 
     print("Claude API로 캡션 생성 중...")
     content = generate_text(topic, brand_guide)
+    errors = validate_generated_content(content)
+    if errors:
+        raise ValueError("생성 콘텐츠 CTA 검증 실패: " + " / ".join(errors))
+    content["caption"] = build_conversion_caption(content)
     print(f"헤드라인: {content['image_headline']}")
 
     IMAGES_DIR.mkdir(exist_ok=True)
