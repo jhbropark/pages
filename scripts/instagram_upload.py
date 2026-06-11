@@ -1,0 +1,263 @@
+#!/usr/bin/env python3
+"""
+Instagram 예약 업로드 스크립트
+Meta Graph API를 사용하여 예약된 콘텐츠를 Instagram에 자동 게시합니다.
+
+필요한 환경 변수:
+  INSTAGRAM_USER_ID      - Instagram 비즈니스 계정 ID
+  INSTAGRAM_ACCESS_TOKEN - Meta Graph API 장기 액세스 토큰
+"""
+
+import json
+import os
+import sys
+import logging
+from datetime import datetime, timezone
+from pathlib import Path
+import urllib.request
+import urllib.parse
+import urllib.error
+
+# --- 경로 설정 ---
+REPO_ROOT = Path(__file__).parent.parent
+QUEUE_FILE = REPO_ROOT / "queue" / "queue.json"
+LOG_FILE = REPO_ROOT / "logs" / "upload_log.json"
+
+# --- 유효성 검사 상수 ---
+MAX_CAPTION_LENGTH = 2200
+MAX_HASHTAG_COUNT = 30
+ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png"}
+
+# --- 로깅 설정 ---
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%Y-%m-%dT%H:%M:%S",
+)
+logger = logging.getLogger(__name__)
+
+GRAPH_API_BASE = "https://graph.facebook.com/v19.0"
+
+
+# ---------------------------------------------------------------------------
+# 유효성 검사
+# ---------------------------------------------------------------------------
+
+def validate_item(item: dict) -> list[str]:
+    """콘텐츠 항목을 검증하고 오류 목록을 반환합니다."""
+    errors = []
+
+    # 이미지 URL 확인
+    image_url: str = item.get("image_url", "")
+    if not image_url:
+        errors.append("image_url이 없습니다.")
+    else:
+        ext = Path(urllib.parse.urlparse(image_url).path).suffix.lower()
+        if ext not in ALLOWED_EXTENSIONS:
+            errors.append(f"지원하지 않는 이미지 형식: {ext} (허용: {ALLOWED_EXTENSIONS})")
+
+    # 캡션 길이 확인
+    caption: str = item.get("caption", "")
+    if len(caption) > MAX_CAPTION_LENGTH:
+        errors.append(f"캡션이 너무 깁니다: {len(caption)}자 (최대 {MAX_CAPTION_LENGTH}자)")
+
+    # 해시태그 수 확인
+    hashtags: list = item.get("hashtags", [])
+    if len(hashtags) > MAX_HASHTAG_COUNT:
+        errors.append(f"해시태그가 너무 많습니다: {len(hashtags)}개 (최대 {MAX_HASHTAG_COUNT}개)")
+
+    # 예약 시간 확인
+    if not item.get("scheduled_time"):
+        errors.append("scheduled_time이 없습니다.")
+
+    return errors
+
+
+# ---------------------------------------------------------------------------
+# Meta Graph API 호출
+# ---------------------------------------------------------------------------
+
+def _api_post(endpoint: str, params: dict) -> dict:
+    """Graph API에 POST 요청을 보내고 JSON 응답을 반환합니다."""
+    data = urllib.parse.urlencode(params).encode("utf-8")
+    url = f"{GRAPH_API_BASE}/{endpoint}"
+    req = urllib.request.Request(url, data=data, method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"API 오류 {e.code}: {body}") from e
+
+
+def create_media_container(user_id: str, access_token: str, image_url: str, caption: str) -> str:
+    """이미지 미디어 컨테이너를 생성하고 creation_id를 반환합니다."""
+    result = _api_post(
+        f"{user_id}/media",
+        {
+            "image_url": image_url,
+            "caption": caption,
+            "access_token": access_token,
+        },
+    )
+    return result["id"]
+
+
+def publish_media(user_id: str, access_token: str, creation_id: str) -> str:
+    """미디어 컨테이너를 게시하고 게시물 ID를 반환합니다."""
+    result = _api_post(
+        f"{user_id}/media_publish",
+        {
+            "creation_id": creation_id,
+            "access_token": access_token,
+        },
+    )
+    return result["id"]
+
+
+def get_post_permalink(post_id: str, access_token: str) -> str:
+    """게시물 permalink를 가져옵니다."""
+    params = urllib.parse.urlencode({"fields": "permalink", "access_token": access_token})
+    url = f"{GRAPH_API_BASE}/{post_id}?{params}"
+    try:
+        with urllib.request.urlopen(url, timeout=30) as resp:
+            data = json.loads(resp.read())
+            return data.get("permalink", f"https://www.instagram.com/p/{post_id}/")
+    except Exception:
+        return f"https://www.instagram.com/p/{post_id}/"
+
+
+# ---------------------------------------------------------------------------
+# 큐 및 로그 관리
+# ---------------------------------------------------------------------------
+
+def load_queue() -> dict:
+    if not QUEUE_FILE.exists():
+        logger.warning("queue.json 파일이 없습니다: %s", QUEUE_FILE)
+        return {"items": []}
+    with open(QUEUE_FILE, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_queue(queue: dict) -> None:
+    with open(QUEUE_FILE, "w", encoding="utf-8") as f:
+        json.dump(queue, f, ensure_ascii=False, indent=2)
+
+
+def append_log(entry: dict) -> None:
+    LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+    logs = []
+    if LOG_FILE.exists():
+        with open(LOG_FILE, encoding="utf-8") as f:
+            logs = json.load(f)
+    logs.append(entry)
+    with open(LOG_FILE, "w", encoding="utf-8") as f:
+        json.dump(logs, f, ensure_ascii=False, indent=2)
+
+
+# ---------------------------------------------------------------------------
+# 메인 로직
+# ---------------------------------------------------------------------------
+
+def is_due(scheduled_time_str: str, now: datetime) -> bool:
+    """예약 시간이 현재 시각 이전인지 확인합니다."""
+    dt = datetime.fromisoformat(scheduled_time_str)
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt <= now
+
+
+def build_full_caption(caption: str, hashtags: list[str]) -> str:
+    tag_str = " ".join(hashtags)
+    if tag_str:
+        return f"{caption}\n\n{tag_str}"
+    return caption
+
+
+def run() -> None:
+    user_id = os.environ.get("INSTAGRAM_USER_ID")
+    access_token = os.environ.get("INSTAGRAM_ACCESS_TOKEN")
+
+    if not user_id or not access_token:
+        logger.error("환경 변수 INSTAGRAM_USER_ID 또는 INSTAGRAM_ACCESS_TOKEN이 설정되지 않았습니다.")
+        sys.exit(1)
+
+    queue = load_queue()
+    now = datetime.now(tz=timezone.utc)
+    pending = [item for item in queue["items"] if item.get("status") == "pending"]
+
+    if not pending:
+        logger.info("업로드 대기 중인 콘텐츠가 없습니다.")
+        return
+
+    logger.info("대기 중인 항목: %d개", len(pending))
+    uploaded_count = 0
+
+    for item in pending:
+        item_id = item.get("id", "unknown")
+
+        # 예약 시간 확인
+        scheduled = item.get("scheduled_time", "")
+        if not scheduled or not is_due(scheduled, now):
+            logger.info("[%s] 아직 예약 시간이 아닙니다: %s", item_id, scheduled)
+            continue
+
+        # 유효성 검사
+        errors = validate_item(item)
+        if errors:
+            logger.warning("[%s] 유효성 검사 실패: %s", item_id, "; ".join(errors))
+            item["status"] = "invalid"
+            item["errors"] = errors
+            append_log({
+                "id": item_id,
+                "status": "invalid",
+                "errors": errors,
+                "timestamp": now.isoformat(),
+            })
+            continue
+
+        # 업로드
+        full_caption = build_full_caption(item["caption"], item.get("hashtags", []))
+        try:
+            logger.info("[%s] 미디어 컨테이너 생성 중...", item_id)
+            creation_id = create_media_container(user_id, access_token, item["image_url"], full_caption)
+
+            logger.info("[%s] 게시 중...", item_id)
+            post_id = publish_media(user_id, access_token, creation_id)
+
+            permalink = get_post_permalink(post_id, access_token)
+            uploaded_at = datetime.now(tz=timezone.utc).isoformat()
+
+            item["status"] = "uploaded"
+            item["post_id"] = post_id
+            item["post_url"] = permalink
+            item["uploaded_at"] = uploaded_at
+
+            append_log({
+                "id": item_id,
+                "status": "uploaded",
+                "post_id": post_id,
+                "post_url": permalink,
+                "timestamp": uploaded_at,
+            })
+
+            logger.info("[%s] 업로드 완료: %s", item_id, permalink)
+            uploaded_count += 1
+
+        except Exception as exc:
+            logger.error("[%s] 업로드 실패: %s", item_id, exc)
+            item["status"] = "failed"
+            item["error"] = str(exc)
+            append_log({
+                "id": item_id,
+                "status": "failed",
+                "error": str(exc),
+                "timestamp": now.isoformat(),
+            })
+
+    save_queue(queue)
+    logger.info("완료: %d개 업로드됨", uploaded_count)
+
+
+if __name__ == "__main__":
+    run()

@@ -1,0 +1,40 @@
+name: Instagram 예약 업로드
+
+on:
+  # 매시간 정각에 실행 (UTC 기준 — KST는 +9시간)
+  schedule:
+    - cron: "0 * * * *"
+  # 수동 실행 허용
+  workflow_dispatch:
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # queue.json 및 logs 커밋용
+
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Python 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 예약 업로드 실행
+        env:
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+        run: python scripts/instagram_upload.py
+
+      - name: 변경사항 커밋 (queue + logs)
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add queue/queue.json logs/
+          # 변경이 있을 때만 커밋
+          git diff --cached --quiet || git commit -m "chore: Instagram 업로드 결과 저장 [skip ci]"
+          git push
