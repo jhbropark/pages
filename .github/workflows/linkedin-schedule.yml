@@ -28,8 +28,8 @@ jobs:
           LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
           LINKEDIN_API_VERSION: "202605"
         run: |
-          if [ -z "$LINKEDIN_ACCESS_TOKEN" ] || [ -z "$LINKEDIN_AUTHOR_URN" ]; then
-            echo "LinkedIn Secret이 아직 설정되지 않아 업로드를 건너뜁니다."
+          if [ -z "$LINKEDIN_ACCESS_TOKEN" ]; then
+            echo "LinkedIn 액세스 토큰이 아직 설정되지 않아 업로드를 건너뜁니다."
             exit 0
           fi
           python scripts/linkedin_upload.py
