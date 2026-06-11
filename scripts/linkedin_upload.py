@@ -81,6 +81,28 @@ def _download_image(image_url: str) -> tuple[bytes, str]:
     return content, content_type
 
 
+def resolve_person_author_urn(access_token: str) -> str:
+    request = urllib.request.Request(
+        "https://api.linkedin.com/v2/userinfo",
+        headers={"Authorization": f"Bearer {access_token}"},
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            user_info = json.loads(response.read())
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace")
+        raise RuntimeError(
+            "개인 프로필 ID 자동 확인에 실패했습니다. LinkedIn 앱에 "
+            "'Sign In with LinkedIn using OpenID Connect' 제품을 추가하고 "
+            "openid, profile 권한으로 토큰을 다시 발급하세요. "
+            f"API 오류 {exc.code}: {body}"
+        ) from exc
+    person_id = user_info.get("sub")
+    if not person_id:
+        raise RuntimeError(f"LinkedIn userinfo 응답에 sub가 없습니다: {user_info}")
+    return f"urn:li:person:{person_id}"
+
+
 def initialize_image_upload(access_token: str, author_urn: str) -> tuple[str, str]:
     result, _ = _request_json(
         "POST",
@@ -210,11 +232,12 @@ def build_commentary(item: dict) -> str:
 def run() -> None:
     access_token = os.environ.get("LINKEDIN_ACCESS_TOKEN", "").strip()
     author_urn = os.environ.get("LINKEDIN_AUTHOR_URN", "").strip()
-    if not access_token or not author_urn:
-        logger.error(
-            "LINKEDIN_ACCESS_TOKEN과 LINKEDIN_AUTHOR_URN을 모두 설정해야 합니다."
-        )
+    if not access_token:
+        logger.error("LINKEDIN_ACCESS_TOKEN을 설정해야 합니다.")
         sys.exit(1)
+    if not author_urn:
+        logger.info("개인 프로필 ID를 LinkedIn userinfo에서 확인합니다.")
+        author_urn = resolve_person_author_urn(access_token)
     if not (
         author_urn.startswith("urn:li:person:")
         or author_urn.startswith("urn:li:organization:")
