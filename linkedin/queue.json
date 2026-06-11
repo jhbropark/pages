@@ -126,7 +126,7 @@
       "pair_id": "linkedin_20260612_style_01",
       "language": "en",
       "pair_order": 2,
-      "status": "pending",
+      "status": "uploaded",
       "topic": "The Art of Transparency",
       "pillar_id": "3d_moa",
       "dm_keyword": "MOA",
@@ -141,14 +141,17 @@
       "alt_text": "The Art of Transparency. A clear gel capsule and luminous particles move toward a hydrated skin barrier in a premium navy and aqua 3D scene.",
       "scheduled_time": "2026-06-12T01:20:00+09:00",
       "created_at": "2026-06-11T16:11:26.298716+00:00",
-      "generated_by": "codex-linkedin-bilingual-series"
+      "generated_by": "codex-linkedin-bilingual-series",
+      "post_urn": "urn:li:share:7470872550646902785",
+      "image_urn": "urn:li:image:D5610AQEPwnD0NDXGlA",
+      "uploaded_at": "2026-06-11T16:20:19.037297+00:00"
     },
     {
       "id": "linkedin_20260612_style_02_en",
       "pair_id": "linkedin_20260612_style_02",
       "language": "en",
       "pair_order": 2,
-      "status": "pending",
+      "status": "uploaded",
       "topic": "The New Lab",
       "pillar_id": "visual_trends",
       "dm_keyword": "LAB",
@@ -163,14 +166,17 @@
       "alt_text": "The New Lab. A refined future laboratory balances a deep navy environment with warm beige architecture and transparent scientific instruments.",
       "scheduled_time": "2026-06-12T01:20:00+09:00",
       "created_at": "2026-06-11T16:11:26.298735+00:00",
-      "generated_by": "codex-linkedin-bilingual-series"
+      "generated_by": "codex-linkedin-bilingual-series",
+      "post_urn": "urn:li:share:7470872557945044992",
+      "image_urn": "urn:li:image:D5610AQEMj3mmFoUDvw",
+      "uploaded_at": "2026-06-11T16:20:20.895418+00:00"
     },
     {
       "id": "linkedin_20260612_style_03_en",
       "pair_id": "linkedin_20260612_style_03",
       "language": "en",
       "pair_order": 2,
-      "status": "pending",
+      "status": "uploaded",
       "topic": "Cinema at Micro Scale",
       "pillar_id": "3d_moa",
       "dm_keyword": "FILM",
@@ -185,14 +191,17 @@
       "alt_text": "Cinema at Micro Scale. One translucent cell is held in sharp cinematic focus while surrounding structures dissolve into a deep navy bokeh.",
       "scheduled_time": "2026-06-12T01:20:00+09:00",
       "created_at": "2026-06-11T16:11:26.298740+00:00",
-      "generated_by": "codex-linkedin-bilingual-series"
+      "generated_by": "codex-linkedin-bilingual-series",
+      "post_urn": "urn:li:share:7470872567172751360",
+      "image_urn": "urn:li:image:D5610AQER1namlpj7HA",
+      "uploaded_at": "2026-06-11T16:20:22.943918+00:00"
     },
     {
       "id": "linkedin_20260612_style_04_en",
       "pair_id": "linkedin_20260612_style_04",
       "language": "en",
       "pair_order": 2,
-      "status": "pending",
+      "status": "uploaded",
       "topic": "Less Data, More Clarity",
       "pillar_id": "interactive_ar",
       "dm_keyword": "UX",
@@ -207,7 +216,10 @@
       "alt_text": "Less Data, More Clarity. A transparent 3D skin-layer model is paired with a restrained aqua interface, nodes, and a circular gauge.",
       "scheduled_time": "2026-06-12T01:20:00+09:00",
       "created_at": "2026-06-11T16:11:26.298742+00:00",
-      "generated_by": "codex-linkedin-bilingual-series"
+      "generated_by": "codex-linkedin-bilingual-series",
+      "post_urn": "urn:li:share:7470872574508306432",
+      "image_urn": "urn:li:image:D5610AQEd0ItLpdTpBA",
+      "uploaded_at": "2026-06-11T16:20:24.709107+00:00"
     }
   ]
 }
