@@ -2,7 +2,7 @@
   "items": [
     {
       "id": "post_20260612_decision_question_test",
-      "status": "pending",
+      "status": "failed",
       "topic": "기술을 보여주기 전에 질문부터 설계해야 하는 이유",
       "pillar_id": "science_communication",
       "image_url": "https://jhbropark.github.io/pages/images/post_20260612_decision_question_test.jpg",
@@ -16,7 +16,8 @@
       ],
       "scheduled_time": "2026-06-12T02:45:00+09:00",
       "created_at": "2026-06-12T02:45:00+09:00",
-      "generated_by": "codex-decision-question-test"
+      "generated_by": "codex-decision-question-test",
+      "error": "API 오류 400: {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"ASt1fxasr3LB7V03YyyvvXx\"}}"
     },
     {
       "id": "post_20260612_article_trust_ko",
