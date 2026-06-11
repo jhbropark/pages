@@ -105,7 +105,7 @@ CONTENT_SCHEMA = {
         },
         "linkedin_en": {
             "type": "string",
-            "description": "English LinkedIn essay, 1200~2600 characters. Start with 'English version' and end with a question, the same DM keyword, and the contact hub.",
+            "description": "English LinkedIn essay, 1200~2600 characters. Do not add a language label. End with a question, the same DM keyword, and the contact hub.",
         },
         "linkedin_ko_hashtags": {
             "type": "array",
@@ -162,7 +162,7 @@ def generate_text(topic: str, brand_guide: str) -> dict:
                     "DM 키워드에는 받을 자료나 다음 단계를 구체적으로 연결하세요. "
                     "같은 주제의 LinkedIn 한국어판과 영어판도 작성하세요. "
                     "영어판은 번역투가 아닌 글로벌 B2B 의사결정자를 위한 자연스러운 "
-                    "에세이로 쓰고 첫 줄에 'English version'을 표시하세요. "
+                    "에세이로 쓰고 'English version' 같은 언어 표시는 넣지 마세요. "
                     "두 언어판은 같은 주장, 질문, DM 키워드, 문의 허브 "
                     "https://jhbropark.github.io/pages/contact.html 을 사용하세요."
                 ),
@@ -208,8 +208,8 @@ def validate_generated_content(content: dict) -> list[str]:
     en_count = len(content.get("linkedin_en", "").strip())
     if not 1200 <= en_count <= 2600:
         errors.append(f"LinkedIn 영어 본문은 1200~2600자여야 합니다: {en_count}자")
-    if not content.get("linkedin_en", "").lstrip().startswith("English version"):
-        errors.append("LinkedIn 영어 본문은 'English version'으로 시작해야 합니다.")
+    if content.get("linkedin_en", "").lstrip().lower().startswith("english version"):
+        errors.append("LinkedIn 영어 본문에 'English version'을 넣지 마세요.")
     if keyword and keyword not in content.get("linkedin_ko", ""):
         errors.append("LinkedIn 한국어 본문에 DM 키워드가 없습니다.")
     if keyword and keyword not in content.get("linkedin_en", ""):
@@ -317,6 +317,89 @@ def generate_image(headline: str, output_path: Path, seed: int) -> None:
     img.convert("RGB").save(output_path, quality=92)
 
 
+def generate_linkedin_image(
+    headline: str,
+    output_path: Path,
+    seed: int,
+) -> None:
+    """Create a 1200×627 LinkedIn card that fills the feed width."""
+    width, height = 1200, 627
+    image = Image.new("RGB", (width, height), (8, 20, 38))
+    pixels = image.load()
+    aqua = (14, 165, 233)
+    beige = (248, 246, 242)
+    for y in range(height):
+        for x in range(width):
+            gradient = (x * 0.22 + y) / (width * 0.22 + height)
+            glow = max(
+                0.0,
+                1.0 - math.hypot(x - width * 0.82, y - height * 0.2) / 560,
+            )
+            pixels[x, y] = (
+                int(8 + 22 * gradient + aqua[0] * glow * 0.04),
+                int(20 + 24 * gradient + aqua[1] * glow * 0.12),
+                int(38 + 28 * gradient + aqua[2] * glow * 0.15),
+            )
+
+    overlay = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+    rng = random.Random(seed)
+    for _ in range(7):
+        cx = rng.randint(int(width * 0.58), width + 100)
+        cy = rng.randint(-80, height + 80)
+        radius = rng.randint(70, 190)
+        draw.ellipse(
+            (cx - radius, cy - radius, cx + radius, cy + radius),
+            outline=(14, 165, 233, rng.randint(12, 30)),
+            width=2,
+        )
+    draw.rounded_rectangle(
+        (70, 70, 1130, 292),
+        radius=28,
+        fill=(8, 20, 38, 218),
+        outline=(248, 246, 242, 45),
+        width=1,
+    )
+    draw.rounded_rectangle((70, 70, 80, 292), radius=5, fill=(*aqua, 255))
+    image = Image.alpha_composite(image.convert("RGBA"), overlay)
+    draw = ImageDraw.Draw(image)
+
+    headline_font = _load_font(62, "Regular")
+    meta_font = _load_font(20, "Regular")
+    brand_font = _load_font(22, "Medium")
+    lines = _wrap_headline(headline, max_chars=28)
+    if len(lines) > 2:
+        lines = lines[:2]
+    for index, line in enumerate(lines):
+        draw.text(
+            (118, 108 + index * 78),
+            line,
+            font=headline_font,
+            fill=beige,
+        )
+    draw.text(
+        (120, 252),
+        "SCIENCE TO MESSAGE · BEAUTY TO EXPERIENCE",
+        font=meta_font,
+        fill=(125, 211, 252),
+    )
+    draw.rounded_rectangle(
+        (70, 538, 1130, 592),
+        radius=18,
+        fill=(8, 20, 38, 210),
+        outline=(248, 246, 242, 38),
+        width=1,
+    )
+    brand_width = draw.textlength("bbbb.beauty", font=brand_font)
+    draw.text(
+        ((width - brand_width) / 2, 552),
+        "bbbb.beauty",
+        font=brand_font,
+        fill=beige,
+    )
+    image.convert("RGB").save(output_path, quality=94, optimize=True)
+
+
 # ---------------------------------------------------------------------------
 # 4. 큐에 항목 추가
 # ---------------------------------------------------------------------------
@@ -381,12 +464,18 @@ def main() -> None:
 
     IMAGES_DIR.mkdir(exist_ok=True)
     image_filename = f"{post_id}_ko.jpg"
-    english_image_filename = f"{post_id}_en.jpg"
+    linkedin_ko_image_filename = f"{post_id}_linkedin_ko.jpg"
+    linkedin_en_image_filename = f"{post_id}_linkedin_en.jpg"
     print("한국어·영어 템플릿 이미지 생성 중...")
     generate_image(content["image_headline"], IMAGES_DIR / image_filename, seed=now_kst.timetuple().tm_yday)
-    generate_image(
+    generate_linkedin_image(
+        content["image_headline"],
+        IMAGES_DIR / linkedin_ko_image_filename,
+        seed=now_kst.timetuple().tm_yday,
+    )
+    generate_linkedin_image(
         content["english_image_headline"],
-        IMAGES_DIR / english_image_filename,
+        IMAGES_DIR / linkedin_en_image_filename,
         seed=now_kst.timetuple().tm_yday,
     )
 
@@ -421,7 +510,7 @@ def main() -> None:
             "pair_order": 1,
             "commentary": content["linkedin_ko"],
             "hashtags": content["linkedin_ko_hashtags"],
-            "image_url": f"{PAGES_BASE_URL}/images/{image_filename}",
+            "image_url": f"{PAGES_BASE_URL}/images/{linkedin_ko_image_filename}",
             "alt_text": f"bbbb.beauty 한국어 카드: {content['image_headline']}",
         },
         {
@@ -431,7 +520,7 @@ def main() -> None:
             "pair_order": 2,
             "commentary": content["linkedin_en"],
             "hashtags": content["linkedin_en_hashtags"],
-            "image_url": f"{PAGES_BASE_URL}/images/{english_image_filename}",
+            "image_url": f"{PAGES_BASE_URL}/images/{linkedin_en_image_filename}",
             "alt_text": f"bbbb.beauty English card: {content['english_image_headline']}",
         },
     ])

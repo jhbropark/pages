@@ -56,6 +56,21 @@ class LinkedInUploadTests(unittest.TestCase):
         self.assertEqual(payload["content"]["media"]["id"], "urn:li:image:abc")
         self.assertEqual(payload["lifecycleState"], "PUBLISHED")
 
+    def test_delete_post_uses_encoded_urn(self):
+        response = MagicMock()
+        response.status = 204
+        response.__enter__.return_value = response
+        with patch.object(
+            linkedin_upload.urllib.request,
+            "urlopen",
+            return_value=response,
+        ) as urlopen:
+            linkedin_upload.delete_post("token", "urn:li:share:123")
+        request = urlopen.call_args.args[0]
+        self.assertEqual(request.method, "DELETE")
+        self.assertIn("urn%3Ali%3Ashare%3A123", request.full_url)
+        self.assertEqual(request.headers["X-restli-method"], "DELETE")
+
     def test_queue_round_trip_preserves_korean(self):
         with tempfile.TemporaryDirectory() as directory:
             queue_path = Path(directory) / "queue.json"
