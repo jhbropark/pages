@@ -37,8 +37,8 @@ KOREAN_FONT_CANDIDATES = [
     "C:/Windows/Fonts/malgun.ttf",
     "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
     "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
-    "/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf",
     "/usr/share/fonts/truetype/nanum/NanumGothic.ttf",
+    "/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf",
     "/usr/share/fonts/truetype/nanum/NanumMyeongjoBold.ttf",
 ]
 FALLBACK_FONT_CANDIDATES = [
