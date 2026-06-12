@@ -166,5 +166,17 @@
     "status": "failed",
     "error": "이미지 다운로드 오류 404: https://jhbropark.github.io/pages/images/linkedin/cellular-sequence/cellular-sequence-ko.jpg",
     "timestamp": "2026-06-12T19:01:29.396130+00:00"
+  },
+  {
+    "id": "linkedin_20260613_cellular_sequence_test_ko",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471276025625292800",
+    "timestamp": "2026-06-12T19:03:34.380946+00:00"
+  },
+  {
+    "id": "linkedin_20260613_cellular_sequence_test_en",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471276031086063616",
+    "timestamp": "2026-06-12T19:03:36.224845+00:00"
   }
 ]

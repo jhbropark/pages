@@ -507,7 +507,7 @@
     },
     {
       "pair_id": "linkedin_20260613_cellular_sequence_test",
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "science_communication",
       "scheduled_time": "2026-06-12T18:55:00+00:00",
       "created_at": "2026-06-13T03:58:00+09:00",
@@ -525,11 +525,14 @@
       ],
       "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/linkedin/cellular-sequence/cellular-sequence-ko.jpg",
       "alt_text": "성분의 도달, 세포 신호, 조직 반응을 세 개의 연속된 현미경 장면으로 보여주는 한국어 LinkedIn 이미지.",
-      "dm_keyword": "프로젝트"
+      "dm_keyword": "프로젝트",
+      "post_urn": "urn:li:share:7471276025625292800",
+      "image_urn": "urn:li:image:D5610AQHf_0OABN8YQg",
+      "uploaded_at": "2026-06-12T19:03:34.380946+00:00"
     },
     {
       "pair_id": "linkedin_20260613_cellular_sequence_test",
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "science_communication",
       "scheduled_time": "2026-06-12T18:55:00+00:00",
       "created_at": "2026-06-13T03:58:00+09:00",
@@ -547,7 +550,10 @@
       ],
       "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/linkedin/cellular-sequence/cellular-sequence-en.jpg",
       "alt_text": "Three connected microscopic scenes show ingredient arrival, cellular signaling, and tissue response in an English LinkedIn image.",
-      "dm_keyword": "PROJECT"
+      "dm_keyword": "PROJECT",
+      "post_urn": "urn:li:share:7471276031086063616",
+      "image_urn": "urn:li:image:D5610AQEaEo504D0oiQ",
+      "uploaded_at": "2026-06-12T19:03:36.224845+00:00"
     }
   ]
 }
