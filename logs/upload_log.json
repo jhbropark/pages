@@ -249,5 +249,12 @@
     "error": "API 오류 400: {\"error\":{\"message\":\"The parameter video_url is required\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AdC7en4NwMMUmwiXFKCSgfT\"}}",
     "creation_id": "18107928892806318",
     "timestamp": "2026-06-12T15:39:22.889512+00:00"
+  },
+  {
+    "id": "post_20260612_body_cell_reel_test",
+    "status": "uploaded",
+    "post_id": "18111771571921528",
+    "post_url": "https://www.instagram.com/reel/DZfxKOfmguc/",
+    "timestamp": "2026-06-12T18:46:06.497729+00:00"
   }
 ]
