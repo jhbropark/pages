@@ -504,6 +504,50 @@
       "post_urn": "urn:li:share:7471191297471471616",
       "image_urn": "urn:li:image:D5610AQE9vs-C1vDaFA",
       "uploaded_at": "2026-06-12T13:26:54.221215+00:00"
+    },
+    {
+      "pair_id": "linkedin_20260613_cellular_sequence_test",
+      "status": "pending",
+      "pillar_id": "science_communication",
+      "scheduled_time": "2026-06-12T18:55:00+00:00",
+      "created_at": "2026-06-13T03:58:00+09:00",
+      "generated_by": "codex-cellular-sequence-linkedin",
+      "id": "linkedin_20260613_cellular_sequence_test_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "topic": "기술의 가치는 변화의 순서에서 보입니다",
+      "commentary": "기술을 설명할 때 구조와 수치를 먼저 보여주고 있지는 않으신가요?\n\n메디컬·바이오 기술의 가치는 한 장의 결과 이미지보다 변화가 이어지는 과정에서 더 분명하게 드러납니다. 성분이 목표 지점에 도달하고, 세포 사이에서 신호가 전달되며, 그 반응이 주변 조직으로 확장되는 순서가 보여야 시청자는 기술의 원인과 결과를 연결할 수 있습니다.\n\n그래서 3D MoA 콘텐츠를 설계할 때는 먼저 세 가지 질문을 정리합니다.\n\n▪ 어디에서 시작되는가\n▪ 무엇이 이동하거나 결합하는가\n▪ 어떤 반응을 거쳐 다음 변화로 이어지는가\n\n이 질문은 단순한 장면 목록이 아닙니다. 카메라가 어디를 먼저 바라볼지, 어떤 입자의 속도를 강조할지, 세포의 반응을 어느 순간에 확대할지 결정하는 시각적 시나리오가 됩니다.\n\n반대로 모든 정보를 한 화면에 담으면 과학적으로 풍부해 보여도 핵심 사건은 흐려질 수 있습니다. 연구 자료의 정확성을 지키면서도 시청자가 변화의 순서를 놓치지 않도록 정보의 등장 시점과 장면의 밀도를 조절해야 합니다.\n\nbbbb.beauty는 검토된 R&D 자료를 바탕으로 성분의 도달, 세포 신호, 조직 반응을 하나의 연속된 경험으로 설계합니다. 브랜드 필름, 학회 발표, 바이어 미팅, 교육 콘텐츠처럼 활용 환경이 달라지면 같은 과학도 장면의 속도와 설명 깊이가 달라져야 하기 때문입니다.\n\nScience to Message, Beauty to Experience.\n기술은 정확하게, 메시지는 쉽게.\n\n현재 설명하기 가장 어려운 단계가 성분의 이동인지, 세포의 반응인지 궁금합니다. 댓글로 현재의 과제를 나눠주시거나 프로젝트의 배경과 활용 목적을 LinkedIn 메시지 또는 문의 페이지에 남겨주시면, 자료를 먼저 살펴본 뒤 적합한 시각화 방향을 함께 검토하겠습니다.\n\n프로젝트 문의: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#메디컬애니메이션",
+        "#바이오마케팅",
+        "#3DMOA"
+      ],
+      "image_url": "https://jhbropark.github.io/pages/images/linkedin/cellular-sequence/cellular-sequence-ko.jpg",
+      "alt_text": "성분의 도달, 세포 신호, 조직 반응을 세 개의 연속된 현미경 장면으로 보여주는 한국어 LinkedIn 이미지.",
+      "dm_keyword": "프로젝트"
+    },
+    {
+      "pair_id": "linkedin_20260613_cellular_sequence_test",
+      "status": "pending",
+      "pillar_id": "science_communication",
+      "scheduled_time": "2026-06-12T18:55:00+00:00",
+      "created_at": "2026-06-13T03:58:00+09:00",
+      "generated_by": "codex-cellular-sequence-linkedin",
+      "id": "linkedin_20260613_cellular_sequence_test_en",
+      "language": "en",
+      "pair_order": 2,
+      "topic": "The value of science appears in the sequence of change",
+      "commentary": "When explaining a technology, do we begin with structure and data before showing what actually changes?\n\nThe value of a medical or biotechnology innovation often becomes clearer through a sequence rather than a single result image. An ingredient reaches its target. Cells exchange a signal. That response develops into a change in the surrounding tissue. When viewers can follow this progression, they can connect mechanism with meaning.\n\nWe begin the design of a 3D MoA story with three questions.\n\n▪ Where does the mechanism begin?\n▪ What moves, binds, or transforms?\n▪ Which response leads to the next observable change?\n\nThese are not merely production notes. They determine where the camera looks first, which movement receives emphasis, and when the cellular response should come into focus. Together they form the visual logic of the story.\n\nPlacing every available detail on one screen may look scientifically comprehensive while making the key event harder to recognize. The challenge is to preserve the accuracy of the source material and control when each layer of information appears, so the viewer never loses the sequence of cause and response.\n\nbbbb.beauty translates reviewed R&D materials into a continuous experience of arrival, cellular signaling, and tissue response. A brand film, congress presentation, buyer meeting, and educational experience require different pacing and levels of explanation, even when the underlying science is the same.\n\nScience to Message, Beauty to Experience.\n\nWhich stage of your technology is currently the most difficult to explain: movement or response? You are welcome to share the challenge in the comments, or send the project context and intended use through LinkedIn message or our inquiry page. We will review the material first and discuss an appropriate visualization direction with you.\n\nProject inquiry: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#ScienceCommunication",
+        "#MedicalAnimation",
+        "#BiotechMarketing",
+        "#3DMOA"
+      ],
+      "image_url": "https://jhbropark.github.io/pages/images/linkedin/cellular-sequence/cellular-sequence-en.jpg",
+      "alt_text": "Three connected microscopic scenes show ingredient arrival, cellular signaling, and tissue response in an English LinkedIn image.",
+      "dm_keyword": "PROJECT"
     }
   ]
 }
