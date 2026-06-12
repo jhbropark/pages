@@ -100,6 +100,63 @@ def _api_post(endpoint: str, params: dict) -> dict:
         raise RuntimeError(f"API 오류 {e.code}: {body}") from e
 
 
+def _api_get(endpoint: str, access_token: str, fields: str = "") -> dict:
+    """Graph API GET 요청을 보내고 JSON 응답을 반환합니다."""
+    params = {"access_token": access_token}
+    if fields:
+        params["fields"] = fields
+    url = f"{GRAPH_API_BASE}/{endpoint}?{urllib.parse.urlencode(params)}"
+    req = urllib.request.Request(url, method="GET")
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"API 조회 오류 {e.code}: {body}") from e
+
+
+def diagnose_access(access_token: str) -> str:
+    """토큰 소유 계정을 확인하고 실제 숫자 Instagram 계정 ID를 반환합니다."""
+    profile = _api_get(
+        "me",
+        access_token,
+        "id,user_id,username,account_type,media_count",
+    )
+    resolved_id = str(profile.get("user_id") or profile.get("id") or "").strip()
+    if not resolved_id.isdigit():
+        raise RuntimeError("토큰에서 숫자 Instagram 계정 ID를 확인하지 못했습니다.")
+
+    logger.info(
+        "토큰 계정 확인 완료: username=%s, account_type=%s, user_id=%s",
+        profile.get("username", "unknown"),
+        profile.get("account_type", "unknown"),
+        resolved_id,
+    )
+
+    try:
+        permissions = _api_get("me/permissions", access_token)
+        granted = [
+            item.get("permission")
+            for item in permissions.get("data", [])
+            if item.get("status") == "granted"
+        ]
+        logger.info("승인된 Instagram 권한: %s", ", ".join(granted) or "확인되지 않음")
+    except RuntimeError as exc:
+        logger.warning("권한 목록 조회를 지원하지 않거나 실패했습니다: %s", exc)
+
+    try:
+        limit = _api_get(
+            f"{resolved_id}/content_publishing_limit",
+            access_token,
+            "config,quota_usage",
+        )
+        logger.info("콘텐츠 게시 한도 상태: %s", json.dumps(limit, ensure_ascii=False))
+    except RuntimeError as exc:
+        logger.warning("콘텐츠 게시 한도 조회 실패: %s", exc)
+
+    return resolved_id
+
+
 def create_media_container(user_id: str, access_token: str, image_url: str, caption: str) -> str:
     """이미지 미디어 컨테이너를 생성하고 creation_id를 반환합니다."""
     result = _api_post(
@@ -232,11 +289,14 @@ def run() -> None:
     GRAPH_API_BASE = _resolve_api_base(access_token)
     logger.info("API 호스트: %s (토큰 접두사: %s...)", GRAPH_API_BASE, access_token[:4])
 
-    # INSTAGRAM_USER_ID에 숫자 ID 대신 사용자명이 들어 있으면 API가 인식하지 못합니다.
-    # 토큰 소유자 본인 계정을 가리키는 "me"로 대체합니다.
-    if not user_id.isdigit():
-        logger.warning("INSTAGRAM_USER_ID('%s')가 숫자 ID가 아니므로 'me'로 대체합니다.", user_id)
-        user_id = "me"
+    resolved_user_id = diagnose_access(access_token)
+    if user_id.isdigit() and user_id != resolved_user_id:
+        logger.warning(
+            "Secret의 계정 ID(%s)가 토큰 계정 ID(%s)와 달라 토큰 계정 ID를 사용합니다.",
+            user_id,
+            resolved_user_id,
+        )
+    user_id = resolved_user_id
 
     queue = load_queue()
     now = datetime.now(tz=timezone.utc)
