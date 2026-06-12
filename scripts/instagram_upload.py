@@ -295,7 +295,7 @@ def diagnose_access(access_token: str, configured_user_id: str = "") -> str:
         profile = _api_get(
             configured_user_id,
             access_token,
-            "id,username,account_type,media_count",
+            "id,username,media_count",
         )
     else:
         profile = _api_get(

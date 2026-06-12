@@ -35,7 +35,6 @@ class InstagramUploadTests(unittest.TestCase):
                 {
                     "id": "17841234567890123",
                     "username": "bbbb.beauty_official",
-                    "account_type": "BUSINESS",
                 },
                 {"data": []},
                 {"data": []},
