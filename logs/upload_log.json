@@ -205,5 +205,11 @@
     "status": "failed",
     "error": "API 오류 500: {\"error\":{\"message\":\"An unexpected error has occurred. Please retry your request later.\",\"type\":\"OAuthException\",\"is_transient\":true,\"code\":2,\"fbtrace_id\":\"AllT_V4lvN9Ch5WDKqGU1Kp\"}}",
     "timestamp": "2026-06-12T14:30:24.272087+00:00"
+  },
+  {
+    "id": "post_20260612_body_cell_reel_test",
+    "status": "failed",
+    "error": "미디어 컨테이너가 300초 내에 준비되지 않았습니다.",
+    "timestamp": "2026-06-12T14:55:15.700096+00:00"
   }
 ]
