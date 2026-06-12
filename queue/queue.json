@@ -359,7 +359,7 @@
     },
     {
       "id": "post_20260612_body_cell_reel_test",
-      "status": "pending",
+      "status": "failed",
       "topic": "세포의 이동과 반응을 이해 가능한 움직임으로",
       "pillar_id": "3d_moa",
       "format": "reel",
@@ -379,7 +379,7 @@
       "previous_error": "미디어 컨테이너가 300초 내에 준비되지 않았습니다.",
       "creation_id": "18107928892806318",
       "container_created_at": "2026-06-12T15:31:33.685981+00:00",
-      "error": "미디어 컨테이너가 300초 내에 준비되지 않았습니다."
+      "error": "API 오류 400: {\"error\":{\"message\":\"The parameter video_url is required\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AdC7en4NwMMUmwiXFKCSgfT\"}}"
     },
     {
       "id": "post_20260612_body_cell_story_01_test",
