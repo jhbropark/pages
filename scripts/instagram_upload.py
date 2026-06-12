@@ -41,6 +41,15 @@ logger = logging.getLogger(__name__)
 # - "Instagram 로그인이 포함된 API" 토큰(IGAA...)  → graph.instagram.com
 # - Facebook 로그인 기반 토큰(EAA...)              → graph.facebook.com
 def _resolve_api_base(token: str) -> str:
+    if token.isdigit():
+        raise ValueError(
+            "INSTAGRAM_ACCESS_TOKEN에 숫자 Instagram 계정 ID가 저장되어 있습니다. "
+            "액세스 토큰 전체 문자열을 저장하고, 숫자 ID는 INSTAGRAM_USER_ID에 저장하세요."
+        )
+    if len(token) < 40:
+        raise ValueError(
+            "INSTAGRAM_ACCESS_TOKEN 값이 액세스 토큰 형식보다 너무 짧습니다."
+        )
     if token.startswith("IG"):
         return "https://graph.instagram.com/v23.0"
     return "https://graph.facebook.com/v23.0"
