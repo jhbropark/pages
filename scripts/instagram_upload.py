@@ -167,13 +167,26 @@ def _api_get(endpoint: str, access_token: str, fields: str = "") -> dict:
     if fields:
         params["fields"] = fields
     url = f"{GRAPH_API_BASE}/{endpoint}?{urllib.parse.urlencode(params)}"
-    req = urllib.request.Request(url, method="GET")
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return json.loads(resp.read())
-    except urllib.error.HTTPError as e:
-        body = e.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"API 조회 오류 {e.code}: {body}") from e
+    last_error = None
+    for attempt in range(5):
+        req = urllib.request.Request(url, method="GET")
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return json.loads(resp.read())
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", errors="replace")
+            last_error = RuntimeError(f"API 조회 오류 {e.code}: {body}")
+            is_transient = '"is_transient":true' in body or '"code":2' in body
+            if not is_transient or attempt == 4:
+                raise last_error from e
+            delay = 5 * (2 ** attempt)
+            logger.warning(
+                "Meta 조회 일시 오류로 %d초 후 재시도합니다 (%d/5).",
+                delay,
+                attempt + 2,
+            )
+            time.sleep(delay)
+    raise last_error
 
 
 def diagnose_access(access_token: str) -> str:
