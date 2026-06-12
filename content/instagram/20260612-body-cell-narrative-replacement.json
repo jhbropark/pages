@@ -1,0 +1,31 @@
+{
+  "id": "body-cell-narrative-replacement",
+  "status": "draft",
+  "replaces_post": "https://www.instagram.com/p/DZfCgZKFr0c/",
+  "format": "carousel",
+  "content_principles": [
+    "자연스러운 한국어",
+    "Instagram 프로필 문의 링크만 CTA로 사용",
+    "문장과 이미지의 직접적인 인과관계",
+    "인체 내부에서 세포가 이동하고 융합하는 역동적 장면"
+  ],
+  "image_urls": [
+    "https://jhbropark.github.io/pages/images/replacements/body-cell-narrative/final/carousel-01.jpg",
+    "https://jhbropark.github.io/pages/images/replacements/body-cell-narrative/final/carousel-02.jpg",
+    "https://jhbropark.github.io/pages/images/replacements/body-cell-narrative/final/carousel-03.jpg",
+    "https://jhbropark.github.io/pages/images/replacements/body-cell-narrative/final/carousel-04.jpg",
+    "https://jhbropark.github.io/pages/images/replacements/body-cell-narrative/final/carousel-05.jpg",
+    "https://jhbropark.github.io/pages/images/replacements/body-cell-narrative/final/carousel-06.jpg"
+  ],
+  "caption": "좋은 과학 콘텐츠는 정보를 줄이는 작업이 아닙니다.\n\n인체 안에서 작용이 어디서 시작되고, 세포가 어떤 경로로 이동하며, 주변 조직이 어떻게 반응하는지 이해하기 쉬운 순서로 보여주는 일입니다.\n\nbbbb.beauty는 원본 R&D 자료와 콘텐츠의 활용 목적을 먼저 검토한 뒤, 과학적 정확성과 영화적 연출이 함께 작동하는 장면을 설계합니다.\n\n현재 시각화가 필요한 기술이나 작용 기전이 있으시다면 Instagram 프로필의 문의 링크에 프로젝트 배경과 활용 채널을 남겨주세요. 내용을 먼저 살펴본 뒤, 적합한 방향을 함께 검토하겠습니다.",
+  "hashtags": [
+    "#메디컬애니메이션",
+    "#3DMOA",
+    "#과학커뮤니케이션",
+    "#바이오마케팅",
+    "#ScientificVisualization",
+    "#bbbbbeauty"
+  ],
+  "cta_style": "Instagram profile inquiry link",
+  "generated_by": "codex-body-cell-narrative"
+}
