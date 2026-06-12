@@ -66,14 +66,30 @@ def validate_item(item: dict) -> list[str]:
     """콘텐츠 항목을 검증하고 오류 목록을 반환합니다."""
     errors = []
 
-    # 이미지 URL 확인
-    image_url: str = item.get("image_url", "")
-    if not image_url:
-        errors.append("image_url이 없습니다.")
+    # 단일 이미지 또는 2~10장 캐러셀 URL 확인
+    image_urls = item.get("image_urls")
+    if image_urls is not None:
+        if not isinstance(image_urls, list) or not 2 <= len(image_urls) <= 10:
+            errors.append("image_urls는 2~10장의 이미지여야 합니다.")
+        else:
+            for image_url in image_urls:
+                ext = Path(urllib.parse.urlparse(image_url).path).suffix.lower()
+                if ext not in ALLOWED_EXTENSIONS:
+                    errors.append(
+                        f"지원하지 않는 캐러셀 이미지 형식: {ext} "
+                        f"(허용: {ALLOWED_EXTENSIONS})"
+                    )
     else:
-        ext = Path(urllib.parse.urlparse(image_url).path).suffix.lower()
-        if ext not in ALLOWED_EXTENSIONS:
-            errors.append(f"지원하지 않는 이미지 형식: {ext} (허용: {ALLOWED_EXTENSIONS})")
+        image_url: str = item.get("image_url", "")
+        if not image_url:
+            errors.append("image_url이 없습니다.")
+        else:
+            ext = Path(urllib.parse.urlparse(image_url).path).suffix.lower()
+            if ext not in ALLOWED_EXTENSIONS:
+                errors.append(
+                    f"지원하지 않는 이미지 형식: {ext} "
+                    f"(허용: {ALLOWED_EXTENSIONS})"
+                )
 
     # 캡션 길이 확인
     caption: str = item.get("caption", "")
@@ -172,6 +188,39 @@ def create_media_container(user_id: str, access_token: str, image_url: str, capt
         f"{user_id}/media",
         {
             "image_url": image_url,
+            "caption": caption,
+            "access_token": access_token,
+        },
+    )
+    return result["id"]
+
+
+def create_carousel_container(
+    user_id: str,
+    access_token: str,
+    image_urls: list[str],
+    caption: str,
+) -> str:
+    """이미지 자식 컨테이너와 캐러셀 부모 컨테이너를 생성합니다."""
+    child_ids = []
+    for image_url in image_urls:
+        result = _api_post(
+            f"{user_id}/media",
+            {
+                "image_url": image_url,
+                "is_carousel_item": "true",
+                "access_token": access_token,
+            },
+        )
+        child_id = result["id"]
+        wait_for_container_ready(child_id, access_token)
+        child_ids.append(child_id)
+
+    result = _api_post(
+        f"{user_id}/media",
+        {
+            "media_type": "CAROUSEL",
+            "children": ",".join(child_ids),
             "caption": caption,
             "access_token": access_token,
         },
@@ -345,7 +394,20 @@ def run() -> None:
         full_caption = build_full_caption(item["caption"], item.get("hashtags", []))
         try:
             logger.info("[%s] 미디어 컨테이너 생성 중...", item_id)
-            creation_id = create_media_container(user_id, access_token, item["image_url"], full_caption)
+            if item.get("image_urls"):
+                creation_id = create_carousel_container(
+                    user_id,
+                    access_token,
+                    item["image_urls"],
+                    full_caption,
+                )
+            else:
+                creation_id = create_media_container(
+                    user_id,
+                    access_token,
+                    item["image_url"],
+                    full_caption,
+                )
 
             logger.info("[%s] 미디어 처리 완료 대기 중...", item_id)
             wait_for_container_ready(creation_id, access_token)

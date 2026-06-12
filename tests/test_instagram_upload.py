@@ -25,6 +25,30 @@ class InstagramUploadTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "너무 짧습니다"):
             instagram_upload._resolve_api_base("not-a-token")
 
+    def test_carousel_accepts_two_to_ten_images(self):
+        item = {
+            "image_urls": [
+                "https://example.com/slide-1.jpg",
+                "https://example.com/slide-2.jpg",
+            ],
+            "caption": "Test",
+            "hashtags": [],
+            "scheduled_time": "2026-06-12T00:00:00+00:00",
+        }
+        self.assertEqual(instagram_upload.validate_item(item), [])
+
+    def test_carousel_rejects_single_image(self):
+        item = {
+            "image_urls": ["https://example.com/slide-1.jpg"],
+            "caption": "Test",
+            "hashtags": [],
+            "scheduled_time": "2026-06-12T00:00:00+00:00",
+        }
+        self.assertIn(
+            "image_urls는 2~10장의 이미지여야 합니다.",
+            instagram_upload.validate_item(item),
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
