@@ -329,7 +329,7 @@
     },
     {
       "id": "post_20260612_body_cell_narrative_replacement",
-      "status": "pending",
+      "status": "uploaded",
       "topic": "인체 안에서 시작되는 세포의 움직임을 이해 가능한 장면으로",
       "pillar_id": "3d_moa",
       "format": "carousel",
@@ -352,7 +352,10 @@
       ],
       "scheduled_time": "2026-06-12T12:55:00+00:00",
       "created_at": "2026-06-12T21:56:00+09:00",
-      "generated_by": "codex-body-cell-narrative"
+      "generated_by": "codex-body-cell-narrative",
+      "post_id": "18118400746758930",
+      "post_url": "https://www.instagram.com/p/DZfJbcVlo5t/",
+      "uploaded_at": "2026-06-12T12:58:36.374803+00:00"
     }
   ]
 }
