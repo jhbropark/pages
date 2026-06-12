@@ -216,6 +216,75 @@ def _api_get(endpoint: str, access_token: str, fields: str = "") -> dict:
     raise last_error
 
 
+def _rupload_from_url(upload_uri: str, access_token: str, video_url: str) -> dict:
+    """공개 URL의 영상을 Meta 업로드 서버로 직접 전달합니다."""
+    last_error = None
+    for attempt in range(5):
+        req = urllib.request.Request(
+            upload_uri,
+            data=b"",
+            headers={
+                "Authorization": f"OAuth {access_token}",
+                "file_url": video_url,
+            },
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                result = json.loads(resp.read())
+                if not result.get("success"):
+                    raise RuntimeError(
+                        f"Meta 영상 업로드 실패: {json.dumps(result, ensure_ascii=False)}"
+                    )
+                return result
+        except urllib.error.HTTPError as exc:
+            body = exc.read().decode("utf-8", errors="replace")
+            last_error = RuntimeError(f"Meta 영상 업로드 오류 {exc.code}: {body}")
+            is_transient = '"retriable":true' in body or '"is_transient":true' in body
+            if not is_transient or attempt == 4:
+                raise last_error from exc
+            delay = 5 * (2 ** attempt)
+            logger.warning(
+                "Meta 영상 업로드 일시 오류로 %d초 후 재시도합니다 (%d/5).",
+                delay,
+                attempt + 2,
+            )
+            time.sleep(delay)
+    raise last_error
+
+
+def create_resumable_video_container(
+    user_id: str,
+    access_token: str,
+    media_type: str,
+    video_url: str,
+    caption: str = "",
+    share_to_feed: bool = False,
+) -> str:
+    """영상 컨테이너를 만든 뒤 rupload를 통해 Meta 서버에 영상을 전달합니다."""
+    params = {
+        "media_type": media_type,
+        "upload_type": "resumable",
+        "access_token": access_token,
+    }
+    if caption:
+        params["caption"] = caption
+    if media_type == "REELS":
+        params["share_to_feed"] = "true" if share_to_feed else "false"
+
+    result = _api_post(f"{user_id}/media", params)
+    creation_id = result["id"]
+    upload_uri = result.get("uri")
+    if not upload_uri:
+        upload_uri = (
+            f"https://rupload.facebook.com/ig-api-upload/"
+            f"{GRAPH_API_VERSION}/{creation_id}"
+        )
+    logger.info("Meta 영상 서버로 업로드 중... (creation_id=%s)", creation_id)
+    _rupload_from_url(upload_uri, access_token, video_url)
+    return creation_id
+
+
 def diagnose_access(access_token: str) -> str:
     """토큰 소유 계정을 확인하고 실제 숫자 Instagram 계정 ID를 반환합니다."""
     profile = _api_get(
@@ -312,6 +381,15 @@ def create_reel_container(
     cover_url: str = "",
 ) -> str:
     """릴스 비디오 컨테이너를 생성합니다."""
+    if not cover_url:
+        return create_resumable_video_container(
+            user_id,
+            access_token,
+            "REELS",
+            video_url,
+            caption,
+            share_to_feed=True,
+        )
     params = {
         "media_type": "REELS",
         "video_url": video_url,
@@ -340,14 +418,18 @@ def create_story_container(
     video_url: str = "",
 ) -> str:
     """이미지 또는 비디오 스토리 컨테이너를 생성합니다."""
+    if video_url:
+        return create_resumable_video_container(
+            user_id,
+            access_token,
+            "STORIES",
+            video_url,
+        )
     params = {
         "media_type": "STORIES",
         "access_token": access_token,
     }
-    if video_url:
-        params["video_url"] = video_url
-    else:
-        params["image_url"] = image_url
+    params["image_url"] = image_url
     result = _api_post(f"{user_id}/media", params)
     return result["id"]
 
@@ -361,7 +443,11 @@ def wait_for_container_ready(
     """Meta 권장 주기에 맞춰 미디어 컨테이너의 처리 상태를 확인합니다."""
     deadline = time.time() + timeout
     while time.time() < deadline:
-        result = _api_get(creation_id, access_token, "status_code,status")
+        result = _api_get(
+            creation_id,
+            access_token,
+            "status_code,status,video_status",
+        )
         status_code = result.get("status_code", "")
         status_detail = result.get("status", "")
         if status_code in {"FINISHED", "PUBLISHED"}:
@@ -373,10 +459,12 @@ def wait_for_container_ready(
                 f"(creation_id={creation_id}, status_code={status_code}{detail})"
             )
         logger.info(
-            "미디어 처리 대기 중... (creation_id=%s, status_code=%s, status=%s)",
+            "미디어 처리 대기 중... "
+            "(creation_id=%s, status_code=%s, status=%s, video_status=%s)",
             creation_id,
             status_code or "unknown",
             status_detail or "unknown",
+            json.dumps(result.get("video_status", {}), ensure_ascii=False),
         )
         remaining = deadline - time.time()
         if remaining > 0:

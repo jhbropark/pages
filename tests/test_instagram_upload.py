@@ -88,6 +88,42 @@ class InstagramUploadTests(unittest.TestCase):
                     poll_interval=0,
                 )
 
+    def test_resumable_container_uploads_returned_uri(self):
+        with (
+            patch.object(
+                instagram_upload,
+                "_api_post",
+                return_value={
+                    "id": "container-123",
+                    "uri": "https://rupload.facebook.com/upload/container-123",
+                },
+            ) as api_post,
+            patch.object(
+                instagram_upload,
+                "_rupload_from_url",
+                return_value={"success": True},
+            ) as rupload,
+        ):
+            result = instagram_upload.create_resumable_video_container(
+                "user-123",
+                "token",
+                "REELS",
+                "https://example.com/reel.mp4",
+                "Caption",
+                share_to_feed=True,
+            )
+
+        self.assertEqual(result, "container-123")
+        self.assertEqual(
+            api_post.call_args.args[1]["upload_type"],
+            "resumable",
+        )
+        rupload.assert_called_once_with(
+            "https://rupload.facebook.com/upload/container-123",
+            "token",
+            "https://example.com/reel.mp4",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
