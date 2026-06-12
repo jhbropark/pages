@@ -33,6 +33,16 @@ class LinkedInUploadTests(unittest.TestCase):
         }
         self.assertEqual(linkedin_upload.validate_item(item), [])
 
+    def test_build_commentary_removes_all_asterisks(self):
+        item = {
+            "commentary": "Send **UX** by DM.\n* Do not show Markdown markers.",
+            "hashtags": ["#UXStrategy", "#ScienceCommunication"],
+        }
+        commentary = linkedin_upload.build_commentary(item)
+        self.assertNotIn("*", commentary)
+        self.assertIn("Send UX by DM.", commentary)
+        self.assertIn("#UXStrategy #ScienceCommunication", commentary)
+
     def test_create_post_uses_versioned_posts_payload(self):
         with patch.object(
             linkedin_upload,

@@ -244,10 +244,16 @@ def append_log(entry: dict) -> None:
         handle.write("\n")
 
 
+def sanitize_linkedin_text(text: str) -> str:
+    """LinkedIn에서 그대로 노출되는 Markdown 별표를 제거합니다."""
+    return text.replace("*", "")
+
+
 def build_commentary(item: dict) -> str:
     hashtags = " ".join(item.get("hashtags", []))
     commentary = item["commentary"].strip()
-    return f"{commentary}\n\n{hashtags}" if hashtags else commentary
+    combined = f"{commentary}\n\n{hashtags}" if hashtags else commentary
+    return sanitize_linkedin_text(combined)
 
 
 def sort_pending_items(items: list[dict]) -> list[dict]:
