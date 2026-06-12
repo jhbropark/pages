@@ -175,5 +175,35 @@
     "status": "failed",
     "error": "API 오류 500: {\"error\":{\"message\":\"An unexpected error has occurred. Please retry your request later.\",\"type\":\"OAuthException\",\"is_transient\":true,\"code\":2,\"fbtrace_id\":\"AIrCuj0t41CsAZl2bj0O5ka\"}}",
     "timestamp": "2026-06-12T14:27:25.008970+00:00"
+  },
+  {
+    "id": "post_20260612_body_cell_reel_test",
+    "status": "failed",
+    "error": "미디어 컨테이너가 300초 내에 준비되지 않았습니다.",
+    "timestamp": "2026-06-12T14:30:24.272087+00:00"
+  },
+  {
+    "id": "post_20260612_body_cell_story_01_test",
+    "status": "failed",
+    "error": "API 오류 500: {\"error\":{\"message\":\"An unexpected error has occurred. Please retry your request later.\",\"type\":\"OAuthException\",\"is_transient\":true,\"code\":2,\"fbtrace_id\":\"AvhaVb3hi0bxNG50tfhQVYI\"}}",
+    "timestamp": "2026-06-12T14:30:24.272087+00:00"
+  },
+  {
+    "id": "post_20260612_body_cell_story_02_test",
+    "status": "failed",
+    "error": "API 오류 500: {\"error\":{\"message\":\"An unexpected error has occurred. Please retry your request later.\",\"type\":\"OAuthException\",\"is_transient\":true,\"code\":2,\"fbtrace_id\":\"A5cs5QA9ccUZIM0EyFsNgGp\"}}",
+    "timestamp": "2026-06-12T14:30:24.272087+00:00"
+  },
+  {
+    "id": "post_20260612_body_cell_story_03_test",
+    "status": "failed",
+    "error": "API 오류 500: {\"error\":{\"message\":\"An unexpected error has occurred. Please retry your request later.\",\"type\":\"OAuthException\",\"is_transient\":true,\"code\":2,\"fbtrace_id\":\"ApGlXIlSHi8K3IaKMirtak1\"}}",
+    "timestamp": "2026-06-12T14:30:24.272087+00:00"
+  },
+  {
+    "id": "post_20260612_body_cell_story_04_test",
+    "status": "failed",
+    "error": "API 오류 500: {\"error\":{\"message\":\"An unexpected error has occurred. Please retry your request later.\",\"type\":\"OAuthException\",\"is_transient\":true,\"code\":2,\"fbtrace_id\":\"AllT_V4lvN9Ch5WDKqGU1Kp\"}}",
+    "timestamp": "2026-06-12T14:30:24.272087+00:00"
   }
 ]
