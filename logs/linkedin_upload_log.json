@@ -160,5 +160,11 @@
     "status": "uploaded",
     "post_urn": "urn:li:share:7471191297471471616",
     "timestamp": "2026-06-12T13:26:54.221215+00:00"
+  },
+  {
+    "id": "linkedin_20260613_cellular_sequence_test_ko",
+    "status": "failed",
+    "error": "이미지 다운로드 오류 404: https://jhbropark.github.io/pages/images/linkedin/cellular-sequence/cellular-sequence-ko.jpg",
+    "timestamp": "2026-06-12T19:01:29.396130+00:00"
   }
 ]
