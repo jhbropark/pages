@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bbbb.beauty//Instagram Token Renewal//KO
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:instagram-token-renewal-bbbb-beauty@bbbb.beauty
+DTSTAMP:20260612T064000Z
+DTSTART;TZID=Asia/Seoul:20260712T090000
+DTEND;TZID=Asia/Seoul:20260712T093000
+RRULE:FREQ=DAILY;INTERVAL=30
+SUMMARY:[bbbb.beauty] Instagram 토큰 검증 및 갱신
+DESCRIPTION:자동 처리 순서\n1. Instagram 토큰으로 /me 계정 조회\n2. 게시 권한과 콘텐츠 게시 한도 확인\n3. Meta refresh_access_token API 호출\n4. 갱신된 토큰으로 테스트 조회\n5. 실패 시 GitHub Issue 생성 및 알림\n\n사용자가 해야 하는 일\n- GitHub Issue 또는 인증 실패 알림이 없으면 별도 작업 없음\n- OAuthException 190 또는 재로그인 요청이 오면 Meta 개발자 앱에서 새 토큰 발급\n- 새 토큰은 GitHub Actions Secret INSTAGRAM_ACCESS_TOKEN에 저장\n- 숫자 Instagram ID는 INSTAGRAM_USER_ID에만 저장\n- 토큰 값은 채팅이나 문서에 공유하지 않기\n\n관련 주소\nMeta 앱: https://developers.facebook.com/apps/\nGitHub Secrets: https://github.com/jhbropark/pages/settings/secrets/actions\nGitHub Actions: https://github.com/jhbropark/pages/actions\n\n담당 계정: bbbb.beauty_official
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:Instagram 토큰 갱신 점검이 7일 후 예정되어 있습니다.
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:내일 Instagram 토큰 검증 및 갱신 상태를 확인하세요.
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:1시간 후 Instagram 토큰 검증 및 갱신 점검입니다.
+END:VALARM
+END:VEVENT
+END:VCALENDAR
