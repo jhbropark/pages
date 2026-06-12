@@ -110,5 +110,12 @@
     "status": "failed",
     "error": "API 오류 400: {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AT3Rvsz0-0mX448LZ5FLQ1R\"}}",
     "timestamp": "2026-06-11T18:13:31.617598+00:00"
+  },
+  {
+    "id": "post_20260612_decision_question_test",
+    "status": "uploaded",
+    "post_id": "17914680957402281",
+    "post_url": "https://www.instagram.com/p/DZeeHMIFfKK/",
+    "timestamp": "2026-06-12T06:40:08.309580+00:00"
   }
 ]
