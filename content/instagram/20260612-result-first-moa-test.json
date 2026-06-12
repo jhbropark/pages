@@ -1,0 +1,24 @@
+{
+  "id": "result-first-moa-test",
+  "status": "draft",
+  "format": "carousel",
+  "topic": "성분을 설명하지 말고 이동을 보여주세요",
+  "image_urls": [
+    "https://jhbropark.github.io/pages/images/tests/result-first-moa/carousel-01.jpg",
+    "https://jhbropark.github.io/pages/images/tests/result-first-moa/carousel-02.jpg",
+    "https://jhbropark.github.io/pages/images/tests/result-first-moa/carousel-03.jpg",
+    "https://jhbropark.github.io/pages/images/tests/result-first-moa/carousel-04.jpg",
+    "https://jhbropark.github.io/pages/images/tests/result-first-moa/carousel-05.jpg",
+    "https://jhbropark.github.io/pages/images/tests/result-first-moa/carousel-06.jpg"
+  ],
+  "caption": "보이지 않는 성분의 가치는 긴 설명만으로 전달되지 않습니다.\n\nR&D 정보를 시각적 우선순위로 번역하고, 와이어프레임에서 이동 경로를 검증한 뒤 빛·재질·카메라로 이해 가능한 장면을 만듭니다.\n\n당신의 기술에서 먼저 보여줘야 할 것은 A 성분 전달, B 작용 기전 중 무엇인가요?\nDM 'MOA'로 기술 시각화 진단 질문을 받아보세요.",
+  "hashtags": [
+    "#3DMOA",
+    "#메디컬애니메이션",
+    "#과학커뮤니케이션",
+    "#더마코스메틱",
+    "#바이오마케팅",
+    "#bbbbbeauty"
+  ],
+  "generated_by": "codex-result-first-test"
+}
