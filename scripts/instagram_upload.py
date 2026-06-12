@@ -139,13 +139,26 @@ def _api_post(endpoint: str, params: dict) -> dict:
     """Graph API에 POST 요청을 보내고 JSON 응답을 반환합니다."""
     data = urllib.parse.urlencode(params).encode("utf-8")
     url = f"{GRAPH_API_BASE}/{endpoint}"
-    req = urllib.request.Request(url, data=data, method="POST")
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return json.loads(resp.read())
-    except urllib.error.HTTPError as e:
-        body = e.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"API 오류 {e.code}: {body}") from e
+    last_error = None
+    for attempt in range(5):
+        req = urllib.request.Request(url, data=data, method="POST")
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return json.loads(resp.read())
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", errors="replace")
+            last_error = RuntimeError(f"API 오류 {e.code}: {body}")
+            is_transient = '"is_transient":true' in body or '"code":2' in body
+            if not is_transient or attempt == 4:
+                raise last_error from e
+            delay = 5 * (2 ** attempt)
+            logger.warning(
+                "Meta 일시 오류로 %d초 후 재시도합니다 (%d/5).",
+                delay,
+                attempt + 2,
+            )
+            time.sleep(delay)
+    raise last_error
 
 
 def _api_get(endpoint: str, access_token: str, fields: str = "") -> dict:
