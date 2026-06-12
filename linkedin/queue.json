@@ -459,7 +459,7 @@
     },
     {
       "pair_id": "linkedin_20260612_body_cell_narrative_test",
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "3d_moa",
       "scheduled_time": "2026-06-12T13:22:00+00:00",
       "created_at": "2026-06-12T22:23:00+09:00",
@@ -476,11 +476,14 @@
         "#3DMOA"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/linkedin/body-cell-narrative/body-cell-narrative-ko.jpg",
-      "alt_text": "인체 내부의 혈류와 세포가 빛을 향해 역동적으로 이동하는 장면 위에 보이지 않는 작용을 움직임으로 이해시킨다는 한국어 메시지를 배치한 bbbb.beauty 이미지."
+      "alt_text": "인체 내부의 혈류와 세포가 빛을 향해 역동적으로 이동하는 장면 위에 보이지 않는 작용을 움직임으로 이해시킨다는 한국어 메시지를 배치한 bbbb.beauty 이미지.",
+      "post_urn": "urn:li:share:7471191291771383808",
+      "image_urn": "urn:li:image:D5610AQHAzjhcxzZsYw",
+      "uploaded_at": "2026-06-12T13:26:52.284708+00:00"
     },
     {
       "pair_id": "linkedin_20260612_body_cell_narrative_test",
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "3d_moa",
       "scheduled_time": "2026-06-12T13:22:00+00:00",
       "created_at": "2026-06-12T22:23:00+09:00",
@@ -497,7 +500,10 @@
         "#ScientificVisualization"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/linkedin/body-cell-narrative/body-cell-narrative-en.jpg",
-      "alt_text": "A dynamic microscopic view of blood flow and translucent cells moving through the body, paired with an English message about making invisible mechanisms understandable through movement."
+      "alt_text": "A dynamic microscopic view of blood flow and translucent cells moving through the body, paired with an English message about making invisible mechanisms understandable through movement.",
+      "post_urn": "urn:li:share:7471191297471471616",
+      "image_urn": "urn:li:image:D5610AQE9vs-C1vDaFA",
+      "uploaded_at": "2026-06-12T13:26:54.221215+00:00"
     }
   ]
 }

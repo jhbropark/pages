@@ -148,5 +148,17 @@
     "status": "uploaded",
     "post_urn": "urn:li:share:7470876519054221312",
     "timestamp": "2026-06-11T16:36:05.109945+00:00"
+  },
+  {
+    "id": "linkedin_20260612_body_cell_narrative_test_ko",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471191291771383808",
+    "timestamp": "2026-06-12T13:26:52.284708+00:00"
+  },
+  {
+    "id": "linkedin_20260612_body_cell_narrative_test_en",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471191297471471616",
+    "timestamp": "2026-06-12T13:26:54.221215+00:00"
   }
 ]
