@@ -285,13 +285,24 @@ def create_resumable_video_container(
     return creation_id
 
 
-def diagnose_access(access_token: str) -> str:
+def diagnose_access(access_token: str, configured_user_id: str = "") -> str:
     """토큰 소유 계정을 확인하고 실제 숫자 Instagram 계정 ID를 반환합니다."""
-    profile = _api_get(
-        "me",
-        access_token,
-        "id,user_id,username,account_type,media_count",
-    )
+    if GRAPH_API_BASE.startswith("https://graph.facebook.com"):
+        if not configured_user_id.isdigit():
+            raise RuntimeError(
+                "Facebook Graph API 토큰에는 숫자 INSTAGRAM_USER_ID가 필요합니다."
+            )
+        profile = _api_get(
+            configured_user_id,
+            access_token,
+            "id,username,account_type,media_count",
+        )
+    else:
+        profile = _api_get(
+            "me",
+            access_token,
+            "id,user_id,username,account_type,media_count",
+        )
     resolved_id = str(profile.get("user_id") or profile.get("id") or "").strip()
     if not resolved_id.isdigit():
         raise RuntimeError("토큰에서 숫자 Instagram 계정 ID를 확인하지 못했습니다.")
@@ -571,7 +582,7 @@ def run() -> None:
     GRAPH_API_BASE = _resolve_api_base(access_token)
     logger.info("API 호스트: %s (토큰 접두사: %s...)", GRAPH_API_BASE, access_token[:4])
 
-    resolved_user_id = diagnose_access(access_token)
+    resolved_user_id = diagnose_access(access_token, user_id)
     if user_id.isdigit() and user_id != resolved_user_id:
         logger.warning(
             "Secret의 계정 ID(%s)가 토큰 계정 ID(%s)와 달라 토큰 계정 ID를 사용합니다.",

@@ -26,6 +26,34 @@ class InstagramUploadTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "너무 짧습니다"):
             instagram_upload._resolve_api_base("not-a-token")
 
+    def test_facebook_token_diagnoses_configured_instagram_account(self):
+        instagram_upload.GRAPH_API_BASE = "https://graph.facebook.com/v25.0"
+        with patch.object(
+            instagram_upload,
+            "_api_get",
+            side_effect=[
+                {
+                    "id": "17841234567890123",
+                    "username": "bbbb.beauty_official",
+                    "account_type": "BUSINESS",
+                },
+                {"data": []},
+                {"data": []},
+            ],
+        ) as api_get:
+            resolved_id = instagram_upload.diagnose_access(
+                "EAAm-token",
+                "17841234567890123",
+            )
+
+        self.assertEqual(resolved_id, "17841234567890123")
+        self.assertEqual(api_get.call_args_list[0].args[0], "17841234567890123")
+
+    def test_facebook_token_requires_configured_instagram_account(self):
+        instagram_upload.GRAPH_API_BASE = "https://graph.facebook.com/v25.0"
+        with self.assertRaisesRegex(RuntimeError, "INSTAGRAM_USER_ID"):
+            instagram_upload.diagnose_access("EAAm-token")
+
     def test_carousel_accepts_two_to_ten_images(self):
         item = {
             "image_urls": [
