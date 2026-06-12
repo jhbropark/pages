@@ -300,7 +300,7 @@
     },
     {
       "id": "post_20260612_scientific_choreography_test",
-      "status": "pending",
+      "status": "uploaded",
       "topic": "Scientific Choreography: 과학을 기억되는 장면으로",
       "pillar_id": "science_communication",
       "format": "carousel",
@@ -322,7 +322,10 @@
       ],
       "scheduled_time": "2026-06-12T10:20:00+00:00",
       "created_at": "2026-06-12T19:20:00+09:00",
-      "generated_by": "codex-scientific-choreography"
+      "generated_by": "codex-scientific-choreography",
+      "post_id": "17858050764659511",
+      "post_url": "https://www.instagram.com/p/DZfCgZKFr0c/",
+      "uploaded_at": "2026-06-12T11:58:07.837768+00:00"
     }
   ]
 }
