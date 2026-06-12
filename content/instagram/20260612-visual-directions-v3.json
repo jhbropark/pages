@@ -1,0 +1,35 @@
+{
+  "series_id": "visual-directions-v3",
+  "status": "draft",
+  "created_at": "2026-06-12T19:00:00+09:00",
+  "items": [
+    {
+      "id": "visual-v3-01-hyper-silico",
+      "concept": "Hyper-Silico Transparency",
+      "image_url": "https://jhbropark.github.io/pages/images/concepts/visual-directions-v3/final/01-hyper-silico.jpg",
+      "caption": "보이지 않는 성분의 이동을 고객은 어떻게 믿을 수 있을까요?\n\n투명한 캡슐과 빛의 굴절은 장식이 아니라, 성분 전달과 작용 기전을 이해시키는 시각 언어입니다.\n\n더 설명하기 어려운 것은 A 성분 전달, B 작용 기전 중 무엇인가요?\nDM 'MOA'로 현재 기술의 시각화 과제를 보내주세요.",
+      "hashtags": ["#3DMOA", "#메디컬애니메이션", "#더마코스메틱", "#과학커뮤니케이션", "#bbbbbeauty"]
+    },
+    {
+      "id": "visual-v3-02-neo-lab",
+      "concept": "Neo-Lab Aesthetic",
+      "image_url": "https://jhbropark.github.io/pages/images/concepts/visual-directions-v3/final/02-neo-lab.jpg",
+      "caption": "과학적 신뢰가 반드시 차갑고 딱딱할 필요는 없습니다.\n\nDeep Navy의 정밀함과 Soft Beige의 온도를 결합하면 연구의 전문성과 뷰티 브랜드의 감성을 함께 전달할 수 있습니다.\n\nA 차가운 정밀함, B 따뜻한 전문성. 어떤 무드가 브랜드에 더 가깝나요?\nDM 'LAB'으로 브랜드 무드 진단 질문을 받아보세요.",
+      "hashtags": ["#네오랩", "#더마코스메틱", "#브랜드디자인", "#메디컬브랜딩", "#bbbbbeauty"]
+    },
+    {
+      "id": "visual-v3-03-micro-cinema",
+      "concept": "Micro-Cinematography",
+      "image_url": "https://jhbropark.github.io/pages/images/concepts/visual-directions-v3/final/03-micro-cinema.jpg",
+      "caption": "정확한 정보도 시선의 중심이 없으면 기억되지 않습니다.\n\n하나의 세포와 하나의 변화에 초점을 맞추면 작용 기전은 설명을 넘어 영화적 서사가 됩니다.\n\n현재 영상의 문제는 A 정확하지만 평범함, B 멋지지만 어려움 중 무엇인가요?\nDM 'FILM'으로 스토리보드 점검 질문을 받아보세요.",
+      "hashtags": ["#마이크로시네마", "#과학영상", "#3D애니메이션", "#바이오마케팅", "#bbbbbeauty"]
+    },
+    {
+      "id": "visual-v3-04-data-minimal",
+      "concept": "Data Minimalism UX",
+      "image_url": "https://jhbropark.github.io/pages/images/concepts/visual-directions-v3/final/04-data-minimal.jpg",
+      "caption": "데이터가 많을수록 이해가 깊어지는 것은 아닙니다.\n\n사용자가 터치하는 순간 필요한 정보만 반응하게 하면 복잡한 기술도 탐색 가능한 경험이 됩니다.\n\n우선 활용처는 A 전시·영업, B 교육·트레이닝 중 어디인가요?\nDM 'UX'로 인터랙티브 콘텐츠 기획 질문을 받아보세요.",
+      "hashtags": ["#인터랙티브콘텐츠", "#의료기기마케팅", "#AR콘텐츠", "#UX디자인", "#bbbbbeauty"]
+    }
+  ]
+}
