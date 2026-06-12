@@ -380,7 +380,7 @@
     },
     {
       "id": "post_20260612_body_cell_story_01_test",
-      "status": "ready",
+      "status": "pending",
       "topic": "설명하기 어려운 기술 단계 선택",
       "pillar_id": "3d_moa",
       "format": "story",
@@ -393,7 +393,7 @@
     },
     {
       "id": "post_20260612_body_cell_story_02_test",
-      "status": "ready",
+      "status": "pending",
       "topic": "원인 이동 반응 프레임",
       "pillar_id": "science_communication",
       "format": "story",
@@ -406,7 +406,7 @@
     },
     {
       "id": "post_20260612_body_cell_story_03_test",
-      "status": "ready",
+      "status": "pending",
       "topic": "정확한 자료에서 기억되는 장면으로",
       "pillar_id": "project_process",
       "format": "story",
@@ -419,7 +419,7 @@
     },
     {
       "id": "post_20260612_body_cell_story_04_test",
-      "status": "ready",
+      "status": "pending",
       "topic": "프로젝트 문의 전환",
       "pillar_id": "service_portfolio",
       "format": "story",
