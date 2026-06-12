@@ -356,6 +356,79 @@
       "post_id": "18118400746758930",
       "post_url": "https://www.instagram.com/p/DZfJbcVlo5t/",
       "uploaded_at": "2026-06-12T12:58:36.374803+00:00"
+    },
+    {
+      "id": "post_20260612_body_cell_reel_test",
+      "status": "pending",
+      "topic": "세포의 이동과 반응을 이해 가능한 움직임으로",
+      "pillar_id": "3d_moa",
+      "format": "reel",
+      "video_url": "https://jhbropark.github.io/pages/images/social-formats/body-cell-motion/reel/body-cell-motion-reel-ko.mp4",
+      "cover_url": "https://jhbropark.github.io/pages/images/social-formats/body-cell-motion/reel/body-cell-motion-reel-cover.jpg",
+      "caption": "보이지 않는 작용도 움직임으로 보여주면 이해할 수 있습니다.\n\n성분이 도달하고, 세포가 신호를 주고받으며, 주변 조직의 반응으로 이어지는 흐름. bbbb.beauty는 검토된 R&D 자료를 바탕으로 이 과정을 정확하고 기억되는 장면으로 설계합니다.\n\n현재 설명하기 어려운 기술이나 작용 기전이 있으시다면 프로필 문의 링크에 프로젝트의 배경과 활용 목적을 남겨주세요.",
+      "hashtags": [
+        "#메디컬애니메이션",
+        "#3DMOA",
+        "#과학커뮤니케이션",
+        "#바이오마케팅",
+        "#ScientificVisualization",
+        "#bbbbbeauty"
+      ],
+      "scheduled_time": "2026-06-12T14:22:00+00:00",
+      "created_at": "2026-06-12T23:23:00+09:00",
+      "generated_by": "codex-body-cell-reel-story"
+    },
+    {
+      "id": "post_20260612_body_cell_story_01_test",
+      "status": "pending",
+      "topic": "설명하기 어려운 기술 단계 선택",
+      "pillar_id": "3d_moa",
+      "format": "story",
+      "image_url": "https://jhbropark.github.io/pages/images/social-formats/body-cell-motion/stories/body-cell-story-01.jpg",
+      "caption": "",
+      "hashtags": [],
+      "scheduled_time": "2026-06-12T14:22:00+00:00",
+      "created_at": "2026-06-12T23:23:00+09:00",
+      "generated_by": "codex-body-cell-reel-story"
+    },
+    {
+      "id": "post_20260612_body_cell_story_02_test",
+      "status": "pending",
+      "topic": "원인 이동 반응 프레임",
+      "pillar_id": "science_communication",
+      "format": "story",
+      "image_url": "https://jhbropark.github.io/pages/images/social-formats/body-cell-motion/stories/body-cell-story-02.jpg",
+      "caption": "",
+      "hashtags": [],
+      "scheduled_time": "2026-06-12T14:22:00+00:00",
+      "created_at": "2026-06-12T23:23:00+09:00",
+      "generated_by": "codex-body-cell-reel-story"
+    },
+    {
+      "id": "post_20260612_body_cell_story_03_test",
+      "status": "pending",
+      "topic": "정확한 자료에서 기억되는 장면으로",
+      "pillar_id": "project_process",
+      "format": "story",
+      "image_url": "https://jhbropark.github.io/pages/images/social-formats/body-cell-motion/stories/body-cell-story-03.jpg",
+      "caption": "",
+      "hashtags": [],
+      "scheduled_time": "2026-06-12T14:22:00+00:00",
+      "created_at": "2026-06-12T23:23:00+09:00",
+      "generated_by": "codex-body-cell-reel-story"
+    },
+    {
+      "id": "post_20260612_body_cell_story_04_test",
+      "status": "pending",
+      "topic": "프로젝트 문의 전환",
+      "pillar_id": "service_portfolio",
+      "format": "story",
+      "image_url": "https://jhbropark.github.io/pages/images/social-formats/body-cell-motion/stories/body-cell-story-04.jpg",
+      "caption": "",
+      "hashtags": [],
+      "scheduled_time": "2026-06-12T14:22:00+00:00",
+      "created_at": "2026-06-12T23:23:00+09:00",
+      "generated_by": "codex-body-cell-reel-story"
     }
   ]
 }

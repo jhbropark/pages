@@ -28,6 +28,7 @@ LOG_FILE = REPO_ROOT / "logs" / "upload_log.json"
 MAX_CAPTION_LENGTH = 2200
 MAX_HASHTAG_COUNT = 30
 ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png"}
+ALLOWED_VIDEO_EXTENSIONS = {".mp4", ".mov"}
 
 # --- 로깅 설정 ---
 logging.basicConfig(
@@ -65,10 +66,32 @@ GRAPH_API_BASE = "https://graph.facebook.com/v23.0"
 def validate_item(item: dict) -> list[str]:
     """콘텐츠 항목을 검증하고 오류 목록을 반환합니다."""
     errors = []
+    content_format = item.get("format", "single_image")
 
+    if content_format == "reel":
+        video_url = item.get("video_url", "")
+        if not video_url:
+            errors.append("릴스 video_url이 없습니다.")
+        else:
+            ext = Path(urllib.parse.urlparse(video_url).path).suffix.lower()
+            if ext not in ALLOWED_VIDEO_EXTENSIONS:
+                errors.append(
+                    f"지원하지 않는 릴스 형식: {ext} "
+                    f"(허용: {ALLOWED_VIDEO_EXTENSIONS})"
+                )
+    elif content_format == "story":
+        image_url = item.get("image_url", "")
+        video_url = item.get("video_url", "")
+        if not image_url and not video_url:
+            errors.append("스토리 image_url 또는 video_url이 없습니다.")
+        source_url = image_url or video_url
+        ext = Path(urllib.parse.urlparse(source_url).path).suffix.lower()
+        allowed = ALLOWED_EXTENSIONS | ALLOWED_VIDEO_EXTENSIONS
+        if ext not in allowed:
+            errors.append(f"지원하지 않는 스토리 형식: {ext} (허용: {allowed})")
     # 단일 이미지 또는 2~10장 캐러셀 URL 확인
-    image_urls = item.get("image_urls")
-    if image_urls is not None:
+    elif item.get("image_urls") is not None:
+        image_urls = item["image_urls"]
         if not isinstance(image_urls, list) or not 2 <= len(image_urls) <= 10:
             errors.append("image_urls는 2~10장의 이미지여야 합니다.")
         else:
@@ -225,6 +248,54 @@ def create_carousel_container(
             "access_token": access_token,
         },
     )
+    return result["id"]
+
+
+def create_reel_container(
+    user_id: str,
+    access_token: str,
+    video_url: str,
+    caption: str,
+    cover_url: str = "",
+) -> str:
+    """릴스 비디오 컨테이너를 생성합니다."""
+    params = {
+        "media_type": "REELS",
+        "video_url": video_url,
+        "caption": caption,
+        "share_to_feed": "true",
+        "access_token": access_token,
+    }
+    if cover_url:
+        params["cover_url"] = cover_url
+    try:
+        result = _api_post(f"{user_id}/media", params)
+    except RuntimeError as exc:
+        if cover_url and "cover_url" in str(exc):
+            logger.warning("현재 API에서 cover_url을 거부하여 자동 커버로 재시도합니다.")
+            params.pop("cover_url", None)
+            result = _api_post(f"{user_id}/media", params)
+        else:
+            raise
+    return result["id"]
+
+
+def create_story_container(
+    user_id: str,
+    access_token: str,
+    image_url: str = "",
+    video_url: str = "",
+) -> str:
+    """이미지 또는 비디오 스토리 컨테이너를 생성합니다."""
+    params = {
+        "media_type": "STORIES",
+        "access_token": access_token,
+    }
+    if video_url:
+        params["video_url"] = video_url
+    else:
+        params["image_url"] = image_url
+    result = _api_post(f"{user_id}/media", params)
     return result["id"]
 
 
@@ -391,10 +462,26 @@ def run() -> None:
             continue
 
         # 업로드
-        full_caption = build_full_caption(item["caption"], item.get("hashtags", []))
+        full_caption = build_full_caption(item.get("caption", ""), item.get("hashtags", []))
         try:
             logger.info("[%s] 미디어 컨테이너 생성 중...", item_id)
-            if item.get("image_urls"):
+            content_format = item.get("format", "single_image")
+            if content_format == "reel":
+                creation_id = create_reel_container(
+                    user_id,
+                    access_token,
+                    item["video_url"],
+                    full_caption,
+                    item.get("cover_url", ""),
+                )
+            elif content_format == "story":
+                creation_id = create_story_container(
+                    user_id,
+                    access_token,
+                    item.get("image_url", ""),
+                    item.get("video_url", ""),
+                )
+            elif item.get("image_urls"):
                 creation_id = create_carousel_container(
                     user_id,
                     access_token,
@@ -410,7 +497,8 @@ def run() -> None:
                 )
 
             logger.info("[%s] 미디어 처리 완료 대기 중...", item_id)
-            wait_for_container_ready(creation_id, access_token)
+            wait_timeout = 300 if item.get("format") == "reel" else 120
+            wait_for_container_ready(creation_id, access_token, timeout=wait_timeout)
 
             logger.info("[%s] 게시 중...", item_id)
             post_id = publish_media(user_id, access_token, creation_id)

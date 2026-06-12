@@ -25,7 +25,7 @@
       {
         "image_url": "https://jhbropark.github.io/pages/images/social-formats/body-cell-motion/stories/body-cell-story-01.jpg",
         "purpose": "고객 과제 파악",
-        "sticker": "poll",
+        "sticker": "api_static_choice",
         "options": [
           "성분의 이동",
           "세포의 반응"
@@ -44,7 +44,7 @@
       {
         "image_url": "https://jhbropark.github.io/pages/images/social-formats/body-cell-motion/stories/body-cell-story-04.jpg",
         "purpose": "상담 전환",
-        "sticker": "link",
+        "sticker": "api_static_profile_cta",
         "link": "https://jhbropark.github.io/pages/contact.html"
       }
     ]

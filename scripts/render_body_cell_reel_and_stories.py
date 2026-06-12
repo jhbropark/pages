@@ -203,7 +203,15 @@ def render_stories(sources):
         outline=(*WHITE, 175),
         width=3,
     )
-    draw.text((355, 1240), "투표 스티커 영역", font=font(28, True), fill=(*WHITE, 205))
+    draw.text((230, 1200), "A  성분의 이동", font=font(30, True), fill=WHITE)
+    draw.line((530, 1170, 530, 1370), fill=(*WHITE, 90), width=2)
+    draw.text((595, 1200), "B  세포의 반응", font=font(30, True), fill=WHITE)
+    draw.text(
+        (250, 1310),
+        "가장 가까운 항목을 메시지로 알려주세요.",
+        font=font(23),
+        fill=(*WHITE, 190),
+    )
     draw.text((64, 1775), "성분의 이동  /  세포의 반응", font=font(25, True), fill=WHITE)
     outputs.append(Image.alpha_composite(image, overlay))
 
@@ -258,7 +266,13 @@ def render_stories(sources):
         outline=(*WHITE, 180),
         width=3,
     )
-    draw.text((348, 1250), "링크 스티커 영역", font=font(30, True), fill=(*WHITE, 215))
+    draw.text((250, 1220), "프로필의 문의 링크에서", font=font(31, True), fill=WHITE)
+    draw.text(
+        (255, 1300),
+        "편하신 방식으로 프로젝트를 알려주세요.",
+        font=font(24),
+        fill=(*WHITE, 200),
+    )
     draw.text((64, 1775), "bbbb.beauty  |  프로젝트 문의", font=font(25, True), fill=WHITE)
     outputs.append(Image.alpha_composite(image, overlay))
 
