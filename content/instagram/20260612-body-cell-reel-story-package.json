@@ -1,0 +1,53 @@
+{
+  "id": "body-cell-reel-story-package",
+  "status": "draft",
+  "campaign": "세포의 움직임을 이해 가능한 장면으로",
+  "reel": {
+    "language": "ko",
+    "duration_seconds": 16,
+    "resolution": "1080x1920",
+    "video_url": "https://jhbropark.github.io/pages/images/social-formats/body-cell-motion/reel/body-cell-motion-reel-ko.mp4",
+    "cover_url": "https://jhbropark.github.io/pages/images/social-formats/body-cell-motion/reel/body-cell-motion-reel-cover.jpg",
+    "caption": "보이지 않는 작용도 움직임으로 보여주면 이해할 수 있습니다.\n\n성분이 도달하고, 세포가 신호를 주고받으며, 주변 조직의 반응으로 이어지는 흐름. bbbb.beauty는 검토된 R&D 자료를 바탕으로 이 과정을 정확하고 기억되는 장면으로 설계합니다.\n\n현재 설명하기 어려운 기술이나 작용 기전이 있으시다면 프로필 문의 링크에 프로젝트의 배경과 활용 목적을 남겨주세요.",
+    "hashtags": [
+      "#메디컬애니메이션",
+      "#3DMOA",
+      "#과학커뮤니케이션",
+      "#바이오마케팅",
+      "#ScientificVisualization",
+      "#bbbbbeauty"
+    ],
+    "audio_note": "무음 마스터. Instagram 게시 단계에서 저작권 사용이 허용된 긴장감 있는 앰비언트 또는 미니멀 전자음악을 추가한다."
+  },
+  "stories": {
+    "resolution": "1080x1920",
+    "sequence": [
+      {
+        "image_url": "https://jhbropark.github.io/pages/images/social-formats/body-cell-motion/stories/body-cell-story-01.jpg",
+        "purpose": "고객 과제 파악",
+        "sticker": "poll",
+        "options": [
+          "성분의 이동",
+          "세포의 반응"
+        ]
+      },
+      {
+        "image_url": "https://jhbropark.github.io/pages/images/social-formats/body-cell-motion/stories/body-cell-story-02.jpg",
+        "purpose": "원인-이동-반응 프레임 전달",
+        "sticker": null
+      },
+      {
+        "image_url": "https://jhbropark.github.io/pages/images/social-formats/body-cell-motion/stories/body-cell-story-03.jpg",
+        "purpose": "bbbb.beauty 제작 방법 소개",
+        "sticker": null
+      },
+      {
+        "image_url": "https://jhbropark.github.io/pages/images/social-formats/body-cell-motion/stories/body-cell-story-04.jpg",
+        "purpose": "상담 전환",
+        "sticker": "link",
+        "link": "https://jhbropark.github.io/pages/contact.html"
+      }
+    ]
+  },
+  "generated_by": "codex-body-cell-reel-story"
+}
