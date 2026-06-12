@@ -4,6 +4,7 @@
 from pathlib import Path
 import math
 import random
+import subprocess
 
 import imageio_ffmpeg
 import numpy as np
@@ -16,7 +17,7 @@ SOURCE = BASE / "source"
 REEL_DIR = BASE / "reel"
 STORY_DIR = BASE / "stories"
 W, H = 1080, 1920
-FPS = 24
+FPS = 30
 DURATION = 16
 FONT = Path("C:/Windows/Fonts/NotoSansKR-VF.ttf")
 FONT_BOLD = Path("C:/Windows/Fonts/malgunbd.ttf")
@@ -151,7 +152,7 @@ def make_reel_frame(sources, frame_number):
 
 def render_reel(sources):
     REEL_DIR.mkdir(parents=True, exist_ok=True)
-    output = REEL_DIR / "body-cell-motion-reel-ko.mp4"
+    output = REEL_DIR / "body-cell-motion-reel-ko-v3.mp4"
     writer = imageio_ffmpeg.write_frames(
         str(output),
         (W, H),
@@ -160,7 +161,16 @@ def render_reel(sources):
         macro_block_size=2,
         pix_fmt_in="rgb24",
         pix_fmt_out="yuv420p",
-        output_params=["-crf", "20", "-preset", "medium", "-movflags", "+faststart"],
+        output_params=[
+            "-crf", "20",
+            "-preset", "medium",
+            "-flags", "+cgop",
+            "-g", "60",
+            "-keyint_min", "30",
+            "-sc_threshold", "0",
+            "-movflags", "+faststart",
+            "-use_editlist", "0",
+        ],
     )
     writer.send(None)
     for frame_number in range(FPS * DURATION):
@@ -279,6 +289,31 @@ def render_stories(sources):
     for index, output in enumerate(outputs, 1):
         path = STORY_DIR / f"body-cell-story-{index:02d}.jpg"
         output.convert("RGB").save(path, quality=95, optimize=True)
+        video_path = STORY_DIR / f"body-cell-story-{index:02d}-v2.mp4"
+        subprocess.run(
+            [
+                imageio_ffmpeg.get_ffmpeg_exe(),
+                "-y",
+                "-hide_banner",
+                "-loglevel", "error",
+                "-loop", "1",
+                "-framerate", str(FPS),
+                "-i", str(path),
+                "-t", "6",
+                "-an",
+                "-c:v", "libx264",
+                "-pix_fmt", "yuv420p",
+                "-r", str(FPS),
+                "-flags", "+cgop",
+                "-g", "60",
+                "-keyint_min", "30",
+                "-sc_threshold", "0",
+                "-movflags", "+faststart",
+                "-use_editlist", "0",
+                str(video_path),
+            ],
+            check=True,
+        )
     return outputs
 
 

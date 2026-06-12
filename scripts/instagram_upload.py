@@ -29,6 +29,8 @@ MAX_CAPTION_LENGTH = 2200
 MAX_HASHTAG_COUNT = 30
 ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png"}
 ALLOWED_VIDEO_EXTENSIONS = {".mp4", ".mov"}
+GRAPH_API_VERSION = os.environ.get("INSTAGRAM_GRAPH_API_VERSION", "v25.0")
+PUBLISHING_POLL_INTERVAL = 60
 
 # --- 로깅 설정 ---
 logging.basicConfig(
@@ -52,11 +54,11 @@ def _resolve_api_base(token: str) -> str:
             "INSTAGRAM_ACCESS_TOKEN 값이 액세스 토큰 형식보다 너무 짧습니다."
         )
     if token.startswith("IG"):
-        return "https://graph.instagram.com/v23.0"
-    return "https://graph.facebook.com/v23.0"
+        return f"https://graph.instagram.com/{GRAPH_API_VERSION}"
+    return f"https://graph.facebook.com/{GRAPH_API_VERSION}"
 
 
-GRAPH_API_BASE = "https://graph.facebook.com/v23.0"
+GRAPH_API_BASE = f"https://graph.facebook.com/{GRAPH_API_VERSION}"
 
 
 # ---------------------------------------------------------------------------
@@ -128,6 +130,31 @@ def validate_item(item: dict) -> list[str]:
     if not item.get("scheduled_time"):
         errors.append("scheduled_time이 없습니다.")
 
+    return errors
+
+
+def inspect_local_mp4(video_url: str) -> list[str]:
+    """저장소에서 제공하는 MP4가 Meta의 컨테이너 요구사항을 만족하는지 검사합니다."""
+    parsed = urllib.parse.urlparse(video_url)
+    marker = "/pages/"
+    if parsed.hostname != "jhbropark.github.io" or marker not in parsed.path:
+        return []
+
+    relative_path = urllib.parse.unquote(parsed.path.split(marker, 1)[1])
+    local_path = REPO_ROOT / Path(relative_path)
+    if not local_path.exists() or local_path.suffix.lower() != ".mp4":
+        return []
+
+    payload = local_path.read_bytes()
+    errors = []
+    moov_offset = payload.find(b"moov")
+    mdat_offset = payload.find(b"mdat")
+    if moov_offset < 0:
+        errors.append("MP4에 moov atom이 없습니다.")
+    elif mdat_offset >= 0 and moov_offset > mdat_offset:
+        errors.append("MP4 moov atom이 파일 시작 부분에 없습니다.")
+    if b"edts" in payload or b"elst" in payload:
+        errors.append("Meta가 허용하지 않는 MP4 편집 목록(edts/elst)이 포함되어 있습니다.")
     return errors
 
 
@@ -325,23 +352,35 @@ def create_story_container(
     return result["id"]
 
 
-def wait_for_container_ready(creation_id: str, access_token: str, timeout: int = 120) -> None:
-    """미디어 컨테이너의 이미지 처리가 끝날 때까지 대기합니다."""
-    params = urllib.parse.urlencode({"fields": "status_code", "access_token": access_token})
-    url = f"{GRAPH_API_BASE}/{creation_id}?{params}"
+def wait_for_container_ready(
+    creation_id: str,
+    access_token: str,
+    timeout: int = 300,
+    poll_interval: int = PUBLISHING_POLL_INTERVAL,
+) -> None:
+    """Meta 권장 주기에 맞춰 미디어 컨테이너의 처리 상태를 확인합니다."""
     deadline = time.time() + timeout
     while time.time() < deadline:
-        try:
-            with urllib.request.urlopen(url, timeout=30) as resp:
-                status = json.loads(resp.read()).get("status_code", "")
-        except urllib.error.HTTPError:
-            status = ""
-        if status == "FINISHED":
+        result = _api_get(creation_id, access_token, "status_code,status")
+        status_code = result.get("status_code", "")
+        status_detail = result.get("status", "")
+        if status_code in {"FINISHED", "PUBLISHED"}:
             return
-        if status == "ERROR":
-            raise RuntimeError("미디어 컨테이너 처리 실패 (status_code=ERROR)")
-        logger.info("미디어 처리 대기 중... (status=%s)", status or "unknown")
-        time.sleep(5)
+        if status_code in {"ERROR", "EXPIRED"}:
+            detail = f": {status_detail}" if status_detail else ""
+            raise RuntimeError(
+                f"미디어 컨테이너 처리 실패 "
+                f"(creation_id={creation_id}, status_code={status_code}{detail})"
+            )
+        logger.info(
+            "미디어 처리 대기 중... (creation_id=%s, status_code=%s, status=%s)",
+            creation_id,
+            status_code or "unknown",
+            status_detail or "unknown",
+        )
+        remaining = deadline - time.time()
+        if remaining > 0:
+            time.sleep(min(poll_interval, remaining))
     raise RuntimeError(f"미디어 컨테이너가 {timeout}초 내에 준비되지 않았습니다.")
 
 
@@ -475,6 +514,9 @@ def run() -> None:
 
         # 유효성 검사
         errors = validate_item(item)
+        video_url = item.get("video_url", "")
+        if video_url:
+            errors.extend(inspect_local_mp4(video_url))
         if errors:
             logger.warning("[%s] 유효성 검사 실패: %s", item_id, "; ".join(errors))
             item["status"] = "invalid"
@@ -522,8 +564,11 @@ def run() -> None:
                     full_caption,
                 )
 
+            item["creation_id"] = creation_id
+            item["container_created_at"] = datetime.now(tz=timezone.utc).isoformat()
+            save_queue(queue)
             logger.info("[%s] 미디어 처리 완료 대기 중...", item_id)
-            wait_timeout = 300 if item.get("format") == "reel" else 120
+            wait_timeout = 300
             wait_for_container_ready(creation_id, access_token, timeout=wait_timeout)
 
             logger.info("[%s] 게시 중...", item_id)
@@ -556,6 +601,7 @@ def run() -> None:
                 "id": item_id,
                 "status": "failed",
                 "error": str(exc),
+                "creation_id": item.get("creation_id"),
                 "timestamp": now.isoformat(),
             })
 
