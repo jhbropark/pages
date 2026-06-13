@@ -38,8 +38,18 @@ class ContentStrategyTests(unittest.TestCase):
         self.assertEqual(channels["instagram"]["caption_max_chars"], 220)
         self.assertEqual(channels["instagram"]["carousel_cards"], {"min": 4, "max": 6})
         self.assertEqual(channels["linkedin"]["hashtags"], {"min": 3, "max": 4})
-        self.assertEqual(self.strategy["operations"]["publish_days"], ["TU", "TH"])
-        self.assertEqual(self.strategy["operations"]["draft_days"], ["MO", "WE"])
+        every_day = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"]
+        self.assertEqual(self.strategy["operations"]["publish_days"], every_day)
+        self.assertEqual(self.strategy["operations"]["draft_days"], every_day)
+        self.assertEqual(self.strategy["operations"]["daily_frequency"], 2)
+        self.assertEqual(
+            channels["instagram"]["publish_times_kst"],
+            ["12:30", "19:00"],
+        )
+        self.assertEqual(
+            channels["linkedin"]["publish_times_kst"],
+            ["09:00", "15:00"],
+        )
 
     def test_visual_color_ratios_total_100(self):
         colors = self.strategy["visual_system"]["colors"]

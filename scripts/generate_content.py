@@ -5,7 +5,7 @@ Instagram + LinkedIn 이중 언어 콘텐츠 자동 생성 스크립트
 1. content/topics.json에서 오늘의 주제를 선택
 2. Claude API로 B2B 캡션 + 해시태그 + 이미지 헤드라인 생성
 3. 한국어·영어 이미지 카드 생성 (images/)
-4. Instagram 한국어 큐와 LinkedIn 한국어→영어 쌍 큐에 추가
+4. 매일 두 슬롯의 Instagram 한국어 큐와 LinkedIn 한국어→영어 쌍 큐에 추가
 
 필요한 환경 변수:
   ANTHROPIC_API_KEY - Claude API 키
@@ -29,6 +29,7 @@ IMAGES_DIR = REPO_ROOT / "images"
 
 KST = timezone(timedelta(hours=9))
 PAGES_BASE_URL = "https://jhbropark.github.io/pages"
+RAW_BASE_URL = "https://raw.githubusercontent.com/jhbropark/pages/main"
 
 # 한글 폰트 후보 (GitHub Actions에서는 fonts-nanum 설치)
 KOREAN_FONT_CANDIDATES = [
@@ -51,13 +52,16 @@ FALLBACK_FONT_CANDIDATES = [
 # 1. 주제 선택
 # ---------------------------------------------------------------------------
 
-def pick_topic(now_kst: datetime) -> tuple[str, str, str]:
-    """오늘의 주제, 브랜드 가이드, 예약 시각(HH:MM)을 반환합니다."""
+def load_generation_config() -> dict:
     with open(TOPICS_FILE, encoding="utf-8") as f:
-        config = json.load(f)
+        return json.load(f)
+
+
+def pick_topic(config: dict, now_kst: datetime, slot_index: int) -> str:
+    """날짜와 슬롯에 따라 겹치지 않는 주제를 순환 선택합니다."""
     topics = config["topics"]
-    topic = topics[now_kst.timetuple().tm_yday % len(topics)]
-    return topic, config["brand_guide"], config.get("schedule_time_kst", "18:00")
+    topic_index = (now_kst.timetuple().tm_yday * len(config["daily_slots"]) + slot_index) % len(topics)
+    return topics[topic_index]
 
 
 # ---------------------------------------------------------------------------
@@ -137,7 +141,7 @@ CONTENT_SCHEMA = {
 }
 
 
-def generate_text(topic: str, brand_guide: str) -> dict:
+def generate_text(topic: str, brand_guide: str, editorial_focus: str = "") -> dict:
     client = anthropic.Anthropic()
     response = client.messages.create(
         model="claude-opus-4-8",
@@ -152,6 +156,7 @@ def generate_text(topic: str, brand_guide: str) -> dict:
                 "role": "user",
                 "content": (
                     f"오늘의 주제: \"{topic}\"\n\n"
+                    f"이번 슬롯의 편집 방향: {editorial_focus}\n\n"
                     "이 주제로 브랜드·마케팅·R&D·메디컬 담당자에게 "
                     "실무적인 관점이나 판단 기준을 주는 Instagram 게시물을 작성해 주세요. "
                     "복잡한 과학을 쉽게 전달하되 전문성을 낮추지 말고, "
@@ -440,22 +445,32 @@ def add_linkedin_pair(items: list[dict]) -> None:
 # 메인
 # ---------------------------------------------------------------------------
 
-def main() -> None:
-    now_kst = datetime.now(tz=KST)
-    post_id = f"post_{now_kst:%Y%m%d}"
-
-    # 같은 날 중복 생성 방지
+def slot_exists(post_id: str) -> bool:
     with open(QUEUE_FILE, encoding="utf-8") as f:
         queue = json.load(f)
-    if any(item["id"] == post_id for item in queue["items"]):
-        print(f"[{post_id}] 오늘 콘텐츠가 이미 존재합니다. 종료합니다.")
-        return
+    return any(item["id"] == post_id for item in queue["items"])
 
-    topic, brand_guide, schedule_time = pick_topic(now_kst)
-    print(f"오늘의 주제: {topic}")
 
+def generate_slot(
+    now_kst: datetime,
+    config: dict,
+    slot: dict,
+    slot_index: int,
+) -> bool:
+    slot_id = slot["id"]
+    post_id = f"post_{now_kst:%Y%m%d}_{slot_id}"
+    if slot_exists(post_id):
+        print(f"[{post_id}] 해당 슬롯 콘텐츠가 이미 존재합니다. 건너뜁니다.")
+        return False
+
+    topic = pick_topic(config, now_kst, slot_index)
+    print(f"[{slot_id}] 오늘의 주제: {topic}")
     print("Claude API로 캡션 생성 중...")
-    content = generate_text(topic, brand_guide)
+    content = generate_text(
+        topic,
+        config["brand_guide"],
+        slot.get("editorial_focus", ""),
+    )
     errors = validate_generated_content(content)
     if errors:
         raise ValueError("생성 콘텐츠 CTA 검증 실패: " + " / ".join(errors))
@@ -479,24 +494,30 @@ def main() -> None:
         seed=now_kst.timetuple().tm_yday,
     )
 
-    scheduled = compute_scheduled_time(now_kst, schedule_time)
+    scheduled = compute_scheduled_time(now_kst, slot["instagram_time_kst"])
     add_to_queue({
         "id": post_id,
         "status": "pending",
         "topic": topic,
-        "image_url": f"{PAGES_BASE_URL}/images/{image_filename}",
+        "format": "single_image",
+        "slot": slot_id,
+        "image_url": f"{RAW_BASE_URL}/images/{image_filename}",
         "caption": content["caption"],
         "hashtags": content["hashtags"],
         "scheduled_time": scheduled.isoformat(),
         "created_at": now_kst.isoformat(),
         "generated_by": "claude-opus-4-8",
     })
-    linkedin_scheduled = compute_scheduled_time(now_kst, "09:00")
-    pair_id = f"linkedin_{now_kst:%Y%m%d}"
+    linkedin_scheduled = compute_scheduled_time(
+        now_kst,
+        slot["linkedin_time_kst"],
+    )
+    pair_id = f"linkedin_{now_kst:%Y%m%d}_{slot_id}"
     common = {
         "pair_id": pair_id,
         "status": "pending",
         "topic": topic,
+        "slot": slot_id,
         "scheduled_time": linkedin_scheduled.isoformat(),
         "created_at": now_kst.isoformat(),
         "generated_by": "claude-opus-4-8",
@@ -510,7 +531,7 @@ def main() -> None:
             "pair_order": 1,
             "commentary": content["linkedin_ko"],
             "hashtags": content["linkedin_ko_hashtags"],
-            "image_url": f"{PAGES_BASE_URL}/images/{linkedin_ko_image_filename}",
+            "image_url": f"{RAW_BASE_URL}/images/{linkedin_ko_image_filename}",
             "alt_text": f"bbbb.beauty 한국어 카드: {content['image_headline']}",
         },
         {
@@ -520,14 +541,25 @@ def main() -> None:
             "pair_order": 2,
             "commentary": content["linkedin_en"],
             "hashtags": content["linkedin_en_hashtags"],
-            "image_url": f"{PAGES_BASE_URL}/images/{linkedin_en_image_filename}",
+            "image_url": f"{RAW_BASE_URL}/images/{linkedin_en_image_filename}",
             "alt_text": f"bbbb.beauty English card: {content['english_image_headline']}",
         },
     ])
     print(
-        f"큐에 추가 완료: Instagram 1개 + LinkedIn 언어쌍 2개 "
-        f"(예약: {linkedin_scheduled.isoformat()})"
+        f"[{slot_id}] 큐에 추가 완료: Instagram 1개 "
+        f"({scheduled.isoformat()}) + LinkedIn 언어쌍 2개 "
+        f"({linkedin_scheduled.isoformat()})"
     )
+    return True
+
+
+def main() -> None:
+    now_kst = datetime.now(tz=KST)
+    config = load_generation_config()
+    generated = 0
+    for slot_index, slot in enumerate(config["daily_slots"]):
+        generated += int(generate_slot(now_kst, config, slot, slot_index))
+    print(f"오늘 생성된 슬롯: {generated}/{len(config['daily_slots'])}")
 
 
 if __name__ == "__main__":

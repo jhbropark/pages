@@ -1,5 +1,6 @@
 import importlib.util
 import unittest
+from datetime import datetime
 from pathlib import Path
 
 
@@ -51,6 +52,18 @@ class ContentConversionTests(unittest.TestCase):
         self.content["dm_keyword"] = ""
         errors = generate_content.validate_generated_content(self.content)
         self.assertTrue(any("DM 키워드" in error for error in errors))
+
+    def test_two_daily_slots_select_different_topics(self):
+        config = {
+            "daily_slots": [{"id": "morning"}, {"id": "afternoon"}],
+            "topics": ["A", "B", "C", "D"],
+        }
+        now = datetime(2026, 6, 13, tzinfo=generate_content.KST)
+        selected = [
+            generate_content.pick_topic(config, now, slot_index)
+            for slot_index in range(2)
+        ]
+        self.assertEqual(len(set(selected)), 2)
 
 
 if __name__ == "__main__":

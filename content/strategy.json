@@ -162,7 +162,10 @@
         "max": 7
       },
       "cta": "댓글 질문 + DM 키워드 + 프로필 링크를 필수로 넣고 저장·공유·동료 태그 중 하나를 추가",
-      "publish_time_kst": "19:00"
+      "publish_times_kst": [
+        "12:30",
+        "19:00"
+      ]
     },
     "linkedin": {
       "body_chars": {
@@ -197,7 +200,10 @@
         },
         "image_rule": "LinkedIn 이미지는 피드 카드의 좌우 여백 없이 표시되도록 1200×627 가로형으로 별도 생성한다."
       },
-      "publish_time_kst": "09:00"
+      "publish_times_kst": [
+        "09:00",
+        "15:00"
+      ]
     }
   },
   "compliance": {
@@ -261,14 +267,25 @@
   },
   "operations": {
     "publish_days": [
+      "MO",
       "TU",
-      "TH"
+      "WE",
+      "TH",
+      "FR",
+      "SA",
+      "SU"
     ],
     "draft_days": [
       "MO",
-      "WE"
+      "TU",
+      "WE",
+      "TH",
+      "FR",
+      "SA",
+      "SU"
     ],
     "draft_time_kst": "06:00",
+    "daily_frequency": 2,
     "approval_deadline_kst": "15:00",
     "reviewers": [
       "CMO Jay Im",

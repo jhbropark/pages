@@ -20,7 +20,20 @@
     "soft_beige": "#F8F6F2",
     "aqua_blue": "#0EA5E9"
   },
-  "schedule_time_kst": "18:00",
+  "daily_slots": [
+    {
+      "id": "morning",
+      "instagram_time_kst": "12:30",
+      "linkedin_time_kst": "09:00",
+      "editorial_focus": "과학 커뮤니케이션 인사이트와 B2B 의사결정 질문"
+    },
+    {
+      "id": "afternoon",
+      "instagram_time_kst": "19:00",
+      "linkedin_time_kst": "15:00",
+      "editorial_focus": "3D/MOA 제작 노하우, 산업 문제 해결, 프로젝트 방법론"
+    }
+  ],
   "topic_bank": [
     {
       "pillar_id": "science_communication",
