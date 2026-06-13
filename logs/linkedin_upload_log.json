@@ -178,5 +178,77 @@
     "status": "uploaded",
     "post_urn": "urn:li:share:7471276031086063616",
     "timestamp": "2026-06-12T19:03:36.224845+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_01_insight_ko",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471394902375936003",
+    "timestamp": "2026-06-13T02:55:56.884425+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_01_insight_en",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471394907547455489",
+    "timestamp": "2026-06-13T02:55:58.607602+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_02_moa-craft_ko",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471394914677874688",
+    "timestamp": "2026-06-13T02:55:59.750642+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_02_moa-craft_en",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471394918976917504",
+    "timestamp": "2026-06-13T02:56:01.307173+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_03_industry-solution_ko",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471394925884948481",
+    "timestamp": "2026-06-13T02:56:02.408217+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_03_industry-solution_en",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471394930716774400",
+    "timestamp": "2026-06-13T02:56:03.707327+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_04_methodology_ko",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471394937062961153",
+    "timestamp": "2026-06-13T02:56:05.097096+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_04_methodology_en",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471394941714444288",
+    "timestamp": "2026-06-13T02:56:06.740212+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_05_portfolio_ko",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471394948102238208",
+    "timestamp": "2026-06-13T02:56:07.784524+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_05_portfolio_en",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471394953307295744",
+    "timestamp": "2026-06-13T02:56:09.427256+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_06_philosophy_ko",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471394960106336256",
+    "timestamp": "2026-06-13T02:56:10.576637+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_06_philosophy_en",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471394963683962880",
+    "timestamp": "2026-06-13T02:56:11.744950+00:00"
   }
 ]
