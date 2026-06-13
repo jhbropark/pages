@@ -494,11 +494,13 @@
         "#ScientificVisualization",
         "#bbbbbeauty"
       ],
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "six_type_test",
       "scheduled_time": "2026-06-13T02:52:36.135249+00:00",
       "created_at": "2026-06-13T02:52:36.135249+00:00",
-      "generated_by": "codex-six-channel-types"
+      "generated_by": "codex-six-channel-types",
+      "post_url": "https://www.instagram.com/reel/DZgpUE4kxIP/",
+      "uploaded_at": "2026-06-13T02:56:48+00:00"
     },
     {
       "id": "post_20260613_six_types_04_image_story",
@@ -520,11 +522,13 @@
       "video_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/channel-six-types/instagram/05-process-video-story.mp4",
       "caption": "",
       "hashtags": [],
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "six_type_test",
       "scheduled_time": "2026-06-13T02:52:36.135249+00:00",
       "created_at": "2026-06-13T02:52:36.135249+00:00",
-      "generated_by": "codex-six-channel-types"
+      "generated_by": "codex-six-channel-types",
+      "post_url": "https://www.instagram.com/stories/bbbb.beauty_official/3918313727372497981",
+      "uploaded_at": "2026-06-13T02:57:27+00:00"
     },
     {
       "id": "post_20260613_six_types_06_portfolio",

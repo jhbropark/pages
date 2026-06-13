@@ -457,7 +457,7 @@ def wait_for_container_ready(
         result = _api_get(
             creation_id,
             access_token,
-            "status_code,status,video_status",
+            "status_code,status",
         )
         status_code = result.get("status_code", "")
         status_detail = result.get("status", "")
@@ -471,11 +471,10 @@ def wait_for_container_ready(
             )
         logger.info(
             "미디어 처리 대기 중... "
-            "(creation_id=%s, status_code=%s, status=%s, video_status=%s)",
+            "(creation_id=%s, status_code=%s, status=%s)",
             creation_id,
             status_code or "unknown",
             status_detail or "unknown",
-            json.dumps(result.get("video_status", {}), ensure_ascii=False),
         )
         remaining = deadline - time.time()
         if remaining > 0:
