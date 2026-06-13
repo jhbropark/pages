@@ -13,6 +13,12 @@ SPEC.loader.exec_module(linkedin_upload)
 
 
 class LinkedInUploadTests(unittest.TestCase):
+    def test_sanitize_korean_brand_particle_prevents_idn_link(self):
+        text = "bbbb.beauty는 과학을 시각화하고 bbbb.beauty가 검토합니다."
+        sanitized = linkedin_upload.sanitize_linkedin_text(text)
+        self.assertEqual(sanitized, "저희는 과학을 시각화하고 저희가 검토합니다.")
+        self.assertNotIn("bbbb.beauty는", sanitized)
+
     def test_resolve_person_author_urn_from_userinfo(self):
         response = MagicMock()
         response.read.return_value = json.dumps({"sub": "person123"}).encode("utf-8")

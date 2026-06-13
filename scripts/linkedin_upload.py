@@ -5,6 +5,7 @@ import json
 import logging
 import mimetypes
 import os
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -245,8 +246,21 @@ def append_log(entry: dict) -> None:
 
 
 def sanitize_linkedin_text(text: str) -> str:
-    """LinkedIn에서 그대로 노출되는 Markdown 별표를 제거합니다."""
-    return text.replace("*", "")
+    """Remove unsupported markup and prevent Korean particles becoming IDN links."""
+    replacements = {
+        "bbbb.beauty는": "저희는",
+        "bbbb.beauty가": "저희가",
+        "bbbb.beauty를": "저희를",
+        "bbbb.beauty와": "저희와",
+        "bbbb.beauty의": "저희의",
+        "bbbb.beauty에서": "저희 회사에서",
+        "bbbb.beauty로": "저희 회사로",
+        "bbbb.beauty입니다": "저희는 bbbb.beauty입니다",
+    }
+    sanitized = text.replace("*", "")
+    for source, target in replacements.items():
+        sanitized = sanitized.replace(source, target)
+    return re.sub(r"bbbb\.beauty(?=[가-힣])", "bbbb beauty ", sanitized)
 
 
 def build_commentary(item: dict) -> str:
