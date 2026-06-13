@@ -322,5 +322,149 @@
     "status": "uploaded",
     "post_urn": "urn:li:share:7471403980091244544",
     "timestamp": "2026-06-13T03:32:01.145600+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_01_insight_en",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471394907547455489",
+    "timestamp": "2026-06-13T08:24:02.344475+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_02_moa-craft_en",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471394918976917504",
+    "timestamp": "2026-06-13T08:24:02.930196+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_03_industry-solution_en",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471394930716774400",
+    "timestamp": "2026-06-13T08:24:03.504328+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_04_methodology_en",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471394941714444288",
+    "timestamp": "2026-06-13T08:24:04.224699+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_05_portfolio_en",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471394953307295744",
+    "timestamp": "2026-06-13T08:24:04.816777+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_06_philosophy_en",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471394963683962880",
+    "timestamp": "2026-06-13T08:24:05.413951+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_01_insight_ko_domain_fixed",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471403956485660672",
+    "timestamp": "2026-06-13T08:24:05.991311+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_02_moa-craft_ko_domain_fixed",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471403961674117120",
+    "timestamp": "2026-06-13T08:24:06.586068+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_03_industry-solution_ko_domain_fixed",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471403966606761984",
+    "timestamp": "2026-06-13T08:24:07.168478+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_04_methodology_ko_domain_fixed",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471403970956275712",
+    "timestamp": "2026-06-13T08:24:07.789900+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_05_portfolio_ko_domain_fixed",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471403975141900288",
+    "timestamp": "2026-06-13T08:24:08.280363+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_06_philosophy_ko_domain_fixed",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471403980091244544",
+    "timestamp": "2026-06-13T08:24:08.860359+00:00"
+  },
+  {
+    "id": "linkedin_20260613_diverse_visual_v2_01_insight_ko",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471477502192930816",
+    "timestamp": "2026-06-13T08:24:10.119654+00:00"
+  },
+  {
+    "id": "linkedin_20260613_diverse_visual_v2_01_insight_en",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471477507075100672",
+    "timestamp": "2026-06-13T08:24:11.841743+00:00"
+  },
+  {
+    "id": "linkedin_20260613_diverse_visual_v2_02_moa-craft_ko",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471477514205298688",
+    "timestamp": "2026-06-13T08:24:12.996749+00:00"
+  },
+  {
+    "id": "linkedin_20260613_diverse_visual_v2_02_moa-craft_en",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471477519242776576",
+    "timestamp": "2026-06-13T08:24:14.748636+00:00"
+  },
+  {
+    "id": "linkedin_20260613_diverse_visual_v2_03_industry-solution_ko",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471477526247301120",
+    "timestamp": "2026-06-13T08:24:15.936327+00:00"
+  },
+  {
+    "id": "linkedin_20260613_diverse_visual_v2_03_industry-solution_en",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471477530756030465",
+    "timestamp": "2026-06-13T08:24:17.103413+00:00"
+  },
+  {
+    "id": "linkedin_20260613_diverse_visual_v2_04_methodology_ko",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471477535537553409",
+    "timestamp": "2026-06-13T08:24:18.129649+00:00"
+  },
+  {
+    "id": "linkedin_20260613_diverse_visual_v2_04_methodology_en",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471477539870425088",
+    "timestamp": "2026-06-13T08:24:19.638118+00:00"
+  },
+  {
+    "id": "linkedin_20260613_diverse_visual_v2_05_portfolio_ko",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471477547357130752",
+    "timestamp": "2026-06-13T08:24:20.974611+00:00"
+  },
+  {
+    "id": "linkedin_20260613_diverse_visual_v2_05_portfolio_en",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471477551954034689",
+    "timestamp": "2026-06-13T08:24:22.403828+00:00"
+  },
+  {
+    "id": "linkedin_20260613_diverse_visual_v2_06_philosophy_ko",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471477557822074880",
+    "timestamp": "2026-06-13T08:24:23.505383+00:00"
+  },
+  {
+    "id": "linkedin_20260613_diverse_visual_v2_06_philosophy_en",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471477563748548608",
+    "timestamp": "2026-06-13T08:24:24.992931+00:00"
   }
 ]

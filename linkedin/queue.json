@@ -586,7 +586,7 @@
       "pair_id": "linkedin_20260613_six_types_01_insight",
       "language": "en",
       "pair_order": 2,
-      "status": "delete_pending",
+      "status": "deleted",
       "pillar_id": "science_communication",
       "content_type": "insight",
       "topic": "Science communication insight",
@@ -605,7 +605,8 @@
       "post_urn": "urn:li:share:7471394907547455489",
       "image_urn": "urn:li:image:D5610AQHwb4ZTnrm7uQ",
       "uploaded_at": "2026-06-13T02:55:58.607602+00:00",
-      "replacement_reason": "Replace repeated card template with a distinct visual direction"
+      "replacement_reason": "Replace repeated card template with a distinct visual direction",
+      "deleted_at": "2026-06-13T08:24:02.344475+00:00"
     },
     {
       "id": "linkedin_20260613_six_types_02_moa-craft_ko",
@@ -638,7 +639,7 @@
       "pair_id": "linkedin_20260613_six_types_02_moa-craft",
       "language": "en",
       "pair_order": 2,
-      "status": "delete_pending",
+      "status": "deleted",
       "pillar_id": "moa_craft",
       "content_type": "moa-craft",
       "topic": "3D and MoA production craft",
@@ -657,7 +658,8 @@
       "post_urn": "urn:li:share:7471394918976917504",
       "image_urn": "urn:li:image:D5610AQF_XU2wc72gLg",
       "uploaded_at": "2026-06-13T02:56:01.307173+00:00",
-      "replacement_reason": "Replace repeated card template with a distinct visual direction"
+      "replacement_reason": "Replace repeated card template with a distinct visual direction",
+      "deleted_at": "2026-06-13T08:24:02.930196+00:00"
     },
     {
       "id": "linkedin_20260613_six_types_03_industry-solution_ko",
@@ -690,7 +692,7 @@
       "pair_id": "linkedin_20260613_six_types_03_industry-solution",
       "language": "en",
       "pair_order": 2,
-      "status": "delete_pending",
+      "status": "deleted",
       "pillar_id": "industry_solution",
       "content_type": "industry-solution",
       "topic": "Industry problem solving",
@@ -709,7 +711,8 @@
       "post_urn": "urn:li:share:7471394930716774400",
       "image_urn": "urn:li:image:D5610AQEEIsRIF_K-Pg",
       "uploaded_at": "2026-06-13T02:56:03.707327+00:00",
-      "replacement_reason": "Replace repeated card template with a distinct visual direction"
+      "replacement_reason": "Replace repeated card template with a distinct visual direction",
+      "deleted_at": "2026-06-13T08:24:03.504328+00:00"
     },
     {
       "id": "linkedin_20260613_six_types_04_methodology_ko",
@@ -742,7 +745,7 @@
       "pair_id": "linkedin_20260613_six_types_04_methodology",
       "language": "en",
       "pair_order": 2,
-      "status": "delete_pending",
+      "status": "deleted",
       "pillar_id": "methodology",
       "content_type": "methodology",
       "topic": "Project process and methodology",
@@ -761,7 +764,8 @@
       "post_urn": "urn:li:share:7471394941714444288",
       "image_urn": "urn:li:image:D5610AQEmt03gpWNBig",
       "uploaded_at": "2026-06-13T02:56:06.740212+00:00",
-      "replacement_reason": "Replace repeated card template with a distinct visual direction"
+      "replacement_reason": "Replace repeated card template with a distinct visual direction",
+      "deleted_at": "2026-06-13T08:24:04.224699+00:00"
     },
     {
       "id": "linkedin_20260613_six_types_05_portfolio_ko",
@@ -794,7 +798,7 @@
       "pair_id": "linkedin_20260613_six_types_05_portfolio",
       "language": "en",
       "pair_order": 2,
-      "status": "delete_pending",
+      "status": "deleted",
       "pillar_id": "portfolio",
       "content_type": "portfolio",
       "topic": "Services and portfolio",
@@ -813,7 +817,8 @@
       "post_urn": "urn:li:share:7471394953307295744",
       "image_urn": "urn:li:image:D5610AQEivtNs5wmB0g",
       "uploaded_at": "2026-06-13T02:56:09.427256+00:00",
-      "replacement_reason": "Replace repeated card template with a distinct visual direction"
+      "replacement_reason": "Replace repeated card template with a distinct visual direction",
+      "deleted_at": "2026-06-13T08:24:04.816777+00:00"
     },
     {
       "id": "linkedin_20260613_six_types_06_philosophy_ko",
@@ -846,7 +851,7 @@
       "pair_id": "linkedin_20260613_six_types_06_philosophy",
       "language": "en",
       "pair_order": 2,
-      "status": "delete_pending",
+      "status": "deleted",
       "pillar_id": "philosophy",
       "content_type": "philosophy",
       "topic": "bbbb.beauty perspective and philosophy",
@@ -865,14 +870,15 @@
       "post_urn": "urn:li:share:7471394963683962880",
       "image_urn": "urn:li:image:D5610AQEa5fceCAYhbA",
       "uploaded_at": "2026-06-13T02:56:11.744950+00:00",
-      "replacement_reason": "Replace repeated card template with a distinct visual direction"
+      "replacement_reason": "Replace repeated card template with a distinct visual direction",
+      "deleted_at": "2026-06-13T08:24:05.413951+00:00"
     },
     {
       "id": "linkedin_20260613_six_types_01_insight_ko_domain_fixed",
       "pair_id": "linkedin_20260613_six_types_01_insight_domain_fixed",
       "language": "ko",
       "pair_order": 1,
-      "status": "delete_pending",
+      "status": "deleted",
       "pillar_id": "science_communication",
       "content_type": "insight",
       "topic": "과학 커뮤니케이션 인사이트",
@@ -891,14 +897,15 @@
       "post_urn": "urn:li:share:7471403956485660672",
       "image_urn": "urn:li:image:D5610AQHEnX5UKcUHeQ",
       "uploaded_at": "2026-06-13T03:31:55.527968+00:00",
-      "replacement_reason": "Replace repeated card template with a distinct visual direction"
+      "replacement_reason": "Replace repeated card template with a distinct visual direction",
+      "deleted_at": "2026-06-13T08:24:05.991311+00:00"
     },
     {
       "id": "linkedin_20260613_six_types_02_moa-craft_ko_domain_fixed",
       "pair_id": "linkedin_20260613_six_types_02_moa-craft_domain_fixed",
       "language": "ko",
       "pair_order": 1,
-      "status": "delete_pending",
+      "status": "deleted",
       "pillar_id": "moa_craft",
       "content_type": "moa-craft",
       "topic": "3D/MoA 제작 노하우",
@@ -917,14 +924,15 @@
       "post_urn": "urn:li:share:7471403961674117120",
       "image_urn": "urn:li:image:D5610AQHY8zfpys5MAQ",
       "uploaded_at": "2026-06-13T03:31:56.761709+00:00",
-      "replacement_reason": "Replace repeated card template with a distinct visual direction"
+      "replacement_reason": "Replace repeated card template with a distinct visual direction",
+      "deleted_at": "2026-06-13T08:24:06.586068+00:00"
     },
     {
       "id": "linkedin_20260613_six_types_03_industry-solution_ko_domain_fixed",
       "pair_id": "linkedin_20260613_six_types_03_industry-solution_domain_fixed",
       "language": "ko",
       "pair_order": 1,
-      "status": "delete_pending",
+      "status": "deleted",
       "pillar_id": "industry_solution",
       "content_type": "industry-solution",
       "topic": "산업별 문제 해결",
@@ -943,14 +951,15 @@
       "post_urn": "urn:li:share:7471403966606761984",
       "image_urn": "urn:li:image:D5610AQHAOTleWAz04w",
       "uploaded_at": "2026-06-13T03:31:57.962137+00:00",
-      "replacement_reason": "Replace repeated card template with a distinct visual direction"
+      "replacement_reason": "Replace repeated card template with a distinct visual direction",
+      "deleted_at": "2026-06-13T08:24:07.168478+00:00"
     },
     {
       "id": "linkedin_20260613_six_types_04_methodology_ko_domain_fixed",
       "pair_id": "linkedin_20260613_six_types_04_methodology_domain_fixed",
       "language": "ko",
       "pair_order": 1,
-      "status": "delete_pending",
+      "status": "deleted",
       "pillar_id": "methodology",
       "content_type": "methodology",
       "topic": "프로젝트 과정과 방법론",
@@ -969,14 +978,15 @@
       "post_urn": "urn:li:share:7471403970956275712",
       "image_urn": "urn:li:image:D5610AQE8WX6IijWG7A",
       "uploaded_at": "2026-06-13T03:31:58.960676+00:00",
-      "replacement_reason": "Replace repeated card template with a distinct visual direction"
+      "replacement_reason": "Replace repeated card template with a distinct visual direction",
+      "deleted_at": "2026-06-13T08:24:07.789900+00:00"
     },
     {
       "id": "linkedin_20260613_six_types_05_portfolio_ko_domain_fixed",
       "pair_id": "linkedin_20260613_six_types_05_portfolio_domain_fixed",
       "language": "ko",
       "pair_order": 1,
-      "status": "delete_pending",
+      "status": "deleted",
       "pillar_id": "portfolio",
       "content_type": "portfolio",
       "topic": "서비스와 포트폴리오",
@@ -995,14 +1005,15 @@
       "post_urn": "urn:li:share:7471403975141900288",
       "image_urn": "urn:li:image:D5610AQFzDg5zQggJyQ",
       "uploaded_at": "2026-06-13T03:31:59.923086+00:00",
-      "replacement_reason": "Replace repeated card template with a distinct visual direction"
+      "replacement_reason": "Replace repeated card template with a distinct visual direction",
+      "deleted_at": "2026-06-13T08:24:08.280363+00:00"
     },
     {
       "id": "linkedin_20260613_six_types_06_philosophy_ko_domain_fixed",
       "pair_id": "linkedin_20260613_six_types_06_philosophy_domain_fixed",
       "language": "ko",
       "pair_order": 1,
-      "status": "delete_pending",
+      "status": "deleted",
       "pillar_id": "philosophy",
       "content_type": "philosophy",
       "topic": "bbbb.beauty의 관점과 철학",
@@ -1021,14 +1032,15 @@
       "post_urn": "urn:li:share:7471403980091244544",
       "image_urn": "urn:li:image:D5610AQG3rs_Y24J92Q",
       "uploaded_at": "2026-06-13T03:32:01.145600+00:00",
-      "replacement_reason": "Replace repeated card template with a distinct visual direction"
+      "replacement_reason": "Replace repeated card template with a distinct visual direction",
+      "deleted_at": "2026-06-13T08:24:08.860359+00:00"
     },
     {
       "id": "linkedin_20260613_diverse_visual_v2_01_insight_ko",
       "pair_id": "linkedin_20260613_diverse_visual_v2_01_insight",
       "language": "ko",
       "pair_order": 1,
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "science_communication",
       "content_type": "insight",
       "topic": "과학 커뮤니케이션 인사이트",
@@ -1043,14 +1055,17 @@
       "alt_text": "bbbb.beauty insight visual direction, ko",
       "scheduled_time": "2026-06-13T08:20:57.760610+00:00",
       "created_at": "2026-06-13T08:20:57.760610+00:00",
-      "generated_by": "codex-diverse-visual-series-v2"
+      "generated_by": "codex-diverse-visual-series-v2",
+      "post_urn": "urn:li:share:7471477502192930816",
+      "image_urn": "urn:li:image:D5610AQGQXfuad-YntA",
+      "uploaded_at": "2026-06-13T08:24:10.119654+00:00"
     },
     {
       "id": "linkedin_20260613_diverse_visual_v2_01_insight_en",
       "pair_id": "linkedin_20260613_diverse_visual_v2_01_insight",
       "language": "en",
       "pair_order": 2,
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "science_communication",
       "content_type": "insight",
       "topic": "Science communication insight",
@@ -1065,14 +1080,17 @@
       "alt_text": "bbbb.beauty insight visual direction, en",
       "scheduled_time": "2026-06-13T08:20:57.760610+00:00",
       "created_at": "2026-06-13T08:20:57.760610+00:00",
-      "generated_by": "codex-diverse-visual-series-v2"
+      "generated_by": "codex-diverse-visual-series-v2",
+      "post_urn": "urn:li:share:7471477507075100672",
+      "image_urn": "urn:li:image:D5610AQH0PaUGuoXemg",
+      "uploaded_at": "2026-06-13T08:24:11.841743+00:00"
     },
     {
       "id": "linkedin_20260613_diverse_visual_v2_02_moa-craft_ko",
       "pair_id": "linkedin_20260613_diverse_visual_v2_02_moa-craft",
       "language": "ko",
       "pair_order": 1,
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "moa_craft",
       "content_type": "moa-craft",
       "topic": "3D/MoA 제작 노하우",
@@ -1087,14 +1105,17 @@
       "alt_text": "bbbb.beauty moa-craft visual direction, ko",
       "scheduled_time": "2026-06-13T08:20:57.760610+00:00",
       "created_at": "2026-06-13T08:20:57.760610+00:00",
-      "generated_by": "codex-diverse-visual-series-v2"
+      "generated_by": "codex-diverse-visual-series-v2",
+      "post_urn": "urn:li:share:7471477514205298688",
+      "image_urn": "urn:li:image:D5610AQHr_1KqSSKIGg",
+      "uploaded_at": "2026-06-13T08:24:12.996749+00:00"
     },
     {
       "id": "linkedin_20260613_diverse_visual_v2_02_moa-craft_en",
       "pair_id": "linkedin_20260613_diverse_visual_v2_02_moa-craft",
       "language": "en",
       "pair_order": 2,
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "moa_craft",
       "content_type": "moa-craft",
       "topic": "3D and MoA production craft",
@@ -1109,14 +1130,17 @@
       "alt_text": "bbbb.beauty moa-craft visual direction, en",
       "scheduled_time": "2026-06-13T08:20:57.760610+00:00",
       "created_at": "2026-06-13T08:20:57.760610+00:00",
-      "generated_by": "codex-diverse-visual-series-v2"
+      "generated_by": "codex-diverse-visual-series-v2",
+      "post_urn": "urn:li:share:7471477519242776576",
+      "image_urn": "urn:li:image:D5610AQF2o0Juh9fOIw",
+      "uploaded_at": "2026-06-13T08:24:14.748636+00:00"
     },
     {
       "id": "linkedin_20260613_diverse_visual_v2_03_industry-solution_ko",
       "pair_id": "linkedin_20260613_diverse_visual_v2_03_industry-solution",
       "language": "ko",
       "pair_order": 1,
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "industry_solution",
       "content_type": "industry-solution",
       "topic": "산업별 문제 해결",
@@ -1131,14 +1155,17 @@
       "alt_text": "bbbb.beauty industry-solution visual direction, ko",
       "scheduled_time": "2026-06-13T08:20:57.760610+00:00",
       "created_at": "2026-06-13T08:20:57.760610+00:00",
-      "generated_by": "codex-diverse-visual-series-v2"
+      "generated_by": "codex-diverse-visual-series-v2",
+      "post_urn": "urn:li:share:7471477526247301120",
+      "image_urn": "urn:li:image:D5610AQEj7RqBWKaImw",
+      "uploaded_at": "2026-06-13T08:24:15.936327+00:00"
     },
     {
       "id": "linkedin_20260613_diverse_visual_v2_03_industry-solution_en",
       "pair_id": "linkedin_20260613_diverse_visual_v2_03_industry-solution",
       "language": "en",
       "pair_order": 2,
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "industry_solution",
       "content_type": "industry-solution",
       "topic": "Industry problem solving",
@@ -1153,14 +1180,17 @@
       "alt_text": "bbbb.beauty industry-solution visual direction, en",
       "scheduled_time": "2026-06-13T08:20:57.760610+00:00",
       "created_at": "2026-06-13T08:20:57.760610+00:00",
-      "generated_by": "codex-diverse-visual-series-v2"
+      "generated_by": "codex-diverse-visual-series-v2",
+      "post_urn": "urn:li:share:7471477530756030465",
+      "image_urn": "urn:li:image:D5610AQHcZyXDnQnWSw",
+      "uploaded_at": "2026-06-13T08:24:17.103413+00:00"
     },
     {
       "id": "linkedin_20260613_diverse_visual_v2_04_methodology_ko",
       "pair_id": "linkedin_20260613_diverse_visual_v2_04_methodology",
       "language": "ko",
       "pair_order": 1,
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "methodology",
       "content_type": "methodology",
       "topic": "프로젝트 과정과 방법론",
@@ -1175,14 +1205,17 @@
       "alt_text": "bbbb.beauty methodology visual direction, ko",
       "scheduled_time": "2026-06-13T08:20:57.760610+00:00",
       "created_at": "2026-06-13T08:20:57.760610+00:00",
-      "generated_by": "codex-diverse-visual-series-v2"
+      "generated_by": "codex-diverse-visual-series-v2",
+      "post_urn": "urn:li:share:7471477535537553409",
+      "image_urn": "urn:li:image:D5610AQHo5ECHvlx6cw",
+      "uploaded_at": "2026-06-13T08:24:18.129649+00:00"
     },
     {
       "id": "linkedin_20260613_diverse_visual_v2_04_methodology_en",
       "pair_id": "linkedin_20260613_diverse_visual_v2_04_methodology",
       "language": "en",
       "pair_order": 2,
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "methodology",
       "content_type": "methodology",
       "topic": "Project process and methodology",
@@ -1197,14 +1230,17 @@
       "alt_text": "bbbb.beauty methodology visual direction, en",
       "scheduled_time": "2026-06-13T08:20:57.760610+00:00",
       "created_at": "2026-06-13T08:20:57.760610+00:00",
-      "generated_by": "codex-diverse-visual-series-v2"
+      "generated_by": "codex-diverse-visual-series-v2",
+      "post_urn": "urn:li:share:7471477539870425088",
+      "image_urn": "urn:li:image:D5610AQGIPDdLJThU9g",
+      "uploaded_at": "2026-06-13T08:24:19.638118+00:00"
     },
     {
       "id": "linkedin_20260613_diverse_visual_v2_05_portfolio_ko",
       "pair_id": "linkedin_20260613_diverse_visual_v2_05_portfolio",
       "language": "ko",
       "pair_order": 1,
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "portfolio",
       "content_type": "portfolio",
       "topic": "서비스와 포트폴리오",
@@ -1219,14 +1255,17 @@
       "alt_text": "bbbb.beauty portfolio visual direction, ko",
       "scheduled_time": "2026-06-13T08:20:57.760610+00:00",
       "created_at": "2026-06-13T08:20:57.760610+00:00",
-      "generated_by": "codex-diverse-visual-series-v2"
+      "generated_by": "codex-diverse-visual-series-v2",
+      "post_urn": "urn:li:share:7471477547357130752",
+      "image_urn": "urn:li:image:D5610AQHr5VGehkrtBQ",
+      "uploaded_at": "2026-06-13T08:24:20.974611+00:00"
     },
     {
       "id": "linkedin_20260613_diverse_visual_v2_05_portfolio_en",
       "pair_id": "linkedin_20260613_diverse_visual_v2_05_portfolio",
       "language": "en",
       "pair_order": 2,
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "portfolio",
       "content_type": "portfolio",
       "topic": "Services and portfolio",
@@ -1241,14 +1280,17 @@
       "alt_text": "bbbb.beauty portfolio visual direction, en",
       "scheduled_time": "2026-06-13T08:20:57.760610+00:00",
       "created_at": "2026-06-13T08:20:57.760610+00:00",
-      "generated_by": "codex-diverse-visual-series-v2"
+      "generated_by": "codex-diverse-visual-series-v2",
+      "post_urn": "urn:li:share:7471477551954034689",
+      "image_urn": "urn:li:image:D5610AQGQw68LwrFYPQ",
+      "uploaded_at": "2026-06-13T08:24:22.403828+00:00"
     },
     {
       "id": "linkedin_20260613_diverse_visual_v2_06_philosophy_ko",
       "pair_id": "linkedin_20260613_diverse_visual_v2_06_philosophy",
       "language": "ko",
       "pair_order": 1,
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "philosophy",
       "content_type": "philosophy",
       "topic": "bbbb.beauty의 관점과 철학",
@@ -1263,14 +1305,17 @@
       "alt_text": "bbbb.beauty philosophy visual direction, ko",
       "scheduled_time": "2026-06-13T08:20:57.760610+00:00",
       "created_at": "2026-06-13T08:20:57.760610+00:00",
-      "generated_by": "codex-diverse-visual-series-v2"
+      "generated_by": "codex-diverse-visual-series-v2",
+      "post_urn": "urn:li:share:7471477557822074880",
+      "image_urn": "urn:li:image:D5610AQFUD0QBwtkcxg",
+      "uploaded_at": "2026-06-13T08:24:23.505383+00:00"
     },
     {
       "id": "linkedin_20260613_diverse_visual_v2_06_philosophy_en",
       "pair_id": "linkedin_20260613_diverse_visual_v2_06_philosophy",
       "language": "en",
       "pair_order": 2,
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "philosophy",
       "content_type": "philosophy",
       "topic": "bbbb.beauty perspective and philosophy",
@@ -1285,7 +1330,10 @@
       "alt_text": "bbbb.beauty philosophy visual direction, en",
       "scheduled_time": "2026-06-13T08:20:57.760610+00:00",
       "created_at": "2026-06-13T08:20:57.760610+00:00",
-      "generated_by": "codex-diverse-visual-series-v2"
+      "generated_by": "codex-diverse-visual-series-v2",
+      "post_urn": "urn:li:share:7471477563748548608",
+      "image_urn": "urn:li:image:D5610AQGNqy6RZVobsQ",
+      "uploaded_at": "2026-06-13T08:24:24.992931+00:00"
     }
   ]
 }
