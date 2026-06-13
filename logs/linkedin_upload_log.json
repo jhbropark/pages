@@ -250,5 +250,77 @@
     "status": "uploaded",
     "post_urn": "urn:li:share:7471394963683962880",
     "timestamp": "2026-06-13T02:56:11.744950+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_01_insight_ko",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471394902375936003",
+    "timestamp": "2026-06-13T03:31:51.180261+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_02_moa-craft_ko",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471394914677874688",
+    "timestamp": "2026-06-13T03:31:51.717000+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_03_industry-solution_ko",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471394925884948481",
+    "timestamp": "2026-06-13T03:31:52.186650+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_04_methodology_ko",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471394937062961153",
+    "timestamp": "2026-06-13T03:31:52.798700+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_05_portfolio_ko",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471394948102238208",
+    "timestamp": "2026-06-13T03:31:53.362345+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_06_philosophy_ko",
+    "status": "deleted",
+    "post_urn": "urn:li:share:7471394960106336256",
+    "timestamp": "2026-06-13T03:31:53.911868+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_01_insight_ko_domain_fixed",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471403956485660672",
+    "timestamp": "2026-06-13T03:31:55.527968+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_02_moa-craft_ko_domain_fixed",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471403961674117120",
+    "timestamp": "2026-06-13T03:31:56.761709+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_03_industry-solution_ko_domain_fixed",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471403966606761984",
+    "timestamp": "2026-06-13T03:31:57.962137+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_04_methodology_ko_domain_fixed",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471403970956275712",
+    "timestamp": "2026-06-13T03:31:58.960676+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_05_portfolio_ko_domain_fixed",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471403975141900288",
+    "timestamp": "2026-06-13T03:31:59.923086+00:00"
+  },
+  {
+    "id": "linkedin_20260613_six_types_06_philosophy_ko_domain_fixed",
+    "status": "uploaded",
+    "post_urn": "urn:li:share:7471403980091244544",
+    "timestamp": "2026-06-13T03:32:01.145600+00:00"
   }
 ]
