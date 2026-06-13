@@ -20,6 +20,7 @@ from pathlib import Path
 
 import anthropic
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from visual_direction_renderer import render_direction
 
 REPO_ROOT = Path(__file__).parent.parent
 TOPICS_FILE = REPO_ROOT / "content" / "topics.json"
@@ -326,8 +327,14 @@ def generate_linkedin_image(
     headline: str,
     output_path: Path,
     seed: int,
+    direction: str | None = None,
+    language: str = "ko",
 ) -> None:
-    """Create a 1200×627 LinkedIn card that fills the feed width."""
+    """Create a 1200x627 LinkedIn card using a rotating visual direction."""
+    if direction:
+        render_direction(direction, headline, language, output_path)
+        return
+
     width, height = 1200, 627
     image = Image.new("RGB", (width, height), (8, 20, 38))
     pixels = image.load()
@@ -483,15 +490,31 @@ def generate_slot(
     linkedin_en_image_filename = f"{post_id}_linkedin_en.jpg"
     print("한국어·영어 템플릿 이미지 생성 중...")
     generate_image(content["image_headline"], IMAGES_DIR / image_filename, seed=now_kst.timetuple().tm_yday)
+    visual_directions = (
+        "insight",
+        "moa-craft",
+        "industry-solution",
+        "methodology",
+        "portfolio",
+        "philosophy",
+    )
+    visual_direction = visual_directions[
+        (now_kst.timetuple().tm_yday * len(config["daily_slots"]) + slot_index)
+        % len(visual_directions)
+    ]
     generate_linkedin_image(
         content["image_headline"],
         IMAGES_DIR / linkedin_ko_image_filename,
         seed=now_kst.timetuple().tm_yday,
+        direction=visual_direction,
+        language="ko",
     )
     generate_linkedin_image(
         content["english_image_headline"],
         IMAGES_DIR / linkedin_en_image_filename,
         seed=now_kst.timetuple().tm_yday,
+        direction=visual_direction,
+        language="en",
     )
 
     scheduled = compute_scheduled_time(now_kst, slot["instagram_time_kst"])
