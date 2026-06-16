@@ -1365,7 +1365,7 @@
       "pair_id": "linkedin_20260616_data_understanding",
       "language": "en",
       "pair_order": 2,
-      "status": "pending",
+      "status": "uploaded",
       "pillar_id": "science_communication",
       "content_type": "daily-insight",
       "topic": "Why more clinical data does not always create understanding",
@@ -1380,7 +1380,10 @@
       "alt_text": "bbbb.beauty LinkedIn card about designing the order of understanding before adding more clinical data",
       "scheduled_time": "2026-06-16T10:30:00+09:00",
       "created_at": "2026-06-15T23:54:41.020752+00:00",
-      "generated_by": "codex-20260616-data-understanding"
+      "generated_by": "codex-20260616-data-understanding",
+      "post_urn": "urn:li:share:7472523782004490241",
+      "image_urn": "urn:li:image:D5610AQGKUUDFB52hPQ",
+      "uploaded_at": "2026-06-16T05:41:42.806851+00:00"
     }
   ]
 }
