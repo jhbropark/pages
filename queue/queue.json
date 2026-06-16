@@ -571,7 +571,7 @@
     },
     {
       "id": "post_20260616_data_understanding_carousel",
-      "status": "pending",
+      "status": "uploaded",
       "topic": "임상 데이터는 충분한데 고객은 왜 이해하지 못할까",
       "pillar_id": "science_communication",
       "format": "carousel",
@@ -593,7 +593,12 @@
       ],
       "scheduled_time": "2026-06-16T19:00:00+09:00",
       "created_at": "2026-06-15T23:54:41.020752+00:00",
-      "generated_by": "codex-20260616-data-understanding"
+      "generated_by": "codex-20260616-data-understanding",
+      "creation_id": "18108858475806318",
+      "container_created_at": "2026-06-16T10:07:50.093085+00:00",
+      "post_id": "18088040897300273",
+      "post_url": "https://www.instagram.com/p/DZpJFa0Fago/",
+      "uploaded_at": "2026-06-16T10:08:00.567115+00:00"
     }
   ]
 }
