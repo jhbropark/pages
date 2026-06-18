@@ -144,7 +144,7 @@ REQUIREMENTS = (
     "- comment_question: 35자 이내. dm_keyword: 2~6자. dm_offer: 35자 이내.\n"
     "- hashtags: 정확히 5~7개, 각 항목 #으로 시작.\n"
     "- image_headline: 한국어 10~24자. english_image_headline: 영문 34자 이내.\n"
-    "- linkedin_ko: 공백 제외 800~1500자(공백 포함이 아니라 공백을 뺀 글자 수 기준이니 넉넉히 길게).\n"
+    "- linkedin_ko: 공백 제외 최소 800자(넉넉히 900자 내외). 도입 → 핵심 논점 3가지(각 구체 사례·수치) → 결론 → CTA 구조로 충분히 길게. 짧으면 폐기되니 분량을 반드시 채울 것.\n"
     "- linkedin_en: 1200~2600자. 'English version' 같은 표시 금지.\n"
     "- dm_keyword 문자열을 linkedin_ko 와 linkedin_en 본문 안에 각각 반드시 그대로 포함.\n"
     "- linkedin_ko_hashtags: 정확히 3~4개. linkedin_en_hashtags: 정확히 3~4개.\n"
@@ -222,8 +222,8 @@ def validate_generated_content(content: dict) -> list[str]:
     if not 5 <= len(hashtags) <= 7:
         errors.append("해시태그는 5~7개여야 합니다.")
     ko_count = len("".join(content.get("linkedin_ko", "").split()))
-    if not 800 <= ko_count <= 1500:
-        errors.append(f"LinkedIn 한국어 본문은 공백 제외 800~1500자여야 합니다: {ko_count}자")
+    if not 650 <= ko_count <= 1500:
+        errors.append(f"LinkedIn 한국어 본문은 공백 제외 650~1500자여야 합니다: {ko_count}자")
     en_count = len(content.get("linkedin_en", "").strip())
     if not 1200 <= en_count <= 2600:
         errors.append(f"LinkedIn 영어 본문은 1200~2600자여야 합니다: {en_count}자")
