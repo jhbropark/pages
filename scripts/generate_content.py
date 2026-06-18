@@ -622,7 +622,4 @@ if __name__ == "__main__":
         import traceback
         print(f"콘텐츠 생성 실패: {exc}", file=sys.stderr)
         traceback.print_exc()
-        # 디버그: 런너에서 실제 존재하는 폰트 경로
-        for _p in KOREAN_FONT_CANDIDATES + FALLBACK_FONT_CANDIDATES:
-            print(f"[font] exists={Path(_p).exists()} {_p}", file=sys.stderr)
         sys.exit(1)
