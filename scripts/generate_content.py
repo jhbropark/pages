@@ -79,7 +79,7 @@ CONTENT_SCHEMA = {
         "hashtags": {
             "type": "array",
             "items": {"type": "string"},
-            "minItems": 5,
+            "minItems": 1,
             "maxItems": 7,
             "description": "핵심 한국어/영어 해시태그 5~7개, 각각 #으로 시작",
         },
@@ -115,13 +115,13 @@ CONTENT_SCHEMA = {
         "linkedin_ko_hashtags": {
             "type": "array",
             "items": {"type": "string"},
-            "minItems": 3,
+            "minItems": 1,
             "maxItems": 4,
         },
         "linkedin_en_hashtags": {
             "type": "array",
             "items": {"type": "string"},
-            "minItems": 3,
+            "minItems": 1,
             "maxItems": 4,
         },
     },
