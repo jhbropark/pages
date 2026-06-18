@@ -1,0 +1,44 @@
+name: Notion → Instagram 자동 게시
+
+on:
+  # 매일 KST 12:35 (03:35 UTC), 19:05 (10:05 UTC) — strategy.json publish_times 기준
+  schedule:
+    - cron: "35 3 * * *"
+    - cron: "5 10 * * *"
+  # 수동 실행
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Python 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Notion → Instagram 게시 실행
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+        run: python scripts/notion_instagram_publish.py
+
+      - name: 로그 커밋
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -f logs/notion_instagram_log.json ]; then
+            git add logs/notion_instagram_log.json
+          fi
+          git diff --cached --quiet || git commit -m "chore: Notion Instagram 게시 로그 저장 [skip ci]"
+          git push
