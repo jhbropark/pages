@@ -18,14 +18,42 @@ SOURCES = {
     "portfolio": ROOT / "images" / "replacements" / "body-cell-narrative" / "05-multi-channel-source.png",
     "philosophy": ROOT / "images" / "concepts" / "visual-directions-v3" / "03-micro-cinema-source.png",
 }
-SANS = Path("C:/Windows/Fonts/NotoSansKR-VF.ttf")
-SERIF = Path("C:/Windows/Fonts/NotoSerifKR-VF.ttf")
-LATIN = Path("C:/Windows/Fonts/bahnschrift.ttf")
+def _pick_font(candidates: list[str]) -> str | None:
+    for p in candidates:
+        if Path(p).exists():
+            return p
+    return None
+
+
+# 런너(Linux)에 존재하는 폰트를 우선 선택하고, 없으면 Windows 경로로 폴백
+SANS = _pick_font([
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+    "/usr/share/fonts/truetype/nanum/NanumGothic.ttf",
+    "C:/Windows/Fonts/NotoSansKR-VF.ttf",
+    "C:/Windows/Fonts/malgun.ttf",
+])
+SERIF = _pick_font([
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+    "/usr/share/fonts/truetype/nanum/NanumMyeongjo.ttf",
+    "/usr/share/fonts/truetype/nanum/NanumMyeongjoBold.ttf",
+    "C:/Windows/Fonts/NotoSerifKR-VF.ttf",
+]) or SANS
+LATIN = _pick_font([
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+    "C:/Windows/Fonts/bahnschrift.ttf",
+]) or SANS
 
 
 def _font(size: int, *, serif: bool = False, latin: bool = False) -> ImageFont.FreeTypeFont:
-    path = LATIN if latin else SERIF if serif else SANS
-    return ImageFont.truetype(str(path), size)
+    chosen = LATIN if latin else SERIF if serif else SANS
+    for path in (chosen, SANS, SERIF, LATIN):
+        if path and Path(path).exists():
+            try:
+                return ImageFont.truetype(str(path), size)
+            except OSError:
+                continue
+    return ImageFont.load_default(size=size)
 
 
 def _cover(path: Path, size: tuple[int, int], bias_x: float = 0.5, bias_y: float = 0.5) -> Image.Image:
