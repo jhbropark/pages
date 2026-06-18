@@ -599,6 +599,46 @@
       "post_id": "18088040897300273",
       "post_url": "https://www.instagram.com/p/DZpJFa0Fago/",
       "uploaded_at": "2026-06-16T10:08:00.567115+00:00"
+    },
+    {
+      "id": "post_20260618_morning",
+      "status": "pending",
+      "topic": "더마코스메틱의 성분 설명을 고객 언어로 번역하는 세 단계",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260618_morning_ko.jpg",
+      "caption": "성분명을 그대로 옮기면 정보가 되지만, 고객 언어로 옮기면 신뢰가 됩니다. 메커니즘에서 가치까지 잇는 세 단계로 더마코스메틱 메시지의 격차를 좁혀보세요.\n\n댓글: 메커니즘 vs 결과, 뭐가 먼저?\nDM “번역3”: 성분 메시지 번역 체크리스트 제공\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#더마코스메틱",
+        "#과학커뮤니케이션",
+        "#성분마케팅",
+        "#MOA",
+        "#브랜드신뢰",
+        "#bbbbbeauty"
+      ],
+      "scheduled_time": "2026-06-19T12:30:00+09:00",
+      "created_at": "2026-06-18T11:49:45.072060+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260618_afternoon",
+      "status": "pending",
+      "topic": "임상 데이터와 프리미엄 비주얼을 함께 설계해야 하는 이유",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260618_afternoon_ko.jpg",
+      "caption": "임상 데이터는 신뢰를 만들고, 비주얼은 그 신뢰를 전달합니다. 둘을 따로 설계하면 메시지가 흩어집니다. MOA 스토리보드 단계부터 데이터와 비주얼을 함께 묶어야 과학이 설득으로 이어집니다.\n\n댓글: 먼저 정하나요? 데이터 A vs 비주얼 B\nDM “MOA”: MOA 설계 체크리스트 PDF 보내드립니다\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#메디컬마케팅",
+        "#3D비주얼",
+        "#B2B콘텐츠"
+      ],
+      "scheduled_time": "2026-06-18T19:00:00+09:00",
+      "created_at": "2026-06-18T11:49:45.072060+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
