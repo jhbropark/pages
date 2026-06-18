@@ -138,8 +138,46 @@ CONTENT_SCHEMA = {
 }
 
 
-def generate_text(topic: str, brand_guide: str, editorial_focus: str = "") -> dict:
+REQUIREMENTS = (
+    "\n\n[반드시 지켜야 하는 엄격한 분량·개수 요건 — 하나라도 어기면 폐기됩니다]\n"
+    "- caption(핵심 본문): 한국어 80~100자. (시스템이 댓글/DM/링크 줄을 덧붙이므로 본문이 길면 전체가 220자를 넘김)\n"
+    "- comment_question: 35자 이내. dm_keyword: 2~6자. dm_offer: 35자 이내.\n"
+    "- hashtags: 정확히 5~7개, 각 항목 #으로 시작.\n"
+    "- image_headline: 한국어 10~24자. english_image_headline: 영문 34자 이내.\n"
+    "- linkedin_ko: 공백 제외 800~1500자(공백 포함이 아니라 공백을 뺀 글자 수 기준이니 넉넉히 길게).\n"
+    "- linkedin_en: 1200~2600자. 'English version' 같은 표시 금지.\n"
+    "- dm_keyword 문자열을 linkedin_ko 와 linkedin_en 본문 안에 각각 반드시 그대로 포함.\n"
+    "- linkedin_ko_hashtags: 정확히 3~4개. linkedin_en_hashtags: 정확히 3~4개.\n"
+)
+
+
+def generate_text(
+    topic: str, brand_guide: str, editorial_focus: str = "", feedback: str = ""
+) -> dict:
     client = anthropic.Anthropic()
+    user_content = (
+        f"오늘의 주제: \"{topic}\"\n\n"
+        f"이번 슬롯의 편집 방향: {editorial_focus}\n\n"
+        "이 주제로 브랜드·마케팅·R&D·메디컬 담당자에게 "
+        "실무적인 관점이나 판단 기준을 주는 Instagram 게시물을 작성해 주세요. "
+        "복잡한 과학을 쉽게 전달하되 전문성을 낮추지 말고, "
+        "서비스를 과도하게 광고하기보다 bbbb.beauty의 관점과 역량이 "
+        "자연스럽게 드러나게 하세요. 소비자용 피부관리 팁은 작성하지 마세요. "
+        "반드시 고객이 댓글과 DM으로 쉽게 대화를 시작할 수 있는 장치를 만드세요. "
+        "댓글 질문은 A/B 선택이나 한 단어 답변처럼 부담이 없어야 하며, "
+        "DM 키워드에는 받을 자료나 다음 단계를 구체적으로 연결하세요. "
+        "같은 주제의 LinkedIn 한국어판과 영어판도 작성하세요. "
+        "영어판은 번역투가 아닌 글로벌 B2B 의사결정자를 위한 자연스러운 "
+        "에세이로 쓰고 'English version' 같은 언어 표시는 넣지 마세요. "
+        "두 언어판은 같은 주장, 질문, DM 키워드, 문의 허브 "
+        "https://jhbropark.github.io/pages/contact.html 을 사용하세요."
+        + REQUIREMENTS
+    )
+    if feedback:
+        user_content += (
+            "\n\n[직전 시도가 요건을 위반했습니다. 아래를 반드시 교정해서 다시 작성하세요]\n"
+            + feedback
+        )
     response = client.messages.create(
         model="claude-opus-4-8",
         max_tokens=4096,
@@ -148,28 +186,7 @@ def generate_text(topic: str, brand_guide: str, editorial_focus: str = "") -> di
             "에이전시의 과학 커뮤니케이션 에디터입니다. "
             f"브랜드 가이드: {brand_guide}"
         ),
-        messages=[
-            {
-                "role": "user",
-                "content": (
-                    f"오늘의 주제: \"{topic}\"\n\n"
-                    f"이번 슬롯의 편집 방향: {editorial_focus}\n\n"
-                    "이 주제로 브랜드·마케팅·R&D·메디컬 담당자에게 "
-                    "실무적인 관점이나 판단 기준을 주는 Instagram 게시물을 작성해 주세요. "
-                    "복잡한 과학을 쉽게 전달하되 전문성을 낮추지 말고, "
-                    "서비스를 과도하게 광고하기보다 bbbb.beauty의 관점과 역량이 "
-                    "자연스럽게 드러나게 하세요. 소비자용 피부관리 팁은 작성하지 마세요. "
-                    "반드시 고객이 댓글과 DM으로 쉽게 대화를 시작할 수 있는 장치를 만드세요. "
-                    "댓글 질문은 A/B 선택이나 한 단어 답변처럼 부담이 없어야 하며, "
-                    "DM 키워드에는 받을 자료나 다음 단계를 구체적으로 연결하세요. "
-                    "같은 주제의 LinkedIn 한국어판과 영어판도 작성하세요. "
-                    "영어판은 번역투가 아닌 글로벌 B2B 의사결정자를 위한 자연스러운 "
-                    "에세이로 쓰고 'English version' 같은 언어 표시는 넣지 마세요. "
-                    "두 언어판은 같은 주장, 질문, DM 키워드, 문의 허브 "
-                    "https://jhbropark.github.io/pages/contact.html 을 사용하세요."
-                ),
-            }
-        ],
+        messages=[{"role": "user", "content": user_content}],
         output_config={"format": {"type": "json_schema", "schema": CONTENT_SCHEMA}},
     )
     text = next(b.text for b in response.content if b.type == "text")
@@ -469,14 +486,25 @@ def generate_slot(
     topic = pick_topic(config, now_kst, slot_index)
     print(f"[{slot_id}] 오늘의 주제: {topic}")
     print("Claude API로 캡션 생성 중...")
-    content = generate_text(
-        topic,
-        config["brand_guide"],
-        slot.get("editorial_focus", ""),
-    )
-    errors = validate_generated_content(content)
+    content = None
+    errors: list[str] = []
+    max_attempts = 3
+    for attempt in range(1, max_attempts + 1):
+        feedback = "- " + "\n- ".join(errors) if errors else ""
+        content = generate_text(
+            topic,
+            config["brand_guide"],
+            slot.get("editorial_focus", ""),
+            feedback=feedback,
+        )
+        errors = validate_generated_content(content)
+        if not errors:
+            break
+        print(f"  검증 실패(시도 {attempt}/{max_attempts}): {' / '.join(errors)}")
     if errors:
-        raise ValueError("생성 콘텐츠 CTA 검증 실패: " + " / ".join(errors))
+        raise ValueError(
+            f"생성 콘텐츠 CTA 검증 실패({max_attempts}회 시도): " + " / ".join(errors)
+        )
     content["caption"] = build_conversion_caption(content)
     print(f"헤드라인: {content['image_headline']}")
 
