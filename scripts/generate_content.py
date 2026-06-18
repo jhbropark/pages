@@ -80,7 +80,6 @@ CONTENT_SCHEMA = {
             "type": "array",
             "items": {"type": "string"},
             "minItems": 1,
-            "maxItems": 7,
             "description": "핵심 한국어/영어 해시태그 5~7개, 각각 #으로 시작",
         },
         "image_headline": {
@@ -101,7 +100,6 @@ CONTENT_SCHEMA = {
         },
         "english_image_headline": {
             "type": "string",
-            "maxLength": 34,
             "description": "English image headline. Maximum 34 characters, concise and premium.",
         },
         "linkedin_ko": {
@@ -116,13 +114,11 @@ CONTENT_SCHEMA = {
             "type": "array",
             "items": {"type": "string"},
             "minItems": 1,
-            "maxItems": 4,
         },
         "linkedin_en_hashtags": {
             "type": "array",
             "items": {"type": "string"},
             "minItems": 1,
-            "maxItems": 4,
         },
     },
     "required": [
