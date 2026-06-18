@@ -246,7 +246,10 @@ def validate_generated_content(content: dict) -> list[str]:
 def _load_font(size: int, variation: str = "Regular") -> ImageFont.FreeTypeFont:
     for path in KOREAN_FONT_CANDIDATES:
         if Path(path).exists():
-            loaded = ImageFont.truetype(path, size)
+            try:
+                loaded = ImageFont.truetype(path, size)
+            except OSError:
+                continue  # 존재하지만 열 수 없는 폰트는 건너뜀
             try:
                 loaded.set_variation_by_name(variation)
             except (AttributeError, OSError):
@@ -254,7 +257,10 @@ def _load_font(size: int, variation: str = "Regular") -> ImageFont.FreeTypeFont:
             return loaded
     for path in FALLBACK_FONT_CANDIDATES:
         if Path(path).exists():
-            return ImageFont.truetype(path, size)
+            try:
+                return ImageFont.truetype(path, size)
+            except OSError:
+                continue
     return ImageFont.load_default(size=size)
 
 
