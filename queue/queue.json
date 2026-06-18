@@ -599,6 +599,46 @@
       "post_id": "18088040897300273",
       "post_url": "https://www.instagram.com/p/DZpJFa0Fago/",
       "uploaded_at": "2026-06-16T10:08:00.567115+00:00"
+    },
+    {
+      "id": "post_20260618_morning",
+      "status": "pending",
+      "topic": "더마코스메틱의 성분 설명을 고객 언어로 번역하는 세 단계",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260618_morning_ko.jpg",
+      "caption": "성분명만 나열한 자료는 신뢰를 만들지 못합니다. 작용 기전을 고객 언어로 번역하는 세 단계: 메커니즘 정의, 근거 위계 정리, 시각적 비유 설계. 정확성을 잃지 않고 이해를 높이는 길입니다.\n\n댓글: 가장 어려운 단계는? A 정의 B 비유\nDM “번역3단계”: 성분 메시지 번역 체크리스트 PDF 제공\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#더마코스메틱",
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#B2B마케팅",
+        "#메디컬콘텐츠",
+        "#brandstrategy"
+      ],
+      "scheduled_time": "2026-06-19T12:30:00+09:00",
+      "created_at": "2026-06-18T11:52:43.126080+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260618_afternoon",
+      "status": "pending",
+      "topic": "임상 데이터와 프리미엄 비주얼을 함께 설계해야 하는 이유",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260618_afternoon_ko.jpg",
+      "caption": "임상 데이터가 정확해도 화면에서 무너지면 신뢰는 전달되지 않습니다. 비주얼과 과학을 따로 설계하면 둘 다 약해집니다. MOA는 데이터 구조와 시각 언어를 처음부터 함께 짜야 합니다.\n\n댓글: 우선순위는? A 정확성 B 임팩트\nDM “MOA”: MOA 영상 사전 설계 체크리스트 발송\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학시각화",
+        "#메디컬콘텐츠",
+        "#더마코스메틱",
+        "#3D애니메이션",
+        "#B2B마케팅"
+      ],
+      "scheduled_time": "2026-06-18T19:00:00+09:00",
+      "created_at": "2026-06-18T11:52:43.126080+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }

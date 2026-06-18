@@ -1384,6 +1384,94 @@
       "post_urn": "urn:li:share:7472523782004490241",
       "image_urn": "urn:li:image:D5610AQGKUUDFB52hPQ",
       "uploaded_at": "2026-06-16T05:41:42.806851+00:00"
+    },
+    {
+      "pair_id": "linkedin_20260618_morning",
+      "status": "pending",
+      "topic": "더마코스메틱의 성분 설명을 고객 언어로 번역하는 세 단계",
+      "slot": "morning",
+      "scheduled_time": "2026-06-19T09:00:00+09:00",
+      "created_at": "2026-06-18T11:52:43.126080+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "번역3단계",
+      "id": "linkedin_20260618_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "더마코스메틱 브랜드의 성분 자료를 검토하다 보면 같은 패턴을 자주 봅니다. 활성 성분의 이름과 농도, 인비트로 결과는 빼곡한데, 정작 고객이 '그래서 이게 내 피부에서 어떻게 작동하나'를 이해할 단서는 비어 있습니다. 과학적으로 정확한 자료가 반드시 설득력 있는 자료는 아닙니다. 우리는 성분 설명을 고객 언어로 번역하는 작업을 세 단계로 나눠 접근합니다.\n\n첫째, 작용 기전(MOA)을 한 문장으로 정의합니다. '나이아신아마이드 함유'가 아니라 '피부 장벽의 세라마이드 합성 경로에 작용한다'처럼, 무엇이 어디서 어떻게 일어나는지를 명사 나열이 아닌 동작으로 서술합니다. R&D가 가진 메커니즘 데이터를 마케팅 팀이 그대로 받아 쓰는 순간 번역은 실패합니다. 핵심 동사를 먼저 합의하는 것이 출발점입니다.\n\n둘째, 근거의 위계를 정리합니다. 모든 데이터가 같은 무게를 갖지 않습니다. 인비트로, 동물 모델, 인체 적용 시험은 설득력과 규제 표현 범위가 다릅니다. 어떤 주장을 어떤 근거로 뒷받침할 수 있는지 매트릭스로 정리하면, 과장 없이 말할 수 있는 경계가 분명해집니다. 이는 메디컬·규제 검토를 통과하는 콘텐츠의 토대이기도 합니다.\n\n셋째, 시각적 비유를 설계합니다. 추상적인 분자 경로는 3D나 2D 애니메이션으로 공간과 시간을 부여할 때 비로소 직관이 됩니다. 단 비유는 메커니즘의 본질을 왜곡하지 않아야 합니다. 정확성과 직관 사이의 줄타기가 과학 시각화의 핵심 역량입니다.\n\n이 세 단계는 결국 하나의 질문으로 수렴합니다. 우리 기술의 가치를 고객이 스스로 설명할 수 있는가. 그렇지 못하다면 번역이 덜 된 것입니다.\n\n여러분의 성분 자료는 지금 어느 단계에서 막혀 있나요? 댓글로 한 단어만 남겨 주셔도 좋습니다. 번역3단계 라고 DM 주시면 성분 메시지 번역 체크리스트를 보내드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#더마코스메틱",
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#B2B마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260618_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 성분을 고객 언어로 번역하는 3단계"
+    },
+    {
+      "pair_id": "linkedin_20260618_morning",
+      "status": "pending",
+      "topic": "더마코스메틱의 성분 설명을 고객 언어로 번역하는 세 단계",
+      "slot": "morning",
+      "scheduled_time": "2026-06-19T09:00:00+09:00",
+      "created_at": "2026-06-18T11:52:43.126080+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "번역3단계",
+      "id": "linkedin_20260618_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "Reviewing dermocosmetic ingredient decks, I keep seeing the same gap. The active names, concentrations, and in-vitro charts are all there, yet the one thing a customer needs is missing: how does this actually work on my skin. Scientifically accurate material is not automatically persuasive material. We approach the translation of ingredient science into customer language in three deliberate steps.\n\nFirst, define the mechanism of action in a single sentence. Not 'contains niacinamide,' but 'acts on the ceramide synthesis pathway that supports the skin barrier.' State what happens, where, and how, using verbs rather than a list of nouns. Translation fails the moment a marketing team copies the R&D mechanism data verbatim. Agreeing on the core verb first is where clarity begins.\n\nSecond, organize the hierarchy of evidence. Not all data carries the same weight. In-vitro findings, animal models, and human application studies differ in persuasive power and in the regulatory language they permit. Mapping which claim is supported by which level of evidence draws a clear boundary for what can be said without overstatement. That matrix is also the foundation for content that passes medical and regulatory review.\n\nThird, design the visual analogy. An abstract molecular pathway becomes intuitive only when 3D or 2D animation gives it space and time. But the analogy must not distort the essence of the mechanism. Walking the line between accuracy and intuition is the central craft of scientific visualization.\n\nThese three steps converge on one question: can your customer explain the value of your technology in their own words? If not, the translation is incomplete. The goal is never to dumb the science down. It is to carry its meaning across without loss.\n\nWhere is your ingredient story currently stuck? A single word in the comments is enough. Message me the keyword 번역3단계 and I will send our ingredient message translation checklist. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#Dermocosmetics",
+        "#ScienceCommunication",
+        "#MedicalAnimation",
+        "#B2BMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260618_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: 3 Steps to Translate Actives"
+    },
+    {
+      "pair_id": "linkedin_20260618_afternoon",
+      "status": "pending",
+      "topic": "임상 데이터와 프리미엄 비주얼을 함께 설계해야 하는 이유",
+      "slot": "afternoon",
+      "scheduled_time": "2026-06-18T15:00:00+09:00",
+      "created_at": "2026-06-18T11:52:43.126080+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260618_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "임상 데이터는 정확한데 영상이 설득력이 없다는 피드백을 받아본 적 있으신가요. 많은 메디컬·더마 브랜드가 겪는 문제의 핵심은 데이터와 비주얼을 별개의 공정으로 다루는 데 있습니다. 과학팀이 자료를 넘기고, 제작팀이 나중에 그림을 입히는 순서로는 메커니즘의 인과 구조가 화면에서 끊깁니다.\n\n첫째, 시각 언어는 데이터 구조에서 출발해야 합니다. 작용기전(MOA)을 표현할 때 분자의 결합 순서, 농도 의존성, 시간 축을 먼저 합의하지 않으면 멋진 렌더링이 오히려 사실을 왜곡합니다. 우리는 스토리보드 이전에 과학 검수 회의를 두고, 무엇을 강조하고 무엇을 단순화할지 근거와 함께 결정합니다.\n\n둘째, 단순화에는 기준이 필요합니다. 모든 디테일을 담으면 아무도 이해하지 못하고, 너무 줄이면 규제·메디컬 검토에서 막힙니다. 핵심은 의학적으로 틀리지 않으면서 핵심 메시지를 남기는 경계를 찾는 일입니다. 이 경계는 디자이너 혼자도, 과학자 혼자도 정할 수 없습니다.\n\n셋째, 프리미엄 비주얼은 신뢰의 신호입니다. 같은 데이터라도 정제된 라이팅, 정확한 스케일, 일관된 시각 규칙이 있으면 의사결정자는 브랜드의 기술 성숙도를 다르게 인식합니다. 미감은 장식이 아니라 신뢰 자산입니다.\n\n그래서 bbbb.beauty는 데이터 구조와 시각 설계를 한 테이블에서 동시에 시작합니다. 과학을 메시지로, 아름다움을 경험으로 연결하는 방식입니다.\n\n여러분의 콘텐츠에서 우선순위는 정확성인가요, 임팩트인가요. 댓글로 의견을 들려주세요. MOA 라고 댓글이나 DM을 주시면 MOA 영상 사전 설계 체크리스트를 보내드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학시각화",
+        "#메디컬마케팅",
+        "#더마코스메틱"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260618_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 데이터와 비주얼은 따로 설계되지 않는다"
+    },
+    {
+      "pair_id": "linkedin_20260618_afternoon",
+      "status": "pending",
+      "topic": "임상 데이터와 프리미엄 비주얼을 함께 설계해야 하는 이유",
+      "slot": "afternoon",
+      "scheduled_time": "2026-06-18T15:00:00+09:00",
+      "created_at": "2026-06-18T11:52:43.126080+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260618_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "Have you ever heard that your clinical data is sound but the video just isn't convincing? For many medical, derma, and bio brands, the root cause is treating science and visuals as separate stages. When the science team hands over files and the production team paints visuals afterward, the causal logic of the mechanism breaks on screen.\n\nFirst, the visual language must originate from the data structure. When representing a mechanism of action, binding sequence, dose dependency, and the time axis have to be agreed upon before a single frame is rendered. Otherwise a beautiful render quietly distorts the science. We place a scientific review before storyboarding, deciding what to emphasize and what to simplify, each choice backed by evidence.\n\nSecond, simplification needs a standard. Include every detail and no one understands it; cut too much and medical or regulatory review stops the project. The real skill is finding the boundary where the message stays clear without becoming medically inaccurate. Neither a designer alone nor a scientist alone can draw that line.\n\nThird, premium visuals are a trust signal. With the same data, refined lighting, accurate scale, and consistent visual rules make decision-makers read your technical maturity differently. Aesthetics are not decoration; they are a trust asset that shapes how partners and clients evaluate your science.\n\nThis is why at bbbb.beauty we begin data architecture and visual design at the same table, not in sequence. Science to message, beauty to experience. The result is content that satisfies medical reviewers and persuades commercial stakeholders at once, instead of forcing a trade-off between rigor and impact.\n\nSo here is the question for your team: when you build scientific content, what comes first, accuracy or impact? Share your view in the comments. Comment or DM me MOA and I will send our pre-production design checklist for MOA videos. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOAanimation",
+        "#ScienceVisualization",
+        "#MedicalMarketing",
+        "#Dermocosmetics"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260618_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Data and Visuals: One Design"
     }
   ]
 }
