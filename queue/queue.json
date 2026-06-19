@@ -599,6 +599,46 @@
       "post_id": "18088040897300273",
       "post_url": "https://www.instagram.com/p/DZpJFa0Fago/",
       "uploaded_at": "2026-06-16T10:08:00.567115+00:00"
+    },
+    {
+      "id": "post_20260620_morning",
+      "status": "pending",
+      "topic": "R&D의 기술 언어와 마케팅의 고객 언어 사이를 연결하는 방법",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260620_morning_ko.jpg",
+      "caption": "R&D는 '메커니즘'을 말하고, 마케팅은 '왜 좋은가'를 묻습니다. 둘 사이의 번역 손실이 신뢰를 깎습니다. 핵심은 데이터를 지우지 않고 의미로 옮기는 한 장의 설계도입니다.\n\n댓글: 더 어려운 쪽은? A.R&D B.마케팅\nDM “번역”: R&D-마케팅 메시지 번역 체크리스트\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#사이언스커뮤니케이션",
+        "#MOA",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#의학시각화",
+        "#브랜드신뢰"
+      ],
+      "scheduled_time": "2026-06-20T12:30:00+09:00",
+      "created_at": "2026-06-20T06:57:21.122028+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260620_afternoon",
+      "status": "pending",
+      "topic": "논문 한 편이 설득력 있는 브랜드 스토리가 되기까지",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260620_afternoon_ko.jpg",
+      "caption": "논문의 결론을 그대로 옮기면 자료가 되고, 작용 기전을 시각으로 번역하면 브랜드 스토리가 됩니다. 핵심은 데이터가 아니라 '왜 이게 중요한가'를 보이게 만드는 일입니다.\n\n댓글: 논문 시각화, 직접 vs 외주?\nDM “논문번역”: 논문→스토리 전환 체크리스트 보내드려요\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#3D비주얼라이제이션",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#메디컬콘텐츠"
+      ],
+      "scheduled_time": "2026-06-20T19:00:00+09:00",
+      "created_at": "2026-06-20T06:57:21.122028+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
