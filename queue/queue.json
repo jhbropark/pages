@@ -599,6 +599,38 @@
       "post_id": "18088040897300273",
       "post_url": "https://www.instagram.com/p/DZpJFa0Fago/",
       "uploaded_at": "2026-06-16T10:08:00.567115+00:00"
+    },
+    {
+      "id": "post_20260619_startup_7truths_carousel",
+      "status": "pending",
+      "topic": "스타트업 7가지 진실 — 쿠팡·배민·토스를 키운 투자자의 관점",
+      "pillar_id": "startup_insight",
+      "format": "carousel",
+      "image_urls": [
+        "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/20260619-startup-7truths/instagram-carousel-01.jpg",
+        "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/20260619-startup-7truths/instagram-carousel-02.jpg",
+        "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/20260619-startup-7truths/instagram-carousel-03.jpg",
+        "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/20260619-startup-7truths/instagram-carousel-04.jpg",
+        "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/20260619-startup-7truths/instagram-carousel-05.jpg",
+        "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/20260619-startup-7truths/instagram-carousel-06.jpg",
+        "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/20260619-startup-7truths/instagram-carousel-07.jpg",
+        "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/20260619-startup-7truths/instagram-carousel-08.jpg"
+      ],
+      "caption": "화려한 성공 공식 대신, 가장 솔직한 스타트업의 진실 7가지 🎯\n\n쿠팡·배민·토스를 키운 투자자가 말하는 본질.\n저장해두고 곱씹어보세요 📌",
+      "hashtags": [
+        "#스타트업",
+        "#창업",
+        "#스타트업현실",
+        "#벤처캐피탈",
+        "#AI",
+        "#창업가마인드",
+        "#성장",
+        "#리더십"
+      ],
+      "scheduled_time": "2026-06-19T19:05:00+09:00",
+      "created_at": "2026-06-19T05:19:07.146884+00:00",
+      "generated_by": "claude-render-startup-7truths",
+      "notion_page_id": "38067493-145b-81af-bbd0-c162facc9b95"
     }
   ]
 }
