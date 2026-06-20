@@ -5,3 +5,6 @@ __pycache__/
 .env
 */.env
 !.env.example
+
+# reel intermediates
+namecode_grid/story/kb*.mp4
