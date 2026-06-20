@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "krea": {
+      "command": "npx",
+      "args": ["-y", "@vmosaic/krea-mcp-server"],
+      "env": {
+        "KREA_API_KEY": "${KREA_API_KEY}"
+      }
+    }
+  }
+}
