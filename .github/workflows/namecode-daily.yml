@@ -74,6 +74,25 @@ jobs:
           name: namecode-apod-${{ steps.gen.outputs.date }}
           path: namecode_grid/daily/*${{ steps.gen.outputs.date }}*
 
+      - name: Build 30s reel (ffmpeg loop)
+        # loops a committed 9:16 seed into a finished 30s reel
+        run: |
+          SEED="namecode_grid/namecode_reel_occultation_9x16.mp4"
+          if [ -f "$SEED" ]; then
+            ffmpeg -version >/dev/null 2>&1 || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+            bash namecode_grid/loop_reel.sh "$SEED" \
+              "namecode_grid/daily/reel_${{ steps.gen.outputs.date }}.mp4" 30
+          else
+            echo "no reel seed found; skipping reel build"
+          fi
+
+      - name: Upload reel artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: namecode-reel-${{ steps.gen.outputs.date }}
+          path: namecode_grid/daily/reel_*.mp4
+          if-no-files-found: ignore
+
       - name: Commit daily image
         run: |
           git config user.name "namecode-bot"

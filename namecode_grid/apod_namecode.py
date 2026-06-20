@@ -118,12 +118,14 @@ def topical_tag(name):
 
 
 def build_caption(brief):
-    """Front-load the hook in the first ~125 chars (visible before '…more')."""
+    """Front-load the hook in the first ~125 chars (visible before '…more');
+    nudge sends + saves (the top 2026 signals)."""
     tags = " ".join(HASHTAGS_BASE + [topical_tag(brief["work_name"])])
     return (
         f"{brief['work_name']} — today's sky, rendered in code.\n"
         f"{brief['apod_title']}.\n\n"
-        f"NASA APOD · {brief['date']}.\n\n"
+        f"Source: NASA APOD · {brief['date']}.\n"
+        f"Save this sky ✦ send it to someone who looks up.\n\n"
         f"{tags}"
     )
 

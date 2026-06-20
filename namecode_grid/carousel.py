@@ -19,14 +19,14 @@ CRESCENT = G("823828bc-58df-4a1d-af2f-e2b58b7ac90e")
 HERO = G("182621fd-c742-4a5f-8aab-4b8383b660f6")
 CLOUDS = G("74e7d743-5425-40ee-9130-a12cc395db83")
 SLIDES = [
-    (None, "title", "THE MOON\nHID VENUS", "namecode reads the sky · 2026.06.20"),
-    (CRESCENT, "step", "ON JUNE 17,\nIN DAYLIGHT", "A young crescent Moon met the evening star."),
-    (HERO, "step", "VENUS MET\nTHE LIMB", "An occultation: one body passes before another."),
+    (None, "title", "THE MOON\nHID VENUS", "A daytime occultation · 2026.06.20"),
+    (CRESCENT, "step", "ON JUNE 17,\nIN DAYLIGHT", "A young crescent met the evening star."),
+    (HERO, "step", "VENUS MET\nTHE LIMB", "An occultation — one world slides before another."),
     (CRESCENT, "step", "GONE FOR\nAN HOUR", "Venus vanished behind the Moon."),
-    (HERO, "step", "THEN\nREAPPEARED", "Emerging beyond the bright lunar limb."),
-    (CLOUDS, "step", "FROM BRITISH\nCOLUMBIA", "Seen through dramatically cloudy skies."),
-    (HERO, "step", "namecode\nTRANSLATION", "namecode - OCCULTATION | 1 hr"),
-    (None, "cta", "A NEW SKY,\nEVERY DAY", "Follow  @namecode_original"),
+    (HERO, "step", "THEN IT\nREAPPEARED", "Slipping back beyond the bright limb."),
+    (CLOUDS, "step", "THROUGH\nDAYTIME CLOUDS", "Caught from British Columbia."),
+    (HERO, "step", "namecode\nTRANSLATION", "One event, one frame — OCCULTATION | 1 hr"),
+    (None, "cta", "A NEW SKY,\nEVERY DAY", "Save this · follow @namecode_original"),
 ]
 
 
