@@ -8,3 +8,5 @@ __pycache__/
 
 # reel intermediates
 namecode_grid/story/kb*.mp4
+namecode_grid/story/up*.mp4
+namecode_grid/story/strip*.png
