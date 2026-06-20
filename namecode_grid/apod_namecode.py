@@ -39,6 +39,21 @@ STOPWORDS = {
 }
 
 
+# ---------------------------------------------------------------- config
+def load_dotenv(path=None):
+    """Minimal, dependency-free .env loader (namecode_grid/.env by default)."""
+    path = path or os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+    try:
+        with open(path) as fh:
+            for line in fh:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    k, v = line.split("=", 1)
+                    os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+    except FileNotFoundError:
+        pass
+
+
 # ---------------------------------------------------------------- NASA APOD
 def get_apod(date=None):
     base = os.environ.get("NASA_APOD_BASE", "https://api.nasa.gov/planetary/apod")
@@ -148,6 +163,7 @@ def compose(img_bytes, name, value, out, size=1080):
 
 # ---------------------------------------------------------------- main
 def main():
+    load_dotenv()
     ap = argparse.ArgumentParser()
     ap.add_argument("--date")
     ap.add_argument("--subject", help="skip NASA; use this subject directly")
