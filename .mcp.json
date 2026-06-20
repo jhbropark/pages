@@ -1,8 +1,8 @@
 {
   "mcpServers": {
     "krea": {
-      "command": "npx",
-      "args": ["-y", "@vmosaic/krea-mcp-server"],
+      "command": "node",
+      "args": ["vendor/krea-mcp-server/src/index.js"],
       "env": {
         "KREA_API_KEY": "${KREA_API_KEY}"
       }
