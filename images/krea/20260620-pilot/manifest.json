@@ -1,0 +1,339 @@
+{
+  "batch": "20260620-pilot",
+  "source_tool": "krea",
+  "plan": "content/plans/20260620-krea-content-production.md",
+  "concepts": [
+    {
+      "slug": "ingredient-delivery",
+      "pillar_id": "moa_craft",
+      "dm_keyword": "MOA",
+      "topic": "성분 전달의 가시화",
+      "assets": [
+        {
+          "file": "instagram-card-01.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-02.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-03.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-04.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-05.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-06.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "linkedin-ko.jpg",
+          "kind": "image",
+          "size": [
+            1200,
+            627
+          ],
+          "channel": "linkedin"
+        },
+        {
+          "file": "linkedin-en.jpg",
+          "kind": "image",
+          "size": [
+            1200,
+            627
+          ],
+          "channel": "linkedin"
+        },
+        {
+          "file": "reel.mp4",
+          "kind": "video",
+          "size": null,
+          "channel": "instagram"
+        }
+      ]
+    },
+    {
+      "slug": "warm-science",
+      "pillar_id": "science_communication",
+      "dm_keyword": "LAB",
+      "topic": "차갑지 않은 과학",
+      "assets": [
+        {
+          "file": "instagram-card-01.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-02.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-03.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-04.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-05.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-06.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "linkedin-ko.jpg",
+          "kind": "image",
+          "size": [
+            1200,
+            627
+          ],
+          "channel": "linkedin"
+        },
+        {
+          "file": "linkedin-en.jpg",
+          "kind": "image",
+          "size": [
+            1200,
+            627
+          ],
+          "channel": "linkedin"
+        }
+      ]
+    },
+    {
+      "slug": "one-cell-one-change",
+      "pillar_id": "moa_craft",
+      "dm_keyword": "FILM",
+      "topic": "하나의 세포, 하나의 변화",
+      "assets": [
+        {
+          "file": "instagram-card-01.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-02.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-03.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-04.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-05.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-06.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "linkedin-ko.jpg",
+          "kind": "image",
+          "size": [
+            1200,
+            627
+          ],
+          "channel": "linkedin"
+        },
+        {
+          "file": "linkedin-en.jpg",
+          "kind": "image",
+          "size": [
+            1200,
+            627
+          ],
+          "channel": "linkedin"
+        },
+        {
+          "file": "reel.mp4",
+          "kind": "video",
+          "size": null,
+          "channel": "instagram"
+        }
+      ]
+    },
+    {
+      "slug": "industry-scene",
+      "pillar_id": "industry_solution",
+      "dm_keyword": "UX",
+      "topic": "업종별 한 장면",
+      "assets": [
+        {
+          "file": "instagram-card-01.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-02.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-03.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-04.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-05.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "instagram-card-06.jpg",
+          "kind": "image",
+          "size": [
+            1080,
+            1080
+          ],
+          "channel": "instagram"
+        },
+        {
+          "file": "linkedin-ko.jpg",
+          "kind": "image",
+          "size": [
+            1200,
+            627
+          ],
+          "channel": "linkedin"
+        },
+        {
+          "file": "linkedin-en.jpg",
+          "kind": "image",
+          "size": [
+            1200,
+            627
+          ],
+          "channel": "linkedin"
+        }
+      ]
+    }
+  ]
+}
