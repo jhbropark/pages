@@ -26,8 +26,7 @@ def tile(c):
     f=F(14); tw=d.textlength(label,font=f)
     x,y=12,12; pad=7; bx2=x+tw+pad*2; by2=y+24
     d.rounded_rectangle([x,y,bx2,by2],radius=3,fill=(18,18,18,170))
-    if hero: d.rectangle([x,y,x+3,by2],fill=RED)   # minimal red signature on hero only
-    d.text((x+pad+(3 if hero else 0),y+4),label,font=f,fill=PAPER)
+    d.text((x+pad,y+4),label,font=f,fill=PAPER)
     return im
 tiles=[tile(c) for c in cells]; GW=T*3+G*2
 # grid only
