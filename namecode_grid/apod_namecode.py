@@ -101,6 +101,18 @@ def astro_value(text):
     return None
 
 
+HASHTAGS = ("#newmediaart #generativeart #creativecoding #artxcode "
+            "#touchdesigner #immersiveart #digitalart #namecode")
+
+
+def build_caption(brief):
+    return (
+        f"{brief['work_name']} — today's sky, translated into code.\n"
+        f"{brief['apod_title']}.\n\n"
+        f"Inspired by NASA APOD, {brief['date']}.\n.\n.\n{HASHTAGS}"
+    )
+
+
 def build_prompt(subject, explanation=""):
     snippet = (explanation or "").strip().replace("\n", " ")
     if len(snippet) > 200:
@@ -171,6 +183,8 @@ def main():
     ap.add_argument("--model", default="flux")
     ap.add_argument("--dry-run", action="store_true", help="print brief, no generation")
     ap.add_argument("--out")
+    ap.add_argument("--brief-out", help="write the brief JSON to this path")
+    ap.add_argument("--caption-out", help="write the post caption to this path")
     a = ap.parse_args()
 
     if a.subject:
@@ -188,11 +202,17 @@ def main():
         src_url = apod.get("hdurl") or apod.get("url")
 
     name = a.name or derive_name(title)
-    value = astro_value(explanation) or sim_value(f"{date}:{name}")
+    value = astro_value(explanation) or astro_value(title) or sim_value(f"{date}:{name}")
     prompt = build_prompt(subject, explanation)
     brief = {"date": date, "apod_title": title, "work_name": name,
              "label": f"namecode - {name} | {value}", "source": src_url, "prompt": prompt}
     print(json.dumps(brief, ensure_ascii=False, indent=2))
+    if a.brief_out:
+        with open(a.brief_out, "w", encoding="utf-8") as fh:
+            json.dump(brief, fh, ensure_ascii=False, indent=2)
+    if a.caption_out:
+        with open(a.caption_out, "w", encoding="utf-8") as fh:
+            fh.write(build_caption(brief))
 
     if a.dry_run:
         return
