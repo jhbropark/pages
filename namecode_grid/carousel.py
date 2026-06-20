@@ -15,14 +15,17 @@ W, H = 1080, 1350
 
 # (image_url | None, kind, headline, sub)
 G = "https://gen.krea.ai/images/{}.png".format
+CRESCENT = G("823828bc-58df-4a1d-af2f-e2b58b7ac90e")
+HERO = G("182621fd-c742-4a5f-8aab-4b8383b660f6")
+CLOUDS = G("74e7d743-5425-40ee-9130-a12cc395db83")
 SLIDES = [
-    (None, "title", "TRANSLATING\nTHE SKY\nINTO CODE", "namecode // daily generative studio"),
-    (G("4e8f0515-ba75-4d1b-8356-3c1f205fbbca"), "step", "01  PICK THE DAY'S\n    COSMIC EVENT", "Sourced from NASA APOD, every day."),
-    (G("983a978e-eb22-4c8b-9e86-df4ed0929665"), "step", "02  EXTRACT THE\n    REAL DATA", "Magnitude, distance, geometry."),
-    (G("ce4cc011-a64e-43c9-87aa-daafccfb329e"), "step", "03  TRANSLATE INTO\n    PARTICLES", "Code turns physics into form."),
-    (G("0130532e-332f-4df5-8939-775ba09f61df"), "step", "04  RENDER IN\n    MONOCHROME", "One palette. Black & light."),
-    (G("b44d47e0-f3d5-4b7e-b384-124c691b113c"), "step", "05  LABEL WITH THE\n    REAL FIGURE", "namecode - NAME | mag -4.2"),
-    (G("1bf56457-eb83-4712-baee-b0d7dd7dcae1"), "step", "FROM SCREEN\nTO SPACE", "Built for immersive installation."),
+    (None, "title", "THE MOON\nHID VENUS", "namecode reads the sky · 2026.06.20"),
+    (CRESCENT, "step", "ON JUNE 17,\nIN DAYLIGHT", "A young crescent Moon met the evening star."),
+    (HERO, "step", "VENUS MET\nTHE LIMB", "An occultation: one body passes before another."),
+    (CRESCENT, "step", "GONE FOR\nAN HOUR", "Venus vanished behind the Moon."),
+    (HERO, "step", "THEN\nREAPPEARED", "Emerging beyond the bright lunar limb."),
+    (CLOUDS, "step", "FROM BRITISH\nCOLUMBIA", "Seen through dramatically cloudy skies."),
+    (HERO, "step", "namecode\nTRANSLATION", "namecode - OCCULTATION | 1 hr"),
     (None, "cta", "A NEW SKY,\nEVERY DAY", "Follow  @namecode_original"),
 ]
 

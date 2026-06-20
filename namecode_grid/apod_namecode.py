@@ -94,6 +94,8 @@ ASTRO_PATTERNS = [
     (r"(\d+(?:\.\d+)?)\s*degrees?", "{0} deg"),
     (r"(\d+(?:\.\d+)?)\s*(?:million\s*)?km\b", "{0} km"),
     (r"(\d+(?:\.\d+)?)\s*AU\b", "{0} AU"),
+    (r"(\d+(?:\.\d+)?)\s*[- ]?hours?\b", "{0} hr"),
+    (r"hour[\s-]?long", "1 hr"),
 ]
 
 
@@ -102,7 +104,7 @@ def astro_value(text):
     for pat, fmt in ASTRO_PATTERNS:
         m = re.search(pat, text or "", re.I)
         if m:
-            return fmt.format(m.group(1))
+            return fmt.format(m.group(1)) if "{0}" in fmt else fmt
     return None
 
 
