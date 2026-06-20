@@ -25,3 +25,10 @@ Format: `namecode - <WORK_NAME> | <value>` (top-left, mono, FUSE\*-style).
 - Source of daily inspiration: **NASA APOD** (https://apod.nasa.gov/apod/).
 - Pipeline: `apod_namecode.py` (APOD → Krea → duotone + mono label) →
   `ig_publish.py` (Meta Graph API → @namecode_original).
+
+## Instagram formats (2026) — format role separation
+- **Feed (daily APOD):** 4:5 portrait **1080×1350** (`apod_namecode.py`, default `FEED_SIZE`). Mono label top-left safe zone.
+- **Carousel (explainer):** 4:5, **8–10 slides** (`carousel.py`). First slide sets the ratio.
+- **Reel (highlight):** 9:16 **1080×1920**, **30–90s** (loop/stitch the Krea seed in an editor).
+- **Caption:** front-load the hook in the first ~125 chars; **3–5 hashtags** (`HASHTAGS_BASE` + one per-work topical tag). Not 30.
+- Optimize for **sends + saves** (the top 2026 signals), then non-trivial comments.

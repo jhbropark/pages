@@ -33,6 +33,11 @@ PAPER = (245, 245, 243)
 BLACK = (12, 12, 12)
 FONT = os.environ.get("NAMECODE_FONT", "/tmp/fnt/JetBrainsMono.ttf")
 
+# Instagram 2026 formats
+FEED_SIZE = (1080, 1350)      # 4:5 portrait — daily APOD feed posts
+CAROUSEL_SIZE = (1080, 1350)  # 4:5 — explainer carousels (8-10 slides)
+REEL_SIZE = (1080, 1920)      # 9:16 — highlight reels
+
 STOPWORDS = {
     "the", "a", "an", "of", "and", "in", "on", "to", "from", "with", "at", "by",
     "meets", "near", "over", "as", "for", "its", "is", "are", "this", "that",
@@ -101,15 +106,23 @@ def astro_value(text):
     return None
 
 
-HASHTAGS = ("#newmediaart #generativeart #creativecoding #artxcode "
-            "#touchdesigner #immersiveart #digitalart #namecode")
+# Instagram 2026: 3-5 targeted hashtags (not 30). 4 base + 1 per-work topical.
+HASHTAGS_BASE = ["#namecode", "#newmediaart", "#generativeart", "#creativecodeart"]
+
+
+def topical_tag(name):
+    word = re.split(r"[.\s]", name)[0].lower()
+    return "#" + re.sub(r"[^a-z0-9]", "", word)
 
 
 def build_caption(brief):
+    """Front-load the hook in the first ~125 chars (visible before '…more')."""
+    tags = " ".join(HASHTAGS_BASE + [topical_tag(brief["work_name"])])
     return (
-        f"{brief['work_name']} — today's sky, translated into code.\n"
+        f"{brief['work_name']} — today's sky, rendered in code.\n"
         f"{brief['apod_title']}.\n\n"
-        f"Inspired by NASA APOD, {brief['date']}.\n.\n.\n{HASHTAGS}"
+        f"NASA APOD · {brief['date']}.\n\n"
+        f"{tags}"
     )
 
 
@@ -127,7 +140,7 @@ def build_prompt(subject, explanation=""):
 
 
 # ---------------------------------------------------------------- Krea
-def krea_generate(prompt, width=1024, height=1024, model="flux"):
+def krea_generate(prompt, width=1024, height=1280, model="flux"):  # 4:5 portrait
     base = os.environ.get("KREA_BASE", "https://api.krea.ai")
     key = os.environ["KREA_API_KEY"]
     body = {"prompt": prompt, "width": width, "height": height}
@@ -158,15 +171,17 @@ def krea_wait(job_id, timeout=120):
 
 
 # ---------------------------------------------------------------- compose
-def compose(img_bytes, name, value, out, size=1080):
-    g = ImageOps.autocontrast(
-        Image.open(io.BytesIO(img_bytes)).convert("L").resize((size, size)), cutoff=1)
+def compose(img_bytes, name, value, out, size=FEED_SIZE):
+    """Compose a finished post. Default 4:5 (1080x1350) for the IG feed."""
+    W, H = size
+    g = ImageOps.autocontrast(Image.open(io.BytesIO(img_bytes)).convert("L"), cutoff=1)
+    g = ImageOps.fit(g, (W, H), method=Image.LANCZOS)          # cover-fit to 4:5
     im = ImageOps.colorize(g, black=BLACK, white=PAPER).convert("RGB")
     d = ImageDraw.Draw(im, "RGBA")
     label = f"namecode - {name} | {value}"
-    f = ImageFont.truetype(FONT, max(20, size // 36))
+    f = ImageFont.truetype(FONT, max(22, W // 34))
     tw = d.textlength(label, font=f)
-    x, y, pad = 34, 34, 14
+    x, y, pad = 40, 40, 14                                     # top-left safe zone
     d.rounded_rectangle([x, y, x + tw + pad * 2, y + f.size + 22], radius=6, fill=(18, 18, 18, 170))
     d.text((x + pad, y + 11), label, font=f, fill=PAPER)
     im.save(out)
