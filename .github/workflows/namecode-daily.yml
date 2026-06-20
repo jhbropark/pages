@@ -1,0 +1,113 @@
+name: namecode daily (APOD → artwork → publish)
+
+# Runs on GitHub's runners (open internet), so it reaches api.nasa.gov,
+# api.krea.ai and graph.facebook.com without any container egress changes.
+
+on:
+  schedule:
+    - cron: "0 13 * * *"      # 13:00 UTC daily (~22:00 KST). Adjust as needed.
+  workflow_dispatch:          # manual "Run workflow" button
+    inputs:
+      date:
+        description: "APOD date (YYYY-MM-DD), blank = today"
+        required: false
+      publish:
+        description: "Publish to Instagram? (true/false)"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write             # to commit the daily image
+
+concurrency:
+  group: namecode-daily
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    # job-level env so the optional publish step's `if:` can read the token
+    # (secrets context is not allowed directly in `if:` expressions)
+    env:
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install requests Pillow
+
+      - name: Fetch label font (JetBrains Mono)
+        run: |
+          mkdir -p /tmp/fnt
+          curl -sL -o /tmp/fnt/JetBrainsMono.ttf \
+            https://github.com/JetBrains/JetBrainsMono/raw/master/fonts/ttf/JetBrainsMono-Regular.ttf
+
+      - name: Generate today's artwork from APOD
+        id: gen
+        working-directory: namecode_grid
+        env:
+          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+          KREA_API_KEY: ${{ secrets.KREA_API_KEY }}
+          NAMECODE_FONT: /tmp/fnt/JetBrainsMono.ttf
+        run: |
+          set -e
+          DATE_ARG=""
+          if [ -n "${{ github.event.inputs.date }}" ]; then DATE_ARG="--date ${{ github.event.inputs.date }}"; fi
+          mkdir -p daily
+          DATE=$(date -u +%F)
+          if [ -n "${{ github.event.inputs.date }}" ]; then DATE="${{ github.event.inputs.date }}"; fi
+          python apod_namecode.py $DATE_ARG \
+            --out "daily/namecode_apod_${DATE}.png" \
+            --brief-out "daily/brief_${DATE}.json" \
+            --caption-out "daily/caption_${DATE}.txt"
+          echo "date=${DATE}" >> "$GITHUB_OUTPUT"
+          echo "image=namecode_grid/daily/namecode_apod_${DATE}.png" >> "$GITHUB_OUTPUT"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: namecode-apod-${{ steps.gen.outputs.date }}
+          path: namecode_grid/daily/*${{ steps.gen.outputs.date }}*
+
+      - name: Build 30s reel (ffmpeg loop)
+        # loops a committed 9:16 seed into a finished 30s reel
+        run: |
+          SEED="namecode_grid/namecode_reel_occultation_9x16.mp4"
+          if [ -f "$SEED" ]; then
+            ffmpeg -version >/dev/null 2>&1 || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+            bash namecode_grid/loop_reel.sh "$SEED" \
+              "namecode_grid/daily/reel_${{ steps.gen.outputs.date }}.mp4" 30
+          else
+            echo "no reel seed found; skipping reel build"
+          fi
+
+      - name: Upload reel artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: namecode-reel-${{ steps.gen.outputs.date }}
+          path: namecode_grid/daily/reel_*.mp4
+          if-no-files-found: ignore
+
+      - name: Commit daily image
+        run: |
+          git config user.name "namecode-bot"
+          git config user.email "bot@namecode.kr"
+          git add namecode_grid/daily/
+          git commit -m "daily: APOD artwork ${{ steps.gen.outputs.date }}" || echo "nothing to commit"
+          git push || echo "push skipped"
+
+      - name: Publish to Instagram (optional)
+        # only when a token is present AND publish=true (manual) or scheduled
+        if: ${{ env.IG_ACCESS_TOKEN != '' && (github.event_name == 'schedule' || github.event.inputs.publish == 'true') }}
+        working-directory: namecode_grid
+        run: |
+          pip install requests
+          RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/namecode_apod_${{ steps.gen.outputs.date }}.png"
+          echo "Hosting image at: $RAW"
+          python ig_publish.py --image-url "$RAW" \
+            --caption-file "daily/caption_${{ steps.gen.outputs.date }}.txt"
