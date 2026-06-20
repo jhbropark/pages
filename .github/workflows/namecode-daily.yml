@@ -2,10 +2,19 @@ name: namecode daily (APOD → artwork → publish)
 
 # Runs on GitHub's runners (open internet), so it reaches api.nasa.gov,
 # api.krea.ai and graph.facebook.com without any container egress changes.
+#
+# SEPARATE from the queue-based pipeline (generate-content.yml /
+# instagram-schedule.yml / linkedin-schedule.yml). That system serves a
+# DIFFERENT brand/account via INSTAGRAM_* secrets and queue/queue.json.
+# This one is namecode (@namecode_original) only:
+#   - its own secrets: IG_USER_ID / IG_ACCESS_TOKEN  (do NOT reuse INSTAGRAM_*)
+#   - its own paths:   namecode_grid/daily/           (never touches queue/, images/)
+# Offset cron + rebase-before-push keep it from racing the hourly uploaders.
 
 on:
   schedule:
-    - cron: "0 13 * * *"      # 13:00 UTC daily (~22:00 KST). Adjust as needed.
+    - cron: "15 13 * * *"     # 13:15 UTC daily — off the top of the hour so it
+                              # doesn't race the hourly INSTAGRAM/LinkedIn pushers.
   workflow_dispatch:          # manual "Run workflow" button
     inputs:
       date:
@@ -99,7 +108,11 @@ jobs:
           git config user.email "bot@namecode.kr"
           git add namecode_grid/daily/
           git commit -m "daily: APOD artwork ${{ steps.gen.outputs.date }}" || echo "nothing to commit"
-          git push || echo "push skipped"
+          # rebase-before-push so we don't lose to the hourly uploaders' pushes
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin "${{ github.ref_name }}" || true
+            git push && break || { echo "push retry $i"; sleep 5; }
+          done
 
       - name: Publish to Instagram (optional)
         # only when a token is present AND publish=true (manual) or scheduled
