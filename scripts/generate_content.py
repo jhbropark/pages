@@ -221,6 +221,8 @@ def validate_generated_content(content: dict) -> list[str]:
     hashtags = content.get("hashtags", [])
     if not 5 <= len(hashtags) <= 7:
         errors.append("해시태그는 5~7개여야 합니다.")
+    if any(not str(tag).strip().startswith("#") for tag in hashtags):
+        errors.append("모든 해시태그는 #으로 시작해야 합니다.")
     ko_count = len("".join(content.get("linkedin_ko", "").split()))
     if not 650 <= ko_count <= 1500:
         errors.append(f"LinkedIn 한국어 본문은 공백 제외 650~1500자여야 합니다: {ko_count}자")
@@ -234,8 +236,11 @@ def validate_generated_content(content: dict) -> list[str]:
     if keyword and keyword not in content.get("linkedin_en", ""):
         errors.append("LinkedIn 영어 본문에 DM 키워드가 없습니다.")
     for field in ("linkedin_ko_hashtags", "linkedin_en_hashtags"):
-        if not 3 <= len(content.get(field, [])) <= 4:
+        tags = content.get(field, [])
+        if not 3 <= len(tags) <= 4:
             errors.append(f"{field}는 3~4개여야 합니다.")
+        if any(not str(tag).strip().startswith("#") for tag in tags):
+            errors.append(f"{field}의 모든 해시태그는 #으로 시작해야 합니다.")
     return errors
 
 

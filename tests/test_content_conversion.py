@@ -53,6 +53,18 @@ class ContentConversionTests(unittest.TestCase):
         errors = generate_content.validate_generated_content(self.content)
         self.assertTrue(any("DM 키워드" in error for error in errors))
 
+    def test_hashtag_without_hash_prefix_fails(self):
+        self.content["hashtags"][0] = "과학커뮤니케이션"
+        errors = generate_content.validate_generated_content(self.content)
+        self.assertTrue(any("#으로 시작" in error for error in errors))
+
+    def test_linkedin_hashtag_without_hash_prefix_fails(self):
+        self.content["linkedin_en_hashtags"][0] = "ScienceCommunication"
+        errors = generate_content.validate_generated_content(self.content)
+        self.assertTrue(
+            any("linkedin_en_hashtags" in error and "#으로 시작" in error for error in errors)
+        )
+
     def test_two_daily_slots_select_different_topics(self):
         config = {
             "daily_slots": [{"id": "morning"}, {"id": "afternoon"}],
