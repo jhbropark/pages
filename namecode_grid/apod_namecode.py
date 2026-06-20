@@ -64,6 +64,28 @@ def sim_value(seed):
     return f"{h % 100:02d}.{h // 100 % 1000:03d}"
 
 
+# Label value = real astronomical data pulled from the APOD text (option D).
+# Ordered by preference; first match wins. Falls back to sim_value().
+ASTRO_PATTERNS = [
+    (r"magnitude[s]?\s+(?:of\s+)?(-?\d+(?:\.\d+)?)", "mag {0}"),
+    (r"(-?\d+(?:\.\d+)?)\s*magnitude", "mag {0}"),
+    (r"(\d+(?:\.\d+)?)\s*(million|billion)?\s*light[- ]?years?", "{0} ly"),
+    (r"(\d+(?:\.\d+)?)\s*arc\s*minutes?", "{0}'"),
+    (r"(\d+(?:\.\d+)?)\s*degrees?", "{0} deg"),
+    (r"(\d+(?:\.\d+)?)\s*(?:million\s*)?km\b", "{0} km"),
+    (r"(\d+(?:\.\d+)?)\s*AU\b", "{0} AU"),
+]
+
+
+def astro_value(text):
+    """Return a real measured quantity from the APOD explanation, or None."""
+    for pat, fmt in ASTRO_PATTERNS:
+        m = re.search(pat, text or "", re.I)
+        if m:
+            return fmt.format(m.group(1))
+    return None
+
+
 def build_prompt(subject, explanation=""):
     snippet = (explanation or "").strip().replace("\n", " ")
     if len(snippet) > 200:
@@ -150,7 +172,7 @@ def main():
         src_url = apod.get("hdurl") or apod.get("url")
 
     name = a.name or derive_name(title)
-    value = sim_value(f"{date}:{name}")
+    value = astro_value(explanation) or sim_value(f"{date}:{name}")
     prompt = build_prompt(subject, explanation)
     brief = {"date": date, "apod_title": title, "work_name": name,
              "label": f"namecode - {name} | {value}", "source": src_url, "prompt": prompt}
