@@ -599,6 +599,122 @@
       "post_id": "18088040897300273",
       "post_url": "https://www.instagram.com/p/DZpJFa0Fago/",
       "uploaded_at": "2026-06-16T10:08:00.567115+00:00"
+    },
+    {
+      "id": "krea-pilot-ingredient-delivery",
+      "status": "draft",
+      "format": "carousel",
+      "topic": "성분 전달의 가시화",
+      "pillar_id": "moa_craft",
+      "dm_keyword": "MOA",
+      "image_urls": [
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/ingredient-delivery/instagram-card-01.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/ingredient-delivery/instagram-card-02.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/ingredient-delivery/instagram-card-03.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/ingredient-delivery/instagram-card-04.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/ingredient-delivery/instagram-card-05.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/ingredient-delivery/instagram-card-06.jpg"
+      ],
+      "caption": "보이지 않는 성분의 가치는 설명이 아니라 이동으로 전달됩니다.\n\n어디서 출발해 무엇을 통과하고 어디서 변화가 일어나는지를 먼저 정의한 뒤, 투명한 텍스처와 빛으로 그 경로를 보이게 만듭니다.\n\n지금 더 보여주기 어려운 것은 A 성분 전달, B 작용 기전 중 무엇인가요?\nDM 'MOA'로 기술 시각화 진단 질문을 받아보세요. 프로필 링크에서 포트폴리오도 확인하실 수 있습니다.",
+      "hashtags": [
+        "#3DMOA",
+        "#메디컬애니메이션",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#바이오마케팅",
+        "#bbbbbeauty"
+      ],
+      "alt_text": "투명한 캡슐과 발광 입자가 수분감 있는 피부 장벽을 향해 이동하는 Deep Navy·Aqua Blue 3D 장면.",
+      "scheduled_time": null,
+      "created_at": "2026-06-20T06:44:11.515562+00:00",
+      "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "krea-pilot-warm-science",
+      "status": "draft",
+      "format": "carousel",
+      "topic": "차갑지 않은 과학",
+      "pillar_id": "science_communication",
+      "dm_keyword": "LAB",
+      "image_urls": [
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/warm-science/instagram-card-01.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/warm-science/instagram-card-02.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/warm-science/instagram-card-03.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/warm-science/instagram-card-04.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/warm-science/instagram-card-05.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/warm-science/instagram-card-06.jpg"
+      ],
+      "caption": "과학적 신뢰가 반드시 차갑고 딱딱해야 하는 것은 아닙니다.\n\nDeep Navy의 정밀함에 Soft Beige의 온도를 더하면 연구의 전문성과 뷰티 브랜드의 감성을 한 화면에서 함께 전할 수 있습니다.\n\n브랜드에 더 가까운 무드는 A 차가운 정밀함, B 따뜻한 전문성 중 무엇인가요?\nDM 'LAB'으로 브랜드 무드 진단 질문을 받아보세요. 프로필 링크도 함께 확인해 주세요.",
+      "hashtags": [
+        "#네오랩",
+        "#브랜드디자인",
+        "#메디컬브랜딩",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#bbbbbeauty"
+      ],
+      "alt_text": "따뜻한 베이지 건축과 깊은 네이비 환경, 투명한 실험 오브젝트가 결합된 정제된 미래 연구실 장면.",
+      "scheduled_time": null,
+      "created_at": "2026-06-20T06:44:11.515562+00:00",
+      "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "krea-pilot-one-cell-one-change",
+      "status": "draft",
+      "format": "carousel",
+      "topic": "하나의 세포, 하나의 변화",
+      "pillar_id": "moa_craft",
+      "dm_keyword": "FILM",
+      "image_urls": [
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/one-cell-one-change/instagram-card-01.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/one-cell-one-change/instagram-card-02.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/one-cell-one-change/instagram-card-03.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/one-cell-one-change/instagram-card-04.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/one-cell-one-change/instagram-card-05.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/one-cell-one-change/instagram-card-06.jpg"
+      ],
+      "caption": "정확한 정보도 시선의 중심이 없으면 기억되지 않습니다.\n\n하나의 세포와 하나의 변화에 초점을 맞추고 나머지를 흐리면 작용 기전은 설명을 넘어 영화적 장면이 됩니다.\n\n지금 영상의 문제는 A 정확하지만 평범함, B 멋지지만 어려움 중 무엇인가요?\nDM 'FILM'으로 스토리보드 점검 체크리스트를 받아보세요. 프로필 링크도 확인해 주세요.",
+      "hashtags": [
+        "#마이크로시네마",
+        "#과학영상",
+        "#3D애니메이션",
+        "#메디컬애니메이션",
+        "#바이오마케팅",
+        "#bbbbbeauty"
+      ],
+      "alt_text": "하나의 반투명 세포가 시네마틱 초점 안에 머물고 주변 구조가 깊은 네이비 보케로 사라지는 장면.",
+      "scheduled_time": null,
+      "created_at": "2026-06-20T06:44:11.515562+00:00",
+      "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "krea-pilot-industry-scene",
+      "status": "draft",
+      "format": "carousel",
+      "topic": "업종별 한 장면",
+      "pillar_id": "industry_solution",
+      "dm_keyword": "UX",
+      "image_urls": [
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/instagram-card-01.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/instagram-card-02.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/instagram-card-03.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/instagram-card-04.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/instagram-card-05.jpg",
+        "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/instagram-card-06.jpg"
+      ],
+      "caption": "같은 기술도 업종에 따라 먼저 보여줘야 할 장면이 다릅니다.\n\n더마는 피부 장벽의 변화를, 제약은 작용 기전의 근거를, 의료기기는 사용 맥락을 우선합니다. 한 장면이 업종의 질문에 답해야 합니다.\n\n먼저 풀고 싶은 업종은 A 더마·제약, B 의료기기·바이오 중 어디인가요?\nDM 'UX'로 업종별 비주얼 기획 질문을 받아보세요. 프로필 링크도 확인해 주세요.",
+      "hashtags": [
+        "#인터랙티브콘텐츠",
+        "#의료기기마케팅",
+        "#제약마케팅",
+        "#더마코스메틱",
+        "#과학커뮤니케이션",
+        "#bbbbbeauty"
+      ],
+      "alt_text": "더마·제약·의료기기 세 업종의 핵심 장면을 Deep Navy 그리드 위에 정렬하고 Aqua Blue 포인트로 강조한 장면.",
+      "scheduled_time": null,
+      "created_at": "2026-06-20T06:44:11.515562+00:00",
+      "generated_by": "claude-krea-pilot"
     }
   ]
 }
