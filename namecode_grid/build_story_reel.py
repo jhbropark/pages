@@ -42,7 +42,17 @@ def main():
     label_png = os.path.join(tmp, "label.png")
     make_label_png(label_png)
 
-    durs = [probe_dur(c) for c in clips]
+    durs0 = [probe_dur(c) for c in clips]
+    # TARGET seconds -> per-clip slowdown factor (smooth retime); else SLOWMO
+    target = float(os.environ.get("TARGET", "0") or 0)
+    if target > 0:
+        factor = (target + (len(clips) - 1) * XF) / sum(durs0)
+    else:
+        factor = float(os.environ.get("SLOWMO", "1"))
+    durs = [d * factor for d in durs0]
+    retime = (f"setpts={factor:.4f}*PTS,framerate=fps={FPS}"
+              if abs(factor - 1) > 1e-3 else f"fps={FPS}")
+
     inputs = []
     for c in clips:
         inputs += ["-i", c]
@@ -50,7 +60,7 @@ def main():
     label_idx = len(clips)
 
     vf = (f"scale={W}:{H}:force_original_aspect_ratio=increase,"
-          f"crop={W}:{H},unsharp=5:5:0.6,fps={FPS},setsar=1,format=yuv420p")
+          f"crop={W}:{H},unsharp=5:5:0.6,{retime},setsar=1,format=yuv420p")
     parts = [f"[{i}:v]{vf}[v{i}]" for i in range(len(clips))]
 
     last, acc = "[v0]", durs[0]
