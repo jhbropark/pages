@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260625_morning",
+      "status": "pending",
+      "topic": "의학적 검수 과정이 크리에이티브 품질을 높이는 이유",
+      "slot": "morning",
+      "scheduled_time": "2026-06-26T09:00:00+09:00",
+      "created_at": "2026-06-25T07:06:20.548197+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "검수가이드",
+      "id": "linkedin_20260625_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "의학적 검수를 '크리에이티브의 브레이크'로 여기는 담당자를 자주 만납니다. 일정이 늘어지고, 표현이 깎이고, 임팩트가 줄어든다는 우려죠. 하지만 현장에서 검증된 결론은 반대입니다. 잘 설계된 검수는 크리에이티브의 품질을 끌어올립니다.\n\n첫째, 검수는 모호함을 제거합니다. 작용기전(MOA) 애니메이션을 만들 때 가장 흔한 함정은 '대충 그럴듯한' 시각화입니다. 분자가 수용체에 결합하는 각도, 신호 전달의 순서, 작용 부위의 스케일이 어긋나면 전문가 시청자는 즉시 신뢰를 거둡니다. 검수는 이 지점을 초기에 정리해, 재작업 라운드를 줄이고 핵심 장면에 자원을 집중하게 합니다. 결과적으로 비주얼은 더 과감해집니다.\n\n둘째, 검수는 메시지의 우선순위를 만듭니다. 모든 기전을 다 보여주려는 시도는 결국 아무것도 전달하지 못합니다. 메디컬 검수자는 '무엇이 차별점이고 무엇이 근거인가'를 가려줍니다. 이 필터를 거치면 60초 영상에서 버릴 장면과 살릴 장면이 분명해지고, 스토리라인이 단단해집니다.\n\n셋째, 검수는 규제와 클레임의 리스크를 관리합니다. 표현 하나가 과장 광고로 해석될 수 있는 영역에서, 사후 수정은 비용이자 신뢰 손상입니다. 사전 검수는 이 위험을 설계 단계에서 차단합니다.\n\n핵심은 검수를 '마지막 관문'이 아니라 '초기 설계 파트너'로 두는 것입니다. 기획 단계부터 메디컬 관점이 들어오면 정확성과 창의성은 충돌하지 않고 서로를 강화합니다. bbbb.beauty가 과학을 메시지로, 기술을 신뢰로 옮기는 방식이 바로 이것입니다.\n\n여러분의 조직에서 의학 검수는 크리에이티브를 돕고 있나요, 막고 있나요? 댓글로 의견을 나눠 주세요. 의학검수 체크리스트가 필요하시면 '검수가이드'를 댓글이나 DM으로 남겨 주시면 보내드립니다. 더 깊은 논의는 문의 허브에서 시작할 수 있습니다: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#의학검수",
+        "#MOA애니메이션",
+        "#메디컬마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260625_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 검수는 제약이 아니라 설계다"
+    },
+    {
+      "pair_id": "linkedin_20260625_morning",
+      "status": "pending",
+      "topic": "의학적 검수 과정이 크리에이티브 품질을 높이는 이유",
+      "slot": "morning",
+      "scheduled_time": "2026-06-26T09:00:00+09:00",
+      "created_at": "2026-06-25T07:06:20.548197+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "검수가이드",
+      "id": "linkedin_20260625_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "Many brand and medical leads still treat scientific review as the brake on creative work. They expect longer timelines, softened language, and diluted impact. In practice, the opposite is true: a well-designed review process raises creative quality rather than lowering it.\n\nFirst, review removes ambiguity. The most common trap in mechanism-of-action animation is the \"roughly plausible\" visualization. If the binding angle of a molecule to its receptor, the sequence of signal transduction, or the scale of the active site is off, expert viewers withdraw their trust instantly. Early review resolves these points before production, reducing rework rounds and concentrating resources on the scenes that matter. The visuals become bolder, not safer.\n\nSecond, review creates message priority. Trying to show every pathway ends up communicating nothing. Medical reviewers help separate what is the true differentiator from what is merely supporting evidence. Once a 60-second piece passes that filter, the choice between scenes to cut and scenes to keep becomes obvious, and the storyline holds together.\n\nThird, review manages regulatory and claim risk. In categories where a single phrase can be read as an exaggerated claim, post-launch correction is both a cost and a credibility loss. Upstream review neutralizes that exposure at the design stage instead of in damage control.\n\nThe key shift is to treat review not as the final gate but as an early design partner. When a medical perspective enters at the planning phase, accuracy and creativity stop competing and start reinforcing each other. This is precisely how bbbb.beauty translates science into message and technology into trust.\n\nSo here is the question worth asking your own team: in your organization, does medical review help your creative work or hold it back? Share your view in the comments. If you would like our medical review checklist, comment or DM the keyword \"검수가이드\" and we will send it over. For a deeper conversation, start at our contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#ScienceCommunication",
+        "#MedicalReview",
+        "#MOAanimation",
+        "#HealthcareMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260625_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Review Sharpens Creative"
+    },
+    {
+      "pair_id": "linkedin_20260625_afternoon",
+      "status": "pending",
+      "topic": "3D·2D·실사의 역할을 구분하면 메시지가 선명해집니다",
+      "slot": "afternoon",
+      "scheduled_time": "2026-06-25T15:00:00+09:00",
+      "created_at": "2026-06-25T07:06:20.548197+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "역할분담",
+      "id": "linkedin_20260625_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "\"이 영상 하나로 작용기전도 보여주고, 제품 콘셉트도 설명하고, 임상 신뢰도까지 다 담아주세요.\" 메디컬·더마·바이오 프로젝트에서 자주 듣는 요청입니다. 의도는 이해하지만, 한 매체가 모든 역할을 떠안는 순간 메시지는 오히려 흐려집니다. 핵심은 3D, 2D, 실사의 역할을 명확히 구분하는 것입니다.\n\n첫째, 3D/MOA는 '눈에 보이지 않는 메커니즘'을 담당합니다. 분자가 수용체에 결합하고, 성분이 피부 장벽을 통과하며, 세포 신호가 전달되는 과정은 실사로 촬영할 수 없습니다. 3D는 이 보이지 않는 작용을 공간적으로 재현해 '왜 효과가 있는가'를 설득합니다. 단, 정확성이 생명입니다. 구조와 스케일, 작용 순서가 과학적 근거와 어긋나면 신뢰가 한순간에 무너집니다.\n\n둘째, 2D는 '개념과 흐름'을 담당합니다. 임상 디자인, 작용 단계 요약, 비교 데이터, 환자 여정처럼 추상적인 정보를 정리할 때 2D가 가장 빠르고 명료합니다. 3D로 모든 정보를 표현하려다 화면이 복잡해지는 대신, 2D 다이어그램과 모션 그래픽으로 핵심을 압축하면 이해 속도가 빨라집니다.\n\n셋째, 실사는 '신뢰와 맥락'을 담당합니다. 연구 현장, 제조 공정, 임상의 인터뷰, 실제 사용 환경은 브랜드의 진정성을 전합니다. 3D가 과학을 설명한다면 실사는 '이 과학이 현실에서 작동한다'는 증거를 보여줍니다.\n\n좋은 메디컬 콘텐츠는 이 세 매체를 섞는 게 아니라, 각 메시지에 맞는 매체를 배정하는 설계에서 출발합니다. 기획 단계에서 \"이 장면은 무엇을 증명해야 하는가\"를 먼저 정의하면, 매체 선택은 자연스럽게 따라옵니다. bbbb.beauty는 이 역할분담을 프로젝트 초기 설계의 기준으로 삼습니다.\n\n여러분의 콘텐츠에서 지금 가장 약한 고리는 3D, 2D, 실사 중 무엇인가요? 매체별 역할 분배 체크리스트가 필요하시면 '역할분담'을 댓글이나 DM으로 남겨주세요. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#메디컬애니메이션",
+        "#MOA",
+        "#과학커뮤니케이션",
+        "#B2B콘텐츠"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260625_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 3D·2D·실사, 역할을 나누면 선명해진다"
+    },
+    {
+      "pair_id": "linkedin_20260625_afternoon",
+      "status": "pending",
+      "topic": "3D·2D·실사의 역할을 구분하면 메시지가 선명해집니다",
+      "slot": "afternoon",
+      "scheduled_time": "2026-06-25T15:00:00+09:00",
+      "created_at": "2026-06-25T07:06:20.548197+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "역할분담",
+      "id": "linkedin_20260625_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "\"Can one video explain the mechanism of action, present the product concept, and convey clinical credibility all at once?\" This is a request we hear often on medical, derma, and bio projects. The intent makes sense, but the moment a single medium tries to carry every role, the message gets blurry. The real leverage is in clearly dividing the roles of 3D, 2D, and live action.\n\nFirst, 3D and MOA animation own the invisible mechanism. How a molecule binds to a receptor, how an active ingredient crosses the skin barrier, how a cellular signal propagates\ndashthese cannot be filmed. 3D reconstructs the unseen in space and answers the crucial question: why does it work? Accuracy is everything here. If structure, scale, or sequence drift from the scientific evidence, trust collapses instantly.\n\nSecond, 2D owns concepts and flow. Trial design, summarized mechanism steps, comparative data, patient journeys\ndashabstract information is fastest and clearest in 2D. Instead of forcing every detail into a crowded 3D scene, diagrams and motion graphics compress the essentials and accelerate comprehension.\n\nThird, live action owns trust and context. Research environments, manufacturing processes, clinician interviews, and real-world use convey a brand's authenticity. If 3D explains the science, live footage proves that the science works in reality.\n\nStrong medical content does not simply blend these three media. It begins with a design decision that assigns the right medium to each message. When you define \"what must this scene prove?\" early in planning, the medium choice follows naturally. At bbbb.beauty, this role division is a foundational principle from the earliest stage of every project.\n\nIn your own content, which is the weakest link right now: 3D, 2D, or live action? If you want our checklist for distributing roles across media, comment or DM the keyword \"\ress\ress\" \ndashsend 역할분담 to receive it. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MedicalAnimation",
+        "#MOA",
+        "#ScienceCommunication",
+        "#B2BContent"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260625_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: 3D, 2D, Live: Split Roles, Sharper Message"
     }
   ]
 }
