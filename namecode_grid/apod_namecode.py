@@ -60,14 +60,24 @@ def load_dotenv(path=None):
 
 
 # ---------------------------------------------------------------- NASA APOD
-def get_apod(date=None):
+def get_apod(date=None, retries=5):
     base = os.environ.get("NASA_APOD_BASE", "https://api.nasa.gov/planetary/apod")
     params = {"api_key": os.environ.get("NASA_API_KEY", "DEMO_KEY"), "thumbs": "true"}
     if date:
         params["date"] = date
-    r = requests.get(base, params=params, timeout=30)
-    r.raise_for_status()
-    return r.json()
+    last = None
+    for i in range(retries):
+        try:
+            r = requests.get(base, params=params, timeout=30)
+            if r.status_code >= 500 or r.status_code == 429:
+                raise requests.HTTPError(f"{r.status_code} from APOD", response=r)
+            r.raise_for_status()
+            return r.json()
+        except requests.RequestException as e:  # transient 5xx/429/timeout/conn
+            last = e
+            if i < retries - 1:
+                time.sleep(2 ** i)  # 1, 2, 4, 8s
+    raise last
 
 
 # Recognizable astronomical phenomena make punchier work names than generic
