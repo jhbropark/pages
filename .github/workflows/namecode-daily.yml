@@ -122,14 +122,19 @@ jobs:
         if: ${{ env.IG_ACCESS_TOKEN != '' && (github.event_name == 'schedule' || github.event.inputs.publish == 'true') }}
         working-directory: namecode_grid
         run: |
+          set -o pipefail
           pip install requests
           RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/namecode_apod_${{ steps.gen.outputs.date }}.png"
           echo "Hosting image at: $RAW"
           python ig_publish.py --image-url "$RAW" \
-            --caption-file "daily/caption_${{ steps.gen.outputs.date }}.txt"
+            --caption-file "daily/caption_${{ steps.gen.outputs.date }}.txt" | tee /tmp/pub.txt
+          echo "permalink=$(sed -n 's/^permalink: //p' /tmp/pub.txt)" >> "$GITHUB_OUTPUT"
 
       - name: Notify Telegram (status)
         if: ${{ always() && env.TELEGRAM_BOT_TOKEN != '' }}
+        env:
+          BUTTON_URL: ${{ steps.pub.outputs.permalink }}
+          BUTTON_TEXT: "📷 View on Instagram"
         run: |
           pip install requests -q
           DATE="${{ steps.gen.outputs.date }}"

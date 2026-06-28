@@ -121,6 +121,18 @@ def publish_carousel(image_urls, caption, dry=False):
     return res["id"]
 
 
+def get_permalink(mid, dry=False):
+    """Public instagram.com URL of a published media (for the Telegram button)."""
+    if dry:
+        return ""
+    base, ver, _, tok = cfg()
+    try:
+        j = _get(f"{base}/{ver}/{mid}", {"fields": "permalink", "access_token": tok}, dry)
+        return j.get("permalink", "")
+    except Exception:
+        return ""
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--image-url")
@@ -155,6 +167,9 @@ def main():
             sys.exit("ERROR: provide --image-url, --reel --video-url, or --carousel")
         mid = publish_image(a.image_url, caption, a.dry_run)
     print(f"[ok] published media id: {mid}")
+    link = get_permalink(mid, a.dry_run)
+    if link:
+        print(f"permalink: {link}")
 
 
 if __name__ == "__main__":
