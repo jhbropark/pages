@@ -64,11 +64,27 @@ def _get(url, params, dry):
     return r.json()
 
 
+def _wait_ready(base, ver, cid, tok, dry, tries=20, delay=3):
+    """Poll a media container's status_code until FINISHED before publishing.
+    Skipping this causes code 9007 'media is not ready for publishing'.
+    Images are usually ready in seconds; reels take longer."""
+    for _ in range(tries):
+        st = _get(f"{base}/{ver}/{cid}", {"fields": "status_code", "access_token": tok}, dry)
+        sc = st.get("status_code")
+        if sc == "FINISHED":
+            return
+        if sc == "ERROR":
+            raise RuntimeError(f"container processing error: {st}")
+        time.sleep(delay)
+    raise RuntimeError("container not ready (timed out)")
+
+
 def publish_image(image_url, caption, dry=False):
     base, ver, uid, tok = cfg()
     container = _post(f"{base}/{ver}/{uid}/media",
                       {"image_url": image_url, "caption": caption, "access_token": tok}, dry)
     cid = container["id"]
+    _wait_ready(base, ver, cid, tok, dry)
     res = _post(f"{base}/{ver}/{uid}/media_publish",
                 {"creation_id": cid, "access_token": tok}, dry)
     return res["id"]
@@ -82,14 +98,7 @@ def publish_reel(video_url, caption, cover_url=None, dry=False):
         params["cover_url"] = cover_url
     container = _post(f"{base}/{ver}/{uid}/media", params, dry)
     cid = container["id"]
-    # reels need processing; poll status_code until FINISHED
-    for _ in range(30):
-        st = _get(f"{base}/{ver}/{cid}", {"fields": "status_code", "access_token": tok}, dry)
-        if st.get("status_code") == "FINISHED":
-            break
-        if st.get("status_code") == "ERROR":
-            raise RuntimeError(f"reel processing error: {st}")
-        time.sleep(5)
+    _wait_ready(base, ver, cid, tok, dry, tries=40, delay=5)  # reels process longer
     res = _post(f"{base}/{ver}/{uid}/media_publish",
                 {"creation_id": cid, "access_token": tok}, dry)
     return res["id"]
@@ -106,6 +115,7 @@ def publish_carousel(image_urls, caption, dry=False):
     container = _post(f"{base}/{ver}/{uid}/media",
                       {"media_type": "CAROUSEL", "children": ",".join(children),
                        "caption": caption, "access_token": tok}, dry)
+    _wait_ready(base, ver, container["id"], tok, dry)
     res = _post(f"{base}/{ver}/{uid}/media_publish",
                 {"creation_id": container["id"], "access_token": tok}, dry)
     return res["id"]
