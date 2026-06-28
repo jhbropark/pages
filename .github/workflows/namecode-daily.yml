@@ -40,6 +40,8 @@ jobs:
     env:
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
     steps:
@@ -130,16 +132,33 @@ jobs:
             --caption-file "daily/caption_${{ steps.gen.outputs.date }}.txt" | tee /tmp/pub.txt
           echo "permalink=$(sed -n 's/^permalink: //p' /tmp/pub.txt)" >> "$GITHUB_OUTPUT"
 
+      - name: Publish to Facebook (optional)
+        id: fbpub
+        # cross-post the same artwork to the Facebook Page when its token is set
+        if: ${{ env.FB_PAGE_TOKEN != '' && (github.event_name == 'schedule' || github.event.inputs.publish == 'true') }}
+        working-directory: namecode_grid
+        run: |
+          set -o pipefail
+          pip install requests
+          RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/namecode_apod_${{ steps.gen.outputs.date }}.png"
+          echo "Hosting image at: $RAW"
+          python fb_publish.py --image-url "$RAW" \
+            --caption-file "daily/caption_${{ steps.gen.outputs.date }}.txt" | tee /tmp/fbpub.txt
+          echo "permalink=$(sed -n 's/^permalink: //p' /tmp/fbpub.txt)" >> "$GITHUB_OUTPUT"
+
       - name: Notify Telegram (status)
         if: ${{ always() && env.TELEGRAM_BOT_TOKEN != '' }}
         env:
           BUTTON_URL: ${{ steps.pub.outputs.permalink }}
           BUTTON_TEXT: "📷 View on Instagram"
+          BUTTON2_URL: ${{ steps.fbpub.outputs.permalink }}
+          BUTTON2_TEXT: "📘 View on Facebook"
         run: |
           pip install requests -q
           DATE="${{ steps.gen.outputs.date }}"
           GEN="${{ steps.gen.outcome }}"
           PUB="${{ steps.pub.outcome }}"
+          FBPUB="${{ steps.fbpub.outcome }}"
           LABEL=$(python -c "import json;print(json.load(open('namecode_grid/daily/brief_'+'$DATE'+'.json'))['label'])" 2>/dev/null || echo "")
           if [ "$GEN" != "success" ]; then
             MSG="🛰 namecode daily ${DATE:-?}
@@ -147,6 +166,7 @@ jobs:
           else
             MSG="🛰 namecode daily ${DATE}
           ✅ generated: ${LABEL:-?}
-          feed publish: ${PUB}"
+          IG publish: ${PUB}
+          FB publish: ${FBPUB}"
           fi
           MESSAGE="$MSG" python namecode_grid/notify_telegram.py

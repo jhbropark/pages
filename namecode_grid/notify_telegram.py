@@ -19,10 +19,16 @@ def main():
         print("Telegram not configured; skipping notification.")
         return
     payload = {"chat_id": chat, "text": msg or "(empty)", "disable_web_page_preview": True}
+    # up to two inline link buttons (e.g. the published Instagram + Facebook posts)
+    row = []
     btn_url = os.environ.get("BUTTON_URL")
-    if btn_url:  # inline link button (e.g. the published Instagram post)
-        payload["reply_markup"] = {"inline_keyboard": [[
-            {"text": os.environ.get("BUTTON_TEXT", "Open"), "url": btn_url}]]}
+    if btn_url:
+        row.append({"text": os.environ.get("BUTTON_TEXT", "Open"), "url": btn_url})
+    btn2_url = os.environ.get("BUTTON2_URL")
+    if btn2_url:
+        row.append({"text": os.environ.get("BUTTON2_TEXT", "Open"), "url": btn2_url})
+    if row:
+        payload["reply_markup"] = {"inline_keyboard": [row]}
     r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", json=payload, timeout=30)
     print("telegram:", r.status_code, r.text[:200])
 
