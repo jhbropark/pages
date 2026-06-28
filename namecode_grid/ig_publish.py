@@ -95,12 +95,29 @@ def publish_reel(video_url, caption, cover_url=None, dry=False):
     return res["id"]
 
 
+def publish_carousel(image_urls, caption, dry=False):
+    """Carousel: each image as a child item -> CAROUSEL container -> publish."""
+    base, ver, uid, tok = cfg()
+    children = []
+    for u in image_urls:
+        c = _post(f"{base}/{ver}/{uid}/media",
+                  {"image_url": u, "is_carousel_item": "true", "access_token": tok}, dry)
+        children.append(c["id"])
+    container = _post(f"{base}/{ver}/{uid}/media",
+                      {"media_type": "CAROUSEL", "children": ",".join(children),
+                       "caption": caption, "access_token": tok}, dry)
+    res = _post(f"{base}/{ver}/{uid}/media_publish",
+                {"creation_id": container["id"], "access_token": tok}, dry)
+    return res["id"]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--image-url")
     ap.add_argument("--reel", action="store_true")
     ap.add_argument("--video-url")
     ap.add_argument("--cover-url")
+    ap.add_argument("--carousel", help="comma-separated image URLs (2-10)")
     ap.add_argument("--caption", default="")
     ap.add_argument("--caption-file")
     ap.add_argument("--dry-run", action="store_true")
@@ -114,13 +131,18 @@ def main():
     if not a.dry_run and (not uid or not tok):
         sys.exit("ERROR: set IG_USER_ID and IG_ACCESS_TOKEN (or use --dry-run).")
 
-    if a.reel:
+    if a.carousel:
+        urls = [u.strip() for u in a.carousel.split(",") if u.strip()]
+        if len(urls) < 2:
+            sys.exit("ERROR: --carousel needs 2-10 image URLs")
+        mid = publish_carousel(urls, caption, a.dry_run)
+    elif a.reel:
         if not a.video_url:
             sys.exit("ERROR: --reel requires --video-url")
         mid = publish_reel(a.video_url, caption, a.cover_url, a.dry_run)
     else:
         if not a.image_url:
-            sys.exit("ERROR: provide --image-url (or --reel --video-url)")
+            sys.exit("ERROR: provide --image-url, --reel --video-url, or --carousel")
         mid = publish_image(a.image_url, caption, a.dry_run)
     print(f"[ok] published media id: {mid}")
 

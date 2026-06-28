@@ -40,6 +40,8 @@ jobs:
     env:
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
     steps:
       - uses: actions/checkout@v4
 
@@ -115,6 +117,7 @@ jobs:
           done
 
       - name: Publish to Instagram (optional)
+        id: pub
         # only when a token is present AND publish=true (manual) or scheduled
         if: ${{ env.IG_ACCESS_TOKEN != '' && (github.event_name == 'schedule' || github.event.inputs.publish == 'true') }}
         working-directory: namecode_grid
@@ -124,3 +127,21 @@ jobs:
           echo "Hosting image at: $RAW"
           python ig_publish.py --image-url "$RAW" \
             --caption-file "daily/caption_${{ steps.gen.outputs.date }}.txt"
+
+      - name: Notify Telegram (status)
+        if: ${{ always() && env.TELEGRAM_BOT_TOKEN != '' }}
+        run: |
+          pip install requests -q
+          DATE="${{ steps.gen.outputs.date }}"
+          GEN="${{ steps.gen.outcome }}"
+          PUB="${{ steps.pub.outcome }}"
+          LABEL=$(python -c "import json;print(json.load(open('namecode_grid/daily/brief_'+'$DATE'+'.json'))['label'])" 2>/dev/null || echo "")
+          if [ "$GEN" != "success" ]; then
+            MSG="🛰 namecode daily ${DATE:-?}
+          ❌ generation FAILED — check the run logs."
+          else
+            MSG="🛰 namecode daily ${DATE}
+          ✅ generated: ${LABEL:-?}
+          feed publish: ${PUB}"
+          fi
+          MESSAGE="$MSG" python namecode_grid/notify_telegram.py

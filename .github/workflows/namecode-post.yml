@@ -7,12 +7,20 @@ name: namecode post (manual publish)
 on:
   workflow_dispatch:
     inputs:
+      type:
+        description: "What to post"
+        type: choice
+        options: [reel, carousel]
+        default: reel
       video:
-        description: "Reel mp4 path in repo"
+        description: "Reel mp4 path in repo (type=reel)"
         default: namecode_grid/namecode_reel_occultation_60s.mp4
       cover:
-        description: "Cover png path in repo"
+        description: "Cover png path in repo (type=reel)"
         default: namecode_grid/post_occultation/cover.png
+      slides_dir:
+        description: "Carousel slides dir in repo (type=carousel)"
+        default: namecode_grid/post_occultation/carousel
       caption:
         description: "Caption txt path in repo"
         default: namecode_grid/post_occultation/caption.txt
@@ -40,10 +48,21 @@ jobs:
           exit 1
 
       - name: Publish reel to Instagram
+        if: ${{ github.event.inputs.type == 'reel' }}
         run: |
           RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}"
           echo "video: $RAW/${{ github.event.inputs.video }}"
           python namecode_grid/ig_publish.py --reel \
             --video-url "$RAW/${{ github.event.inputs.video }}" \
             --cover-url "$RAW/${{ github.event.inputs.cover }}" \
+            --caption-file "${{ github.event.inputs.caption }}"
+
+      - name: Publish carousel to Instagram
+        if: ${{ github.event.inputs.type == 'carousel' }}
+        run: |
+          RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}"
+          DIR="${{ github.event.inputs.slides_dir }}"
+          URLS=$(for f in $(ls "$DIR"/*.png | sort); do printf '%s/%s,' "$RAW" "$f"; done | sed 's/,$//')
+          echo "carousel urls: $URLS"
+          python namecode_grid/ig_publish.py --carousel "$URLS" \
             --caption-file "${{ github.event.inputs.caption }}"
