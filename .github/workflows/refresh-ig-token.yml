@@ -1,0 +1,32 @@
+name: refresh IG token (keep alive)
+
+# Instagram-login long-lived tokens last 60 days. Refresh monthly so the daily
+# publisher never lapses. Auto-stores the new token if GH_PAT is set.
+
+on:
+  schedule:
+    - cron: "0 6 1 * *"     # 06:00 UTC on the 1st of each month
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      GH_PAT: ${{ secrets.GH_PAT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests pynacl
+      - name: Guard — token required
+        if: ${{ env.IG_ACCESS_TOKEN == '' }}
+        run: |
+          echo "::notice::IG_ACCESS_TOKEN not set yet — nothing to refresh."
+          exit 0
+      - name: Refresh token
+        run: python namecode_grid/refresh_ig_token.py

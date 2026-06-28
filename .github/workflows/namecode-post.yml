@@ -1,0 +1,49 @@
+name: namecode post (manual publish)
+
+# One-shot publisher for a finished reel (e.g. the OCCULTATION hero).
+# Runs only when IG_USER_ID / IG_ACCESS_TOKEN secrets are set.
+# Uses the committed file's raw URL as the public video/cover URL.
+
+on:
+  workflow_dispatch:
+    inputs:
+      video:
+        description: "Reel mp4 path in repo"
+        default: namecode_grid/namecode_reel_occultation_60s.mp4
+      cover:
+        description: "Cover png path in repo"
+        default: namecode_grid/post_occultation/cover.png
+      caption:
+        description: "Caption txt path in repo"
+        default: namecode_grid/post_occultation/caption.txt
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+
+      - name: Guard — secrets required
+        if: ${{ env.IG_ACCESS_TOKEN == '' }}
+        run: |
+          echo "::error::Set IG_USER_ID and IG_ACCESS_TOKEN secrets before publishing."
+          exit 1
+
+      - name: Publish reel to Instagram
+        run: |
+          RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}"
+          echo "video: $RAW/${{ github.event.inputs.video }}"
+          python namecode_grid/ig_publish.py --reel \
+            --video-url "$RAW/${{ github.event.inputs.video }}" \
+            --cover-url "$RAW/${{ github.event.inputs.cover }}" \
+            --caption-file "${{ github.event.inputs.caption }}"
