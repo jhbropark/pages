@@ -60,19 +60,48 @@ def load_dotenv(path=None):
 
 
 # ---------------------------------------------------------------- NASA APOD
-def get_apod(date=None):
+def get_apod(date=None, retries=5):
     base = os.environ.get("NASA_APOD_BASE", "https://api.nasa.gov/planetary/apod")
     params = {"api_key": os.environ.get("NASA_API_KEY", "DEMO_KEY"), "thumbs": "true"}
     if date:
         params["date"] = date
-    r = requests.get(base, params=params, timeout=30)
-    r.raise_for_status()
-    return r.json()
+    last = None
+    for i in range(retries):
+        try:
+            r = requests.get(base, params=params, timeout=30)
+            if r.status_code >= 500 or r.status_code == 429:
+                raise requests.HTTPError(f"{r.status_code} from APOD", response=r)
+            r.raise_for_status()
+            return r.json()
+        except requests.RequestException as e:  # transient 5xx/429/timeout/conn
+            last = e
+            if i < retries - 1:
+                time.sleep(2 ** i)  # 1, 2, 4, 8s
+    raise last
 
 
-def derive_name(title):
-    """Turn an APOD title into a namecode work name, e.g.
-    'Daytime Moon Meets Evening Star' -> 'MOON.STAR'."""
+# Recognizable astronomical phenomena make punchier work names than generic
+# title words; prefer them when present in the title or explanation.
+# (stem matched with a word boundary -> clean display name; stems catch plurals)
+PHENOMENA = [
+    ("occultation", "OCCULTATION"), ("eclipse", "ECLIPSE"), ("transit", "TRANSIT"),
+    ("conjunction", "CONJUNCTION"), ("opposition", "OPPOSITION"), ("comet", "COMET"),
+    ("supernova", "SUPERNOVA"), ("nebula", "NEBULA"), ("galax", "GALAXY"),
+    ("aurora", "AURORA"), ("eruption", "ERUPTION"), ("meteor", "METEOR"),
+    ("solstice", "SOLSTICE"), ("equinox", "EQUINOX"), ("corona", "CORONA"),
+    ("prominence", "PROMINENCE"), ("halo", "HALO"), ("nova", "NOVA"),
+    ("cluster", "CLUSTER"),
+]
+
+
+def derive_name(title, explanation=""):
+    """Turn an APOD into a namecode work name. Prefer a known phenomenon term
+    (e.g. 'OCCULTATION'); otherwise fall back to the salient title words
+    ('Daytime Moon Meets Evening Star' -> 'MOON.STAR')."""
+    blob = f"{title} {explanation}".lower()
+    for stem, name in PHENOMENA:
+        if re.search(rf"\b{stem}", blob):
+            return name
     words = [w for w in re.findall(r"[A-Za-z]+", title) if w.lower() not in STOPWORDS]
     words = sorted(set(words), key=lambda w: (-len(w), title.lower().index(w.lower())))[:2]
     words = sorted(words, key=lambda w: title.lower().index(w.lower()))
@@ -220,7 +249,7 @@ def main():
         date = apod.get("date", a.date or "today")
         src_url = apod.get("hdurl") or apod.get("url")
 
-    name = a.name or derive_name(title)
+    name = a.name or derive_name(title, explanation)
     value = astro_value(explanation) or astro_value(title) or sim_value(f"{date}:{name}")
     prompt = build_prompt(subject, explanation)
     brief = {"date": date, "apod_title": title, "work_name": name,

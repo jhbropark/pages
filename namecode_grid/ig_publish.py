@@ -31,10 +31,16 @@ import requests
 
 
 def cfg():
-    base = os.environ.get("GRAPH_BASE", "https://graph.facebook.com")
     ver = os.environ.get("GRAPH_VERSION", "v21.0")
     uid = os.environ.get("IG_USER_ID")
     tok = os.environ.get("IG_ACCESS_TOKEN")
+    # Auto-pick the API host from the token type unless GRAPH_BASE is set:
+    #   Instagram-login tokens (IGAA…/IG…) -> graph.instagram.com
+    #   Facebook-login tokens (EAA…)       -> graph.facebook.com
+    base = os.environ.get("GRAPH_BASE")
+    if not base:
+        base = ("https://graph.instagram.com" if (tok or "").startswith("IG")
+                else "https://graph.facebook.com")
     return base, ver, uid, tok
 
 
