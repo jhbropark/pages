@@ -18,9 +18,12 @@ def main():
     if not tok or not chat:
         print("Telegram not configured; skipping notification.")
         return
-    r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage",
-                      json={"chat_id": chat, "text": msg or "(empty)",
-                            "disable_web_page_preview": True}, timeout=30)
+    payload = {"chat_id": chat, "text": msg or "(empty)", "disable_web_page_preview": True}
+    btn_url = os.environ.get("BUTTON_URL")
+    if btn_url:  # inline link button (e.g. the published Instagram post)
+        payload["reply_markup"] = {"inline_keyboard": [[
+            {"text": os.environ.get("BUTTON_TEXT", "Open"), "url": btn_url}]]}
+    r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", json=payload, timeout=30)
     print("telegram:", r.status_code, r.text[:200])
 
 
