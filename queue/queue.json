@@ -715,6 +715,26 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260630",
+      "status": "pending",
+      "topic": "전문가에게 정확하고 소비자에게 쉬운 메시지는 어떻게 공존하는가",
+      "pillar_id": "science_communication",
+      "format": "single_image",
+      "image_url": "https://jhbropark.github.io/pages/images/post_20260630.jpg",
+      "caption": "전문가용 정확성과 고객용 쉬움은 평균값이 아니라 이중 레이어 설계에서 함께 만듭니다. 같은 주장 아래 의미 레이어와 근거 레이어를 분리하면 과학은 더 또렷하게 읽힙니다. 프로필을 방문하시고 저장 또는 팀 공유에 활용하시기 바랍니다.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#메디컬브랜딩",
+        "#바이오마케팅",
+        "#메시지전략",
+        "#브랜드메시지",
+        "#bbbbbeauty"
+      ],
+      "scheduled_time": "2026-06-30T19:00:00+09:00",
+      "created_at": "2026-06-29T06:05:00+09:00",
+      "generated_by": "codex"
     }
   ]
 }
