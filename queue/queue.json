@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260630_morning",
+      "status": "pending",
+      "topic": "복잡한 바이오 플랫폼 기술을 한 문장과 한 장면으로 정리하는 법",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260630_morning_ko.jpg",
+      "caption": "바이오 플랫폼은 기전이 복잡할수록 한 문장과 한 장면으로 압축돼야 합니다. 핵심은 작용 단계가 아니라 고객이 기억할 단 하나의 차별점입니다. 메시지를 먼저 정하고 시각화를 설계하세요.\n\n댓글: 메시지 먼저? 비주얼 먼저?\nDM “한문장”: 플랫폼 메시지 압축 체크리스트 제공\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#바이오플랫폼",
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#B2B마케팅",
+        "#메디컬콘텐츠",
+        "#사이언스비주얼"
+      ],
+      "scheduled_time": "2026-06-30T12:30:00+09:00",
+      "created_at": "2026-06-30T07:03:20.430494+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260630_afternoon",
+      "status": "pending",
+      "topic": "Science to Message, Beauty to Experience: bbbb.beauty가 하는 일",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260630_afternoon_ko.jpg",
+      "caption": "MOA 영상의 가치는 화려한 렌더링이 아니라 '메커니즘의 정확한 번역'에서 나옵니다. 논문과 데이터를 시각 언어로 옮기는 과정에서 의학적 정확성과 브랜드 메시지가 만납니다.\n\n댓글: 필요한 건? A. MOA B. 다큐\nDM “MOA”: MOA 영상 제작 체크리스트 PDF 드립니다\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학시각화",
+        "#메디컬커뮤니케이션",
+        "#더마코스메틱",
+        "#3D애니메이션",
+        "#B2B마케팅"
+      ],
+      "scheduled_time": "2026-06-30T19:00:00+09:00",
+      "created_at": "2026-06-30T07:03:20.430494+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
