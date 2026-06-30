@@ -87,25 +87,6 @@ jobs:
           name: namecode-apod-${{ steps.gen.outputs.date }}
           path: namecode_grid/daily/*${{ steps.gen.outputs.date }}*
 
-      - name: Build 30s reel (ffmpeg loop)
-        # loops a committed 9:16 seed into a finished 30s reel
-        run: |
-          SEED="namecode_grid/namecode_reel_occultation_9x16.mp4"
-          if [ -f "$SEED" ]; then
-            ffmpeg -version >/dev/null 2>&1 || (sudo apt-get update && sudo apt-get install -y ffmpeg)
-            bash namecode_grid/loop_reel.sh "$SEED" \
-              "namecode_grid/daily/reel_${{ steps.gen.outputs.date }}.mp4" 30
-          else
-            echo "no reel seed found; skipping reel build"
-          fi
-
-      - name: Upload reel artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: namecode-reel-${{ steps.gen.outputs.date }}
-          path: namecode_grid/daily/reel_*.mp4
-          if-no-files-found: ignore
-
       - name: Commit daily image
         run: |
           git config user.name "namecode-bot"
@@ -118,7 +99,44 @@ jobs:
             git push && break || { echo "push retry $i"; sleep 5; }
           done
 
-      - name: Publish to Instagram (optional)
+      - name: Generate reel (Krea image-to-video)
+        id: reel
+        # turn today's pushed still into a 9:16 1080x1920 reel; only when publishing
+        if: ${{ env.KREA_API_KEY != '' && (github.event_name == 'schedule' || github.event.inputs.publish == 'true') }}
+        working-directory: namecode_grid
+        env:
+          KREA_API_KEY: ${{ secrets.KREA_API_KEY }}
+        run: |
+          set -o pipefail
+          pip install requests imageio-ffmpeg
+          DATE="${{ steps.gen.outputs.date }}"
+          RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/namecode_apod_${DATE}.png"
+          echo "start_image: $RAW"
+          python krea_reel.py --image-url "$RAW" \
+            --brief "daily/brief_${DATE}.json" \
+            --out "daily/reel_${DATE}.mp4"
+          echo "made=1" >> "$GITHUB_OUTPUT"
+
+      - name: Commit reel
+        if: ${{ steps.reel.outputs.made == '1' }}
+        run: |
+          git config user.name "namecode-bot"
+          git config user.email "bot@namecode.kr"
+          git add namecode_grid/daily/reel_*.mp4
+          git commit -m "daily: reel ${{ steps.gen.outputs.date }}" || echo "nothing to commit"
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin "${{ github.ref_name }}" || true
+            git push && break || { echo "push retry $i"; sleep 5; }
+          done
+
+      - name: Upload reel artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: namecode-reel-${{ steps.gen.outputs.date }}
+          path: namecode_grid/daily/reel_*.mp4
+          if-no-files-found: ignore
+
+      - name: Publish feed image to Instagram (optional)
         id: pub
         # only when a token is present AND publish=true (manual) or scheduled
         if: ${{ env.IG_ACCESS_TOKEN != '' && (github.event_name == 'schedule' || github.event.inputs.publish == 'true') }}
@@ -132,7 +150,21 @@ jobs:
             --caption-file "daily/caption_${{ steps.gen.outputs.date }}.txt" | tee /tmp/pub.txt
           echo "permalink=$(sed -n 's/^permalink: //p' /tmp/pub.txt)" >> "$GITHUB_OUTPUT"
 
-      - name: Publish to Facebook (optional)
+      - name: Publish reel to Instagram (optional)
+        id: reelpub
+        if: ${{ steps.reel.outputs.made == '1' && env.IG_ACCESS_TOKEN != '' }}
+        working-directory: namecode_grid
+        run: |
+          set -o pipefail
+          pip install requests
+          REELRAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/reel_${{ steps.gen.outputs.date }}.mp4"
+          COVER="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/namecode_apod_${{ steps.gen.outputs.date }}.png"
+          echo "reel: $REELRAW"
+          python ig_publish.py --reel --video-url "$REELRAW" --cover-url "$COVER" \
+            --caption-file "daily/caption_${{ steps.gen.outputs.date }}.txt" | tee /tmp/reelpub.txt
+          echo "permalink=$(sed -n 's/^permalink: //p' /tmp/reelpub.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Publish feed image to Facebook (optional)
         id: fbpub
         # cross-post the same artwork to the Facebook Page when its token is set
         if: ${{ env.FB_PAGE_TOKEN != '' && (github.event_name == 'schedule' || github.event.inputs.publish == 'true') }}
@@ -146,10 +178,23 @@ jobs:
             --caption-file "daily/caption_${{ steps.gen.outputs.date }}.txt" | tee /tmp/fbpub.txt
           echo "permalink=$(sed -n 's/^permalink: //p' /tmp/fbpub.txt)" >> "$GITHUB_OUTPUT"
 
+      - name: Publish reel to Facebook (optional)
+        id: fbreel
+        continue-on-error: true
+        if: ${{ steps.reel.outputs.made == '1' && env.FB_PAGE_TOKEN != '' }}
+        working-directory: namecode_grid
+        run: |
+          set -o pipefail
+          pip install requests
+          REELRAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/reel_${{ steps.gen.outputs.date }}.mp4"
+          python fb_publish.py --video-url "$REELRAW" \
+            --caption-file "daily/caption_${{ steps.gen.outputs.date }}.txt" | tee /tmp/fbreel.txt
+
       - name: Notify Telegram (status)
         if: ${{ always() && env.TELEGRAM_BOT_TOKEN != '' }}
         env:
-          BUTTON_URL: ${{ steps.pub.outputs.permalink }}
+          # prefer the reel link for the IG button, fall back to the feed post
+          BUTTON_URL: ${{ steps.reelpub.outputs.permalink != '' && steps.reelpub.outputs.permalink || steps.pub.outputs.permalink }}
           BUTTON_TEXT: "📷 View on Instagram"
           BUTTON2_URL: ${{ steps.fbpub.outputs.permalink }}
           BUTTON2_TEXT: "📘 View on Facebook"
@@ -158,7 +203,9 @@ jobs:
           DATE="${{ steps.gen.outputs.date }}"
           GEN="${{ steps.gen.outcome }}"
           PUB="${{ steps.pub.outcome }}"
+          REELPUB="${{ steps.reelpub.outcome }}"
           FBPUB="${{ steps.fbpub.outcome }}"
+          FBREEL="${{ steps.fbreel.outcome }}"
           LABEL=$(python -c "import json;print(json.load(open('namecode_grid/daily/brief_'+'$DATE'+'.json'))['label'])" 2>/dev/null || echo "")
           if [ "$GEN" != "success" ]; then
             MSG="🛰 namecode daily ${DATE:-?}
@@ -166,7 +213,7 @@ jobs:
           else
             MSG="🛰 namecode daily ${DATE}
           ✅ generated: ${LABEL:-?}
-          IG publish: ${PUB}
-          FB publish: ${FBPUB}"
+          IG feed: ${PUB} · reel: ${REELPUB:-skipped}
+          FB feed: ${FBPUB} · reel: ${FBREEL:-skipped}"
           fi
           MESSAGE="$MSG" python namecode_grid/notify_telegram.py

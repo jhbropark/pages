@@ -73,9 +73,27 @@ def publish_photo(image_url, caption, dry=False):
     return post_id, link
 
 
+def publish_video(video_url, caption, dry=False):
+    """Post a video to the Page via /{page}/videos with a remote file_url."""
+    base, ver, pid, tok = cfg()
+    if dry:
+        print(f"POST {base}/{ver}/{pid}/videos  file_url={video_url}", file=sys.stderr)
+        return "DRYRUN", ""
+    tok = resolve_page_token(base, ver, pid, tok)
+    r = requests.post(f"{base}/{ver}/{pid}/videos",
+                      params={"file_url": video_url, "description": caption,
+                              "access_token": tok}, timeout=120)
+    if not r.ok:
+        raise RuntimeError(f"{r.status_code} {r.text}")
+    vid = r.json().get("id")
+    link = f"https://www.facebook.com/{pid}/videos/{vid}" if vid else ""
+    return vid, link
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--image-url", required=True)
+    ap.add_argument("--image-url")
+    ap.add_argument("--video-url", help="post a video instead of a photo")
     ap.add_argument("--caption", default="")
     ap.add_argument("--caption-file")
     ap.add_argument("--dry-run", action="store_true")
@@ -89,8 +107,14 @@ def main():
     if not a.dry_run and (not pid or not tok):
         sys.exit("ERROR: set FB_PAGE_ID and FB_PAGE_TOKEN (or use --dry-run).")
 
-    post_id, link = publish_photo(a.image_url, caption, a.dry_run)
-    print(f"[ok] facebook post id: {post_id}")
+    if a.video_url:
+        post_id, link = publish_video(a.video_url, caption, a.dry_run)
+        print(f"[ok] facebook video id: {post_id}")
+    elif a.image_url:
+        post_id, link = publish_photo(a.image_url, caption, a.dry_run)
+        print(f"[ok] facebook post id: {post_id}")
+    else:
+        sys.exit("ERROR: provide --image-url or --video-url")
     if link:
         print(f"permalink: {link}")
 
