@@ -25,11 +25,37 @@ def cfg():
             os.environ.get("FB_PAGE_TOKEN"))
 
 
+def resolve_page_token(base, ver, page_id, token):
+    """Return a Page access token for `page_id`.
+
+    Posting to /{page}/photos requires the *page* token, not a *user* token —
+    a user token there fails with "(#200) ... publish_actions ... deprecated".
+    User and page tokens look almost identical (same EAA… app prefix), so this
+    accepts either: if `token` is a user token, look up the matching page token
+    via /me/accounts; if it's already a page token (that call returns nothing),
+    use it as-is.
+    """
+    try:
+        r = requests.get(f"{base}/{ver}/me/accounts",
+                         params={"fields": "id,access_token", "access_token": token},
+                         timeout=30)
+        if r.ok:
+            for pg in r.json().get("data", []):
+                if str(pg.get("id")) == str(page_id) and pg.get("access_token"):
+                    print("[info] resolved page token from user token via /me/accounts",
+                          file=sys.stderr)
+                    return pg["access_token"]
+    except Exception:
+        pass
+    return token
+
+
 def publish_photo(image_url, caption, dry=False):
     base, ver, pid, tok = cfg()
     if dry:
         print(f"POST {base}/{ver}/{pid}/photos  url={image_url}", file=sys.stderr)
         return "DRYRUN", ""
+    tok = resolve_page_token(base, ver, pid, tok)
     r = requests.post(f"{base}/{ver}/{pid}/photos",
                       params={"url": image_url, "caption": caption, "access_token": tok},
                       timeout=60)
