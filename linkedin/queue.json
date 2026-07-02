@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260703_morning",
+      "status": "pending",
+      "topic": "의료기기 원리를 3D 영상으로 보여줄 때 놓치지 말아야 할 것",
+      "slot": "morning",
+      "scheduled_time": "2026-07-03T09:00:00+09:00",
+      "created_at": "2026-07-03T06:57:19.007252+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260703_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "의료기기의 작동 원리를 3D 영상으로 옮길 때, 담당자들이 가장 자주 하는 실수는 '멋진 비주얼'을 먼저 상상하는 것입니다. 그러나 의료기기 시각화의 본질은 심미성이 아니라 정확성입니다. 화면이 아름다워도 원리가 틀리면, 그 영상은 오히려 신뢰를 무너뜨립니다.\n\n첫째, 작동 원리(MOA)의 물리적 근거를 먼저 정리해야 합니다. 예를 들어 고주파(RF) 기기의 열 확산, 초음파 집속 에너지의 깊이별 도달, 마이크로니들의 침투 경로는 각각 다른 물리 현상입니다. 이 근거 없이 애니메이션을 만들면 에너지가 조직에 닿는 깊이나 순서가 실제와 어긋나기 쉽습니다. 우리는 시각화 착수 전 R&D·메디컬팀과 원리 정의서를 먼저 합의합니다.\n\n둘째, 규제 범위를 넘지 않는 표현 설계가 필요합니다. 특정 효능을 단정하거나 임상 수치를 과장하는 순간, 영상은 마케팅 자산이 아니라 규제 리스크가 됩니다. 무엇을 '보여줄 수 있고' 무엇을 '암시로 남겨야 하는지'를 사전에 구분하는 것이 실무의 핵심입니다.\n\n셋째, 대상 청중에 따라 정보 밀도를 조절해야 합니다. 학회 발표용, 영업 미팅용, 환자 설명용 영상은 같은 원리라도 강조점과 깊이가 완전히 달라야 합니다. 하나의 영상으로 모두를 만족시키려다 결국 아무도 설득하지 못하는 경우가 많습니다.\n\n결국 좋은 의료기기 3D 영상은 '무엇을 뺄 것인가'의 결정에서 완성됩니다. 정확성, 규제, 청중이라는 세 축을 먼저 세우면 비주얼은 그 위에서 자연스럽게 따라옵니다.\n\n여러분의 조직은 시각화 착수 전에 원리 정의서를 먼저 합의하나요? 의료기기 3D 시각화 체크리스트가 필요하시면 MOA 라고 댓글이나 DM 주세요. 문의는 https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#의료기기마케팅",
+        "#MOA시각화",
+        "#과학커뮤니케이션",
+        "#B2B마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260703_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 원리 없는 3D는 그냥 그림입니다"
+    },
+    {
+      "pair_id": "linkedin_20260703_morning",
+      "status": "pending",
+      "topic": "의료기기 원리를 3D 영상으로 보여줄 때 놓치지 말아야 할 것",
+      "slot": "morning",
+      "scheduled_time": "2026-07-03T09:00:00+09:00",
+      "created_at": "2026-07-03T06:57:19.007252+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260703_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "When translating how a medical device works into a 3D video, the most common mistake teams make is to imagine the beautiful visual first. But the essence of medical device visualization is not aesthetics — it is accuracy. A stunning frame that misrepresents the mechanism does not build trust; it quietly erodes it.\n\nFirst, the physical basis of the mechanism of action must be defined before a single frame is animated. The heat diffusion of an RF device, the depth-specific delivery of focused ultrasound energy, and the penetration path of microneedles are each distinct physical phenomena. Without that foundation, animations easily misrepresent the depth or sequence in which energy reaches tissue. Before we begin, we align with R&D and medical teams on a written mechanism definition.\n\nSecond, expression must be designed to stay within regulatory boundaries. The moment a video asserts a specific efficacy or exaggerates clinical figures, it stops being a marketing asset and becomes a regulatory liability. Deciding in advance what can be shown versus what should remain implied is a core part of the work, not an afterthought.\n\nThird, information density must adapt to the audience. A video for a scientific congress, a sales meeting, and a patient explanation should differ sharply in emphasis and depth, even when the underlying mechanism is identical. Trying to satisfy everyone with one asset usually convinces no one.\n\nIn the end, a strong medical device 3D video is defined by the decision of what to leave out. Once you establish the three axes — accuracy, regulation, and audience — the visuals follow naturally on top of them. The polish is the easy part; the discipline is the difference.\n\nDoes your organization agree on a mechanism definition before visualization begins? If you want our 3D medical device visualization checklist, comment or DM MOA. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MedicalDevice",
+        "#MOAVisualization",
+        "#ScienceCommunication",
+        "#B2BMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260703_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: 3D Without Mechanism Is Just Art"
+    },
+    {
+      "pair_id": "linkedin_20260703_afternoon",
+      "status": "pending",
+      "topic": "제약·바이오 콘텐츠에서 정확성과 몰입감을 동시에 만드는 법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-03T15:00:00+09:00",
+      "created_at": "2026-07-03T06:57:19.007252+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260703_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "제약·바이오 콘텐츠를 만들 때 담당자들이 가장 자주 마주치는 질문이 있습니다. \"과학적으로 정확하게 만들면 지루해지고, 몰입감 있게 만들면 부정확해진다.\" 정말 그럴까요? 저희는 이 둘이 상충 관계가 아니라 설계의 문제라고 봅니다.\n\n첫째, 정확성은 자막이 아니라 시각 구조에서 나옵니다. 작용기전(MOA)을 애니메이션으로 옮길 때 흔한 실수는 화려한 렌더링을 먼저 만들고 나중에 메디컬 검수를 붙이는 것입니다. 순서가 반대여야 합니다. 분자 스케일, 결합 부위, 시간 축, 농도 변화 같은 핵심 근거를 먼저 정의하고, 그 위에 비주얼을 얹어야 합니다. 근거가 먼저 서면 아름다움은 왜곡이 아니라 강조가 됩니다.\n\n둘째, 몰입감은 단순화가 아니라 위계에서 나옵니다. 하나의 장면에 모든 메커니즘을 담으려 하면 시청자는 아무것도 기억하지 못합니다. 저희는 한 장면당 하나의 핵심 메시지 원칙을 씁니다. 세포 진입, 신호 전달, 결과. 이 흐름을 카메라 무빙과 색 대비로 안내하면, 전문가는 근거를 확인하고 비전문가는 이야기를 따라갑니다.\n\n셋째, 검수는 비용이 아니라 신뢰 자산입니다. R&D·메디컬·규제 담당자가 초기 스토리보드 단계부터 참여하면 후반 수정이 급감합니다. 정확성 체크리스트를 공유 언어로 만들어두면 부서 간 합의 속도가 빨라지고, 최종 콘텐츠는 학술 발표부터 영업 자료까지 재사용됩니다.\n\n결국 정확성과 몰입감을 동시에 만드는 힘은 도구가 아니라 방법론입니다. 검증된 과학을 시각 언어로 번역하는 설계가 브랜드의 기술력을 고객의 신뢰로 연결합니다.\n\n여러분의 조직에서는 정확성과 몰입감 중 어느 쪽이 더 어렵습니까? MOA 라고 댓글이나 DM을 주시면 MOA 콘텐츠 정확성 체크리스트를 보내드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#제약마케팅",
+        "#과학시각화",
+        "#메디컬커뮤니케이션"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260703_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 정확성과 몰입, 둘 다 살리는 설계"
+    },
+    {
+      "pair_id": "linkedin_20260703_afternoon",
+      "status": "pending",
+      "topic": "제약·바이오 콘텐츠에서 정확성과 몰입감을 동시에 만드는 법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-03T15:00:00+09:00",
+      "created_at": "2026-07-03T06:57:19.007252+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260703_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "A recurring tension shows up whenever pharma and biotech teams brief a content project: \"If we make it scientifically accurate, it gets boring. If we make it immersive, it drifts from the data.\" We disagree with the premise. Accuracy and immersion are not a trade-off. They are a design problem.\n\nFirst, accuracy comes from visual structure, not from disclaimers on screen. A common mistake in translating a mechanism of action into animation is to build the glossy render first and bolt on medical review at the end. The order should be reversed. Define the load-bearing evidence first: molecular scale, binding sites, the time axis, concentration dynamics. Once that scaffold stands, beauty becomes emphasis rather than distortion. The visuals amplify the science instead of competing with it.\n\nSecond, immersion comes from hierarchy, not from oversimplification. When a single scene tries to carry every pathway at once, the audience remembers nothing. We apply a one-scene-one-message rule. Cellular entry, signal transduction, outcome. Guide that sequence with camera movement and color contrast, and two audiences are served at the same time: specialists verify the evidence, while non-specialists follow the story. Simplifying the frame is not the same as simplifying the science.\n\nThird, review is an asset, not a cost. When R&D, medical, and regulatory stakeholders join at the storyboard stage rather than the final cut, late-stage revisions drop sharply. Turning an accuracy checklist into a shared language accelerates cross-functional alignment, and the finished asset gets reused across scientific symposia, sales enablement, and investor communication. One rigorous build, many contexts.\n\nThe capability that produces both accuracy and immersion is not a piece of software. It is methodology, the discipline of translating validated science into a visual language that carries a brand's technical credibility into customer trust. That translation is where a message becomes a decision.\n\nIn your organization, which side is harder to get right, accuracy or immersion? Comment or DM me the word MOA and I will send our MOA content accuracy checklist. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOAanimation",
+        "#PharmaMarketing",
+        "#ScienceVisualization",
+        "#MedicalCommunication"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260703_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Accuracy And Immersion, By Design"
     }
   ]
 }
