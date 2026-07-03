@@ -101,7 +101,10 @@ jobs:
 
       - name: Generate reel (Krea image-to-video)
         id: reel
-        # turn today's pushed still into a 9:16 1080x1920 reel; only when publishing
+        # turn today's pushed still into a 9:16 1080x1920 reel; only when publishing.
+        # continue-on-error: the reel is a bonus — its failure must never block
+        # the feed publishes below (reel steps skip via steps.reel.outputs.made).
+        continue-on-error: true
         if: ${{ env.KREA_API_KEY != '' && (github.event_name == 'schedule' || github.event.inputs.publish == 'true') }}
         working-directory: namecode_grid
         env:
@@ -152,6 +155,8 @@ jobs:
 
       - name: Publish reel to Instagram (optional)
         id: reelpub
+        # continue-on-error: a reel-publish hiccup must not skip the FB steps below
+        continue-on-error: true
         if: ${{ steps.reel.outputs.made == '1' && env.IG_ACCESS_TOKEN != '' }}
         working-directory: namecode_grid
         run: |
