@@ -30,12 +30,12 @@ def krea_video(image_url, prompt):
     key = os.environ["KREA_API_KEY"]
     body = {"prompt": prompt, "start_image": image_url}
     hdr = {"Authorization": f"Bearer {key}"}
-    # The exact REST slug for the video model isn't documented; "kling" is the
-    # alias the Krea API accepts. Allow an env override, else try a few known
-    # spellings and use the first the API routes (4xx "unknown model" -> next).
+    # Model slugs are provider/version, per vendor/krea-mcp-server VIDEO_MODELS
+    # (e.g. "kling/kling-1.6", "minimax/hailuo"). Allow an env override, else
+    # try known slugs and use the first the API routes (404 -> next).
     env_path = os.environ.get("KREA_VIDEO_PATH")
     candidates = [env_path] if env_path else [
-        "kling", "kuaishou/kling-2-1", "kwaivgi/kling-v2-1"]
+        "kling/kling-1.6", "kling/kling-2.5", "minimax/hailuo"]
     last = None
     for path in candidates:
         r = requests.post(f"{base}/generate/video/{path}", json=body,
