@@ -85,17 +85,32 @@ def ffmpeg_exe():
     return which("ffmpeg") or __import__("imageio_ffmpeg").get_ffmpeg_exe()
 
 
-def normalize_vertical(src, out):
+def normalize_vertical(src, out, min_seconds=30):
     """Fit any aspect into 1080x1920 over a blurred fill (no subject cropping),
-    then boomerang (forward+reverse) for a seamless loop roughly twice as long."""
+    boomerang (forward+reverse) for a seamless loop, then repeat the boomerang
+    until the reel is at least `min_seconds` (brand spec: reels run 30-90s)."""
     vf = (f"[0:v]scale={REEL_W}:{REEL_H}:force_original_aspect_ratio=increase,"
           f"crop={REEL_W}:{REEL_H},boxblur=22:8[bg];"
           f"[0:v]scale={REEL_W}:{REEL_H}:force_original_aspect_ratio=decrease[fg];"
           f"[bg][fg]overlay=(W-w)/2:(H-h)/2,setsar=1[v];"
           f"[v]split[a][b];[b]reverse[r];[a][r]concat=n=2:v=1[out]")
+    boom = out + ".boom.mp4"
     subprocess.run([ffmpeg_exe(), "-y", "-i", src, "-filter_complex", vf,
                     "-map", "[out]", "-an", "-c:v", "libx264", "-pix_fmt", "yuv420p",
-                    "-movflags", "+faststart", out], check=True)
+                    "-movflags", "+faststart", boom], check=True)
+    # measure the boomerang and loop it enough times to clear min_seconds
+    import re as _re
+    probe = subprocess.run([ffmpeg_exe(), "-i", boom], capture_output=True, text=True)
+    m = _re.search(r"Duration: (\d+):(\d+):(\d+\.\d+)", probe.stderr)
+    dur = (int(m.group(1)) * 3600 + int(m.group(2)) * 60 + float(m.group(3))) if m else 10.0
+    import math
+    loops = max(0, math.ceil(min_seconds / dur) - 1)  # extra repeats beyond the first
+    subprocess.run([ffmpeg_exe(), "-y", "-stream_loop", str(loops), "-i", boom,
+                    "-c", "copy", "-movflags", "+faststart", out], check=True)
+    try:
+        os.remove(boom)
+    except OSError:
+        pass
 
 
 def main():

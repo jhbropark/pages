@@ -76,6 +76,7 @@ jobs:
           if [ -n "${{ github.event.inputs.date }}" ]; then DATE="${{ github.event.inputs.date }}"; fi
           python apod_namecode.py $DATE_ARG \
             --out "daily/namecode_apod_${DATE}.png" \
+            --reel-out "daily/namecode_apod_${DATE}_9x16.png" \
             --brief-out "daily/brief_${DATE}.json" \
             --caption-out "daily/caption_${DATE}.txt"
           echo "date=${DATE}" >> "$GITHUB_OUTPUT"
@@ -113,7 +114,8 @@ jobs:
           set -o pipefail
           pip install requests imageio-ffmpeg
           DATE="${{ steps.gen.outputs.date }}"
-          RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/namecode_apod_${DATE}.png"
+          # 9:16 still as start_image -> native vertical video, no blur bars
+          RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/namecode_apod_${DATE}_9x16.png"
           echo "start_image: $RAW"
           python krea_reel.py --image-url "$RAW" \
             --brief "daily/brief_${DATE}.json" \
@@ -171,7 +173,10 @@ jobs:
 
       - name: Publish feed image to Facebook (optional)
         id: fbpub
-        # cross-post the same artwork to the Facebook Page when its token is set
+        # cross-post the same artwork to the Facebook Page when its token is set.
+        # continue-on-error: a dead FB token must not skip the FB reel step or
+        # mark the whole run failed — Telegram reports the per-channel outcome.
+        continue-on-error: true
         if: ${{ env.FB_PAGE_TOKEN != '' && (github.event_name == 'schedule' || github.event.inputs.publish == 'true') }}
         working-directory: namecode_grid
         run: |

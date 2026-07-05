@@ -231,6 +231,7 @@ def main():
     ap.add_argument("--model", default="flux")
     ap.add_argument("--dry-run", action="store_true", help="print brief, no generation")
     ap.add_argument("--out")
+    ap.add_argument("--reel-out", help="also compose a 9:16 still (reel start_image)")
     ap.add_argument("--brief-out", help="write the brief JSON to this path")
     ap.add_argument("--caption-out", help="write the post caption to this path")
     a = ap.parse_args()
@@ -270,6 +271,9 @@ def main():
     out = a.out or f"namecode_apod_{date}.png"
     compose(img, name, value, out)
     print(f"[ok] saved {out}", file=sys.stderr)
+    if a.reel_out:  # full-bleed 9:16 start_image so the reel has no blur bars
+        compose(img, name, value, a.reel_out, size=REEL_SIZE)
+        print(f"[ok] saved {a.reel_out}", file=sys.stderr)
 
 
 if __name__ == "__main__":
