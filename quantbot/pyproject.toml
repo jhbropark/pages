@@ -1,0 +1,29 @@
+[project]
+name = "quantbot"
+version = "0.1.0"
+description = "Korean equities quant trading bot (KIS OpenAPI + backtesting)"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "requests>=2.31",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+data = ["finance-datareader>=0.9.90", "pykrx>=1.0.45", "pyarrow>=14.0"]
+live = ["websockets>=12.0"]
+dev = ["pytest>=7.4"]
+
+[project.scripts]
+quantbot = "quantbot.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
