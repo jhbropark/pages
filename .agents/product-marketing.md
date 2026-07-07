@@ -1,11 +1,10 @@
 # Product Marketing Context — namecode
 
-*Last updated: 2026-07-07*
+*Last updated: 2026-07-07 (v2 — benchmarks, business model, customer language, metrics tooling filled in)*
 
 > Scope: this document covers the **namecode** art brand (@namecode_original)
 > only. The `content/` directory belongs to a separate brand (bbbb.beauty B2B)
 > and is intentionally out of scope here.
-> Items marked ⚠️ are assumptions drafted from the codebase — confirm or correct.
 
 ## Product Overview
 **One-liner:** namecode translates the universe into code — the day's sky,
@@ -23,8 +22,13 @@ label with a real astronomical value (`namecode - COMET | mag -4.2`).
 
 **Product type:** art brand / daily content project (Instagram-first).
 
-**Business model:** ⚠️ audience-building phase; no monetization implemented in
-the repo. Plausible later: prints, commissions, exhibitions, digital editions.
+**Business model:** phased. **Phase 1 (now → ~10K followers):** pure
+audience-building — daily cadence, optimize sends + saves, build the dated
+archive as the asset. **Phase 2 (10K+ or first inbound demand):** limited
+print/digital editions of the most-saved works (the saves data doubles as
+demand research) and open commissions. **Phase 3:** exhibitions, licensing,
+brand collaborations built on the CUBE trilogy as flagship. No paid ads;
+growth is organic via format quality and shareability.
 
 ## Target Audience
 **Primary audience:** generative art / new media art enthusiasts on Instagram;
@@ -62,15 +66,33 @@ generative art is usually abstract and placeless. There is little that fuses
 something smart and beautiful.
 
 ## Competitive Landscape
-⚠️ Drafted from category knowledge — validate against accounts you actually
-benchmark.
+Benchmarks verified 2026-07 (follower counts approximate).
 
-**Direct:** daily generative/AI-art Instagram accounts — fall short on data
-grounding and daily editorial concept.
-**Secondary:** astronomy photo accounts (APOD reposters, NASA fan pages) —
-fall short on visual authorship and brand system.
-**Indirect:** FUSE*-style studio accounts (audiovisual/particle art) — post
-infrequently; namecode's edge is the *daily* ritual.
+**Direct — APOD repost accounts** (same daily-sky content, no authorship):
+- [@astronomypicturesdaily](https://www.instagram.com/astronomypicturesdaily/)
+  (~865K) — proves large demand for daily APOD content on IG; pure photo
+  reposts, zero visual authorship or brand system. namecode's clearest gap
+  to exploit.
+- [@nasa_apod](https://www.instagram.com/nasa_apod/) (~21K) and a long tail of
+  small reposters (@apod.nasa, @apod.daily) — same weakness.
+
+**Secondary — generative/data artists** (same aesthetic shelf, not daily, not
+sky-anchored):
+- [@refikanadol](https://www.instagram.com/refikanadol/) (~1M) — data-driven
+  AI art, institutional scale; posts are exhibition-driven, not a daily ritual.
+- Zhestkov Studio ([zhestkov.studio](https://zhestkov.studio/)) — particle
+  simulations, monochrome-adjacent; art-film cadence.
+- fuse* ([fuseworks.it](https://www.fuseworks.it/studio)) — the direct visual
+  reference for namecode's label system; installation/performance cadence.
+- Quayola, NONOTAK, Zach Lieberman — strong systems, infrequent or
+  process-diary posting.
+
+**Indirect:** generic AI-art accounts (prolific, inconsistent, no data
+grounding) and official space accounts like @nasa (news, not art).
+
+**namecode's wedge:** the *only* position combining (a) the proven daily-APOD
+demand of the reposters with (b) the visual authorship of the studio tier —
+at a daily cadence neither side offers.
 
 ## Differentiation
 **Key differentiators:**
@@ -93,13 +115,28 @@ followers who want colorful/maximalist AI art; anyone expecting Korean-language
 content (namecode is English-only).
 
 ## Customer Language
-⚠️ No verbatim audience quotes collected yet — mine IG comments/DMs and update.
+From published research on art-audience behavior on Instagram (own-comment
+verbatims still to be layered in as the account grows — see Goals):
+
+**How audiences talk about this kind of work:** the dominant comment
+vocabulary on visual-art IG is awe-language — "Wow", "What is this?", "Love",
+"Awesome", "Mind-blowing" (MDPI interaction-behavior study of IG art
+accounts). Generative-art viewers report interest/excitement driven by
+dynamic transitions and visual attractiveness; awe (wonder, the sublime) is
+the core emotion that predicts appreciation.
+**Strategic implication (evidence-based):** research shows the *same artwork
+is rated less awe-inducing when labeled AI-made* — so lead captions with the
+sky event and the data ("today's sky, rendered in code"), never with the AI
+tooling. "What is this?" is a top comment type → captions that name the
+phenomenon (OCCULTATION, COMET) answer curiosity and earn saves.
 
 **Words to use:** rendered in code · today's sky · particles · signal ·
-translate · monochrome · negative space · orbit · magnitude · archive · series.
-**Words to avoid:** "AI-generated" as the lead (medium, not message);
-hype-words (stunning!, mind-blowing); emoji walls; more than 3–5 hashtags;
-decorative fake numbers.
+translate · monochrome · negative space · orbit · magnitude · archive · series
+· look up.
+**Words to avoid:** "AI-generated" as the lead (medium, not message — and it
+measurably lowers perceived awe); hype-words (stunning!, mind-blowing) in our
+own voice (audience words, not brand words); emoji walls; more than 3–5
+hashtags; decorative fake numbers.
 
 **Glossary:**
 | Term | Meaning |
@@ -122,11 +159,18 @@ APOD title + `Source: NASA APOD · <date>` + save/send CTA + 3–5 hashtags
 - Every piece traceable to a NASA APOD source and date
 - Multi-format system already live: feed 1080×1350, carousel 8–10 slides,
   reels 9:16 30–90s
-- ⚠️ Follower/engagement metrics not tracked in repo — add once available.
+- Category demand proof: @astronomypicturesdaily reposts raw APOD to ~865K
+  followers — the audience for daily-sky content exists at scale.
 
 ## Goals
-**Business goal:** ⚠️ grow @namecode_original into a recognized generative-art
-brand (audience first; monetization later).
+**Business goal:** grow @namecode_original into a recognized generative-art
+brand; Phase 1 milestone **10K followers**, then editions/commissions
+(see Business model).
 **Conversion action:** follows; **sends + saves** are the primary engagement
 signals to optimize (2026 IG algorithm), then non-trivial comments.
-**Current metrics:** ⚠️ unknown — pull from IG Insights and record here.
+**Metrics tracking:** run `python namecode_grid/ig_insights.py` (needs
+`IG_USER_ID` + `IG_ACCESS_TOKEN` with `instagram_manage_insights`) — it
+snapshots follower count and per-post saves/sends/reach into
+`namecode_grid/metrics/ig_metrics.json` and prints the top posts by
+saves+sends. Re-run weekly; paste the latest headline numbers here. As
+comments accumulate, harvest verbatims into Customer Language.
