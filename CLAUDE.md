@@ -26,6 +26,17 @@ Format: `namecode - <WORK_NAME> | <value>` (top-left, mono, FUSE\*-style).
 - Pipeline: `apod_namecode.py` (APOD → Krea → duotone + mono label) →
   `ig_publish.py` (Meta Graph API → @namecode_original).
 
+## Marketing skills
+- `.claude/skills/` carries 46 marketing skills vendored from
+  [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)
+  (MIT, snapshot `6c60174`, `evals/` dropped) — copywriting, social, content
+  strategy, CRO, SEO, ads, launch, pricing, etc.
+- **`product-marketing` is the foundation skill**: other skills expect its
+  positioning/audience context — invoke or consult it first for bigger
+  marketing tasks. For namecode work, brand rules in this file override any
+  generic advice in the skills.
+- Update by re-copying from the upstream repo (compare `VERSIONS.md` there).
+
 ## Instagram formats (2026) — format role separation
 - **Feed (daily APOD):** 4:5 portrait **1080×1350** (`apod_namecode.py`, default `FEED_SIZE`). Mono label top-left safe zone.
 - **Carousel (explainer):** 4:5, **8–10 slides** (`carousel.py`). First slide sets the ratio.
