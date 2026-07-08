@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260706_morning",
+      "status": "pending",
+      "topic": "AR이 메디컬·뷰티 제품 교육의 이해도를 높이는 방식",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260706_morning_ko.jpg",
+      "caption": "복잡한 작용기전을 글로 설명하면 이해는 제각각입니다. AR은 3차원 구조와 시간의 흐름을 눈앞에서 조작하게 만들어, 교육 대상이 스스로 원리를 발견하게 합니다. 정확성과 경험을 함께 설계할 때 이해도가 남습니다.\n\n댓글: 교육 방식? A 영상 / B AR\nDM “AR가이드”: AR 교육 콘텐츠 도입 체크리스트 PDF\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#AR",
+        "#메디컬커뮤니케이션",
+        "#MOA",
+        "#과학시각화",
+        "#B2B마케팅",
+        "#더마코스메틱"
+      ],
+      "scheduled_time": "2026-07-06T12:30:00+09:00",
+      "created_at": "2026-07-06T06:49:05.234038+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260706_afternoon",
+      "status": "pending",
+      "topic": "영업 현장에서 다시 활용되는 메디컬 교육 콘텐츠 설계법",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260706_afternoon_ko.jpg",
+      "caption": "메디컬 교육 콘텐츠는 한 번 쓰고 버리는 자료가 아닙니다. MOA 애니메이션을 모듈로 설계하면 세일즈 미팅, 학회, 온보딩까지 다시 살아납니다. 핵심은 처음부터 재사용을 전제로 한 구조 설계입니다.\n\n댓글: 교육용 A vs 영업용 B, 뭐부터?\nDM “MODULE”: 콘텐츠 재사용 설계 체크리스트 제공\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#메디컬콘텐츠",
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#B2B마케팅",
+        "#세일즈이네이블먼트",
+        "#더마코스메틱"
+      ],
+      "scheduled_time": "2026-07-06T19:00:00+09:00",
+      "created_at": "2026-07-06T06:49:05.234038+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
