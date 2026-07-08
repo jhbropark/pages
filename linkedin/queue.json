@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260708_morning",
+      "status": "pending",
+      "topic": "전시회와 학회에서 복잡한 기술을 짧게 전달하는 비주얼 구조",
+      "slot": "morning",
+      "scheduled_time": "2026-07-09T09:00:00+09:00",
+      "created_at": "2026-07-08T07:04:14.293599+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "부스구조",
+      "id": "linkedin_20260708_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "전시회와 학회 부스 앞에서 관람객이 머무는 시간은 길지 않습니다. 그 짧은 순간에 우리는 논문 한 편 분량의 기술을 설명하려 하지만, 실제로 상대가 가져가는 것은 문장이 아니라 하나의 인상입니다. 복잡한 기술을 짧게 전달하는 일은 정보를 압축하는 문제가 아니라, 시선과 이해의 순서를 설계하는 문제입니다.\n\n첫째, 진입점은 결과가 아니라 문제여야 합니다. 많은 부스 영상이 '우리 기술은 이렇게 작동합니다'로 시작하지만, 관람객은 아직 왜 봐야 하는지 모릅니다. 해결하려는 문제를 먼저 시각적으로 던지면 그 다음 등장하는 기전이 답으로 읽힙니다. 문제-기전-결과의 순서가 기술-기술-기술의 나열보다 훨씬 오래 남습니다.\n\n둘째, 한 화면에 하나의 개념만 담아야 합니다. 학회 포스터와 부스 스크린의 가장 흔한 실패는 정보량을 신뢰의 증거로 착각하는 것입니다. 무음 환경에서 재생되는 루프 영상이라면 자막과 그래픽만으로 이해되어야 하고, 각 장면은 단일한 시각적 초점을 가져야 합니다. 세포 단위의 작용기전을 다룰 때 특히 이 원칙이 기억률을 좌우합니다.\n\n셋째, 대화가 시작될 지점을 미리 심어야 합니다. 잘 설계된 비주얼은 그 자체로 끝나지 않고, 영업 담당자가 이어받을 질문을 자연스럽게 만듭니다. 관람객이 '이 부분은 어떻게 구현했나요'라고 물을 지점을 화면에 남겨두는 것, 그것이 전시 콘텐츠의 진짜 성과 지표입니다.\n\nbbbb.beauty는 의학적 정확성을 지키면서도 몇 초 안에 핵심 기전 하나가 남도록 비주얼 구조를 설계합니다. 여러분의 부스 영상은 정보를 나열하고 있습니까, 아니면 시선의 순서를 설계하고 있습니까?\n\n전시·학회 비주얼 설계 체크리스트가 필요하시면 '부스구조'를 댓글이나 DM으로 남겨주세요. 문의: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#의학애니메이션",
+        "#전시회마케팅",
+        "#B2B마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260708_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 몇 초 안에 핵심 기전만 남기기"
+    },
+    {
+      "pair_id": "linkedin_20260708_morning",
+      "status": "pending",
+      "topic": "전시회와 학회에서 복잡한 기술을 짧게 전달하는 비주얼 구조",
+      "slot": "morning",
+      "scheduled_time": "2026-07-09T09:00:00+09:00",
+      "created_at": "2026-07-08T07:04:14.293599+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "부스구조",
+      "id": "linkedin_20260708_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "At a trade show or scientific conference, the time a visitor spends in front of your booth is short. In that brief window, we often try to explain a paper's worth of technology, yet what people actually take away is not a sentence but a single impression. Communicating complex science quickly is not a problem of compressing information. It is a problem of designing the order in which attention and understanding unfold.\n\nFirst, the entry point should be a problem, not a result. Many booth videos open with \"here is how our technology works,\" but the visitor does not yet know why they should care. When you present the problem visually first, the mechanism that follows reads as an answer. The sequence of problem, mechanism, result stays with people far longer than a list of technology, technology, technology.\n\nSecond, each frame should carry only one concept. The most common failure on conference posters and booth screens is mistaking sheer volume of information for proof of credibility. If a loop plays on mute, it must be understandable through captions and graphics alone, and every scene needs a single visual focus. When the subject is a mechanism of action at the cellular level, this principle largely determines recall.\n\nThird, plant the point where conversation begins. Well-designed visuals do not end in themselves. They create the natural question a sales lead can pick up. Leaving a spot on screen where a visitor will ask \"how did you implement this part\" is the real performance metric of exhibition content.\n\nAt bbbb.beauty, we design visual structures so that a single core mechanism survives within a few seconds, without lowering scientific accuracy. So ask yourself: is your booth video listing information, or is it designing the order of attention?\n\nIf you would like a checklist for exhibition and conference visual design, comment or DM 부스구조. Contact: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#ScienceCommunication",
+        "#MedicalAnimation",
+        "#TradeShowMarketing",
+        "#B2BMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260708_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: One Mechanism in a Few Seconds"
+    },
+    {
+      "pair_id": "linkedin_20260708_afternoon",
+      "status": "pending",
+      "topic": "KOL 인터뷰를 신뢰도 높은 다큐멘터리 콘텐츠로 만드는 법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-08T15:00:00+09:00",
+      "created_at": "2026-07-08T07:04:14.293599+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "KOL",
+      "id": "linkedin_20260708_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "KOL 인터뷰 영상을 만들었는데 시청자 반응이 '결국 광고 아니냐'로 돌아온 경험, 메디컬·뷰티 마케팅 담당자라면 한 번쯤 겪습니다. 문제는 전문가의 권위가 부족해서가 아니라, 인터뷰를 다큐멘터리의 문법으로 설계하지 않았기 때문입니다. 신뢰도 높은 KOL 콘텐츠를 만드는 세 가지 판단 기준을 정리합니다.\n\n첫째, 질문 설계가 곧 신뢰의 뼈대입니다. '우리 제품이 좋은 이유'를 묻는 순간 답변은 광고가 됩니다. 대신 '이 기전이 임상에서 왜 중요한가', '기존 접근의 한계는 무엇인가'처럼 문제와 과학을 먼저 세우면, 브랜드는 해답의 맥락 안에 자연스럽게 놓입니다. 전문가는 팔지 않고 설명할 때 가장 설득력 있습니다.\n\n둘째, 말을 이미지로 검증해야 합니다. KOL이 작용기전을 설명할 때 화면에 정확한 3D/MOA 시각화가 동반되면, 주장은 근거로 전환됩니다. 우리는 인터뷰 스크립트와 애니메이션 시퀀스를 같은 타임라인에서 함께 설계합니다. 전문가가 세포 수준 변화를 언급하는 그 순간, 검증된 비주얼이 붙어야 시청자의 이해와 신뢰가 동시에 올라갑니다.\n\n셋째, 편집 윤리가 브랜드를 지킵니다. 발언을 잘라 붙여 의미를 왜곡하지 않고, 미검증 효능이나 규제 범위를 벗어난 표현은 사전에 메디컬 검수로 걸러냅니다. 다큐멘터리의 힘은 '보여주되 과장하지 않는' 절제에서 나옵니다. 이 원칙이 장기적으로 KOL과 브랜드 양쪽의 평판을 지킵니다.\n\n결국 KOL 인터뷰는 촬영 기술이 아니라 과학 서사의 설계 문제입니다. 문제 정의, 시각적 검증, 편집 윤리가 맞물릴 때 전문가의 한마디가 브랜드 신뢰로 축적됩니다.\n\n여러분의 다음 프로젝트는 인터뷰가 필요합니까, 다큐멘터리가 필요합니까? 댓글로 의견 남겨주세요. 'KOL'을 DM으로 보내주시면 KOL 다큐 사전기획 체크리스트를 보내드립니다. 문의: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#KOL마케팅",
+        "#메디컬다큐멘터리",
+        "#과학커뮤니케이션",
+        "#MOA애니메이션"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260708_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: KOL 인터뷰, 다큐로 바꾸는 법"
+    },
+    {
+      "pair_id": "linkedin_20260708_afternoon",
+      "status": "pending",
+      "topic": "KOL 인터뷰를 신뢰도 높은 다큐멘터리 콘텐츠로 만드는 법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-08T15:00:00+09:00",
+      "created_at": "2026-07-08T07:04:14.293599+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "KOL",
+      "id": "linkedin_20260708_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "You produced a KOL interview, and the feedback came back as \"isn't this just an ad?\" If you work in medical or beauty marketing, you have likely felt this sting. The problem is rarely a lack of expert authority. It is that the interview was never designed with the grammar of documentary. Here are three judgment criteria for building KOL content that earns trust.\n\nFirst, question design is the backbone of credibility. The moment you ask \"why is our product great,\" the answer becomes advertising. Instead, frame the science and the problem first: \"why does this mechanism matter clinically,\" \"what are the limits of existing approaches.\" When the problem is established, the brand sits naturally within the context of the solution. Experts are most persuasive when they explain rather than sell.\n\nSecond, words must be verified by imagery. When a KOL describes a mechanism of action, an accurate 3D/MOA visualization on screen converts a claim into evidence. We design the interview script and the animation sequence on the same timeline. The exact moment an expert references a cellular-level change, a validated visual should appear, raising comprehension and trust simultaneously.\n\nThird, editorial ethics protect the brand. We do not splice statements to distort meaning, and we filter unverified efficacy or out-of-scope regulatory language through medical review before it ever airs. The power of documentary comes from restraint, showing without exaggerating. This discipline safeguards the reputation of both the KOL and the brand over the long term.\n\nUltimately, a KOL interview is not a filming challenge but a scientific narrative design challenge. When problem definition, visual verification, and editorial ethics align, a single expert sentence compounds into brand trust.\n\nDoes your next project call for an interview or a documentary? Share your view in the comments. Send me the keyword KOL by DM and I will share our KOL documentary pre-production checklist. Contact: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#KOLmarketing",
+        "#MedicalDocumentary",
+        "#ScienceCommunication",
+        "#MOAanimation"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260708_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: KOL Interview to Documentary"
     }
   ]
 }

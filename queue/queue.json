@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260708_morning",
+      "status": "pending",
+      "topic": "전시회와 학회에서 복잡한 기술을 짧게 전달하는 비주얼 구조",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260708_morning_ko.jpg",
+      "caption": "부스 앞에서 확보되는 시간은 평균 몇 초입니다. 그 안에 핵심 기전 하나만 남기려면, 설명이 아니라 시선의 순서를 설계해야 합니다. 정보량이 아니라 진입 구조가 기억을 좌우합니다.\n\n댓글: 부스 영상, 무음 A / 내레이션 B?\nDM “부스구조”: 전시·학회 비주얼 설계 체크리스트 제공\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#의학애니메이션",
+        "#MOA",
+        "#전시회마케팅",
+        "#더마코스메틱",
+        "#B2B마케팅"
+      ],
+      "scheduled_time": "2026-07-08T12:30:00+09:00",
+      "created_at": "2026-07-08T07:04:14.293599+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260708_afternoon",
+      "status": "pending",
+      "topic": "KOL 인터뷰를 신뢰도 높은 다큐멘터리 콘텐츠로 만드는 법",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260708_afternoon_ko.jpg",
+      "caption": "KOL 인터뷰가 광고처럼 보이면 신뢰는 무너집니다. 근거 흐름, 데이터 시각화, 편집 윤리를 설계하면 전문가의 말이 다큐멘터리의 무게를 얻습니다.\n\n댓글: 인터뷰 vs 다큐, 뭐가 더 필요?\nDM “KOL”: KOL 다큐 사전기획 체크리스트 제공\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#KOL마케팅",
+        "#메디컬다큐멘터리",
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#더마코스메틱",
+        "#B2B콘텐츠"
+      ],
+      "scheduled_time": "2026-07-08T19:00:00+09:00",
+      "created_at": "2026-07-08T07:04:14.293599+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
