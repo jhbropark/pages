@@ -110,14 +110,16 @@ jobs:
         working-directory: namecode_grid
         env:
           KREA_API_KEY: ${{ secrets.KREA_API_KEY }}
+          NAMECODE_FONT: /tmp/fnt/JetBrainsMono.ttf   # for the DECODE hook overlays
         run: |
           set -o pipefail
-          pip install requests imageio-ffmpeg
+          pip install requests imageio-ffmpeg Pillow
           DATE="${{ steps.gen.outputs.date }}"
           # 9:16 still as start_image -> native vertical video, no blur bars
           RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/namecode_apod_${DATE}_9x16.png"
           echo "start_image: $RAW"
           python krea_reel.py --image-url "$RAW" \
+            --still "daily/namecode_apod_${DATE}_9x16.png" \
             --brief "daily/brief_${DATE}.json" \
             --out "daily/reel_${DATE}.mp4"
           echo "made=1" >> "$GITHUB_OUTPUT"

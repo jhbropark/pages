@@ -20,9 +20,19 @@ import argparse, json, os, subprocess, sys, time
 import requests
 
 REEL_W, REEL_H = 1080, 1920
-DEFAULT_PROMPT = ("Cinematic slow push-in on a dark astronomical scene, fine white "
-                  "particles drifting like stars, subtle parallax, FUSE-style minimal "
-                  "motion, high-contrast monochrome, quiet and elegant. Vertical 9:16.")
+STYLE = ("Dark astronomical scene, fine white particles like stars, high-contrast "
+         "monochrome, cinematic film grain. Vertical 9:16.")
+# One motion per day, chosen by date seed — never the same slow zoom twice in a row.
+MOTIONS = [
+    "Slow orbital drift around the subject, background stars sliding in parallax.",
+    "Lateral dolly glide with layered depth parallax, foreground dust drifting past.",
+    "A sweep of light crosses the scene, particles igniting and fading in its wake.",
+    "Particles surge inward, converge on the subject, then disperse outward.",
+    "Slow pull-back reveal from an extreme close-up detail to the full composition.",
+    "The subject rotates almost imperceptibly while star trails arc around it.",
+    "Rising vertical drift, as if ascending past the subject through falling dust.",
+]
+DEFAULT_PROMPT = MOTIONS[0] + " " + STYLE
 
 
 def krea_video(image_url, prompt):
@@ -114,22 +124,31 @@ def normalize_vertical(src, out, min_seconds=30):
 
 
 def main():
+    import random
     ap = argparse.ArgumentParser()
     ap.add_argument("--image-url", required=True, help="public URL of the daily still (start_image)")
-    ap.add_argument("--brief", help="brief JSON (uses its prompt as motion guidance)")
+    ap.add_argument("--still", help="local path to the labeled 9:16 still (enables the DECODE hook)")
+    ap.add_argument("--brief", help="brief JSON (label/date + scene guidance)")
     ap.add_argument("--prompt", help="override motion prompt")
     ap.add_argument("--out", required=True, help="output mp4 path (normalized 1080x1920)")
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
 
-    prompt = a.prompt or DEFAULT_PROMPT
+    label, seed = "", "namecode"
+    brief = {}
     if a.brief and os.path.exists(a.brief):
         try:
-            b = json.load(open(a.brief, encoding="utf-8"))
-            # blend the work's own prompt with the motion direction
-            prompt = f"{DEFAULT_PROMPT} Scene: {b.get('prompt', '')}".strip()
+            brief = json.load(open(a.brief, encoding="utf-8"))
+            label = brief.get("label", "")
+            seed = brief.get("date", seed)
         except Exception:
             pass
+    # date-seeded motion: a different camera/particle move every day
+    motion = random.Random(seed).choice(MOTIONS)
+    prompt = a.prompt or f"{motion} {STYLE}"
+    if brief.get("prompt"):
+        prompt = f"{prompt} Scene: {brief['prompt']}".strip()
+    print(f"[info] motion: {motion}", file=sys.stderr)
 
     if a.dry_run:
         print(f"[dry-run] would generate video from {a.image_url}", file=sys.stderr)
@@ -143,7 +162,20 @@ def main():
     raw = a.out + ".krea.mp4"
     with open(raw, "wb") as fh:
         fh.write(requests.get(url, timeout=120).content)
-    normalize_vertical(raw, a.out)
+
+    if a.still and os.path.exists(a.still) and label:
+        # DECODE 3-act assembly: glyph-decode hook -> motion + glitch beats -> end card
+        boom = a.out + ".boom.mp4"
+        normalize_vertical(raw, boom, min_seconds=0)  # single boomerang, no plain loop
+        import reel_fx
+        reel_fx.assemble(a.still, boom, label, a.out, seed=seed)
+        for f in (boom,):
+            try:
+                os.remove(f)
+            except OSError:
+                pass
+    else:
+        normalize_vertical(raw, a.out)  # fallback: plain 30s boomerang loop
     try:
         os.remove(raw)
     except OSError:
