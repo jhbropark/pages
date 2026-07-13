@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260714_morning",
+      "status": "pending",
+      "topic": "복잡한 바이오 플랫폼 기술을 한 문장과 한 장면으로 정리하는 법",
+      "slot": "morning",
+      "scheduled_time": "2026-07-14T09:00:00+09:00",
+      "created_at": "2026-07-14T06:43:08.113016+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "한문장",
+      "id": "linkedin_20260714_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "복잡한 바이오 플랫폼 기술은 기술이 부족해서 외면받는 경우가 드뭅니다. 대부분은 한 문장과 한 장면으로 정리되지 않아 청중의 기억에서 사라집니다. R&D 미팅에서는 명확했던 메커니즘이, 투자자나 파트너 앞에서는 슬라이드 40장의 안개가 되는 이유입니다.\n\n첫째, 메시지는 계층으로 설계해야 합니다. 플랫폼 하나에는 보통 여러 작용 기전과 응용 분야가 얽혀 있습니다. 이를 동시에 말하면 아무것도 남지 않습니다. 가장 차별화된 작용점 하나를 최상위 문장으로 올리고, 나머지 기전과 데이터는 근거 계층으로 내려야 합니다. 예를 들어 전달체 플랫폼이라면 '무엇을, 어디로, 어떻게 정확히 보내는가'를 한 문장으로 고정하고, 방출 곡선과 안정성 데이터는 뒷받침 자료로 배치합니다.\n\n둘째, 한 장면은 은유가 아니라 기전의 정확한 시각화여야 합니다. 청중이 기억하는 것은 문장이 아니라 움직이는 이미지입니다. 분자가 표적에 결합하는 결정적 순간, 방출이 일어나는 조건, 세포 반응의 전환점. 이 핵심 프레임 하나를 정확하게 시각화하면 나머지 설명의 인지 부담이 급격히 줄어듭니다. 다만 여기서 정확성을 희생하면 신뢰가 무너지므로, 시각화와 과학 검증은 같은 테이블에서 진행되어야 합니다.\n\n셋째, 청중별로 같은 기술을 다른 진입점으로 번역해야 합니다. 투자자는 차별성과 확장성, 규제 담당자는 근거와 재현성, 파트너 R&D는 통합 가능성에 반응합니다. 핵심 문장과 장면은 하나로 유지하되, 그 앞뒤에 놓이는 맥락을 청중에 맞춰 재구성하는 것이 실무의 관건입니다.\n\n결국 좋은 과학 커뮤니케이션은 기술을 단순화하는 것이 아니라 우선순위를 정하는 일입니다. bbbb.beauty는 의학적 정확성을 유지하면서 복잡한 플랫폼을 한 문장과 한 장면으로 응축하는 작업을 해왔습니다.\n\n당신의 플랫폼은 지금 한 문장으로 설명되나요? 댓글에 Yes 또는 No를 남겨 주세요. '한문장'을 DM으로 보내주시면 플랫폼 메시지 정리 체크리스트를 보내드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#바이오플랫폼",
+        "#MOA시각화",
+        "#B2B브랜딩"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260714_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 한 문장, 한 장면의 힘"
+    },
+    {
+      "pair_id": "linkedin_20260714_morning",
+      "status": "pending",
+      "topic": "복잡한 바이오 플랫폼 기술을 한 문장과 한 장면으로 정리하는 법",
+      "slot": "morning",
+      "scheduled_time": "2026-07-14T09:00:00+09:00",
+      "created_at": "2026-07-14T06:43:08.113016+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "한문장",
+      "id": "linkedin_20260714_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "Complex bio-platform technologies rarely fail because the science is weak. They fail because no one can hold the technology in a single sentence and a single scene. The mechanism that felt obvious in an R&D meeting turns into a fog of forty slides in front of investors and partners.\n\nFirst, message architecture has to be layered. A single platform usually bundles several mechanisms of action and multiple applications. Say all of them at once and nothing survives. Elevate the one most differentiating action point into your headline sentence, and push the remaining mechanisms and datasets down into a supporting layer. For a delivery platform, for example, lock in one sentence about what you carry, where it goes, and how precisely it releases, then place release curves and stability data behind it as evidence.\n\nSecond, the single scene must be an accurate visualization of the mechanism, not a decorative metaphor. Audiences remember a moving image, not a sentence. The decisive moment of target binding, the condition that triggers release, the tipping point of a cellular response. Render that one core frame with precision and the cognitive load of everything else drops sharply. But the moment you sacrifice accuracy for aesthetics, trust collapses, which is why visualization and scientific validation have to happen at the same table.\n\nThird, translate the same technology through different entry points for different audiences. Investors respond to differentiation and scalability, regulatory reviewers to evidence and reproducibility, partner R&D teams to integration potential. The core sentence and scene stay constant, but the context around them is recomposed per audience. That recomposition is the real craft.\n\nGood science communication is not about simplifying the technology. It is about deciding what comes first. At bbbb.beauty, we work to compress complex platforms into one sentence and one scene while preserving medical accuracy.\n\nCan your platform be explained in a single sentence right now? Leave a Yes or No in the comments. Send me the keyword 한문장 by DM and I will share a platform message clarity checklist. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#SciComm",
+        "#BioPlatform",
+        "#MOAVisualization",
+        "#B2BMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260714_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: One Sentence, One Scene"
+    },
+    {
+      "pair_id": "linkedin_20260714_afternoon",
+      "status": "pending",
+      "topic": "Science to Message, Beauty to Experience: bbbb.beauty가 하는 일",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-14T15:00:00+09:00",
+      "created_at": "2026-07-14T06:43:08.113016+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260714_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "\"작용기전 애니메이션 하나 만들어 주세요.\" 이 요청 뒤에는 생각보다 복잡한 판단이 숨어 있습니다. MOA 영상은 예쁜 3D 그림이 아니라, 검증된 과학적 주장을 오해 없이 시각 언어로 옮기는 번역 작업이기 때문입니다.\n\n현장에서 반복적으로 마주하는 세 가지 문제를 정리합니다.\n\n첫째, 정확성과 몰입의 균형입니다. 세포와 분자를 사실적으로 그릴수록 시청자는 흥미를 잃고, 단순화할수록 메디컬 팀은 \"이건 사실과 다르다\"고 지적합니다. 우리는 스토리보드 단계에서 R&D·메디컬 담당자와 근거 문헌을 함께 검토해, 어디까지 단순화가 허용되는지 사전에 합의합니다. 이 합의가 없으면 완성 단계에서 전면 수정이 발생합니다.\n\n둘째, 데이터의 시각적 위계입니다. 하나의 기전에는 수십 개의 이벤트가 얽혀 있지만, 한 편의 영상이 전달할 수 있는 핵심 메시지는 보통 두세 개입니다. 무엇을 강조하고 무엇을 배경으로 둘지 결정하는 것이 제작 품질을 좌우합니다. 이 우선순위 결정은 디자이너가 아니라 과학과 마케팅 목표를 함께 아는 사람이 내려야 합니다.\n\n셋째, 규제와 커뮤니케이션의 경계입니다. 효능을 암시하는 표현이 시각적으로 과장되면 규제 리스크가 됩니다. 우리는 문구뿐 아니라 화면의 움직임과 강조 방식까지 검토 대상에 포함합니다.\n\n좋은 MOA 콘텐츠는 결국 기술력을 고객의 신뢰로 연결하는 다리입니다. 과학을 메시지로, 브랜드를 경험으로 번역하는 일이 우리가 하는 일입니다.\n\n여러분의 조직에서는 3D와 2D 중 어느 방식이 더 자주 필요하신가요? 댓글로 남겨 주세요. MOA 라고 DM 주시면 제작 전 점검용 체크리스트를 보내드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학시각화",
+        "#메디컬커뮤니케이션",
+        "#B2B마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260714_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 과학을 신뢰로 번역하다"
+    },
+    {
+      "pair_id": "linkedin_20260714_afternoon",
+      "status": "pending",
+      "topic": "Science to Message, Beauty to Experience: bbbb.beauty가 하는 일",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-14T15:00:00+09:00",
+      "created_at": "2026-07-14T06:43:08.113016+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260714_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "\"Can you make an animation of our mechanism of action?\" Behind that simple request sits a surprising amount of judgment. An MOA film is not a pretty 3D rendering; it is a translation task, moving a validated scientific claim into visual language without distortion.\n\nHere are three problems we face on nearly every project.\n\nFirst, the balance between accuracy and engagement. The more photorealistic the cells and molecules become, the more viewers disengage. The more we simplify, the more the medical team objects that \"this isn't quite right.\" We resolve this at the storyboard stage, reviewing source literature together with R&D and medical stakeholders to agree in advance on how much simplification is acceptable. Without that agreement, you end up rebuilding scenes at the final stage, which is expensive and slow.\n\nSecond, the visual hierarchy of data. A single mechanism may involve dozens of interconnected events, but one film can usually carry only two or three core messages. Deciding what to emphasize and what to keep as background determines production quality. That prioritization cannot be left to a designer alone; it must come from someone who understands both the science and the marketing objective.\n\nThird, the boundary between regulation and communication. When an on-screen motion visually overstates an effect, it becomes a regulatory risk, even if the wording is compliant. We review not only the copy but also the movement and emphasis choices on screen.\n\nGood MOA content is ultimately a bridge that turns technical capability into customer trust. Translating science into message and brand into experience is precisely what we do.\n\nIn your organization, do you more often need 3D or 2D approaches? Share it in the comments. Send me the keyword MOA and I will share our pre-production checklist. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA",
+        "#ScienceVisualization",
+        "#MedicalCommunication",
+        "#B2BMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260714_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Translating Science into Trust"
     }
   ]
 }
