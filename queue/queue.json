@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260715_morning",
+      "status": "pending",
+      "topic": "좋은 과학 콘텐츠는 기술 설명이 아니라 이해 설계에서 시작됩니다",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260715_morning_ko.jpg",
+      "caption": "기술을 나열하면 정보가 됩니다. 이해를 설계하면 신뢰가 됩니다. 좋은 과학 콘텐츠는 무엇을 말할지가 아니라, 상대가 어떤 순서로 이해하게 할지 설계에서 시작됩니다.\n\n댓글: 당신의 콘텐츠, 설명형 A? 이해형 B?\nDM “설계”: 이해 설계 체크리스트 7문항 드립니다\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#메디컬콘텐츠",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#바이오브랜딩"
+      ],
+      "scheduled_time": "2026-07-15T12:30:00+09:00",
+      "created_at": "2026-07-15T06:45:28.041969+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260715_afternoon",
+      "status": "pending",
+      "topic": "MOA 애니메이션이 복잡한 작용기전을 브랜드 자산으로 바꾸는 방법",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260715_afternoon_ko.jpg",
+      "caption": "작용기전은 데이터가 아니라 이야기여야 팔립니다. MOA 애니메이션은 눈에 보이지 않는 메커니즘을 신뢰의 언어로 바꿔 브랜드 자산으로 남깁니다.\n\n댓글: MOA, 영상 A / 인포그래픽 B?\nDM “MOA”: MOA 제작 체크리스트 PDF 드립니다\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#3D메디컬",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#브랜드자산",
+        "#의학시각화"
+      ],
+      "scheduled_time": "2026-07-15T19:00:00+09:00",
+      "created_at": "2026-07-15T06:45:28.041969+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
