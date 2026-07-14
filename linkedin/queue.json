@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260713_morning",
+      "status": "pending",
+      "topic": "제품 차별점을 경쟁사 비교 없이 명확하게 보여주는 방법",
+      "slot": "morning",
+      "scheduled_time": "2026-07-13T09:00:00+09:00",
+      "created_at": "2026-07-13T06:38:26.242526+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "기전",
+      "id": "linkedin_20260713_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "제품 차별점을 설명할 때 많은 팀이 가장 먼저 경쟁사 비교표를 꺼냅니다. 그러나 비교는 곧 상대의 기준으로 우리 제품을 평가하겠다는 선언과 같습니다. 상대가 정한 항목 위에서 싸우는 순간, 차별점은 우위가 아니라 정도의 차이로 축소됩니다. 비교 없이 차별점을 증명하는 더 강력한 방법은, 우리 기술이 작동하는 고유한 경로 자체를 보이게 만드는 것입니다.\n\n첫째, 작용 기전(MOA)을 시각적 언어로 번역하세요. 성분이 어디에 결합하고 어떤 신호를 거쳐 결과에 이르는지를 3D나 2D 애니메이션으로 보여주면, 고객은 '왜 이 제품이 다른가'를 스스로 이해합니다. 경쟁사를 언급하지 않아도 경로의 고유성이 차별점을 대신 말합니다.\n\n둘째, 근거의 위계를 시각화하세요. 인비트로, 전임상, 임상 데이터가 어떤 순서로 연결되는지 하나의 흐름으로 정리하면, 데이터가 흩어진 수치가 아니라 하나의 논리로 읽힙니다. 담당자는 이 흐름 위에서 자사 강점이 어느 단계에 있는지 명확히 인식합니다.\n\n셋째, 고객이 경험하는 문제부터 시작하세요. 기술 스펙이 아니라 해결하려는 과제를 먼저 제시하고, 그 해결 경로에 우리 기술을 배치하면 차별점이 맥락 안에서 자연스럽게 드러납니다.\n\nbbbb.beauty는 복잡한 의학기술을 고객이 신뢰할 수 있는 시각 언어로 번역합니다. 비교표 대신 기전으로 설득하는 방식이 장기적으로 더 강한 브랜드 자산이 됩니다. 여러분의 팀은 차별점을 비교로 설명하나요, 아니면 기전으로 증명하나요? 댓글로 의견을 남겨주세요. '기전'을 DM으로 보내주시면 차별점 시각화 진단 질문 5개를 드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#더마코스메틱",
+        "#B2B마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260713_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 차별점은 비교가 아니라 기전으로"
+    },
+    {
+      "pair_id": "linkedin_20260713_morning",
+      "status": "pending",
+      "topic": "제품 차별점을 경쟁사 비교 없이 명확하게 보여주는 방법",
+      "slot": "morning",
+      "scheduled_time": "2026-07-13T09:00:00+09:00",
+      "created_at": "2026-07-13T06:38:26.242526+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "기전",
+      "id": "linkedin_20260713_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "When teams explain what makes their product different, the first instinct is often to build a competitor comparison table. But comparison is a quiet concession: it means you agree to be judged on someone else's criteria. The moment you fight on the axes a rival defined, your differentiation shrinks from an advantage into a matter of degree. There is a stronger way to prove differentiation without naming anyone else, and it starts with making your product's unique pathway visible.\n\nFirst, translate your mechanism of action into visual language. When you show where an ingredient binds, which signaling steps it moves through, and how it reaches an outcome, customers understand for themselves why this product behaves differently. Through 3D or 2D animation, the uniqueness of the pathway does the persuading. No competitor needs to be mentioned, because the mechanism speaks on its behalf.\n\nSecond, visualize the hierarchy of evidence. In vitro, preclinical, and clinical data often live as scattered numbers in a deck. When you connect them into a single narrative flow, the evidence reads as one logic rather than isolated figures. Decision-makers can immediately see which stage carries your strongest proof, and confidence follows clarity.\n\nThird, begin with the problem your customer experiences, not with your specifications. Present the challenge first, then place your technology along the path to its resolution. Differentiation that emerges inside a real context feels earned rather than claimed.\n\nAt bbbb.beauty, we translate complex medical technology into visual language that customers can trust. Persuading through mechanism rather than comparison builds a more durable brand asset over time, because you own the frame instead of borrowing a rival's. The comparison table wins a single slide; the visualized mechanism wins the memory.\n\nDoes your team explain differentiation through comparison, or prove it through mechanism? Share your view in the comments. Send me the keyword 기전 by DM and I will share five diagnostic questions for visualizing your differentiation. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#ScienceCommunication",
+        "#MOAAnimation",
+        "#Dermocosmetics",
+        "#B2BMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260713_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Prove Difference by Mechanism"
+    },
+    {
+      "pair_id": "linkedin_20260713_afternoon",
+      "status": "pending",
+      "topic": "과학 커뮤니케이션 프로젝트의 킥오프에서 물어야 할 질문",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-13T15:00:00+09:00",
+      "created_at": "2026-07-13T06:38:26.242526+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "킥오프",
+      "id": "linkedin_20260713_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "과학 커뮤니케이션 프로젝트가 실패하는 대부분의 이유는 제작 후반이 아니라 킥오프에서 결정됩니다. 3D/MOA 애니메이션은 시각적으로 완성도가 높아 보여도, 초반에 합의하지 못한 전제가 있으면 리뷰 단계에서 반복적인 재작업으로 이어집니다. 그래서 우리는 첫 미팅에서 던지는 질문의 질이 결과물의 절반을 좌우한다고 봅니다.\n\n첫째, 이 콘텐츠가 전달해야 할 단 하나의 핵심 메시지는 무엇입니까. MOA 애니메이션은 분자 수준의 여러 단계를 담을 수 있지만, 모든 단계를 동일한 비중으로 보여주면 청중은 결국 아무것도 기억하지 못합니다. 수용체 결합인지, 신호 전달 경로인지, 특정 표적의 선택성인지를 초반에 정하면 시각적 강조와 카메라 워크의 우선순위가 명확해집니다.\n\n둘째, 근거가 되는 데이터와 문헌의 범위는 어디까지입니까. 우리는 사내 자료, 논문, 규제 제출 문서 중 어떤 것을 시각화의 근거로 삼을지 킥오프에서 확정합니다. 확인되지 않은 기전을 추정으로 표현하면 메디컬 검수 단계에서 전면 수정이 불가피합니다. 애매한 표현이 필요한 부분은 사전에 시각적 처리 방식을 합의합니다.\n\n셋째, 이 콘텐츠는 누가 어디서 보게 됩니까. 학회 발표, 영업 담당자용 태블릿, 규제 대응, 내부 교육은 각기 다른 정확성과 톤을 요구합니다. 타깃 청중과 사용 채널을 명확히 하면 러닝타임과 설명의 깊이를 처음부터 맞출 수 있습니다.\n\n결국 좋은 킥오프는 제작 기간과 검수 라운드를 줄이고, 메디컬·마케팅·R&D 담당자가 같은 그림을 공유하게 만듭니다. bbbb.beauty는 이 세 질문을 구조화한 체크리스트로 프로젝트를 시작합니다.\n\n여러분의 프로젝트에서 가장 먼저 합의해야 할 것은 정확성입니까, 임팩트입니까. 킥오프 질문 체크리스트가 필요하시면 '킥오프'를 남겨주세요. 문의: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#메디컬마케팅",
+        "#B2B크리에이티브"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260713_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 킥오프에서 물어야 할 질문"
+    },
+    {
+      "pair_id": "linkedin_20260713_afternoon",
+      "status": "pending",
+      "topic": "과학 커뮤니케이션 프로젝트의 킥오프에서 물어야 할 질문",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-13T15:00:00+09:00",
+      "created_at": "2026-07-13T06:38:26.242526+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "킥오프",
+      "id": "linkedin_20260713_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "Most science communication projects don't fail in the final render. They fail at the kickoff. A 3D or MOA animation can look polished and still trigger round after round of rework, because the assumptions that mattered were never agreed on in the first meeting. In our experience, the quality of the questions you ask at kickoff determines roughly half of the final outcome.\n\nThree questions consistently separate smooth projects from painful ones.\n\nFirst: what is the single core message this piece must land? An MOA animation can depict many molecular steps, but if every step carries equal visual weight, the audience remembers nothing. Deciding early whether the story is about receptor binding, a signaling cascade, or target selectivity gives clear priority to visual emphasis and camera work. Focus is not a limitation. It is what makes the science memorable.\n\nSecond: what is the boundary of the supporting evidence? We define at kickoff whether the visualization draws on internal data, published literature, or regulatory documentation. Representing an unconfirmed mechanism as settled fact guarantees a full rewrite once medical review begins. Where a mechanism is uncertain, we agree in advance on how ambiguity will be handled visually, rather than discovering the problem in a late review.\n\nThird: who will watch this, and where? A conference stage, a sales rep's tablet, a regulatory submission, and internal training each demand a different balance of accuracy, tone, and runtime. Locking the audience and channel early lets us calibrate depth and duration from the start, instead of retrofitting them under deadline pressure.\n\nA strong kickoff shrinks production time, reduces review rounds, and gets medical, marketing, and R&D stakeholders looking at the same picture. That alignment is worth more than any single visual flourish. At bbbb.beauty we open every engagement with these questions structured into a checklist, so the science stays accurate and the message stays clear.\n\nSo I'll turn it to you: at the very start of a project, what should be settled first, accuracy or impact? If you'd like our kickoff question checklist, comment 킥오프 and I'll send it over. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#ScienceCommunication",
+        "#MOAAnimation",
+        "#MedicalMarketing",
+        "#B2BCreative"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260713_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Questions to Ask at Kickoff"
     }
   ]
 }
