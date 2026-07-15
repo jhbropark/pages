@@ -113,7 +113,7 @@ jobs:
           NAMECODE_FONT: /tmp/fnt/JetBrainsMono.ttf   # for the DECODE hook overlays
         run: |
           set -o pipefail
-          pip install requests imageio-ffmpeg Pillow
+          pip install requests imageio-ffmpeg Pillow numpy
           DATE="${{ steps.gen.outputs.date }}"
           # 9:16 still as start_image -> native vertical video, no blur bars
           RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/namecode_apod_${DATE}_9x16.png"
