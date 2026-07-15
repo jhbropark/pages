@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260716_morning",
+      "status": "pending",
+      "topic": "더마코스메틱의 성분 설명을 고객 언어로 번역하는 세 단계",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260716_morning_ko.jpg",
+      "caption": "성분명을 그대로 노출하면 고객은 이해하지 못합니다. 기전을 신뢰의 언어로 번역하는 데는 세 단계가 필요합니다. 정확성을 지키면서 메시지를 설계하는 관점을 공유합니다.\n\n댓글: 당신의 벽은? A 정확성 B 전달력\nDM “번역3”: 성분 메시지 번역 체크리스트 발송\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#더마코스메틱",
+        "#과학커뮤니케이션",
+        "#MOA",
+        "#브랜드마케팅",
+        "#의학시각화",
+        "#B2B마케팅"
+      ],
+      "scheduled_time": "2026-07-16T12:30:00+09:00",
+      "created_at": "2026-07-16T06:45:36.127669+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260716_afternoon",
+      "status": "pending",
+      "topic": "임상 데이터와 프리미엄 비주얼을 함께 설계해야 하는 이유",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260716_afternoon_ko.jpg",
+      "caption": "임상 데이터가 아무리 견고해도, 시각적으로 왜곡되면 신뢰는 무너집니다. 정확성과 프리미엄 비주얼은 따로 설계할 수 없습니다.\n\n댓글: 당신의 우선순위는? 정확성 or 임팩트\nDM “설계”: MOA 제작 사전 점검 체크리스트 발송\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학시각화",
+        "#메디컬커뮤니케이션",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#임상데이터"
+      ],
+      "scheduled_time": "2026-07-16T19:00:00+09:00",
+      "created_at": "2026-07-16T06:45:36.127669+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
