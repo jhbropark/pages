@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260719_morning",
+      "status": "pending",
+      "topic": "과학 시각화에서 예쁜 이미지보다 먼저 확인해야 하는 기준",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260719_morning_ko.jpg",
+      "caption": "과학 시각화는 예쁨보다 정확성이 먼저입니다. 데이터 출처, 메커니즘 근거, 규제 적합성을 확인하지 않은 비주얼은 신뢰를 잃습니다. 아름다움은 근거 위에서만 힘을 갖습니다.\n\n댓글: 당신의 우선순위는? 정확성 vs 비주얼\nDM “기준표”: 과학 시각화 검수 체크리스트 5항목 전달\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학시각화",
+        "#MOA애니메이션",
+        "#메디컬커뮤니케이션",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#brandtrust"
+      ],
+      "scheduled_time": "2026-07-19T12:30:00+09:00",
+      "created_at": "2026-07-19T06:39:30.590567+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260719_afternoon",
+      "status": "pending",
+      "topic": "브랜드 필름과 과학 다큐멘터리는 무엇이 다른가",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260719_afternoon_ko.jpg",
+      "caption": "브랜드 필름은 감정으로 신뢰를 만들고, 과학 다큐는 근거로 신뢰를 증명합니다. 목적이 다르면 구조와 검증 방식도 달라져야 합니다. 무엇을 먼저 정해야 할까요.\n\n댓글: 필름 vs 다큐, 무엇이 급해요?\nDM “FILM”: 목적별 콘텐츠 설계 체크리스트 전송\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#브랜드필름",
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#메디컬콘텐츠",
+        "#더마코스메틱",
+        "#B2B마케팅"
+      ],
+      "scheduled_time": "2026-07-19T19:00:00+09:00",
+      "created_at": "2026-07-19T06:39:30.590567+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }

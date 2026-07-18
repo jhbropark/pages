@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260719_morning",
+      "status": "pending",
+      "topic": "과학 시각화에서 예쁜 이미지보다 먼저 확인해야 하는 기준",
+      "slot": "morning",
+      "scheduled_time": "2026-07-19T09:00:00+09:00",
+      "created_at": "2026-07-19T06:39:30.590567+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "기준표",
+      "id": "linkedin_20260719_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "과학 시각화 프로젝트가 실패하는 순간은 대개 마지막 단계가 아니라 첫 단계에 결정됩니다. 많은 팀이 \"얼마나 예쁘게 뽑을 수 있는가\"부터 논의를 시작하지만, 정작 먼저 확인해야 할 것은 비주얼의 완성도가 아니라 그 이미지가 담고 있는 과학적 주장의 근거입니다.\n\n첫째, 데이터 출처의 추적 가능성입니다. 메커니즘 애니메이션에 등장하는 분자 거동, 수용체 결합, 흡수 경로는 모두 검증된 문헌이나 사내 연구 데이터에 연결되어야 합니다. 출처를 역추적할 수 없는 장면은 아무리 아름다워도 메디컬·규제 검수 단계에서 반드시 다시 열립니다. 제작 후반에 근거가 뒤집히면 재작업 비용이 초기 검수 비용의 몇 배로 불어납니다.\n\n둘째, 메커니즘의 표현 수위입니다. 시각화는 본질적으로 단순화입니다. 문제는 어디까지 단순화해도 과학적으로 오해를 낳지 않는가입니다. 실제 입증된 작용과 이론적 가설, 아직 검증되지 않은 마케팅 메시지를 같은 화면 톤으로 섞으면 청중은 이를 구분하지 못합니다. 입증 수준에 따라 표현 강도를 나누는 원칙이 필요합니다.\n\n셋째, 규제·클레임 적합성입니다. 화장품, 의약품, 의료기기는 허용되는 효능 표현의 경계가 다릅니다. 시각적 은유 하나가 암묵적 효능 주장으로 읽힐 수 있습니다. 비주얼은 텍스트보다 강하게 각인되기 때문에 오히려 더 엄격한 검토가 필요합니다.\n\n결국 좋은 과학 시각화는 아름다움과 정확성 중 하나를 고르는 문제가 아닙니다. 근거라는 토대 위에 프리미엄 비주얼을 쌓아 올릴 때, 기술력은 비로소 고객의 신뢰와 선택으로 연결됩니다. bbbb.beauty가 제작 전 검수 기준을 먼저 세우는 이유입니다.\n\n여러분의 팀은 시각화 프로젝트에서 정확성과 비주얼 중 무엇을 먼저 논의하나요? 실무에서 바로 쓸 수 있는 검수 체크리스트가 필요하시면 '기준표'를 댓글이나 DM으로 남겨주세요. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학시각화",
+        "#메디컬커뮤니케이션",
+        "#MOA애니메이션",
+        "#B2B마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260719_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 예쁜 이미지보다 근거가 먼저"
+    },
+    {
+      "pair_id": "linkedin_20260719_morning",
+      "status": "pending",
+      "topic": "과학 시각화에서 예쁜 이미지보다 먼저 확인해야 하는 기준",
+      "slot": "morning",
+      "scheduled_time": "2026-07-19T09:00:00+09:00",
+      "created_at": "2026-07-19T06:39:30.590567+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "기준표",
+      "id": "linkedin_20260719_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "Science visualization projects rarely fail at the final render. They fail at the first meeting. Too many teams open with \"how beautiful can we make this?\" when the first question should be about the evidence behind the claim the image is making.\n\nFirst, traceability of data sources. Every molecular movement, receptor binding, or absorption pathway shown in a mechanism-of-action animation must connect to peer-reviewed literature or internal research data. A scene that cannot be traced back to a source will be reopened during medical and regulatory review, no matter how polished it looks. When the evidence collapses late in production, rework costs multiply far beyond the price of an early check.\n\nSecond, the level of scientific simplification. Visualization is simplification by nature. The real question is how far you can simplify before the image becomes misleading. When proven mechanisms, theoretical hypotheses, and unverified marketing messages all appear in the same visual tone, audiences cannot tell them apart. You need a principle that scales visual emphasis to the strength of the evidence.\n\nThird, regulatory and claim compliance. Cosmetics, pharmaceuticals, and medical devices operate under different boundaries for permissible efficacy language. A single visual metaphor can read as an implicit efficacy claim. Because images imprint more strongly than text, they often demand stricter scrutiny, not less.\n\nGreat science visualization is not a choice between beauty and accuracy. When premium visuals are built on a foundation of verifiable evidence, technical capability finally converts into client trust and selection. That is why we define review criteria before production begins, not after.\n\nSo here is my question: in your team's visualization projects, what gets discussed first, accuracy or aesthetics? If you want a practical pre-production review checklist, comment or DM me the keyword 기준표. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#ScienceVisualization",
+        "#MedicalCommunication",
+        "#MOAanimation",
+        "#B2Bmarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260719_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Accuracy Before Aesthetics"
+    },
+    {
+      "pair_id": "linkedin_20260719_afternoon",
+      "status": "pending",
+      "topic": "브랜드 필름과 과학 다큐멘터리는 무엇이 다른가",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-19T15:00:00+09:00",
+      "created_at": "2026-07-19T06:39:30.590567+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "FILM",
+      "id": "linkedin_20260719_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "\"브랜드 필름과 과학 다큐멘터리, 결국 같은 영상 아닌가요?\" 프로젝트 초기에 가장 자주 듣는 질문입니다. 둘 다 브랜드의 기술력을 다루지만, 목적이 다르기에 설계 방식 전체가 달라집니다.\n\n첫째, 목적과 신뢰의 경로가 다릅니다. 브랜드 필름은 감정과 스토리로 '이 브랜드는 믿을 만하다'는 인상을 만듭니다. 과학 다큐멘터리는 메커니즘과 근거를 순서대로 보여주며 '왜 효과가 있는가'를 논리로 증명합니다. 전자는 컨버전과 브랜드 자산을, 후자는 KOL 설득과 학술·영업 자료를 겨냥합니다. 목적이 흐려지면 예쁘지만 아무도 설득 못 하는 영상이 나옵니다.\n\n둘째, 검증 프로세스가 다릅니다. 브랜드 필름은 크리에이티브 리뷰가 중심이지만, 과학 다큐는 메디컬·R&D 검수가 필수입니다. 성분의 작용 단계, 세포 수준의 표현, 자막 문구 하나까지 규제와 근거를 확인합니다. 저희는 3D/MOA 제작 시 스토리보드 단계부터 R&D 담당자와 팩트 리스트를 공유해, 렌더링 이후 뒤집히는 재작업을 줄입니다.\n\n셋째, 시각화 밀도가 다릅니다. 브랜드 필름은 은유와 무드가 허용되지만, 과학 다큐는 부정확한 은유가 오히려 신뢰를 깎습니다. 분자 구조, 침투 경로, 작용 부위는 근거 안에서만 표현되어야 합니다. 정확성과 프리미엄 비주얼은 상충하지 않으며, 오히려 정확함이 세련됨의 조건입니다.\n\n실무 판단 기준은 간단합니다. 감정으로 남길 것인가, 근거로 설득할 것인가. 둘 다 필요하다면 하나의 자산에서 목적별 버전을 파생하는 설계가 효율적입니다.\n\n목적에 맞는 콘텐츠를 고민 중이라면 댓글이나 DM으로 FILM 을 남겨주세요. 목적별 콘텐츠 설계 체크리스트를 보내드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html\n\n여러분의 다음 프로젝트는 감정이 급한가요, 근거가 급한가요?",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#브랜드필름",
+        "#메디컬콘텐츠"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260719_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 브랜드 필름 vs 과학 다큐"
+    },
+    {
+      "pair_id": "linkedin_20260719_afternoon",
+      "status": "pending",
+      "topic": "브랜드 필름과 과학 다큐멘터리는 무엇이 다른가",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-19T15:00:00+09:00",
+      "created_at": "2026-07-19T06:39:30.590567+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "FILM",
+      "id": "linkedin_20260719_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "\"Aren't a brand film and a science documentary basically the same video?\" It's the question we hear most at the start of a project. Both showcase a brand's technology, but because their purpose differs, everything about how they're designed diverges.\n\nFirst, the path to trust is different. A brand film builds the impression that \"this brand is credible\" through emotion and story. A science documentary proves \"why it works\" by presenting mechanism and evidence in logical sequence. The former serves conversion and brand equity; the latter serves KOL persuasion, scientific communication, and sales enablement. Blur the purpose and you get a beautiful film that convinces no one.\n\nSecond, the validation process is different. A brand film revolves around creative review, but a science documentary requires medical and R&D verification. Every step of an ingredient's action, every cellular-level depiction, and every line of on-screen text must be checked against evidence and regulatory constraints. In our 3D/MOA work, we share a fact list with R&D from the storyboard stage, which reduces costly rework that would otherwise surface only after rendering.\n\nThird, visualization density is different. A brand film allows metaphor and mood, but in a science documentary an inaccurate metaphor actively erodes trust. Molecular structures, penetration pathways, and sites of action must be shown strictly within the bounds of evidence. Accuracy and premium visuals are not in conflict; accuracy is a precondition for sophistication.\n\nThe practical decision is simple. Do you want to be remembered through emotion, or to persuade through evidence? If you need both, the efficient approach is to design one asset from which purpose-specific versions are derived.\n\nIf you're weighing which format fits your goal, comment or DM me FILM and I'll send a purpose-based content design checklist. Contact hub: https://jhbropark.github.io/pages/contact.html\n\nFor your next project, what's more urgent: the emotion, or the evidence?",
+      "hashtags": [
+        "#ScienceCommunication",
+        "#MOAAnimation",
+        "#MedicalContent",
+        "#BrandFilm"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260719_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Brand Film vs Science Doc"
     }
   ]
 }
