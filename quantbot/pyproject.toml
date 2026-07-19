@@ -12,7 +12,7 @@ dependencies = [
 
 [project.optional-dependencies]
 data = ["finance-datareader>=0.9.90", "pykrx>=1.0.45", "pyarrow>=14.0"]
-live = ["websockets>=12.0"]
+live = ["websockets>=12.0", "pycryptodome>=3.19"]
 dev = ["pytest>=7.4"]
 
 [project.scripts]
