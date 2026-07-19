@@ -98,7 +98,12 @@ def publish_reel(video_url, caption, cover_url=None, dry=False):
         params["cover_url"] = cover_url
     container = _post(f"{base}/{ver}/{uid}/media", params, dry)
     cid = container["id"]
-    _wait_ready(base, ver, cid, tok, dry, tries=40, delay=5)  # reels process longer
+    # Reels transcode server-side and can take several minutes; 40x5s (200s) was
+    # timing out ("container not ready"). Give it ~12 min (overridable) — the IG
+    # container stays valid for ~24h, so a longer poll costs nothing on success.
+    tries = int(os.environ.get("IG_REEL_WAIT_TRIES", "90"))
+    delay = int(os.environ.get("IG_REEL_WAIT_DELAY", "8"))
+    _wait_ready(base, ver, cid, tok, dry, tries=tries, delay=delay)
     res = _post(f"{base}/{ver}/{uid}/media_publish",
                 {"creation_id": cid, "access_token": tok}, dry)
     return res["id"]

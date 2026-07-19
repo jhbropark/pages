@@ -212,10 +212,20 @@ def compose(img_bytes, name, value, out, size=FEED_SIZE):
     im = ImageOps.colorize(g, black=BLACK, white=PAPER).convert("RGB")
     d = ImageDraw.Draw(im, "RGBA")
     label = f"namecode - {name} | {value}"
-    f = ImageFont.truetype(FONT, max(22, W // 34))
+    # Instagram's grid/reels thumbnails center-crop the frame (a 4:5 cover shown
+    # in the taller reels cell loses ~8-15% off each side), which was clipping
+    # the "namecode" prefix. Inset the label into the crop-safe band [10%, 92%]
+    # and shrink the font if a long name would push the value past the right edge.
+    pad = 14
+    x, y = round(W * 0.10), round(W * 0.05)
+    right_safe = round(W * 0.92)
+    fs = max(20, W // 34)
+    f = ImageFont.truetype(FONT, fs)
+    while fs > 18 and x + d.textlength(label, font=f) + pad * 2 > right_safe:
+        fs -= 1
+        f = ImageFont.truetype(FONT, fs)
     tw = d.textlength(label, font=f)
-    x, y, pad = 40, 40, 14                                     # top-left safe zone
-    d.rounded_rectangle([x, y, x + tw + pad * 2, y + f.size + 22], radius=6, fill=(18, 18, 18, 170))
+    d.rounded_rectangle([x, y, x + tw + pad * 2, y + f.size + 22], radius=6, fill=(18, 18, 18, 190))
     d.text((x + pad, y + 11), label, font=f, fill=PAPER)
     im.save(out)
     return out

@@ -140,7 +140,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: namecode-reel-${{ steps.gen.outputs.date }}
-          path: namecode_grid/daily/reel_*.mp4
+          # only today's reel — globbing reel_*.mp4 zipped every historical reel (~184MB)
+          path: namecode_grid/daily/reel_${{ steps.gen.outputs.date }}.mp4
           if-no-files-found: ignore
 
       - name: Publish feed image to Instagram (optional)
