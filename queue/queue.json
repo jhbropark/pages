@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260720_morning",
+      "status": "pending",
+      "topic": "AR이 메디컬·뷰티 제품 교육의 이해도를 높이는 방식",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260720_morning_ko.jpg",
+      "caption": "AR은 제품 교육에서 '보는 것'을 '경험하는 것'으로 바꿉니다. MOA를 손안에서 회전시키고 조작할 때, 담당자와 고객의 이해 속도는 달라집니다. 몰입은 기억을 만듭니다.\n\n댓글: 교육 방식, 영상 vs AR?\nDM “AR가이드”: AR 교육 콘텐츠 기획 체크리스트 발송\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#AR경험",
+        "#메디컬커뮤니케이션",
+        "#MOA",
+        "#뷰티마케팅",
+        "#B2B콘텐츠",
+        "#과학시각화"
+      ],
+      "scheduled_time": "2026-07-20T12:30:00+09:00",
+      "created_at": "2026-07-20T06:40:22.076106+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260720_afternoon",
+      "status": "pending",
+      "topic": "영업 현장에서 다시 활용되는 메디컬 교육 콘텐츠 설계법",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260720_afternoon_ko.jpg",
+      "caption": "메디컬 교육 콘텐츠가 교육으로 끝나면 절반의 성공입니다. 영업 현장에서 다시 꺼내 쓰도록 설계하면 하나의 MOA 자산이 학습과 세일즈를 동시에 움직입니다.\n\n댓글: 교육용 vs 영업용, 어디에 씁니까?\nDM “REUSE”: 콘텐츠 재활용 설계 체크리스트 PDF\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#메디컬콘텐츠",
+        "#MOA애니메이션",
+        "#3D의학시각화",
+        "#B2B마케팅",
+        "#세일즈이네이블먼트",
+        "#사이언스커뮤니케이션"
+      ],
+      "scheduled_time": "2026-07-20T19:00:00+09:00",
+      "created_at": "2026-07-20T06:40:22.076106+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
