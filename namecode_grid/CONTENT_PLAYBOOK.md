@@ -181,10 +181,11 @@ Content alone won't compound — pair it with distribution.
 
 ## Pre-Publish QA Checklist
 
-- [ ] **Work name matches the actual subject.** *(Known drift: 07-05 "Iapetus"
-      was labeled METEOR; 07-06 "Dueling Bands/Milky Way" was labeled COMET.
-      The topical hashtag and the decoded line MUST describe the real
-      phenomenon even if the auto-name is off.)*
+- [ ] **Work name matches the actual subject.** *(`derive_name()` now derives
+      from the title/subject and no longer lets a passing explanation mention
+      hijack the name — the old METEOR (Iapetus) / COMET (Milky Way) drift is
+      fixed and covered by `tests/test_apod_namecode.py`. Still eyeball it: the
+      topical hashtag and decoded line must describe the real phenomenon.)*
 - [ ] Label value is a **real astronomical figure** from the APOD text (not a
       hash fallback) — `apod_namecode.py::astro_value()`.
 - [ ] Hook is front-loaded (≤125 chars) and **not** identical to yesterday's.
