@@ -67,9 +67,23 @@ def _get(url, params, dry):
 def _wait_ready(base, ver, cid, tok, dry, tries=20, delay=3):
     """Poll a media container's status_code until FINISHED before publishing.
     Skipping this causes code 9007 'media is not ready for publishing'.
-    Images are usually ready in seconds; reels take longer."""
+    Images are usually ready in seconds; reels take longer.
+
+    The status GET can return a transient 403/429/5xx mid-poll (rate limiting or
+    an IG-side blip) — those must NOT abort a multi-minute reel wait, so tolerate
+    a run of consecutive errors and keep polling until FINISHED/ERROR/timeout."""
+    errors = 0
     for _ in range(tries):
-        st = _get(f"{base}/{ver}/{cid}", {"fields": "status_code", "access_token": tok}, dry)
+        try:
+            st = _get(f"{base}/{ver}/{cid}", {"fields": "status_code", "access_token": tok}, dry)
+        except Exception as e:
+            errors += 1
+            print(f"[warn] status poll transient error {errors}: {e}", file=sys.stderr)
+            if errors >= 12:
+                raise RuntimeError(f"status poll failed {errors}x: {e}")
+            time.sleep(delay)
+            continue
+        errors = 0
         sc = st.get("status_code")
         if sc == "FINISHED":
             return
