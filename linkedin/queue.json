@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260722_morning",
+      "status": "pending",
+      "topic": "전시회와 학회에서 복잡한 기술을 짧게 전달하는 비주얼 구조",
+      "slot": "morning",
+      "scheduled_time": "2026-07-22T09:00:00+09:00",
+      "created_at": "2026-07-22T06:53:22.081578+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "BOOTH",
+      "id": "linkedin_20260722_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "전시회와 학회 현장에서 관람객이 하나의 부스 앞에 머무는 시간은 평균 몇 초에 불과합니다. 그 짧은 순간에 복잡한 작용기전, 임상 근거, 기술적 차별점을 모두 전달하려는 시도는 대부분 실패합니다. 정보의 양이 많을수록 관람객은 오히려 아무것도 기억하지 못한 채 지나갑니다.\n\n현장에서 작동하는 비주얼 구조는 세 가지 원칙을 따릅니다.\n\n첫째, 단일 메시지 우선입니다. 부스 대형 스크린은 '이 기술이 무엇을 다르게 하는가'라는 단 하나의 질문에만 답해야 합니다. 예를 들어 특정 성분의 피부 흡수 경로를 다룰 때, 전체 대사 과정을 나열하기보다 경쟁 방식과 비교되는 결정적 한 장면을 3초 안에 각인시키는 편이 훨씬 강력합니다. 상세 데이터는 태블릿이나 후속 자료로 넘깁니다.\n\n둘째, 무음 전제 설계입니다. 전시장은 소음이 크고 관람객은 이어폰을 끼지 않습니다. 자막과 시각적 흐름만으로 이해되는 3D MOA 애니메이션은 소리에 의존한 영상보다 완주율이 높습니다. 소리는 보조 장치이지 전제 조건이 아니어야 합니다.\n\n셋째, 대화의 시작점 설계입니다. 좋은 부스 영상은 설명을 끝내는 것이 아니라 담당자와의 질문을 여는 역할을 합니다. 관람객이 '이 부분 어떻게 되나요'라고 묻게 만드는 여백이 상담 전환으로 이어집니다.\n\n의학적 정확성과 프리미엄 비주얼을 동시에 확보하는 일은 디자인 취향의 문제가 아니라 커뮤니케이션 설계의 문제입니다. bbbb.beauty는 복잡한 과학기술을 현장에서 3초 안에 각인되는 구조로 번역합니다.\n\n다음 학회에서 부스 영상, 자막형과 무음형 중 어느 쪽을 택하시겠습니까? 학회 현장용 비주얼 설계 체크리스트가 필요하시면 BOOTH 를 남겨 주세요. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#의료전시",
+        "#B2B마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260722_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 3초 안에 각인되는 구조"
+    },
+    {
+      "pair_id": "linkedin_20260722_morning",
+      "status": "pending",
+      "topic": "전시회와 학회에서 복잡한 기술을 짧게 전달하는 비주얼 구조",
+      "slot": "morning",
+      "scheduled_time": "2026-07-22T09:00:00+09:00",
+      "created_at": "2026-07-22T06:53:22.081578+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "BOOTH",
+      "id": "linkedin_20260722_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "At trade shows and scientific conferences, the average visitor spends only a few seconds in front of any single booth. Trying to convey a full mechanism of action, clinical evidence, and technical differentiation within that window almost always fails. The more information you push, the less your audience retains as they walk away.\n\nA visual structure that actually works on the show floor follows three principles.\n\nFirst, lead with a single message. The large booth screen should answer only one question: what does this technology do differently? When explaining, say, the skin absorption pathway of an active ingredient, it is far stronger to imprint one decisive frame that contrasts with competing approaches within three seconds than to narrate the entire metabolic cascade. Detailed data belongs on a tablet or in follow-up materials.\n\nSecond, design for silence. Exhibition halls are loud, and visitors are not wearing headphones. A 3D MOA animation that is understandable through motion and captions alone achieves far higher completion than sound-dependent video. Audio should be a supplement, never a prerequisite.\n\nThird, design the starting point of a conversation. A strong booth film does not end the explanation; it opens a question with the sales or medical lead standing nearby. The deliberate gap that makes a visitor ask how does this part work is what converts attention into dialogue.\n\nCombining medical accuracy with premium visuals is not a matter of design taste. It is a matter of communication architecture. At bbbb.beauty, we translate complex science into structures that register in three seconds on the floor while preserving rigor.\n\nFor your next conference, would you choose captioned or silent-first booth video? If you want our checklist for designing on-site conference visuals, comment BOOTH. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#SciComm",
+        "#MedicalAnimation",
+        "#MOA",
+        "#B2BMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260722_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: A Structure That Sticks in 3s"
+    },
+    {
+      "pair_id": "linkedin_20260722_afternoon",
+      "status": "pending",
+      "topic": "KOL 인터뷰를 신뢰도 높은 다큐멘터리 콘텐츠로 만드는 법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-22T15:00:00+09:00",
+      "created_at": "2026-07-22T06:53:22.081578+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "KOL",
+      "id": "linkedin_20260722_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "KOL 인터뷰 영상은 많지만, 신뢰를 만드는 인터뷰는 드뭅니다. 전문가가 카메라 앞에서 말한다고 해서 자동으로 권위가 생기지는 않습니다. 문제는 대부분의 KOL 콘텐츠가 '말'에만 의존한다는 점입니다.\n\n첫째, 발언과 근거를 시각적으로 연결해야 합니다. KOL이 특정 성분의 작용 기전을 언급할 때, 그 순간 화면에 MOA 애니메이션이나 임상 데이터 그래프가 함께 흐르면 시청자는 '주장'이 아니라 '설명'으로 받아들입니다. 말과 근거가 분리되면 광고처럼 보이고, 결합되면 다큐멘터리가 됩니다. 우리는 인터뷰 촬영 전 발언 예상 지점을 미리 매핑해 비주얼 삽입 구간을 설계합니다.\n\n둘째, 편집이 곧 맥락 설계입니다. 90분 인터뷰에서 3분을 뽑는 과정은 단순 축약이 아니라 서사 구조를 세우는 일입니다. 문제 제기 → 과학적 원리 → 한계와 조건 → 전망 순으로 재배열하면, 같은 발언도 훨씬 신뢰도 높게 전달됩니다. 특히 '한계와 조건'을 생략하지 않는 것이 오히려 신뢰를 높입니다. 과장 없는 편집이 전문성의 증거입니다.\n\n셋째, 비주얼 품질이 메시지의 무게를 결정합니다. 조명, 배경, 자막 타이포그래피, 데이터 시각화의 정확성까지 프리미엄 수준을 유지해야 KOL의 권위가 화면에서도 유지됩니다. 흔들리는 화면과 부정확한 그래프는 전문가의 말까지 가볍게 만듭니다.\n\n결국 KOL 인터뷰의 신뢰도는 '누가 말했는가'만큼 '어떻게 편집하고 시각화했는가'에서 결정됩니다. 발언을 과학적 맥락과 프리미엄 비주얼로 번역하는 것, 그것이 bbbb.beauty가 KOL 콘텐츠를 다큐멘터리로 끌어올리는 방식입니다.\n\nKOL 콘텐츠와 MOA 애니메이션 중 지금 더 급한 과제는 무엇인가요? 댓글로 알려주세요. 'KOL'을 DM으로 보내주시면 KOL 다큐멘터리 제작 체크리스트를 드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#KOL마케팅",
+        "#메디컬콘텐츠",
+        "#과학커뮤니케이션",
+        "#B2B마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260722_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: KOL 인터뷰, 신뢰로 편집하기"
+    },
+    {
+      "pair_id": "linkedin_20260722_afternoon",
+      "status": "pending",
+      "topic": "KOL 인터뷰를 신뢰도 높은 다큐멘터리 콘텐츠로 만드는 법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-22T15:00:00+09:00",
+      "created_at": "2026-07-22T06:53:22.081578+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "KOL",
+      "id": "linkedin_20260722_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "There is no shortage of KOL interview videos. What is scarce is a KOL interview that actually builds trust. An expert speaking on camera does not automatically create authority. The core problem is that most KOL content leans entirely on words.\n\nFirst, statements must be visually connected to evidence. When a KOL describes the mechanism of action of an ingredient, showing a synchronized MOA animation or clinical data graph in that exact moment turns a claim into an explanation. When words and evidence are separated, it reads like an advertisement. When they are integrated, it becomes a documentary. Before filming, we map the likely points where an expert will make technical statements and design the visual insertion windows in advance.\n\nSecond, editing is context design, not compression. Distilling three minutes from a ninety-minute interview is an act of building narrative structure. Reordering the material into problem, scientific principle, limitations and conditions, and outlook makes the same statements far more credible. Crucially, not omitting the limitations and conditions is what raises trust the most. Editing without exaggeration is itself proof of expertise.\n\nThird, visual quality determines the weight of the message. Lighting, background, subtitle typography, and the accuracy of data visualization all need to hold a premium standard so the KOL's authority survives on screen. Shaky footage and imprecise graphs make even an expert's words feel light.\n\nUltimately, the credibility of a KOL interview is decided as much by how it is edited and visualized as by who is speaking. Translating expert statements into scientific context and premium visuals is how bbbb.beauty elevates KOL content into documentary work.\n\nBetween KOL content and MOA animation, which is the more urgent task for your team right now? Tell me in the comments. Send KOL by DM and I will share our KOL documentary production checklist. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#KOLmarketing",
+        "#MedicalContent",
+        "#ScienceCommunication",
+        "#B2Bmarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260722_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: KOL Interviews, Edited for Trust"
     }
   ]
 }
