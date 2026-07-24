@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260725_morning",
+      "status": "pending",
+      "topic": "기술 중심 브랜드가 고객의 선택을 얻기 위해 설명해야 할 것",
+      "slot": "morning",
+      "scheduled_time": "2026-07-25T09:00:00+09:00",
+      "created_at": "2026-07-25T06:54:12.542216+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "번역",
+      "id": "linkedin_20260725_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "기술 중심 브랜드가 가장 자주 하는 오해는 '데이터가 스스로 말한다'는 믿음입니다. 그러나 임상 근거와 작용기전이 아무리 정교해도, 고객이 이해하지 못하면 그 기술은 의사결정 테이블에 오르지 못합니다. 선택은 언제나 이해한 것 안에서 일어납니다.\n\n첫째, '무엇을'이 아니라 '왜 중요한가'를 설명해야 합니다. 특정 성분이 특정 수용체에 결합한다는 사실만으로는 부족합니다. 그 결합이 피부 장벽 회복이나 진정 반응에서 어떤 차이를 만드는지, 기존 접근과 무엇이 다른지를 연결해야 담당자가 내부 설득 논리로 재사용할 수 있습니다.\n\n둘째, 추상적인 메커니즘은 시각화될 때 기억됩니다. 분자 단위의 작용기전을 텍스트로 나열하면 전문가조차 흐름을 놓칩니다. 3D MOA 애니메이션이나 과학 시각화는 보이지 않는 과정을 시간축 위에 배치해, 복잡성을 낮추지 않으면서도 이해 속도를 높입니다. 정확성과 명료함은 상충하지 않습니다.\n\n셋째, 청중별로 번역의 깊이를 조정해야 합니다. R&D 회의, 영업 자료, 규제 커뮤니케이션, 소비자 접점은 각기 다른 언어를 요구합니다. 같은 기술이라도 하나의 자산을 계층적으로 재구성할 수 있어야 투자 대비 효율이 나옵니다.\n\nbbbb.beauty는 이 세 가지를 '과학의 메시지화'라는 관점에서 다룹니다. 확인되지 않은 효능을 만들지 않고, 근거를 왜곡하지 않으면서 기술의 가치를 이해 가능한 경험으로 옮기는 것이 우리의 일입니다.\n\n당신의 브랜드는 기술을 '증명'하고 있나요, '설명'하고 있나요? 댓글로 데이터 중심인지 시각화 중심인지 알려주세요. 자신의 기술을 어떻게 번역할지 고민된다면 '번역'을 DM으로 보내주세요. 기술 메시지화 체크리스트를 드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#MOA"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260725_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 기술을 신뢰로 번역하는 법"
+    },
+    {
+      "pair_id": "linkedin_20260725_morning",
+      "status": "pending",
+      "topic": "기술 중심 브랜드가 고객의 선택을 얻기 위해 설명해야 할 것",
+      "slot": "morning",
+      "scheduled_time": "2026-07-25T09:00:00+09:00",
+      "created_at": "2026-07-25T06:54:12.542216+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "번역",
+      "id": "linkedin_20260725_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "The most common blind spot among technology-driven brands is the belief that data speaks for itself. It does not. No matter how rigorous your clinical evidence or how elegant your mechanism of action, if the decision-maker cannot understand it, your technology never reaches the table. Selection happens only within the boundaries of what people comprehend.\n\nFirst, explain why it matters, not just what it is. Stating that a compound binds to a specific receptor is not persuasive on its own. You have to connect that action to a tangible difference, in barrier recovery, in soothing response, in how it departs from existing approaches, so that a brand or medical lead can reuse it as internal logic to convince their own stakeholders.\n\nSecond, abstract mechanisms are remembered only when they are made visible. A molecular pathway written as a wall of text loses even expert readers. 3D MOA animation and scientific visualization place invisible processes onto a timeline, lowering perceived complexity without diluting accuracy. Precision and clarity are not in conflict; they reinforce each other.\n\nThird, calibrate the depth of translation to the audience. An R&D review, a sales deck, regulatory communication, and consumer touchpoints each demand a different register. The same science should be built once and restructured in layers, so that a single asset earns its investment across contexts.\n\nAt bbbb.beauty, we approach these three challenges as the work of turning science into message. We do not fabricate efficacy or distort evidence. Our role is to carry the value of a technology into an experience people can actually understand and trust.\n\nSo ask yourself: is your brand proving its technology, or explaining it? Tell me in the comments whether you lean data-first or visualization-first. If you are wrestling with how to translate your own science, send me the keyword 번역 and I will share our science-to-message checklist. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#Scicomm",
+        "#Dermocosmetics",
+        "#B2BMarketing",
+        "#MOA"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260725_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Translate Science into Trust"
+    },
+    {
+      "pair_id": "linkedin_20260725_afternoon",
+      "status": "pending",
+      "topic": "전문가에게는 정확하게, 소비자에게는 쉽게 말하는 콘텐츠 구조",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-25T15:00:00+09:00",
+      "created_at": "2026-07-25T06:54:12.542216+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "LAYER",
+      "id": "linkedin_20260725_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "전문가용 자료와 소비자용 콘텐츠를 따로 만드는 브랜드가 많습니다. 그런데 실제 시장에서 가장 강력한 콘텐츠는, 하나의 구조 안에 두 층위를 동시에 담은 것입니다. 3D/MOA 애니메이션 프로젝트를 진행하며 저희가 반복해서 확인한 원칙 세 가지를 공유합니다.\n\n첫째, 정확성은 타협이 아니라 기반입니다. 성분이 세포 수용체에 작용하는 기전을 시각화할 때, R&D팀이 검증한 메커니즘을 왜곡하지 않는 것이 출발점입니다. 소비자에게 쉽게 전달하기 위해 과학을 단순화하는 것과, 사실을 바꾸는 것은 완전히 다릅니다. 저희는 스토리보드 단계에서 메디컬 검수를 넣어, 표현은 쉬워지되 근거는 흔들리지 않도록 설계합니다.\n\n둘째, 하나의 비주얼을 두 층위로 나눕니다. 같은 3D 장면에서 전문가에게는 수용체 결합과 신호 전달 경로를 명확한 용어로 보여주고, 소비자에게는 같은 장면을 은유와 리듬으로 다시 편집합니다. 동일한 에셋을 재활용하기 때문에 제작 효율도 높고, 브랜드 메시지의 일관성도 유지됩니다.\n\n셋째, 층위별로 채널과 목적을 분리합니다. 전문가 층위는 학술 심포지엄, 영업 자료, 인허가 커뮤니케이션에 쓰이고, 소비자 층위는 상세페이지와 SNS로 나갑니다. 처음부터 두 목적지를 염두에 두고 설계하면, 나중에 별도 제작하는 비용과 시간을 크게 줄일 수 있습니다.\n\n결국 핵심은 '쉽게'와 '정확하게'를 대립이 아니라 층위로 이해하는 것입니다. 두 층위를 함께 설계할 때, R&D의 기술력이 브랜드의 신뢰로 자연스럽게 이어집니다.\n\n여러분의 조직은 전문가용과 소비자용 콘텐츠를 하나의 구조로 설계하고 계신가요, 아니면 따로 제작하고 계신가요? 이중층위 콘텐츠 설계 체크리스트가 필요하시면 LAYER 라고 댓글이나 DM 주세요. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#더마코스메틱",
+        "#B2B콘텐츠"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260725_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 한 콘텐츠, 두 층위의 언어"
+    },
+    {
+      "pair_id": "linkedin_20260725_afternoon",
+      "status": "pending",
+      "topic": "전문가에게는 정확하게, 소비자에게는 쉽게 말하는 콘텐츠 구조",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-25T15:00:00+09:00",
+      "created_at": "2026-07-25T06:54:12.542216+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "LAYER",
+      "id": "linkedin_20260725_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "Many brands build expert materials and consumer content as two separate projects. Yet the most effective science communication we see lives in a single structure that carries two layers at once. After many 3D and MOA animation projects, here are three principles we return to again and again.\n\nFirst, accuracy is the foundation, not a trade-off. When we visualize how an ingredient acts on a cellular receptor, the starting point is the mechanism your R&D team has validated. Simplifying science so a consumer can grasp it is not the same as altering the facts. We embed medical review at the storyboard stage, so the expression becomes accessible while the evidence stays intact.\n\nSecond, one visual is designed for two layers. From the same 3D scene, experts see receptor binding and signaling pathways in precise terminology, while consumers see the same scene re-edited through metaphor and rhythm. Because we reuse the same assets, production is more efficient and the brand message stays consistent across audiences.\n\nThird, we separate channel and purpose by layer. The expert layer serves symposia, sales enablement, and regulatory communication. The consumer layer serves product pages and social. Designing for both destinations from the outset dramatically reduces the cost and time of building separate deliverables later.\n\nThe real shift is to stop treating clear and accurate as opposites, and to treat them as layers of the same content. When both layers are designed together, your technical strength converts naturally into the trust that drives brand selection.\n\nIs your organization designing expert and consumer content within one structure, or producing them separately? If you would like our dual-layer content design checklist, comment or DM LAYER. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#ScienceCommunication",
+        "#MOAanimation",
+        "#Dermocosmetics",
+        "#B2BContent"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260725_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: One Content, Two Layers"
     }
   ]
 }
