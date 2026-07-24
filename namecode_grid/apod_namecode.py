@@ -94,18 +94,49 @@ PHENOMENA = [
 ]
 
 
-def derive_name(title, explanation=""):
-    """Turn an APOD into a namecode work name. Prefer a known phenomenon term
-    (e.g. 'OCCULTATION'); otherwise fall back to the salient title words
-    ('Daytime Moon Meets Evening Star' -> 'MOON.STAR')."""
-    blob = f"{title} {explanation}".lower()
+def _first_phenomenon(text):
     for stem, name in PHENOMENA:
-        if re.search(rf"\b{stem}", blob):
+        if re.search(rf"\b{stem}", text):
             return name
-    words = [w for w in re.findall(r"[A-Za-z]+", title) if w.lower() not in STOPWORDS]
-    words = sorted(set(words), key=lambda w: (-len(w), title.lower().index(w.lower())))[:2]
-    words = sorted(words, key=lambda w: title.lower().index(w.lower()))
-    return ".".join(w.upper() for w in words) or "APOD"
+    return None
+
+
+def derive_name(title, explanation=""):
+    """Turn an APOD into a namecode work name that describes the actual subject.
+
+    Order of preference:
+      1. A phenomenon that is clearly the SUBJECT of the explanation — but only
+         when the title names no phenomenon of its own. This rescues poetic
+         titles ('Young Moon and Bright Planet' -> OCCULTATION).
+      2. The two most salient title words — specific beats generic
+         ('M27: The Dumbbell Nebula' -> DUMBBELL.NEBULA, not NEBULA;
+          'Dueling Bands over the Atacama Desert' -> DUELING.ATACAMA).
+      3. For a thin title, a phenomenon word / the lone salient word / 'APOD'.
+
+    The old logic scanned the *whole* explanation for any phenomenon keyword, so
+    a passing mention hijacked the name — an Iapetus image came out METEOR, a
+    Milky Way image came out COMET. Trusting the explanation only when the
+    phenomenon is the subject (named in the first sentence, or repeated) keeps
+    the good pulls without the false positives."""
+    title_l = title.lower()
+    salient = [w for w in re.findall(r"[A-Za-z]+", title)
+               if len(w) > 1 and w.lower() not in STOPWORDS]
+    title_phenom = _first_phenomenon(title_l)
+
+    if title_phenom is None and explanation:
+        expl_l = explanation.lower()
+        first_sentence = re.split(r"(?<=[.!?])\s", expl_l, 1)[0]
+        for stem, name in PHENOMENA:
+            pat = rf"\b{stem}"
+            if re.search(pat, first_sentence) or len(re.findall(pat, expl_l)) >= 2:
+                return name
+
+    if len(salient) >= 2:
+        top = sorted(set(salient), key=lambda w: (-len(w), title_l.index(w.lower())))[:2]
+        top = sorted(top, key=lambda w: title_l.index(w.lower()))
+        return ".".join(w.upper() for w in top)
+
+    return title_phenom or (salient[0].upper() if salient else "APOD")
 
 
 def sim_value(seed):
