@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260726_morning",
+      "status": "pending",
+      "topic": "프리미엄 메디컬 비주얼을 만드는 네 가지 디렉션 원칙",
+      "slot": "morning",
+      "scheduled_time": "2026-07-26T09:00:00+09:00",
+      "created_at": "2026-07-26T06:42:55.997536+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "원칙",
+      "id": "linkedin_20260726_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "프리미엄 메디컬 비주얼은 '멋있게 만든 3D'가 아닙니다. 기술의 진실을 왜곡 없이 전달하면서도 담당자와 고객의 신뢰를 얻어야 하는, 매우 까다로운 커뮤니케이션 과제입니다. 저희가 프로젝트를 디렉션할 때 반복적으로 검증하는 네 가지 원칙을 공유합니다.\n\n첫째, 과학적 정확성이 심미성보다 선행합니다. 성분의 작용기전(MOA)을 시각화할 때 세포 스케일, 분자 거동, 침투 경로가 실제 근거와 어긋나면 아무리 화면이 화려해도 R&D와 메디컬 검수에서 무너집니다. 저희는 착수 전 논문·기술문서 기반의 비주얼 팩트시트를 먼저 확정하고, 표현 단계에서 이를 벗어나지 않도록 고정합니다.\n\n둘째, 근거와 표현의 경계를 명확히 구분합니다. 입증된 메커니즘과 '이해를 돕기 위한 개념적 은유'는 화면 안에서 시각 언어를 다르게 씁니다. 이 구분이 없으면 과장 광고 리스크가 생기고, 있으면 오히려 규제 검토가 빨라집니다.\n\n셋째, 시선 설계로 정보 위계를 만듭니다. 담당자는 30초 안에 핵심 메시지를 잡아야 합니다. 컬러, 대비, 카메라 이동, 타이밍을 이용해 '무엇을 먼저 볼지'를 설계하면 복잡한 기전도 한 번에 읽힙니다.\n\n넷째, 절제가 프리미엄을 만듭니다. 모든 것을 다 보여주려는 화면은 아무것도 전달하지 못합니다. 하나의 영상에는 하나의 핵심 주장만 남깁니다.\n\n결국 프리미엄은 예산이 아니라 원칙의 문제입니다. 이 네 축이 흔들리지 않을 때 기술력은 비로소 고객의 선택으로 번역됩니다.\n\n여러분의 조직에서는 정확성과 심미성 중 무엇을 먼저 두시나요? 메디컬 비주얼 디렉션 체크리스트가 필요하시면 '원칙'이라고 댓글이나 DM 주세요. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#메디컬비주얼",
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#B2B마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260726_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 프리미엄을 만드는 네 가지 원칙"
+    },
+    {
+      "pair_id": "linkedin_20260726_morning",
+      "status": "pending",
+      "topic": "프리미엄 메디컬 비주얼을 만드는 네 가지 디렉션 원칙",
+      "slot": "morning",
+      "scheduled_time": "2026-07-26T09:00:00+09:00",
+      "created_at": "2026-07-26T06:42:55.997536+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "원칙",
+      "id": "linkedin_20260726_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "Premium medical visuals are not simply well-rendered 3D. They are a demanding communication task: conveying the truth of a technology without distortion, while earning the trust of both the internal team and the end client. Here are the four principles we return to on every project.\n\nFirst, scientific accuracy precedes aesthetics. When visualizing a mechanism of action, if the cellular scale, molecular behavior, or penetration pathway contradicts the underlying evidence, no amount of polish will survive R&D and medical review. Before production begins, we lock a visual fact sheet grounded in papers and technical documents, then hold every frame accountable to it.\n\nSecond, we draw a clear line between evidence and expression. A proven mechanism and a conceptual metaphor used to aid understanding must speak different visual languages on screen. Without this distinction, you risk overstatement; with it, regulatory review actually moves faster.\n\nThird, we engineer attention to build an information hierarchy. A stakeholder must grasp the core message within thirty seconds. By using color, contrast, camera movement, and timing to decide what the viewer sees first, even a complex mechanism becomes legible at a glance.\n\nFourth, restraint creates the sense of premium. A frame that tries to show everything communicates nothing. We keep one central claim per piece and let it breathe.\n\nIn the end, premium is a question of principle, not budget. When these four axes hold steady, technical strength finally translates into client trust and selection.\n\nIn your organization, which comes first, accuracy or aesthetics? If you would like our medical visual direction checklist, comment or DM the keyword \"원칙\". Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MedicalVisualization",
+        "#ScienceCommunication",
+        "#MOAanimation",
+        "#B2Bmarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260726_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Four Principles of Medical Visuals"
+    },
+    {
+      "pair_id": "linkedin_20260726_afternoon",
+      "status": "pending",
+      "topic": "규제가 있는 산업에서 창의적인 스토리텔링이 가능한 이유",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-26T15:00:00+09:00",
+      "created_at": "2026-07-26T06:42:55.997536+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260726_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "\"규제 산업이라 창의적인 콘텐츠는 어렵다\"는 말을 자주 듣습니다. 하지만 규제는 창의성의 반대말이 아닙니다. 오히려 좋은 과학 스토리텔링을 만드는 설계 조건에 가깝습니다.\n\n첫째, 제약은 초점을 만듭니다. 표현할 수 있는 클레임과 근거의 범위가 명확할수록, 우리는 곁가지를 버리고 핵심 메커니즘 하나에 집중하게 됩니다. 예를 들어 성분의 흡수 경로를 3D/MOA로 시각화할 때, 검증되지 않은 효능을 암시하는 컷을 제거하면 남는 것은 실제로 입증 가능한 작용 단계뿐입니다. 이 압축이 오히려 메시지를 강하게 만듭니다.\n\n둘째, 정확성은 신뢰를 만듭니다. 규제 문서와 임상 데이터를 스토리보드 단계에서 함께 검토하면, 나중에 리걸·메디컬 리뷰에서 반려되는 컷을 미리 걸러낼 수 있습니다. 우리는 제작 초기에 메디컬 담당자와 함께 근거-비주얼 매핑 표를 만듭니다. 어떤 장면이 어떤 데이터에 근거하는지 한눈에 보이도록 정리하면, 승인 속도가 빨라지고 재작업이 줄어듭니다.\n\n셋째, 제약은 차별화의 원천입니다. 누구나 쓸 수 있는 화려한 비유 대신, 검증된 작용 기전을 정직하게 보여주는 브랜드가 결국 전문가 신뢰를 얻습니다. 소비자 광고와 달리 B2B와 메디컬 커뮤니케이션에서는 과장이 오히려 리스크입니다. 근거 안에서 만든 이야기는 오래 살아남습니다.\n\n결국 창의성은 규제를 우회하는 기술이 아니라, 규제라는 경계 안에서 가장 명료한 표현을 찾아내는 능력입니다. bbbb.beauty는 과학적 정확성과 프리미엄 비주얼을 함께 설계해 기술력을 신뢰로 번역합니다.\n\n여러분의 조직에서 규제는 콘텐츠의 부담인가요, 아니면 설계 조건인가요? 규제 친화적인 MOA 스토리보드 체크리스트가 필요하시면 댓글이나 DM으로 MOA 라고 남겨주세요. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA",
+        "#메디컬커뮤니케이션",
+        "#과학시각화",
+        "#더마코스메틱"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260726_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 규제 안에서 이야기를 설계하다"
+    },
+    {
+      "pair_id": "linkedin_20260726_afternoon",
+      "status": "pending",
+      "topic": "규제가 있는 산업에서 창의적인 스토리텔링이 가능한 이유",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-26T15:00:00+09:00",
+      "created_at": "2026-07-26T06:42:55.997536+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260726_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "\"We work in a regulated industry, so creative content is hard.\" I hear this often. But regulation is not the opposite of creativity. In science communication, it is closer to a design constraint that makes the work sharper.\n\nFirst, constraints create focus. When the approved claims and the boundaries of your evidence are clearly defined, you stop chasing tangents and commit to one core mechanism. When we visualize an ingredient's absorption pathway in 3D/MOA, removing any frame that implies an unverified benefit leaves only the action steps that can actually be substantiated. That compression makes the message stronger, not weaker.\n\nSecond, accuracy builds trust. If regulatory documents and clinical data are reviewed during the storyboard phase, you can filter out shots that would later be rejected in legal and medical review. Early in production we build an evidence-to-visual mapping: each scene is linked to the data that supports it. When reviewers can see that relationship at a glance, approvals move faster and rework drops.\n\nThird, constraints are a source of differentiation. Instead of flashy metaphors anyone could use, the brands that honestly show a validated mechanism are the ones that earn expert trust. Unlike consumer advertising, in B2B and medical communication exaggeration is a liability. Stories built inside the evidence tend to last.\n\nCreativity, then, is not a technique for bypassing regulation. It is the ability to find the clearest possible expression within the boundaries that regulation defines. At bbbb.beauty we design scientific accuracy and premium visuals together, translating technical depth into trust and, ultimately, into choice.\n\nSo here is my question: in your organization, is regulation a burden on content, or a design condition? If you would like a regulation-friendly MOA storyboard checklist, comment or DM me the keyword MOA. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA",
+        "#MedicalCommunication",
+        "#ScienceVisualization",
+        "#Dermocosmetics"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260726_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Storytelling Within Regulation"
     }
   ]
 }
