@@ -28,6 +28,7 @@ Usage:
 import argparse, hashlib, io, os, re, sys, time, json
 import requests
 from PIL import Image, ImageDraw, ImageFont, ImageOps
+import krea
 
 PAPER = (245, 245, 243)
 BLACK = (12, 12, 12)
@@ -173,34 +174,17 @@ def build_prompt(subject, explanation=""):
 
 
 # ---------------------------------------------------------------- Krea
+IMAGE_MODELS = {"flux": "bfl/flux-1-dev", "imagen-4": "google/imagen-4",
+                "nano-banana": "google/nano-banana-pro"}
+
+
 def krea_generate(prompt, width=1024, height=1280, model="flux"):  # 4:5 portrait
-    base = os.environ.get("KREA_BASE", "https://api.krea.ai")
-    key = os.environ["KREA_API_KEY"]
-    body = {"prompt": prompt, "width": width, "height": height}
-    # model -> path map (subset; matches the patched krea-mcp-server fork)
-    path = {"flux": "bfl/flux-1-dev", "imagen-4": "google/imagen-4",
-            "nano-banana": "google/nano-banana-pro"}.get(model, "bfl/flux-1-dev")
-    r = requests.post(f"{base}/generate/image/{path}", json=body,
-                      headers={"Authorization": f"Bearer {key}"}, timeout=60)
-    r.raise_for_status()
-    return r.json()["job_id"]
+    path = IMAGE_MODELS.get(model, IMAGE_MODELS["flux"])
+    return krea.submit(f"image/{path}", {"prompt": prompt, "width": width, "height": height})
 
 
 def krea_wait(job_id, timeout=120):
-    base = os.environ.get("KREA_BASE", "https://api.krea.ai")
-    key = os.environ["KREA_API_KEY"]
-    t0 = time.time()
-    while time.time() - t0 < timeout:
-        r = requests.get(f"{base}/jobs/{job_id}",
-                         headers={"Authorization": f"Bearer {key}"}, timeout=30)
-        r.raise_for_status()
-        j = r.json()
-        if j["status"] == "completed":
-            return j["result"]["urls"][0]
-        if j["status"] == "failed":
-            raise RuntimeError(f"Krea job failed: {j}")
-        time.sleep(3)
-    raise TimeoutError("Krea job timed out")
+    return krea.wait(job_id, timeout=timeout)
 
 
 # ---------------------------------------------------------------- compose
