@@ -60,7 +60,8 @@ def _get(url, params, dry):
         print(f"GET  {url}", file=sys.stderr)
         return {"status_code": "FINISHED"}
     r = requests.get(url, params=params, timeout=60)
-    r.raise_for_status()
+    if not r.ok:  # surface the API's actual error body (Meta returns a code/subcode)
+        raise requests.HTTPError(f"{r.status_code} {r.text}", response=r)
     return r.json()
 
 
