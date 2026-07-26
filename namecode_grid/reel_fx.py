@@ -24,16 +24,12 @@ specks). Everything is deterministic numpy/PIL/ffmpeg, seeded by the APOD date
 import math, os, shutil, subprocess, sys, tempfile
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from mediautil import ffmpeg_exe
 
 W, H, FPS = 1080, 1920, 30
 PAPER = (250, 250, 248)
 N_PARTICLES = 220
 HOOK_SEC, FLOW_SEC, END_SEC = 2.6, 25.0, 2.4
-
-
-def ffmpeg_exe():
-    from shutil import which
-    return which("ffmpeg") or __import__("imageio_ffmpeg").get_ffmpeg_exe()
 
 
 def load_font(size):

@@ -16,8 +16,10 @@ Usage:
   python krea_reel.py --image-url https://.../art.png \
       --brief daily/brief_DATE.json --out daily/reel_DATE.mp4
 """
-import argparse, json, os, subprocess, sys, time
+import argparse, json, os, subprocess, sys
 import requests
+import krea
+from mediautil import ffmpeg_exe
 
 REEL_W, REEL_H = 1080, 1920
 STYLE = ("Dark astronomical scene, fine white particles like stars, high-contrast "
@@ -36,63 +38,27 @@ DEFAULT_PROMPT = MOTIONS[0] + " " + STYLE
 
 
 def krea_video(image_url, prompt):
-    base = os.environ.get("KREA_BASE", "https://api.krea.ai")
-    key = os.environ["KREA_API_KEY"]
-    body = {"prompt": prompt, "start_image": image_url}
-    hdr = {"Authorization": f"Bearer {key}"}
     # Model slugs are provider/version, per vendor/krea-mcp-server VIDEO_MODELS
-    # (e.g. "kling/kling-1.6", "minimax/hailuo"). Allow an env override, else
-    # try known slugs and use the first the API routes (404 -> next).
+    # (e.g. "kling/kling-1.6", "minimax/hailuo"). Allow an env override, else try
+    # known slugs and use the first the API routes (a 404 falls through to next).
+    body = {"prompt": prompt, "start_image": image_url}
     env_path = os.environ.get("KREA_VIDEO_PATH")
     candidates = [env_path] if env_path else [
         "kling/kling-1.6", "kling/kling-2.5", "minimax/hailuo"]
     last = None
     for path in candidates:
-        r = requests.post(f"{base}/generate/video/{path}", json=body,
-                          headers=hdr, timeout=60)
-        if r.ok:
+        try:
+            job = krea.submit(f"video/{path}", body)
             print(f"[info] krea video model path: {path}", file=sys.stderr)
-            return r.json()["job_id"]
-        last = f"{r.status_code} {r.text}"
-        print(f"[warn] krea video path '{path}' -> {last}", file=sys.stderr)
-        if r.status_code not in (400, 404, 422):
-            break  # auth/balance/server errors won't be fixed by another path
+            return job
+        except RuntimeError as e:
+            last = str(e)
+            print(f"[warn] {last}", file=sys.stderr)
     raise RuntimeError(f"krea video POST failed: {last}")
 
 
 def krea_wait(job_id, timeout=900):
-    base = os.environ.get("KREA_BASE", "https://api.krea.ai")
-    key = os.environ["KREA_API_KEY"]
-    t0 = time.time()
-    while time.time() - t0 < timeout:
-        r = requests.get(f"{base}/jobs/{job_id}",
-                         headers={"Authorization": f"Bearer {key}"}, timeout=30)
-        r.raise_for_status()
-        j = r.json()
-        st = j.get("status")
-        if st == "completed":
-            # tolerate a few result shapes: {result:{urls:[..]}} / {urls:[..]} /
-            # {result:[..]} / {result:{url:..}}
-            res = j.get("result")
-            urls = []
-            if isinstance(res, dict):
-                urls = res.get("urls") or ([res["url"]] if res.get("url") else [])
-            elif isinstance(res, list):
-                urls = res
-            urls = urls or j.get("urls") or []
-            if not urls:
-                raise RuntimeError(f"krea completed but no result url: {j}")
-            return urls[0]
-        if st == "failed":
-            raise RuntimeError(f"krea video failed: {j}")
-        time.sleep(5)
-    raise TimeoutError("krea video timed out")
-
-
-def ffmpeg_exe():
-    """Prefer a system ffmpeg; fall back to the imageio-ffmpeg static binary."""
-    from shutil import which
-    return which("ffmpeg") or __import__("imageio_ffmpeg").get_ffmpeg_exe()
+    return krea.wait(job_id, timeout=timeout, delay=5)
 
 
 def normalize_vertical(src, out, min_seconds=30):
