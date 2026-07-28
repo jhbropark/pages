@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260729_morning",
+      "status": "pending",
+      "topic": "좋은 과학 콘텐츠는 기술 설명이 아니라 이해 설계에서 시작됩니다",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260729_morning_ko.jpg",
+      "caption": "기술을 나열하면 정보가 되고, 이해 순서를 설계하면 신뢰가 됩니다. 좋은 과학 콘텐츠는 무엇을 보여줄지가 아니라 어떤 순서로 이해시킬지에서 시작됩니다.\n\n댓글: 당신의 우선순위는? 정보 vs 이해\nDM “이해설계”: 과학 콘텐츠 이해 설계 체크리스트 발송\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#더마코스메틱",
+        "#메디컬마케팅",
+        "#B2B콘텐츠",
+        "#브랜드신뢰"
+      ],
+      "scheduled_time": "2026-07-29T12:30:00+09:00",
+      "created_at": "2026-07-29T06:54:56.418350+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260729_afternoon",
+      "status": "pending",
+      "topic": "MOA 애니메이션이 복잡한 작용기전을 브랜드 자산으로 바꾸는 방법",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260729_afternoon_ko.jpg",
+      "caption": "작용기전은 데이터가 아니라 이야기로 기억됩니다. MOA 애니메이션은 눈에 보이지 않는 분자 반응을 브랜드가 소유하는 시각 자산으로 바꿉니다. 정확성과 설득력, 둘 다 지킬 때 기술이 신뢰가 됩니다.\n\n댓글: 우선순위는? 정확성 vs 설득력\nDM “MOA”: MOA 영상 기획 체크리스트 8단계 발송\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#3D비주얼라이제이션",
+        "#더마코스메틱",
+        "#메디컬마케팅",
+        "#바이오브랜딩"
+      ],
+      "scheduled_time": "2026-07-29T19:00:00+09:00",
+      "created_at": "2026-07-29T06:54:56.418350+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
