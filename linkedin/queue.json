@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260731_morning",
+      "status": "pending",
+      "topic": "의료기기 원리를 3D 영상으로 보여줄 때 놓치지 말아야 할 것",
+      "slot": "morning",
+      "scheduled_time": "2026-07-31T09:00:00+09:00",
+      "created_at": "2026-07-31T06:58:05.268141+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260731_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "의료기기의 작용 원리를 3D 영상으로 옮길 때, 많은 프로젝트가 '멋진 비주얼'을 먼저 떠올립니다. 그러나 B2B 의사결정자에게 남는 신뢰는 화려함이 아니라 정확성에서 나옵니다. 의학적으로 검증 가능한 3D 콘텐츠를 만들 때 놓치지 말아야 할 세 가지를 정리합니다.\n\n첫째, 스케일의 정직함입니다. 세포, 조직, 디바이스 컴포넌트는 실제 크기 비율이 크게 다릅니다. 극적인 연출을 위해 특정 요소를 과장하면 시청자는 잠깐 몰입하지만, 임상 담당자나 규제 검토자는 즉시 위화감을 느낍니다. 스케일 기준을 초기 스토리보드 단계에서 명시하고, 확대 전환 시 배율 정보를 시각적으로 남기는 것이 신뢰를 지키는 방법입니다.\n\n둘째, 시간축의 표현입니다. 에너지 전달, 조직 반응, 회복 과정은 실제로는 초 단위에서 수 주까지 서로 다른 시간 스케일을 가집니다. 이를 하나의 매끄러운 흐름으로 압축할 때, 어떤 구간이 가속·생략되었는지 명확히 표시하지 않으면 오해가 생깁니다. 타임라인 자막이나 속도 인디케이터 하나가 과장 논란을 막아줍니다.\n\n셋째, 디바이스와 조직의 상호작용을 원리 중심으로 보여주는 것입니다. 결과 장면만 강조하면 '무엇이 일어났는가'는 남지만 '왜 그렇게 작동하는가'는 사라집니다. MOA의 핵심은 인과의 연결입니다. 작용 지점, 물리적·생화학적 메커니즘, 조직 반응을 단계별로 연결해야 R&D와 메디컬 담당자가 근거로 활용할 수 있는 자산이 됩니다.\n\n결국 좋은 3D 의료 영상은 '보기 좋은 영상'과 '주장할 수 있는 영상' 사이의 균형입니다. 규제 리뷰를 통과하고, 세일즈 현장에서 반박당하지 않으며, 학술 채널에서도 인용될 수 있는 콘텐츠가 진짜 자산입니다.\n\n여러분의 우선순위는 정확성인가요, 몰입감인가요? 댓글로 남겨주세요. 자사 의료기기 3D 프로젝트 검수 기준이 필요하다면 MOA 를 DM으로 보내주세요. 체크리스트를 드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#의료기기",
+        "#3D애니메이션",
+        "#과학커뮤니케이션",
+        "#메디컬마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260731_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 3D로 원리를 보여줄 때"
+    },
+    {
+      "pair_id": "linkedin_20260731_morning",
+      "status": "pending",
+      "topic": "의료기기 원리를 3D 영상으로 보여줄 때 놓치지 말아야 할 것",
+      "slot": "morning",
+      "scheduled_time": "2026-07-31T09:00:00+09:00",
+      "created_at": "2026-07-31T06:58:05.268141+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260731_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "When translating a medical device's mechanism of action into 3D animation, most projects start by imagining a striking visual. But for B2B decision-makers, trust is built on accuracy, not spectacle. Here are three things you cannot afford to miss when creating clinically defensible 3D content.\n\nFirst, honesty of scale. Cells, tissues, and device components differ enormously in real size. Exaggerating one element for dramatic effect may hold attention for a moment, but clinical reviewers and regulatory teams notice the distortion immediately. Define your scale reference in the storyboard stage, and keep visible magnification cues during zoom transitions. This is how you protect credibility without sacrificing clarity.\n\nSecond, representation of time. Energy delivery, tissue response, and recovery unfold across radically different timescales, from seconds to weeks. When these are compressed into one seamless flow, viewers can be misled unless you clearly signal which segments are accelerated or omitted. A simple timeline caption or speed indicator prevents accusations of overstatement and keeps the science trustworthy.\n\nThird, show the device-tissue interaction as cause and effect, not just outcome. If you only emphasize the final result, the audience learns what happened but not why it works. The core of a strong MOA narrative is the causal chain: the point of action, the physical or biochemical mechanism, and the resulting tissue response, connected step by step. Only then does the animation become an asset that R&D and medical affairs teams can actually cite and defend.\n\nUltimately, a strong 3D medical film balances the beautiful and the defensible. The real asset is content that passes regulatory review, holds up when challenged in a sales meeting, and can be referenced in scientific channels without embarrassment. Visual polish that cannot survive scrutiny is a liability, not a differentiator.\n\nSo where does your priority sit: accuracy or immersion? Share your view in the comments. If you want a review framework for your own medical device 3D project, send me MOA by DM and I will share the checklist. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MedicalDevice",
+        "#3DAnimation",
+        "#ScienceCommunication",
+        "#MedicalMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260731_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Showing Device MOA in 3D"
+    },
+    {
+      "pair_id": "linkedin_20260731_afternoon",
+      "status": "pending",
+      "topic": "제약·바이오 콘텐츠에서 정확성과 몰입감을 동시에 만드는 법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-31T15:00:00+09:00",
+      "created_at": "2026-07-31T06:58:05.268141+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260731_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "제약·바이오 콘텐츠를 만들 때 가장 자주 마주치는 질문은 이것입니다. \"정확성을 지키면 지루하고, 몰입감을 높이면 과장된다.\" 하지만 이 둘은 상충 관계가 아니라 설계의 문제입니다.\n\n첫째, 정확성은 스크립트가 아니라 소스에서 시작됩니다. MOA 애니메이션의 오류 대부분은 제작 단계가 아니라 자료 해석 단계에서 발생합니다. 작용 기전의 순서, 표적 수용체의 위치, 분자 스케일 비율을 R&D·메디컬 팀과 함께 레퍼런스 논문 기준으로 먼저 합의해야 합니다. 저희는 스토리보드 이전에 과학 검증 시트를 만들어 각 장면이 어떤 근거에 연결되는지 표기합니다. 이 단계가 없으면 리터치는 무한 반복됩니다.\n\n둘째, 몰입감은 화려함이 아니라 시선의 설계입니다. 세포 하나에 100개의 디테일을 다 넣으면 아무것도 전달되지 않습니다. 한 장면에 하나의 메시지, 카메라 무빙은 시청자의 이해 순서를 따라가야 합니다. 표적 결합을 보여줄 때 배경 노이즈를 줄이고 대비와 라이팅으로 핵심 반응에 시선을 고정시키는 것이 관건입니다. 이것이 논문의 정확성을 유지하면서도 30초 안에 이해되는 영상을 만드는 방법입니다.\n\n셋째, 검증과 창의의 경계를 프로세스로 관리합니다. 어디까지가 과학적 사실이고 어디부터가 시각적 은유인지 팀과 브랜드가 사전에 합의해야 합니다. 색상으로 표현한 분자, 속도를 조절한 반응은 은유임을 명확히 하고, 규제·메디컬 리뷰가 통과할 수 있는 경계 안에서 자유도를 확보합니다.\n\n결국 좋은 MOA 콘텐츠는 예술과 과학의 타협이 아니라, 검증된 사실을 가장 명료한 시각 언어로 번역한 결과입니다. 정확성이 신뢰를 만들고, 몰입감이 기억을 만듭니다.\n\n여러분의 조직에서는 정확성과 몰입감 중 어느 쪽에서 더 자주 병목이 생기나요? MOA 라고 댓글이나 DM 주시면 저희가 실제로 사용하는 MOA 제작 검증 체크리스트를 보내드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#제약마케팅",
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#메디컬콘텐츠"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260731_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 정확성과 몰입, 둘 다 잡는 법"
+    },
+    {
+      "pair_id": "linkedin_20260731_afternoon",
+      "status": "pending",
+      "topic": "제약·바이오 콘텐츠에서 정확성과 몰입감을 동시에 만드는 법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-31T15:00:00+09:00",
+      "created_at": "2026-07-31T06:58:05.268141+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260731_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "The most common tension in pharma and biotech content is this: \"If we stay accurate, it's boring. If we make it immersive, it feels exaggerated.\" But these two goals are not in conflict. They are a design problem.\n\nFirst, accuracy starts at the source, not the script. Most errors in MOA animation originate in how the reference material is interpreted, not in production. The sequence of the mechanism, the location of target receptors, the relative scale of molecules, all of this must be agreed on with R&D and medical teams against peer-reviewed sources before a single frame is drawn. Before storyboarding, we build a scientific validation sheet that ties every scene to a specific reference. Skip this step, and revisions loop endlessly.\n\nSecond, immersion is not spectacle. It is the design of attention. Pack a hundred details into one cell and nothing lands. One message per scene, and camera movement that follows the viewer's order of understanding. When showing target binding, reducing background noise and using contrast and lighting to lock the eye onto the key reaction is what lets a video stay faithful to the literature while still being understood in thirty seconds.\n\nThird, the boundary between validation and creative interpretation must be managed as a process. Teams and brands should agree in advance on where scientific fact ends and visual metaphor begins. Color-coded molecules and time-adjusted reactions are metaphors, and stating that clearly keeps you within the limits that regulatory and medical review can approve, while preserving creative freedom.\n\nGood MOA content is not a compromise between art and science. It is validated fact translated into the clearest possible visual language. Accuracy builds trust. Immersion builds memory. You need both to turn technical depth into a decision the audience remembers.\n\nWhere does the bottleneck appear more often in your organization, accuracy or immersion? Comment or DM me MOA and I'll send the MOA production validation checklist we actually use. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#PharmaMarketing",
+        "#MOAanimation",
+        "#ScienceCommunication",
+        "#MedicalContent"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260731_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Accuracy Meets Immersion in MOA"
     }
   ]
 }
