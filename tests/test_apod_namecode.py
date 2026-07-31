@@ -80,5 +80,60 @@ class DeriveNameTests(unittest.TestCase):
         self.assertEqual(derive_name("", ""), "APOD")
 
 
+class AstroValueTests(unittest.TestCase):
+    def test_scale_words_are_kept(self):
+        # '190 million light-years' must not collapse to '190 ly' — the label
+        # value is a real measurement, off-by-a-million is not acceptable.
+        self.assertEqual(apod.astro_value("some 190 million light-years away"),
+                         "190M ly")
+        self.assertEqual(apod.astro_value("about 4.2 light-years distant"),
+                         "4.2 ly")
+        self.assertEqual(apod.astro_value("roughly 150 million km from the Sun"),
+                         "150M km")
+
+    def test_magnitude_and_none(self):
+        self.assertEqual(apod.astro_value("shining at magnitude -4.2"), "mag -4.2")
+        self.assertIsNone(apod.astro_value("no numbers here"))
+
+
+class CaptionSystemTests(unittest.TestCase):
+    def _brief(self, date="2026-07-07", real=True):
+        return {"date": date, "apod_title": "A Test Sky", "work_name": "TEST.SKY",
+                "value": "mag -4.2" if real else "42.123", "value_is_real": real}
+
+    def test_hook_rotates_daily_never_repeats_consecutively(self):
+        hooks = [apod.pick_hook(self._brief(date=f"2026-07-{d:02d}"))
+                 for d in range(1, 8)]
+        for a, b in zip(hooks, hooks[1:]):
+            self.assertNotEqual(a, b)
+
+    def test_hook_is_deterministic_per_date(self):
+        b = self._brief()
+        self.assertEqual(apod.pick_hook(b), apod.pick_hook(b))
+
+    def test_data_hook_skipped_for_sim_value(self):
+        # 2026-07-04 ordinal % 4 == 1 -> the {value} hook; a hash fallback must
+        # not be presented as a measurement, so it reverts to the ritual hook.
+        b = self._brief(date="2026-07-04", real=False)
+        self.assertIn("today's sky, rendered in code", apod.pick_hook(b))
+        self.assertNotIn("42.123", apod.pick_hook(b))
+
+    def test_caption_decodes_phenomenon_and_credits_source(self):
+        cap = apod.build_caption(
+            self._brief(),
+            "What are these two bands? The left one is the Milky Way. More text.")
+        self.assertIn("What are these two bands?", cap)          # decode line
+        self.assertIn("Source: NASA APOD · 2026-07-07 · mag -4.2", cap)
+        self.assertIn("Save this sky ✦ send it to someone who looks up.", cap)
+        first_line = cap.splitlines()[0]
+        self.assertLessEqual(len(first_line), 125)               # front-loaded hook
+        self.assertEqual(cap.count("#"), 5)                      # 4 base + 1 topical
+
+    def test_caption_without_explanation_still_valid(self):
+        cap = apod.build_caption(self._brief(real=False), "")
+        self.assertIn("A Test Sky.", cap)
+        self.assertNotIn("· 42.123", cap)  # sim value stays out of the source line
+
+
 if __name__ == "__main__":
     unittest.main()
