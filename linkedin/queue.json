@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260804_morning",
+      "status": "pending",
+      "topic": "제품 출시 전 MOA 콘텐츠를 준비해야 하는 이유",
+      "slot": "morning",
+      "scheduled_time": "2026-08-04T09:00:00+09:00",
+      "created_at": "2026-08-04T06:57:15.793986+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260804_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "제품 출시가 임박하면 대부분의 팀이 MOA(작용기전) 콘텐츠를 '있으면 좋은 것'으로 미룹니다. 그러나 출시 후에 만드는 MOA 콘텐츠는 이미 확정된 클레임과 패키지, 영업 자료 사이의 틈을 메우는 뒷수습이 되기 쉽습니다. 반대로 출시 전에 MOA를 준비하면 과학적 스토리가 모든 커뮤니케이션의 기준점이 됩니다.\n\n첫째, 규제·검토 정렬입니다. MOA를 시각화하는 과정은 결국 '우리가 무엇을 어디까지 말할 수 있는가'를 정의하는 작업입니다. R&D, 메디컬, 법무가 애니메이션의 한 장면을 함께 검토하면, 텍스트만으로는 놓치던 과장 표현이나 근거 공백이 드러납니다. 이 정렬이 출시 전에 끝나면 이후 자료 수정 비용이 크게 줄어듭니다.\n\n둘째, 영업·교육 자산의 선확보입니다. 영업팀이 신제품의 기전을 정확히 이해하지 못하면 현장 메시지가 흔들립니다. 출시 전에 만든 MOA 콘텐츠는 세일즈 트레이닝, 학술 심포지엄, KOL 미팅에서 동일한 시각 언어로 재사용됩니다. 하나의 과학적 자산이 여러 접점에서 일관되게 작동하는 것입니다.\n\n셋째, 시장 진입 속도입니다. 출시 시점에 MOA 콘텐츠가 준비되어 있으면 첫 인상부터 기술력을 신뢰로 전환할 수 있습니다. 경쟁사가 클레임 문구로 경쟁할 때, 검증된 기전 스토리는 차별화의 핵심이 됩니다.\n\nbbbb.beauty는 의학적 정확성과 프리미엄 비주얼을 결합해 복잡한 기전을 고객의 신뢰로 번역합니다. 여러분의 팀은 MOA 콘텐츠를 출시 전에 준비하십니까, 아니면 출시 후에 대응하십니까? 댓글로 의견을 남겨 주세요. 출시 전 MOA 준비 체크리스트가 필요하면 'MOA'를 DM으로 보내 주시고, 문의는 https://jhbropark.github.io/pages/contact.html 에서 가능합니다.",
+      "hashtags": [
+        "#MOA",
+        "#과학커뮤니케이션",
+        "#메디컬마케팅",
+        "#더마코스메틱"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260804_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 출시 전에 MOA를 준비하라"
+    },
+    {
+      "pair_id": "linkedin_20260804_morning",
+      "status": "pending",
+      "topic": "제품 출시 전 MOA 콘텐츠를 준비해야 하는 이유",
+      "slot": "morning",
+      "scheduled_time": "2026-08-04T09:00:00+09:00",
+      "created_at": "2026-08-04T06:57:15.793986+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260804_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "When a launch date approaches, most teams treat MOA (mechanism of action) content as a nice-to-have and push it downstream. But MOA content built after launch tends to become damage control, stitching together gaps between finalized claims, packaging, and sales decks that were never designed to align. Building MOA content before launch flips this: the scientific story becomes the reference point for every piece of communication.\n\nFirst, regulatory and review alignment. Visualizing a mechanism is, in practice, the act of defining what you can and cannot say. When R&D, medical, and legal review a single animation frame together, exaggerations and evidence gaps that slip past text-only reviews become visible. Finishing this alignment before launch dramatically reduces the cost of reworking assets later.\n\nSecond, securing sales and education assets early. If a sales team does not truly understand a new product's mechanism, field messaging drifts. MOA content prepared before launch is reused across sales training, scientific symposia, and KOL meetings in one consistent visual language. A single scientific asset works coherently across many touchpoints.\n\nThird, speed to market. When MOA content is ready at launch, you convert technical capability into trust from the very first impression. While competitors fight over claim wording, a validated mechanism story becomes a genuine differentiator that is hard to copy quickly.\n\nAt bbbb.beauty we combine medical accuracy with premium visuals to translate complex mechanisms into customer trust. The question for your team is simple: do you prepare MOA content before launch, or react to it after? Share your view in the comments. If you would like our pre-launch MOA preparation checklist, send 'MOA' by DM, and reach us at https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA",
+        "#SciComm",
+        "#MedicalMarketing",
+        "#Dermocosmetics"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260804_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Prepare MOA Before Launch"
+    },
+    {
+      "pair_id": "linkedin_20260804_afternoon",
+      "status": "pending",
+      "topic": "글로벌 론칭을 고려한 과학 콘텐츠의 모듈형 제작 전략",
+      "slot": "afternoon",
+      "scheduled_time": "2026-08-04T15:00:00+09:00",
+      "created_at": "2026-08-04T06:57:15.793986+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MODULE",
+      "id": "linkedin_20260804_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "글로벌 론칭을 앞둔 브랜드가 가장 자주 겪는 문제는 '완성된 콘텐츠를 뒤늦게 다시 만드는' 일입니다. 하나의 시장을 위해 제작한 MOA 애니메이션을 다른 국가로 확장하려 할 때, 규제 문구가 다르고 허용 클레임이 다르며 근거 데이터의 표현 수위도 다릅니다. 결국 처음부터 다시 만드는 상황이 반복됩니다. 해결의 출발점은 제작 초기에 콘텐츠를 '모듈'로 설계하는 것입니다.\n\n첫째, 과학적 코어와 표현 레이어를 분리합니다. 성분의 작용기전, 세포 반응 같은 과학적 코어는 시장이 달라도 변하지 않습니다. 반면 클레임 자막, 효능 강조 표현, 톤앤매너는 국가별로 달라집니다. 이 둘을 하나의 타임라인에 붙여 렌더링하면 문구 하나 바꿀 때마다 전체를 다시 렌더링해야 합니다. 코어 장면과 텍스트·자막 레이어를 분리해두면 규제 검토 결과에 따라 해당 레이어만 교체하면 됩니다.\n\n둘째, 장면 단위의 재사용 설계입니다. 30초, 60초, 학술 심화용 3분 버전을 각각 만드는 대신, 공통 장면을 블록으로 구성해 조합합니다. 하나의 3D 에셋과 장면 라이브러리에서 영업용 짧은 버전, 의료진용 상세 버전, 전시 부스용 무자막 버전을 파생시키는 방식입니다. 자산의 활용도를 높이고 브랜드 일관성도 유지됩니다.\n\n셋째, 규제·메디컬 검수를 제작 뒤가 아니라 설계 단계에 넣습니다. 어떤 표현이 어떤 시장에서 문제가 될지 스토리보드 단계에서 분기해두면, 각국 담당자가 자기 시장에 맞는 모듈만 승인하면 됩니다. 완성본을 놓고 뒤늦게 수정하는 비용과 지연을 줄이는 가장 확실한 방법입니다.\n\nbbbb.beauty는 과학적 정확성을 훼손하지 않으면서 글로벌 확장을 염두에 둔 모듈형 제작 방법론을 설계합니다. 여러분의 다음 글로벌 론칭에서 가장 걱정되는 부분은 무엇인가요? 모듈형 제작 체크리스트가 필요하시면 MODULE 키워드로 DM 주세요. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#글로벌론칭",
+        "#더마코스메틱"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260804_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 모듈로 설계하는 글로벌 과학 콘텐츠"
+    },
+    {
+      "pair_id": "linkedin_20260804_afternoon",
+      "status": "pending",
+      "topic": "글로벌 론칭을 고려한 과학 콘텐츠의 모듈형 제작 전략",
+      "slot": "afternoon",
+      "scheduled_time": "2026-08-04T15:00:00+09:00",
+      "created_at": "2026-08-04T06:57:15.793986+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MODULE",
+      "id": "linkedin_20260804_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "The most common and most expensive mistake brands make before a global launch is rebuilding finished content from scratch. A MOA animation created for one market rarely travels cleanly to the next. Regulatory language differs, permissible claims differ, and even the acceptable way to visualize evidence differs. So teams end up remaking the same asset again and again. The fix starts earlier than most expect: design the content as modules from day one.\n\nFirst, separate the scientific core from the expression layer. The mechanism of action, the cellular response, the underlying science stays constant across markets. What changes is the claim text, the emphasis of efficacy, the tone. When these are baked into a single rendered timeline, changing one line of copy forces a full re-render. Keep the core scenes and the text or subtitle layers separate, and you can swap only the layer that regulatory review flags in a given country.\n\nSecond, design for scene-level reuse. Instead of producing standalone 30-second, 60-second, and three-minute academic versions, build shared scenes as blocks that recombine. From one 3D asset library you can derive a short sales cut, a detailed clinician version, and a subtitle-free booth loop. Asset value goes up, and brand consistency holds across every touchpoint.\n\nThird, move regulatory and medical review to the design stage, not the final cut. If you branch potential problem expressions at the storyboard level, each market's team only approves the modules relevant to them. This is the single most reliable way to cut the cost and delay of late-stage rework, which is where most launch timelines quietly break.\n\nModularity is not a shortcut that lowers scientific rigor. Done well, it protects accuracy by isolating what must stay true from what is allowed to vary. At bbbb.beauty we design production methodology with global expansion in mind, keeping the science intact while making localization a matter of swapping modules rather than rebuilding.\n\nWhat worries you most about your next global launch? If you'd like our modular production checklist, send the keyword MODULE by DM. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOAanimation",
+        "#ScienceCommunication",
+        "#GlobalLaunch",
+        "#Dermocosmetics"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260804_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Modular Science Content for Launch"
     }
   ]
 }
