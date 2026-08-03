@@ -715,6 +715,26 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260714",
+      "status": "pending",
+      "topic": "기술은 정확하게, 메시지는 쉽게",
+      "pillar_id": "philosophy",
+      "format": "single_image",
+      "image_url": "https://jhbropark.github.io/pages/images/post_20260714.jpg",
+      "caption": "기술 설명을 줄이는 것이 아니라 정확히 남길 것과 쉽게 먼저 보여줄 것을 나누어야 합니다. 이 정렬이 되면 론칭 메시지와 비주얼이 더 선명해집니다. 프로필을 방문하시고 저장 또는 팀 공유에 활용하시기 바랍니다.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#브랜드전략",
+        "#메디컬콘텐츠",
+        "#더마코스메틱",
+        "#바이오마케팅",
+        "#bbbbbeauty"
+      ],
+      "scheduled_time": "2026-07-14T19:00:00+09:00",
+      "created_at": "2026-07-13T06:07:04.738539+09:00",
+      "generated_by": "codex"
     }
   ]
 }
