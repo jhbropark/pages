@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260808_morning",
+      "status": "pending",
+      "topic": "기술 중심 브랜드가 고객의 선택을 얻기 위해 설명해야 할 것",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260808_morning_ko.jpg",
+      "caption": "기술이 뛰어나도 고객은 '왜 이게 다른가'를 이해하지 못하면 선택하지 않습니다. 메커니즘, 근거, 차별점을 고객의 언어로 번역하는 것이 신뢰의 시작입니다.\n\n댓글: 고객이 먼저 궁금해하는 건? 근거 vs 차별점\nDM “MOA”: 기술 설명 콘텐츠 진단 체크리스트 전달\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#메디컬콘텐츠",
+        "#브랜드신뢰"
+      ],
+      "scheduled_time": "2026-08-08T12:30:00+09:00",
+      "created_at": "2026-08-08T06:27:24.520784+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260808_afternoon",
+      "status": "pending",
+      "topic": "전문가에게는 정확하게, 소비자에게는 쉽게 말하는 콘텐츠 구조",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260808_afternoon_ko.jpg",
+      "caption": "같은 데이터를 전문가에게는 근거로, 소비자에게는 이미지로 번역합니다. MOA 콘텐츠는 하나의 정보 구조를 두 개의 언어로 설계할 때 신뢰와 이해를 동시에 얻습니다.\n\n댓글: 당신의 우선순위는? 정확성 vs 직관성\nDM “구조”: 이중 언어 콘텐츠 설계 체크리스트 제공\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#메디컬콘텐츠",
+        "#3D시각화",
+        "#B2B마케팅"
+      ],
+      "scheduled_time": "2026-08-08T19:00:00+09:00",
+      "created_at": "2026-08-08T06:27:24.520784+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
