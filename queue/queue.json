@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260809_morning",
+      "status": "pending",
+      "topic": "프리미엄 메디컬 비주얼을 만드는 네 가지 디렉션 원칙",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260809_morning_ko.jpg",
+      "caption": "프리미엄 메디컬 비주얼은 감각이 아니라 원칙에서 나옵니다. 정확성, 위계, 절제, 근거. 이 네 가지가 기술을 신뢰로 번역하는 기준입니다.\n\n댓글: 정확성 vs 심미성, 뭐가 먼저?\nDM “원칙”: 메디컬 비주얼 디렉션 체크리스트 4단계\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#메디컬비주얼",
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#brandtrust"
+      ],
+      "scheduled_time": "2026-08-09T12:30:00+09:00",
+      "created_at": "2026-08-09T06:18:57.771027+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260809_afternoon",
+      "status": "pending",
+      "topic": "규제가 있는 산업에서 창의적인 스토리텔링이 가능한 이유",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260809_afternoon_ko.jpg",
+      "caption": "규제 산업의 스토리텔링은 상상이 아니라 근거 위에서 자랍니다. 승인된 데이터와 MOA를 정확히 시각화할 때, 창의성은 신뢰를 만드는 무기가 됩니다.\n\n댓글: MOA vs 다큐, 뭐부터?\nDM “MOA”: 규제 안전 스토리텔링 체크리스트 발송\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#메디컬마케팅",
+        "#3D비주얼라이제이션",
+        "#regulatoryscience"
+      ],
+      "scheduled_time": "2026-08-09T19:00:00+09:00",
+      "created_at": "2026-08-09T06:18:57.771027+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
