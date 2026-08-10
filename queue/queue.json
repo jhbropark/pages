@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260811_morning",
+      "status": "pending",
+      "topic": "복잡한 바이오 플랫폼 기술을 한 문장과 한 장면으로 정리하는 법",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260811_morning_ko.jpg",
+      "caption": "바이오 플랫폼은 왜 늘 어렵게 들릴까요. 핵심은 한 문장의 메시지와 그것을 증명하는 한 장면입니다. 기술의 전부가 아니라 고객이 기억할 한 축을 먼저 정하세요.\n\n댓글: 당신의 선택은? A 문장 B 장면\nDM “ONE”: 플랫폼 메시지 1문장 정리 워크시트\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#바이오플랫폼",
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#B2B마케팅",
+        "#메디컬콘텐츠",
+        "#사이언스비주얼"
+      ],
+      "scheduled_time": "2026-08-11T12:30:00+09:00",
+      "created_at": "2026-08-11T06:31:03.450178+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260811_afternoon",
+      "status": "pending",
+      "topic": "Science to Message, Beauty to Experience: bbbb.beauty가 하는 일",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260811_afternoon_ko.jpg",
+      "caption": "복잡한 작용기전을 영상 하나에 담는 일은 예술이 아니라 방법론입니다. 문헌 검증, 메커니즘 설계, 시각 번역의 순서가 신뢰를 만듭니다.\n\n댓글: 3D vs 2D, 뭐가 더 궁금?\nDM “MOA”: MOA 제작 체크리스트 PDF 드립니다\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#3D비주얼라이제이션",
+        "#더마코스메틱",
+        "#메디컬마케팅",
+        "#B2B브랜딩"
+      ],
+      "scheduled_time": "2026-08-11T19:00:00+09:00",
+      "created_at": "2026-08-11T06:31:03.450178+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
