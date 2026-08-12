@@ -216,9 +216,13 @@ jobs:
           DATE="${{ steps.gen.outputs.date }}"
           GEN="${{ steps.gen.outcome }}"
           PUB="${{ steps.pub.outcome }}"
+          REELGEN="${{ steps.reel.outcome }}"
           REELPUB="${{ steps.reelpub.outcome }}"
           FBPUB="${{ steps.fbpub.outcome }}"
           FBREEL="${{ steps.fbreel.outcome }}"
+          # if the reel never generated (e.g. Krea 402/credit), say so instead of
+          # a bare "skipped" that hides why the reel didn't post
+          if [ "$REELGEN" = "failure" ]; then IGREEL="gen failed"; else IGREEL="${REELPUB:-skipped}"; fi
           LABEL=$(python -c "import json;print(json.load(open('namecode_grid/daily/brief_'+'$DATE'+'.json'))['label'])" 2>/dev/null || echo "")
           if [ "$GEN" != "success" ]; then
             MSG="🛰 namecode daily ${DATE:-?}
@@ -226,7 +230,7 @@ jobs:
           else
             MSG="🛰 namecode daily ${DATE}
           ✅ generated: ${LABEL:-?}
-          IG feed: ${PUB} · reel: ${REELPUB:-skipped}
+          IG feed: ${PUB} · reel: ${IGREEL}
           FB feed: ${FBPUB} · reel: ${FBREEL:-skipped}"
           fi
           MESSAGE="$MSG" python namecode_grid/notify_telegram.py
