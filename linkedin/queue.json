@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260702_morning",
+      "status": "pending",
+      "topic": "더마코스메틱의 성분 설명을 고객 언어로 번역하는 세 단계",
+      "slot": "morning",
+      "scheduled_time": "2026-07-03T09:00:00+09:00",
+      "created_at": "2026-07-02T07:12:05.113617+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "번역3",
+      "id": "linkedin_20260702_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "더마코스메틱 브랜드가 가장 자주 부딪히는 벽은 성분의 우수성이 아니라, 그 우수성을 고객이 이해하는 언어로 옮기지 못하는 데 있습니다. R&D가 확보한 데이터는 정교하지만, 그대로 전달되면 소비자에게도 리테일 바이어에게도 닿지 않습니다. 성분 설명을 고객 언어로 번역하는 작업은 마케팅의 미화가 아니라, 과학 커뮤니케이션의 정밀한 설계입니다. 실무에서 우리가 권하는 세 단계를 공유합니다.\n\n첫째, 근거를 정리합니다. 어떤 농도에서, 어떤 조건으로, 무엇이 확인되었는지를 규제 관점에서 명확히 구분합니다. 예를 들어 'in vitro에서 확인된 세포 수준 결과'와 '인체적용시험 결과'는 전달 강도가 완전히 달라야 합니다. 이 구분이 흐려지면 과장 표현 리스크가 생기고, 반대로 지나치게 보수적이면 차별점이 사라집니다. 번역의 출발점은 언제나 근거의 경계를 정확히 아는 것입니다.\n\n둘째, 의미를 전환합니다. 성분의 작용기전(MOA)을 고객이 겪는 문제와 연결합니다. '특정 경로를 조절한다'는 과학적 사실을 '왜 이 문제에 의미가 있는가'로 바꾸는 단계입니다. 여기서 핵심은 은유의 남용이 아니라, 검증된 메커니즘과 소비자 편익 사이의 논리적 다리를 놓는 것입니다.\n\n셋째, 시각화합니다. 눈에 보이지 않는 분자 단위의 작용은 텍스트만으로 신뢰를 얻기 어렵습니다. 3D MOA 애니메이션이나 과학 시각화는 근거의 경계를 지키면서도 이해를 가속합니다. 정확성과 몰입을 동시에 확보하는 것이 이 단계의 목표입니다.\n\n이 세 단계는 순서가 중요합니다. 근거 없이 의미를 만들면 과장이 되고, 의미 없이 시각화하면 화려한 껍데기가 됩니다. bbbb.beauty는 이 번역 과정을 의학적 정확성과 프리미엄 비주얼로 설계합니다.\n\n여러분의 브랜드는 어느 단계에서 가장 막히나요? 근거 정리인가요, 아니면 전달인가요? 댓글로 A/B만 남겨주셔도 좋습니다. '번역3'을 DM으로 보내주시면 성분 메시지 번역 체크리스트를 드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#더마코스메틱",
+        "#과학커뮤니케이션",
+        "#브랜드전략",
+        "#MOA애니메이션"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260702_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 성분을 고객 언어로 번역하는 3단계"
+    },
+    {
+      "pair_id": "linkedin_20260702_morning",
+      "status": "pending",
+      "topic": "더마코스메틱의 성분 설명을 고객 언어로 번역하는 세 단계",
+      "slot": "morning",
+      "scheduled_time": "2026-07-03T09:00:00+09:00",
+      "created_at": "2026-07-02T07:12:05.113617+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "번역3",
+      "id": "linkedin_20260702_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "The wall most dermocosmetic brands hit is rarely the quality of their ingredients. It is the failure to translate that quality into language customers actually understand. R&D produces precise data, but delivered raw, it reaches neither consumers nor retail buyers. Translating ingredient science into customer language is not marketing decoration. It is a discipline of scientific communication. Here are the three steps we apply in practice.\n\nFirst, define the evidence. Clarify at what concentration, under what conditions, and exactly what was demonstrated, always from a regulatory perspective. A result confirmed in vitro at the cellular level carries a very different communication weight than a human clinical outcome. Blur that line and you invite overstatement risk. Stay too conservative and your differentiation disappears. Translation always begins with knowing the exact boundary of your evidence.\n\nSecond, convert meaning. Connect the ingredient's mechanism of action to the problem your customer experiences. Turn the scientific fact that a pathway is modulated into a clear answer to why this matters for that problem. The key here is not overusing metaphor, but building a logical bridge between a validated mechanism and a genuine consumer benefit.\n\nThird, visualize. Molecular-level action is invisible, and invisible things struggle to earn trust through text alone. A 3D MOA animation or scientific visualization accelerates understanding while respecting the boundaries of the evidence. The goal of this step is to secure accuracy and immersion at the same time.\n\nSequence matters. Build meaning without evidence and you get exaggeration. Visualize without meaning and you get a beautiful but empty shell. bbbb.beauty designs this translation process with medical accuracy and premium visuals, so a brand's technology becomes the customer's trust and choice.\n\nWhere does your brand get stuck most often? Is it defining the evidence, or is it delivery? A simple A or B in the comments is enough. Send me the keyword 번역3 by DM and I will share our ingredient message translation checklist. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#Dermocosmetics",
+        "#ScienceCommunication",
+        "#BrandStrategy",
+        "#MOAAnimation"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260702_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: 3 Steps: Ingredient to Message"
+    },
+    {
+      "pair_id": "linkedin_20260702_afternoon",
+      "status": "pending",
+      "topic": "임상 데이터와 프리미엄 비주얼을 함께 설계해야 하는 이유",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-02T15:00:00+09:00",
+      "created_at": "2026-07-02T07:12:05.113617+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260702_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "임상 데이터와 프리미엄 비주얼을 나눠서 만들면 어떤 일이 벌어질까요.\n\n많은 브랜드가 R&D팀에서 정리한 기전 데이터를 먼저 확정한 뒤, 마케팅 단계에서 영상 제작사에 '예쁘게 비주얼화'를 의뢰합니다. 순서상 자연스러워 보이지만, 여기서 두 가지 손실이 발생합니다. 데이터의 정확한 뉘앙스가 비주얼로 옮겨지며 뭉개지고, 반대로 비주얼의 서사 구조가 데이터를 담기에 부적합해집니다.\n\n첫째, 정확성과 이해도는 트레이드오프가 아닙니다. 예를 들어 특정 유효성분이 진피층에서 작용하는 경로를 설명할 때, 논문 그래프는 정확하지만 담당자조차 3초 안에 이해하지 못합니다. 반대로 화려한 3D 렌더링은 시선을 끌지만 작용 부위나 시간축이 틀리면 메디컬 검수에서 전면 재작업으로 돌아옵니다. 두 축을 처음부터 같은 테이블에서 설계해야 재작업 비용이 줄어듭니다.\n\n둘째, MOA 애니메이션의 품질은 '스토리보드 이전 단계'에서 결정됩니다. 저희는 제작 착수 전에 R&D·메디컬·마케팅 담당자와 함께 어떤 데이터가 핵심 메시지이고, 어디까지가 검증된 사실이며, 어디부터가 시각적 은유인지를 문서로 합의합니다. 이 경계선을 명확히 하면 규제 리스크와 과장 표현을 사전에 걸러낼 수 있습니다.\n\n셋째, 비주얼은 기억의 인프라입니다. 학회 발표, 영업 자료, 소비자 커뮤니케이션에서 같은 기전을 반복 노출할 때, 일관된 비주얼 언어는 브랜드의 기술 자산이 됩니다. 데이터와 비주얼을 함께 설계하면 한 번의 제작이 여러 채널의 자산으로 확장됩니다.\n\n결론적으로 임상 데이터와 프리미엄 비주얼은 순차 작업이 아니라 병렬 설계 대상입니다. 정확성을 지키면서도 이해와 기억을 만드는 것, 그것이 과학을 신뢰로 바꾸는 방식입니다.\n\nMOA 프로젝트를 준비 중이라면 어떤 기준을 먼저 확인하시나요. 데이터의 정확성인가요, 아니면 시각적 임팩트인가요. 댓글로 의견을 남겨 주세요. 제작 전 점검용 'MOA 영상 기획 체크리스트'가 필요하시면 MOA 라고 DM 주시면 보내드립니다. 자세한 문의는 https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#메디컬비주얼",
+        "#B2B마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260702_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 데이터와 비주얼, 함께 설계하기"
+    },
+    {
+      "pair_id": "linkedin_20260702_afternoon",
+      "status": "pending",
+      "topic": "임상 데이터와 프리미엄 비주얼을 함께 설계해야 하는 이유",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-02T15:00:00+09:00",
+      "created_at": "2026-07-02T07:12:05.113617+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260702_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "What happens when clinical data and premium visuals are built separately?\n\nMany brands finalize the mechanism data with their R&D team first, then hand it to a production studio during the marketing phase to \"make it look beautiful.\" The sequence feels natural, but it creates two losses. The precise nuance of the data gets blurred as it moves into visuals, and the narrative structure of the visuals turns out to be unsuitable for carrying the data.\n\nFirst, accuracy and clarity are not a trade-off. When explaining how an active ingredient works within the dermis, a journal graph is precise but even a specialist cannot grasp it in three seconds. A dazzling 3D render, on the other hand, captures attention but triggers a full redo at medical review if the site of action or the time axis is wrong. Designing both axes at the same table from the start reduces rework cost.\n\nSecond, the quality of an MOA animation is decided before the storyboard exists. Before production begins, we sit down with R&D, medical, and marketing stakeholders to document which data is the core message, where the boundary of verified fact lies, and where visual metaphor begins. Drawing that line clearly lets us screen out regulatory risk and overstatement in advance.\n\nThird, visuals are the infrastructure of memory. When the same mechanism is shown repeatedly across conference presentations, sales decks, and consumer communication, a consistent visual language becomes a technical asset of the brand. Designing data and visuals together lets one production expand into assets for many channels.\n\nSo clinical data and premium visuals are not sequential tasks but parallel design objects. Preserving accuracy while creating understanding and memory is how science becomes trust.\n\nIf you are preparing an MOA project, which do you check first: the accuracy of the data or the visual impact? Share your view in the comments. If you would like our pre-production MOA planning checklist, send me a DM with the keyword MOA and I will share it. For inquiries: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOAanimation",
+        "#ScienceCommunication",
+        "#MedicalVisualization",
+        "#B2BMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260702_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Design Data and Visuals Together"
     }
   ]
 }
