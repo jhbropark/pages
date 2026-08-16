@@ -182,6 +182,18 @@ header.site{position:sticky;top:0;z-index:60;background:rgba(21,23,28,.86);
 .pchip .strike{text-decoration:line-through;color:var(--faint);font-weight:600;font-size:15px}
 .cact{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .clink{font-size:13px;color:var(--muted);font-family:var(--mono)}
+/* 서비스 제공 기간 — 카카오페이 심사 필수 고지 */
+.svcterm{margin-top:16px;display:flex;gap:10px;align-items:flex-start;background:var(--band);
+  border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 9px 9px 0;
+  padding:12px 16px;font-size:13.5px;color:var(--ink2);line-height:1.6}
+.svcterm > b{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);font-weight:700;flex:none;padding-top:3px;white-space:nowrap}
+.svcterm span b{color:var(--ink);font-weight:700}
+.btn-pay{background:var(--accent);color:#1a1205}
+.btn-pay:hover{filter:brightness(1.06)}
+.btn-pay:disabled{opacity:.6;cursor:progress}
+.paymsg{width:100%;font-size:13px;color:var(--muted);margin-top:4px}
+.paymsg.err{color:#e07a7a}
 .clink a{color:var(--accent);border-bottom:1px solid transparent}
 .clink a:hover{border-bottom-color:var(--accent)}
 
@@ -288,7 +300,20 @@ footer.site{border-top:1px solid var(--line);padding:44px 0 32px;background:var(
 .fcol h4{font-size:13px;font-weight:800;margin-bottom:12px}
 .fcol a{display:block;color:var(--muted);font-size:13.5px;padding:4px 0}
 .fcol a:hover{color:var(--ink)}
-.fbot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:32px;
+.bizinfo{margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.bizinfo h4{font-size:12px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);font-weight:700;margin-bottom:14px}
+.bizinfo dl{display:grid;grid-template-columns:repeat(3,1fr);gap:9px 24px}
+@media(max-width:760px){.bizinfo dl{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.bizinfo dl{grid-template-columns:1fr}}
+.bizinfo dl > div{display:flex;gap:8px;font-size:12.5px;line-height:1.55}
+.bizinfo dl > div.wide{grid-column:span 2}
+@media(max-width:480px){.bizinfo dl > div.wide{grid-column:span 1}}
+.bizinfo dt{color:var(--faint);flex:none}
+.bizinfo dd{color:var(--ink2);margin:0}
+.bizinfo dd a{color:var(--muted)}
+.bizterm{margin-top:16px;font-size:12.5px;color:var(--faint);line-height:1.6}
+.fbot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:26px;
   padding-top:20px;border-top:1px solid var(--line);color:var(--faint);font-size:12.5px}
 .fbot a{color:var(--muted)}
 @media(prefers-reduced-motion:reduce){
@@ -466,8 +491,12 @@ footer.site{border-top:1px solid var(--line);padding:44px 0 32px;background:var(
         <div class="pchip hot"><strong>얼리버드</strong><span>₩39,000</span><small>평생소장 · 43% OFF</small></div>
         <div class="pchip"><strong>정가</strong><span class="strike">₩69,000</span><small>오픈 특가 종료 시</small></div>
       </div>
+      <div class="svcterm"><b>서비스 제공 기간</b>
+        <span>결제 후 <b>1영업일 이내</b> 수강 링크를 이메일로 발송하며, 발송 시점부터
+        <b>기간 제한 없이 평생 소장</b>으로 이용하실 수 있습니다.</span></div>
       <div class="cact">
-        <a href="#apply" class="btn btn-accent">이 과정으로 신청하기</a>
+        <button type="button" class="btn btn-pay btn-lg" data-pay="vod">카카오페이로 결제 · ₩39,000</button>
+        <a href="#apply" class="btn btn-outline">먼저 상담받기</a>
         <span class="clink">원본 랜딩 · <a href="https://vod.varis.kr/?utm_source=varis_onepage&utm_medium=detail&utm_content=vod" target="_blank" rel="noopener">vod.varis.kr ↗</a></span>
       </div>
     </article>
@@ -532,8 +561,15 @@ footer.site{border-top:1px solid var(--line);padding:44px 0 32px;background:var(
         <div class="pchip"><strong>PROJECT</strong><span>390,000원~</span><small>4주 코호트 · 크리틱 2회</small></div>
         <div class="pchip"><strong>TEAM / B2B</strong><span>별도 견적</span><small>기업 · 학교 맞춤</small></div>
       </div>
+      <div class="svcterm"><b>서비스 제공 기간</b>
+        <span><b>CORE</b> — 결제 후 1영업일 이내 수강 링크 발송, 강의 열람 기간 제한 없음 ·
+        신규 강의 업데이트는 결제일로부터 <b>6개월</b> 제공.<br />
+        <b>PROJECT</b> — 결제 후 코호트 개강일부터 <b>4주간</b> 과제·크리틱 제공.<br />
+        <b>TEAM / B2B</b> — 계약 시 협의된 일정에 따라 제공.</span></div>
       <div class="cact">
-        <a href="#apply" class="btn btn-accent">이 과정으로 신청하기</a>
+        <button type="button" class="btn btn-pay btn-lg" data-pay="ai_core">카카오페이로 결제 · CORE 149,000원</button>
+        <button type="button" class="btn btn-outline" data-pay="ai_project">PROJECT 결제 · 390,000원</button>
+        <a href="#apply" class="btn btn-outline">먼저 상담받기</a>
         <span class="clink">원본 랜딩 · <a href="https://ai.varis.kr/?utm_source=varis_onepage&utm_medium=detail&utm_content=ai" target="_blank" rel="noopener">ai.varis.kr ↗</a></span>
       </div>
     </article>
@@ -585,6 +621,9 @@ footer.site{border-top:1px solid var(--line);padding:44px 0 32px;background:var(
         <div class="pchip hot"><strong>과정</strong><span>6개월 정규과정</span><small>상시모집 · 1:1 개별 면접</small></div>
         <div class="pchip"><strong>구성</strong><span>4 STEPS</span><small>20 SEATS · 상암 DDMC</small></div>
       </div>
+      <div class="svcterm"><b>서비스 제공 기간</b>
+        <span>등록(결제) 후 해당 기수 개강일부터 <b>6개월간</b> 교육을 제공합니다.
+        개강일은 접수 후 1:1 면접에서 안내해 드립니다.</span></div>
       <div class="cact">
         <a href="#apply" class="btn btn-accent">이 과정으로 신청하기</a>
         <span class="clink">원본 랜딩 · <a href="https://pro.varis.kr/?utm_source=varis_onepage&utm_medium=detail&utm_content=pro" target="_blank" rel="noopener">pro.varis.kr ↗</a></span>
@@ -627,8 +666,13 @@ footer.site{border-top:1px solid var(--line);padding:44px 0 32px;background:var(
         <div class="pchip"><strong>일시납</strong><span>얼리버드 198만</span><small>1,980,000원</small></div>
         <div class="pchip"><strong>정가</strong><span class="strike">240만</span><small>2,400,000원</small></div>
       </div>
+      <div class="svcterm"><b>서비스 제공 기간</b>
+        <span>결제 후 개강일부터 <b>6개월간</b> 멘토링을 제공합니다.
+        분할 납부 선택 시 <b>결제일로부터 1개월(30일) 단위로 매월 동일한 날짜에 총 6회</b> 결제되며,
+        6회차 납부 완료 시 자동 종료됩니다 (자동 갱신 없음).</span></div>
       <div class="cact">
-        <a href="#apply" class="btn btn-accent">이 과정으로 신청하기</a>
+        <button type="button" class="btn btn-pay btn-lg" data-pay="elite">일시납 결제 · 1,980,000원</button>
+        <a href="#apply" class="btn btn-outline">분할 납부 상담하기</a>
         <span class="clink">원본 랜딩 · <a href="https://houdini.varis.kr/?utm_source=varis_onepage&utm_medium=detail&utm_content=elite#options" target="_blank" rel="noopener">houdini.varis.kr ↗</a></span>
       </div>
     </article>
@@ -670,8 +714,13 @@ footer.site{border-top:1px solid var(--line);padding:44px 0 32px;background:var(
         <div class="pchip"><strong>일시납</strong><span>얼리버드 390만</span><small>3,900,000원</small></div>
         <div class="pchip"><strong>정가</strong><span class="strike">480만</span><small>4,800,000원</small></div>
       </div>
+      <div class="svcterm"><b>서비스 제공 기간</b>
+        <span>결제 후 시작일부터 <b>6개월간</b> 1:1 멘토링을 제공합니다.
+        분할 납부 선택 시 <b>결제일로부터 1개월(30일) 단위로 매월 동일한 날짜에 총 6회</b> 결제되며,
+        6회차 납부 완료 시 자동 종료됩니다 (자동 갱신 없음).</span></div>
       <div class="cact">
-        <a href="#apply" class="btn btn-accent">이 과정으로 신청하기</a>
+        <button type="button" class="btn btn-pay btn-lg" data-pay="premium">일시납 결제 · 3,900,000원</button>
+        <a href="#apply" class="btn btn-outline">분할 납부 상담하기</a>
         <span class="clink">원본 랜딩 · <a href="https://houdini.varis.kr/?utm_source=varis_onepage&utm_medium=detail&utm_content=prem#options" target="_blank" rel="noopener">houdini.varis.kr ↗</a></span>
       </div>
     </article>
@@ -709,8 +758,14 @@ footer.site{border-top:1px solid var(--line);padding:44px 0 32px;background:var(
         <div class="pchip"><strong>4회 패키지</strong><span>500,000원</span><small>단계별 발전</small></div>
         <div class="pchip"><strong>월간</strong><span>600,000원</span><small>월 4회 + 작업물 피드백</small></div>
       </div>
+      <div class="svcterm"><b>서비스 제공 기간</b>
+        <span><b>1회권</b> — 결제 후 <b>30일 이내</b> 일정을 협의해 1회 진행.
+        <b>4회 패키지</b> — 결제 후 <b>90일 이내</b> 4회 소진.
+        <b>월간</b> — 결제일로부터 1개월(30일) 동안 4회 제공하며, 자동 갱신되지 않습니다.</span></div>
       <div class="cact">
-        <a href="#apply" class="btn btn-accent">코칭 신청하기</a>
+        <button type="button" class="btn btn-pay btn-lg" data-pay="coach_1">1회 결제 · 150,000원</button>
+        <button type="button" class="btn btn-outline" data-pay="coach_4">4회 패키지 · 500,000원</button>
+        <a href="#apply" class="btn btn-outline">먼저 상담받기</a>
         <span class="clink">원본 랜딩 · <a href="https://houdini.varis.kr/?utm_source=varis_onepage&utm_medium=detail&utm_content=coach#options" target="_blank" rel="noopener">houdini.varis.kr ↗</a></span>
       </div>
     </article>
@@ -774,6 +829,12 @@ footer.site{border-top:1px solid var(--line);padding:44px 0 32px;background:var(
             <td class="hl">워크숍 · 현장 프로젝트</td><td>주간 그룹 + 월 1회 1:1</td><td>주간 1:1 밀착</td></tr>
           <tr><th>결과물</th><td>15초 완성작 1편</td><td>포트폴리오 1편 + 도구 스택</td>
             <td class="hl">포트폴리오 + 업계 네트워킹</td><td>포트폴리오 1편 이상</td><td>대표작 + 포트폴리오 패키지</td></tr>
+          <tr><th>서비스<br />제공 기간</th>
+            <td>결제 후 1영업일 이내 발송<br />이후 기간 제한 없음(평생소장)</td>
+            <td>CORE 열람 무기한<br />(업데이트 6개월)<br />PROJECT 개강일부터 4주</td>
+            <td class="hl">개강일부터 6개월</td>
+            <td>개강일부터 6개월<br />분할 시 월 1회 × 6회</td>
+            <td>시작일부터 6개월<br />분할 시 월 1회 × 6회</td></tr>
           <tr><th>가격</th><td>얼리버드 ₩39,000<br />(정가 ₩69,000)</td>
             <td>FREE 0원 / CORE 149,000원~<br />PROJECT 390,000원~</td>
             <td class="hl">6개월 정규과정<br />(상담 시 안내)</td>
@@ -989,6 +1050,23 @@ footer.site{border-top:1px solid var(--line);padding:44px 0 32px;background:var(
         <a href="https://houdini.varis.kr" target="_blank" rel="noopener">houdini.varis.kr</a>
         <a href="mailto:varis@varis.kr">varis@varis.kr</a></div>
     </div>
+    <!-- ⚠️ 사업자 정보 — 카카오페이/PG 심사 필수 항목입니다.
+         아래 대괄호 값을 실제 사업자등록증 정보로 교체한 뒤 배포하세요.
+         심사 완료 시점까지 동일한 정보를 유지해야 합니다. -->
+    <div class="bizinfo">
+      <h4>사업자 정보</h4>
+      <dl>
+        <div><dt>상호명</dt><dd>[상호명 입력]</dd></div>
+        <div><dt>대표자명</dt><dd>[대표자명 입력]</dd></div>
+        <div><dt>사업자등록번호</dt><dd>[000-00-00000]</dd></div>
+        <div><dt>통신판매업 신고번호</dt><dd>[제0000-지역0000호]</dd></div>
+        <div class="wide"><dt>사업장 주소</dt><dd>[서울특별시 마포구 … DDMC] </dd></div>
+        <div><dt>대표전화</dt><dd>[00-0000-0000]</dd></div>
+        <div><dt>대표이메일</dt><dd><a href="mailto:varis@varis.kr">varis@varis.kr</a></dd></div>
+      </dl>
+      <p class="bizterm">서비스 제공 기간은 각 과정 상세의 「서비스 제공 기간」 안내를 따릅니다.
+        결제 및 환불 관련 문의는 varis@varis.kr 로 연락해 주세요.</p>
+    </div>
     <div class="fbot">
       <span>© 2026 VARIS. All rights reserved.</span>
       <span>varis@varis.kr · <a href="https://varis.kr">varis.kr</a></span>
@@ -1139,6 +1217,60 @@ footer.site{border-top:1px solid var(--line);padding:44px 0 32px;background:var(
   });
 
   renderQuestion(0);
+})();
+
+/* ── 카카오페이 단독 연동 결제 ─────────────────────────────────────
+   금액과 상품명은 서버(/api/kakaopay-ready)에서 결정합니다. 클라이언트는
+   상품 ID만 보내므로 개발자도구로 금액을 위조할 수 없습니다.            */
+(function(){
+  var buttons=document.querySelectorAll('[data-pay]');
+  if(!buttons.length) return;
+
+  function notify(btn, text, isErr){
+    var box=btn.closest('.cact'), el=box.querySelector('.paymsg');
+    if(!el){ el=document.createElement('p'); el.className='paymsg'; box.appendChild(el); }
+    el.textContent=text;
+    el.className='paymsg'+(isErr?' err':'');
+  }
+
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', async function(){
+      var id=btn.dataset.pay, orig=btn.textContent;
+      btn.disabled=true; btn.textContent='결제창 여는 중…'; notify(btn,'',false);
+      var ft={}; try{ ft=JSON.parse(sessionStorage.getItem('varis_first_touch')||'{}'); }catch(e){}
+      try{
+        var r=await fetch('/api/kakaopay-ready',{
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            productId: id,
+            orderId:  'varis-'+id+'-'+Date.now(),
+            userId:   ft.source ? 'src:'+ft.source : 'guest'
+          })
+        });
+        var d=await r.json().catch(function(){ return {}; });
+        if(r.ok && d.ok && (d.redirectPc || d.redirectMobile)){
+          var mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+          location.href = (mobile && d.redirectMobile) ? d.redirectMobile : d.redirectPc;
+          return; // 페이지를 떠나므로 버튼 상태를 되돌리지 않는다
+        }
+        if(d.reason==='not_configured'){
+          notify(btn,'카드결제는 준비 중입니다 — 아래 상담 신청을 남겨 주시면 결제 링크를 보내드립니다.',true);
+        } else {
+          notify(btn,'결제창을 열지 못했습니다. 잠시 후 다시 시도하거나 varis@varis.kr 로 연락 주세요.',true);
+        }
+      }catch(err){
+        notify(btn,'결제 중 문제가 발생했습니다. varis@varis.kr 로 연락 주세요.',true);
+      }
+      btn.disabled=false; btn.textContent=orig;
+    });
+  });
+
+  /* 결제창에서 취소·실패로 돌아온 경우 안내 */
+  var p=new URLSearchParams(location.search), st=p.get('pay');
+  if(st==='cancel' || st==='fail'){
+    var first=document.querySelector('[data-pay]');
+    if(first) notify(first, st==='cancel' ? '결제가 취소되었습니다.' : '결제에 실패했습니다. 다시 시도해 주세요.', true);
+  }
 })();
 
 /* ── 신청 폼 (Formspree AJAX) ─────────────────────────────────────── */
