@@ -12,6 +12,11 @@
 
 const API = 'https://open-api.kakaopay.com/online/v1/payment/ready';
 
+// 배리즈 원격학원은 부가가치세 **면세사업자**(학원업)이므로 판매 금액 전액이 면세다.
+// 카카오페이 ready 호출 시 tax_free_amount 를 total_amount 와 같게 보내야 하며,
+// 0 으로 보내면 과세 거래로 집계되어 정산·세금계산서 처리가 어긋난다.
+const TAX_FREE = true;
+
 // 판매 상품 정의 — 금액은 서버에서만 결정한다(클라이언트가 보낸 금액을 신뢰하지 않음).
 const PRODUCTS = {
   vod:        { name: 'VARIS · AI 미디어아트 첫 한 편 (4주 VOD)',        amount:  39000 },
@@ -64,7 +69,7 @@ export default async function handler(req, res) {
         item_name:        product.name,
         quantity:         1,
         total_amount:     product.amount,
-        tax_free_amount:  0,
+        tax_free_amount:  TAX_FREE ? product.amount : 0,
         approval_url: `${origin}/api/kakaopay-approve?order=${encodeURIComponent(partnerOrderId)}&user=${encodeURIComponent(partnerUserId)}`,
         cancel_url:   `${origin}/?pay=cancel`,
         fail_url:     `${origin}/?pay=fail`,
