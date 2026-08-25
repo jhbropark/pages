@@ -6,8 +6,20 @@
   대상   : Vercel 프로젝트 varis-academy 의 index.html
   기준   : varis.kr 2026-08-23 배포본
 
-  이 저장소에는 varis.kr 의 소스가 없습니다(varis-academy 는 git 미연동).
-  따라서 이 파일은 "그대로 적용 가능한 교체본"이며, 배포는 수동입니다.
+  ⚠ 이 파일은 참고용입니다. 실제 수정은 원본 소스에 이미 적용돼 있습니다.
+
+    원본 : jhbropark/academy-varis  (varis 전 사이트 모노레포)
+    경로 : varis-academy/index.html
+    PR   : https://github.com/jhbropark/academy-varis/pull/4
+
+  처음에는 varis.kr 소스가 어디에도 없는 줄 알고 이 교체본을 만들었으나,
+  academy-varis 레포에 처음부터 있었습니다. 없었던 것은 소스가 아니라
+  Vercel 프로젝트(varis-academy)와 레포의 연결뿐입니다.
+
+  그래도 이 파일을 남겨두는 이유는 두 가지입니다.
+    · 아래 "고친 것 / 남겨둔 것" 에 판단 근거와 되돌리는 방법이 정리돼 있음
+    · 같은 디렉터리의 verify-finder.js 로 가중치를 다시 검증할 수 있음
+  코드를 고칠 때는 이 파일이 아니라 위 원본을 고치세요. 둘이 어긋나면 원본이 맞습니다.
 
   ── 적용 방법 ───────────────────────────────────────────────────────────────
   index.html 에서 아래 3개 블록을 이 파일의 같은 이름 블록으로 통째로 교체합니다.
@@ -53,6 +65,13 @@
 
   E. 가격·표기를 라이브 카탈로그와 1:1 로 맞춤
      elite 월 33만(기존 문서의 35만은 낡은 값), pro 월 246,700원 × 6 (총 148만).
+
+  F. withUtm() 이 프래그먼트 뒤에 쿼리를 붙이던 버그 수정
+     기존: https://houdini.varis.kr/#options?utm_source=...
+     ?utm_ 이 해시의 일부로 먹혀 #options 앵커와 UTM 추적이 동시에 깨져 있었다.
+     elite·prem 두 과정에 해당 — 진단기에서 가장 비싼 경로다.
+     쿼리를 해시 앞에 붙이도록 고쳤다.
+     (81가지 전수 검사로는 안 잡혔고, headless 브라우저로 실제 클릭해서 발견했다.)
 
   ── 남겨둔 것 (별도 판단 필요) ──────────────────────────────────────────────
   · 워크숍 가격 표기가 자체 모순입니다: "8주 오프라인"인데 "월 8만 × 6 (48만)".
@@ -240,9 +259,13 @@
   }
 
   function withUtm(url, contentId){
+    // 프래그먼트(#options)가 있으면 쿼리를 그 '앞'에 붙여야 한다.
+    // 뒤에 붙이면 ?utm_...이 해시의 일부가 되어 앵커와 추적이 둘 다 깨진다.
+    var hash = '', i = url.indexOf('#');
+    if(i > -1){ hash = url.slice(i); url = url.slice(0, i); }
     return url + (url.indexOf('?') > -1 ? '&' : '?')
       + 'utm_source=varis_hub&utm_medium=diagnostic&utm_campaign=course_finder'
-      + '&utm_content=' + encodeURIComponent(contentId);
+      + '&utm_content=' + encodeURIComponent(contentId) + hash;
   }
 
   function renderResult(){
