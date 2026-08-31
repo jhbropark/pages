@@ -25,7 +25,7 @@ Usage:
   python apod_namecode.py --subject "lunar occultation of Venus" --name OCCULTATION
                                                # skip NASA, drive Krea directly
 """
-import argparse, hashlib, io, os, re, sys, time, json
+import argparse, datetime, hashlib, io, os, re, sys, time, json
 import requests
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 import krea
@@ -95,18 +95,49 @@ PHENOMENA = [
 ]
 
 
-def derive_name(title, explanation=""):
-    """Turn an APOD into a namecode work name. Prefer a known phenomenon term
-    (e.g. 'OCCULTATION'); otherwise fall back to the salient title words
-    ('Daytime Moon Meets Evening Star' -> 'MOON.STAR')."""
-    blob = f"{title} {explanation}".lower()
+def _first_phenomenon(text):
     for stem, name in PHENOMENA:
-        if re.search(rf"\b{stem}", blob):
+        if re.search(rf"\b{stem}", text):
             return name
-    words = [w for w in re.findall(r"[A-Za-z]+", title) if w.lower() not in STOPWORDS]
-    words = sorted(set(words), key=lambda w: (-len(w), title.lower().index(w.lower())))[:2]
-    words = sorted(words, key=lambda w: title.lower().index(w.lower()))
-    return ".".join(w.upper() for w in words) or "APOD"
+    return None
+
+
+def derive_name(title, explanation=""):
+    """Turn an APOD into a namecode work name that describes the actual subject.
+
+    Order of preference:
+      1. A phenomenon that is clearly the SUBJECT of the explanation — but only
+         when the title names no phenomenon of its own. This rescues poetic
+         titles ('Young Moon and Bright Planet' -> OCCULTATION).
+      2. The two most salient title words — specific beats generic
+         ('M27: The Dumbbell Nebula' -> DUMBBELL.NEBULA, not NEBULA;
+          'Dueling Bands over the Atacama Desert' -> DUELING.ATACAMA).
+      3. For a thin title, a phenomenon word / the lone salient word / 'APOD'.
+
+    The old logic scanned the *whole* explanation for any phenomenon keyword, so
+    a passing mention hijacked the name — an Iapetus image came out METEOR, a
+    Milky Way image came out COMET. Trusting the explanation only when the
+    phenomenon is the subject (named in the first sentence, or repeated) keeps
+    the good pulls without the false positives."""
+    title_l = title.lower()
+    salient = [w for w in re.findall(r"[A-Za-z]+", title)
+               if len(w) > 1 and w.lower() not in STOPWORDS]
+    title_phenom = _first_phenomenon(title_l)
+
+    if title_phenom is None and explanation:
+        expl_l = explanation.lower()
+        first_sentence = re.split(r"(?<=[.!?])\s", expl_l, 1)[0]
+        for stem, name in PHENOMENA:
+            pat = rf"\b{stem}"
+            if re.search(pat, first_sentence) or len(re.findall(pat, expl_l)) >= 2:
+                return name
+
+    if len(salient) >= 2:
+        top = sorted(set(salient), key=lambda w: (-len(w), title_l.index(w.lower())))[:2]
+        top = sorted(top, key=lambda w: title_l.index(w.lower()))
+        return ".".join(w.upper() for w in top)
+
+    return title_phenom or (salient[0].upper() if salient else "APOD")
 
 
 def sim_value(seed):
@@ -122,7 +153,7 @@ ASTRO_PATTERNS = [
     (r"(\d+(?:\.\d+)?)\s*(million|billion)?\s*light[- ]?years?", "{0} ly"),
     (r"(\d+(?:\.\d+)?)\s*arc\s*minutes?", "{0}'"),
     (r"(\d+(?:\.\d+)?)\s*degrees?", "{0} deg"),
-    (r"(\d+(?:\.\d+)?)\s*(?:million\s*)?km\b", "{0} km"),
+    (r"(\d+(?:\.\d+)?)\s*(million|billion)?\s*km\b", "{0} km"),
     (r"(\d+(?:\.\d+)?)\s*AU\b", "{0} AU"),
     (r"(\d+(?:\.\d+)?)\s*[- ]?hours?\b", "{0} hr"),
     (r"hour[\s-]?long", "1 hr"),
@@ -130,11 +161,19 @@ ASTRO_PATTERNS = [
 
 
 def astro_value(text):
-    """Return a real measured quantity from the APOD explanation, or None."""
+    """Return a real measured quantity from the APOD explanation, or None.
+    Scale words are kept ('190 million light-years' -> '190M ly'), never
+    silently dropped — the label value must stay a true measurement."""
     for pat, fmt in ASTRO_PATTERNS:
         m = re.search(pat, text or "", re.I)
         if m:
-            return fmt.format(m.group(1)) if "{0}" in fmt else fmt
+            if "{0}" not in fmt:
+                return fmt
+            val = m.group(1)
+            scale = m.group(2) if m.re.groups >= 2 else None
+            if scale:
+                val += {"million": "M", "billion": "B"}[scale.lower()]
+            return fmt.format(val)
     return None
 
 
@@ -147,14 +186,55 @@ def topical_tag(name):
     return "#" + re.sub(r"[^a-z0-9]", "", word)
 
 
-def build_caption(brief):
-    """Front-load the hook in the first ~125 chars (visible before '…more');
-    nudge sends + saves (the top 2026 signals)."""
+# Hook rotation (CONTENT_PLAYBOOK.md): never run the same hook two days in a
+# row. Index = day ordinal % len, so the cycle is deterministic per date and
+# reproducible across re-runs. {value} hooks are skipped when the value is the
+# sim_value() fallback (a hash is not a fact worth leading with).
+HOOKS = [
+    "{name} — today's sky, rendered in code.",                       # ritual
+    "{name} — {value}. Today's sky, measured and rendered in code.",  # data
+    "{name} — you looked up and missed this. Here it is, in code.",  # curiosity
+    "{name} — one more sky for the archive.",                        # series
+]
+
+
+def decode_line(explanation, limit=200):
+    """First sentence of the APOD explanation — answers 'What is this?',
+    the top art-comment type, without leaving the caption."""
+    text = (explanation or "").strip().replace("\n", " ")
+    if not text:
+        return ""
+    sentence = re.split(r"(?<=[.!?])\s", text, 1)[0]
+    if len(sentence) > limit:
+        sentence = sentence[:limit].rsplit(" ", 1)[0].rstrip(",;") + "…"
+    return sentence
+
+
+def pick_hook(brief):
+    try:
+        idx = datetime.date.fromisoformat(brief["date"]).toordinal() % len(HOOKS)
+    except (KeyError, ValueError):
+        idx = 0
+    value = brief.get("value", "")
+    if "{value}" in HOOKS[idx] and not brief.get("value_is_real"):
+        idx = 0  # fall back to the ritual hook rather than lead with a hash
+    return HOOKS[idx].format(name=brief["work_name"], value=value)
+
+
+def build_caption(brief, explanation=""):
+    """namecode caption system (CONTENT_PLAYBOOK.md): rotated hook front-loaded
+    in the first ~125 chars, the phenomenon decoded in one line, real data in
+    the source line, and a send/save CTA (the top 2026 signals)."""
     tags = " ".join(HASHTAGS_BASE + [topical_tag(brief["work_name"])])
+    decoded = decode_line(explanation)
+    body = f"{brief['apod_title']}." + (f" {decoded}" if decoded else "")
+    source = f"Source: NASA APOD · {brief['date']}"
+    if brief.get("value_is_real"):
+        source += f" · {brief['value']}"
     return (
-        f"{brief['work_name']} — today's sky, rendered in code.\n"
-        f"{brief['apod_title']}.\n\n"
-        f"Source: NASA APOD · {brief['date']}.\n"
+        f"{pick_hook(brief)}\n"
+        f"{body}\n\n"
+        f"{source}.\n"
         f"Save this sky ✦ send it to someone who looks up.\n\n"
         f"{tags}"
     )
@@ -245,9 +325,11 @@ def main():
         src_url = apod.get("hdurl") or apod.get("url")
 
     name = a.name or derive_name(title, explanation)
-    value = astro_value(explanation) or astro_value(title) or sim_value(f"{date}:{name}")
+    real_value = astro_value(explanation) or astro_value(title)
+    value = real_value or sim_value(f"{date}:{name}")
     prompt = build_prompt(subject, explanation)
     brief = {"date": date, "apod_title": title, "work_name": name,
+             "value": value, "value_is_real": bool(real_value),
              "label": f"namecode - {name} | {value}", "source": src_url, "prompt": prompt}
     print(json.dumps(brief, ensure_ascii=False, indent=2))
     if a.brief_out:
@@ -255,7 +337,7 @@ def main():
             json.dump(brief, fh, ensure_ascii=False, indent=2)
     if a.caption_out:
         with open(a.caption_out, "w", encoding="utf-8") as fh:
-            fh.write(build_caption(brief))
+            fh.write(build_caption(brief, explanation))
 
     if a.dry_run:
         return
