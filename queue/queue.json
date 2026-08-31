@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260714_morning",
+      "status": "pending",
+      "topic": "복잡한 바이오 플랫폼 기술을 한 문장과 한 장면으로 정리하는 법",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260714_morning_ko.jpg",
+      "caption": "바이오 플랫폼은 기술이 많아 실패하는 게 아니라, 한 문장으로 정리되지 않아 잊힙니다. 핵심 MOA 하나, 결정적 장면 하나. 나머지는 근거로 뒤에 두세요.\n\n댓글: 당신의 기술, 한 문장 준비됨? Yes/No\nDM “한문장”: 플랫폼 메시지 정리 체크리스트 발송\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#바이오커뮤니케이션",
+        "#MOA애니메이션",
+        "#과학시각화",
+        "#B2B마케팅",
+        "#플랫폼기술",
+        "#메디컬콘텐츠"
+      ],
+      "scheduled_time": "2026-07-14T12:30:00+09:00",
+      "created_at": "2026-07-14T06:43:08.113016+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260714_afternoon",
+      "status": "pending",
+      "topic": "Science to Message, Beauty to Experience: bbbb.beauty가 하는 일",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260714_afternoon_ko.jpg",
+      "caption": "MOA 애니메이션은 예쁜 그림이 아니라 과학적 주장을 시각으로 번역하는 작업입니다. 정확성과 몰입, 둘 중 하나만 놓쳐도 신뢰는 무너집니다.\n\n댓글: 3D vs 2D, 어느 쪽 관심?\nDM “MOA”: MOA 제작 체크리스트 5단계 PDF 발송\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학시각화",
+        "#메디컬커뮤니케이션",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#3D애니메이션"
+      ],
+      "scheduled_time": "2026-07-14T19:00:00+09:00",
+      "created_at": "2026-07-14T06:43:08.113016+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
