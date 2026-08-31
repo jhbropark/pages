@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260723_morning",
+      "status": "pending",
+      "topic": "의학적 검수 과정이 크리에이티브 품질을 높이는 이유",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260723_morning_ko.jpg",
+      "caption": "의학적 검수는 창의성의 제약이 아니라 신뢰의 설계입니다. 정확한 근거 위에서 시각적 은유가 살아나고, 메시지는 규제와 과학 앞에서 흔들리지 않습니다. 검수는 품질의 최종 단계가 아니라 출발점입니다.\n\n댓글: 검수 시점은? 초기 vs 마무리\nDM “검수”: 의학 검수 체크리스트 PDF 드립니다\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#메디컬크리에이티브",
+        "#MOA애니메이션",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#의학적정확성"
+      ],
+      "scheduled_time": "2026-07-23T12:30:00+09:00",
+      "created_at": "2026-07-23T06:55:23.739946+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260723_afternoon",
+      "status": "pending",
+      "topic": "3D·2D·실사의 역할을 구분하면 메시지가 선명해집니다",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260723_afternoon_ko.jpg",
+      "caption": "3D는 보이지 않는 작용기전을, 2D는 개념과 흐름을, 실사는 신뢰와 감정을 전합니다. 세 표현의 역할을 나누면 같은 데이터도 훨씬 선명한 메시지가 됩니다.\n\n댓글: 3D vs 2D, 뭐가 더 궁금해요?\nDM “역할맵”: 표현 매체 선택 체크리스트 드립니다\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#메디컬비주얼",
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#3D애니메이션",
+        "#bbbbbeauty"
+      ],
+      "scheduled_time": "2026-07-23T19:00:00+09:00",
+      "created_at": "2026-07-23T06:55:23.739946+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
