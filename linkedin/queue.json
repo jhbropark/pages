@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260701_morning",
+      "status": "pending",
+      "topic": "좋은 과학 콘텐츠는 기술 설명이 아니라 이해 설계에서 시작됩니다",
+      "slot": "morning",
+      "scheduled_time": "2026-07-02T09:00:00+09:00",
+      "created_at": "2026-07-01T07:07:45.792792+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "설계",
+      "id": "linkedin_20260701_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "많은 과학 콘텐츠가 실패하는 이유는 정보가 부족해서가 아닙니다. 오히려 정보가 너무 많고, 그 정보들이 어떤 순서로 이해되어야 하는지에 대한 설계가 없기 때문입니다. 기술이 정확하다고 메시지가 전달되는 것은 아닙니다.\n\n첫째, 출발점은 메커니즘이 아니라 질문입니다. R&D 자료를 그대로 영상으로 옮기면 작용기전부터 시작하기 쉽습니다. 그러나 고객의 머릿속에는 '그래서 이게 나에게 왜 중요한가'라는 질문이 먼저 있습니다. 이해 설계는 이 질문의 순서를 다시 배열하는 작업입니다. 무엇을 먼저 보여주고, 무엇을 나중에 보여줄지가 정확성만큼 중요합니다.\n\n둘째, 시각화는 장식이 아니라 인지 부담을 줄이는 도구입니다. 분자 구조를 화려하게 렌더링한다고 이해가 깊어지지 않습니다. 오히려 한 장면에 담긴 정보량을 통제하고, 핵심 단계만 단계적으로 노출할 때 기억에 남습니다. 3D MOA 애니메이션의 가치는 비주얼의 화려함이 아니라, 보이지 않는 과정을 직관적인 인과로 보여주는 데 있습니다.\n\n셋째, 정확성과 명료함은 트레이드오프가 아닙니다. 전문성을 낮추지 않으면서도 쉽게 만들 수 있습니다. 핵심은 메디컬 검수와 커뮤니케이션 설계를 같은 테이블에서 진행하는 것입니다. 과학팀이 정확성을 지키고, 에디터가 이해의 흐름을 설계할 때 둘은 충돌하지 않고 보완됩니다.\n\n좋은 과학 콘텐츠는 '무엇을 설명할까'가 아니라 '고객이 어떤 순서로 이해하게 할까'에서 시작됩니다. 기술 설명이 아니라 이해 설계입니다.\n\n여러분의 콘텐츠는 정확성과 이해도 중 무엇을 우선합니까? 이해 설계 체크리스트가 필요하시면 '설계'를 DM으로 보내주세요. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#더마코스메틱",
+        "#B2B마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260701_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 이해 설계가 먼저다"
+    },
+    {
+      "pair_id": "linkedin_20260701_morning",
+      "status": "pending",
+      "topic": "좋은 과학 콘텐츠는 기술 설명이 아니라 이해 설계에서 시작됩니다",
+      "slot": "morning",
+      "scheduled_time": "2026-07-02T09:00:00+09:00",
+      "created_at": "2026-07-01T07:07:45.792792+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "설계",
+      "id": "linkedin_20260701_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "Most science content does not fail because it lacks information. It fails because it has too much, with no design for the order in which that information should be understood. Accuracy alone does not guarantee that a message lands.\n\nFirst, the starting point is a question, not a mechanism. When R&D material is translated directly into video, it tends to open with mode of action. But the audience's mind begins with a different question: why does this matter to me? Designing for understanding means rearranging that sequence. What you show first and what you hold back matters as much as scientific precision.\n\nSecond, visualization is not decoration. It is a tool to reduce cognitive load. Rendering a molecular structure beautifully does not deepen comprehension. What stays in memory is controlled information per scene and the gradual reveal of only the essential steps. The value of 3D MOA animation lies not in visual spectacle but in turning invisible processes into intuitive cause and effect.\n\nThird, accuracy and clarity are not a trade-off. You can simplify without diluting expertise. The key is to run medical review and communication design at the same table. When the science team protects accuracy and the editor designs the flow of understanding, the two reinforce rather than compete.\n\nGood science content does not start with what to explain. It starts with the order in which the audience will understand it. That is not technical description. That is understanding design.\n\nFor your own content, which do you prioritize: accuracy or comprehension? If you want our understanding design checklist, send me the keyword 설계 by DM. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#SciComm",
+        "#MedicalAnimation",
+        "#B2BMarketing",
+        "#Dermocosmetics"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260701_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Design for Understanding First"
+    },
+    {
+      "pair_id": "linkedin_20260701_afternoon",
+      "status": "pending",
+      "topic": "MOA 애니메이션이 복잡한 작용기전을 브랜드 자산으로 바꾸는 방법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-01T15:00:00+09:00",
+      "created_at": "2026-07-01T07:07:45.792792+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260701_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "작용기전(MOA)은 많은 더마·바이오·제약 브랜드가 가진 가장 강력한 차별화 근거입니다. 그러나 현장에서는 텍스트로 빼곡한 슬라이드 한 장, 혹은 출처가 분명치 않은 도식 하나로 설명되는 경우가 많습니다. 기술은 뛰어난데 전달이 약해 신뢰로 이어지지 못하는 것입니다. MOA 애니메이션은 이 간극을 메우는 도구이며, 단순한 영상 제작이 아니라 과학을 자산으로 전환하는 작업입니다.\n\n첫째, 과학적 정확성이 출발점입니다. 분자 구조, 수용체 결합, 신호 전달 경로는 임의로 단순화하면 오히려 신뢰를 잃습니다. 저희는 제작 전 R&D·메디컬 팀과 핵심 메시지와 근거 데이터를 정렬하고, 어디까지 표현하고 어디서 멈출지 합의합니다. 정확성과 이해도 사이의 균형점을 찾는 과정이 품질을 결정합니다.\n\n둘째, 비주얼은 메시지의 위계를 따라야 합니다. 모든 분자를 다 보여주려는 영상은 결국 아무것도 전달하지 못합니다. 무엇을 강조하고 무엇을 배경으로 둘지, 카메라 워크와 색·빛으로 시선을 어떻게 유도할지가 핵심입니다. 이 위계 설계가 곧 브랜드의 메시지 전략입니다.\n\n셋째, 한 번 제작한 MOA 자산은 다채널로 확장됩니다. 학회 부스, 영업 자료, 의료진 교육, 웹사이트, 투자 설명까지 동일한 시각 언어로 재사용되며, 일관된 인상이 누적될수록 기술력은 브랜드 신뢰로 축적됩니다.\n\n복잡한 기전을 가진 기술일수록 시각화의 투자 대비 효과는 큽니다. 여러분의 조직에서 MOA는 슬라이드에 머물러 있나요, 아니면 자산으로 활용되고 있나요? 댓글로 3D와 2D 중 어느 접근이 궁금한지 알려주세요. MOA 라고 DM 주시면 MOA 제작 체크리스트를 보내드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학시각화",
+        "#메디컬마케팅",
+        "#더마코스메틱"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260701_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 기전을 자산으로 바꾸는 MOA"
+    },
+    {
+      "pair_id": "linkedin_20260701_afternoon",
+      "status": "pending",
+      "topic": "MOA 애니메이션이 복잡한 작용기전을 브랜드 자산으로 바꾸는 방법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-01T15:00:00+09:00",
+      "created_at": "2026-07-01T07:07:45.792792+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260701_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "For many derma, bio, and pharma brands, the mechanism of action (MOA) is the single most powerful proof point of differentiation. Yet in practice it is too often reduced to a text-dense slide or a vague schematic with no clear source. The technology is strong, but the communication is weak, and weak communication rarely converts into trust. MOA animation closes that gap. It is not video production for its own sake; it is the work of turning science into a brand asset.\n\nFirst, scientific accuracy is the starting point, not an afterthought. Molecular structures, receptor binding, and signaling pathways lose credibility the moment they are simplified arbitrarily. Before production, we align with R&D and medical teams on the core message and the underlying data, and we agree on how far to visualize and where to stop. Finding the balance between precision and comprehension is what determines quality.\n\nSecond, visuals must follow a hierarchy of meaning. An animation that tries to show every molecule ends up communicating nothing. The real craft lies in deciding what to emphasize and what to keep in the background, and in using camera movement, color, and light to guide attention. That hierarchy is, in effect, your message strategy made visible.\n\nThird, a well-built MOA asset scales across channels. Conference booths, sales materials, HCP education, websites, and investor decks can all reuse the same visual language. The more consistent the impression, the more your technical credibility compounds into brand trust over time.\n\nThe more complex the mechanism, the higher the return on visualizing it well. So ask yourself: in your organization, does the MOA still live trapped on a slide, or is it working as an asset? Tell me in the comments whether you are more curious about a 3D or 2D approach. Send me MOA by DM and I will share our MOA production checklist. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOAanimation",
+        "#ScienceCommunication",
+        "#MedicalMarketing",
+        "#Dermocosmetics"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260701_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Turn MOA Into Brand Equity"
     }
   ]
 }

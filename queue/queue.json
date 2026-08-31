@@ -715,6 +715,47 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260701_morning",
+      "status": "pending",
+      "topic": "좋은 과학 콘텐츠는 기술 설명이 아니라 이해 설계에서 시작됩니다",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260701_morning_ko.jpg",
+      "caption": "기술이 정확하다고 메시지가 전달되는 건 아닙니다. 좋은 과학 콘텐츠는 데이터 나열이 아니라, 고객이 무엇을 먼저 이해해야 하는지를 설계하는 데서 시작됩니다.\n\n댓글: 우선순위는? A 정확성 B 이해도\nDM “설계”: 이해 설계 체크리스트 PDF 드립니다\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#메디컬콘텐츠",
+        "#brandstrategy"
+      ],
+      "scheduled_time": "2026-07-01T12:30:00+09:00",
+      "created_at": "2026-07-01T07:07:45.792792+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260701_afternoon",
+      "status": "pending",
+      "topic": "MOA 애니메이션이 복잡한 작용기전을 브랜드 자산으로 바꾸는 방법",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260701_afternoon_ko.jpg",
+      "caption": "작용기전은 R&D의 핵심 자산이지만, 슬라이드 한 장으로는 전달되지 않습니다. MOA 애니메이션은 분자 단위 근거를 누구나 이해하는 시각 언어로 번역해 브랜드 신뢰로 연결합니다.\n\n댓글: 3D vs 2D, 어느 쪽이 궁금한가요?\nDM “MOA”: MOA 제작 체크리스트 PDF 보내드려요\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학시각화",
+        "#메디컬콘텐츠",
+        "#더마코스메틱",
+        "#3D애니메이션",
+        "#B2B마케팅",
+        "#사이언스커뮤니케이션"
+      ],
+      "scheduled_time": "2026-07-01T19:00:00+09:00",
+      "created_at": "2026-07-01T07:07:45.792792+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
