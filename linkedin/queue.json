@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260807_morning",
+      "status": "pending",
+      "topic": "하나의 과학 콘텐츠를 세일즈·교육·SNS로 확장하는 방법",
+      "slot": "morning",
+      "scheduled_time": "2026-08-08T09:00:00+09:00",
+      "created_at": "2026-08-07T09:59:42.154656+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "확장맵",
+      "id": "linkedin_20260807_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "과학 콘텐츠 하나를 만들 때, 우리는 흔히 '완성본 하나'를 목표로 삼습니다. 그러나 실무에서 진짜 병목은 제작이 아니라 확장입니다. 임상팀을 위해 만든 MOA 애니메이션이 세일즈 현장에서 다시 편집되고, 학회 부스에서 또 만들어지고, SNS용으로 세 번째 외주를 타는 광경은 낯설지 않습니다. 같은 과학을 세 번 사서 세 번 어긋나게 말하는 셈입니다.\n\n첫째, 확장은 처음 스토리보드 단계에서 결정됩니다. 하나의 작용기전 시퀀스를 설계할 때 우리는 세 개의 출력을 미리 정의합니다. 세일즈덱용 90초 풀버전, 교육 모듈용 챕터 분할본, SNS용 15초 훅 클립입니다. 동일한 3D 애셋과 검증된 메커니즘을 공유하므로 메시지가 채널마다 흔들리지 않습니다. 마스터 애셋 한 벌이 재사용 단위가 되는 구조입니다.\n\n둘째, 채널마다 요구하는 근거의 밀도가 다릅니다. 메디컬 교육 콘텐츠는 기전과 레퍼런스의 정합성이 핵심이고, 세일즈 자료는 차별점과 의사결정 포인트가 앞서야 하며, SNS는 3초 안에 왜 봐야 하는지를 답해야 합니다. 같은 데이터에서 밀도만 다르게 재편성하는 것이지, 사실을 각색하는 것이 아닙니다. 이 경계를 지키는 것이 규제 리스크와 신뢰를 동시에 관리하는 방법입니다.\n\n셋째, 확장 설계는 예산이 아니라 신뢰의 문제입니다. 한 브랜드가 채널마다 다른 그림으로 같은 기전을 설명하면, 고객과 내부 심의 모두 혼란을 겪습니다. 시각 언어를 통일하면 반복 노출이 학습 효과로 쌓입니다.\n\n결국 좋은 과학 콘텐츠는 '한 번 잘 만든 영상'이 아니라 '여러 접점에서 일관되게 확장되는 시스템'입니다. 지금 만들고 있는 콘텐츠가 세 채널로 확장될 준비가 되어 있는지 점검해 보시길 권합니다. 확장맵 이라고 댓글이나 DM을 남겨 주시면 콘텐츠 확장 설계 체크리스트를 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 가능합니다.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#B2B마케팅",
+        "#MOA애니메이션",
+        "#콘텐츠전략"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260807_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 하나의 과학, 세 갈래 확장"
+    },
+    {
+      "pair_id": "linkedin_20260807_morning",
+      "status": "pending",
+      "topic": "하나의 과학 콘텐츠를 세일즈·교육·SNS로 확장하는 방법",
+      "slot": "morning",
+      "scheduled_time": "2026-08-08T09:00:00+09:00",
+      "created_at": "2026-08-07T09:59:42.154656+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "확장맵",
+      "id": "linkedin_20260807_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "When teams commission a science content piece, the goal is usually a single finished asset. In practice, the real bottleneck is not production but expansion. A MOA animation built for the medical team gets re-edited for sales, remade for a congress booth, and outsourced a third time for social. The same science is bought three times and told three inconsistent ways.\n\nFirst, expansion is decided at the storyboard stage, not after delivery. When we design a mechanism-of-action sequence, we predefine three outputs from the start: a 90-second full version for the sales deck, a chapter-segmented cut for training modules, and a 15-second hook clip for social. Because they share the same validated 3D assets and mechanism, the message does not drift across channels. One master asset becomes the reusable unit.\n\nSecond, each channel demands a different density of evidence, not a different story. Medical education content lives on the integrity of mechanism and references. Sales material must lead with differentiation and decision points. Social has three seconds to answer why this matters. We recompose the same data at different densities without dramatizing the facts. Holding that line is how you manage regulatory risk and trust at the same time.\n\nThird, expansion design is a trust problem before it is a budget problem. When a brand explains the same mechanism with different visuals across channels, both customers and internal review committees get confused. Unify the visual language and repeated exposure compounds into learning rather than noise.\n\nGood science content is not one well-made video. It is a system that expands consistently across every touchpoint. So the question for your team is simple: is the content you are producing right now ready to become three channels, or will it be rebuilt three times?\n\nComment or DM the keyword 확장맵 and I will send our content expansion design checklist. You can also reach us at https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#ScienceCommunication",
+        "#B2BMarketing",
+        "#MedicalContent",
+        "#ContentStrategy"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260807_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: One Science, Three Channels"
+    },
+    {
+      "pair_id": "linkedin_20260807_afternoon",
+      "status": "pending",
+      "topic": "고객은 성분명이 아니라 작동하는 이유를 기억합니다",
+      "slot": "afternoon",
+      "scheduled_time": "2026-08-07T15:00:00+09:00",
+      "created_at": "2026-08-07T09:59:42.154656+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260807_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "\"우리 제품엔 특허 성분이 들어 있습니다.\" 많은 브랜드가 이 문장에서 멈춥니다. 하지만 고객의 기억에 남는 것은 성분의 이름이 아니라, 그 성분이 왜 작동하는가에 대한 이해입니다.\n\n성분명은 정보이고, 작동 원리는 서사입니다. 사람의 뇌는 낯선 명사보다 인과관계를 훨씬 오래 기억합니다. R&D가 수년간 축적한 기술이 마케팅 단계에서 성분명 나열로 축소되는 순간, 차별성은 사라지고 경쟁사와 같은 언어를 쓰게 됩니다.\n\n3D/MOA 애니메이션 제작에서 우리가 반복적으로 확인하는 세 가지 판단 기준을 공유합니다.\n\n첫째, 스케일을 정의하십시오. 세포 표면 수용체 결합인지, 진피층 콜라겐 재구성인지, 각질층 장벽 회복인지에 따라 시각 언어가 완전히 달라집니다. 스케일이 흐려지면 화면은 예뻐도 메시지는 남지 않습니다. 기획 초기에 R&D와 스케일 합의를 먼저 하는 이유입니다.\n\n둘째, 검증된 것과 가설을 구분하십시오. 확인된 기전만 명확한 비주얼로, 아직 가설 단계인 경로는 시각적 강도를 낮춰 표현합니다. 이 구분은 규제 리스크를 줄이면서도 과학적 신뢰를 지키는 핵심입니다. 애니메이션은 데이터가 말하는 범위 안에서만 움직여야 합니다.\n\n셋째, 하나의 핵심 기전에 집중하십시오. 모든 경로를 담으려다 아무것도 남지 않는 경우가 가장 많습니다. 담당자가 회의에서 한 문장으로 설명할 수 있는 기전 하나를 정하고, 그것을 시각적 클라이맥스로 설계합니다.\n\n결국 MOA 시각화는 '멋진 영상'을 만드는 작업이 아니라, R&D의 언어를 의사결정자의 신뢰로 번역하는 작업입니다. 성분명은 잊혀도 작동하는 이유는 남습니다.\n\n여러분의 브랜드는 성분명으로 설명되고 있나요, 작동 원리로 기억되고 있나요? MOA 영상 기획 체크리스트가 필요하시면 'MOA'를 남겨 주세요. 문의: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#메디컬마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260807_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 성분명보다 작동 원리"
+    },
+    {
+      "pair_id": "linkedin_20260807_afternoon",
+      "status": "pending",
+      "topic": "고객은 성분명이 아니라 작동하는 이유를 기억합니다",
+      "slot": "afternoon",
+      "scheduled_time": "2026-08-07T15:00:00+09:00",
+      "created_at": "2026-08-07T09:59:42.154656+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260807_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "\"Our product contains a patented ingredient.\" Many brands stop right there. But what stays in a customer's memory is not the name of the ingredient. It is the understanding of why that ingredient works.\n\nAn ingredient name is information. A mechanism of action is a narrative. The human brain remembers causal relationships far longer than unfamiliar nouns. The moment years of R&D get reduced to a list of ingredient names in the marketing phase, differentiation disappears and you end up speaking the same language as your competitors.\n\nHere are three judgment criteria we return to again and again when producing 3D/MOA animation.\n\nFirst, define the scale. Whether you are showing receptor binding at the cell surface, collagen remodeling in the dermis, or barrier recovery in the stratum corneum, the visual language changes completely. When the scale is vague, the frame may look beautiful but the message does not land. That is why we align on scale with R&D before anything else.\n\nSecond, separate what is proven from what is hypothesis. Confirmed mechanisms get clear, confident visuals; pathways still at the hypothesis stage are rendered with lower visual intensity. This distinction reduces regulatory risk while protecting scientific credibility. An animation should only move within the range that the data actually supports.\n\nThird, focus on a single core mechanism. The most common failure is trying to include every pathway and leaving the audience with nothing. Choose the one mechanism a stakeholder can explain in a single sentence, and design it as the visual climax.\n\nUltimately, MOA visualization is not about making an impressive video. It is about translating the language of R&D into the trust of decision makers. Ingredient names fade, but the reason something works endures.\n\nIs your brand being explained by ingredient names, or remembered for how it works? If you would like our MOA video planning checklist, leave the keyword MOA. Contact: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOAanimation",
+        "#ScienceCommunication",
+        "#Dermocosmetics",
+        "#MedicalMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260807_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Mechanism Over Ingredient Name"
     }
   ]
 }
