@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260702_morning",
+      "status": "pending",
+      "topic": "더마코스메틱의 성분 설명을 고객 언어로 번역하는 세 단계",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260702_morning_ko.jpg",
+      "caption": "성분명은 과학이지만, 신뢰는 언어에서 만들어집니다. 메커니즘을 고객의 문제로 바꾸는 번역 세 단계: 근거 정리, 의미 전환, 시각화. 정확성을 잃지 않고 이해를 얻는 방법입니다.\n\n댓글: 당신의 벽은 A근거 B전달?\nDM “번역3”: 성분 메시지 번역 체크리스트 3단계 PDF\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#더마코스메틱",
+        "#과학커뮤니케이션",
+        "#브랜드마케팅",
+        "#성분마케팅",
+        "#MOA애니메이션",
+        "#B2B마케팅"
+      ],
+      "scheduled_time": "2026-07-02T12:30:00+09:00",
+      "created_at": "2026-07-02T07:12:05.113617+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260702_afternoon",
+      "status": "pending",
+      "topic": "임상 데이터와 프리미엄 비주얼을 함께 설계해야 하는 이유",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260702_afternoon_ko.jpg",
+      "caption": "임상 데이터는 신뢰를 만들고, 비주얼은 이해를 만듭니다. 둘을 따로 설계하면 정확한 근거가 전달되지 않고, 아름다운 영상은 기억에 남지 않습니다. MOA는 데이터와 비주얼을 처음부터 함께 설계할 때 완성됩니다.\n\n댓글: 당신의 우선순위는? 정확성 vs 임팩트\nDM “MOA”: MOA 영상 기획 체크리스트 PDF 드립니다\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#메디컬비주얼",
+        "#더마코스메틱",
+        "#3D애니메이션",
+        "#B2B마케팅"
+      ],
+      "scheduled_time": "2026-07-02T19:00:00+09:00",
+      "created_at": "2026-07-02T07:12:05.113617+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
