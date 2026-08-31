@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260710_morning",
+      "status": "pending",
+      "topic": "하나의 과학 콘텐츠를 세일즈·교육·SNS로 확장하는 방법",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260710_morning_ko.jpg",
+      "caption": "하나의 MOA 애니메이션은 세일즈덱, 교육 모듈, SNS 클립으로 나뉠 수 있습니다. 핵심은 처음부터 마스터 에셋을 모듈 단위로 설계하는 것. 목적별로 다시 만들 필요가 없어집니다.\n\n댓글: 확장 우선순위? 세일즈 vs 교육\nDM “확장맵”: 콘텐츠 확장 설계 체크리스트 제공\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#콘텐츠전략",
+        "#MOA애니메이션",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#메디컬콘텐츠"
+      ],
+      "scheduled_time": "2026-07-10T12:30:00+09:00",
+      "created_at": "2026-07-10T07:12:39.560933+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260710_afternoon",
+      "status": "pending",
+      "topic": "고객은 성분명이 아니라 작동하는 이유를 기억합니다",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260710_afternoon_ko.jpg",
+      "caption": "성분명을 외우게 만들려 애쓰지 마세요. 고객이 기억하는 건 그 성분이 왜, 어떻게 작동하는지입니다. MOA를 보여주면 성분은 저절로 남습니다.\n\n댓글: 우리 브랜드는 성분형? 원리형?\nDM “MOA”: MOA 스토리 설계 체크리스트 보내드려요\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#3D비주얼",
+        "#메디컬마케팅",
+        "#브랜드신뢰"
+      ],
+      "scheduled_time": "2026-07-10T19:00:00+09:00",
+      "created_at": "2026-07-10T07:12:39.560933+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
