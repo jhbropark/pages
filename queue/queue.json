@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260712_morning",
+      "status": "pending",
+      "topic": "프리미엄 메디컬 비주얼을 만드는 네 가지 디렉션 원칙",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260712_morning_ko.jpg",
+      "caption": "프리미엄 메디컬 비주얼은 미감이 아니라 판단의 결과입니다. 정확성, 위계, 근거, 절제. 이 네 원칙이 기술을 신뢰로 바꿉니다.\n\n댓글: 가장 어려운 건? 정확성 vs 절제\nDM “원칙”: 디렉션 4원칙 체크리스트 보내드립니다\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#메디컬비주얼",
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#MedicalAnimation"
+      ],
+      "scheduled_time": "2026-07-12T12:30:00+09:00",
+      "created_at": "2026-07-12T06:38:23.045718+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260712_afternoon",
+      "status": "pending",
+      "topic": "규제가 있는 산업에서 창의적인 스토리텔링이 가능한 이유",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260712_afternoon_ko.jpg",
+      "caption": "규제는 창의성의 반대말이 아닙니다. 검증된 근거 안에서 메시지를 설계할 때, 스토리는 오히려 더 정확하고 강력해집니다. MOA는 제약이 아니라 서사의 뼈대입니다.\n\n댓글: A 근거우선 / B 감성우선?\nDM “MOA가이드”: MOA 스토리텔링 체크리스트 제공\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#메디컬커뮤니케이션",
+        "#MOA애니메이션",
+        "#과학시각화",
+        "#더마코스메틱",
+        "#바이오마케팅",
+        "#B2B콘텐츠"
+      ],
+      "scheduled_time": "2026-07-12T19:00:00+09:00",
+      "created_at": "2026-07-12T06:38:23.045718+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
