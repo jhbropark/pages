@@ -1,0 +1,31 @@
+name: Notion Contents → Instagram 큐 준비
+
+on:
+  # 매일 KST 06:00 (21:00 UTC 전날) — generate-content 실행 직후
+  schedule:
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+
+jobs:
+  bridge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Python 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: cryptography 설치 (Google Drive 서비스 계정 JWT)
+        run: pip install --quiet cryptography
+
+      - name: 콘텐츠 브릿지 실행
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          GOOGLE_DRIVE_INSTAGRAM_FOLDER: ${{ secrets.GOOGLE_DRIVE_INSTAGRAM_FOLDER }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: python scripts/notion_content_bridge.py
