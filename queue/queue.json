@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260624_morning",
+      "status": "pending",
+      "topic": "전시회와 학회에서 복잡한 기술을 짧게 전달하는 비주얼 구조",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260624_morning_ko.jpg",
+      "caption": "부스 앞에 머무는 시간은 평균 몇 초입니다. 그 안에 작용기전을 전부 설명할 수 없다면, 하나의 핵심 장면으로 압축해야 합니다. 전시는 정보 전달이 아니라 기억할 단 하나를 남기는 일입니다.\n\n댓글: 부스 영상 vs 인터랙티브? (A/B)\nDM “부스”: 전시·학회 비주얼 구조 설계 체크리스트\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#전시부스",
+        "#학회마케팅",
+        "#더마코스메틱",
+        "#B2B마케팅"
+      ],
+      "scheduled_time": "2026-06-24T12:30:00+09:00",
+      "created_at": "2026-06-24T07:07:27.593616+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260624_afternoon",
+      "status": "pending",
+      "topic": "KOL 인터뷰를 신뢰도 높은 다큐멘터리 콘텐츠로 만드는 법",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260624_afternoon_ko.jpg",
+      "caption": "KOL 인터뷰는 촬영보다 설계가 신뢰도를 가릅니다. 검증된 메시지 구조와 시각 근거를 먼저 정의해야 권위가 콘텐츠로 남습니다.\n\n댓글: 신뢰의 핵심은? A 메시지 B 비주얼\nDM “KOL”: KOL 다큐 신뢰도 설계 체크리스트 PDF\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#KOL마케팅",
+        "#메디컬다큐멘터리",
+        "#과학커뮤니케이션",
+        "#MOA",
+        "#더마코스메틱",
+        "#B2B마케팅"
+      ],
+      "scheduled_time": "2026-06-24T19:00:00+09:00",
+      "created_at": "2026-06-24T07:07:27.593616+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
