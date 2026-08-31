@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260724_morning",
+      "status": "pending",
+      "topic": "하나의 과학 콘텐츠를 세일즈·교육·SNS로 확장하는 방법",
+      "slot": "morning",
+      "scheduled_time": "2026-07-24T09:00:00+09:00",
+      "created_at": "2026-07-24T06:55:01.881519+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "확장맵",
+      "id": "linkedin_20260724_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "과학 콘텐츠를 만들 때 가장 흔한 낭비는 채널마다 처음부터 다시 만드는 것입니다. 세일즈팀은 발표용 덱을, 교육팀은 강의 모듈을, 마케팅팀은 SNS 클립을 따로 발주합니다. 결과적으로 같은 기전을 설명하는데 메시지도 비주얼도 제각각이 되고, 고객은 브랜드의 과학을 세 가지 다른 버전으로 접하게 됩니다.\n\n해법은 하나의 마스터 콘텐츠를 먼저 설계하고, 채널별로 재편집하는 구조입니다. 실무 관점에서 세 가지를 짚습니다.\n\n첫째, 마스터는 최고 정밀도 기준으로 만듭니다. 예를 들어 성분의 작용기전을 다루는 3D MOA 애니메이션을 60~90초 풀버전으로 제작하면, 여기서 세일즈용 30초, SNS용 9~15초, 교육용 챕터 분할본이 파생됩니다. 정밀도가 가장 높은 원본에서 잘라내는 방식이라 품질 하한선이 보장됩니다.\n\n둘째, 채널별로 정보 밀도를 조정합니다. 세일즈 덱은 차별점과 근거에 집중하고, 교육 모듈은 단계별 설명과 반복을, SNS는 하나의 핵심 장면과 후킹에 집중합니다. 같은 소스라도 자막, 속도, 강조 포인트를 다르게 설계해야 각 맥락에서 작동합니다.\n\n셋째, 규제와 언어를 초기에 반영합니다. 국가별 표현 규정과 다국어 버전을 마스터 단계에서 레이어로 분리해두면, 이후 확장할 때 재제작 없이 자막·나레이션만 교체할 수 있습니다.\n\n이렇게 설계하면 총제작비는 개별 발주 대비 줄고, 고객이 어느 채널에서 만나든 동일한 과학 메시지를 경험합니다. 핵심은 '콘텐츠를 만든 뒤 나누는 것'이 아니라 '나눌 것을 전제로 설계하는 것'입니다.\n\n여러분의 조직에서는 세일즈, 교육, SNS 콘텐츠가 하나의 소스에서 나오고 있나요, 아니면 각자 발주되고 있나요? 댓글로 알려주세요. 1콘텐츠 다채널 확장 설계 체크리스트가 필요하시면 '확장맵'을 남겨주세요. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#B2B콘텐츠전략",
+        "#MOA애니메이션",
+        "#메디컬마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260724_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 하나의 과학, 세 채널로"
+    },
+    {
+      "pair_id": "linkedin_20260724_morning",
+      "status": "pending",
+      "topic": "하나의 과학 콘텐츠를 세일즈·교육·SNS로 확장하는 방법",
+      "slot": "morning",
+      "scheduled_time": "2026-07-24T09:00:00+09:00",
+      "created_at": "2026-07-24T06:55:01.881519+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "확장맵",
+      "id": "linkedin_20260724_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "The most common waste in science content is rebuilding it from scratch for every channel. Sales requests a pitch deck, the education team commissions a training module, and marketing orders social clips. The same mechanism ends up described three different ways, with three different visuals, and the customer encounters your science as three inconsistent versions.\n\nThe fix is to design one master asset first, then re-edit it per channel. From a practical standpoint, three points matter.\n\nFirst, build the master at the highest precision. A 3D MOA animation explaining a mechanism of action, produced as a 60 to 90 second full version, becomes the source for a 30 second sales cut, a 9 to 15 second social clip, and chaptered segments for training. Because everything is trimmed from the most precise original, the quality floor is guaranteed across channels.\n\nSecond, adjust information density by channel. A sales deck concentrates on differentiation and evidence. A training module needs stepwise explanation and repetition. Social content lives on one hero moment and a strong hook. Even from the same source, subtitles, pacing, and emphasis must be designed differently to work in each context.\n\nThird, plan regulation and language early. When country-specific claim rules and multilingual layers are separated at the master stage, later expansion only requires swapping subtitles and narration rather than rebuilding the animation.\n\nDesigned this way, total production cost drops compared to separate commissions, and the customer experiences the same scientific message no matter where they meet it. The point is not to make content and then divide it, but to design it knowing it will be divided.\n\nIn your organization, do sales, education, and social content originate from a single source, or are they commissioned separately? Tell me in the comments. If you want the checklist for expanding one asset across multiple channels, comment the keyword 확장맵. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#ScienceCommunication",
+        "#B2BContentStrategy",
+        "#MOAanimation",
+        "#MedicalMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260724_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: One Science, Three Channels"
+    },
+    {
+      "pair_id": "linkedin_20260724_afternoon",
+      "status": "pending",
+      "topic": "고객은 성분명이 아니라 작동하는 이유를 기억합니다",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-24T15:00:00+09:00",
+      "created_at": "2026-07-24T06:55:01.881519+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260724_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "많은 브랜드가 성분명을 앞세웁니다. 특허 원료, 고농도 함량, 낯선 화학명. 그러나 고객은 성분명을 기억하지 못합니다. 그들이 기억하는 건 '왜 이것이 내 피부에서 작동하는가'라는 이해의 순간입니다.\n\n첫째, 작동 원리는 신뢰의 언어입니다. R&D팀이 확보한 데이터가 아무리 정교해도, 담당자·유통·소비자가 그 메커니즘을 머릿속에 그리지 못하면 설득은 멈춥니다. 성분명은 정보이지만, 작동 이유는 기억입니다. MOA(Mechanism of Action)를 시각화하면 추상적 화학 반응이 '보이는 인과관계'로 바뀝니다.\n\n둘째, 정확성과 단순화는 충돌하지 않습니다. 현장에서 가장 흔한 실수는 두 가지입니다. 과도하게 단순화해 과학적 신뢰를 잃거나, 논문을 그대로 옮겨 아무도 이해하지 못하게 만드는 것. 우리는 분자 스케일의 표현 범위, 표적 수용체의 위치, 시간 순서를 사실에 근거해 설계하되, 시청자의 인지 부하를 기준으로 정보의 양을 조절합니다. 확인되지 않은 효능이나 수치는 넣지 않습니다.\n\n셋째, 하나의 MOA 자산은 여러 채널로 확장됩니다. 영업 미팅의 90초 3D 애니메이션, 학회용 정밀 버전, 소셜용 짧은 2D 컷, 매장 태블릿의 인터랙티브 경험까지. 처음부터 '작동 이유'를 축으로 설계하면 재활용 효율이 높아지고 메시지 일관성이 유지됩니다.\n\n성분은 라벨에 적히지만, 이유는 사람의 머릿속에 남습니다. 여러분의 브랜드는 지금 성분명을 팔고 있나요, 작동 이유를 팔고 있나요?\n\nMOA 스토리보드 설계 체크리스트가 필요하시면 댓글이나 DM에 'MOA'를 남겨주세요. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#B2B마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260724_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 성분이 아니라 이유를 기억한다"
+    },
+    {
+      "pair_id": "linkedin_20260724_afternoon",
+      "status": "pending",
+      "topic": "고객은 성분명이 아니라 작동하는 이유를 기억합니다",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-24T15:00:00+09:00",
+      "created_at": "2026-07-24T06:55:01.881519+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260724_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "Many brands lead with ingredient names. Patented actives, high concentrations, unfamiliar chemical terms. Yet customers rarely remember the name. What stays with them is the moment they understand why something works on their skin.\n\nFirst, mechanism is the language of trust. No matter how rigorous your R&D data is, if a marketing lead, a distributor, or an end customer cannot picture how the molecule acts, persuasion stalls. An ingredient name is information; the reason it works is memory. Visualizing the Mechanism of Action turns abstract chemistry into a visible chain of cause and effect.\n\nSecond, accuracy and simplicity are not enemies. The two most common failures we see are opposite extremes: oversimplifying until scientific credibility collapses, or copying the paper verbatim until no one follows. We design molecular scale, receptor location, and temporal sequence based on evidence, while calibrating information density against the viewer's cognitive load. We never invent efficacy claims or clinical numbers.\n\nThird, a single MOA asset scales across channels. A ninety-second 3D animation for sales meetings, a precise version for scientific congresses, short 2D cuts for social, and an interactive experience for in-store tablets. When you build around the reason it works from the start, reuse efficiency rises and message consistency holds across every touchpoint.\n\nIngredients are printed on the label. The reason lives in people's minds. So ask yourself: is your brand selling an ingredient name, or the reason it works?\n\nIf you want our MOA storyboard design checklist, comment or DM 'MOA'. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOAanimation",
+        "#ScienceCommunication",
+        "#Dermocosmetics",
+        "#B2BMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260724_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: They Remember Why, Not What"
     }
   ]
 }
