@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260722_morning",
+      "status": "pending",
+      "topic": "전시회와 학회에서 복잡한 기술을 짧게 전달하는 비주얼 구조",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260722_morning_ko.jpg",
+      "caption": "학회 부스 앞, 관람객이 멈추는 시간은 3초입니다. 복잡한 MOA를 설명하려 하지 말고, 한 장면으로 '왜 다른가'를 먼저 보여주세요. 텍스트가 아니라 구조가 기억을 만듭니다.\n\n댓글: 부스 영상, 자막형 vs 무음형?\nDM “BOOTH”: 학회 비주얼 설계 체크리스트 8종 발송\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#학회부스",
+        "#의료전시",
+        "#B2B마케팅",
+        "#메디컬비주얼"
+      ],
+      "scheduled_time": "2026-07-22T12:30:00+09:00",
+      "created_at": "2026-07-22T06:53:22.081578+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260722_afternoon",
+      "status": "pending",
+      "topic": "KOL 인터뷰를 신뢰도 높은 다큐멘터리 콘텐츠로 만드는 법",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260722_afternoon_ko.jpg",
+      "caption": "KOL의 말은 강력하지만, 신뢰는 편집이 만듭니다. 발언을 데이터·비주얼과 연결하고 맥락을 설계할 때 인터뷰는 다큐멘터리가 됩니다. 근거가 흐름을 이끌어야 합니다.\n\n댓글: KOL 콘텐츠 vs MOA, 뭐가 더 급해요?\nDM “KOL”: KOL 다큐 제작 체크리스트 PDF 드려요\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#KOL마케팅",
+        "#메디컬콘텐츠",
+        "#다큐멘터리",
+        "#과학커뮤니케이션",
+        "#브랜드신뢰",
+        "#B2B마케팅"
+      ],
+      "scheduled_time": "2026-07-22T19:00:00+09:00",
+      "created_at": "2026-07-22T06:53:22.081578+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
