@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260812_morning",
+      "status": "pending",
+      "topic": "좋은 과학 콘텐츠는 기술 설명이 아니라 이해 설계에서 시작됩니다",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260812_morning_ko.jpg",
+      "caption": "복잡한 기술을 나열하면 정보는 늘지만 이해는 줄어듭니다. 좋은 과학 콘텐츠는 '무엇을 먼저 이해시킬까'라는 설계에서 시작됩니다. 설명이 아니라 이해의 순서가 신뢰를 만듭니다.\n\n댓글: 설명형 vs 이해형, 뭘 택하나요?\nDM “설계”: 과학 콘텐츠 이해 설계 체크리스트\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#메디컬콘텐츠",
+        "#브랜드신뢰"
+      ],
+      "scheduled_time": "2026-08-12T12:30:00+09:00",
+      "created_at": "2026-08-12T06:34:12.510668+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260812_afternoon",
+      "status": "pending",
+      "topic": "MOA 애니메이션이 복잡한 작용기전을 브랜드 자산으로 바꾸는 방법",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260812_afternoon_ko.jpg",
+      "caption": "MOA 애니메이션은 단순한 설명 영상이 아닙니다. 눈에 보이지 않는 작용기전을 시각 언어로 번역해, 기술력을 고객이 기억하는 브랜드 자산으로 바꾸는 커뮤니케이션 전략입니다.\n\n댓글: 영상 vs 인포그래픽, 어느 쪽?\nDM “MOA”: MOA 제작 전 점검 체크리스트 5\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#메디컬마케팅",
+        "#3D비주얼라이제이션",
+        "#더마코스메틱",
+        "#바이오브랜딩"
+      ],
+      "scheduled_time": "2026-08-12T19:00:00+09:00",
+      "created_at": "2026-08-12T06:34:12.510668+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }

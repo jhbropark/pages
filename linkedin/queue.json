@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260812_morning",
+      "status": "pending",
+      "topic": "좋은 과학 콘텐츠는 기술 설명이 아니라 이해 설계에서 시작됩니다",
+      "slot": "morning",
+      "scheduled_time": "2026-08-12T09:00:00+09:00",
+      "created_at": "2026-08-12T06:34:12.510668+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "설계",
+      "id": "linkedin_20260812_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "많은 과학 콘텐츠가 실패하는 이유는 정보가 부족해서가 아니라, 너무 많아서입니다.\n\nR&D가 축적한 데이터를 그대로 옮기면 슬라이드는 채워지지만, 보는 사람의 머릿속은 오히려 비워집니다. 좋은 과학 콘텐츠는 '무엇을 설명할까'가 아니라 '무엇을 먼저 이해시킬까'라는 이해 설계에서 시작됩니다.\n\n첫째, 이해의 순서가 정확성만큼 중요합니다. 성분의 작용기전(MOA)을 설명할 때, 분자 구조부터 시작하면 대부분의 의사결정자는 3초 안에 이탈합니다. 반면 '피부에서 어떤 문제가, 왜 생기는가'라는 맥락을 먼저 제시하면, 이후의 기전 설명이 비로소 자리를 잡습니다. 순서를 바꾸는 것만으로 같은 데이터가 전혀 다른 설득력을 갖습니다.\n\n둘째, 시각화는 장식이 아니라 인지 부하를 줄이는 도구입니다. 3D 애니메이션이 아름다워서 효과적인 게 아니라, 텍스트로는 동시에 처리하기 어려운 '시간·공간·인과'를 한 화면에 담기 때문에 효과적입니다. 화려함이 목적이 되는 순간, 콘텐츠는 이해를 돕는 대신 방해합니다.\n\n셋째, 청중 정의가 곧 콘텐츠 설계입니다. 규제 담당자, 영업 파트너, 최종 소비자는 같은 기술을 각각 다른 언어로 이해합니다. 하나의 콘텐츠로 모두를 만족시키려는 시도가 가장 흔한 실패의 원인입니다.\n\n결국 과학 커뮤니케이션의 핵심은 '얼마나 많이 담았는가'가 아니라 '얼마나 정확히 전달되었는가'입니다. 기술력은 이해로 번역될 때 비로소 신뢰와 선택으로 이어집니다.\n\n여러분의 조직은 콘텐츠를 만들 때 '설명'과 '이해' 중 어디에서 시작하시나요? 과학 콘텐츠 이해 설계 체크리스트가 필요하시면 '설계'를 댓글이나 DM으로 남겨주세요. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#더마코스메틱",
+        "#B2B콘텐츠전략"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260812_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 이해 설계가 먼저다"
+    },
+    {
+      "pair_id": "linkedin_20260812_morning",
+      "status": "pending",
+      "topic": "좋은 과학 콘텐츠는 기술 설명이 아니라 이해 설계에서 시작됩니다",
+      "slot": "morning",
+      "scheduled_time": "2026-08-12T09:00:00+09:00",
+      "created_at": "2026-08-12T06:34:12.510668+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "설계",
+      "id": "linkedin_20260812_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "Most science content fails not because it lacks information, but because it has too much.\n\nWhen R&D data is transferred directly into slides, the deck fills up while the audience's mind empties out. Great science content does not begin with \"what should we explain?\" It begins with a question of understanding design: \"what should the audience grasp first?\"\n\nFirst, the sequence of understanding matters as much as accuracy. When explaining a mechanism of action, starting with molecular structure loses most decision-makers within seconds. But if you first establish context, what problem occurs in the skin, and why, the mechanism finally has a place to land. Reordering the same data completely changes its persuasive power.\n\nSecond, visualization is not decoration; it is a tool to reduce cognitive load. A 3D animation is effective not because it is beautiful, but because it holds time, space, and causality in a single frame, dimensions that text struggles to process simultaneously. The moment spectacle becomes the goal, the content obstructs understanding rather than aiding it.\n\nThird, defining the audience is the design itself. A regulatory reviewer, a sales partner, and an end consumer each understand the same technology in a different language. Trying to satisfy all of them with one piece of content is the most common cause of failure.\n\nIn the end, the core of science communication is not how much you packed in, but how precisely it was received. Technical excellence becomes trust and choice only when it is translated into understanding.\n\nWhere does your organization start, with explanation or with understanding? If you would like a checklist for designing science content around comprehension, comment or DM the keyword 설계 (\"design\"). Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#ScienceCommunication",
+        "#MedicalAnimation",
+        "#Dermocosmetics",
+        "#B2BContentStrategy"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260812_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Design Understanding First"
+    },
+    {
+      "pair_id": "linkedin_20260812_afternoon",
+      "status": "pending",
+      "topic": "MOA 애니메이션이 복잡한 작용기전을 브랜드 자산으로 바꾸는 방법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-08-12T15:00:00+09:00",
+      "created_at": "2026-08-12T06:34:12.510668+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260812_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "복잡한 작용기전(MOA)을 설명하는 자료는 많습니다. 그러나 대부분은 논문 도식을 그대로 옮긴 정적 이미지에 머무릅니다. 문제는 여기서 시작됩니다. R&D가 몇 년에 걸쳐 확보한 차별점이, 정작 브랜드·마케팅 단계에서 '남들과 비슷한 설명'으로 희석되는 것입니다. MOA 애니메이션은 이 간극을 메우는 도구입니다. 단, 세 가지 판단 기준을 갖출 때만 자산이 됩니다.\n\n첫째, 정확성이 서사보다 앞서야 합니다. 분자 구조, 수용체 결합, 신호 전달 경로는 시각적 각색의 대상이 아니라 검증의 대상입니다. 저희는 제작 초기에 R&D·메디컬 담당자와 근거 자료를 함께 리뷰하고, 표현 가능한 것과 과장이 되는 것을 명확히 구분합니다. 규제 관점에서 문제가 될 표현을 시작 단계에서 걸러내는 것이 재작업 비용을 줄이는 가장 빠른 길입니다.\n\n둘째, 하나의 핵심 메시지에 집중해야 합니다. 모든 경로를 다 담으려는 영상은 결국 아무것도 남기지 못합니다. '이 기술이 경쟁 대비 무엇을 다르게 하는가'라는 단 하나의 질문에 답하는 장면을 중심축으로 잡아야 합니다. 나머지는 그 축을 지지하는 근거로 배치합니다.\n\n셋째, 자산으로 재사용될 수 있어야 합니다. 잘 설계된 MOA 애니메이션은 학술 심포지엄, 영업 자료, 전시 부스, 온라인 채널, 내부 교육까지 하나의 비주얼 언어로 확장됩니다. 매체마다 새로 만드는 것이 아니라, 모듈 단위로 재편집하는 구조를 처음부터 설계하는 것이 핵심입니다.\n\n결국 MOA 애니메이션의 가치는 '예쁜 영상'이 아니라, 기술적 우위를 고객이 기억하고 신뢰하는 형태로 번역하는 데 있습니다. Science to Message, Beauty to Experience. 이것이 저희가 프로젝트를 바라보는 관점입니다.\n\n여러분의 조직에서는 MOA 자료가 설명에 그치나요, 아니면 브랜드 자산으로 작동하나요? 댓글로 의견을 남겨 주세요. 제작 전 점검 체크리스트가 필요하시면 MOA 라고 DM 주시면 보내드립니다. 문의: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#메디컬마케팅",
+        "#바이오브랜딩"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260812_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 작용기전을 브랜드 자산으로"
+    },
+    {
+      "pair_id": "linkedin_20260812_afternoon",
+      "status": "pending",
+      "topic": "MOA 애니메이션이 복잡한 작용기전을 브랜드 자산으로 바꾸는 방법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-08-12T15:00:00+09:00",
+      "created_at": "2026-08-12T06:34:12.510668+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260812_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "There is no shortage of materials explaining a mechanism of action (MOA). The problem is that most of them stop at static diagrams lifted straight from a paper. And that is exactly where value leaks away. The differentiation that R&D spent years earning gets diluted into a generic explanation the moment it reaches brand and marketing.\n\nMOA animation exists to close that gap. But it only becomes a brand asset when three criteria are met.\n\nFirst, accuracy comes before narrative. Molecular structures, receptor binding, and signaling pathways are subjects of verification, not artistic license. We review the underlying evidence together with R&D and medical stakeholders at the very start of a project, drawing a clear line between what can be shown and what would become an overstatement. Filtering out regulatory red flags early is the fastest way to cut costly rework later.\n\nSecond, focus on a single core message. A video that tries to depict every pathway ultimately leaves nothing behind. The organizing question should be simple: what does this technology do differently from the alternatives? One scene answers that. Everything else is arranged to support it.\n\nThird, design for reuse from day one. A well-built MOA animation extends across scientific symposia, sales decks, exhibition booths, digital channels, and internal training as one coherent visual language. The key is not to rebuild for each medium, but to architect modular assets that can be recut. That is a production decision made before the first frame is drawn.\n\nUltimately, the value of MOA animation is not a beautiful video. It is the translation of a technical advantage into a form that clients remember and trust. Science to Message, Beauty to Experience. That is the lens we bring to every project.\n\nSo here is my question: in your organization, does your MOA material merely explain, or does it actually work as a brand asset? Share your view in the comments. If you would like our pre-production checklist, send me the keyword MOA in a DM and I will share it. Contact: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOAanimation",
+        "#ScienceCommunication",
+        "#MedicalMarketing",
+        "#BioBranding"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260812_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Mechanism Into Brand Asset"
     }
   ]
 }
