@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260713_morning",
+      "status": "pending",
+      "topic": "제품 차별점을 경쟁사 비교 없이 명확하게 보여주는 방법",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260713_morning_ko.jpg",
+      "caption": "경쟁사와 비교하지 않고도 차별점은 증명됩니다. 작용 기전을 눈으로 보이게 시각화하면, 우리 기술의 고유한 경로 자체가 설득이 됩니다.\n\n댓글: 우리만의 강점, 기전 A · 스토리 B?\nDM “기전”: 차별점 시각화 진단 질문 5개 보내드립니다\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#메디컬비주얼",
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#바이오브랜딩"
+      ],
+      "scheduled_time": "2026-07-13T12:30:00+09:00",
+      "created_at": "2026-07-13T06:38:26.242526+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260713_afternoon",
+      "status": "pending",
+      "topic": "과학 커뮤니케이션 프로젝트의 킥오프에서 물어야 할 질문",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260713_afternoon_ko.jpg",
+      "caption": "킥오프에서 던지는 질문이 결과물의 정확성을 결정합니다. MOA의 핵심 메시지, 근거 데이터, 규제 범위, 타깃 청중까지 초반에 합의하면 재작업이 줄어듭니다.\n\n댓글: 우선순위는? 정확성 vs 임팩트\nDM “킥오프”: 프로젝트 킥오프 질문 체크리스트 제공\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#3D비주얼라이제이션",
+        "#메디컬마케팅",
+        "#더마코스메틱",
+        "#B2B크리에이티브"
+      ],
+      "scheduled_time": "2026-07-13T19:00:00+09:00",
+      "created_at": "2026-07-13T06:38:26.242526+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
