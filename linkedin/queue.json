@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260718_morning",
+      "status": "pending",
+      "topic": "R&D의 기술 언어와 마케팅의 고객 언어 사이를 연결하는 방법",
+      "slot": "morning",
+      "scheduled_time": "2026-07-18T09:00:00+09:00",
+      "created_at": "2026-07-18T06:40:57.188799+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "BRIDGE",
+      "id": "linkedin_20260718_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "R&D 담당자와 마케팅 담당자가 같은 회의실에 앉으면 종종 다른 언어로 말합니다. 한쪽은 작용 기전, 흡수율, 임상 설계를 이야기하고, 다른 한쪽은 소비자가 왜 이 제품을 선택해야 하는지를 묻습니다. 둘 다 옳습니다. 문제는 두 언어가 만나는 지점에서 대부분의 메시지가 무너진다는 것입니다.\n\n첫째, 번역이 아니라 재설계가 필요합니다. 기술 문서를 그대로 쉽게 풀어쓰면 정확성은 남지만 감흥이 없고, 마케팅 카피로 과장하면 감흥은 생기지만 규제와 신뢰가 흔들립니다. 우리가 접근하는 방식은 '핵심 메커니즘 한 가지'를 정하고, 그것을 고객이 느낄 하나의 이유로 재구성하는 것입니다. 성분이 무엇을 하는지가 아니라, 그 작용이 왜 중요한지를 시각적 서사로 옮깁니다.\n\n둘째, 시각화는 정확성의 도구입니다. 3D MOA 애니메이션이나 과학 시각화는 예쁘게 보이려는 장식이 아니라, 말로 설명하면 오해되기 쉬운 작용 순서와 위치, 규모를 정직하게 보여주는 언어입니다. 세포 단위에서 일어나는 일을 그림으로 합의하면 R&D와 마케팅이 같은 대상을 두고 대화하게 됩니다.\n\n셋째, 검증 루프를 프로세스에 넣어야 합니다. 콘텐츠 초안에 메디컬·R&D 리뷰 단계를 명시하고, 표현할 수 있는 것과 없는 것의 경계를 미리 정하면 후반부의 반복 수정과 규제 리스크가 줄어듭니다. 정확성과 전달력은 상충하는 목표가 아니라, 순서를 설계하면 함께 얻을 수 있는 결과입니다.\n\n결국 기술 언어와 고객 언어 사이의 다리(BRIDGE)는 우연히 놓이지 않습니다. 어떤 메커니즘을 남기고 무엇을 덜어낼지에 대한 편집 판단이 다리를 만듭니다.\n\n여러분의 조직에서 가장 큰 벽은 정확성입니까, 전달력입니까? 댓글로 알려주세요. 'BRIDGE'를 DM으로 보내주시면 R&D-마케팅 번역 체크리스트를 드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#B2B마케팅",
+        "#더마코스메틱",
+        "#브랜드전략"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260718_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 기술 언어를 신뢰의 언어로"
+    },
+    {
+      "pair_id": "linkedin_20260718_morning",
+      "status": "pending",
+      "topic": "R&D의 기술 언어와 마케팅의 고객 언어 사이를 연결하는 방법",
+      "slot": "morning",
+      "scheduled_time": "2026-07-18T09:00:00+09:00",
+      "created_at": "2026-07-18T06:40:57.188799+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "BRIDGE",
+      "id": "linkedin_20260718_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "When R&D and marketing sit in the same room, they often speak different languages. One side talks about mechanism of action, absorption rates, and clinical design. The other asks why a customer should choose this product at all. Both are right. The problem is that most messages collapse exactly where those two languages meet.\n\nFirst, this is a translation problem that actually requires redesign. Simplify a technical document verbatim and you keep the accuracy but lose the meaning. Push it into marketing copy and you gain emotion but risk credibility and compliance. A more reliable approach is to choose one core mechanism and rebuild it as a single reason the customer can feel. Not what an ingredient does, but why that action matters, told as a visual narrative.\n\nSecond, visualization is a tool of accuracy, not decoration. A 3D MOA animation or scientific visualization is not there to look impressive. It is a language that honestly shows sequence, location, and scale that words tend to distort. Once a cellular process is agreed upon as a shared image, R&D and marketing are finally discussing the same object instead of two different mental models.\n\nThird, build a verification loop into the process itself. Naming an explicit medical and R&D review stage, and defining upfront what can and cannot be claimed, dramatically reduces late-stage rework and regulatory risk. Accuracy and clarity are not competing goals. Sequence the process correctly and you can have both.\n\nThe bridge (BRIDGE) between technical language and customer language is never placed by accident. It is built by editorial judgment about which mechanism to keep and what to leave out. That judgment is where scientific communication earns trust rather than borrowing it.\n\nSo which wall is bigger in your organization: accuracy or clarity? Tell me in the comments. Send 'BRIDGE' by DM and I will share our R&D-to-marketing translation checklist. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#SciComm",
+        "#B2BMarketing",
+        "#Dermocosmetics",
+        "#BrandStrategy"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260718_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: From Data to Trust"
+    },
+    {
+      "pair_id": "linkedin_20260718_afternoon",
+      "status": "pending",
+      "topic": "논문 한 편이 설득력 있는 브랜드 스토리가 되기까지",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-18T15:00:00+09:00",
+      "created_at": "2026-07-18T06:40:57.188799+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260718_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "논문 한 편을 브랜드 스토리로 옮길 때 가장 흔한 실수는 '그대로 옮기려는' 시도입니다. 저널의 그래프와 통계표를 화면에 그대로 띄우면 정확하긴 하지만 아무도 기억하지 못합니다. 데이터를 스토리로 만드는 일은 번역이 아니라 재구성입니다. 무엇을 남기고 무엇을 버릴지를 결정하는 편집의 문제입니다.\n\n첫째, 메커니즘의 '주인공'을 정합니다. 하나의 논문에는 수십 개의 분자와 경로가 등장하지만, 브랜드가 증명하려는 핵심 작용은 대개 하나입니다. 예를 들어 특정 성분이 피부 장벽 단백질 발현을 유도하는 것이 핵심이라면, 그 경로를 시각적 중심에 두고 나머지는 맥락으로 밀어냅니다. 주인공이 없는 MOA 영상은 정보의 나열일 뿐 설득이 되지 않습니다.\n\n둘째, 스케일과 시간을 설계합니다. 세포 내 사건은 나노미터 단위에서 밀리초 단위로 일어나지만, 시청자의 눈은 그 스케일을 직관적으로 이해하지 못합니다. 카메라의 진입 속도, 분자의 이동 속도, 반응이 일어나는 타이밍을 의도적으로 조율해야 '아, 이렇게 작동하는구나'라는 순간이 생깁니다. 이 조율은 예술적 감각이 아니라 과학적 근거와 커뮤니케이션 목표의 교집합에서 나옵니다.\n\n셋째, 정확성과 단순화의 경계를 R&D·메디컬 팀과 함께 합의합니다. 시각화는 필연적으로 단순화를 동반하고, 단순화는 자칫 과장이나 오해로 이어질 수 있습니다. 그래서 우리는 제작 초기에 '어디까지 보여주고 어디부터 생략할지'를 문서로 정의합니다. 이 경계 합의가 없으면 규제·의학 검수 단계에서 전체가 뒤집힙니다.\n\n결국 좋은 MOA 콘텐츠는 논문의 신뢰성을 지키면서 사람의 기억에 남는 형태로 재구성한 결과물입니다. 정확성을 낮추지 않고도 이해도를 높이는 것, 그것이 과학 커뮤니케이션의 핵심입니다.\n\n여러분의 팀은 논문을 콘텐츠로 옮길 때 정확성과 단순화 중 어느 쪽에서 더 자주 막히시나요? 댓글로 남겨 주세요. 'MOA'를 DM으로 보내주시면 논문을 영상으로 옮기는 5단계 체크리스트를 보내드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#메디컬마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260718_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 논문에서 브랜드 스토리까지"
+    },
+    {
+      "pair_id": "linkedin_20260718_afternoon",
+      "status": "pending",
+      "topic": "논문 한 편이 설득력 있는 브랜드 스토리가 되기까지",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-18T15:00:00+09:00",
+      "created_at": "2026-07-18T06:40:57.188799+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260718_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "The most common mistake when turning a research paper into a brand story is trying to reproduce it verbatim. Drop the journal's graphs and statistical tables onto the screen and you get something accurate that no one remembers. Turning data into story is not translation; it is reconstruction. It is an editorial decision about what to keep and what to let go.\n\nFirst, choose the protagonist of the mechanism. A single paper may feature dozens of molecules and pathways, but the action a brand needs to prove is usually one. If the core claim is that an ingredient induces the expression of a barrier protein, that pathway belongs at the visual center while everything else recedes into context. An MOA film without a protagonist is a list of facts, not an act of persuasion.\n\nSecond, design scale and time deliberately. Intracellular events unfold at nanometer distances and millisecond speeds, and the human eye cannot intuit those scales on its own. The speed of the camera's descent, the movement of molecules, the timing of each reaction must be orchestrated so that a viewer arrives at the moment of \"ah, that is how it works.\" This orchestration is not artistic instinct alone; it lives at the intersection of scientific evidence and a clear communication goal.\n\nThird, agree on the boundary between accuracy and simplification together with R&D and medical teams. Visualization inevitably simplifies, and simplification can drift toward exaggeration or misunderstanding. That is why we define, in writing and early in the process, exactly how much to show and where to stop. Without that agreed boundary, the entire project gets overturned during regulatory and medical review.\n\nGood MOA content, in the end, preserves the credibility of the paper while reconstructing it into a form that stays in human memory. Raising comprehension without lowering accuracy is the essence of science communication, and it is what separates a memorable brand asset from a forgettable slide.\n\nWhere does your team get stuck more often when moving from paper to content: accuracy or simplification? Share it in the comments. Send me the keyword MOA by DM and I will share our five-step checklist for turning a paper into film. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOAanimation",
+        "#ScienceCommunication",
+        "#Dermocosmetics",
+        "#MedicalMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260718_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: From Paper to Brand Story"
     }
   ]
 }
