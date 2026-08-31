@@ -715,6 +715,26 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260625",
+      "status": "pending",
+      "topic": "의학적 검수 과정이 크리에이티브 품질을 높이는 이유",
+      "pillar_id": "methodology",
+      "format": "single_image",
+      "image_url": "https://jhbropark.github.io/pages/images/post_20260625.jpg",
+      "caption": "의학적 검수는 마지막 교정이 아니라 초반 설계가 되어야 합니다. 주장 경계, 장면 위계, 승인 경로가 먼저 정리되면 크리에이티브는 더 선명해집니다. 프로필을 방문하시고 저장 또는 팀 공유에 활용하시기 바랍니다.",
+      "hashtags": [
+        "#메디컬콘텐츠",
+        "#과학커뮤니케이션",
+        "#RA협업",
+        "#바이오마케팅",
+        "#스토리보드전략",
+        "#bbbbbeauty"
+      ],
+      "scheduled_time": "2026-06-25T19:00:00+09:00",
+      "created_at": "2026-06-24T06:02:42+09:00",
+      "generated_by": "codex"
     }
   ]
 }
