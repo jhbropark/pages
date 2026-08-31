@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260720_morning",
+      "status": "pending",
+      "topic": "AR이 메디컬·뷰티 제품 교육의 이해도를 높이는 방식",
+      "slot": "morning",
+      "scheduled_time": "2026-07-20T09:00:00+09:00",
+      "created_at": "2026-07-20T06:40:22.076106+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "AR가이드",
+      "id": "linkedin_20260720_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "메디컬·뷰티 제품 교육에서 가장 큰 벽은 '복잡성'이 아니라 '거리감'입니다. 성분의 작용기전, 디바이스의 물리적 원리, 임상적 근거는 슬라이드와 텍스트만으로는 청중과 충분히 가까워지지 않습니다. AR이 주목받는 이유가 여기에 있습니다. 정보를 전달하는 것을 넘어, 학습자가 직접 조작하고 경험하게 만들기 때문입니다.\n\n첫째, AR은 추상적 개념을 공간적 경험으로 전환합니다. 예를 들어 성분이 피부 장벽을 통과하는 경로나 디바이스가 조직에 작용하는 원리를 텍스트로 읽으면 이해가 단편적으로 남습니다. 그러나 실제 공간에 3D 모델을 띄우고 각도를 바꿔가며 관찰하면, 구조와 순서가 하나의 이야기로 연결됩니다. 능동적 조작은 수동적 시청보다 개념 정착에 유리합니다.\n\n둘째, AR은 교육의 개인화를 가능하게 합니다. R&D 담당자는 분자 수준의 상세를, 영업 담당자는 고객 설명용 핵심 메시지를, 메디컬 담당자는 근거 데이터를 각자 필요한 깊이로 탐색할 수 있습니다. 하나의 콘텐츠 자산이 대상별로 다른 학습 경로를 지원하는 셈입니다.\n\n셋째, AR은 현장 확장성을 제공합니다. 학회 부스, 영업 미팅, 사내 교육에서 별도 장비 없이 모바일로 즉시 구동되며, 반복 학습과 자가 복습이 가능합니다. 이는 일회성 프레젠테이션을 지속적 자산으로 바꿉니다.\n\n다만 전제가 있습니다. AR은 도구일 뿐, 그 안에 담기는 과학적 정확성과 메시지 설계가 핵심입니다. 검증되지 않은 표현이나 화려함만 앞선 연출은 오히려 신뢰를 훼손합니다. bbbb.beauty는 의학적 정확성과 프리미엄 비주얼을 함께 설계하는 관점에서 이 작업에 접근합니다.\n\n여러분의 조직은 제품 교육에서 영상과 AR 중 어느 쪽이 더 효과적이라고 보시나요? 관점을 댓글로 나눠 주세요. 'AR가이드'를 댓글이나 DM으로 남겨 주시면 AR 교육 콘텐츠 기획 체크리스트를 보내드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#AR",
+        "#메디컬커뮤니케이션",
+        "#뷰티마케팅",
+        "#과학시각화"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260720_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: AR, 이해에서 경험으로"
+    },
+    {
+      "pair_id": "linkedin_20260720_morning",
+      "status": "pending",
+      "topic": "AR이 메디컬·뷰티 제품 교육의 이해도를 높이는 방식",
+      "slot": "morning",
+      "scheduled_time": "2026-07-20T09:00:00+09:00",
+      "created_at": "2026-07-20T06:40:22.076106+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "AR가이드",
+      "id": "linkedin_20260720_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "In medical and beauty product education, the biggest barrier is rarely complexity itself. It is distance. The mechanism of action of an ingredient, the physics of a device, the clinical rationale behind a claim: none of these come close enough to an audience through slides and text alone. This is precisely why AR is drawing attention. It moves beyond delivering information toward letting learners manipulate and experience it directly.\n\nFirst, AR converts abstract concepts into spatial experience. Reading about how an ingredient crosses the skin barrier, or how a device acts on tissue, leaves understanding fragmented. But when a 3D model appears in real space and learners rotate it, change angles, and observe sequence, structure and order connect into a single narrative. Active manipulation supports retention in a way passive viewing rarely does.\n\nSecond, AR enables personalized learning. An R&D specialist can explore molecular detail, a sales representative can focus on the core message needed for client conversations, and a medical affairs lead can drill into supporting evidence. A single content asset supports different learning paths at different depths, which is difficult to achieve with a fixed presentation.\n\nThird, AR offers field scalability. At conference booths, sales meetings, and internal training, it runs instantly on mobile without special hardware, and it allows repeated, self-directed review. This turns a one-off presentation into a durable, reusable asset.\n\nThere is a condition, however. AR is only a tool. What matters is the scientific accuracy and message architecture inside it. Unverified expressions or spectacle that outpaces substance ultimately erode trust. At bbbb.beauty, we approach this work by designing medical accuracy and premium visuals together, translating science into message and beauty into experience.\n\nSo here is the decision question for your team: in product education, do you see video or AR as the more effective format? Share your view in the comments. Send the keyword AR가이드 in a comment or DM and I will share an AR education content planning checklist. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#AR",
+        "#MedicalCommunication",
+        "#ScienceVisualization",
+        "#BeautyTech"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260720_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: AR: From Seeing to Experiencing"
+    },
+    {
+      "pair_id": "linkedin_20260720_afternoon",
+      "status": "pending",
+      "topic": "영업 현장에서 다시 활용되는 메디컬 교육 콘텐츠 설계법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-20T15:00:00+09:00",
+      "created_at": "2026-07-20T06:40:22.076106+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "REUSE",
+      "id": "linkedin_20260720_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "메디컬 교육 콘텐츠는 대부분 '교육이 끝나는 순간' 수명을 다합니다. 워크숍에서 한 번 상영되고, 파일 서버 어딘가에 저장된 뒤 잊혀집니다. 하지만 같은 MOA 자산을 영업 현장에서 다시 활용하도록 처음부터 설계하면, 하나의 콘텐츠가 학습과 세일즈를 동시에 움직이는 자산으로 바뀝니다.\n\n첫째, 모듈 단위로 쪼갤 수 있게 설계해야 합니다. 20분짜리 풀 버전 하나만 만들면 영업사원은 미팅에서 쓸 수 없습니다. 작용 기전 도입부 40초, 핵심 차별점 90초, 안전성 설명 60초처럼 독립적으로 재생 가능한 챕터로 나눠두면 상황에 맞게 꺼내 쓸 수 있습니다. 하나의 3D 씬을 다양한 길이로 재편집할 것을 전제로 카메라 워크와 내레이션을 설계하는 것이 핵심입니다.\n\n둘째, 청중별 레이어를 분리해야 합니다. R&D 심화 설명과 임상의 대상 요약, 마케팅용 하이라이트는 같은 기전을 다루더라도 정보 밀도가 다릅니다. 베이스 애니메이션은 공유하되 자막·라벨·데이터 오버레이를 레이어로 관리하면, 한 번의 렌더링 자산으로 여러 대상 버전을 효율적으로 파생할 수 있습니다.\n\n셋째, 오프라인과 인터랙티브의 접점을 미리 확보해야 합니다. 영업 미팅은 네트워크가 불안정한 경우가 많습니다. 태블릿 오프라인 재생, 특정 장면으로 바로 점프하는 챕터 인덱스, 질문에 따라 해당 기전으로 이동하는 인터랙티브 구조를 기획 단계에 넣으면 현장 활용도가 달라집니다.\n\n결국 교육 콘텐츠와 영업 콘텐츠를 별도 프로젝트로 두 번 만드는 대신, 하나의 과학 자산을 다목적으로 설계하는 것이 예산과 메시지 일관성 모두에 유리합니다.\n\n여러분의 조직에서는 교육용 자산과 영업용 자산을 따로 제작하십니까, 아니면 하나로 통합하십니까? 댓글로 의견을 나눠 주세요. 콘텐츠 재활용 설계 체크리스트가 필요하시면 REUSE 를 DM으로 보내 주세요. 프로젝트 문의는 https://jhbropark.github.io/pages/contact.html 에서 가능합니다.",
+      "hashtags": [
+        "#메디컬콘텐츠",
+        "#MOA애니메이션",
+        "#세일즈이네이블먼트",
+        "#사이언스커뮤니케이션"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260720_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 교육이 영업으로 이어지는 설계"
+    },
+    {
+      "pair_id": "linkedin_20260720_afternoon",
+      "status": "pending",
+      "topic": "영업 현장에서 다시 활용되는 메디컬 교육 콘텐츠 설계법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-20T15:00:00+09:00",
+      "created_at": "2026-07-20T06:40:22.076106+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "REUSE",
+      "id": "linkedin_20260720_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "Most medical education content dies the moment the training ends. It plays once in a workshop, gets archived on a shared drive, and is never opened again. Yet the same MOA asset, when designed from the start to be reused in the field, becomes something far more valuable: a single piece of content that drives both learning and sales.\n\nFirst, design for modularity. A single 20-minute master film is useless in a customer meeting. Instead, break the story into independently playable chapters, a 40-second mechanism intro, a 90-second differentiation segment, a 60-second safety explanation. When you plan camera work and narration around the assumption that one 3D scene will be re-edited into multiple lengths, your sales team can pull exactly what they need for the moment.\n\nSecond, separate your audience layers. Deep R&D detail, clinician-facing summaries, and marketing highlights may all describe the same mechanism, but they carry very different information density. Keep a shared base animation and manage captions, labels, and data overlays as layers. One rendered asset can then efficiently spawn multiple audience-specific versions without rebuilding from scratch.\n\nThird, plan for offline and interactive touchpoints early. Field meetings often happen with unreliable connectivity. Offline tablet playback, a chapter index that jumps straight to a specific scene, and an interactive structure that navigates to the relevant mechanism based on the customer's question, these decisions belong in the planning phase, not as afterthoughts.\n\nThe strategic takeaway is simple. Instead of commissioning education content and sales content as two separate projects, design one scientific asset to serve multiple purposes. This protects both your budget and, more importantly, your message consistency across every audience that touches your science.\n\nDoes your organization produce training and sales assets separately, or as one integrated system? I would value your perspective in the comments. If you would like our content reuse design checklist, send REUSE by DM. For project inquiries, visit https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MedicalContent",
+        "#MOAanimation",
+        "#SalesEnablement",
+        "#ScienceCommunication"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260720_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: From Training to Sales Tool"
     }
   ]
 }
