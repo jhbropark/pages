@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260628_morning",
+      "status": "pending",
+      "topic": "프리미엄 메디컬 비주얼을 만드는 네 가지 디렉션 원칙",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260628_morning_ko.jpg",
+      "caption": "프리미엄 메디컬 비주얼은 화려함이 아니라 정확성·위계·맥락·근거의 설계에서 나옵니다. 데이터가 메시지가 되고, 비주얼이 신뢰가 되는 네 가지 디렉션 원칙을 정리했습니다.\n\n댓글: 정확성 vs 임팩트, 우선은?\nDM “원칙4”: 메디컬 비주얼 디렉션 체크리스트 PDF\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#메디컬비주얼",
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#사이언스비주얼"
+      ],
+      "scheduled_time": "2026-06-28T12:30:00+09:00",
+      "created_at": "2026-06-28T06:52:23.764038+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260628_afternoon",
+      "status": "pending",
+      "topic": "규제가 있는 산업에서 창의적인 스토리텔링이 가능한 이유",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260628_afternoon_ko.jpg",
+      "caption": "규제는 창의성의 적이 아닙니다. 검증된 사실과 승인된 표현 안에서도 메커니즘을 시각으로 풀면 이야기는 살아납니다. 제약은 오히려 더 정확한 스토리텔링의 출발점입니다.\n\n댓글: 당신의 과제는? A 정확성 B 표현력\nDM “MOA가이드”: 규제 친화 MOA 제작 체크리스트 드려요\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#메디컬콘텐츠",
+        "#더마코스메틱",
+        "#3D비주얼",
+        "#규제산업마케팅"
+      ],
+      "scheduled_time": "2026-06-28T19:00:00+09:00",
+      "created_at": "2026-06-28T06:52:23.764038+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }

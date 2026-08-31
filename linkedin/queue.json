@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260628_morning",
+      "status": "pending",
+      "topic": "프리미엄 메디컬 비주얼을 만드는 네 가지 디렉션 원칙",
+      "slot": "morning",
+      "scheduled_time": "2026-06-28T09:00:00+09:00",
+      "created_at": "2026-06-28T06:52:23.764038+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "원칙4",
+      "id": "linkedin_20260628_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "메디컬·바이오 분야의 비주얼은 예쁜 영상이 목표가 아닙니다. 복잡한 기전을 정확하게 전달하면서도, 고객사의 기술이 신뢰와 선택으로 이어지게 만드는 것이 목표입니다. 같은 데이터를 다루어도 결과물의 설득력이 갈리는 이유는 디렉션 원칙의 유무에 있습니다. bbbb.beauty가 프로젝트마다 적용하는 네 가지 원칙을 공유합니다.\n\n첫째, 정확성이 미학에 우선합니다. 분자 구조, 작용 부위, 침투 경로 같은 요소는 시각적 임팩트를 위해 왜곡되어서는 안 됩니다. 예를 들어 활성 성분의 표피·진피 전달 경로를 단면으로 표현할 때, 층의 비율과 흡수 단계 순서가 과학적 근거와 어긋나면 그 영상은 마케팅 자산이 아니라 규제 리스크가 됩니다.\n\n둘째, 정보의 위계를 설계합니다. 한 장면에 모든 것을 담으면 아무것도 전달되지 않습니다. MOA 애니메이션에서는 핵심 작용 단계 하나를 주인공으로 두고, 보조 정보는 색·심도·움직임의 속도로 단계화합니다. 시청자의 시선이 어디서 머물고 어디로 이동하는지를 먼저 설계한 뒤 비주얼을 입힙니다.\n\n셋째, 맥락을 함께 보여줍니다. 분자 수준의 현상만 보여주면 \"그래서 피부에 무슨 일이 일어나는가\"라는 질문이 남습니다. 세포 단위, 조직 단위, 그리고 사용자가 체감하는 결과까지 스케일을 연결해 주어야 R&D의 언어가 브랜드의 메시지로 번역됩니다.\n\n넷째, 근거와 비주얼을 분리하지 않습니다. 모든 장면은 논문, 데이터 시트, 메디컬 팀의 검수를 거쳐야 합니다. 확인되지 않은 효능을 암시하는 연출은 단기적으로 화려해 보여도 장기적으로 브랜드 신뢰를 훼손합니다.\n\n이 네 가지(원칙4)는 결국 하나의 질문으로 모입니다. \"이 비주얼은 과학적으로 방어 가능한가, 동시에 설득력이 있는가.\" 정확성과 임팩트는 트레이드오프가 아니라 함께 설계되어야 할 두 축입니다.\n\n여러분의 조직은 메디컬 콘텐츠를 만들 때 정확성과 임팩트 중 무엇을 먼저 고려하시나요? 댓글로 의견을 들려주세요. 디렉션 체크리스트가 필요하시면 '원칙4'를 DM으로 보내주시고, 협업 문의는 https://jhbropark.github.io/pages/contact.html 에서 가능합니다.",
+      "hashtags": [
+        "#메디컬비주얼",
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#B2B마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260628_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 프리미엄 비주얼의 네 가지 원칙"
+    },
+    {
+      "pair_id": "linkedin_20260628_morning",
+      "status": "pending",
+      "topic": "프리미엄 메디컬 비주얼을 만드는 네 가지 디렉션 원칙",
+      "slot": "morning",
+      "scheduled_time": "2026-06-28T09:00:00+09:00",
+      "created_at": "2026-06-28T06:52:23.764038+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "원칙4",
+      "id": "linkedin_20260628_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "In medical and bio communication, a visual is not successful because it looks beautiful. It succeeds when it conveys a complex mechanism accurately while turning a company's technology into trust and, ultimately, selection. Teams working from the same dataset often produce results with very different persuasive power. The difference usually comes down to whether a clear set of direction principles exists. Here are the four we apply to every project at bbbb.beauty.\n\nFirst, accuracy precedes aesthetics. Molecular structures, sites of action, and penetration pathways must never be distorted for visual impact. When you render the epidermal and dermal delivery route of an active ingredient as a cross-section, getting the layer proportions or the sequence of absorption wrong turns the asset into a regulatory risk rather than a marketing tool.\n\nSecond, design the hierarchy of information. If a single frame tries to show everything, it communicates nothing. In a mechanism-of-action animation, we make one key step the protagonist and stage supporting information through color, depth, and motion speed. We map where the viewer's eye lands and where it travels before adding any visual polish.\n\nThird, show the context. Showing only a molecular event leaves the audience asking, \"So what actually happens in the skin?\" Connecting scales, from molecule to cell to tissue to the outcome a user perceives, is what translates R&D language into a brand message.\n\nFourth, never separate evidence from visuals. Every scene should pass through papers, data sheets, and medical review. A dramatization that implies an unverified benefit may look impressive in the short term, but it erodes brand trust over time.\n\nThese four ideas converge into a single question: is this visual scientifically defensible and persuasive at the same time? Accuracy and impact are not a trade-off; they are two axes to be designed together.\n\nWhen your organization builds medical content, which do you weigh first, accuracy or impact? Share your view in the comments. If you would like our direction checklist, send the keyword 원칙4 by DM, and reach us for collaboration at https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MedicalVisualization",
+        "#ScienceCommunication",
+        "#MOAanimation",
+        "#B2BMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260628_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: 4 Principles of Medical Visuals"
+    },
+    {
+      "pair_id": "linkedin_20260628_afternoon",
+      "status": "pending",
+      "topic": "규제가 있는 산업에서 창의적인 스토리텔링이 가능한 이유",
+      "slot": "afternoon",
+      "scheduled_time": "2026-06-28T15:00:00+09:00",
+      "created_at": "2026-06-28T06:52:23.764038+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA가이드",
+      "id": "linkedin_20260628_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "규제가 있는 산업에서는 창의적인 스토리텔링이 불가능하다는 오해가 자주 보입니다. 효능을 단정할 수 없고, 임상 수치는 출처가 명확해야 하며, 표현 하나하나가 검토를 거칩니다. 그러나 우리는 이 제약이 오히려 더 강한 콘텐츠를 만든다고 봅니다.\n\n첫째, 메커니즘은 규제 대상이 아니라 사실입니다. 성분이 어떤 경로로 작용하는지, 분자가 수용체에 어떻게 결합하는지는 검증된 과학입니다. 효능 주장 대신 작용기전(MOA)을 3D로 시각화하면, 단정적 카피 없이도 기술의 설득력을 그대로 전달할 수 있습니다. 제작 단계에서 R&D·메디컬·규제 담당자가 함께 참여해 사실의 경계를 먼저 정의하는 이유입니다.\n\n둘째, 제약은 메시지를 날카롭게 만듭니다. 무엇이든 말할 수 있을 때 메시지는 흐려지지만, 승인된 표현 안에서만 움직여야 할 때는 핵심만 남게 됩니다. 우리는 프로젝트 초반에 '말할 수 있는 것'과 '보여줄 수 있는 것'을 분리하는 워크숍을 진행합니다. 이 구분이 명확할수록 창의적 자유도는 오히려 커집니다.\n\n셋째, 정확성은 신뢰의 자산입니다. 시각화 한 장면이 논문 그림이나 작용 경로와 어긋나면 전문가 고객은 즉시 알아챕니다. 그래서 우리는 레퍼런스 검증, 내부 메디컬 리뷰, 클라이언트 감수의 3단계를 거칩니다. 이 과정이 콘텐츠를 마케팅 자료가 아니라 신뢰할 수 있는 커뮤니케이션 도구로 만듭니다.\n\n결국 규제는 창의성의 벽이 아니라 프레임입니다. 정확한 프레임 안에서 시각적 상상력이 작동할 때, 복잡한 기술은 고객의 이해와 선택으로 이어집니다. 규제 친화적인 MOA 콘텐츠를 어떻게 설계하는지 궁금하다면, 당신의 현재 과제는 정확성입니까, 표현력입니까? 댓글로 알려주세요. 'MOA가이드'를 DM으로 보내주시면 규제 친화 MOA 제작 체크리스트를 드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#메디컬콘텐츠",
+        "#규제산업마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260628_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 규제 안에서 스토리는 더 단단해진다"
+    },
+    {
+      "pair_id": "linkedin_20260628_afternoon",
+      "status": "pending",
+      "topic": "규제가 있는 산업에서 창의적인 스토리텔링이 가능한 이유",
+      "slot": "afternoon",
+      "scheduled_time": "2026-06-28T15:00:00+09:00",
+      "created_at": "2026-06-28T06:52:23.764038+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA가이드",
+      "id": "linkedin_20260628_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "There is a persistent myth that regulated industries leave no room for creative storytelling. You cannot overstate efficacy, every clinical figure needs a verified source, and each line of copy passes through review. Yet in our experience, these constraints produce stronger content, not weaker.\n\nFirst, mechanism is not a regulated claim but a fact. How an ingredient travels through a pathway, how a molecule binds to a receptor, is established science. When you visualize the mechanism of action in 3D instead of asserting outcomes, you convey the persuasive weight of the technology without a single risky claim. That is why we bring R&D, medical, and regulatory stakeholders into the room early to define the boundary of fact before a single frame is built.\n\nSecond, constraints sharpen the message. When you can say anything, the message blurs. When you can only move within approved language, only the essential remains. At the start of each project we run a workshop that separates what can be said from what can be shown. The clearer that line, the greater the creative freedom that follows.\n\nThird, accuracy is a trust asset. If one visualized scene contradicts a published figure or a known pathway, expert audiences notice immediately. So we work through three layers: reference verification, internal medical review, and client validation. This process turns content from a marketing asset into a communication tool people can trust.\n\nRegulation, then, is not a wall against creativity but a frame for it. When visual imagination operates inside an accurate frame, complex science becomes understanding, and understanding becomes choice.\n\nSo here is my question: is your current challenge accuracy, or expression? Tell me in the comments. Send me the keyword MOA가이드 and I will share our checklist for regulation-friendly MOA content. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOAanimation",
+        "#ScienceCommunication",
+        "#MedicalContent",
+        "#RegulatedIndustry"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260628_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Regulation Sharpens the Story"
     }
   ]
 }
