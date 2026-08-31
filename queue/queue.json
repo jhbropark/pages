@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260810_morning",
+      "status": "pending",
+      "topic": "제품 차별점을 경쟁사 비교 없이 명확하게 보여주는 방법",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260810_morning_ko.jpg",
+      "caption": "차별점은 경쟁사와 나란히 세울 때가 아니라, 제품이 작동하는 원리를 눈으로 보여줄 때 명확해집니다. 메커니즘 시각화가 곧 차별화입니다.\n\n댓글: 당신의 선택은? A 비교 B 원리\nDM “차별화”: 메커니즘 시각화 체크리스트 보내드립니다\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#메디컬콘텐츠",
+        "#브랜드전략"
+      ],
+      "scheduled_time": "2026-08-10T12:30:00+09:00",
+      "created_at": "2026-08-10T06:20:42.035915+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260810_afternoon",
+      "status": "pending",
+      "topic": "과학 커뮤니케이션 프로젝트의 킥오프에서 물어야 할 질문",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260810_afternoon_ko.jpg",
+      "caption": "MOA 애니메이션의 완성도는 킥오프에서 결정됩니다. '이 콘텐츠로 누가, 어떤 결정을 내려야 하는가'를 먼저 정의하면 과학적 정확성과 메시지가 어긋나지 않습니다.\n\n댓글: 타깃은 의료진 A / 마케팅 B?\nDM “킥오프”: MOA 킥오프 질문 체크리스트 드립니다\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#메디컬콘텐츠",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#사이언스비주얼"
+      ],
+      "scheduled_time": "2026-08-10T19:00:00+09:00",
+      "created_at": "2026-08-10T06:20:42.035915+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
