@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260627_morning",
+      "status": "pending",
+      "topic": "기술 중심 브랜드가 고객의 선택을 얻기 위해 설명해야 할 것",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260627_morning_ko.jpg",
+      "caption": "기술이 뛰어나도 고객은 '왜 이게 나은지'를 이해하지 못하면 선택하지 않습니다. 메커니즘을 신뢰 가능한 언어와 비주얼로 번역하는 일이 곧 경쟁력입니다.\n\n댓글: 더 약한 고리는? A 설명 B 비주얼\nDM “번역”: 기술 메시지 번역 체크리스트 8문항 제공\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#사이언스커뮤니케이션",
+        "#더마코스메틱",
+        "#MOA애니메이션",
+        "#B2B마케팅",
+        "#메디컬콘텐츠",
+        "#브랜드신뢰"
+      ],
+      "scheduled_time": "2026-06-27T12:30:00+09:00",
+      "created_at": "2026-06-27T07:00:43.581545+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260627_afternoon",
+      "status": "pending",
+      "topic": "전문가에게는 정확하게, 소비자에게는 쉽게 말하는 콘텐츠 구조",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260627_afternoon_ko.jpg",
+      "caption": "같은 데이터를 두 번 번역해야 합니다. 전문가에게는 메커니즘의 정확도로, 소비자에게는 직관적 비유로. 하나의 과학에서 두 개의 레이어를 설계하는 것이 콘텐츠 구조의 핵심입니다.\n\n댓글: 전문가용 먼저? 소비자용 먼저?\nDM “레이어”: 이중 레이어 설계 체크리스트 PDF\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#사이언스커뮤니케이션",
+        "#MOA애니메이션",
+        "#더마코스메틱",
+        "#메디컬콘텐츠",
+        "#B2B마케팅",
+        "#3D비주얼라이제이션"
+      ],
+      "scheduled_time": "2026-06-27T19:00:00+09:00",
+      "created_at": "2026-06-27T07:00:43.581545+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
