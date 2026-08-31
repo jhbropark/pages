@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260629_morning",
+      "status": "pending",
+      "topic": "제품 차별점을 경쟁사 비교 없이 명확하게 보여주는 방법",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260629_morning_ko.jpg",
+      "caption": "경쟁사를 깎아내리지 않아도 차별점은 보입니다. 핵심은 우리 기술의 작용기전을 시각적으로 증명하는 것. 메커니즘이 선명할수록 비교는 불필요해집니다.\n\n댓글: 당신의 무기는? A.기전 B.임상\nDM “차별화”: 차별점 시각화 진단 체크리스트 제공\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA",
+        "#메디컬마케팅",
+        "#더마코스메틱",
+        "#B2B브랜딩",
+        "#brandstrategy"
+      ],
+      "scheduled_time": "2026-06-29T12:30:00+09:00",
+      "created_at": "2026-06-29T06:52:41.869509+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260629_afternoon",
+      "status": "pending",
+      "topic": "과학 커뮤니케이션 프로젝트의 킥오프에서 물어야 할 질문",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260629_afternoon_ko.jpg",
+      "caption": "킥오프에서 좋은 질문 하나가 영상 3D 제작의 재작업 수십 시간을 줄입니다. 'MOA의 핵심 단계는 무엇인가, 누구에게 보여줄 것인가'부터 정의하면 메시지가 흔들리지 않습니다.\n\n댓글: 우선순위는? A 정확성 B 임팩트\nDM “킥오프”: 킥오프 질문 체크리스트 PDF 보내드립니다\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#3D메디컬",
+        "#더마코스메틱",
+        "#B2B마케팅",
+        "#메디컬콘텐츠"
+      ],
+      "scheduled_time": "2026-06-29T19:00:00+09:00",
+      "created_at": "2026-06-29T06:52:41.869509+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
