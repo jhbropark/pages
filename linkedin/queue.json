@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260805_morning",
+      "status": "pending",
+      "topic": "전시회와 학회에서 복잡한 기술을 짧게 전달하는 비주얼 구조",
+      "slot": "morning",
+      "scheduled_time": "2026-08-06T09:00:00+09:00",
+      "created_at": "2026-08-05T07:02:56.237604+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "부스",
+      "id": "linkedin_20260805_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "전시회와 학회에서 관람객이 하나의 부스에 머무는 시간은 길지 않습니다. 그 짧은 순간에 복잡한 작용기전이나 임상 근거를 전부 설명하려는 시도는 대부분 실패합니다. 정보의 양이 아니라 정보의 순서와 구조가 전달을 결정하기 때문입니다.\n\n첫째, 진입 장면은 결과가 아니라 문제에서 출발해야 합니다. 많은 브랜드가 자사 기술의 우수성부터 화면에 띄웁니다. 그러나 관람객은 자신이 왜 이 기술을 봐야 하는지 모르는 상태입니다. 해결하려는 생물학적 문제를 한 장면으로 먼저 제시하면, 이후 등장하는 작용기전이 맥락을 얻습니다. 3D MOA 애니메이션에서 도입 3초를 문제 정의에 쓰는 이유입니다.\n\n둘째, 레이어를 분리해야 합니다. 학회 부스 스크린은 소리 없이 재생되는 경우가 많고, 관람객은 중간부터 봅니다. 따라서 세포 수준, 분자 수준, 임상 결과를 한 화면에 몰아넣기보다 단계별로 층을 나눠 반복 재생되도록 설계합니다. 어느 지점에서 보기 시작해도 핵심 메시지 한 가지는 반드시 잡히도록 만드는 구조입니다.\n\n셋째, 대화가 시작되는 지점을 남겨야 합니다. 영상이 모든 것을 설명하면 부스 담당자와 관람객 사이의 대화가 사라집니다. 오히려 핵심 기전만 시각화하고 세부 데이터는 담당자가 이어서 설명하도록 여백을 두면, 영상은 대화의 도입부 역할을 합니다. 인터랙티브 콘텐츠나 AR은 이 여백을 관람객이 직접 탐색하게 만드는 도구입니다.\n\n정리하면 전시·학회 비주얼의 목적은 완결된 설명이 아니라, 기억되는 한 장면과 이어질 대화의 시작입니다. 무엇을 뺄지 결정하는 편집이 무엇을 넣을지보다 중요합니다.\n\n여러분의 팀은 부스에서 기술을 보여줄 때 완결된 설명과 대화의 시작 중 무엇을 우선하시나요? 댓글로 의견을 나눠 주세요. '부스'를 DM으로 보내주시면 전시·학회 비주얼 설계 체크리스트를 전달드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#전시회마케팅",
+        "#B2B브랜딩"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260805_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 3초 안에 전달되는 기술"
+    },
+    {
+      "pair_id": "linkedin_20260805_morning",
+      "status": "pending",
+      "topic": "전시회와 학회에서 복잡한 기술을 짧게 전달하는 비주얼 구조",
+      "slot": "morning",
+      "scheduled_time": "2026-08-06T09:00:00+09:00",
+      "created_at": "2026-08-05T07:02:56.237604+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "부스",
+      "id": "linkedin_20260805_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "At trade shows and scientific congresses, the time a visitor spends in front of a single booth is short. Trying to explain an entire mechanism of action or full clinical rationale in those seconds usually fails. What determines whether the message lands is not the volume of information, but its order and structure.\n\nFirst, the opening frame should start with the problem, not the result. Many brands lead with the superiority of their own technology. But the visitor does not yet know why this technology matters to them. Present the biological problem you are solving in a single frame first, and the mechanism that follows gains context. That is why, in a 3D MOA animation, we spend the opening three seconds defining the problem rather than showcasing the solution.\n\nSecond, separate the layers. Congress booth screens often play without sound, and visitors tend to catch them mid-loop. So instead of cramming the cellular level, the molecular level, and the clinical outcome into one dense frame, we build the sequence in distinct layers that loop cleanly. No matter where a viewer joins, at least one core message must register.\n\nThird, leave a place for the conversation to begin. If the video explains everything, the exchange between your booth staff and the visitor disappears. Visualize only the essential mechanism and leave the detailed data for your team to walk through, and the video becomes an opening line rather than a closing statement. Interactive content and AR turn that deliberate gap into something the visitor explores directly.\n\nIn short, the goal of exhibition and congress visuals is not a complete explanation, but one memorable scene and the start of a dialogue. The editorial decision of what to leave out matters more than what to put in.\n\nWhen your team presents technology at a booth, do you prioritize a complete explanation or the start of a conversation? Share your view in the comments. Send the keyword 부스 by DM and I will share our exhibition and congress visual design checklist. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#ScienceCommunication",
+        "#MOAanimation",
+        "#MedicalVisualization",
+        "#B2BMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260805_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: The 3-Second Booth Story"
+    },
+    {
+      "pair_id": "linkedin_20260805_afternoon",
+      "status": "pending",
+      "topic": "KOL 인터뷰를 신뢰도 높은 다큐멘터리 콘텐츠로 만드는 법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-08-05T15:00:00+09:00",
+      "created_at": "2026-08-05T07:02:56.237604+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "KOL",
+      "id": "linkedin_20260805_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "KOL 인터뷰 영상이 기대만큼 신뢰를 주지 못하는 이유는 대부분 촬영 품질이 아니라 사전 설계의 부재입니다. 카메라 앞에 전문가를 세우기 전에, 그 발언이 어떤 과학적 근거 위에 놓일지를 먼저 정의해야 합니다. bbbb.beauty가 메디컬 다큐멘터리를 만들 때 지키는 세 가지 원칙을 공유합니다.\n\n첫째, 질문을 근거에서 역설계합니다. KOL이 자유롭게 말하도록 두면 감상적 발언과 검증된 사실이 뒤섞입니다. 우리는 브랜드의 임상 데이터와 작용기전을 먼저 정리한 뒤, 각 질문이 어떤 근거에 대응하는지 매핑합니다. 이렇게 하면 편집 단계에서 '이 말은 뒷받침할 데이터가 있는가'를 매번 확인할 수 있고, 규제·의학 검수 부담도 줄어듭니다.\n\n둘째, 말로 설명하기 어려운 기전은 MOA 시각화로 보완합니다. 전문가가 성분의 세포 단위 작용을 설명할 때, 관객은 대개 절반만 이해합니다. 이때 3D MOA 애니메이션을 인터뷰 위에 레이어링하면 발언이 곧바로 시각적 증거가 됩니다. 인터뷰와 시각자료의 타임코드를 촬영 전에 맞춰두면 후반 작업이 훨씬 정확해집니다.\n\n셋째, 다큐멘터리의 신뢰는 '보여준 것'과 '주장한 것'의 일치에서 나옵니다. 확인되지 않은 효능을 KOL의 입을 빌려 말하게 하는 순간 콘텐츠 전체의 신뢰가 무너집니다. 발언, 자막, 시각자료가 동일한 근거를 가리키도록 검수 체계를 두는 것이 핵심입니다.\n\n결국 KOL 다큐멘터리는 촬영 프로젝트가 아니라 과학 커뮤니케이션 설계 프로젝트입니다. 좋은 설계가 좋은 발언을, 좋은 발언이 신뢰를 만듭니다.\n\n여러분의 KOL 콘텐츠는 촬영이 먼저였나요, 설계가 먼저였나요? 사전 질문 설계 체크리스트가 필요하시면 KOL 이라고 남겨주세요. 문의는 https://jhbropark.github.io/pages/contact.html 에서 이어갈 수 있습니다.",
+      "hashtags": [
+        "#KOL인터뷰",
+        "#메디컬다큐멘터리",
+        "#MOA애니메이션",
+        "#과학커뮤니케이션"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260805_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: KOL 발언을 신뢰의 증거로"
+    },
+    {
+      "pair_id": "linkedin_20260805_afternoon",
+      "status": "pending",
+      "topic": "KOL 인터뷰를 신뢰도 높은 다큐멘터리 콘텐츠로 만드는 법",
+      "slot": "afternoon",
+      "scheduled_time": "2026-08-05T15:00:00+09:00",
+      "created_at": "2026-08-05T07:02:56.237604+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "KOL",
+      "id": "linkedin_20260805_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "KOL interview videos often fail to build trust, and the reason is rarely the production quality. It is the absence of upstream design. Before you place an expert in front of a camera, you need to define the scientific ground on which every statement will stand. Here are three principles bbbb.beauty follows when producing medical documentaries.\n\nFirst, reverse-engineer questions from the evidence. When a KOL is left to speak freely, credible facts get mixed with impressions. We first organize the brand's clinical data and mechanism of action, then map each question to the evidence it is meant to surface. This lets the editing team repeatedly ask, does a statement have data behind it, and it lightens the regulatory and medical review burden later.\n\nSecond, reinforce hard-to-explain mechanisms with MOA visualization. When an expert describes how an ingredient acts at the cellular level, audiences typically grasp only half of it. Layering a 3D MOA animation over the interview turns the spoken claim into visible evidence. Aligning the timecodes of interview and visuals before the shoot makes post-production far more precise.\n\nThird, documentary trust comes from the alignment between what is shown and what is claimed. The moment an unverified efficacy claim is put into a KOL's mouth, the credibility of the entire piece collapses. The key is a review system where speech, subtitles, and visuals all point to the same evidence.\n\nA KOL documentary is not a shooting project. It is a science communication design project. Good design produces good statements, and good statements produce trust.\n\nWas your KOL content shoot-first or design-first? If you would like our pre-interview question design checklist, comment KOL. You can continue the conversation at https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#KOLinterview",
+        "#MedicalDocumentary",
+        "#MOAanimation",
+        "#ScienceCommunication"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260805_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Turn KOL Words Into Evidence"
     }
   ]
 }

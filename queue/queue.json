@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260805_morning",
+      "status": "pending",
+      "topic": "전시회와 학회에서 복잡한 기술을 짧게 전달하는 비주얼 구조",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260805_morning_ko.jpg",
+      "caption": "부스 앞에 멈춘 3초, 이 안에 기술의 핵심이 보여야 합니다. 전시·학회 비주얼은 설명이 아니라 한 장면의 구조 설계입니다. 무엇을 먼저 보여줄지가 신뢰를 결정합니다.\n\n댓글: 부스 영상 vs 인터랙티브?\nDM “부스”: 전시·학회 비주얼 설계 체크리스트 전달\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#의학시각화",
+        "#전시회마케팅",
+        "#B2B브랜딩",
+        "#더마코스메틱"
+      ],
+      "scheduled_time": "2026-08-05T12:30:00+09:00",
+      "created_at": "2026-08-05T07:02:56.237604+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260805_afternoon",
+      "status": "pending",
+      "topic": "KOL 인터뷰를 신뢰도 높은 다큐멘터리 콘텐츠로 만드는 법",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260805_afternoon_ko.jpg",
+      "caption": "KOL 인터뷰가 흔들리는 이유는 촬영이 아니라 설계입니다. 임상 근거와 MOA 시각화를 먼저 정렬해야 발언 하나하나가 신뢰의 증거로 남습니다.\n\n댓글: KOL 콘텐츠, 촬영파 vs 설계파?\nDM “KOL”: KOL 다큐 사전질문 설계 체크리스트\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#KOL인터뷰",
+        "#메디컬다큐멘터리",
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#B2B콘텐츠"
+      ],
+      "scheduled_time": "2026-08-05T19:00:00+09:00",
+      "created_at": "2026-08-05T07:02:56.237604+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }
