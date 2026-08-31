@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260705_morning",
+      "status": "pending",
+      "topic": "과학 시각화에서 예쁜 이미지보다 먼저 확인해야 하는 기준",
+      "slot": "morning",
+      "scheduled_time": "2026-07-05T09:00:00+09:00",
+      "created_at": "2026-07-05T06:46:05.624386+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "기준표",
+      "id": "linkedin_20260705_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "과학 시각화를 의뢰할 때 가장 먼저 던지는 질문이 \"얼마나 예쁘게 나오나요\"라면, 프로젝트의 리스크는 이미 시작된 것입니다. 메디컬·더마·바이오 분야의 비주얼은 감상의 대상이 아니라 주장의 근거이기 때문입니다. 심미성보다 먼저 확인해야 할 세 가지 기준을 제안합니다.\n\n첫째, 데이터와 메커니즘의 출처입니다. 3D MOA 애니메이션에서 분자가 수용체에 결합하는 장면 하나에도 문헌 근거가 있어야 합니다. 예를 들어 특정 성분의 작용 경로를 시각화할 때, 실제 논문의 결합 부위와 다르게 표현하면 그 영상은 마케팅 자산이 아니라 규제 리스크가 됩니다. 아름다운 렌더링은 틀린 과학을 더 설득력 있게 퍼뜨릴 뿐입니다.\n\n둘째, 표현 수위의 규제 적합성입니다. 더마코스메틱과 화장품, 의약품은 허용되는 효능 표현의 경계가 다릅니다. 시각적으로 '치료'를 연상시키는 연출이 화장품 콘텐츠에 들어가면 문구는 통과해도 이미지가 문제가 됩니다. 시각 언어도 규제 검토 대상이라는 점을 초기 기획 단계에서 합의해야 합니다.\n\n셋째, 단순화의 정직성입니다. 복잡한 과학을 쉽게 만드는 것과 왜곡하는 것은 다릅니다. 스케일, 속도, 인과관계를 압축할 때 '이건 개념적 표현'임을 명시하는지, 아니면 사실처럼 보이게 하는지가 신뢰의 분기점입니다. 좋은 시각화는 무엇을 생략했는지 스스로 설명할 수 있습니다.\n\n결국 예쁜 이미지는 이 세 기준을 통과한 뒤에 얹는 마감입니다. 순서를 바꾸면 R&D가 쌓은 신뢰가 비주얼 한 장면에서 무너집니다. bbbb.beauty는 의학적 정확성 검증을 먼저 세우고 프리미엄 비주얼을 그 위에 올리는 방식으로 작업합니다.\n\n여러분의 조직은 시각화 프로젝트에서 검증과 비주얼 중 무엇을 먼저 확정하시나요? 댓글로 A/B만 남겨 주셔도 좋습니다. 사전검증 체크리스트가 필요하시면 '기준표'를 DM으로 보내 주세요. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학시각화",
+        "#MOA애니메이션",
+        "#메디컬커뮤니케이션",
+        "#더마코스메틱"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260705_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 예쁨보다 먼저, 정확성"
+    },
+    {
+      "pair_id": "linkedin_20260705_morning",
+      "status": "pending",
+      "topic": "과학 시각화에서 예쁜 이미지보다 먼저 확인해야 하는 기준",
+      "slot": "morning",
+      "scheduled_time": "2026-07-05T09:00:00+09:00",
+      "created_at": "2026-07-05T06:46:05.624386+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "기준표",
+      "id": "linkedin_20260705_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "If the first question when commissioning scientific visualization is \"how beautiful will it look,\" the project risk has already begun. In medical, derma, and bio fields, visuals are not objects of appreciation—they are evidence for claims. I propose three criteria to verify before aesthetics.\n\nFirst, the source of data and mechanism. In a 3D MOA animation, even a single scene of a molecule binding to a receptor needs literature backing. If you visualize a compound's pathway differently from the actual binding site described in the research, that video becomes a regulatory liability rather than a marketing asset. A beautiful render only spreads incorrect science more persuasively.\n\nSecond, regulatory fit of expression level. Dermocosmetics, cosmetics, and pharmaceuticals operate under different boundaries for permissible efficacy claims. When a visual staging that evokes \"treatment\" enters cosmetic content, the copy may pass review while the image fails. Visual language is also subject to regulatory scrutiny, and this must be agreed upon at the earliest planning stage—not after final rendering.\n\nThird, the honesty of simplification. Making complex science easy is different from distorting it. When you compress scale, speed, or causality, the branch point of trust is whether you clearly state \"this is a conceptual representation\" or let it appear as literal fact. Strong visualization can explain what it chose to omit.\n\nUltimately, a beautiful image is the finish applied only after passing these three criteria. Reverse the order, and the trust your R&D team built over years can collapse in a single visual frame. At bbbb.beauty, we establish medical accuracy verification first, then layer premium visuals on top of that foundation—because credibility, once lost, is far more expensive to rebuild than to protect.\n\nIn your organization, which do you lock first in a visualization project: verification or visuals? A simple A or B in the comments is enough. If you want a pre-production verification checklist, send me the keyword 기준표 by DM. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#ScienceVisualization",
+        "#MedicalAnimation",
+        "#Dermocosmetics",
+        "#B2BMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260705_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Accuracy Before Aesthetics"
+    },
+    {
+      "pair_id": "linkedin_20260705_afternoon",
+      "status": "pending",
+      "topic": "브랜드 필름과 과학 다큐멘터리는 무엇이 다른가",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-05T15:00:00+09:00",
+      "created_at": "2026-07-05T06:46:05.624386+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "필름가이드",
+      "id": "linkedin_20260705_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "\"브랜드 필름과 과학 다큐멘터리는 결국 같은 영상 아닌가요?\" 메디컬·더마 브랜드 담당자에게 자주 받는 질문입니다. 겉보기엔 비슷해 보여도, 두 포맷은 목적과 설득의 문법이 근본적으로 다릅니다. 이 차이를 이해하지 못하면 예산은 쓰였는데 아무도 설득되지 않는 콘텐츠가 나옵니다.\n\n첫째, 설득의 축이 다릅니다. 브랜드 필름은 감정과 세계관으로 신뢰를 만듭니다. 성분의 기술적 원리보다 \"이 브랜드가 무엇을 믿는가\"를 보여줍니다. 반면 과학 다큐멘터리는 근거와 논리로 설득합니다. 작용기전(MOA), 임상 설계, 데이터 해석의 인과 사슬을 관객이 스스로 납득하도록 구성합니다. 같은 성분을 다루더라도 전자는 60초 안에 감정을 남기고, 후자는 5분 동안 이해를 쌓습니다.\n\n둘째, 검증 기준이 다릅니다. 브랜드 필름의 품질은 무드보드와 톤앤매너로 판단되지만, 과학 다큐는 메디컬·RA 리뷰를 통과해야 합니다. 3D/MOA 애니메이션에서 수용체 결합 방식이나 세포 내 이동 경로를 시각화할 때, 우리는 자문 과학자와 함께 표현 수위를 검증합니다. \"보기 좋게\"와 \"근거 있게\" 사이의 균형이 이 포맷의 핵심 난이도입니다.\n\n셋째, 제작 방법론이 다릅니다. 브랜드 필름은 스토리보드에서 출발하지만, 과학 다큐는 사실 관계 정리와 팩트 시트에서 출발합니다. bbbb.beauty는 프로젝트 초반에 \"이 영상이 감정을 남겨야 하는가, 이해를 남겨야 하는가\"를 먼저 정의합니다. 이 하나의 판단이 스크립트 구조, 비주얼 밀도, 러닝타임, 검수 프로세스를 전부 결정하기 때문입니다.\n\n실무에서는 하나의 과학 스토리를 두 갈래로 설계하는 접근이 효과적입니다. 전시·투자자용은 감정 중심 브랜드 필름으로, 학술·의료진용은 근거 중심 다큐로 나누되, 동일한 3D 에셋을 재활용해 제작 효율을 확보합니다.\n\n여러분의 다음 프로젝트는 감정을 남겨야 합니까, 이해를 남겨야 합니까? 목적별 영상 설계 체크리스트가 필요하면 댓글이나 DM으로 '필름가이드'를 남겨 주세요. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#MOA애니메이션",
+        "#메디컬마케팅",
+        "#브랜드필름"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260705_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 브랜드 필름 vs 과학 다큐"
+    },
+    {
+      "pair_id": "linkedin_20260705_afternoon",
+      "status": "pending",
+      "topic": "브랜드 필름과 과학 다큐멘터리는 무엇이 다른가",
+      "slot": "afternoon",
+      "scheduled_time": "2026-07-05T15:00:00+09:00",
+      "created_at": "2026-07-05T06:46:05.624386+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "필름가이드",
+      "id": "linkedin_20260705_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "\"Aren't a brand film and a science documentary basically the same video?\" It's one of the most common questions we hear from medical, derma, and biotech marketers. They look alike on the surface, but the two formats follow fundamentally different grammars of persuasion. Miss that distinction and you end up with content that spent the budget but convinced no one.\n\nFirst, the axis of persuasion differs. A brand film builds trust through emotion and worldview. It cares less about the technical mechanism of an ingredient and more about what the brand stands for. A science documentary, by contrast, persuades through evidence and logic. It constructs the causal chain of the mechanism of action, the clinical design, and the data interpretation so the audience reaches the conclusion themselves. With the same ingredient, the former leaves an emotion in 60 seconds while the latter builds understanding over five minutes.\n\nSecond, the validation standard differs. A brand film is judged by mood boards and tone. A science documentary must pass medical and regulatory review. When we visualize receptor binding or intracellular transport in 3D/MOA animation, we verify the level of representation together with advisory scientists. Balancing \"visually compelling\" against \"scientifically defensible\" is the core difficulty of this format.\n\nThird, the production methodology differs. A brand film starts from a storyboard. A science documentary starts from fact organization and a fact sheet. At bbbb.beauty, we define one question at the very beginning of a project: should this film leave an emotion, or leave understanding? That single decision determines the script structure, visual density, runtime, and review process.\n\nIn practice, designing one scientific story along two tracks works well. An emotion-led brand film for exhibitions and investors, an evidence-led documentary for academic and clinical audiences, while reusing the same 3D assets to protect production efficiency.\n\nSo, should your next project leave an emotion, or leave understanding? If you'd like our purpose-based film design checklist, comment or DM the keyword '필름가이드'. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#ScienceCommunication",
+        "#MOAanimation",
+        "#MedicalMarketing",
+        "#BrandFilm"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260705_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Brand Film vs Science Doc"
     }
   ]
 }
