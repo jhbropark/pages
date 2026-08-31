@@ -715,6 +715,26 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260702",
+      "status": "pending",
+      "topic": "3D/MOA가 필요한 순간과 다큐멘터리가 필요한 순간",
+      "pillar_id": "portfolio",
+      "format": "single_image",
+      "image_url": "https://jhbropark.github.io/pages/images/post_20260702.jpg",
+      "caption": "3D/MOA와 다큐멘터리는 같은 영상을 줄인 버전이 아니라 서로 다른 결정 순간을 여는 형식입니다. 기전 이해와 브랜드 신뢰를 분리 설계하면 첫 장면이 더 선명해집니다. 프로필을 방문하시고 저장 또는 팀 공유에 활용하시기 바랍니다.",
+      "hashtags": [
+        "#3DMOA",
+        "#브랜드필름",
+        "#뷰티브랜딩",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#bbbbbeauty"
+      ],
+      "scheduled_time": "2026-07-02T19:00:00+09:00",
+      "created_at": "2026-07-01T06:04:36.6702295+09:00",
+      "generated_by": "codex"
     }
   ]
 }
