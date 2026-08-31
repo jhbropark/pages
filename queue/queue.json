@@ -715,6 +715,46 @@
       "scheduled_time": null,
       "created_at": "2026-06-20T06:44:11.515562+00:00",
       "generated_by": "claude-krea-pilot"
+    },
+    {
+      "id": "post_20260801_morning",
+      "status": "pending",
+      "topic": "R&D의 기술 언어와 마케팅의 고객 언어 사이를 연결하는 방법",
+      "format": "single_image",
+      "slot": "morning",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260801_morning_ko.jpg",
+      "caption": "R&D는 '메커니즘'을 말하고 마케팅은 '가치'를 말합니다. 둘 사이 번역이 실패하면 좋은 기술도 팔리지 않습니다. 정확성을 지키며 의미로 옮기는 것이 과학 커뮤니케이션의 핵심입니다.\n\n댓글: 당신 팀의 병목은? R&D vs 마케팅\nDM “번역”: R&D-마케팅 번역 체크리스트 드립니다\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#R&D마케팅",
+        "#더마코스메틱",
+        "#MOA애니메이션",
+        "#B2B마케팅",
+        "#메디컬콘텐츠"
+      ],
+      "scheduled_time": "2026-08-01T12:30:00+09:00",
+      "created_at": "2026-08-01T06:55:56.460416+09:00",
+      "generated_by": "claude-opus-4-8"
+    },
+    {
+      "id": "post_20260801_afternoon",
+      "status": "pending",
+      "topic": "논문 한 편이 설득력 있는 브랜드 스토리가 되기까지",
+      "format": "single_image",
+      "slot": "afternoon",
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260801_afternoon_ko.jpg",
+      "caption": "논문의 데이터는 정확하지만 설득하지 못합니다. 핵심 기전 하나를 골라 시각적 서사로 번역할 때, 근거는 비로소 브랜드 스토리가 됩니다. 정확성과 몰입, 둘 다 잡는 과정을 정리했습니다.\n\n댓글: 논문 시각화, 필요? YES/NO\nDM “MOA”: 논문→영상 번역 체크리스트 발송\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#의학시각화",
+        "#B2B마케팅",
+        "#브랜드스토리"
+      ],
+      "scheduled_time": "2026-08-01T19:00:00+09:00",
+      "created_at": "2026-08-01T06:55:56.460416+09:00",
+      "generated_by": "claude-opus-4-8"
     }
   ]
 }

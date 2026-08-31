@@ -1560,6 +1560,94 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260801_morning",
+      "status": "pending",
+      "topic": "R&D의 기술 언어와 마케팅의 고객 언어 사이를 연결하는 방법",
+      "slot": "morning",
+      "scheduled_time": "2026-08-01T09:00:00+09:00",
+      "created_at": "2026-08-01T06:55:56.460416+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "번역",
+      "id": "linkedin_20260801_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "R&D 회의실에서는 작용기전, 흡수율, 임상 엔드포인트가 언어입니다. 마케팅 회의실에서는 소비자 혜택, 차별점, 구매 이유가 언어입니다. 두 방이 같은 제품을 이야기하면서도 서로 다른 언어를 쓰기 때문에, 훌륭한 기술이 시장에서 제대로 전달되지 못하는 일이 반복됩니다. 문제는 번역의 부재입니다.\n\n첫째, 번역은 '단순화'가 아니라 '의미 보존'입니다. 복잡한 메커니즘을 소비자 문구로 줄일 때 흔히 정확성이 희생됩니다. 예를 들어 특정 성분의 작용 경로를 '피부 재생'이라는 한 단어로 뭉개면, R&D가 확보한 근거의 층위가 사라지고 규제 리스크만 남습니다. 좋은 번역은 근거의 위계를 유지한 채 청중의 언어로 재배열하는 작업입니다.\n\n둘째, 시각화는 가장 강력한 공통 언어입니다. 3D MOA 애니메이션이나 과학 시각화는 R&D 데이터의 정확성과 마케팅의 직관성을 동시에 만족시킬 수 있는 드문 포맷입니다. 텍스트로 열 줄 설명할 세포 단위 작용을 15초 영상 하나가 이해와 신뢰로 바꿉니다. 이때 핵심은 화려함이 아니라, 실제 데이터와 논문 근거에 기반한 시각적 정확성입니다.\n\n셋째, 번역에는 '중간 언어'를 만드는 사람이 필요합니다. R&D와 마케팅 사이에 과학 커뮤니케이션 에디터가 개입해, 무엇을 말할 수 있고 무엇을 말하면 안 되는지, 어떤 근거로 어디까지 주장할 수 있는지를 정리해야 합니다. 이 중간 언어가 없으면 마케팅은 과장하고 R&D는 침묵하는 극단이 반복됩니다.\n\n결국 기술을 고객의 신뢰와 선택으로 연결하는 것은 번역의 질입니다. 정확성을 지키면서도 의미가 살아있는 메시지를 설계하는 일, 그것이 bbbb.beauty가 집중하는 지점입니다.\n\n여러분의 조직에서 R&D와 마케팅 사이 번역은 누가 담당하고 있나요? 댓글로 병목 지점을 알려주세요. '번역'이라고 DM 주시면 R&D-마케팅 번역 체크리스트를 보내드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#R&D마케팅",
+        "#B2B마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260801_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 기술 언어를 가치로 번역하다"
+    },
+    {
+      "pair_id": "linkedin_20260801_morning",
+      "status": "pending",
+      "topic": "R&D의 기술 언어와 마케팅의 고객 언어 사이를 연결하는 방법",
+      "slot": "morning",
+      "scheduled_time": "2026-08-01T09:00:00+09:00",
+      "created_at": "2026-08-01T06:55:56.460416+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "번역",
+      "id": "linkedin_20260801_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "In the R&D room, the language is mechanism of action, bioavailability, and clinical endpoints. In the marketing room, the language is benefit, differentiation, and reasons to buy. Both teams describe the same product, yet they speak different dialects. That gap is why strong science often fails to reach the market. The missing discipline is translation.\n\nFirst, translation is not simplification; it is meaning preservation. When a complex mechanism is compressed into a consumer phrase, accuracy is usually the first casualty. Collapse a specific molecular pathway into a single word like 'renewal,' and the evidentiary structure that R&D worked hard to build disappears, leaving only regulatory risk. Good translation rearranges claims into the audience's language while keeping the hierarchy of evidence intact.\n\nSecond, visualization is the most powerful shared language between the two rooms. A 3D MOA animation or scientific visualization is one of the rare formats that can satisfy R&D's demand for accuracy and marketing's need for intuition at the same time. A cellular action that would take ten lines of text can become understanding and trust in a fifteen-second sequence. The point is not spectacle; it is visual fidelity grounded in real data and published evidence.\n\nThird, translation requires someone who builds an intermediate language. A science communication editor should sit between R&D and marketing to clarify what can be said, what must not be said, and how far a claim can go on what evidence. Without this middle layer, marketing tends to exaggerate while R&D goes silent, and the organization swings between those extremes.\n\nUltimately, what turns technology into customer trust and choice is the quality of translation. Designing messages that stay accurate while remaining meaningful is exactly where bbbb.beauty focuses.\n\nWho owns the translation between R&D and marketing in your organization? Share your biggest bottleneck in the comments. Message me the keyword 번역 and I will send our R&D-to-marketing translation checklist. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#ScienceCommunication",
+        "#Dermocosmetics",
+        "#B2BMarketing",
+        "#MedicalContent"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260801_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Translate Science into Value"
+    },
+    {
+      "pair_id": "linkedin_20260801_afternoon",
+      "status": "pending",
+      "topic": "논문 한 편이 설득력 있는 브랜드 스토리가 되기까지",
+      "slot": "afternoon",
+      "scheduled_time": "2026-08-01T15:00:00+09:00",
+      "created_at": "2026-08-01T06:55:56.460416+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260801_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "R&D 팀이 자랑스럽게 내민 논문 한 편이, 정작 마케팅 자리에서는 아무도 설득하지 못하는 장면을 자주 봅니다. 데이터는 견고한데 메시지는 흐릿합니다. 문제는 과학의 수준이 아니라 번역의 부재입니다.\n\n논문 한 편이 설득력 있는 브랜드 스토리가 되기까지, 저희가 지키는 세 가지 판단 기준을 공유합니다.\n\n첫째, 모든 것을 보여주려 하지 않습니다. 한 편의 논문에는 수십 개의 경로와 지표가 담기지만, 관객이 기억하는 기전은 하나입니다. 저희는 R&D·메디컬 담당자와 함께 '이 성분의 차별점을 한 문장으로 만드는 핵심 기전'을 먼저 합의합니다. 이 합의 없이 제작을 시작하면 3D MOA 애니메이션은 화려하지만 공허해집니다.\n\n둘째, 시각적 은유와 과학적 사실의 경계를 명확히 합니다. 세포 내부를 표현할 때 스케일, 색, 속도는 모두 연출된 선택입니다. 저희는 어디까지가 검증된 사실이고 어디부터가 이해를 돕는 표현인지 내부 주석으로 구분합니다. 이 경계가 무너지면 규제 리스크와 신뢰 손상이 동시에 발생합니다.\n\n셋째, 근거의 출처를 끝까지 추적 가능하게 남깁니다. 장면마다 참조한 논문과 데이터 구간을 매핑해, 메디컬 검수와 해외 인허가 대응에서 같은 자료를 다시 쓸 수 있게 합니다. 콘텐츠가 일회성 홍보물이 아니라 자산이 되는 지점입니다.\n\n결국 좋은 MOA 콘텐츠는 과학을 단순화하는 것이 아니라, 정확성을 유지한 채 이해의 진입점을 만드는 일입니다. 이 과정에서 R&D의 자부심과 마케팅의 설득력은 충돌하지 않고 하나가 됩니다.\n\n여러분의 논문에서 가장 먼저 시각화해야 할 기전은 무엇인가요? 댓글로 짧게 남겨 주세요. 'MOA'를 DM으로 보내주시면 논문을 영상 서사로 번역하는 체크리스트를 보내드립니다. 문의 허브: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학커뮤니케이션",
+        "#더마코스메틱",
+        "#B2B마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260801_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 논문에서 브랜드 스토리로"
+    },
+    {
+      "pair_id": "linkedin_20260801_afternoon",
+      "status": "pending",
+      "topic": "논문 한 편이 설득력 있는 브랜드 스토리가 되기까지",
+      "slot": "afternoon",
+      "scheduled_time": "2026-08-01T15:00:00+09:00",
+      "created_at": "2026-08-01T06:55:56.460416+09:00",
+      "generated_by": "claude-opus-4-8",
+      "dm_keyword": "MOA",
+      "id": "linkedin_20260801_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "I often see a scene where the R&D team proudly presents a peer-reviewed paper, yet in the marketing room it convinces no one. The data is solid, but the message is blurry. The problem is not the quality of the science. It is the absence of translation.\n\nHere are the three principles we follow to turn a single paper into a persuasive brand story.\n\nFirst, we resist the urge to show everything. One paper may contain dozens of pathways and endpoints, but audiences remember a single mechanism. Before production begins, we align with R&D and medical stakeholders on the one core mechanism that expresses the ingredient's true differentiation in a single sentence. Without that agreement, even a beautiful 3D MOA animation feels impressive but hollow.\n\nSecond, we draw a clear line between visual metaphor and scientific fact. When we render the interior of a cell, scale, color, and speed are all directed choices. We annotate internally where verified evidence ends and interpretive visualization begins. When that boundary collapses, regulatory risk and erosion of trust arrive together.\n\nThird, we keep every claim traceable to its source. Each scene is mapped to the referenced study and data range, so the same material can be reused for medical review and international regulatory dossiers. This is where content stops being a one-off promotional asset and becomes a durable one.\n\nGreat MOA content is not about simplifying science. It is about creating an entry point to understanding while preserving accuracy. In that process, the pride of R&D and the persuasive power of marketing stop competing and become one.\n\nWhich mechanism in your own research deserves to be visualized first? Share a short answer in the comments. Send 'MOA' by DM and I will share our checklist for translating a paper into a visual narrative. Contact hub: https://jhbropark.github.io/pages/contact.html",
+      "hashtags": [
+        "#MOAanimation",
+        "#ScienceCommunication",
+        "#Dermocosmetics",
+        "#B2BMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/post_20260801_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: From Paper to Brand Story"
     }
   ]
 }
