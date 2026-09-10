@@ -5,6 +5,12 @@ __pycache__/
 .env
 */.env
 !.env.example
+quantbot/.kis_token.json
+
+# quantbot local artifacts
+quantbot/data/
+quantbot/.venv/
+*.egg-info/
 
 # reel intermediates
 namecode_grid/story/kb*.mp4
