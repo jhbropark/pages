@@ -1,0 +1,8 @@
+{
+  "name": "financial-report-template",
+  "private": true,
+  "version": "1.0.0",
+  "description": "23-slide financial report deck (dark + light) generated with pptxgenjs; import into Google Slides.",
+  "scripts": { "build": "node build_deck.js" },
+  "dependencies": { "pptxgenjs": "^3.12.0" }
+}
