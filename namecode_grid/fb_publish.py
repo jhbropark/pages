@@ -64,8 +64,57 @@ def _try_post(base, ver, pid, edge, params, timeout):
     r = requests.post(f"{base}/{ver}/{pid}/{edge}", params=params, timeout=timeout)
     if r.ok:
         return r.json()
-    print(f"[warn] /{edge} -> {r.status_code} {r.text[:300]}", file=sys.stderr)
+    # print the whole body: Meta packs the actual requirement into the tail of
+    # the message ("...requires both pages_read_engagement and pages_manage_posts")
+    print(f"[warn] /{edge} -> {r.status_code} {r.text}", file=sys.stderr)
     return None
+
+
+def diagnose(base, ver, pid, tok):
+    """Print who the token is and what it may do, so a (#200) is actionable.
+
+    Never prints the token itself. The three questions a publish failure turns
+    on: is this a *page* token or a *user* token, is it for the page we post
+    to, and does it carry CREATE_CONTENT (pages_manage_posts).
+    """
+    print("--- facebook token diagnosis ---", file=sys.stderr)
+
+    def _get(path, fields):
+        try:
+            r = requests.get(f"{base}/{ver}/{path}",
+                             params={"fields": fields, "access_token": tok}, timeout=30)
+            return r.json()
+        except Exception as e:
+            return {"error": {"message": str(e)}}
+
+    me = _get("me", "id,name")
+    me_id, me_name = me.get("id"), me.get("name")
+    print(f"token identity: /me -> id={me_id} name={me_name!r}", file=sys.stderr)
+    print(f"FB_PAGE_ID    : {pid}", file=sys.stderr)
+    if me_id and str(me_id) != str(pid):
+        print("[!] token does NOT belong to FB_PAGE_ID — either it is a *user* "
+              "token (issue a Page token for this page) or it is a page token "
+              "for a different page (set FB_PAGE_ID to the id above).",
+              file=sys.stderr)
+    elif me_id:
+        print("[ok] token is a page token for FB_PAGE_ID.", file=sys.stderr)
+
+    tasks = _get(pid, "tasks").get("tasks")
+    print(f"page tasks    : {tasks}", file=sys.stderr)
+    if isinstance(tasks, list) and "CREATE_CONTENT" not in tasks:
+        print("[!] CREATE_CONTENT missing — this token cannot publish. Re-issue "
+              "it with pages_read_engagement AND pages_manage_posts.",
+              file=sys.stderr)
+
+    perms = _get("me/permissions", "")
+    granted = sorted(p["permission"] for p in perms.get("data", [])
+                     if p.get("status") == "granted")
+    if granted:
+        print(f"granted scopes: {', '.join(granted)}", file=sys.stderr)
+        for need in ("pages_read_engagement", "pages_manage_posts"):
+            if need not in granted:
+                print(f"[!] missing scope: {need}", file=sys.stderr)
+    print("--- end diagnosis ---", file=sys.stderr)
 
 
 def publish_photo(image_url, caption, dry=False):
@@ -91,6 +140,7 @@ def publish_photo(image_url, caption, dry=False):
         j = _try_post(base, ver, pid, "feed",
                       {"link": image_url, "message": caption, "access_token": tok}, 60)
     if j is None:
+        diagnose(base, ver, pid, tok)
         raise RuntimeError("facebook photo publish failed on both /photos and /feed")
 
     post_id = j.get("post_id") or j.get("id")
@@ -120,6 +170,7 @@ def publish_video(video_url, caption, dry=False):
     j = _try_post(base, ver, pid, "feed",
                   {"link": video_url, "message": caption, "access_token": tok}, 60)
     if j is None:
+        diagnose(base, ver, pid, tok)
         raise RuntimeError("facebook video publish failed on both /videos and /feed")
     post_id = j.get("post_id") or j.get("id")
     return post_id, permalink(base, ver, post_id, tok)
@@ -132,13 +183,20 @@ def main():
     ap.add_argument("--caption", default="")
     ap.add_argument("--caption-file")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--diagnose", action="store_true",
+                    help="report who FB_PAGE_TOKEN is and what it may do, then exit")
     a = ap.parse_args()
 
     caption = a.caption
     if a.caption_file:
         caption = open(a.caption_file, encoding="utf-8").read().strip()
 
-    _, _, pid, tok = cfg()
+    base, ver, pid, tok = cfg()
+    if a.diagnose:
+        if not pid or not tok:
+            sys.exit("ERROR: set FB_PAGE_ID and FB_PAGE_TOKEN.")
+        diagnose(base, ver, pid, tok)
+        return
     if not a.dry_run and (not pid or not tok):
         sys.exit("ERROR: set FB_PAGE_ID and FB_PAGE_TOKEN (or use --dry-run).")
 
