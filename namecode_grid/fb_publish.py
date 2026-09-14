@@ -37,14 +37,24 @@ def resolve_page_token(base, ver, page_id, token):
     """
     try:
         r = requests.get(f"{base}/{ver}/me/accounts",
-                         params={"fields": "id,access_token", "access_token": token},
+                         params={"fields": "id,name,access_token", "access_token": token},
                          timeout=30)
         if r.ok:
-            for pg in r.json().get("data", []):
+            pages = r.json().get("data", [])
+            for pg in pages:
                 if str(pg.get("id")) == str(page_id) and pg.get("access_token"):
                     print("[info] resolved page token from user token via /me/accounts",
                           file=sys.stderr)
                     return pg["access_token"]
+            if pages:
+                # A user token that administers pages, but none of them is
+                # FB_PAGE_ID — usually FB_PAGE_ID holds the personal account id
+                # instead of a Page id, which makes every post look like an
+                # attempt to publish to a user timeline ("publish_actions").
+                print(f"[warn] FB_PAGE_ID={page_id} is not one of the pages this "
+                      "token administers. Set it to one of:", file=sys.stderr)
+                for pg in pages:
+                    print(f"         {pg.get('id')}  {pg.get('name')!r}", file=sys.stderr)
     except Exception:
         pass
     return token
@@ -91,17 +101,36 @@ def diagnose(base, ver, pid, tok):
     me_id, me_name = me.get("id"), me.get("name")
     print(f"token identity: /me -> id={me_id} name={me_name!r}", file=sys.stderr)
     print(f"FB_PAGE_ID    : {pid}", file=sys.stderr)
-    if me_id and str(me_id) != str(pid):
-        print("[!] token does NOT belong to FB_PAGE_ID — either it is a *user* "
-              "token (issue a Page token for this page) or it is a page token "
-              "for a different page (set FB_PAGE_ID to the id above).",
-              file=sys.stderr)
-    elif me_id:
-        print("[ok] token is a page token for FB_PAGE_ID.", file=sys.stderr)
+
+    # /me/accounts only ever returns data for a *user* token, so a non-empty
+    # list settles what kind of token this is — matching ids do not (if
+    # FB_PAGE_ID holds the personal account id, /me matches it and the token
+    # is still a user token).
+    pages = _get("me/accounts", "id,name").get("data")
+    if pages:
+        print("token kind    : USER token (administers "
+              f"{len(pages)} page(s))", file=sys.stderr)
+        for pg in pages:
+            print(f"  page: {pg.get('id')}  {pg.get('name')!r}", file=sys.stderr)
+        if not any(str(pg.get("id")) == str(pid) for pg in pages):
+            print("[!] FB_PAGE_ID is not any of those pages. If it equals the "
+                  "/me id above, it is the personal account id — posting there "
+                  "is what returns 'publish_actions is deprecated'. Set "
+                  "FB_PAGE_ID to one of the page ids listed above; the page "
+                  "token is then resolved automatically.", file=sys.stderr)
+    else:
+        print("token kind    : PAGE token (or /me/accounts unavailable)", file=sys.stderr)
+        if me_id and str(me_id) != str(pid):
+            print("[!] token does NOT belong to FB_PAGE_ID — set FB_PAGE_ID to "
+                  f"{me_id}, or issue a token for the page you meant.",
+                  file=sys.stderr)
 
     tasks = _get(pid, "tasks").get("tasks")
     print(f"page tasks    : {tasks}", file=sys.stderr)
-    if isinstance(tasks, list) and "CREATE_CONTENT" not in tasks:
+    if tasks is None:
+        print("[!] no `tasks` on FB_PAGE_ID — that id is not a Page you "
+              "administer (a personal account has no tasks).", file=sys.stderr)
+    elif "CREATE_CONTENT" not in tasks:
         print("[!] CREATE_CONTENT missing — this token cannot publish. Re-issue "
               "it with pages_read_engagement AND pages_manage_posts.",
               file=sys.stderr)
