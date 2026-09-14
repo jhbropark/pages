@@ -50,44 +50,79 @@ def resolve_page_token(base, ver, page_id, token):
     return token
 
 
-def publish_photo(image_url, caption, dry=False):
-    base, ver, pid, tok = cfg()
-    if dry:
-        print(f"POST {base}/{ver}/{pid}/photos  url={image_url}", file=sys.stderr)
-        return "DRYRUN", ""
-    tok = resolve_page_token(base, ver, pid, tok)
-    r = requests.post(f"{base}/{ver}/{pid}/photos",
-                      params={"url": image_url, "caption": caption, "access_token": tok},
-                      timeout=60)
-    if not r.ok:
-        raise RuntimeError(f"{r.status_code} {r.text}")
-    j = r.json()
-    post_id = j.get("post_id") or j.get("id")
-    link = ""
+def permalink(base, ver, post_id, tok):
     try:
         pl = requests.get(f"{base}/{ver}/{post_id}",
                           params={"fields": "permalink_url", "access_token": tok}, timeout=30).json()
-        link = pl.get("permalink_url", "")
+        return pl.get("permalink_url", "")
     except Exception:
-        pass
-    return post_id, link
+        return ""
+
+
+def _try_post(base, ver, pid, edge, params, timeout):
+    """POST to /{page}/{edge}; return the parsed json, or None with a logged reason."""
+    r = requests.post(f"{base}/{ver}/{pid}/{edge}", params=params, timeout=timeout)
+    if r.ok:
+        return r.json()
+    print(f"[warn] /{edge} -> {r.status_code} {r.text[:300]}", file=sys.stderr)
+    return None
+
+
+def publish_photo(image_url, caption, dry=False):
+    """Post the daily artwork to the Page.
+
+    Tries the native photo edge first (best presentation: a real photo post),
+    then falls back to /{page}/feed with the image as a `link`. Pages on the
+    New Pages Experience reject /photos with "(#200) This endpoint is
+    deprecated since the required permission publish_actions is deprecated",
+    and /feed is the path that still works there.
+    """
+    base, ver, pid, tok = cfg()
+    if dry:
+        print(f"POST {base}/{ver}/{pid}/photos  url={image_url}", file=sys.stderr)
+        print(f"  fallback: POST {base}/{ver}/{pid}/feed  link={image_url}", file=sys.stderr)
+        return "DRYRUN", ""
+    tok = resolve_page_token(base, ver, pid, tok)
+
+    j = _try_post(base, ver, pid, "photos",
+                  {"url": image_url, "caption": caption, "access_token": tok}, 60)
+    if j is None:
+        print("[info] falling back to /feed (New Pages Experience)", file=sys.stderr)
+        j = _try_post(base, ver, pid, "feed",
+                      {"link": image_url, "message": caption, "access_token": tok}, 60)
+    if j is None:
+        raise RuntimeError("facebook photo publish failed on both /photos and /feed")
+
+    post_id = j.get("post_id") or j.get("id")
+    return post_id, permalink(base, ver, post_id, tok)
 
 
 def publish_video(video_url, caption, dry=False):
-    """Post a video to the Page via /{page}/videos with a remote file_url."""
+    """Post a video to the Page via /{page}/videos with a remote file_url.
+
+    Same fallback shape as publish_photo: if the video edge is unavailable on
+    this Page, post the video URL as a /feed link instead.
+    """
     base, ver, pid, tok = cfg()
     if dry:
         print(f"POST {base}/{ver}/{pid}/videos  file_url={video_url}", file=sys.stderr)
+        print(f"  fallback: POST {base}/{ver}/{pid}/feed  link={video_url}", file=sys.stderr)
         return "DRYRUN", ""
     tok = resolve_page_token(base, ver, pid, tok)
-    r = requests.post(f"{base}/{ver}/{pid}/videos",
-                      params={"file_url": video_url, "description": caption,
-                              "access_token": tok}, timeout=120)
-    if not r.ok:
-        raise RuntimeError(f"{r.status_code} {r.text}")
-    vid = r.json().get("id")
-    link = f"https://www.facebook.com/{pid}/videos/{vid}" if vid else ""
-    return vid, link
+
+    j = _try_post(base, ver, pid, "videos",
+                  {"file_url": video_url, "description": caption, "access_token": tok}, 120)
+    if j is not None:
+        vid = j.get("id")
+        return vid, (f"https://www.facebook.com/{pid}/videos/{vid}" if vid else "")
+
+    print("[info] falling back to /feed (New Pages Experience)", file=sys.stderr)
+    j = _try_post(base, ver, pid, "feed",
+                  {"link": video_url, "message": caption, "access_token": tok}, 60)
+    if j is None:
+        raise RuntimeError("facebook video publish failed on both /videos and /feed")
+    post_id = j.get("post_id") or j.get("id")
+    return post_id, permalink(base, ver, post_id, tok)
 
 
 def main():
