@@ -8,9 +8,42 @@ imports directly (all charts and tables stay editable).
 |---|---|
 | `financial-report-dark.pptx` | black background, white type |
 | `financial-report-light.pptx` | white background, black type |
+| `financial-report-editorial.pptx` | warm cream ground, blush blocks, one deep teal accent |
 
+![editorial](preview-editorial.png)
 ![dark](preview-dark.png)
 ![light](preview-light.png)
+
+## The editorial theme
+
+Palette sampled from a reference board of fashion-editorial layouts, so the
+numbers below are measured from that image rather than invented:
+
+| role | hex |
+|---|---|
+| page | `#FAF7F4` |
+| card | `#EFE7DF` |
+| blush block | `#E0B0A8` |
+| teal accent | `#1E4848` |
+| ink | `#2E2A28` |
+
+Two rules carry the look:
+
+- **Section labels are uppercase and widely tracked** (`track` / `labelUpper` on
+  the theme). That single move does most of the editorial work.
+- **An accent block sits behind the image well, offset down-left**, so a strip of
+  colour shows past the photo's edge. Flat fills only — a transparent wash over a
+  warm ground turns muddy.
+
+Chart series are a **single-hue sequential ramp**, `#EFD3CC → #C98A80 → #8E4F48 →
+#4A2A26`, monotonic in OKLab lightness (0.888 / 0.694 / 0.500 / 0.325) and checked
+for adjacent-pair separation. Teal is deliberately kept out of the ramp so it can
+still mean "look here". Segments carry direct labels, which is what discharges the
+low contrast of the lightest step against the cream card.
+
+Typography is Arial throughout. The reference pairs a display serif with a
+geometric sans; swap `FONT` if you have a licensed display face, but note that
+LibreOffice-based previews only render true-to-width for metric-safe fonts.
 
 ## Slides
 1. Cover — *Financial report / Template*
