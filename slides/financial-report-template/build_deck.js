@@ -39,6 +39,11 @@ const THEMES = {
     dot: "8E8E93",
     imgPlaceholderA: "C7C7CC",
     imgPlaceholderB: "8E8E93",
+    accent: "E5E5EA",   // strongest mark on this ground
+    onSeries: "FFFFFF", // label drawn on top of a series fill
+    emphasis: "FFFFFF", // the "actual" line against a muted projection
+    bentoA: "AEAEB2", bentoB: "3A3A3C", bentoText: "FFFFFF",
+    track: 0, labelUpper: false,
   },
   light: {
     name: "light",
@@ -62,6 +67,47 @@ const THEMES = {
     dot: "AEAEB2",
     imgPlaceholderA: "C7C7CC",
     imgPlaceholderB: "8E8E93",
+    accent: "1C1C1E",
+    onSeries: "1C1C1E",
+    emphasis: "000000",
+    bentoA: "C7C7CC", bentoB: "E5E5EA", bentoText: "1C1C1E",
+    track: 0, labelUpper: false,
+  },
+
+  // Editorial — palette sampled from the reference board: warm cream ground,
+  // blush as a full block colour rather than a tint, one deep teal accent used
+  // sparingly, ink that is warm near-black rather than pure black.
+  // Chart series are a single-hue sequential ramp (blush -> deep rose), checked
+  // for monotonic lightness (0.888 / 0.694 / 0.500 / 0.325 in OKLab) and for
+  // adjacent-pair separation; teal stays out of the ramp so it can mean
+  // "this is the one to look at".
+  editorial: {
+    name: "editorial",
+    bg: "FAF7F4",
+    card: "EFE7DF",
+    cardAlt: "E0B0A8",  // the blush block
+    title: "2E2A28",
+    sub: "A99890",
+    text: "554C47",
+    muted: "A99890",
+    faint: "D8CCC4",
+    axis: "D8CCC4",
+    grid: "EFE7DF",
+    s1: "EFD3CC",
+    s2: "C98A80",
+    s3: "8E4F48",
+    s4: "4A2A26",
+    tableHead: "EFE7DF",
+    tableTotal: "E0B0A8",
+    tableTotalText: "2E2A28",
+    dot: "C98A80",
+    imgPlaceholderA: "E0B0A8",
+    imgPlaceholderB: "1E4848",
+    accent: "1E4848",   // deep teal, the one saturated note
+    onSeries: "FFFFFF",
+    emphasis: "1E4848",
+    bentoA: "E0B0A8", bentoB: "EFE7DF", bentoText: "2E2A28",
+    track: 2.2, labelUpper: true,  // wide-tracked small caps, the board's signature
   },
 };
 
@@ -77,9 +123,9 @@ const FOOTNOTE =
 
 // --------------------------------------------------------------- helpers ---
 function label(slide, T, text, opts = {}) {
-  slide.addText(text, {
+  slide.addText(T.labelUpper ? text.toUpperCase() : text, {
     x: M, y: 0.2, w: 6, h: 0.2,
-    fontFace: FONT, fontSize: 7, color: T.muted,
+    fontFace: FONT, fontSize: 7, color: T.muted, charSpacing: T.track,
     isTextBox: true, margin: 0, valign: "top",
     ...opts,
   });
@@ -200,7 +246,7 @@ function miniBarCard(pres, slide, T, x, y, w, h, head, sub, labels, values, anno
     barDir: "col", barGapWidthPct: 45,
     chartColors: [T.s2],
     valAxisHidden: true,
-    showValue: true, dataLabelPosition: "ctr", dataLabelColor: T.name === "dark" ? "FFFFFF" : "1C1C1E",
+    showValue: true, dataLabelPosition: "ctr", dataLabelColor: T.onSeries,
   }));
 }
 
@@ -261,10 +307,9 @@ SLIDES.push((pres, T) => {
 SLIDES.push((pres, T) => {
   const s = pres.addSlide();
   s.background = { color: T.bg };
-  s.addText([
-    { text: "FY 2024", options: { breakLine: true } },
-    { text: "Highlights", options: { bold: true } },
-  ], { x: M, y: 0.25, w: 3, h: 0.4, fontFace: FONT, fontSize: 8, color: T.title, isTextBox: true, margin: 0, valign: "top" });
+  label(s, T, "FY 2024");
+  title(s, T, "Highlights");
+
   const items = [
     "Revenue grew +18% Y/Y to $525 million",
     "US revenue grew +23% Y/Y to $337 million",
@@ -272,20 +317,25 @@ SLIDES.push((pres, T) => {
   ];
   s.addText(items.map((t, i) => ({
     text: t,
-    options: { bullet: { code: "25B8" }, breakLine: i < items.length - 1, paraSpaceAfter: 10 },
+    options: { bullet: { code: "25B8" }, breakLine: i < items.length - 1, paraSpaceAfter: 14 },
   })), {
-    x: M, y: 2.7, w: 4.3, h: 2.6, fontFace: FONT, fontSize: 11, color: T.title, isTextBox: true, margin: 0, valign: "bottom",
+    x: M, y: 1.5, w: 4.3, h: 3.85,
+    fontFace: FONT, fontSize: 11, color: T.title, isTextBox: true, margin: 0, valign: "top",
   });
-  // image placeholder (replace with a product / office photo)
+
+  // Image well. An accent block sits behind it, offset down-left so a strip of
+  // colour shows past the photo's edge — the reference board's signature move.
+  // Two flat fills, never a transparent wash over the page: a tinted overlay
+  // turns muddy on a warm ground.
   s.addShape("roundRect", {
-    x: 5.15, y: 0.25, w: 4.5, h: 5.1, rectRadius: 0.08,
+    x: 5.05, y: 3.3, w: 2.0, h: 2.05, rectRadius: 0.08,
+    fill: { color: T.imgPlaceholderB }, line: { color: T.imgPlaceholderB, width: 0 },
+  });
+  s.addShape("roundRect", {
+    x: 5.6, y: 0.25, w: 4.05, h: 5.1, rectRadius: 0.08,
     fill: { color: T.imgPlaceholderA }, line: { color: T.imgPlaceholderA, width: 0 },
   });
-  s.addShape("roundRect", {
-    x: 5.15, y: 2.8, w: 4.5, h: 2.55, rectRadius: 0.08,
-    fill: { color: T.imgPlaceholderB, transparency: 55 }, line: { color: T.imgPlaceholderB, width: 0, transparency: 100 },
-  });
-  s.addNotes("Replace the grey block on the right with a full-bleed image.");
+  s.addNotes("Replace the large block on the right with a photo. Keep the small offset block behind it — it is what ties this slide to the rest of the deck.");
 });
 
 // 4 · Growth accelerated to 81% YoY — area chart
@@ -343,7 +393,7 @@ SLIDES.push((pres, T) => {
     barDir: "col", barGrouping: "stacked", barGapWidthPct: 60, chartColors: colors,
     valAxisHidden: true,
     showValue: true, dataLabelPosition: "ctr", dataLabelFormatCode: '"$"0"M"', dataLabelFontSize: 5,
-    dataLabelColor: T.name === "dark" ? "FFFFFF" : "1C1C1E",
+    dataLabelColor: T.onSeries,
   }));
   // total labels above each stack
   const n = totals.length;
@@ -381,7 +431,7 @@ SLIDES.push((pres, T) => {
     barDir: "col", barGrouping: "stacked", barGapWidthPct: 45, chartColors: colors,
     valAxisHidden: true,
     showValue: true, dataLabelPosition: "ctr", dataLabelFormatCode: '0" %"', dataLabelFontSize: 5,
-    dataLabelColor: T.name === "dark" ? "FFFFFF" : "1C1C1E",
+    dataLabelColor: T.onSeries,
   }));
 });
 
@@ -401,7 +451,7 @@ SLIDES.push((pres, T) => {
     { name: "Total revenue", labels: ["Year 0", "Year 1", "Year 2", "Year 3", "Year 4"], values: [0, 22, 45, 68, 90] },
   ], chartBase(T, {
     x: 3.7, y: 0.4, w: 5.85, h: 4.8,
-    chartColors: [T.s3, T.name === "dark" ? "FFFFFF" : "000000"],
+    chartColors: [T.s3, T.emphasis],
     lineSize: 1.25, lineDataSymbol: "none",
     valAxisMinVal: 0, valAxisMaxVal: 90, valAxisMajorUnit: 22.5, valAxisLabelFormatCode: '"$"0"M"',
     catAxisLineShow: false,
@@ -445,9 +495,9 @@ SLIDES.push((pres, T) => {
     { name: "GAAP operating profit", labels: ["Q 1", "Q 2", "Q 3", "Q 4"], values: [240, 300, 400, 620] },
   ], chartBase(T, {
     x: 3.7, y: 0.4, w: 5.85, h: 4.8,
-    chartColors: [T.faint, T.name === "dark" ? "FFFFFF" : "000000"],
+    chartColors: [T.faint, T.emphasis],
     lineSize: 1, lineDataSymbol: "circle", lineDataSymbolSize: 6,
-    lineDataSymbolLineColor: T.name === "dark" ? "FFFFFF" : "000000",
+    lineDataSymbolLineColor: T.emphasis,
     valAxisMinVal: 0, valAxisMaxVal: 700, valAxisMajorUnit: 175, valAxisLabelFormatCode: '"$"0"M"',
     catAxisLineShow: false,
   }));
@@ -505,10 +555,9 @@ SLIDES.push((pres, T) => {
   const ROW = [0.25, 2.0, 3.75], RH = 1.6;
   const SPAN2 = RH * 2 + 0.15;
 
-  const dark = T.name === "dark";
-  const cA = dark ? "AEAEB2" : "C7C7CC"; // accent card (light)
-  const cB = dark ? "3A3A3C" : "E5E5EA"; // mid card
-  const tOn = dark ? "FFFFFF" : "1C1C1E"; // text on either card
+  const cA = T.bentoA;    // accent card
+  const cB = T.bentoB;    // mid card
+  const tOn = T.bentoText;
 
   // The top-left cell carries the slide title at full size, so the empty grid
   // slot reads as a deliberate title cell rather than a stray 8pt label.
@@ -699,7 +748,7 @@ SLIDES.push((pres, T) => {
     x: 3.7, y: 0.85, w: 5.85, h: 4.35,
     barDir: "col", barGrouping: "stacked", barGapWidthPct: 40, chartColors: [T.s1, T.s2],
     valAxisHidden: true,
-    showValue: true, dataLabelPosition: "ctr", dataLabelFormatCode: '"$"0"M"', dataLabelColor: T.name === "dark" ? "FFFFFF" : "1C1C1E",
+    showValue: true, dataLabelPosition: "ctr", dataLabelFormatCode: '"$"0"M"', dataLabelColor: T.onSeries,
   }));
 });
 
@@ -722,7 +771,7 @@ SLIDES.push((pres, T) => {
       x, y: 0.7, w: 2.95, h: 4.5,
       barDir: "col", barGrouping: "stacked", barGapWidthPct: 45, chartColors: [T.s1, T.s2],
       valAxisHidden: true, valAxisMinVal: 0, valAxisMaxVal: 34,
-      showValue: true, dataLabelPosition: "ctr", dataLabelFormatCode: '"$"0"M"', dataLabelColor: T.name === "dark" ? "FFFFFF" : "1C1C1E",
+      showValue: true, dataLabelPosition: "ctr", dataLabelFormatCode: '"$"0"M"', dataLabelColor: T.onSeries,
     }));
   };
   half(3.65, "Cash from operations", [13, 14], [15, 16]);
