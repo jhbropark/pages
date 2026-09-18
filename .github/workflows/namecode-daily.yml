@@ -24,6 +24,10 @@ on:
         description: "Publish to Instagram? (true/false)"
         required: false
         default: "false"
+      fb_only:
+        description: "Facebook only: skip generation, cross-post an already-committed day (true/false)"
+        required: false
+        default: "false"
 
 permissions:
   contents: write             # to commit the daily image
@@ -35,6 +39,8 @@ concurrency:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    # the fb-only dispatch below replaces this job entirely for that run
+    if: ${{ github.event.inputs.fb_only != 'true' }}
     # job-level env so the optional publish step's `if:` can read the token
     # (secrets context is not allowed directly in `if:` expressions)
     env:
@@ -233,4 +239,58 @@ jobs:
           IG feed: ${PUB} · reel: ${IGREEL}
           FB feed: ${FBPUB} · reel: ${FBREEL:-skipped}"
           fi
+          MESSAGE="$MSG" python namecode_grid/notify_telegram.py
+
+  # Facebook-only cross-post of a day whose artwork is already committed.
+  #
+  # The daily job generates and publishes in one pass, so a Krea outage upstream
+  # (a 500 on /generate/image, or a 402 on credit) loses the Facebook post for
+  # that day even though the artwork is sitting in namecode_grid/daily/. This
+  # path re-posts an existing day to the Page alone — no regeneration, and no
+  # Instagram call, so it never duplicates a feed post that already went out.
+  fb-only:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.fb_only == 'true' }}
+    env:
+      FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Publish feed image to Facebook
+        id: fbpub
+        continue-on-error: true
+        working-directory: namecode_grid
+        run: |
+          set -o pipefail
+          pip install requests -q
+          DATE="${{ github.event.inputs.date }}"
+          if [ -z "$DATE" ]; then DATE=$(date -u +%F); fi
+          IMG="daily/namecode_apod_${DATE}.png"
+          if [ ! -f "$IMG" ]; then
+            echo "::error::$IMG is not committed — pick a date that has artwork."
+            exit 1
+          fi
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+          RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/$IMG"
+          echo "Hosting image at: $RAW"
+          python fb_publish.py --image-url "$RAW" \
+            --caption-file "daily/caption_${DATE}.txt" | tee /tmp/fbpub.txt
+          echo "permalink=$(sed -n 's/^permalink: //p' /tmp/fbpub.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Notify Telegram (status)
+        if: ${{ always() && env.TELEGRAM_BOT_TOKEN != '' }}
+        env:
+          BUTTON_URL: ${{ steps.fbpub.outputs.permalink }}
+          BUTTON_TEXT: "📘 View on Facebook"
+        run: |
+          pip install requests -q
+          MSG="🛰 namecode — Facebook-only cross-post ${{ steps.fbpub.outputs.date }}
+          FB feed: ${{ steps.fbpub.outcome }}"
           MESSAGE="$MSG" python namecode_grid/notify_telegram.py
