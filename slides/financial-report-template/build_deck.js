@@ -498,42 +498,64 @@ SLIDES.push((pres, T) => {
 SLIDES.push((pres, T) => {
   const s = pres.addSlide();
   s.background = { color: T.bg };
-  s.addText([
-    { text: "FY 2024", options: { breakLine: true } },
-    { text: "Highlights", options: { bold: true } },
-  ], { x: M, y: 0.25, w: 3, h: 0.4, fontFace: FONT, fontSize: 8, color: T.title, isTextBox: true, margin: 0, valign: "top" });
 
-  const quoteCard = (x, y, w, h, quote, src, big, color, textColor) => {
-    card(s, T, x, y, w, h, color);
-    s.addText(quote, {
-      x: x + 0.15, y: y + 0.15, w: w - 0.3, h: h - 0.55,
-      fontFace: FONT, fontSize: big ? 8.5 : 7.5, bold: big, color: textColor, isTextBox: true, margin: 0, valign: "top",
-    });
-    if (src) s.addText(src, { x: x + 0.15, y: y + h - 0.32, w: w - 0.3, h: 0.2, fontFace: FONT, fontSize: 5.5, color: textColor, isTextBox: true, margin: 0, valign: "bottom" });
-  };
-  const statCard = (x, y, w, h, stat, color, textColor, size, arrow) => {
-    card(s, T, x, y, w, h, color);
-    s.addText((arrow ? "▲ " : "") + stat, {
-      x: x + 0.15, y: y + 0.1, w: w - 0.3, h: 0.7,
-      fontFace: FONT, fontSize: size, bold: size > 12, color: textColor, isTextBox: true, margin: 0, valign: "top",
-    });
-  };
+  // 3 x 3 bento grid. Columns 0.35 / 3.5 / 6.65 (w 3.0), rows 0.25 / 2.0 / 3.75 (h 1.6),
+  // 0.15 gutters. A card may span two rows (SPAN2).
+  const COL = [M, 3.5, 6.65], CW = 3.0;
+  const ROW = [0.25, 2.0, 3.75], RH = 1.6;
+  const SPAN2 = RH * 2 + 0.15;
+
   const dark = T.name === "dark";
-  const cA = dark ? "AEAEB2" : "C7C7CC"; // light card (accent)
+  const cA = dark ? "AEAEB2" : "C7C7CC"; // accent card (light)
   const cB = dark ? "3A3A3C" : "E5E5EA"; // mid card
-  const tA = dark ? "FFFFFF" : "1C1C1E";
-  const tB = dark ? "FFFFFF" : "1C1C1E";
-  // column 1 (bottom half)
-  quoteCard(M, 1.95, 3.0, 3.4,
+  const tOn = dark ? "FFFFFF" : "1C1C1E"; // text on either card
+
+  // The top-left cell carries the slide title at full size, so the empty grid
+  // slot reads as a deliberate title cell rather than a stray 8pt label.
+  s.addText([
+    { text: "FY 2024", options: { color: T.sub, breakLine: true } },
+    { text: "Highlights", options: { color: T.title, bold: true } },
+  ], {
+    x: COL[0], y: ROW[0], w: CW, h: RH,
+    fontFace: FONT, fontSize: 18, isTextBox: true, margin: 0,
+    valign: "bottom", lineSpacingMultiple: 0.95,
+  });
+
+  // One bento card: the text block is vertically centred in the card, and any
+  // source line is pinned to the bottom, so short copy no longer leaves a void.
+  const bento = (cx, cy, cw, ch, text, opts = {}) => {
+    const { source, size = 8.5, fill = cB, color = tOn } = opts;
+    card(s, T, cx, cy, cw, ch, fill);
+    const pad = 0.2;
+    const srcH = source ? 0.22 : 0;
+    s.addText(text, {
+      x: cx + pad, y: cy + pad, w: cw - pad * 2, h: ch - pad * 2 - srcH,
+      fontFace: FONT, fontSize: size, bold: true, color,
+      isTextBox: true, margin: 0, valign: "middle", lineSpacingMultiple: 1.1,
+    });
+    if (source) {
+      s.addText(source, {
+        x: cx + pad, y: cy + ch - pad - srcH, w: cw - pad * 2, h: srcH,
+        fontFace: FONT, fontSize: 5.5, color,
+        isTextBox: true, margin: 0, valign: "bottom",
+      });
+    }
+  };
+
+  // column 1 — tall quote across rows 2-3
+  bento(COL[0], ROW[1], CW, SPAN2,
     "\"Company X forges a resilient platform for complex, critical AI use cases, offering seamless integration and scalability. This platform empowers enterprises to leverage advanced AI technologies swiftly and efficiently, ensuring they remain at the forefront of innovation in their industry.\"",
-    "– Source", true, cA, tA);
-  // column 2
-  quoteCard(3.5, 0.25, 3.0, 1.6, "\"A New Era in AI: Company X's Breakthroughs Redefine Enterprise Solutions\"", "– TechCrunch", true, cB, tB);
-  statCard(3.5, 2.0, 3.0, 1.6, "+10 new stores", cB, tB, 15);
-  quoteCard(3.5, 3.75, 3.0, 1.6, "\"Company X Revolutionises AI Integration, Setting New Industry Standards\"", "– Bloomberg", true, cB, tB);
-  // column 3
-  statCard(6.65, 0.25, 3.0, 3.35, "74M units sold", cA, tA, 9);
-  statCard(6.65, 3.75, 3.0, 1.6, "14M\nSubscribers", cA, tA, 15, true);
+    { source: "– Source", fill: cA });
+
+  // column 2 — three cards
+  bento(COL[1], ROW[0], CW, RH, "\"A New Era in AI: Company X's Breakthroughs Redefine Enterprise Solutions\"", { source: "– TechCrunch" });
+  bento(COL[1], ROW[1], CW, RH, "+10 new stores", { size: 15 });
+  bento(COL[1], ROW[2], CW, RH, "\"Company X Revolutionises AI Integration, Setting New Industry Standards\"", { source: "– Bloomberg" });
+
+  // column 3 — tall stat across rows 1-2, stat on row 3
+  bento(COL[2], ROW[0], CW, SPAN2, "74M\nunits sold", { size: 20, fill: cA });
+  bento(COL[2], ROW[2], CW, RH, "▲ 14M\nSubscribers", { size: 15, fill: cA });
+
   s.addNotes("Bento grid: swap quotes / stats freely; keep the two accent (light) cards diagonal for balance.");
 });
 
