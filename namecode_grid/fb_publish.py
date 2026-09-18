@@ -102,6 +102,22 @@ def diagnose(base, ver, pid, tok):
     print(f"token identity: /me -> id={me_id} name={me_name!r}", file=sys.stderr)
     print(f"FB_PAGE_ID    : {pid}", file=sys.stderr)
 
+    # A dead token fails *every* Graph call, so nothing below can say anything
+    # about page identity — /me comes back empty and the page lookups look like
+    # "not a Page you administer". Stop here instead of reporting that as a
+    # conclusion; code 190 is about the token, never about FB_PAGE_ID.
+    err = me.get("error") or {}
+    if err.get("code") == 190:
+        print(f"[!] token is INVALID/EXPIRED: {err.get('message')}", file=sys.stderr)
+        print("    Re-issue FB_PAGE_TOKEN. Prefer a long-lived *user* token: a "
+              "page token derived from one (which resolve_page_token does via "
+              "/me/accounts) does not expire, so the daily run stops breaking "
+              "every time a short-lived token lapses.", file=sys.stderr)
+        print("    No conclusion about FB_PAGE_ID can be drawn while the token "
+              "is dead — re-run the diagnosis after replacing it.", file=sys.stderr)
+        print("--- end diagnosis ---", file=sys.stderr)
+        return
+
     # /me/accounts only ever returns data for a *user* token, so a non-empty
     # list settles what kind of token this is — matching ids do not (if
     # FB_PAGE_ID holds the personal account id, /me matches it and the token
