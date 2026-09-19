@@ -1,0 +1,98 @@
+name: 콘텐츠 버퍼 리필
+
+# Tops content/buffer.json back up. This is the only workflow that needs a
+# model, and it authenticates with CLAUDE_CODE_OAUTH_TOKEN, which draws on the
+# Claude subscription rather than API credits. See docs/content-pipeline.md.
+#
+# If that secret is absent the job stops with a clear message instead of
+# failing obscurely — and the daily render keeps working off the existing
+# buffer either way.
+
+on:
+  schedule:
+    # 매주 월요일 05:00 KST (일요일 20:00 UTC) — 일일 렌더링보다 한 시간 앞서서
+    - cron: "0 20 * * 0"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "채울 일수 (슬롯 2개 × 일수)"
+        required: false
+        default: "7"
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+env:
+  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+  TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+jobs:
+  refill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: 인증 수단 확인
+        id: auth
+        run: |
+          if [ -n "${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}" ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::CLAUDE_CODE_OAUTH_TOKEN 이 없습니다. 로컬에서 'claude setup-token' 으로 발급해 저장소 시크릿에 추가하세요."
+          fi
+
+      - name: 버퍼 잔량 확인
+        id: buffer
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, pathlib
+          p = pathlib.Path("content/buffer.json")
+          items = json.loads(p.read_text(encoding="utf-8"))["items"] if p.exists() else []
+          left = sum(1 for i in items if not i.get("consumed_at"))
+          print(f"remaining={left}")
+          print(f"days={left // 2}")
+          PY
+
+      - name: Claude로 버퍼 채우기
+        if: ${{ steps.auth.outputs.ok == 'true' }}
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            content/buffer.json 에 ${{ github.event.inputs.days || '7' }}일치
+            (슬롯 2개 × 일수) 콘텐츠를 추가해 주세요.
+
+            - 형식과 필수 필드는 docs/content-pipeline.md 의 "버퍼 항목" 절을 따르세요.
+            - 주제는 content/topics.json 의 topic_bank 에서 고르되,
+              buffer.json 에 이미 있는 topic 과 겹치지 않게 하세요.
+            - 브랜드 가이드는 content/topics.json 의 brand_guide 를 따르세요.
+            - 기존 항목은 수정하지 말고 items 배열 끝에 추가만 하세요.
+            - 끝나면 변경 사항을 커밋하고 PR을 여세요.
+          claude_args: |
+            --model claude-opus-5
+            --max-turns 30
+
+      - name: Telegram 알림
+        if: ${{ always() && env.TELEGRAM_BOT_TOKEN != '' }}
+        run: |
+          pip install requests -q
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          if [ "${{ steps.auth.outputs.ok }}" != "true" ]; then
+            MSG="🧪 콘텐츠 버퍼 리필
+          ⚠️ CLAUDE_CODE_OAUTH_TOKEN 시크릿이 없어 건너뛰었습니다.
+          현재 버퍼: ${{ steps.buffer.outputs.days }}일치
+          $RUN_URL"
+          elif [ "${{ job.status }}" != "success" ]; then
+            MSG="🧪 콘텐츠 버퍼 리필
+          ❌ 실패했습니다. 현재 버퍼: ${{ steps.buffer.outputs.days }}일치
+          $RUN_URL"
+          else
+            MSG="🧪 콘텐츠 버퍼 리필
+          ✅ 완료 — PR을 확인해 주세요.
+          리필 전 버퍼: ${{ steps.buffer.outputs.days }}일치"
+          fi
+          MESSAGE="$MSG" python namecode_grid/notify_telegram.py
