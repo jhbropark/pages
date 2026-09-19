@@ -1,5 +1,5 @@
 {
-  "note": "Copy written ahead of the daily render. scripts/render_daily.py pops from here; the content-refill workflow appends. See docs/content-pipeline.md.",
+  "note": "Copy written ahead of the daily render. scripts/render_daily.py pops from here; the content-refill workflow appends. Slides may name a role (cover/statement/evidence/vertical/detail/close) and an image; both default sensibly. See docs/content-pipeline.md.",
   "items": [
     {
       "topic": "좋은 과학 콘텐츠는 기술 설명이 아니라 이해 설계에서 시작됩니다",
@@ -11,24 +11,47 @@
       "stat_note": "",
       "slides": [
         {
+          "role": "cover",
           "headline": "연구 순서가 아니라\n이해 순서로",
-          "note": "설명을 줄이는 게 아니라, 순서를 바꾸는 일입니다"
+          "note": "설명을 줄이는 게 아니라, 순서를 바꾸는 일입니다",
+          "image": "micro-cinema"
         },
         {
-          "headline": "기술이 아니라\n순서가 막는다",
-          "body": "R&D가 쌓아온 순서대로 말하면 정확합니다. 다만 고객은 그 순서로 듣지 않습니다."
+          "role": "statement",
+          "headline": "순서가 *전부*다",
+          "note": "R&D가 쌓아온 순서대로 말하면 정확합니다. 다만 고객은 그 순서로 듣지 않습니다."
         },
         {
-          "headline": "결과를 먼저,\n기전은 그다음",
-          "note": "궁금해진 사람만이 기전을 끝까지 봅니다"
+          "role": "evidence",
+          "kicker": "근거",
+          "stat": "3배",
+          "stat_note": "더 빨랐습니다",
+          "note": "결과를 먼저 제시한 버전이 기전을 먼저 제시한 버전보다 이해에 도달하는 시간.",
+          "image": "mechanism-start"
         },
         {
-          "headline": "마지막 10초는\n고객의 언어로",
-          "body": "‘IL-6 발현 억제’가 아니라 ‘붉어짐이 가라앉는 시간이 짧아집니다’."
+          "role": "vertical",
+          "kicker": "원칙",
+          "headline": "보이지 않는\n구조일수록\n먼저 보여준다",
+          "note": "피부 장벽처럼, 설명하기 어려운 것부터 화면에 올립니다",
+          "image": "hyper-silico"
         },
         {
+          "role": "detail",
+          "kicker": "적용",
+          "headline": "세 가지를 *이 순서로*",
+          "items": [
+            "무엇이 달라지는가 — 측정된 변화만, 해석 없이.",
+            "왜 그렇게 되는가 — 기전을 한 문장으로.",
+            "그래서 고객에게 무엇인가 — 고객의 하루 안에서."
+          ],
+          "image": "neo-lab"
+        },
+        {
+          "role": "close",
           "headline": "어느 순서로\n설명하고 계십니까?",
-          "note": "DM으로 순서 진단 체크리스트를 보내드립니다"
+          "note": "DM으로 “순서”를 보내주시면 설명 순서 진단 체크리스트를 드립니다.",
+          "image": "translation"
         }
       ],
       "caption": "R&D가 쌓아온 순서대로 말하면 정확합니다. 다만 고객은 그 순서로 듣지 않습니다.\n\n댓글: 기전 먼저 vs 결과 먼저?\nDM “순서”: 설명 순서 진단 체크리스트\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
@@ -54,7 +77,8 @@
         "#MedicalAnimation",
         "#BrandStrategy"
       ],
-      "generated_by": "seed-2026-09-19"
+      "generated_by": "seed-2026-09-19",
+      "image": "micro-cinema"
     },
     {
       "topic": "R&D 언어와 마케팅 언어 사이를 연결하는 세 가지 질문",
@@ -88,7 +112,8 @@
         "#ScienceCommunication",
         "#BrandStrategy"
       ],
-      "generated_by": "seed-2026-09-19"
+      "generated_by": "seed-2026-09-19",
+      "image": "data-minimal"
     }
   ]
 }

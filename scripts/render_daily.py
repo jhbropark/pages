@@ -49,9 +49,14 @@ FORMAT_CYCLE = [
     ("carousel", 4),
 ]
 
-# Which ground each slide of a carousel sits on: dark bookends, light middle,
-# one warm slide to break the run. Mirrors the reference deck's rhythm.
-CAROUSEL_GROUNDS = ["ink", "paper", "rose", "paper", "ink"]
+# The order of roles a carousel walks. Each role is a different composition,
+# so a deck alternates picture, type, figure and list rather than repeating one
+# layout — see docs/editorial-direction.md.
+CAROUSEL_ROLES = ["cover", "statement", "evidence", "vertical", "detail", "close"]
+
+# A single card is a cover when there is a picture to carry it, and a statement
+# when there is not; the renderer falls back on its own if the image is missing.
+SINGLE_ROLE = "cover"
 
 # LinkedIn stays landscape (1200x627) and keeps the art directions from
 # images/concepts/visual-directions-v3/ that the old pipeline already wired up.
@@ -131,12 +136,15 @@ def render_post(item: dict, post_id: str, slide_count: int) -> list[str]:
         name = f"{post_id}.jpg"
         cards.render(
             cards.Slide(
-                ground="ink",
+                role=item.get("role", SINGLE_ROLE),
                 kicker=item.get("kicker", ""),
                 headline=item["image_headline"],
-                note=item.get("note", ""),
+                sub=item.get("note", ""),
                 stat=item.get("stat", ""),
                 stat_note=item.get("stat_note", ""),
+                image=item.get("image", ""),
+                index=1,
+                total=1,
             ),
             IMAGES_DIR / name,
         )
@@ -152,16 +160,23 @@ def render_post(item: dict, post_id: str, slide_count: int) -> list[str]:
     total = len(slides)
     for index, slide in enumerate(slides):
         name = f"{post_id}-{index + 1:02d}.jpg"
+        # The last slide of a carousel is always the close, whatever its
+        # position in the role order, so a deck ends on the ask.
+        if index == total - 1 and total > 1:
+            default_role = "close"
+        else:
+            default_role = CAROUSEL_ROLES[index % (len(CAROUSEL_ROLES) - 1)]
         cards.render(
             cards.Slide(
-                ground=slide.get("ground", CAROUSEL_GROUNDS[index % len(CAROUSEL_GROUNDS)]),
+                role=slide.get("role", default_role),
                 kicker=slide.get("kicker", item.get("kicker", "") if index == 0 else ""),
-                headline=slide["headline"],
-                note=slide.get("note", ""),
+                headline=slide.get("headline", ""),
+                sub=slide.get("note", slide.get("body", "")),
                 stat=slide.get("stat", ""),
                 stat_note=slide.get("stat_note", ""),
-                body=slide.get("body", ""),
-                number=index + 1,
+                items=slide.get("items", []),
+                image=slide.get("image", item.get("image", "")),
+                index=index + 1,
                 total=total,
             ),
             IMAGES_DIR / name,

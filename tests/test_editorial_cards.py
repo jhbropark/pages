@@ -50,13 +50,13 @@ class TextNeverOverflows(unittest.TestCase):
 
     def test_fit_font_shrinks_until_the_headline_fits(self):
         long_headline = "고객이 이해하는 순서로 다시 쓰는 과학 커뮤니케이션 설계의 원칙"
-        font, lines = cards.fit_font(
+        base, emph, lines = cards.fit_font(
             long_headline, 700, 300, serif=True, weight="Bold",
             start=112, leading=1.16,
         )
-        self.assertLessEqual(len(lines) * font.size * 1.16, 300)
+        self.assertLessEqual(len(lines) * max(base.size, emph.size) * 1.16, 300)
         for line in lines:
-            self.assertLessEqual(cards.text_width(line, font), 700)
+            self.assertLessEqual(cards.line_width(line, base, emph), 700)
 
 
 class AlphaActuallyBlends(unittest.TestCase):
@@ -94,33 +94,87 @@ class RenderedCards(unittest.TestCase):
     def test_card_is_four_by_five(self):
         with tempfile.TemporaryDirectory() as tmp:
             out = cards.render(
-                cards.Slide(headline="이해 순서로", kicker="원칙", number=1, total=4),
+                cards.Slide(role="statement", headline="이해 순서로", kicker="원칙"),
                 Path(tmp) / "card.jpg",
             )
             self.assertEqual(Image.open(out).size, (1080, 1350))
 
-    def test_every_ground_renders(self):
+    def test_every_role_renders_at_the_right_size(self):
         with tempfile.TemporaryDirectory() as tmp:
-            for name in cards.GROUNDS:
+            for i, role in enumerate(cards.ROLES):
                 out = cards.render(
                     cards.Slide(
-                        headline="변화 · 기전 · 의미", ground=name, stat="3배",
-                        body="한 문장으로 먼저 답한다.", note="짧은 방주",
-                        number=2, total=5,
+                        role=role, headline="변화 · 기전 *· 의미*", kicker="원칙",
+                        stat="3배", stat_note="더 빨랐습니다", sub="짧은 방주",
+                        items=["하나 — 측정된 변화만.", "둘 — 기전을 한 문장으로."],
+                        index=i + 1, total=len(cards.ROLES),
                     ),
-                    Path(tmp) / f"{name}.jpg",
+                    Path(tmp) / f"{role}.jpg",
                 )
-                self.assertTrue(out.exists(), name)
+                self.assertEqual(Image.open(out).size, (1080, 1350), role)
 
-    def test_the_rail_sits_at_the_same_height_on_every_slide(self):
-        # The continuity device only works if it does not move between slides.
+    def test_an_unknown_role_falls_back_instead_of_raising(self):
         with tempfile.TemporaryDirectory() as tmp:
-            for index in range(1, 5):
-                cards.render(
-                    cards.Slide(headline="연속", number=index, total=4),
-                    Path(tmp) / f"{index}.jpg",
-                )
-            self.assertEqual(cards.RAIL_Y, int(cards.H * 0.735))
+            out = cards.render(
+                cards.Slide(role="does-not-exist", headline="폴백"),
+                Path(tmp) / "fallback.jpg",
+            )
+            self.assertEqual(Image.open(out).size, (1080, 1350))
+
+
+class Emphasis(unittest.TestCase):
+    """``순서가 *전부*다`` sets 전부 differently without breaking the word."""
+
+    def setUp(self):
+        self.base = cards._font(120, serif=True, weight="Medium")
+        self.emph = cards._font(160, serif=True, weight="Bold")
+
+    def test_runs_are_split_on_the_marker(self):
+        self.assertEqual(cards.runs("순서가 *전부*다"),
+                         [("순서가 ", False), ("전부", True), ("다", False)])
+
+    def test_emphasis_does_not_create_a_word_boundary(self):
+        # The earlier bug: 전부 and 다 were treated as separate words, so the
+        # line could break between them and a space was inserted.
+        words = cards.words_of("순서가 *전부*다")
+        self.assertEqual(len(words), 2)
+        self.assertEqual("".join(t for t, _ in words[1]), "전부다")
+
+    def test_the_emphasised_word_stays_whole_when_wrapped(self):
+        # Narrow enough to force a break: it must fall before 전부다, never
+        # inside it.
+        lines = cards.wrap_runs("순서가 *전부*다", self.base, self.emph, 420)
+        rendered = ["".join(t for word in line for t, _ in word) for line in lines]
+        self.assertGreater(len(rendered), 1)
+        self.assertTrue(any("전부다" in line for line in rendered), rendered)
+        self.assertFalse(any(line.endswith("전부") for line in rendered), rendered)
+
+
+class KnockoutLegibility(unittest.TestCase):
+    """Type cut out of a picture is only as legible as the picture."""
+
+    def setUp(self):
+        base = cards._font(120, serif=True, weight="Bold")
+        lines = cards.wrap_runs("연구 순서가\n이해 순서로", base, base, 900)
+        self.mask = cards._text_mask(lines, base, base, 48, 400, 124)
+
+    def test_a_flat_dark_photograph_is_rejected(self):
+        flat = Image.new("RGB", (cards.W, cards.H), (18, 20, 26))
+        self.assertFalse(cards._knockout_is_legible(flat, self.mask, cards.BLACK))
+
+    def test_a_bright_photograph_is_accepted(self):
+        bright = Image.new("RGB", (cards.W, cards.H), (238, 232, 226))
+        self.assertTrue(cards._knockout_is_legible(bright, self.mask, cards.BLACK))
+
+
+class SourceImagery(unittest.TestCase):
+    def test_the_brand_renders_are_found(self):
+        self.assertGreater(len(cards.available_images()), 0)
+
+    def test_a_missing_name_still_resolves(self):
+        # A buffer naming an image that no longer exists must not crash the
+        # daily run; it falls back to a deterministic pick.
+        self.assertIsNotNone(cards.resolve_image("no-such-image", 2))
 
 
 class VendoredFonts(unittest.TestCase):

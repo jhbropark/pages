@@ -69,10 +69,11 @@ ANTHROPIC_API_KEY=... python scripts/generate_content.py --days 7
 |---|---|---|
 | `topic` | ✔ | `content/topics.json` 의 주제 문자열 |
 | `kicker` |  | 헤드라인 위 작은 라벨 (예: `과학 커뮤니케이션`) |
-| `image_headline` | ✔ | 카드 헤드라인. `\n` 으로 줄바꿈 지정 가능 |
+| `image_headline` | ✔ | 카드 헤드라인. `\n` 하드 개행, `*강조*` 지원 |
 | `english_image_headline` | ✔ | LinkedIn 영문 카드용 |
 | `note` |  | `*소문자 방주` 캡션 |
 | `stat` / `stat_note` |  | 강조 수치와 꼬리말 |
+| `role` / `image` |  | 단일 카드의 역할과 사진 (기본 `cover`) |
 | `slides` |  | 캐러셀 슬라이드 배열 (아래 참조) |
 | `caption` | ✔ | Instagram 본문 (CTA 포함, 220자 이내) |
 | `hashtags` | ✔ | 5~7개 |
@@ -81,9 +82,19 @@ ANTHROPIC_API_KEY=... python scripts/generate_content.py --days 7
 | `linkedin_ko_hashtags` / `linkedin_en_hashtags` | ✔ | 각 3~4개 |
 | `generated_by` |  | 출처 표시 |
 
-`slides` 의 각 원소는 `headline` 이 필수이고 `ground`(`ink`/`paper`/`rose`),
-`kicker`, `note`, `stat`, `stat_note`, `body` 를 선택적으로 가집니다. 비워두면
+`slides` 의 각 원소는 아래를 가질 수 있습니다. 전부 선택이고, 비워두면
 `image_headline` 을 표지로 쓰고 `points` 배열을 이어 붙입니다.
+
+| 필드 | 설명 |
+|---|---|
+| `role` | `cover` / `statement` / `evidence` / `vertical` / `detail` / `close`. 생략하면 캐러셀 위치에 따라 정해지고, 마지막 장은 항상 `close` |
+| `headline` | `\n` 하드 개행, `*강조*` 로 한 단어만 크게·굵게·클레이로 |
+| `note` | 보조 문장 |
+| `stat` / `stat_note` | `evidence` 의 수치와 꼬리말 |
+| `items` | `detail` 의 번호 목록 |
+| `image` | 소스 렌더 이름의 일부(`hyper-silico` 등) 또는 저장소 상대 경로. 틀려도 실행은 죽지 않고 인덱스로 대체 |
+
+역할별 구성과 조판 규칙은 `docs/editorial-direction.md` 에 있습니다.
 
 ## 포맷 순환
 
