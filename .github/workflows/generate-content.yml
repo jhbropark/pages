@@ -34,13 +34,18 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: 한글 폰트 설치
+      # Hahmlet and Pretendard are vendored in assets/fonts/, so the cards need
+      # no download. Noto/Nanum are still installed as the fallback for a
+      # syllable Hahmlet lacks, and for the LinkedIn landscape renderer.
+      - name: 폴백 한글 폰트 설치
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-cjk-extra fonts-nanum
 
       - name: 의존성 설치
-        run: pip install --quiet Pillow requests
+        # fonttools drives the Hangul coverage guard in editorial_cards;
+        # without it the guard disables itself silently.
+        run: pip install --quiet Pillow requests fonttools
 
       - name: 카드 렌더링 및 큐 추가
         id: render

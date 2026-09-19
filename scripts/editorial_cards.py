@@ -23,7 +23,9 @@ overwrites the alpha channel instead of blending it).
 from __future__ import annotations
 
 import math
+import sys
 from dataclasses import dataclass
+from functools import lru_cache
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -85,25 +87,92 @@ GROUNDS: dict[str, Ground] = {
 # Fonts
 # ---------------------------------------------------------------------------
 
+# Display is Hahmlet, text is Pretendard, both vendored under assets/fonts/ so
+# a build never depends on a font download. The system Noto CJK faces stay on
+# as fallbacks: apt installs them in CI, and Hahmlet needs one (see below).
+FONT_DIR = REPO_ROOT / "assets" / "fonts"
+
 SERIF_CANDIDATES = [
+    str(FONT_DIR / "Hahmlet.ttf"),
     "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc",
     "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
     "/usr/share/fonts/truetype/nanum/NanumMyeongjoBold.ttf",
-    str(REPO_ROOT / "assets" / "fonts" / "NotoSerifKR.ttf"),
 ]
 SANS_CANDIDATES = [
+    str(FONT_DIR / "Pretendard.ttf"),
     "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
     "/usr/share/fonts/truetype/nanum/NanumGothic.ttf",
-    str(REPO_ROOT / "assets" / "fonts" / "NotoSansKR.ttf"),
 ]
+
+# Hahmlet carries the KS X 1001 common set — 2,788 of the 11,172 modern Hangul
+# syllables — not the full range. That covers ordinary Korean prose completely
+# (every one of the 613 distinct syllables across the 35,742 Korean characters
+# already in this repo is present), but a rare syllable would otherwise render
+# as an empty box in a published post with nothing to warn anyone. So a
+# headline is checked against the face before it is drawn, and a card that
+# Hahmlet cannot set falls back to Noto Serif, which covers all 11,172.
+SERIF_FALLBACK = SERIF_CANDIDATES[1:]
 
 # Set by tests and by the preview build to point at a downloaded copy.
 FONT_OVERRIDE: dict[str, str] = {}
 
 
-def _font(size: int, *, serif: bool = False, weight: str = "Regular") -> ImageFont.FreeTypeFont:
+@lru_cache(maxsize=8)
+def _coverage(path: str) -> frozenset[int]:
+    """Every code point a font can actually draw."""
+    try:
+        from fontTools.ttLib import TTFont
+    except ImportError:
+        return frozenset()  # without fontTools, assume the face is fine
+    try:
+        font = TTFont(path, fontNumber=0, lazy=True)
+    except Exception:
+        return frozenset()
+    points: set[int] = set()
+    for table in font["cmap"].tables:
+        points |= set(table.cmap.keys())
+    font.close()
+    return frozenset(points)
+
+
+def uncovered(text: str, path: str) -> set[str]:
+    """Characters in ``text`` that ``path`` has no glyph for."""
+    points = _coverage(path)
+    if not points:
+        return set()
+    return {ch for ch in text if ch.strip() and ord(ch) not in points}
+
+
+def serif_for(text: str) -> str:
+    """The display face to set ``text`` in — Hahmlet unless it would tofu."""
+    if "serif" in FONT_OVERRIDE:
+        return FONT_OVERRIDE["serif"]
+    primary = SERIF_CANDIDATES[0]
+    if not Path(primary).exists():
+        return ""
+    missing = uncovered(text, primary)
+    if not missing:
+        return primary
+    for path in SERIF_FALLBACK:
+        if Path(path).exists() and not uncovered(text, path):
+            print(f"editorial_cards: {''.join(sorted(missing))!r} missing from "
+                  f"Hahmlet; falling back to {Path(path).name}", file=sys.stderr)
+            return path
+    # No installed face can set this text. Something still has to be drawn, but
+    # it will contain empty boxes, so say so as loudly as possible rather than
+    # publishing a card with holes in it and no record of why.
+    print(f"editorial_cards: WARNING {''.join(sorted(missing))!r} has no glyph "
+          f"in any installed serif; the card will render tofu. Install "
+          f"fonts-noto-cjk or reword the headline.", file=sys.stderr)
+    return primary
+
+
+def _font(size: int, *, serif: bool = False, weight: str = "Regular",
+          path: str = "") -> ImageFont.FreeTypeFont:
     key = "serif" if serif else "sans"
-    paths = [FONT_OVERRIDE[key]] if key in FONT_OVERRIDE else []
+    paths = [path] if path else []
+    if key in FONT_OVERRIDE:
+        paths.append(FONT_OVERRIDE[key])
     paths += SERIF_CANDIDATES if serif else SANS_CANDIDATES
     for path in paths:
         if not Path(path).exists():
@@ -177,16 +246,17 @@ def fit_font(
     start: int,
     leading: float,
     floor: int = 28,
+    path: str = "",
 ) -> tuple[ImageFont.FreeTypeFont, list[str]]:
     """Largest size at which ``text`` fits the box. Never overflows."""
     size = start
     while size > floor:
-        font = _font(size, serif=serif, weight=weight)
+        font = _font(size, serif=serif, weight=weight, path=path)
         lines = wrap(text, font, max_width)
         if len(lines) * size * leading <= max_height:
             return font, lines
         size -= 3
-    font = _font(floor, serif=serif, weight=weight)
+    font = _font(floor, serif=serif, weight=weight, path=path)
     return font, wrap(text, font, max_width)
 
 
@@ -261,7 +331,7 @@ def render(slide: Slide, out: Path) -> Path:
 
     # --- giant ghosted slide number, bottom-right, cropped by the edge -----
     if slide.number is not None:
-        nf = _font(460, serif=True, weight="Bold")
+        nf = _font(460, serif=True, weight="Bold", path=serif_for("0123456789"))
         label = f"{slide.number:02d}"
         nd = ImageDraw.Draw(img)
         box = nd.textbbox((0, 0), label, font=nf)
@@ -299,9 +369,10 @@ def render(slide: Slide, out: Path) -> Path:
 
     # --- serif display headline, all-caps for Latin, tight leading --------
     # the right-hand gutter is reserved for the sticker, so type never collides
+    display = serif_for(slide.headline)
     hf, lines = fit_font(
         slide.headline, W - MARGIN * 2 - STICKER_GUTTER, 470,
-        serif=True, weight="Bold", start=112, leading=1.16,
+        serif=True, weight="Bold", start=112, leading=1.16, path=display,
     )
     lh = hf.size * 1.16
     for i, line in enumerate(lines):
@@ -317,7 +388,7 @@ def render(slide: Slide, out: Path) -> Path:
 
     # --- a figure, set huge in the accent ---------------------------------
     if slide.stat:
-        sf = _font(150, serif=True, weight="Bold")
+        sf = _font(150, serif=True, weight="Bold", path=serif_for(slide.stat))
         d.text((MARGIN, y), slide.stat, font=sf, fill=g.accent)
         if slide.stat_note:
             nf2 = _font(27, weight="Medium")

@@ -5,6 +5,7 @@ only showed up by eye. A test is the only thing that keeps them fixed.
 """
 
 import importlib.util
+import json
 import sys
 import tempfile
 import unittest
@@ -120,6 +121,67 @@ class RenderedCards(unittest.TestCase):
                     Path(tmp) / f"{index}.jpg",
                 )
             self.assertEqual(cards.RAIL_Y, int(cards.H * 0.735))
+
+
+class VendoredFonts(unittest.TestCase):
+    """Hahmlet for display, Pretendard for text, both from assets/fonts/."""
+
+    def test_both_faces_are_vendored(self):
+        for name in ("Hahmlet.ttf", "Pretendard.ttf"):
+            self.assertTrue((cards.FONT_DIR / name).exists(), name)
+
+    def test_display_and_text_faces_are_preferred(self):
+        self.assertTrue(cards.SERIF_CANDIDATES[0].endswith("Hahmlet.ttf"))
+        self.assertTrue(cards.SANS_CANDIDATES[0].endswith("Pretendard.ttf"))
+
+    def test_a_build_needs_no_font_download(self):
+        # Both primaries resolve from the repo, so nothing is fetched at build
+        # time — the point of vendoring rather than curling them in the workflow.
+        self.assertTrue(Path(cards.SERIF_CANDIDATES[0]).exists())
+        self.assertTrue(Path(cards.SANS_CANDIDATES[0]).exists())
+
+
+class HangulCoverage(unittest.TestCase):
+    """Hahmlet carries the common set, not all 11,172 syllables.
+
+    Ordinary Korean prose is fully covered, but the gap is real, so it is
+    guarded rather than assumed away.
+    """
+
+    def test_pretendard_covers_every_modern_syllable(self):
+        missing = cards.uncovered(
+            "".join(chr(cp) for cp in range(0xAC00, 0xD7A4)),
+            cards.SANS_CANDIDATES[0],
+        )
+        self.assertEqual(missing, set())
+
+    def test_ordinary_korean_sets_in_hahmlet(self):
+        for line in ["연구 순서가 아니라 이해 순서로",
+                     "변화 · 기전 · 의미",
+                     "보이지 않는 것을 보여주는 일",
+                     "과학 커뮤니케이션 3배 bbbb.beauty"]:
+            self.assertEqual(cards.uncovered(line, cards.SERIF_CANDIDATES[0]), set(), line)
+
+    def test_a_syllable_outside_the_common_set_is_detected(self):
+        # 쁢 is a valid modern syllable that Hahmlet does not carry; the guard
+        # has to notice rather than let it through as an empty box.
+        self.assertEqual(cards.uncovered("쁢", cards.SERIF_CANDIDATES[0]), {"쁢"})
+
+    def test_buffered_copy_is_all_settable(self):
+        """Preflight: nothing waiting to be posted can tofu."""
+        buffer_file = cards.REPO_ROOT / "content" / "buffer.json"
+        if not buffer_file.exists():
+            self.skipTest("no buffer")
+        buffer = json.loads(buffer_file.read_text(encoding="utf-8"))
+        for item in buffer.get("items", []):
+            headlines = [item.get("image_headline", "")]
+            headlines += [s.get("headline", "") for s in item.get("slides", [])]
+            for headline in headlines:
+                face = cards.serif_for(headline)
+                self.assertEqual(
+                    cards.uncovered(headline, face), set(),
+                    f"{headline!r} cannot be set in {Path(face).name}",
+                )
 
 
 if __name__ == "__main__":
