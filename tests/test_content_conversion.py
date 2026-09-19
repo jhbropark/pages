@@ -1,6 +1,5 @@
 import importlib.util
 import unittest
-from datetime import datetime
 from pathlib import Path
 
 
@@ -65,17 +64,28 @@ class ContentConversionTests(unittest.TestCase):
             any("linkedin_en_hashtags" in error and "#으로 시작" in error for error in errors)
         )
 
-    def test_two_daily_slots_select_different_topics(self):
-        config = {
-            "daily_slots": [{"id": "morning"}, {"id": "afternoon"}],
-            "topics": ["A", "B", "C", "D"],
+    def test_refill_skips_topics_already_waiting_in_the_buffer(self):
+        """No topic is queued twice while an earlier copy is still unposted.
+
+        This property used to belong to pick_topic(), which chose a topic from
+        the day of the year at generation time. Generation now happens ahead of
+        posting, so the same guarantee comes from excluding whatever is still
+        sitting unconsumed in the buffer.
+        """
+        buffer = {
+            "items": [
+                {"topic": "A"},
+                {"topic": "B", "consumed_at": "2026-09-01T06:00:00+09:00"},
+            ]
         }
-        now = datetime(2026, 6, 13, tzinfo=generate_content.KST)
-        selected = [
-            generate_content.pick_topic(config, now, slot_index)
-            for slot_index in range(2)
-        ]
-        self.assertEqual(len(set(selected)), 2)
+        waiting = generate_content.buffered_topics(buffer)
+
+        # "B" has already gone out, so it is free to come round again; "A" is
+        # still queued and must not be picked a second time.
+        self.assertEqual(waiting, {"A"})
+
+        remaining = [t for t in ["A", "B", "C", "D"] if t not in waiting]
+        self.assertEqual(remaining, ["B", "C", "D"])
 
 
 if __name__ == "__main__":
