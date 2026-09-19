@@ -14,7 +14,7 @@ Env:
 Usage:
   python fb_publish.py --image-url https://.../post.png --caption-file caption.txt
 """
-import argparse, os, sys
+import argparse, hashlib, os, sys
 import requests
 
 
@@ -80,6 +80,17 @@ def _try_post(base, ver, pid, edge, params, timeout):
     return None
 
 
+def token_fingerprint(tok):
+    """A short, non-reversible id for a token value.
+
+    Answers "did the secret actually change?" across runs without revealing
+    any token material: a 8-hex prefix of the SHA-256 of a high-entropy token
+    cannot be reversed or replayed, but two runs showing the same fingerprint
+    are provably using the same value.
+    """
+    return hashlib.sha256((tok or "").encode()).hexdigest()[:8]
+
+
 def diagnose(base, ver, pid, tok):
     """Print who the token is and what it may do, so a (#200) is actionable.
 
@@ -88,6 +99,9 @@ def diagnose(base, ver, pid, tok):
     to, and does it carry CREATE_CONTENT (pages_manage_posts).
     """
     print("--- facebook token diagnosis ---", file=sys.stderr)
+    print(f"token fingerprint: sha256:{token_fingerprint(tok)} "
+          f"(len {len(tok or '')}) — same value as a previous run means the "
+          "secret did not actually change", file=sys.stderr)
 
     def _get(path, fields):
         try:
