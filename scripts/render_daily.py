@@ -127,7 +127,12 @@ def compute_scheduled_time(now_kst: datetime, time_str: str) -> datetime:
 # ---------------------------------------------------------------------------
 
 def render_post(item: dict, post_id: str, slide_count: int) -> list[str]:
-    """Render the card(s) for one post and return their filenames."""
+    """Render the card(s) for one post and return their filenames.
+
+    Fewer cards than asked for is possible: an item with no ``slides`` has
+    nothing to build a deck from. render_slot downgrades the format when that
+    happens, so the queue never labels a single card as a carousel.
+    """
     IMAGES_DIR.mkdir(parents=True, exist_ok=True)
     slides = item.get("slides") or []
     names: list[str] = []
@@ -208,6 +213,13 @@ def render_slot(now_kst: datetime, config: dict, slot: dict, slot_index: int,
     print(f"[{slot_id}] {fmt} ({slide_count} slide(s)) — {item['topic']}", flush=True)
 
     names = render_post(item, post_id, slide_count)
+    if len(names) < slide_count:
+        # The buffer item had no slides to build a deck from. Post it honestly
+        # as what it is rather than sending one image out as a carousel.
+        print(f"[{slot_id}] only {len(names)} card(s) available for a "
+              f"{slide_count}-card {fmt}; posting as single_image instead",
+              flush=True)
+        fmt = "single_image"
     urls = [f"{RAW_BASE_URL}/images/daily/{name}" for name in names]
 
     direction = VISUAL_DIRECTIONS[day_index % len(VISUAL_DIRECTIONS)]
