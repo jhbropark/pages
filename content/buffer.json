@@ -114,6 +114,854 @@
       ],
       "generated_by": "seed-2026-09-19",
       "image": "data-minimal"
+    },
+    {
+      "topic": "MOA 애니메이션이 복잡한 작용기전을 브랜드 자산으로 바꾸는 방법",
+      "kicker": "MOA 애니메이션",
+      "image": "mechanism-start",
+      "image_headline": "기전은 한 번에\n*하나씩*",
+      "english_image_headline": "One pathway at a time",
+      "note": "동시에 일어나는 일을 동시에 보여주면 아무것도 전달되지 않습니다",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학시각화",
+        "#제약마케팅",
+        "#메디컬콘텐츠",
+        "#3D애니메이션"
+      ],
+      "comment_question": "기전 영상, 몇 초가 적당할까요?",
+      "dm_keyword": "기전",
+      "dm_offer": "MOA 영상 기획 체크리스트",
+      "caption": "세포 안에서 동시에 일어나는 일을 화면에서도 동시에 보여주면, 정확하지만 아무것도 전달되지 않습니다.\n\n댓글: 기전 영상, 몇 초가 적당할까요?\nDM “기전”: MOA 영상 기획 체크리스트\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "slides": [
+        {
+          "role": "cover",
+          "headline": "기전은 한 번에\n*하나씩*",
+          "note": "동시에 보여주면 아무것도 전달되지 않습니다",
+          "image": "mechanism-start"
+        },
+        {
+          "role": "statement",
+          "headline": "정확한데\n*안 보인다*",
+          "note": "실제 세포 안에서는 여러 경로가 동시에 일어납니다. 화면에서도 그러면 관객은 따라오지 못합니다."
+        },
+        {
+          "role": "evidence",
+          "kicker": "기준",
+          "stat": "7초",
+          "stat_note": "한 경로당",
+          "note": "한 경로를 7초 안에 설명할 수 없으면, 아직 쪼개지지 않은 것입니다.",
+          "image": "cause-path-response"
+        },
+        {
+          "role": "vertical",
+          "kicker": "순서",
+          "headline": "결과를 먼저\n경로는 다음\n수치는 끝에",
+          "note": "궁금해진 사람만이 기전을 끝까지 봅니다",
+          "image": "cell-fusion"
+        },
+        {
+          "role": "detail",
+          "kicker": "자산화",
+          "headline": "한 번 만들고 *세 번 쓴다*",
+          "items": [
+            "영업 — 태블릿에서 60초 버전.",
+            "학회 — 루프 재생용 무자막 버전.",
+            "교육 — 챕터로 끊은 장문 버전."
+          ],
+          "image": "multi-channel"
+        },
+        {
+          "role": "close",
+          "headline": "기전 영상,\n몇 초짜리를 쓰고 계십니까?",
+          "note": "DM으로 “기전”을 보내주시면 MOA 영상 기획 체크리스트를 드립니다.",
+          "image": "translation"
+        }
+      ],
+      "linkedin_ko": "MOA 애니메이션 시안을 검토할 때 가장 자주 나오는 피드백은 \"정확하지 않다\"가 아닙니다. \"정확한데 무슨 말인지 모르겠다\"입니다.\n\n원인은 대개 하나입니다. 실제 세포 안에서 동시에 일어나는 일을 화면에서도 동시에 보여준 것입니다. 수용체 결합, 신호 전달, 전사 인자 이동, 단백질 발현이 한 화면에서 같이 움직이면 과학적으로는 옳습니다. 다만 사람의 눈은 한 번에 하나의 움직임만 따라갑니다.\n\n저희가 쓰는 기준은 단순합니다. 한 경로를 7초 안에 설명할 수 없다면, 그 경로는 아직 충분히 쪼개지지 않은 것입니다. 7초는 짧게 만들라는 뜻이 아니라, 한 화면이 감당할 수 있는 정보량의 상한선입니다.\n\n쪼갠 다음에는 순서를 바꿉니다. 결과를 먼저 보여주고, 왜 그렇게 되었는지로 거슬러 올라갑니다. 기전을 먼저 쌓아 올리면 결론에 도달하기 전에 대부분이 이탈합니다. 결과를 먼저 본 사람만이 그 경로를 끝까지 따라올 이유를 갖습니다.\n\n이렇게 만든 영상은 한 번 쓰고 끝나지 않습니다. 영업 담당자가 태블릿에서 여는 60초 버전, 학회 부스에서 무자막으로 도는 루프 버전, 내부 교육용으로 챕터를 끊은 장문 버전. 같은 소스에서 세 개가 나옵니다. 기획 단계에서 이 세 쓰임을 정해두면 재촬영도 재렌더링도 없습니다.\n\n기전 영상을 자산이 아니라 일회성 납품물로 쓰고 계신다면, 대개 기획 단계에서 쓰임이 하나만 정의돼 있었기 때문입니다.\n\n여러분의 MOA 영상은 몇 초짜리입니까? 그 영상은 지금 몇 군데에서 쓰이고 있습니까?\n\nDM으로 “기전”을 보내주시면 저희가 쓰는 MOA 영상 기획 체크리스트를 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "linkedin_en": "The most common note on an MOA animation draft is not \"that is inaccurate\". It is \"that is accurate and I have no idea what I just watched\".\n\nThe cause is usually the same. Things that happen simultaneously inside a real cell were shown simultaneously on screen. Receptor binding, signal transduction, transcription factor translocation and protein expression all moving in one frame is scientifically correct. The human eye still follows one movement at a time.\n\nOur working rule is simple: if a pathway cannot be explained in seven seconds, it has not been broken down far enough yet. Seven seconds is not an instruction to make things short. It is the ceiling on how much information a single frame can carry.\n\nOnce it is broken down, we change the order. Show the outcome first, then travel back to why it happened. Building the mechanism up from the bottom loses most of the room before the conclusion arrives. Only someone who has already seen the outcome has a reason to follow the pathway to the end.\n\nAn animation made this way does not get used once. A sixty-second cut a rep opens on a tablet, a silent loop for a conference booth, a long chaptered version for internal training — three deliverables out of one source. Decide those three uses during planning and there is no reshoot and no re-render later.\n\nIf your mechanism video behaves like a one-off deliverable rather than an asset, it is usually because only one use was defined before production started.\n\nHow long is your MOA video, and how many places is it working in right now?\n\nSend me “기전” for the planning checklist we use. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "linkedin_ko_hashtags": [
+        "#MOA애니메이션",
+        "#과학시각화",
+        "#제약마케팅"
+      ],
+      "linkedin_en_hashtags": [
+        "#MedicalAnimation",
+        "#ScienceVisualization",
+        "#PharmaMarketing"
+      ],
+      "generated_by": "seed-2026-09-20"
+    },
+    {
+      "topic": "더마코스메틱의 성분 설명을 고객 언어로 번역하는 세 단계",
+      "kicker": "더마코스메틱",
+      "image": "hyper-silico",
+      "image_headline": "성분이 아니라\n*변화*를 판다",
+      "english_image_headline": "Sell the change, not the INCI",
+      "note": "성분표는 근거지 메시지가 아닙니다",
+      "hashtags": [
+        "#더마코스메틱",
+        "#뷰티마케팅",
+        "#성분마케팅",
+        "#브랜드전략",
+        "#과학커뮤니케이션"
+      ],
+      "comment_question": "성분명 먼저 vs 체감 먼저?",
+      "dm_keyword": "성분",
+      "dm_offer": "성분 번역 3단계 워크시트",
+      "caption": "성분표를 그대로 옮기면 정확합니다. 다만 고객은 성분을 사지 않고 달라지는 상태를 삽니다.\n\n댓글: 성분명 먼저 vs 체감 먼저?\nDM “성분”: 성분 번역 3단계 워크시트\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "slides": [
+        {
+          "role": "cover",
+          "headline": "성분이 아니라\n*변화*를 판다",
+          "note": "성분표는 근거지 메시지가 아닙니다",
+          "image": "hyper-silico"
+        },
+        {
+          "role": "statement",
+          "headline": "정확한 라벨,\n*빈* 메시지",
+          "note": "INCI 명을 그대로 옮기면 규제는 통과합니다. 고객의 머릿속에는 아무것도 남지 않습니다."
+        },
+        {
+          "role": "detail",
+          "kicker": "세 단계",
+          "headline": "성분에서 *체감*까지",
+          "items": [
+            "무엇이 들었나 — 성분명과 함량.",
+            "무엇을 하나 — 측정된 작용 하나.",
+            "무엇이 달라지나 — 고객의 하루 안에서."
+          ],
+          "image": "neo-lab"
+        },
+        {
+          "role": "evidence",
+          "kicker": "경계",
+          "stat": "0",
+          "stat_note": "건의 추정",
+          "note": "2단계에서 측정되지 않은 것은 3단계로 넘기지 않습니다.",
+          "image": "data-minimal"
+        },
+        {
+          "role": "close",
+          "headline": "성분명 먼저입니까,\n체감 먼저입니까?",
+          "note": "DM으로 “성분”을 보내주시면 번역 3단계 워크시트를 드립니다.",
+          "image": "context-first"
+        }
+      ],
+      "linkedin_ko": "더마코스메틱 브리프를 받으면 성분표가 먼저 옵니다. 함량과 INCI 명이 정확하게 정리돼 있습니다. 그 자체로는 훌륭한 문서인데, 그대로 광고 문안이 되지는 않습니다.\n\n고객은 성분을 사지 않습니다. 달라지는 상태를 삽니다. 문제는 그 사이를 건너뛰면 둘 중 하나가 일어난다는 것입니다. 성분명을 그대로 쓰면 아무 말도 하지 않은 것이 되고, 체감만 크게 쓰면 규제에 걸립니다. 두 실패가 정반대로 보이지만 원인은 같습니다. 근거와 메시지 사이에 다리가 없다는 것입니다.\n\n저희는 세 단계로 나눕니다.\n\n첫째, 무엇이 들었는가. 성분명과 함량을 그대로 적습니다. 해석은 한 글자도 붙이지 않습니다. 이 단계에서 마케팅은 자주 놀랍니다. 생각보다 말할 수 있는 것이 적기 때문입니다.\n\n둘째, 무엇을 하는가. 측정된 작용을 하나만 적습니다. 여러 개를 적고 싶어지는 지점인데, 여기서 늘리면 뒤에서 반드시 무리가 생깁니다. in vitro 결과인지 임상 결과인지도 이 줄에 함께 적습니다. 출처가 같은 줄에 없으면 나중에 아무도 확인하지 않습니다.\n\n셋째, 무엇이 달라지는가. 앞의 두 답을 고객의 하루 안에서 벌어지는 일로 옮깁니다. '경피 수분 손실량 감소'가 '오후에 당김이 덜하다'가 되는 지점입니다. 같은 사실인데 듣는 사람이 다릅니다.\n\n규칙은 하나입니다. 2단계에서 측정되지 않은 것은 3단계로 넘기지 않습니다. 이 규칙이 있으면 법무 검토가 카피를 잘라내는 일이 거의 없어집니다. 잘릴 문장이 애초에 써지지 않기 때문입니다.\n\n이 세 줄이 한 장에 들어가면 그 뒤로는 영상이든 상세페이지든 형식의 문제입니다. 세 줄이 없으면 어떤 형식으로도 좋은 콘텐츠가 나오지 않습니다. 화면이 화려할수록 빈 곳이 더 잘 보입니다.\n\n여러분의 팀은 성분명을 먼저 말합니까, 체감을 먼저 말합니까?\n\nDM으로 “성분”을 보내주시면 번역 3단계 워크시트를 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "linkedin_en": "A dermocosmetic brief usually arrives with the ingredient table first. Concentrations and INCI names, all correct. It is an excellent document that does not become copy on its own.\n\nCustomers do not buy ingredients. They buy a change of state. Skip the space between the two and one of two things happens: write the INCI name as it stands and you have said nothing, or write the felt benefit large and you have a regulatory problem. The two failures look opposite and share a cause — there is no bridge between the evidence and the message.\n\nWe split it into three steps.\n\nFirst, what is in it. Ingredient and concentration exactly as recorded, with no interpretation attached. Marketing is often surprised here, because there is less that can be said than assumed.\n\nSecond, what does it do. One measured action, and only one. This is where the temptation to add more appears, and adding here always forces a stretch later. Whether the evidence is in vitro or clinical goes on the same line: if the source is not beside the claim, nobody checks it afterwards.\n\nThird, what changes. Move the first two answers into something that happens inside someone's day. This is where 'reduced transepidermal water loss' becomes 'less tightness in the afternoon'. Same fact, different listener.\n\nOne rule holds it together: nothing reaches step three that was not measured at step two. With that rule in place, legal review almost stops cutting copy, because the sentences that would be cut never get written in the first place.\n\nOnce those three lines fit on one page, film or product page is a question of format. Without them, no format produces good content — the more polished the screen, the more visible the hollow place.\n\nDoes your team lead with the ingredient, or with the change?\n\nSend me “성분” for the three-step worksheet. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "linkedin_ko_hashtags": [
+        "#더마코스메틱",
+        "#뷰티마케팅",
+        "#브랜드전략"
+      ],
+      "linkedin_en_hashtags": [
+        "#Dermocosmetics",
+        "#BeautyMarketing",
+        "#BrandStrategy"
+      ],
+      "generated_by": "seed-2026-09-20"
+    },
+    {
+      "topic": "임상 데이터와 프리미엄 비주얼을 함께 설계해야 하는 이유",
+      "kicker": "임상 데이터",
+      "image": "data-minimal",
+      "image_headline": "근거와 화면은\n*같이* 설계한다",
+      "english_image_headline": "Design data and image together",
+      "note": "다 만든 뒤에 데이터를 얹으면 둘 다 망가집니다",
+      "hashtags": [
+        "#임상데이터",
+        "#과학시각화",
+        "#제약마케팅",
+        "#브랜드필름",
+        "#데이터시각화"
+      ],
+      "comment_question": "데이터 먼저 vs 화면 먼저?",
+      "dm_keyword": "근거",
+      "dm_offer": "데이터-비주얼 동시 설계 가이드",
+      "caption": "화면을 먼저 다 만들고 마지막에 데이터를 얹으면, 근거는 자막이 되고 화면은 장식이 됩니다.\n\n댓글: 데이터 먼저 vs 화면 먼저?\nDM “근거”: 데이터-비주얼 동시 설계 가이드\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "slides": [
+        {
+          "role": "cover",
+          "headline": "근거와 화면은\n*같이* 설계한다",
+          "note": "나중에 얹으면 둘 다 망가집니다",
+          "image": "data-minimal"
+        },
+        {
+          "role": "statement",
+          "headline": "자막이 된\n*근거*",
+          "note": "영상이 다 나온 뒤 데이터를 넣으면, 가장 중요한 숫자가 가장 작은 글씨가 됩니다."
+        },
+        {
+          "role": "evidence",
+          "kicker": "순서",
+          "stat": "1",
+          "stat_note": "장면당 하나",
+          "note": "한 장면이 감당할 수 있는 주장은 하나입니다. 둘이면 둘 다 안 남습니다.",
+          "image": "collision"
+        },
+        {
+          "role": "detail",
+          "kicker": "동시 설계",
+          "headline": "세 가지를 *먼저* 고정한다",
+          "items": [
+            "어떤 수치를 보여줄 것인가.",
+            "그 수치가 몇 번째 장면에 오는가.",
+            "화면에서 얼마나 크게 놓이는가."
+          ],
+          "image": "neo-lab"
+        },
+        {
+          "role": "close",
+          "headline": "데이터가 먼저입니까,\n화면이 먼저입니까?",
+          "note": "DM으로 “근거”를 보내주시면 동시 설계 가이드를 드립니다.",
+          "image": "response"
+        }
+      ],
+      "linkedin_ko": "제약·바이오 브랜드 필름에서 가장 흔한 사고는 순서에서 납니다. 영상이 거의 완성된 뒤에 메디컬 팀이 데이터를 검토하고, 그때 숫자가 들어갑니다.\n\n결과는 늘 비슷합니다. 가장 중요한 수치가 화면에서 가장 작은 글씨가 됩니다. 자막으로 밀려나거나 엔딩 크레딧 직전에 몰아서 붙습니다. 근거가 있는데도 근거가 없어 보이는 영상이 이렇게 만들어집니다. 더 나쁜 것은 이 시점에 수정을 요청하면 렌더링을 다시 돌려야 해서, 대개 그냥 넘어간다는 점입니다.\n\n반대 방향의 실패도 있습니다. 데이터를 먼저 다 정리한 다음 그것을 그대로 화면에 옮기면, 이번에는 슬라이드가 움직이는 것에 가까워집니다. 정확하지만 아무도 끝까지 보지 않습니다. 두 실패 모두 데이터와 화면을 서로 다른 단계에서 다뤘기 때문에 생깁니다.\n\n저희는 기획 단계에서 세 가지를 같이 고정합니다.\n\n첫째, 어떤 수치를 보여줄 것인가. 가진 것을 다 보여주지 않습니다. 하나의 영상이 감당할 수 있는 주장은 많아야 세 개이고, 한 장면이 감당할 수 있는 주장은 하나입니다. 두 개를 넣으면 둘 다 남지 않습니다.\n\n둘째, 그 수치가 몇 번째 장면에 오는가. 결과 수치는 앞쪽에, 조건과 한계는 그 수치를 본 뒤에 놓습니다. 한계를 숨기는 것이 아니라, 관심이 생긴 다음에 읽히도록 두는 것입니다. 순서만 바꿔도 같은 한계가 변명이 아니라 신뢰의 근거로 읽힙니다.\n\n셋째, 화면에서 얼마나 크게 놓이는가. 이걸 미리 정하면 그 크기에 맞는 화면을 설계하게 됩니다. 나중에 정하면 이미 꽉 찬 화면에 숫자를 끼워 넣게 됩니다.\n\n프리미엄 비주얼과 임상적 정확성은 상충하지 않습니다. 다만 순차적으로 만들면 반드시 상충합니다. 같이 설계할 때만 같이 살아남습니다.\n\n여러분의 프로젝트에서는 데이터 검토가 몇 번째 단계에 있습니까?\n\nDM으로 “근거”를 보내주시면 동시 설계 가이드를 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "linkedin_en": "The most common accident in a pharma brand film is one of sequence. The film is nearly finished, then the medical team reviews the data, and that is when the numbers go in.\n\nThe result is always similar. The most important figure becomes the smallest type on screen. It gets pushed into a subtitle, or stacked just before the end credits. This is how a film with real evidence ends up looking as though it has none. Worse, asking for a change at that point means re-rendering, so it usually goes out as it is.\n\nThe opposite failure also exists. Organise all the data first, then move it onto the screen as it stands, and you have made slides that move. Accurate, and nobody watches to the end. Both failures come from handling the data and the frame at different stages.\n\nWe fix three things during planning instead.\n\nFirst, which figures appear. Not everything you have. A film can carry three claims at most, and a single scene can carry one. Put two in a scene and neither survives it.\n\nSecond, which scene each figure lands in. Outcome figures go early; conditions and limitations go after the figure has been seen. That is not hiding the limitation — it is placing it where someone has a reason to read it. Order alone decides whether the same caveat reads as an excuse or as a reason to trust you.\n\nThird, how large it sits on screen. Decide that in advance and you design a frame that fits it. Decide it later and you are wedging a number into a frame that is already full.\n\nPremium visuals and clinical accuracy do not conflict. They only conflict when they are built in sequence. Designed together, they survive together.\n\nAt what stage does data review sit in your projects?\n\nSend me “근거” for the guide we use. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "linkedin_ko_hashtags": [
+        "#임상데이터",
+        "#과학시각화",
+        "#제약마케팅"
+      ],
+      "linkedin_en_hashtags": [
+        "#ClinicalData",
+        "#ScienceVisualization",
+        "#PharmaMarketing"
+      ],
+      "generated_by": "seed-2026-09-20"
+    },
+    {
+      "topic": "의료기기 원리를 3D 영상으로 보여줄 때 놓치지 말아야 할 것",
+      "kicker": "의료기기",
+      "image": "collision",
+      "image_headline": "기기가 아니라\n*조직*을 보여준다",
+      "english_image_headline": "Show the tissue, not the device",
+      "note": "장비가 멋있게 도는 영상은 아무것도 설명하지 않습니다",
+      "hashtags": [
+        "#의료기기",
+        "#3D애니메이션",
+        "#메디컬콘텐츠",
+        "#의료기기마케팅",
+        "#과학시각화"
+      ],
+      "comment_question": "기기 외관 vs 조직 단면?",
+      "dm_keyword": "기기",
+      "dm_offer": "의료기기 영상 기획 질문지",
+      "caption": "의료기기 영상의 절반이 장비가 회전하는 장면입니다. 정작 의사가 궁금한 건 조직 안에서 무슨 일이 일어나는가입니다.\n\n댓글: 기기 외관 vs 조직 단면?\nDM “기기”: 의료기기 영상 기획 질문지\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "slides": [
+        {
+          "role": "cover",
+          "headline": "기기가 아니라\n*조직*을 보여준다",
+          "note": "장비가 도는 영상은 아무것도 설명하지 않습니다",
+          "image": "collision"
+        },
+        {
+          "role": "statement",
+          "headline": "멋있는데\n*안 남는다*",
+          "note": "제품 렌더링은 카탈로그의 일입니다. 영상의 일은 조직 안에서 벌어지는 변화를 보여주는 것입니다."
+        },
+        {
+          "role": "vertical",
+          "kicker": "시점",
+          "headline": "기기 바깥에서\n조직 안으로\n다시 밖으로",
+          "note": "한 번은 반드시 안으로 들어갔다 나와야 합니다",
+          "image": "cause-path-response"
+        },
+        {
+          "role": "detail",
+          "kicker": "놓치기 쉬운 것",
+          "headline": "세 가지를 *반드시* 넣는다",
+          "items": [
+            "스케일 — 실제 크기를 알 수 있는 기준물.",
+            "시간 — 몇 초 만에 일어나는 일인지.",
+            "한계 — 적용되지 않는 조건."
+          ],
+          "image": "neo-lab"
+        },
+        {
+          "role": "close",
+          "headline": "기기 외관입니까,\n조직 단면입니까?",
+          "note": "DM으로 “기기”를 보내주시면 영상 기획 질문지를 드립니다.",
+          "image": "visible-movement"
+        }
+      ],
+      "linkedin_ko": "의료기기 홍보 영상을 열 편 보면 예닐곱 편의 절반이 같은 장면입니다. 장비가 검은 배경에서 천천히 회전하고, 빛이 표면을 훑고 지나갑니다. 잘 만든 렌더링입니다. 다만 그 장면은 카탈로그가 이미 하고 있는 일입니다.\n\n의사가 이 영상을 보는 이유는 하나입니다. 이 기기가 내 환자의 조직에서 무엇을 하는가. 그 답이 없으면 아무리 화면이 좋아도 구매 결정에 기여하지 않습니다.\n\n그래서 저희는 시점을 한 번 반드시 안으로 들입니다. 기기 바깥에서 시작하더라도, 중간에 조직 단면으로 들어갔다가 다시 나옵니다. 이 왕복이 없으면 시청자는 기기를 본 것이지 원리를 본 것이 아닙니다.\n\n그리고 자주 빠지는 세 가지가 있습니다.\n\n첫째, 스케일. 조직 단면을 확대해서 보여줄 때 실제 크기를 가늠할 기준물이 없으면, 보는 사람은 지금이 밀리미터 단위인지 마이크로미터 단위인지 모릅니다. 스케일 바 하나가 설명 두 문장을 대신합니다.\n\n둘째, 시간. 이 변화가 3초 만에 일어나는 일인지 3주에 걸친 일인지는 임상적으로 완전히 다른 이야기입니다. 애니메이션은 시간을 자유롭게 압축하므로, 압축했다는 사실을 화면에 적어야 합니다.\n\n셋째, 한계. 적용되지 않는 조건을 넣으면 영상이 약해 보일 것 같지만 반대입니다. 조건을 명시한 영상이 임상의에게는 더 신뢰받습니다. 그들은 이미 한계가 있다는 것을 알고 있고, 말하지 않는 쪽을 의심합니다.\n\n한 가지 덧붙이면, 이 세 가지는 제작 막바지에 넣기가 가장 어렵습니다. 스케일 바와 시간 표기는 카메라 워크와 레이아웃에 영향을 주기 때문에, 콘티 단계에서 자리를 비워두지 않으면 나중에는 화면 구석에 작게 얹는 수밖에 없습니다. 적용 조건도 마찬가지입니다. 마지막에 넣으면 면책 문구처럼 읽히고, 처음부터 넣으면 설명의 일부로 읽힙니다. 같은 문장인데 놓인 위치가 신뢰도를 바꿉니다.\n\n여러분의 기기 영상은 조직 안으로 들어갑니까, 바깥에서 도는 데서 끝납니까?\n\nDM으로 “기기”를 보내주시면 영상 기획 질문지를 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "linkedin_en": "Watch ten medical device films and half of six or seven of them are the same shot. The device turning slowly on a black background, light travelling across the surface. It is a well-made render. It is also what the catalogue already does.\n\nA clinician watches this film for one reason: what does this device do inside my patient's tissue? Without that answer, no amount of finish contributes to a purchasing decision.\n\nSo we take the camera inside at least once. Even when the film opens outside the device, it moves into a tissue cross-section partway through and comes back out. Without that round trip the viewer has seen a device, not a mechanism.\n\nThree things are commonly missing.\n\nFirst, scale. When a tissue cross-section is magnified with nothing in frame to judge size against, the viewer cannot tell millimetres from micrometres. One scale bar replaces two sentences of explanation.\n\nSecond, time. Whether a change takes three seconds or three weeks is clinically a completely different statement. Animation compresses time freely, so the fact that it was compressed belongs on screen.\n\nThird, limits. Naming the conditions where it does not apply feels like weakening the film, and the opposite is true. Clinicians trust a film that states its conditions, because they already know the limits exist and they are suspicious of anyone who omits them.\n\nAll three are hardest to add at the end. A scale bar and a time stamp affect camera work and layout, so unless space is left for them at storyboard stage they end up small in a corner. The same goes for the conditions: added last they read as a disclaimer, designed in from the start they read as part of the explanation. Same sentence, and its position decides how much it is trusted.\n\nDoes your device film go inside the tissue, or does it end outside, turning?\n\nSend me “기기” for the planning questionnaire. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "linkedin_ko_hashtags": [
+        "#의료기기",
+        "#메디컬콘텐츠",
+        "#과학시각화"
+      ],
+      "linkedin_en_hashtags": [
+        "#MedicalDevices",
+        "#MedicalAnimation",
+        "#HealthcareMarketing"
+      ],
+      "generated_by": "seed-2026-09-20"
+    },
+    {
+      "topic": "제약·바이오 콘텐츠에서 정확성과 몰입감을 동시에 만드는 법",
+      "kicker": "제약·바이오",
+      "image": "response",
+      "image_headline": "정확성은 빼지 않고\n*순서*만 바꾼다",
+      "english_image_headline": "Keep the rigour, move the order",
+      "note": "쉽게 만드는 게 아니라, 읽히는 자리에 두는 일입니다",
+      "hashtags": [
+        "#제약마케팅",
+        "#바이오",
+        "#과학커뮤니케이션",
+        "#브랜드필름",
+        "#메디컬콘텐츠"
+      ],
+      "comment_question": "정확성 vs 몰입, 뭘 먼저?",
+      "dm_keyword": "몰입",
+      "dm_offer": "정확성-몰입 균형 체크리스트",
+      "caption": "정확성과 몰입은 상충하지 않습니다. 상충하는 건 정확성과 '전부 한꺼번에 말하려는 태도'입니다.\n\n댓글: 정확성 vs 몰입, 뭘 먼저?\nDM “몰입”: 정확성-몰입 균형 체크리스트\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "slides": [
+        {
+          "role": "cover",
+          "headline": "정확성은 빼지 않고\n*순서*만 바꾼다",
+          "note": "쉽게 만드는 게 아니라 읽히는 자리에 두는 일입니다",
+          "image": "response"
+        },
+        {
+          "role": "statement",
+          "headline": "둘 중 하나를\n*버리지* 않는다",
+          "note": "정확성과 몰입이 싸우는 것처럼 보일 때, 실제로 싸우는 건 정보의 양과 화면의 시간입니다."
+        },
+        {
+          "role": "evidence",
+          "kicker": "관찰",
+          "stat": "8초",
+          "stat_note": "까지가 한계",
+          "note": "첫 8초 안에 '이게 나와 무슨 상관인가'의 답이 없으면 대부분 이탈합니다.",
+          "image": "visible-movement"
+        },
+        {
+          "role": "detail",
+          "kicker": "방법",
+          "headline": "정확성을 *지키는* 세 가지",
+          "items": [
+            "출처를 화면에 같이 둔다 — 나중에 붙이지 않는다.",
+            "조건을 결과 바로 뒤에 둔다.",
+            "모르는 것은 모른다고 적는다."
+          ],
+          "image": "data-minimal"
+        },
+        {
+          "role": "close",
+          "headline": "무엇을 먼저\n말하고 계십니까?",
+          "note": "DM으로 “몰입”을 보내주시면 균형 체크리스트를 드립니다.",
+          "image": "context-first"
+        }
+      ],
+      "linkedin_ko": "제약·바이오 콘텐츠 회의에서 가장 자주 나오는 대립은 이렇게 생깁니다. 마케팅은 몰입을 원하고 메디컬은 정확성을 원합니다. 둘 다 옳은데 회의는 늘 길어집니다.\n\n저희가 보기에 이 대립은 대개 가짜입니다. 실제로 충돌하는 것은 정확성과 몰입이 아니라, 정보의 양과 화면의 시간입니다. 90초 영상에 열 가지를 넣으려니 어느 쪽도 만족하지 못하는 것입니다.\n\n몰입은 정보를 줄여서 만드는 것이 아닙니다. 첫 8초 안에 '이게 나와 무슨 상관인가'의 답을 주면 만들어집니다. 그 답이 늦으면 뒤에 아무리 정확한 내용을 넣어도 볼 사람이 남아 있지 않습니다. 그래서 저희는 결과를 앞으로 당깁니다. 기전과 조건은 그 뒤로 옮깁니다. 내용을 뺀 것이 아니라 순서를 바꾼 것입니다.\n\n정확성 쪽에서는 세 가지를 지킵니다.\n\n첫째, 출처를 화면에 같이 둡니다. 엔딩에 몰아서 붙이면 아무도 읽지 않습니다. 주장 바로 옆에 작게 두면 읽는 사람만 읽고, 그것으로 충분합니다.\n\n둘째, 조건을 결과 바로 뒤에 둡니다. in vitro인지, 몇 명 대상인지, 어떤 조건에서인지. 결과에서 멀어질수록 그 조건은 면책 문구처럼 읽히고, 가까울수록 설명의 일부로 읽힙니다.\n\n셋째, 모르는 것은 모른다고 적습니다. 이것이 가장 어렵고 가장 효과가 큽니다. 임상의와 R&D 담당자는 모든 것이 설명된 콘텐츠를 오히려 의심합니다. 한계를 아는 사람이 만들었다는 신호가 신뢰를 만듭니다.\n\n정확성을 지키면서 몰입을 만드는 일은 타협이 아닙니다. 순서 설계입니다.\n\n여러분의 콘텐츠는 첫 8초에 무엇을 말합니까?\n\nDM으로 “몰입”을 보내주시면 균형 체크리스트를 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "linkedin_en": "The standard argument in a pharma content meeting goes like this. Marketing wants engagement, medical wants accuracy. Both are right and the meeting always runs long.\n\nIn our experience that conflict is usually false. What actually collides is not accuracy and engagement but volume of information and minutes of screen time. Ten things are being pushed into ninety seconds, and neither side gets what it needs.\n\nEngagement is not made by removing information. It is made by answering 'what does this change for me' inside the first eight seconds. Answer it late and no amount of accuracy afterwards matters, because nobody is still watching. So we move the outcome forward and push mechanism and conditions behind it. Nothing was cut — the order changed.\n\nOn the accuracy side we hold three things.\n\nFirst, sources sit beside the claim, on screen. Stacked at the end, nobody reads them. Set small next to the statement, the people who care read them, and that is enough.\n\nSecond, conditions go immediately after the result. In vitro or clinical, how many subjects, under what protocol. The further a condition sits from its result, the more it reads as a disclaimer; the closer it sits, the more it reads as part of the explanation.\n\nThird, we write down what is not known. This is the hardest one and the most effective. Clinicians and R&D leads are suspicious of content in which everything is explained. Evidence that the makers understood the limits is what builds trust.\n\nHolding accuracy while building engagement is not a compromise. It is a question of order.\n\nWhat do your first eight seconds say?\n\nSend me “몰입” for the checklist. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "linkedin_ko_hashtags": [
+        "#제약마케팅",
+        "#과학커뮤니케이션",
+        "#브랜드필름"
+      ],
+      "linkedin_en_hashtags": [
+        "#PharmaMarketing",
+        "#ScienceCommunication",
+        "#BrandFilm"
+      ],
+      "generated_by": "seed-2026-09-20"
+    },
+    {
+      "topic": "논문 한 편이 설득력 있는 브랜드 스토리가 되기까지",
+      "kicker": "논문에서 스토리로",
+      "image": "translation",
+      "image_headline": "논문은 *결론*부터\n다시 읽는다",
+      "english_image_headline": "Read the paper backwards",
+      "note": "초록의 순서는 검증의 순서지 설득의 순서가 아닙니다",
+      "hashtags": [
+        "#과학커뮤니케이션",
+        "#브랜드스토리",
+        "#논문",
+        "#바이오마케팅",
+        "#콘텐츠전략"
+      ],
+      "comment_question": "논문 어디부터 읽으세요?",
+      "dm_keyword": "논문",
+      "dm_offer": "논문→스토리 변환 템플릿",
+      "caption": "논문을 앞에서부터 요약하면 배경으로 시작합니다. 브랜드 스토리는 결론에서 시작해야 합니다.\n\n댓글: 논문 어디부터 읽으세요?\nDM “논문”: 논문→스토리 변환 템플릿\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "slides": [
+        {
+          "role": "cover",
+          "headline": "논문은 *결론*부터\n다시 읽는다",
+          "note": "초록의 순서는 검증의 순서입니다",
+          "image": "translation"
+        },
+        {
+          "role": "statement",
+          "headline": "요약하면\n*지루해진다*",
+          "note": "논문을 앞에서부터 줄이면 배경과 방법이 절반을 차지합니다. 아무도 그 절반을 읽지 않습니다."
+        },
+        {
+          "role": "detail",
+          "kicker": "변환",
+          "headline": "네 줄로 *다시* 쓴다",
+          "items": [
+            "결론 — 무엇이 확인됐는가, 한 문장.",
+            "조건 — 어떤 범위에서만 참인가.",
+            "의미 — 고객에게 무엇이 달라지는가.",
+            "한계 — 다음 연구가 필요한 지점."
+          ],
+          "image": "neo-lab"
+        },
+        {
+          "role": "evidence",
+          "kicker": "경계",
+          "stat": "1",
+          "stat_note": "편에 주장 하나",
+          "note": "논문 한 편에서 브랜드 주장 하나만 끌어냅니다. 둘이면 둘 다 약해집니다.",
+          "image": "data-minimal"
+        },
+        {
+          "role": "close",
+          "headline": "논문을 어디부터\n읽고 계십니까?",
+          "note": "DM으로 “논문”을 보내주시면 변환 템플릿을 드립니다.",
+          "image": "micro-cinema"
+        }
+      ],
+      "linkedin_ko": "자사 연구가 저널에 실리면 마케팅 팀에 논문 PDF가 전달됩니다. 그리고 대개 이런 요청이 붙습니다. 이걸로 콘텐츠를 만들어 주세요.\n\n여기서 가장 흔한 실수는 논문을 요약하는 것입니다. 앞에서부터 줄이면 배경과 방법이 분량의 절반을 차지합니다. 논문에서는 그 절반이 가장 중요한 부분인데, 브랜드 콘텐츠에서는 아무도 읽지 않는 부분이 됩니다. 요약은 충실할수록 지루해지는 이상한 작업입니다.\n\n저희는 거꾸로 읽습니다. 결론부터 시작해서 필요한 만큼만 거슬러 올라갑니다. 그리고 네 줄로 다시 씁니다.\n\n첫째, 결론. 무엇이 확인됐는지 한 문장으로 적습니다. 형용사는 넣지 않습니다. 한 문장에 담기지 않으면 아직 결론이 정리되지 않은 것입니다.\n\n둘째, 조건. 어떤 범위에서만 참인지 적습니다. 이 줄이 빠지면 나중에 반드시 문제가 됩니다. 그리고 이 줄을 먼저 써두면, 뒤에서 과장된 문장을 쓰고 싶은 유혹이 자연스럽게 줄어듭니다.\n\n셋째, 의미. 앞의 두 줄을 고객의 관점으로 옮깁니다. 연구자에게 의미 있는 결과와 브랜드 담당자에게 의미 있는 결과는 다를 수 있습니다. 다르다면 그 차이를 인정하고 후자를 씁니다. 연구자에게는 p값이 결과지만, 고객에게는 그 p값이 만들어내는 변화가 결과입니다.\n\n넷째, 한계. 다음 연구가 필요한 지점을 적습니다. 이것을 콘텐츠에 넣는 브랜드는 드물고, 넣는 브랜드는 전문가 집단에서 확연히 다르게 취급받습니다.\n\n한 가지 규칙을 더 둡니다. 논문 한 편에서 브랜드 주장은 하나만 끌어냅니다. 좋은 논문일수록 여러 결과가 담겨 있어서 두세 개를 다 쓰고 싶어지는데, 그러면 셋 다 약해집니다. 나머지는 다음 콘텐츠로 미뤄둡니다. 논문 한 편이 콘텐츠 한 편이 아니라 시리즈의 출발점이 되는 이유입니다.\n\n여러분은 논문을 어디부터 읽으십니까?\n\nDM으로 “논문”을 보내주시면 변환 템플릿을 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "linkedin_en": "When in-house research lands in a journal, the PDF arrives in the marketing team's inbox, usually with one line attached: can we make content out of this?\n\nThe most common mistake at that point is to summarise the paper. Condense it front to back and background and methods take half the length. In the paper that half is the most important part. In brand content it is the part nobody reads. Summarising is a strange job in which the more faithful you are, the duller the result.\n\nWe read it backwards instead — start at the conclusion and travel back only as far as necessary — and rewrite it as four lines.\n\nFirst, the conclusion. What was confirmed, in one sentence, with no adjectives. If it does not fit in one sentence, the conclusion has not been settled yet.\n\nSecond, the conditions. The range within which it is true. Leave this line out and it causes a problem later. Write it first and the temptation to overstate further down quietly disappears.\n\nThird, the meaning. Move the first two lines into the customer's frame. A result that matters to a researcher and a result that matters to a brand lead can be different things. To a researcher the p-value is the result; to a customer the result is whatever that p-value changes.\n\nFourth, the limits. Where further work is needed. Few brands put this in their content, and the ones that do are treated noticeably differently by expert audiences.\n\nOne more rule: one brand claim per paper. The better the paper, the more results it holds and the more tempting it is to use two or three — and then all three are weaker. The rest waits for the next piece. That is why one paper is the start of a series rather than one piece of content.\n\nWhere do you start reading a paper?\n\nSend me “논문” for the conversion template. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "linkedin_ko_hashtags": [
+        "#과학커뮤니케이션",
+        "#브랜드스토리",
+        "#바이오마케팅"
+      ],
+      "linkedin_en_hashtags": [
+        "#ScienceCommunication",
+        "#BrandStorytelling",
+        "#BiotechMarketing"
+      ],
+      "generated_by": "seed-2026-09-20"
+    },
+    {
+      "topic": "과학 시각화에서 예쁜 이미지보다 먼저 확인해야 하는 기준",
+      "kicker": "과학 시각화",
+      "image": "micro-cinema",
+      "image_headline": "예쁜 것보다\n*맞는* 것이 먼저",
+      "english_image_headline": "Correct before beautiful",
+      "note": "틀린 비주얼은 예쁠수록 더 빨리 퍼집니다",
+      "hashtags": [
+        "#과학시각화",
+        "#메디컬일러스트",
+        "#바이오",
+        "#콘텐츠전략",
+        "#과학커뮤니케이션"
+      ],
+      "comment_question": "비주얼 검수, 누가 하나요?",
+      "dm_keyword": "검수",
+      "dm_offer": "과학 비주얼 검수 기준표",
+      "caption": "과학 비주얼에서 가장 위험한 건 못 만든 이미지가 아니라, 예쁘게 잘못 만든 이미지입니다.\n\n댓글: 비주얼 검수, 누가 하나요?\nDM “검수”: 과학 비주얼 검수 기준표\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "slides": [
+        {
+          "role": "cover",
+          "headline": "예쁜 것보다\n*맞는* 것이 먼저",
+          "note": "틀린 비주얼은 예쁠수록 더 빨리 퍼집니다",
+          "image": "micro-cinema"
+        },
+        {
+          "role": "statement",
+          "headline": "잘 만들어서\n*더 위험한*",
+          "note": "완성도가 높을수록 의심 없이 인용되고, 한 번 퍼진 이미지는 회수되지 않습니다."
+        },
+        {
+          "role": "detail",
+          "kicker": "먼저 볼 것",
+          "headline": "네 가지를 *먼저* 확인한다",
+          "items": [
+            "비율 — 세포와 분자의 상대 크기.",
+            "밀도 — 실제 세포는 비어 있지 않다.",
+            "방향 — 경로에 방향이 있는가.",
+            "시간 — 압축했다면 그렇게 적었는가."
+          ],
+          "image": "data-minimal"
+        },
+        {
+          "role": "evidence",
+          "kicker": "현실",
+          "stat": "30%",
+          "stat_note": "가 물이 아니다",
+          "note": "세포질은 단백질로 붐빕니다. 텅 빈 배경에 분자 몇 개는 예쁘지만 틀립니다.",
+          "image": "cell-fusion"
+        },
+        {
+          "role": "close",
+          "headline": "비주얼 검수는\n누가 하고 계십니까?",
+          "note": "DM으로 “검수”를 보내주시면 검수 기준표를 드립니다.",
+          "image": "neo-lab"
+        }
+      ],
+      "linkedin_ko": "과학 시각화 시안을 받으면 대부분 완성도부터 봅니다. 빛이 좋은지, 색이 브랜드에 맞는지, 움직임이 부드러운지. 모두 중요한데, 그 전에 봐야 할 것이 있습니다.\n\n틀린 비주얼은 못 만들었을 때보다 잘 만들었을 때 더 위험합니다. 완성도가 높으면 의심 없이 인용되고, 발표 자료로 옮겨지고, 다른 팀이 가져다 씁니다. 한 번 퍼진 이미지는 회수되지 않습니다. 몇 해 뒤 학회 슬라이드에서 자사의 틀린 도식을 다시 만나는 일이 실제로 일어납니다.\n\n저희가 완성도보다 먼저 보는 것은 네 가지입니다.\n\n첫째, 비율. 세포, 소기관, 단백질, 저분자의 상대적 크기가 맞는지 봅니다. 화면 구성상 수용체를 크게 그리고 싶어지는데, 그러면 보는 사람의 머릿속에 틀린 축척이 남습니다.\n\n둘째, 밀도. 실제 세포질은 단백질로 붐빕니다. 검은 배경에 분자 몇 개가 떠 있는 화면은 아름답지만 세포가 아닙니다. 밀도를 어느 정도 포기하더라도, 포기했다는 사실은 알고 포기해야 합니다. 가독성을 위해 비운 것과 몰라서 비운 것은 다른 일입니다.\n\n셋째, 방향. 신호 전달에는 방향이 있습니다. 화살표 하나가 반대로 그려져 있으면 그 영상은 기전을 반대로 가르칩니다. 이 실수가 생각보다 자주 나오고, 대개 아무도 지적하지 않습니다.\n\n넷째, 시간. 애니메이션은 시간을 자유롭게 압축합니다. 며칠에 걸친 변화를 3초로 보여줬다면 그 사실이 화면에 있어야 합니다.\n\n이 네 가지는 디자이너가 혼자 판단할 수 없습니다. 그래서 저희는 첫 시안 전에 과학 담당자와 한 번 앉습니다. 예쁘게 만든 다음에 고치면 대부분 다시 만들어야 하기 때문입니다. 30분 회의가 2주의 재작업을 막습니다.\n\n여러분의 팀에서는 비주얼 검수를 누가 합니까?\n\nDM으로 “검수”를 보내주시면 검수 기준표를 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "linkedin_en": "When a science visualisation draft arrives, most people look at the finish first. Is the lighting good, is the colour on brand, is the motion smooth. All of that matters, and something has to come before it.\n\nA wrong visual is more dangerous when it is well made than when it is not. High finish gets cited without question, moved into decks, and picked up by other teams. An image that has spread does not come back — meeting your own incorrect diagram on a conference slide years later genuinely happens.\n\nFour things we check before finish.\n\nFirst, proportion. Whether the relative sizes of cell, organelle, protein and small molecule hold up. Composition tempts you to draw the receptor large, and the viewer walks away with a wrong scale in their head.\n\nSecond, density. Real cytoplasm is crowded with protein. A few molecules floating on a black background is beautiful and is not a cell. You may give up some of that density for legibility, but you should know that you are giving it up: emptying the frame for clarity and emptying it out of ignorance are different acts.\n\nThird, direction. Signalling has a direction. One arrow drawn the wrong way and the film teaches the mechanism backwards. This happens more often than you would expect, and usually nobody says so.\n\nFourth, time. Animation compresses time freely. If a change that takes days was shown in three seconds, that belongs on screen.\n\nNone of these are things a designer can settle alone, which is why we sit down with the science lead before the first draft rather than after. Fixing them once something is finished usually means making it again — thirty minutes of review prevents two weeks of rework.\n\nWho signs off the science in your visuals?\n\nSend me “검수” for the review sheet. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "linkedin_ko_hashtags": [
+        "#과학시각화",
+        "#메디컬일러스트",
+        "#과학커뮤니케이션"
+      ],
+      "linkedin_en_hashtags": [
+        "#ScienceVisualization",
+        "#MedicalIllustration",
+        "#SciComm"
+      ],
+      "generated_by": "seed-2026-09-20"
+    },
+    {
+      "topic": "브랜드 필름과 과학 다큐멘터리는 무엇이 다른가",
+      "kicker": "형식의 선택",
+      "image": "neo-lab",
+      "image_headline": "누구의 질문에\n*답하는가*",
+      "english_image_headline": "Whose question does it answer",
+      "note": "형식을 먼저 고르면 대개 틀린 형식을 고릅니다",
+      "hashtags": [
+        "#브랜드필름",
+        "#다큐멘터리",
+        "#콘텐츠전략",
+        "#메디컬콘텐츠",
+        "#영상제작"
+      ],
+      "comment_question": "브랜드 필름 vs 다큐, 뭘?",
+      "dm_keyword": "형식",
+      "dm_offer": "형식 선택 판단 기준",
+      "caption": "브랜드 필름은 '우리는 이런 회사입니다'에 답하고, 다큐는 '이건 어떻게 작동합니까'에 답합니다.\n\n댓글: 브랜드 필름 vs 다큐, 뭘?\nDM “형식”: 형식 선택 판단 기준\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "slides": [
+        {
+          "role": "cover",
+          "headline": "누구의 질문에\n*답하는가*",
+          "note": "형식을 먼저 고르면 대개 틀린 형식을 고릅니다",
+          "image": "neo-lab"
+        },
+        {
+          "role": "statement",
+          "headline": "같은 예산,\n*다른* 결과",
+          "note": "형식이 틀리면 아무리 잘 만들어도 그 콘텐츠가 있어야 할 자리에 쓰이지 못합니다."
+        },
+        {
+          "role": "detail",
+          "kicker": "차이",
+          "headline": "세 가지가 *다르다*",
+          "items": [
+            "화자 — 브랜드가 말하는가, 현상이 말하는가.",
+            "시간 — 90초인가, 12분인가.",
+            "쓰임 — 첫인상인가, 깊은 검토인가."
+          ],
+          "image": "multi-channel"
+        },
+        {
+          "role": "vertical",
+          "kicker": "판단",
+          "headline": "먼저 정하는 건\n형식이 아니라\n질문이다",
+          "note": "질문이 정해지면 형식은 거의 자동으로 따라옵니다",
+          "image": "context-first"
+        },
+        {
+          "role": "close",
+          "headline": "어떤 질문에\n답하려 하십니까?",
+          "note": "DM으로 “형식”을 보내주시면 판단 기준을 드립니다.",
+          "image": "translation"
+        }
+      ],
+      "linkedin_ko": "\"다큐멘터리처럼 만들어 주세요.\" 의뢰 초반에 자주 듣는 말입니다. 좋은 요청인데, 이 말이 실제로 뜻하는 바는 회사마다 다릅니다. 어떤 곳은 톤을 말하고, 어떤 곳은 길이를 말하고, 어떤 곳은 '광고처럼 보이지 않았으면 좋겠다'를 말합니다.\n\n형식을 먼저 정하면 대개 틀린 형식을 고르게 됩니다. 먼저 정해야 하는 것은 질문입니다. 이 콘텐츠는 누구의 어떤 질문에 답하는가.\n\n브랜드 필름은 '우리는 어떤 회사인가'에 답합니다. 화자는 브랜드이고, 길이는 대개 60초에서 120초이며, 쓰임은 첫인상입니다. 처음 만나는 사람에게 3분을 요구할 수 없기 때문에 짧아야 합니다.\n\n과학 다큐멘터리는 '이것이 어떻게 작동하는가'에 답합니다. 화자는 현상이고 브랜드는 뒤로 물러납니다. 길이는 8분에서 15분이고, 쓰임은 이미 관심이 있는 사람의 깊은 검토입니다. 학회에서, 교육에서, 실사 단계에서 열립니다.\n\n이 둘을 섞으면 어느 쪽도 되지 않습니다. 90초짜리 다큐는 설명이 부족하고, 12분짜리 브랜드 필름은 아무도 끝까지 보지 않습니다. 실제로 가장 많이 낭비되는 예산이 여기서 나옵니다.\n\n저희가 권하는 순서는 이렇습니다. 먼저 이 콘텐츠가 열리는 상황을 적습니다. 누가, 어디서, 몇 분을 쓸 수 있는 상태에서 보는가. 그 답이 나오면 형식은 거의 자동으로 따라옵니다. 그리고 둘 다 필요하다는 결론이 나오는 경우도 많은데, 그때는 같은 촬영에서 두 편을 만드는 설계가 가능합니다. 기획 단계에서 정했을 때만 가능합니다.\n\n여러분의 다음 영상은 어떤 질문에 답합니까?\n\nDM으로 “형식”을 보내주시면 판단 기준을 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "linkedin_en": "\"Make it like a documentary.\" It comes up early in a lot of briefs. It is a good instinct, and it means different things to different companies. Some mean tone, some mean length, some mean \"I would rather it did not look like an ad\".\n\nChoosing the format first usually means choosing the wrong one. What has to be settled first is the question: whose question does this answer?\n\nA brand film answers 'what kind of company is this'. The brand is the narrator, the length is typically sixty to a hundred and twenty seconds, and the use is first impression. It has to be short because you cannot ask three minutes of someone meeting you for the first time.\n\nA science documentary answers 'how does this work'. The phenomenon narrates and the brand steps back. Length runs eight to fifteen minutes, and the use is close examination by someone who is already interested — at a conference, in training, during diligence.\n\nBlend the two and you get neither. A ninety-second documentary is under-explained; a twelve-minute brand film goes unwatched. This is where most wasted production budget actually goes.\n\nThe order we suggest: write down the situation in which this content gets opened. Who, where, and with how many minutes available. Once that is answered the format follows almost automatically. Often the answer is that both are needed, and then two films can be designed out of one shoot — but only if that is decided during planning.\n\nWhat question does your next film answer?\n\nSend me “형식” for the decision guide. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "linkedin_ko_hashtags": [
+        "#브랜드필름",
+        "#콘텐츠전략",
+        "#영상제작"
+      ],
+      "linkedin_en_hashtags": [
+        "#BrandFilm",
+        "#ContentStrategy",
+        "#Documentary"
+      ],
+      "generated_by": "seed-2026-09-20"
+    },
+    {
+      "topic": "영업 현장에서 다시 활용되는 메디컬 교육 콘텐츠 설계법",
+      "kicker": "영업 현장",
+      "image": "multi-channel",
+      "image_headline": "태블릿에서\n*열리는가*",
+      "english_image_headline": "Does it open on a tablet",
+      "note": "현장에서 안 열리는 콘텐츠는 만들지 않은 것과 같습니다",
+      "hashtags": [
+        "#메디컬마케팅",
+        "#영업지원",
+        "#교육콘텐츠",
+        "#제약마케팅",
+        "#콘텐츠전략"
+      ],
+      "comment_question": "현장에서 몇 분 쓰시나요?",
+      "dm_keyword": "현장",
+      "dm_offer": "현장 활용 콘텐츠 설계 가이드",
+      "caption": "본사에서 잘 만든 교육 자료의 절반이 현장에서 한 번도 열리지 않습니다. 대개 길이 때문입니다.\n\n댓글: 현장에서 몇 분 쓰시나요?\nDM “현장”: 현장 활용 콘텐츠 설계 가이드\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "slides": [
+        {
+          "role": "cover",
+          "headline": "태블릿에서\n*열리는가*",
+          "note": "현장에서 안 열리는 콘텐츠는 만들지 않은 것과 같습니다",
+          "image": "multi-channel"
+        },
+        {
+          "role": "statement",
+          "headline": "잘 만들었는데\n*안 쓴다*",
+          "note": "12분짜리 교육 영상은 훌륭할 수 있습니다. 다만 진료실에서 쓸 수 있는 시간은 3분입니다."
+        },
+        {
+          "role": "evidence",
+          "kicker": "현실",
+          "stat": "3분",
+          "stat_note": "이 상한선",
+          "note": "현장에서 확보되는 시간을 먼저 확인하고, 그 길이에 맞춰 설계합니다.",
+          "image": "visible-movement"
+        },
+        {
+          "role": "detail",
+          "kicker": "설계",
+          "headline": "세 가지를 *미리* 만든다",
+          "items": [
+            "90초 — 관심을 만드는 버전.",
+            "3분 — 기전을 설명하는 버전.",
+            "링크 — 남겨두고 나중에 보는 버전."
+          ],
+          "image": "data-minimal"
+        },
+        {
+          "role": "close",
+          "headline": "현장에서 몇 분을\n쓸 수 있습니까?",
+          "note": "DM으로 “현장”을 보내주시면 설계 가이드를 드립니다.",
+          "image": "context-first"
+        }
+      ],
+      "linkedin_ko": "본사에서 만든 메디컬 교육 콘텐츠의 상당수가 현장에서 한 번도 열리지 않습니다. 품질 때문이 아닙니다. 대개 길이 때문입니다.\n\n12분짜리 교육 영상은 그 자체로 훌륭할 수 있습니다. 다만 영업 담당자가 진료실에서 확보하는 시간은 3분 안팎입니다. 12분짜리를 3분 안에 보여줄 방법은 없으므로, 그 영상은 열리지 않고 대신 인쇄물이 나갑니다. 제작비는 이미 집행된 뒤입니다.\n\n그래서 저희는 기획 단계에서 현장의 시간을 먼저 묻습니다. 몇 분입니까. 이 질문 하나가 전체 설계를 바꿉니다.\n\n그다음 같은 소스에서 세 가지를 만듭니다.\n\n첫째, 90초 버전. 관심을 만드는 것이 목적입니다. 결론과 가장 강한 근거 하나만 담습니다. 대기 시간에, 복도에서 열립니다.\n\n둘째, 3분 버전. 기전을 설명합니다. 90초 버전을 본 사람이 더 묻는 상황에서 열립니다. 여기까지가 대면에서 쓸 수 있는 최대치입니다.\n\n셋째, 링크로 남기는 장문 버전. 그 자리에서는 보지 않습니다. 명함과 함께 남겨두고, 관심이 있는 사람이 나중에 엽니다. 이 버전에 데이터와 조건을 충분히 넣습니다.\n\n중요한 것은 세 개를 따로 만드는 것이 아니라, 하나의 촬영과 하나의 렌더링에서 세 개가 나오도록 처음부터 설계하는 것입니다. 나중에 자르면 흐름이 끊기고, 대개 다시 만들게 됩니다. 기획 단계의 질문 하나가 재제작 비용을 없앱니다.\n\n덧붙이면, 현장에서 쓰이는지 아닌지는 제작이 끝난 뒤에는 거의 바꿀 수 없습니다. 영업 조직에 물어보는 30분이 제작비 전체의 성패를 가릅니다. 그런데 이 30분이 일정에서 가장 먼저 생략됩니다. 본사와 현장 사이의 거리가 길이로 나타나는 셈입니다.\n\n여러분의 영업 담당자는 현장에서 몇 분을 확보합니까?\n\nDM으로 “현장”을 보내주시면 설계 가이드를 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "linkedin_en": "A large share of the medical education content produced at head office never gets opened in the field. Not because of quality. Usually because of length.\n\nA twelve-minute training film can be excellent. The window a rep actually gets in a clinic is around three minutes. There is no way to show twelve minutes inside three, so the film stays closed and a printed leaflet goes out instead — after the production budget has already been spent.\n\nSo we ask about the field's minutes during planning. How long do you actually get? That one question changes the whole design.\n\nThen three things come out of the same source.\n\nFirst, a ninety-second cut. Its job is to create interest: the conclusion and the single strongest piece of evidence. It opens in a waiting room, in a corridor.\n\nSecond, a three-minute cut. It explains the mechanism, and it opens when someone who saw the first one asks for more. That is the ceiling for anything shown face to face.\n\nThird, a long version left as a link. Nobody watches it in the room. It goes out with the card and the interested party opens it later, which is where the data and the conditions belong in full.\n\nThe point is not to make three films. It is to design one shoot and one render so that three come out of it. Cut down afterwards and the flow breaks, and it usually gets remade.\n\nWhether content gets used in the field is almost impossible to change once production is finished. Thirty minutes spent asking the commercial team decides the fate of the whole budget — and those thirty minutes are the first thing dropped from a schedule. The distance between head office and the field shows up as running time.\n\nHow many minutes do your reps actually get?\n\nSend me “현장” for the design guide. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "linkedin_ko_hashtags": [
+        "#메디컬마케팅",
+        "#영업지원",
+        "#콘텐츠전략"
+      ],
+      "linkedin_en_hashtags": [
+        "#MedicalMarketing",
+        "#SalesEnablement",
+        "#ContentStrategy"
+      ],
+      "generated_by": "seed-2026-09-20"
+    },
+    {
+      "topic": "제품 출시 전 MOA 콘텐츠를 준비해야 하는 이유",
+      "kicker": "출시 준비",
+      "image": "cause-path-response",
+      "image_headline": "출시 *후*에 만들면\n늦는다",
+      "english_image_headline": "Built after launch is late",
+      "note": "기전 콘텐츠는 출시 6개월 전에 쓰이기 시작합니다",
+      "hashtags": [
+        "#제품출시",
+        "#MOA",
+        "#제약마케팅",
+        "#론칭전략",
+        "#메디컬콘텐츠"
+      ],
+      "comment_question": "MOA 콘텐츠, 언제 만드세요?",
+      "dm_keyword": "출시",
+      "dm_offer": "출시 전 콘텐츠 타임라인",
+      "caption": "MOA 콘텐츠를 출시 후에 만들면, 가장 필요한 6개월을 빈손으로 보내게 됩니다.\n\n댓글: MOA 콘텐츠, 언제 만드세요?\nDM “출시”: 출시 전 콘텐츠 타임라인\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "slides": [
+        {
+          "role": "cover",
+          "headline": "출시 *후*에 만들면\n늦는다",
+          "note": "기전 콘텐츠는 출시 6개월 전에 쓰이기 시작합니다",
+          "image": "cause-path-response"
+        },
+        {
+          "role": "statement",
+          "headline": "가장 필요한 때\n*빈손*",
+          "note": "자문단 회의, 학회 사전 미팅, 내부 교육. 전부 출시 전에 일어납니다."
+        },
+        {
+          "role": "detail",
+          "kicker": "타임라인",
+          "headline": "세 시점에서 *쓰인다*",
+          "items": [
+            "T-6개월 — 자문단과 내부 설득.",
+            "T-3개월 — 영업 교육과 학회.",
+            "T-0 — 고객 대면과 디지털."
+          ],
+          "image": "neo-lab"
+        },
+        {
+          "role": "evidence",
+          "kicker": "이유",
+          "stat": "6개월",
+          "stat_note": "앞서 시작",
+          "note": "기전은 임상 데이터가 확정되기 전에도 설명할 수 있습니다.",
+          "image": "mechanism-start"
+        },
+        {
+          "role": "close",
+          "headline": "MOA 콘텐츠를\n언제 만드십니까?",
+          "note": "DM으로 “출시”를 보내주시면 타임라인을 드립니다.",
+          "image": "translation"
+        }
+      ],
+      "linkedin_ko": "MOA 콘텐츠 제작 문의가 들어오는 시점은 대부분 출시 직전이거나 출시 직후입니다. 그런데 그 콘텐츠가 가장 필요한 시기는 이미 지나간 뒤인 경우가 많습니다.\n\n기전 콘텐츠가 실제로 쓰이는 첫 자리는 고객이 아닙니다. 내부와 자문단입니다. 출시 6개월 전, 자문단 회의에서 이 제품이 무엇을 다르게 하는지 설명해야 합니다. 같은 시기에 내부 설득도 일어납니다. 영업 조직이 이 제품을 왜 우선순위에 두어야 하는지 납득해야 하는 시점입니다.\n\n출시 3개월 전에는 영업 교육과 학회 사전 미팅이 있습니다. 이때 쓸 자료가 없으면 슬라이드로 대신하게 되고, 슬라이드는 사람마다 다르게 설명됩니다. 메시지가 갈라지는 지점이 여기입니다. 그리고 한 번 갈라진 메시지는 출시 후에 통일하기가 매우 어렵습니다.\n\n출시 시점에야 고객 대면과 디지털 채널이 열립니다. 대부분의 브랜드가 이 시점을 기준으로 제작을 시작하는데, 그러면 앞의 두 구간을 빈손으로 보낸 것입니다.\n\n여기서 자주 나오는 반론은 임상 데이터가 아직 확정되지 않았다는 것입니다. 맞습니다. 다만 기전은 데이터보다 먼저 확정됩니다. 작용기전 자체는 3상 결과에 따라 바뀌지 않습니다. 수치를 넣을 자리만 비워두고 기전 영상을 먼저 만들면, 데이터가 나온 뒤에 그 자리만 채우면 됩니다.\n\n이렇게 하면 출시 전 6개월이 빈 구간이 아니라 준비 구간이 됩니다. 그리고 출시 시점에는 이미 여러 번 설명해 본 메시지를 들고 나가게 됩니다.\n\n한 가지 더. 출시 전에 만든 콘텐츠는 출시 후에 다시 쓸 수 있지만, 출시 후에 만든 콘텐츠는 출시 전으로 돌아갈 수 없습니다. 같은 제작비인데 쓰이는 기간이 두 배 차이 납니다. 타이밍이 품질만큼 중요한 이유입니다.\n\n여러분의 팀은 MOA 콘텐츠를 언제 만들기 시작합니까?\n\nDM으로 “출시”를 보내주시면 타임라인을 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "linkedin_en": "Enquiries about MOA content almost always arrive just before launch or just after it. By then the period in which that content was most needed has usually passed.\n\nThe first place a mechanism film actually gets used is not with customers. It is internal, and with the advisory board. Six months out, someone has to explain what this product does differently in an advisory meeting. Internal persuasion happens in the same window — the commercial organisation has to be convinced why this product deserves priority.\n\nThree months out there is sales training and pre-congress work. With nothing to use, slides fill the gap, and slides get narrated differently by every person holding them. This is the point at which the message starts to diverge, and a message that has diverged is very hard to reunify after launch.\n\nOnly at launch do customer meetings and digital channels open. Most brands start production against that date, which means the two earlier windows were spent empty-handed.\n\nThe common objection is that the clinical data is not final yet. That is true, and the mechanism is settled before the data is. A mechanism of action does not change with the phase three readout. Build the mechanism film first with the figures left as gaps, and once the data lands you fill the gaps rather than starting over.\n\nDone this way, the six months before launch stop being a dead zone and become preparation — and at launch you go out with a message that has already been explained several times.\n\nOne more thing: content made before launch can be reused after it, while content made after launch can never go back. Same budget, twice the working life. That is why timing matters as much as quality.\n\nWhen does your team start building MOA content?\n\nSend me “출시” for the timeline. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "linkedin_ko_hashtags": [
+        "#제품출시",
+        "#제약마케팅",
+        "#MOA"
+      ],
+      "linkedin_en_hashtags": [
+        "#ProductLaunch",
+        "#PharmaMarketing",
+        "#MedicalAffairs"
+      ],
+      "generated_by": "seed-2026-09-20"
+    },
+    {
+      "topic": "전시회와 학회에서 복잡한 기술을 짧게 전달하는 비주얼 구조",
+      "kicker": "학회·전시",
+      "image": "visible-movement",
+      "image_headline": "소리 없이\n*읽히는가*",
+      "english_image_headline": "Does it read without sound",
+      "note": "부스에서는 아무도 헤드폰을 쓰지 않습니다",
+      "hashtags": [
+        "#학회마케팅",
+        "#전시부스",
+        "#과학시각화",
+        "#메디컬콘텐츠",
+        "#B2B마케팅"
+      ],
+      "comment_question": "부스 영상, 몇 초 루프?",
+      "dm_keyword": "부스",
+      "dm_offer": "학회 부스 영상 설계 기준",
+      "caption": "학회 부스를 지나가는 사람이 화면을 보는 시간은 4초입니다. 그 4초는 소리 없이 지나갑니다.\n\n댓글: 부스 영상, 몇 초 루프?\nDM “부스”: 학회 부스 영상 설계 기준\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "slides": [
+        {
+          "role": "cover",
+          "headline": "소리 없이\n*읽히는가*",
+          "note": "부스에서는 아무도 헤드폰을 쓰지 않습니다",
+          "image": "visible-movement"
+        },
+        {
+          "role": "statement",
+          "headline": "4초 안에\n*멈춰* 세운다",
+          "note": "복도를 지나가던 사람이 발을 멈추게 하는 것이 첫 목표입니다. 설명은 그다음입니다."
+        },
+        {
+          "role": "evidence",
+          "kicker": "길이",
+          "stat": "20초",
+          "stat_note": "루프",
+          "note": "앞에 선 사람이 한 바퀴를 다 볼 수 있어야 합니다.",
+          "image": "collision"
+        },
+        {
+          "role": "detail",
+          "kicker": "구조",
+          "headline": "네 가지를 *지킨다*",
+          "items": [
+            "무음으로 완결될 것.",
+            "자막은 4미터 밖에서 읽힐 것.",
+            "어느 지점에서 들어와도 이해될 것.",
+            "마지막 3초에 브랜드가 있을 것."
+          ],
+          "image": "data-minimal"
+        },
+        {
+          "role": "close",
+          "headline": "부스 영상은\n몇 초 루프입니까?",
+          "note": "DM으로 “부스”를 보내주시면 설계 기준을 드립니다.",
+          "image": "neo-lab"
+        }
+      ],
+      "linkedin_ko": "학회 부스용 영상을 만들 때 가장 자주 나오는 실수는 그 영상을 '짧은 브랜드 필름'으로 생각하는 것입니다. 부스는 완전히 다른 환경입니다.\n\n먼저 소리가 없습니다. 전시장은 시끄럽고 아무도 헤드폰을 쓰지 않습니다. 내레이션에 정보를 실으면 그 정보는 전달되지 않습니다. 무음으로 완결되지 않는 영상은 부스에서 작동하지 않습니다.\n\n둘째, 시작점을 고를 수 없습니다. 지나가던 사람은 영상의 한가운데로 들어옵니다. 기승전결이 있는 구조는 그래서 불리합니다. 어느 지점에서 들어와도 무슨 이야기인지 알 수 있어야 합니다.\n\n셋째, 시간이 짧습니다. 복도를 지나가는 사람이 화면에 주는 시간은 4초 안팎입니다. 그 4초에 해야 할 일은 설명이 아니라 정지입니다. 발을 멈추게 한 다음에야 설명할 기회가 생깁니다.\n\n그래서 저희는 부스 영상을 20초 안팎의 루프로 설계합니다. 발을 멈춘 사람이 한 바퀴를 다 볼 수 있는 길이입니다. 60초 루프는 대부분 중간부터 보게 되고, 끝까지 서 있는 사람은 드뭅니다.\n\n자막은 4미터 밖에서 읽히는 크기여야 합니다. 모니터 앞에서 확인하면 항상 충분해 보이는데, 부스에서는 사람들이 그렇게 가까이 서지 않습니다. 실제 거리에서 한 번 확인해 보시기를 권합니다. 모니터 크기와 설치 높이도 함께 확인해야 합니다. 같은 자막도 55인치 모니터를 눈높이보다 높게 달면 읽히지 않습니다.\n\n마지막 3초에는 브랜드와 한 줄의 메시지를 둡니다. 루프의 끝이 다음 루프의 시작이 되므로, 이 3초가 사실상 가장 자주 보이는 구간입니다. 여기에 아무것도 없으면 하루 종일 돌아간 영상이 누구의 것인지 아무도 기억하지 못합니다.\n\n여러분의 부스 영상은 몇 초짜리 루프입니까?\n\nDM으로 “부스”를 보내주시면 설계 기준을 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "linkedin_en": "The most common mistake in a congress booth film is treating it as a short brand film. A booth is a completely different environment.\n\nFirst, there is no sound. Exhibition halls are loud and nobody puts on headphones. Information carried by narration does not arrive. A film that is not complete in silence does not work in a booth.\n\nSecond, the viewer does not choose where to start. Someone walking past enters in the middle. A structure with a beginning, middle and end is therefore a disadvantage — it has to make sense wherever it is joined.\n\nThird, the window is short. A person passing gives a screen about four seconds. The job of those four seconds is not explanation, it is stopping them. Only after someone's feet stop is there a chance to explain anything.\n\nSo we design booth films as loops of around twenty seconds — short enough that someone who has stopped can see a full turn. A sixty-second loop is almost always joined mid-way, and few people stay to the end.\n\nCaptions have to be legible from four metres. Checked at a monitor they always look large enough, and in a booth nobody stands that close. Check the screen size and mounting height as well: the same caption on a 55-inch panel hung above eye level does not read.\n\nThe last three seconds carry the brand and one line of message. The end of the loop is the start of the next one, which makes those three seconds the most frequently seen part of the whole film — leave them empty and nobody remembers whose film ran all day.\n\nHow long is your booth loop?\n\nSend me “부스” for the design standard. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "linkedin_ko_hashtags": [
+        "#학회마케팅",
+        "#전시부스",
+        "#B2B마케팅"
+      ],
+      "linkedin_en_hashtags": [
+        "#CongressMarketing",
+        "#TradeShow",
+        "#B2BMarketing"
+      ],
+      "generated_by": "seed-2026-09-20"
+    },
+    {
+      "topic": "글로벌 론칭을 고려한 과학 콘텐츠의 모듈형 제작 전략",
+      "kicker": "글로벌 론칭",
+      "image": "cell-fusion",
+      "image_headline": "번역이 아니라\n*모듈*로 만든다",
+      "english_image_headline": "Build modules, not translations",
+      "note": "다 만든 뒤에 자막만 바꾸면 절반의 나라에서 못 씁니다",
+      "hashtags": [
+        "#글로벌마케팅",
+        "#론칭전략",
+        "#메디컬콘텐츠",
+        "#제약마케팅",
+        "#콘텐츠전략"
+      ],
+      "comment_question": "몇 개 국가에 나가시나요?",
+      "dm_keyword": "모듈",
+      "dm_offer": "모듈형 제작 구조 설계도",
+      "caption": "한국에서 완성한 영상에 자막만 바꿔 내보내면, 규제가 다른 나라에서는 통째로 못 씁니다.\n\n댓글: 몇 개 국가에 나가시나요?\nDM “모듈”: 모듈형 제작 구조 설계도\n프로필 링크에서 포트폴리오를 확인하고, 팀에 저장·공유해 주세요.",
+      "slides": [
+        {
+          "role": "cover",
+          "headline": "번역이 아니라\n*모듈*로 만든다",
+          "note": "자막만 바꾸는 방식은 절반의 나라에서 막힙니다",
+          "image": "cell-fusion"
+        },
+        {
+          "role": "statement",
+          "headline": "한 번 만들고\n*다시* 만든다",
+          "note": "국가마다 허가 문구와 적응증이 다릅니다. 통짜 영상은 한 문장 때문에 전체를 다시 만듭니다."
+        },
+        {
+          "role": "detail",
+          "kicker": "분리",
+          "headline": "세 층으로 *나눈다*",
+          "items": [
+            "불변층 — 기전. 어디서나 같다.",
+            "가변층 — 수치와 적응증. 국가별로 교체.",
+            "현지층 — 자막, 로고, 연락처."
+          ],
+          "image": "data-minimal"
+        },
+        {
+          "role": "evidence",
+          "kicker": "효과",
+          "stat": "1회",
+          "stat_note": "렌더링으로",
+          "note": "불변층을 한 번 렌더링하고 가변층만 교체합니다.",
+          "image": "multi-channel"
+        },
+        {
+          "role": "close",
+          "headline": "몇 개 국가에\n나가십니까?",
+          "note": "DM으로 “모듈”을 보내주시면 구조 설계도를 드립니다.",
+          "image": "context-first"
+        }
+      ],
+      "linkedin_ko": "글로벌 론칭을 앞둔 콘텐츠 프로젝트에서 가장 비싼 실수는 '먼저 한국어로 만들고 나중에 번역한다'는 전제입니다. 언어는 가장 쉬운 부분입니다. 문제는 그 뒤에 있습니다.\n\n국가마다 허가된 적응증이 다릅니다. 표시할 수 있는 수치도 다르고, 비교 광고의 허용 범위도 다릅니다. 한국에서 문제없는 한 문장이 다른 시장에서는 통째로 삭제 대상이 됩니다. 통짜로 렌더링한 영상은 그 한 문장 때문에 전체를 다시 만들어야 합니다.\n\n그래서 저희는 처음부터 세 층으로 나눕니다.\n\n첫째, 불변층. 작용기전 자체입니다. 분자와 세포에서 일어나는 일은 국경에 따라 달라지지 않습니다. 제작비의 대부분이 여기 들어가고, 이 층은 한 번만 렌더링합니다.\n\n둘째, 가변층. 수치, 적응증, 비교 표현입니다. 이 층은 별도 레이어로 분리해서 국가별로 교체합니다. 교체에 드는 시간이 재렌더링이 아니라 합성 수준이 되도록 설계합니다. 화면에서 이 층이 놓일 자리도 미리 비워둡니다. 나중에 긴 문장이 들어올 나라를 기준으로 공간을 잡아야 합니다.\n\n셋째, 현지층. 자막, 로고, 연락처, 법적 고지입니다. 가장 자주 바뀌고 가장 가벼운 층입니다.\n\n이 구조의 이점은 비용만이 아닙니다. 속도가 달라집니다. 새 국가가 추가됐을 때 가변층과 현지층만 준비하면 며칠 안에 나갈 수 있습니다. 통짜 구조에서는 몇 주가 걸립니다.\n\n그리고 한 가지 조건이 있습니다. 이 분리는 기획 단계에서만 가능합니다. 완성된 영상을 나중에 층으로 쪼갤 수는 없습니다. 글로벌 계획이 있다면 첫 회의에서 말해야 하는 이유입니다.\n\n여러분의 콘텐츠는 몇 개 국가에 나갑니까?\n\nDM으로 “모듈”을 보내주시면 구조 설계도를 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "linkedin_en": "The most expensive assumption in a content project heading for global launch is 'build it in the home market first and translate later'. Language is the easy part. The problem sits behind it.\n\nApproved indications differ by country. So do the figures you may show and the latitude for comparative claims. One sentence that is fine in one market is deleted entirely in another, and a film rendered as a single piece has to be rebuilt in full because of that one sentence.\n\nSo we separate three layers from the start.\n\nFirst, the invariant layer: the mechanism itself. What happens at the molecular and cellular level does not change at a border. Most of the budget goes here, and this layer is rendered once.\n\nSecond, the variable layer: figures, indications, comparative statements. Held as separate layers and swapped per market, designed so that swapping is a compositing job rather than a re-render. Leave the space for it in frame too, sized against the market whose sentence runs longest.\n\nThird, the local layer: captions, logo, contact details, legal notices. The lightest layer and the one that changes most often.\n\nThe benefit is not only cost. It is speed. When a new market is added, preparing the variable and local layers takes days. With a single-piece film it takes weeks.\n\nOne condition applies: this separation is only possible during planning. A finished film cannot be taken apart into layers afterwards. That is why a global plan belongs in the first meeting rather than the last.\n\nHow many markets does your content go out to?\n\nSend me “모듈” for the structure diagram. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "linkedin_ko_hashtags": [
+        "#글로벌마케팅",
+        "#론칭전략",
+        "#콘텐츠전략"
+      ],
+      "linkedin_en_hashtags": [
+        "#GlobalLaunch",
+        "#ContentStrategy",
+        "#PharmaMarketing"
+      ],
+      "generated_by": "seed-2026-09-20"
     }
   ]
 }
