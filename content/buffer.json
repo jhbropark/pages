@@ -78,7 +78,9 @@
         "#BrandStrategy"
       ],
       "generated_by": "seed-2026-09-19",
-      "image": "micro-cinema"
+      "image": "micro-cinema",
+      "consumed_at": "2026-09-21T07:46:54.986274+09:00",
+      "consumed_as": "post_20260921_morning"
     },
     {
       "topic": "R&D 언어와 마케팅 언어 사이를 연결하는 세 가지 질문",
@@ -113,7 +115,9 @@
         "#BrandStrategy"
       ],
       "generated_by": "seed-2026-09-19",
-      "image": "data-minimal"
+      "image": "data-minimal",
+      "consumed_at": "2026-09-21T07:46:54.986274+09:00",
+      "consumed_as": "post_20260921_afternoon"
     },
     {
       "topic": "MOA 애니메이션이 복잡한 작용기전을 브랜드 자산으로 바꾸는 방법",

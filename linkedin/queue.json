@@ -1560,6 +1560,90 @@
         "#ScienceCommunication"
       ],
       "image_url": "https://jhbropark.github.io/pages/images/krea/20260620-pilot/industry-scene/linkedin-en.jpg"
+    },
+    {
+      "pair_id": "linkedin_20260921_morning",
+      "status": "pending",
+      "topic": "좋은 과학 콘텐츠는 기술 설명이 아니라 이해 설계에서 시작됩니다",
+      "slot": "morning",
+      "scheduled_time": "2026-09-21T09:00:00+09:00",
+      "created_at": "2026-09-21T07:46:54.986274+09:00",
+      "generated_by": "seed-2026-09-19",
+      "dm_keyword": "순서",
+      "id": "linkedin_20260921_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "연구 결과를 발표할 때 우리는 대부분 연구가 진행된 순서대로 말합니다. 배경을 설명하고, 방법을 설명하고, 결과를 설명하고, 마지막에 의미를 붙입니다. 논문에서는 이 순서가 옳습니다. 검증 가능성이 가장 중요한 가치이기 때문입니다.\n\n문제는 같은 순서를 고객 앞에서 반복할 때 생깁니다. 브랜드 담당자, 유통 파트너, 투자 심사역은 검증 과정을 따라오려고 자리에 앉아 있는 것이 아닙니다. 그들은 '이게 나에게 무엇을 바꾸는가'라는 질문 하나를 들고 있습니다. 그 질문에 답이 나오기까지 4분이 걸리면, 대부분은 그 전에 듣기를 멈춥니다.\n\n저희가 MOA 애니메이션 프로젝트에서 쓰는 방법은 세 가지입니다.\n\n첫째, 결과를 먼저 보여줍니다. 피부 장벽이 회복된 상태를 먼저 제시하고, 그다음에 왜 그렇게 되었는지로 거슬러 올라갑니다. 궁금해진 사람만이 기전을 끝까지 봅니다.\n\n둘째, 기전은 한 번에 하나씩만 보여줍니다. 실제 세포 안에서는 여러 경로가 동시에 일어나지만, 화면에서 동시에 보여주면 아무것도 전달되지 않습니다. 정확성과 이해 가능성이 충돌할 때, 저희는 정확성을 유지하면서 순서를 조정합니다.\n\n셋째, 마지막 10초를 고객의 언어로 끝냅니다. 'IL-6 발현 억제'가 아니라 '붉어짐이 가라앉는 데 걸리는 시간이 짧아집니다'로 끝냅니다. 같은 사실이지만 듣는 사람이 다릅니다.\n\n이건 과학을 쉽게 만드는 일이 아닙니다. 설명의 순서를 고객의 이해 순서에 맞추는 설계 작업입니다. 기술을 낮추지 않고도 할 수 있습니다.\n\n여러분의 팀은 기전을 먼저 설명하십니까, 결과를 먼저 설명하십니까? 댓글로 알려주세요.\n\nDM으로 “순서”를 보내주시면 설명 순서를 점검하는 체크리스트를 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "hashtags": [
+        "#ScienceCommunication",
+        "#MedicalAnimation",
+        "#B2BMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/post_20260921_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 연구 순서가 아니라\n이해 순서로"
+    },
+    {
+      "pair_id": "linkedin_20260921_morning",
+      "status": "pending",
+      "topic": "좋은 과학 콘텐츠는 기술 설명이 아니라 이해 설계에서 시작됩니다",
+      "slot": "morning",
+      "scheduled_time": "2026-09-21T09:00:00+09:00",
+      "created_at": "2026-09-21T07:46:54.986274+09:00",
+      "generated_by": "seed-2026-09-19",
+      "dm_keyword": "순서",
+      "id": "linkedin_20260921_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "When we present research, we almost always present it in the order the research happened. Background, then method, then results, then — finally — meaning. In a paper that order is correct, because verifiability is the value that matters most there.\n\nThe trouble starts when we repeat that order in front of a customer. A brand manager, a distribution partner, an investment analyst: none of them is in the room to follow your validation process. Each is holding a single question — what does this change for me? If the answer takes four minutes to arrive, most of them stop listening before it does.\n\nOn MOA animation projects we work three ways.\n\nFirst, we show the outcome before the mechanism. The restored skin barrier comes first; only then do we travel back to explain why. People who have become curious are the ones who watch a mechanism to the end.\n\nSecond, we show one pathway at a time. Inside a real cell several things happen at once, but putting them on screen at once communicates nothing. When accuracy and comprehensibility collide, we keep the accuracy and change the order.\n\nThird, we end the last ten seconds in the customer's language. Not 'suppression of IL-6 expression' but 'redness settles faster'. Same fact — different listener.\n\nThis is not about making science easy. It is design work: matching the order of explanation to the order in which someone actually comes to understand. You can do it without lowering the technical bar at all.\n\nDoes your team lead with mechanism, or with outcome? I would like to know.\n\nSend me “순서” and I will share the checklist we use to audit explanation order. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "hashtags": [
+        "#ScienceCommunication",
+        "#MedicalAnimation",
+        "#BrandStrategy"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/post_20260921_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Order of understanding, not research"
+    },
+    {
+      "pair_id": "linkedin_20260921_afternoon",
+      "status": "pending",
+      "topic": "R&D 언어와 마케팅 언어 사이를 연결하는 세 가지 질문",
+      "slot": "afternoon",
+      "scheduled_time": "2026-09-21T15:00:00+09:00",
+      "created_at": "2026-09-21T07:46:54.986274+09:00",
+      "generated_by": "seed-2026-09-19",
+      "dm_keyword": "번역",
+      "id": "linkedin_20260921_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "R&D 회의록과 마케팅 브리프를 나란히 놓고 읽어보면, 두 문서가 같은 제품을 다루고 있다는 사실을 믿기 어려울 때가 있습니다. 한쪽은 조건과 한계를 정확히 적고, 다른 쪽은 약속과 기대를 적습니다. 둘 다 정직합니다. 다만 서로를 번역할 언어가 없습니다.\n\n저희가 프로젝트 초반에 양쪽을 한 자리에 앉히고 던지는 질문은 세 개입니다.\n\n첫째, 무엇이 달라지는가. 측정된 변화만 적습니다. 해석도, 형용사도 붙이지 않습니다. 이 단계에서 마케팅은 자주 놀랍니다. 생각보다 말할 수 있는 것이 적기 때문입니다. R&D도 놀랍니다. 생각보다 말할 수 있는 것이 많기 때문입니다.\n\n둘째, 왜 그렇게 되는가. 기전을 한 문장으로 적습니다. 한 문장에 담기지 않으면, 아직 콘텐츠로 만들 준비가 안 된 것입니다. 이 제약이 생각보다 강력합니다.\n\n셋째, 그래서 고객에게 무엇인가. 앞의 두 답을 고객의 하루 안에서 벌어지는 일로 옮깁니다. '경피 수분 손실량 감소'가 '오후에 당김이 덜하다'가 되는 지점입니다.\n\n이 세 답이 한 장에 들어가면, 그다음부터는 3D든 2D든 다큐멘터리든 형식의 문제입니다. 세 답이 없으면 어떤 형식으로도 좋은 콘텐츠가 나오지 않습니다. 화면이 화려할수록 빈 곳이 더 잘 보입니다.\n\n여러분의 팀에서는 이 세 질문에 누가 답합니까? 한 사람이 다 답하고 있다면, 그게 병목일 수 있습니다.\n\nDM으로 “번역”을 보내주시면 저희가 쓰는 질문지를 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "hashtags": [
+        "#R&D",
+        "#과학커뮤니케이션",
+        "#브랜드전략"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/post_20260921_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 같은 데이터,\n다른 문장"
+    },
+    {
+      "pair_id": "linkedin_20260921_afternoon",
+      "status": "pending",
+      "topic": "R&D 언어와 마케팅 언어 사이를 연결하는 세 가지 질문",
+      "slot": "afternoon",
+      "scheduled_time": "2026-09-21T15:00:00+09:00",
+      "created_at": "2026-09-21T07:46:54.986274+09:00",
+      "generated_by": "seed-2026-09-19",
+      "dm_keyword": "번역",
+      "id": "linkedin_20260921_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "Put an R&D meeting record and a marketing brief side by side and it can be hard to believe the two documents describe the same product. One writes down conditions and limits precisely. The other writes down promises and expectations. Both are honest. What is missing is a language that translates between them.\n\nEarly in a project we sit both sides down and ask three questions.\n\nFirst: what changes? Only measured change goes on the page — no interpretation, no adjectives. Marketing is often surprised here, because there is less that can be said than they assumed. R&D is often surprised too, because there is more.\n\nSecond: why does it change? The mechanism, in one sentence. If it does not fit in one sentence, it is not ready to become content yet. That constraint is more powerful than it sounds.\n\nThird: so what, for the customer? We move the first two answers into something that happens inside someone's day. This is where 'reduced transepidermal water loss' becomes 'less tightness in the afternoon'.\n\nOnce those three answers fit on one page, everything after it — 3D, 2D, documentary — is a question of format. Without them, no format produces good content. The more polished the screen, the more visible the hollow place.\n\nWho answers these three questions on your team? If one person is answering all three, that may be your bottleneck.\n\nSend me “번역” for the question sheet we use. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "hashtags": [
+        "#RandD",
+        "#ScienceCommunication",
+        "#BrandStrategy"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/post_20260921_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Same data, different sentence"
     }
   ]
 }
