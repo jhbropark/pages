@@ -1,15 +1,26 @@
-name: Instagram 콘텐츠 자동 생성
+name: 일일 콘텐츠 렌더링
+
+# Renders one day of content from content/buffer.json and opens a review PR.
+# Deliberately makes no model call: the copy was written ahead of time by the
+# content-refill workflow, so an expired API key or an empty credit balance
+# cannot stop the day's post. Between 2026-08-12 and 2026-09-18 this workflow
+# failed 38 days running on "credit balance is too low" and said nothing.
 
 on:
   # 매일 06:00 KST (21:00 UTC) — 생성 후 PR 검토 시간을 확보
   schedule:
     - cron: "0 21 * * *"
-  # 수동 실행 허용
   workflow_dispatch:
 
+env:
+  PYTHONUNBUFFERED: "1"
+  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+  TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
 jobs:
-  generate:
+  render:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     permissions:
       contents: write
       pull-requests: write
@@ -23,35 +34,71 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: 한글 폰트 설치
+      # Hahmlet and Pretendard are vendored in assets/fonts/, so the cards need
+      # no download. Noto/Nanum are still installed as the fallback for a
+      # syllable Hahmlet lacks, and for the LinkedIn landscape renderer.
+      - name: 폴백 한글 폰트 설치
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq fonts-noto-cjk fonts-nanum
+          sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-cjk-extra fonts-nanum
 
       - name: 의존성 설치
-        run: pip install --quiet anthropic Pillow
+        # fonttools drives the Hangul coverage guard in editorial_cards;
+        # without it the guard disables itself silently.
+        run: pip install --quiet Pillow requests fonttools
 
-      - name: 콘텐츠 생성
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python scripts/generate_content.py
+      - name: 카드 렌더링 및 큐 추가
+        id: render
+        run: python scripts/render_daily.py
 
       - name: 검토용 PR 생성
+        id: pr
+        if: ${{ steps.render.outputs.rendered != '0' }}
         uses: peter-evans/create-pull-request@v7
         with:
           commit-message: "feat: 자동 생성 콘텐츠 추가 (${{ github.run_id }})"
           title: "🤖 오늘의 Instagram 콘텐츠 — 검토 후 머지해 주세요"
           body: |
-            자동 생성된 Instagram 콘텐츠입니다.
+            버퍼(`content/buffer.json`)에서 꺼내 렌더링한 오늘의 콘텐츠입니다.
 
             **검토 방법:**
-            1. Files changed 탭에서 이미지(`images/`)와 캡션(`queue/queue.json`) 확인
+            1. Files changed 탭에서 카드(`images/daily/`)와 캡션(`queue/queue.json`) 확인
             2. 마음에 들면 **Merge** → 예약 시간에 자동 게시됩니다
             3. 수정이 필요하면 이 브랜치에서 직접 편집 후 머지
             4. 게시하지 않으려면 PR을 **Close**
 
-            ---
-            🤖 generate-content 워크플로우가 자동 생성한 PR입니다.
+            버퍼 잔량: **${{ steps.render.outputs.buffer_days }}일치**
+            (${{ steps.render.outputs.buffer_remaining }}개 항목)
           branch: auto-content/${{ github.run_id }}
           delete-branch: true
           labels: auto-content
+
+      # Tell someone. The old workflow failed silently for five weeks; a run
+      # that fails, renders nothing, or is about to run out of copy now says so.
+      - name: Telegram 알림
+        if: ${{ always() && env.TELEGRAM_BOT_TOKEN != '' }}
+        env:
+          BUTTON_URL: ${{ steps.pr.outputs.pull-request-url }}
+          BUTTON_TEXT: "📝 Review the PR"
+        run: |
+          pip install requests -q
+          DAYS="${{ steps.render.outputs.buffer_days }}"
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          if [ "${{ steps.render.outcome }}" != "success" ]; then
+            MSG="🧪 bbbb.beauty 일일 콘텐츠
+          ❌ 렌더링 실패 — 버퍼가 비었거나 렌더러가 터졌습니다.
+          $RUN_URL"
+          elif [ "${{ steps.render.outputs.rendered }}" = "0" ]; then
+            MSG="🧪 bbbb.beauty 일일 콘텐츠
+          ⏭ 렌더링할 슬롯이 없습니다 (이미 큐에 있음).
+          버퍼 잔량: ${DAYS:-?}일치"
+          else
+            MSG="🧪 bbbb.beauty 일일 콘텐츠
+          ✅ ${{ steps.render.outputs.rendered }}개 슬롯 렌더링 완료
+          버퍼 잔량: ${DAYS:-?}일치"
+            if [ -n "$DAYS" ] && [ "$DAYS" -le 3 ]; then
+              MSG="$MSG
+          ⚠️ 버퍼가 3일치 이하입니다 — content-refill 워크플로를 돌려주세요."
+            fi
+          fi
+          MESSAGE="$MSG" python namecode_grid/notify_telegram.py
