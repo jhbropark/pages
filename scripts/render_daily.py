@@ -232,21 +232,27 @@ def render_slot(now_kst: datetime, config: dict, slot: dict, slot_index: int,
 
     scheduled = compute_scheduled_time(now_kst, slot["instagram_time_kst"])
     queue = _read_queue(QUEUE_FILE)
-    queue["items"].append({
+    queue_item = {
         "id": post_id,
         "status": "pending",
         "topic": item["topic"],
         "format": fmt,
         "slot": slot_id,
         "image_url": urls[0],
-        "image_urls": urls,
         "alt_text": f"bbbb.beauty 카드: {item['image_headline']}",
         "caption": item["caption"],
         "hashtags": item["hashtags"],
         "scheduled_time": scheduled.isoformat(),
         "created_at": now_kst.isoformat(),
         "generated_by": item.get("generated_by", "buffer"),
-    })
+    }
+    # instagram_upload.py treats a present "image_urls" key as a carousel and
+    # requires 2-10 entries, whatever "format" says — so a downgraded or
+    # single_image slot must not carry it, or a lone image gets rejected as
+    # an invalid one-image carousel (see the FORMAT_CYCLE downgrade above).
+    if len(urls) > 1:
+        queue_item["image_urls"] = urls
+    queue["items"].append(queue_item)
 
     linkedin_scheduled = compute_scheduled_time(now_kst, slot["linkedin_time_kst"])
     pair_id = f"linkedin_{now_kst:%Y%m%d}_{slot_id}"

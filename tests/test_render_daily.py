@@ -67,6 +67,57 @@ class EveryBufferedItemRenders(unittest.TestCase):
             self.assertEqual(len(render_daily.render_post(bare, "bare", 4)), 1)
 
 
+class RenderSlotQueuesTheImageItCanActuallyPost(unittest.TestCase):
+    """The gap instagram_upload.py actually enforces.
+
+    instagram_upload.py's validator treats a present "image_urls" key as a
+    carousel and requires 2-10 entries, regardless of what "format" says.
+    A single_image (or downgraded) slot must therefore not carry the key at
+    all, or the post is rejected as an invalid one-image carousel.
+    """
+
+    def test_single_image_slot_has_no_image_urls_key(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp)
+            render_daily.IMAGES_DIR = tmp_path
+            render_daily.QUEUE_FILE = tmp_path / "queue.json"
+            render_daily.LINKEDIN_QUEUE_FILE = tmp_path / "linkedin_queue.json"
+            render_daily.QUEUE_FILE.write_text(
+                json.dumps({"items": []}), encoding="utf-8")
+            render_daily.LINKEDIN_QUEUE_FILE.write_text(
+                json.dumps({"items": []}), encoding="utf-8")
+
+            # Day-of-year 2 with a single configured slot lands FORMAT_CYCLE
+            # on its "single_image" entry (index 2) — deterministic whatever
+            # date the suite actually runs on.
+            now_kst = render_daily.datetime(2026, 1, 2, 9, 0, tzinfo=render_daily.KST)
+            slot = {
+                "id": "test_slot",
+                "instagram_time_kst": "09:00",
+                "linkedin_time_kst": "10:00",
+            }
+            item = {
+                "topic": "t",
+                "image_headline": "헤드라인만 있는 항목",
+                "english_image_headline": "headline only",
+                "caption": "caption",
+                "hashtags": ["#a"],
+                "dm_keyword": "kw",
+                "linkedin_ko": "ko commentary",
+                "linkedin_ko_hashtags": ["#a"],
+                "linkedin_en": "en commentary",
+                "linkedin_en_hashtags": ["#a"],
+            }
+            render_daily.render_slot(
+                now_kst, {"daily_slots": [slot]}, slot, slot_index=0,
+                buffer={"items": [item]})
+
+            queue = json.loads(render_daily.QUEUE_FILE.read_text(encoding="utf-8"))
+            queued = queue["items"][0]
+            self.assertEqual(queued["format"], "single_image")
+            self.assertNotIn("image_urls", queued)
+
+
 class Buffer(unittest.TestCase):
     def test_holds_whole_days(self):
         slots = len(json.loads(
