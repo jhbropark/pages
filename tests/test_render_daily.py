@@ -88,3 +88,47 @@ class Buffer(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TheQueueEntryTheUploaderAccepts(unittest.TestCase):
+    """What render_daily writes has to be what instagram_upload can post.
+
+    The 2026-09-21 morning card rendered fine, landed in the queue, and never
+    posted: the entry carried both `image_url` and `image_urls`, and the
+    uploader reads the format off whichever key is present, not off `format`.
+    One image down the carousel path is not a legal carousel, so Graph refused
+    it. Testing `_image_keys` alone would miss that — the question is whether
+    the uploader accepts the entry.
+    """
+
+    def setUp(self):
+        self.upload = _load("instagram_upload")
+
+    def _entry(self, fmt, count):
+        urls = [f"https://example.test/images/daily/card-{n}.jpg"
+                for n in range(1, count + 1)]
+        return {"id": "post_test", "format": fmt, "caption": "c",
+                "scheduled_time": "2026-09-21T19:00:00+09:00",
+                **render_daily._image_keys(fmt, urls)}
+
+    def test_a_single_image_entry_validates(self):
+        self.assertEqual(self.upload.validate_item(self._entry("single_image", 1)), [])
+
+    def test_a_carousel_entry_validates(self):
+        self.assertEqual(self.upload.validate_item(self._entry("carousel", 4)), [])
+
+    def test_a_story_entry_validates(self):
+        self.assertEqual(self.upload.validate_item(self._entry("story", 1)), [])
+
+    def test_the_keys_are_exclusive(self):
+        """Carrying both is what broke it, so neither entry may carry both."""
+        single = self._entry("single_image", 1)
+        carousel = self._entry("carousel", 4)
+        self.assertNotIn("image_urls", single)
+        self.assertNotIn("image_url", carousel)
+
+    def test_both_keys_together_is_what_the_uploader_rejects(self):
+        """Pin the original failure, so the exclusivity above has a reason."""
+        broken = self._entry("single_image", 1)
+        broken["image_urls"] = [broken["image_url"]]
+        self.assertTrue(self.upload.validate_item(broken))

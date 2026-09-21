@@ -107,6 +107,21 @@ def slot_exists(post_id: str) -> bool:
     return any(item.get("id") == post_id for item in _read_queue(QUEUE_FILE)["items"])
 
 
+def _image_keys(fmt: str, urls: list[str]) -> dict:
+    """The image key an Instagram post carries, which names its format.
+
+    `instagram_upload.py` reads the format off the key rather than off
+    `format`: anything holding `image_urls` goes down the carousel path, and a
+    carousel of one is not a legal carousel. Writing both keys sent the
+    2026-09-21 morning card there and Graph rejected it before it ever posted
+    ("image_urls는 2~10장의 이미지여야 합니다"). So the keys are exclusive, as
+    every hand-written entry in the queue already had them.
+    """
+    if fmt == "carousel":
+        return {"image_urls": urls}
+    return {"image_url": urls[0]}
+
+
 def compute_scheduled_time(now_kst: datetime, time_str: str) -> datetime:
     """Today at ``time_str``, or tomorrow if that has already passed.
 
@@ -238,8 +253,7 @@ def render_slot(now_kst: datetime, config: dict, slot: dict, slot_index: int,
         "topic": item["topic"],
         "format": fmt,
         "slot": slot_id,
-        "image_url": urls[0],
-        "image_urls": urls,
+        **_image_keys(fmt, urls),
         "alt_text": f"bbbb.beauty 카드: {item['image_headline']}",
         "caption": item["caption"],
         "hashtags": item["hashtags"],
