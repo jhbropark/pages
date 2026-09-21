@@ -291,5 +291,13 @@
     "post_id": "18088040897300273",
     "post_url": "https://www.instagram.com/p/DZpJFa0Fago/",
     "timestamp": "2026-06-16T10:08:00.567115+00:00"
+  },
+  {
+    "id": "post_20260921_morning",
+    "status": "invalid",
+    "errors": [
+      "image_urls는 2~10장의 이미지여야 합니다."
+    ],
+    "timestamp": "2026-09-21T03:35:29.061224+00:00"
   }
 ]

@@ -718,7 +718,7 @@
     },
     {
       "id": "post_20260921_morning",
-      "status": "pending",
+      "status": "invalid",
       "topic": "좋은 과학 콘텐츠는 기술 설명이 아니라 이해 설계에서 시작됩니다",
       "format": "single_image",
       "slot": "morning",
@@ -737,7 +737,10 @@
       ],
       "scheduled_time": "2026-09-21T12:30:00+09:00",
       "created_at": "2026-09-21T07:46:54.986274+09:00",
-      "generated_by": "seed-2026-09-19"
+      "generated_by": "seed-2026-09-19",
+      "errors": [
+        "image_urls는 2~10장의 이미지여야 합니다."
+      ]
     },
     {
       "id": "post_20260921_afternoon",
