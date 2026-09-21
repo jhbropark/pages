@@ -120,6 +120,18 @@ class TheQueueEntryTheUploaderAccepts(unittest.TestCase):
     def test_a_story_entry_validates(self):
         self.assertEqual(self.upload.validate_item(self._entry("story", 1)), [])
 
+    def test_a_carousel_of_one_cannot_be_written_at_all(self):
+        """The downgrade rewrites `fmt` first, so this is the second lock.
+
+        A one-image carousel is the exact shape Graph rejected; neither route
+        into it should exist.
+        """
+        entry = {"id": "post_test", "format": "carousel", "caption": "c",
+                 "scheduled_time": "2026-09-21T19:00:00+09:00",
+                 **render_daily._image_keys("carousel", ["https://e.test/a.jpg"])}
+        self.assertNotIn("image_urls", entry)
+        self.assertEqual(self.upload.validate_item(entry), [])
+
     def test_the_keys_are_exclusive(self):
         """Carrying both is what broke it, so neither entry may carry both."""
         single = self._entry("single_image", 1)

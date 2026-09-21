@@ -117,7 +117,10 @@ def _image_keys(fmt: str, urls: list[str]) -> dict:
     ("image_urls는 2~10장의 이미지여야 합니다"). So the keys are exclusive, as
     every hand-written entry in the queue already had them.
     """
-    if fmt == "carousel":
+    # Both conditions, though the downgrade above already rewrites `fmt` when
+    # a deck comes up short: a carousel of one is the exact shape that got
+    # rejected, so it is worth being unable to write it by either route.
+    if fmt == "carousel" and len(urls) > 1:
         return {"image_urls": urls}
     return {"image_url": urls[0]}
 
