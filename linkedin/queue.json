@@ -1644,6 +1644,90 @@
       ],
       "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/post_20260921_afternoon_linkedin_en.jpg",
       "alt_text": "bbbb.beauty English card: Same data, different sentence"
+    },
+    {
+      "pair_id": "linkedin_20260922_morning",
+      "status": "pending",
+      "topic": "MOA 애니메이션이 복잡한 작용기전을 브랜드 자산으로 바꾸는 방법",
+      "slot": "morning",
+      "scheduled_time": "2026-09-22T09:00:00+09:00",
+      "created_at": "2026-09-22T08:44:03.472908+09:00",
+      "generated_by": "seed-2026-09-20",
+      "dm_keyword": "기전",
+      "id": "linkedin_20260922_morning_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "MOA 애니메이션 시안을 검토할 때 가장 자주 나오는 피드백은 \"정확하지 않다\"가 아닙니다. \"정확한데 무슨 말인지 모르겠다\"입니다.\n\n원인은 대개 하나입니다. 실제 세포 안에서 동시에 일어나는 일을 화면에서도 동시에 보여준 것입니다. 수용체 결합, 신호 전달, 전사 인자 이동, 단백질 발현이 한 화면에서 같이 움직이면 과학적으로는 옳습니다. 다만 사람의 눈은 한 번에 하나의 움직임만 따라갑니다.\n\n저희가 쓰는 기준은 단순합니다. 한 경로를 7초 안에 설명할 수 없다면, 그 경로는 아직 충분히 쪼개지지 않은 것입니다. 7초는 짧게 만들라는 뜻이 아니라, 한 화면이 감당할 수 있는 정보량의 상한선입니다.\n\n쪼갠 다음에는 순서를 바꿉니다. 결과를 먼저 보여주고, 왜 그렇게 되었는지로 거슬러 올라갑니다. 기전을 먼저 쌓아 올리면 결론에 도달하기 전에 대부분이 이탈합니다. 결과를 먼저 본 사람만이 그 경로를 끝까지 따라올 이유를 갖습니다.\n\n이렇게 만든 영상은 한 번 쓰고 끝나지 않습니다. 영업 담당자가 태블릿에서 여는 60초 버전, 학회 부스에서 무자막으로 도는 루프 버전, 내부 교육용으로 챕터를 끊은 장문 버전. 같은 소스에서 세 개가 나옵니다. 기획 단계에서 이 세 쓰임을 정해두면 재촬영도 재렌더링도 없습니다.\n\n기전 영상을 자산이 아니라 일회성 납품물로 쓰고 계신다면, 대개 기획 단계에서 쓰임이 하나만 정의돼 있었기 때문입니다.\n\n여러분의 MOA 영상은 몇 초짜리입니까? 그 영상은 지금 몇 군데에서 쓰이고 있습니까?\n\nDM으로 “기전”을 보내주시면 저희가 쓰는 MOA 영상 기획 체크리스트를 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "hashtags": [
+        "#MOA애니메이션",
+        "#과학시각화",
+        "#제약마케팅"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/post_20260922_morning_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 기전은 한 번에\n*하나씩*"
+    },
+    {
+      "pair_id": "linkedin_20260922_morning",
+      "status": "pending",
+      "topic": "MOA 애니메이션이 복잡한 작용기전을 브랜드 자산으로 바꾸는 방법",
+      "slot": "morning",
+      "scheduled_time": "2026-09-22T09:00:00+09:00",
+      "created_at": "2026-09-22T08:44:03.472908+09:00",
+      "generated_by": "seed-2026-09-20",
+      "dm_keyword": "기전",
+      "id": "linkedin_20260922_morning_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "The most common note on an MOA animation draft is not \"that is inaccurate\". It is \"that is accurate and I have no idea what I just watched\".\n\nThe cause is usually the same. Things that happen simultaneously inside a real cell were shown simultaneously on screen. Receptor binding, signal transduction, transcription factor translocation and protein expression all moving in one frame is scientifically correct. The human eye still follows one movement at a time.\n\nOur working rule is simple: if a pathway cannot be explained in seven seconds, it has not been broken down far enough yet. Seven seconds is not an instruction to make things short. It is the ceiling on how much information a single frame can carry.\n\nOnce it is broken down, we change the order. Show the outcome first, then travel back to why it happened. Building the mechanism up from the bottom loses most of the room before the conclusion arrives. Only someone who has already seen the outcome has a reason to follow the pathway to the end.\n\nAn animation made this way does not get used once. A sixty-second cut a rep opens on a tablet, a silent loop for a conference booth, a long chaptered version for internal training — three deliverables out of one source. Decide those three uses during planning and there is no reshoot and no re-render later.\n\nIf your mechanism video behaves like a one-off deliverable rather than an asset, it is usually because only one use was defined before production started.\n\nHow long is your MOA video, and how many places is it working in right now?\n\nSend me “기전” for the planning checklist we use. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "hashtags": [
+        "#MedicalAnimation",
+        "#ScienceVisualization",
+        "#PharmaMarketing"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/post_20260922_morning_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: One pathway at a time"
+    },
+    {
+      "pair_id": "linkedin_20260922_afternoon",
+      "status": "pending",
+      "topic": "더마코스메틱의 성분 설명을 고객 언어로 번역하는 세 단계",
+      "slot": "afternoon",
+      "scheduled_time": "2026-09-22T15:00:00+09:00",
+      "created_at": "2026-09-22T08:44:03.472908+09:00",
+      "generated_by": "seed-2026-09-20",
+      "dm_keyword": "성분",
+      "id": "linkedin_20260922_afternoon_ko",
+      "language": "ko",
+      "pair_order": 1,
+      "commentary": "더마코스메틱 브리프를 받으면 성분표가 먼저 옵니다. 함량과 INCI 명이 정확하게 정리돼 있습니다. 그 자체로는 훌륭한 문서인데, 그대로 광고 문안이 되지는 않습니다.\n\n고객은 성분을 사지 않습니다. 달라지는 상태를 삽니다. 문제는 그 사이를 건너뛰면 둘 중 하나가 일어난다는 것입니다. 성분명을 그대로 쓰면 아무 말도 하지 않은 것이 되고, 체감만 크게 쓰면 규제에 걸립니다. 두 실패가 정반대로 보이지만 원인은 같습니다. 근거와 메시지 사이에 다리가 없다는 것입니다.\n\n저희는 세 단계로 나눕니다.\n\n첫째, 무엇이 들었는가. 성분명과 함량을 그대로 적습니다. 해석은 한 글자도 붙이지 않습니다. 이 단계에서 마케팅은 자주 놀랍니다. 생각보다 말할 수 있는 것이 적기 때문입니다.\n\n둘째, 무엇을 하는가. 측정된 작용을 하나만 적습니다. 여러 개를 적고 싶어지는 지점인데, 여기서 늘리면 뒤에서 반드시 무리가 생깁니다. in vitro 결과인지 임상 결과인지도 이 줄에 함께 적습니다. 출처가 같은 줄에 없으면 나중에 아무도 확인하지 않습니다.\n\n셋째, 무엇이 달라지는가. 앞의 두 답을 고객의 하루 안에서 벌어지는 일로 옮깁니다. '경피 수분 손실량 감소'가 '오후에 당김이 덜하다'가 되는 지점입니다. 같은 사실인데 듣는 사람이 다릅니다.\n\n규칙은 하나입니다. 2단계에서 측정되지 않은 것은 3단계로 넘기지 않습니다. 이 규칙이 있으면 법무 검토가 카피를 잘라내는 일이 거의 없어집니다. 잘릴 문장이 애초에 써지지 않기 때문입니다.\n\n이 세 줄이 한 장에 들어가면 그 뒤로는 영상이든 상세페이지든 형식의 문제입니다. 세 줄이 없으면 어떤 형식으로도 좋은 콘텐츠가 나오지 않습니다. 화면이 화려할수록 빈 곳이 더 잘 보입니다.\n\n여러분의 팀은 성분명을 먼저 말합니까, 체감을 먼저 말합니까?\n\nDM으로 “성분”을 보내주시면 번역 3단계 워크시트를 보내드립니다. 문의는 https://jhbropark.github.io/pages/contact.html 에서 받습니다.",
+      "hashtags": [
+        "#더마코스메틱",
+        "#뷰티마케팅",
+        "#브랜드전략"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/post_20260922_afternoon_linkedin_ko.jpg",
+      "alt_text": "bbbb.beauty 한국어 카드: 성분이 아니라\n*변화*를 판다"
+    },
+    {
+      "pair_id": "linkedin_20260922_afternoon",
+      "status": "pending",
+      "topic": "더마코스메틱의 성분 설명을 고객 언어로 번역하는 세 단계",
+      "slot": "afternoon",
+      "scheduled_time": "2026-09-22T15:00:00+09:00",
+      "created_at": "2026-09-22T08:44:03.472908+09:00",
+      "generated_by": "seed-2026-09-20",
+      "dm_keyword": "성분",
+      "id": "linkedin_20260922_afternoon_en",
+      "language": "en",
+      "pair_order": 2,
+      "commentary": "A dermocosmetic brief usually arrives with the ingredient table first. Concentrations and INCI names, all correct. It is an excellent document that does not become copy on its own.\n\nCustomers do not buy ingredients. They buy a change of state. Skip the space between the two and one of two things happens: write the INCI name as it stands and you have said nothing, or write the felt benefit large and you have a regulatory problem. The two failures look opposite and share a cause — there is no bridge between the evidence and the message.\n\nWe split it into three steps.\n\nFirst, what is in it. Ingredient and concentration exactly as recorded, with no interpretation attached. Marketing is often surprised here, because there is less that can be said than assumed.\n\nSecond, what does it do. One measured action, and only one. This is where the temptation to add more appears, and adding here always forces a stretch later. Whether the evidence is in vitro or clinical goes on the same line: if the source is not beside the claim, nobody checks it afterwards.\n\nThird, what changes. Move the first two answers into something that happens inside someone's day. This is where 'reduced transepidermal water loss' becomes 'less tightness in the afternoon'. Same fact, different listener.\n\nOne rule holds it together: nothing reaches step three that was not measured at step two. With that rule in place, legal review almost stops cutting copy, because the sentences that would be cut never get written in the first place.\n\nOnce those three lines fit on one page, film or product page is a question of format. Without them, no format produces good content — the more polished the screen, the more visible the hollow place.\n\nDoes your team lead with the ingredient, or with the change?\n\nSend me “성분” for the three-step worksheet. You can reach us at https://jhbropark.github.io/pages/contact.html.",
+      "hashtags": [
+        "#Dermocosmetics",
+        "#BeautyMarketing",
+        "#BrandStrategy"
+      ],
+      "image_url": "https://raw.githubusercontent.com/jhbropark/pages/main/images/daily/post_20260922_afternoon_linkedin_en.jpg",
+      "alt_text": "bbbb.beauty English card: Sell the change, not the INCI"
     }
   ]
 }
