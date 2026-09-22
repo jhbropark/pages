@@ -106,29 +106,12 @@ jobs:
             git push && break || { echo "push retry $i"; sleep 5; }
           done
 
-      - name: Generate reel (Krea image-to-video)
+      - name: Generate reel (delegated to Krea workspace-credit routine)
         id: reel
-        # turn today's pushed still into a 9:16 1080x1920 reel; only when publishing.
-        # continue-on-error: the reel is a bonus — its failure must never block
-        # the feed publishes below (reel steps skip via steps.reel.outputs.made).
-        continue-on-error: true
-        if: ${{ env.KREA_API_KEY != '' && (github.event_name == 'schedule' || github.event.inputs.publish == 'true') }}
-        working-directory: namecode_grid
-        env:
-          KREA_API_KEY: ${{ secrets.KREA_API_KEY }}
-          NAMECODE_FONT: /tmp/fnt/JetBrainsMono.ttf   # for the DECODE hook overlays
-        run: |
-          set -o pipefail
-          pip install requests imageio-ffmpeg Pillow numpy
-          DATE="${{ steps.gen.outputs.date }}"
-          # 9:16 still as start_image -> native vertical video, no blur bars
-          RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/namecode_apod_${DATE}_9x16.png"
-          echo "start_image: $RAW"
-          python krea_reel.py --image-url "$RAW" \
-            --still "daily/namecode_apod_${DATE}_9x16.png" \
-            --brief "daily/brief_${DATE}.json" \
-            --out "daily/reel_${DATE}.mp4"
-          echo "made=1" >> "$GITHUB_OUTPUT"
+        # Disabled intentionally: GitHub Actions uses Krea API balance.
+        # Aside generates/publishes reels through Krea workspace credits.
+        if: ${{ false }}
+        run: echo "Reel delegated to the Krea workspace-credit routine"
 
       - name: Commit reel
         if: ${{ steps.reel.outputs.made == '1' }}
