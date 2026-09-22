@@ -42,7 +42,7 @@ concurrency:
 
 jobs:
   generate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     # the fb-only dispatch below replaces this job entirely for that run
     if: ${{ github.event.inputs.fb_only != 'true' && github.event.inputs.test_only != 'true' }}
     # job-level env so the optional publish step's `if:` can read the token
@@ -56,9 +56,9 @@ jobs:
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       REQUESTED_DATE: ${{ github.event.inputs.date }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
@@ -188,12 +188,12 @@ jobs:
 
 
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.test_only == 'true' }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
@@ -234,7 +234,7 @@ jobs:
   # path re-posts an existing day to the Page alone — no regeneration, and no
   # Instagram call, so it never duplicates a feed post that already went out.
   fb-only:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.fb_only == 'true' && github.event.inputs.test_only != 'true' }}
     env:
       FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
@@ -243,9 +243,9 @@ jobs:
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       REQUESTED_DATE: ${{ github.event.inputs.date }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
