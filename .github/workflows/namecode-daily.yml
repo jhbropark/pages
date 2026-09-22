@@ -28,6 +28,10 @@ on:
         description: "Facebook only: skip generation, cross-post an already-committed day (true/false)"
         required: false
         default: "false"
+      test_only:
+        description: "Run validation only; do not generate or publish (true/false)"
+        required: false
+        default: "false"
 
 permissions:
   contents: write             # to commit the daily image
@@ -40,7 +44,7 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     # the fb-only dispatch below replaces this job entirely for that run
-    if: ${{ github.event.inputs.fb_only != 'true' }}
+    if: ${{ github.event.inputs.fb_only != 'true' && github.event.inputs.test_only != 'true' }}
     # job-level env so the optional publish step's `if:` can read the token
     # (secrets context is not allowed directly in `if:` expressions)
     env:
@@ -50,6 +54,7 @@ jobs:
       FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      REQUESTED_DATE: ${{ github.event.inputs.date }}
     steps:
       - uses: actions/checkout@v4
 
@@ -58,13 +63,16 @@ jobs:
           python-version: "3.11"
 
       - name: Install deps
-        run: pip install requests Pillow
+        run: python -m pip install --disable-pip-version-check --no-input requests Pillow
 
       - name: Fetch label font (JetBrains Mono)
         run: |
+          set -euo pipefail
           mkdir -p /tmp/fnt
-          curl -sL -o /tmp/fnt/JetBrainsMono.ttf \
+          curl --fail --retry 3 --retry-delay 2 --connect-timeout 10 -sSL \
+            -o /tmp/fnt/JetBrainsMono.ttf \
             https://github.com/JetBrains/JetBrainsMono/raw/master/fonts/ttf/JetBrainsMono-Regular.ttf
+          test -s /tmp/fnt/JetBrainsMono.ttf
 
       - name: Generate today's artwork from APOD
         id: gen
@@ -74,13 +82,17 @@ jobs:
           KREA_API_KEY: ${{ secrets.KREA_API_KEY }}
           NAMECODE_FONT: /tmp/fnt/JetBrainsMono.ttf
         run: |
-          set -e
-          DATE_ARG=""
-          if [ -n "${{ github.event.inputs.date }}" ]; then DATE_ARG="--date ${{ github.event.inputs.date }}"; fi
+          set -euo pipefail
+          if [[ -n "$REQUESTED_DATE" && ! "$REQUESTED_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+            echo "::error::date must be YYYY-MM-DD"
+            exit 1
+          fi
+          DATE_ARG=()
+          if [ -n "$REQUESTED_DATE" ]; then DATE_ARG=(--date "$REQUESTED_DATE"); fi
           mkdir -p daily
           DATE=$(date -u +%F)
-          if [ -n "${{ github.event.inputs.date }}" ]; then DATE="${{ github.event.inputs.date }}"; fi
-          python apod_namecode.py $DATE_ARG \
+          if [ -n "$REQUESTED_DATE" ]; then DATE="$REQUESTED_DATE"; fi
+          python apod_namecode.py "${DATE_ARG[@]}" \
             --out "daily/namecode_apod_${DATE}.png" \
             --reel-out "daily/namecode_apod_${DATE}_9x16.png" \
             --brief-out "daily/brief_${DATE}.json" \
@@ -100,38 +112,26 @@ jobs:
           git config user.email "bot@namecode.kr"
           git add namecode_grid/daily/
           git commit -m "daily: APOD artwork ${{ steps.gen.outputs.date }}" || echo "nothing to commit"
-          # rebase-before-push so we don't lose to the hourly uploaders' pushes
+          # Rebase-before-push so we don't lose to concurrent uploaders.
+          PUSHED=false
           for i in 1 2 3 4 5; do
-            git pull --rebase --autostash origin "${{ github.ref_name }}" || true
-            git push && break || { echo "push retry $i"; sleep 5; }
+            if ! git pull --rebase --autostash origin "${{ github.ref_name }}"; then
+              git rebase --abort || true
+              echo "rebase retry $i"
+              sleep 5
+              continue
+            fi
+            if git push; then
+              PUSHED=true
+              break
+            fi
+            echo "push retry $i"
+            sleep 5
           done
-
-      - name: Generate reel (delegated to Krea workspace-credit routine)
-        id: reel
-        # Disabled intentionally: GitHub Actions uses Krea API balance.
-        # Aside generates/publishes reels through Krea workspace credits.
-        if: ${{ false }}
-        run: echo "Reel delegated to the Krea workspace-credit routine"
-
-      - name: Commit reel
-        if: ${{ steps.reel.outputs.made == '1' }}
-        run: |
-          git config user.name "namecode-bot"
-          git config user.email "bot@namecode.kr"
-          git add namecode_grid/daily/reel_*.mp4
-          git commit -m "daily: reel ${{ steps.gen.outputs.date }}" || echo "nothing to commit"
-          for i in 1 2 3 4 5; do
-            git pull --rebase --autostash origin "${{ github.ref_name }}" || true
-            git push && break || { echo "push retry $i"; sleep 5; }
-          done
-
-      - name: Upload reel artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: namecode-reel-${{ steps.gen.outputs.date }}
-          # only today's reel — globbing reel_*.mp4 zipped every historical reel (~184MB)
-          path: namecode_grid/daily/reel_${{ steps.gen.outputs.date }}.mp4
-          if-no-files-found: ignore
+          if [ "$PUSHED" != true ]; then
+            echo "::error::failed to push after 5 attempts"
+            exit 1
+          fi
 
       - name: Publish feed image to Instagram (optional)
         id: pub
@@ -140,28 +140,11 @@ jobs:
         working-directory: namecode_grid
         run: |
           set -o pipefail
-          pip install requests
           RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/namecode_apod_${{ steps.gen.outputs.date }}.png"
           echo "Hosting image at: $RAW"
           python ig_publish.py --image-url "$RAW" \
             --caption-file "daily/caption_${{ steps.gen.outputs.date }}.txt" | tee /tmp/pub.txt
           echo "permalink=$(sed -n 's/^permalink: //p' /tmp/pub.txt)" >> "$GITHUB_OUTPUT"
-
-      - name: Publish reel to Instagram (optional)
-        id: reelpub
-        # continue-on-error: a reel-publish hiccup must not skip the FB steps below
-        continue-on-error: true
-        if: ${{ steps.reel.outputs.made == '1' && env.IG_ACCESS_TOKEN != '' }}
-        working-directory: namecode_grid
-        run: |
-          set -o pipefail
-          pip install requests
-          REELRAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/reel_${{ steps.gen.outputs.date }}.mp4"
-          COVER="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/namecode_apod_${{ steps.gen.outputs.date }}.png"
-          echo "reel: $REELRAW"
-          python ig_publish.py --reel --video-url "$REELRAW" --cover-url "$COVER" \
-            --caption-file "daily/caption_${{ steps.gen.outputs.date }}.txt" | tee /tmp/reelpub.txt
-          echo "permalink=$(sed -n 's/^permalink: //p' /tmp/reelpub.txt)" >> "$GITHUB_OUTPUT"
 
       - name: Publish feed image to Facebook (optional)
         id: fbpub
@@ -173,45 +156,24 @@ jobs:
         working-directory: namecode_grid
         run: |
           set -o pipefail
-          pip install requests
           RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/namecode_apod_${{ steps.gen.outputs.date }}.png"
           echo "Hosting image at: $RAW"
           python fb_publish.py --image-url "$RAW" \
             --caption-file "daily/caption_${{ steps.gen.outputs.date }}.txt" | tee /tmp/fbpub.txt
           echo "permalink=$(sed -n 's/^permalink: //p' /tmp/fbpub.txt)" >> "$GITHUB_OUTPUT"
 
-      - name: Publish reel to Facebook (optional)
-        id: fbreel
-        continue-on-error: true
-        if: ${{ steps.reel.outputs.made == '1' && env.FB_PAGE_TOKEN != '' }}
-        working-directory: namecode_grid
-        run: |
-          set -o pipefail
-          pip install requests
-          REELRAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/reel_${{ steps.gen.outputs.date }}.mp4"
-          python fb_publish.py --video-url "$REELRAW" \
-            --caption-file "daily/caption_${{ steps.gen.outputs.date }}.txt" | tee /tmp/fbreel.txt
-
       - name: Notify Telegram (status)
         if: ${{ always() && env.TELEGRAM_BOT_TOKEN != '' }}
         env:
-          # prefer the reel link for the IG button, fall back to the feed post
-          BUTTON_URL: ${{ steps.reelpub.outputs.permalink != '' && steps.reelpub.outputs.permalink || steps.pub.outputs.permalink }}
+          BUTTON_URL: ${{ steps.pub.outputs.permalink }}
           BUTTON_TEXT: "📷 View on Instagram"
           BUTTON2_URL: ${{ steps.fbpub.outputs.permalink }}
           BUTTON2_TEXT: "📘 View on Facebook"
         run: |
-          pip install requests -q
           DATE="${{ steps.gen.outputs.date }}"
           GEN="${{ steps.gen.outcome }}"
           PUB="${{ steps.pub.outcome }}"
-          REELGEN="${{ steps.reel.outcome }}"
-          REELPUB="${{ steps.reelpub.outcome }}"
           FBPUB="${{ steps.fbpub.outcome }}"
-          FBREEL="${{ steps.fbreel.outcome }}"
-          # if the reel never generated (e.g. Krea 402/credit), say so instead of
-          # a bare "skipped" that hides why the reel didn't post
-          if [ "$REELGEN" = "failure" ]; then IGREEL="gen failed"; else IGREEL="${REELPUB:-skipped}"; fi
           LABEL=$(python -c "import json;print(json.load(open('namecode_grid/daily/brief_'+'$DATE'+'.json'))['label'])" 2>/dev/null || echo "")
           if [ "$GEN" != "success" ]; then
             MSG="🛰 namecode daily ${DATE:-?}
@@ -219,10 +181,50 @@ jobs:
           else
             MSG="🛰 namecode daily ${DATE}
           ✅ generated: ${LABEL:-?}
-          IG feed: ${PUB} · reel: ${IGREEL}
-          FB feed: ${FBPUB} · reel: ${FBREEL:-skipped}"
+          IG feed: ${PUB} · reel: delegated
+          FB feed: ${FBPUB} · reel: delegated"
           fi
           MESSAGE="$MSG" python namecode_grid/notify_telegram.py
+
+
+  validate:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.test_only == 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install validation deps
+        run: python -m pip install --disable-pip-version-check --no-input requests Pillow
+
+      - name: Compile namecode scripts
+        run: |
+          python -m py_compile \
+            namecode_grid/apod_namecode.py \
+            namecode_grid/krea.py \
+            namecode_grid/krea_reel.py \
+            namecode_grid/ig_publish.py \
+            namecode_grid/fb_publish.py \
+            namecode_grid/notify_telegram.py
+
+      - name: Run APOD dry-run
+        working-directory: namecode_grid
+        run: |
+          set -euo pipefail
+          TMP_DIR=$(mktemp -d)
+          python apod_namecode.py \
+            --subject "Validation subject" \
+            --name VALIDATION \
+            --date 2099-01-01 \
+            --dry-run \
+            --brief-out "$TMP_DIR/brief.json" \
+            --caption-out "$TMP_DIR/caption.txt"
+          BRIEF_PATH="$TMP_DIR/brief.json" python -c \
+            'import json, os; d=json.load(open(os.environ["BRIEF_PATH"])); assert d["work_name"] == "VALIDATION"; assert d["date"] == "2099-01-01"'
+          test -s "$TMP_DIR/caption.txt"
 
   # Facebook-only cross-post of a day whose artwork is already committed.
   #
@@ -233,12 +235,13 @@ jobs:
   # Instagram call, so it never duplicates a feed post that already went out.
   fb-only:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.fb_only == 'true' }}
+    if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.fb_only == 'true' && github.event.inputs.test_only != 'true' }}
     env:
       FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
       FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      REQUESTED_DATE: ${{ github.event.inputs.date }}
     steps:
       - uses: actions/checkout@v4
 
@@ -253,8 +256,12 @@ jobs:
         run: |
           set -o pipefail
           pip install requests -q
-          DATE="${{ github.event.inputs.date }}"
+          DATE="$REQUESTED_DATE"
           if [ -z "$DATE" ]; then DATE=$(date -u +%F); fi
+          if [[ ! "$DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+            echo "::error::date must be YYYY-MM-DD"
+            exit 1
+          fi
           IMG="daily/namecode_apod_${DATE}.png"
           if [ ! -f "$IMG" ]; then
             echo "::error::$IMG is not committed — pick a date that has artwork."
@@ -275,5 +282,263 @@ jobs:
         run: |
           pip install requests -q
           MSG="🛰 namecode — Facebook-only cross-post ${{ steps.fbpub.outputs.date }}
-          FB feed: ${{ steps.fbpub.outcome }}"
-          MESSAGE="$MSG" python namecode_grid/notify_telegram.py
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
