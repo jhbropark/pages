@@ -1,0 +1,118 @@
+name: namecode reel publish (IG + FB)
+
+# Publishes an ALREADY-COMMITTED daily reel to Instagram and the Facebook Page.
+#
+# Reel generation happens outside CI (Krea web workspace credits), because the
+# KREA_API_KEY used by namecode-daily.yml has no API balance. That routine
+# commits namecode_grid/daily/reel_<date>.mp4 and then dispatches this workflow,
+# which only publishes — it never regenerates and never touches Krea.
+#
+# Feed images are published by namecode-daily.yml. This is the reel (video)
+# channel only, so the two never duplicate each other.
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Reel date (YYYY-MM-DD), blank = today (UTC)"
+        required: false
+      instagram:
+        description: "Publish reel to Instagram? (true/false)"
+        required: false
+        default: "true"
+      facebook:
+        description: "Publish reel to the Facebook Page? (true/false)"
+        required: false
+        default: "true"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: namecode-reel-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    env:
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      REQUESTED_DATE: ${{ github.event.inputs.date }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: python -m pip install --disable-pip-version-check --no-input requests
+
+      - name: Resolve date and assert the reel is committed
+        id: res
+        run: |
+          set -euo pipefail
+          DATE="${REQUESTED_DATE:-}"
+          if [ -z "$DATE" ]; then DATE=$(date -u +%F); fi
+          if [[ ! "$DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+            echo "::error::date must be YYYY-MM-DD"
+            exit 1
+          fi
+          REEL="namecode_grid/daily/reel_${DATE}.mp4"
+          COVER="namecode_grid/daily/namecode_apod_${DATE}_9x16.png"
+          CAPTION="namecode_grid/daily/caption_${DATE}.txt"
+          for f in "$REEL" "$COVER" "$CAPTION"; do
+            if [ ! -f "$f" ]; then
+              echo "::error::$f is not committed — generate the day first."
+              exit 1
+            fi
+          done
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+          echo "reel=$REEL" >> "$GITHUB_OUTPUT"
+          echo "cover=$COVER" >> "$GITHUB_OUTPUT"
+          echo "caption=$CAPTION" >> "$GITHUB_OUTPUT"
+
+      - name: Publish reel to Instagram
+        id: ig
+        continue-on-error: true
+        if: ${{ env.IG_ACCESS_TOKEN != '' && github.event.inputs.instagram != 'false' }}
+        run: |
+          set -o pipefail
+          RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}"
+          echo "video: $RAW/${{ steps.res.outputs.reel }}"
+          python namecode_grid/ig_publish.py --reel \
+            --video-url "$RAW/${{ steps.res.outputs.reel }}" \
+            --cover-url "$RAW/${{ steps.res.outputs.cover }}" \
+            --caption-file "${{ steps.res.outputs.caption }}" | tee /tmp/ig.txt
+          echo "permalink=$(sed -n 's/^permalink: //p' /tmp/ig.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Publish reel to the Facebook Page
+        id: fb
+        continue-on-error: true
+        if: ${{ env.FB_PAGE_TOKEN != '' && github.event.inputs.facebook != 'false' }}
+        run: |
+          set -o pipefail
+          RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}"
+          echo "video: $RAW/${{ steps.res.outputs.reel }}"
+          python namecode_grid/fb_publish.py \
+            --video-url "$RAW/${{ steps.res.outputs.reel }}" \
+            --caption-file "${{ steps.res.outputs.caption }}" | tee /tmp/fb.txt
+          echo "permalink=$(sed -n 's/^permalink: //p' /tmp/fb.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Notify Telegram (status)
+        if: ${{ always() && env.TELEGRAM_BOT_TOKEN != '' }}
+        env:
+          BUTTON_URL: ${{ steps.ig.outputs.permalink }}
+          BUTTON_TEXT: "📷 View reel on Instagram"
+          BUTTON2_URL: ${{ steps.fb.outputs.permalink }}
+          BUTTON2_TEXT: "📘 View reel on Facebook"
+        run: |
+          MSG="🎞 namecode reel ${{ steps.res.outputs.date }}
+          IG reel: ${{ steps.ig.outcome }}
+          FB reel: ${{ steps.fb.outcome }}"
+          MESSAGE="$MSG" python namecode_grid/notify_telegram.py
