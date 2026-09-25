@@ -100,6 +100,9 @@ jobs:
           echo "date=${DATE}" >> "$GITHUB_OUTPUT"
           echo "image=namecode_grid/daily/namecode_apod_${DATE}.png" >> "$GITHUB_OUTPUT"
 
+      - name: Build searchable namecode archive
+        run: node namecode_grid/build_namecode_archive.mjs --repo-root . --out ./namecode
+
       - name: Upload artifact
         uses: actions/upload-artifact@v7
         with:
@@ -110,7 +113,7 @@ jobs:
         run: |
           git config user.name "namecode-bot"
           git config user.email "bot@namecode.kr"
-          git add namecode_grid/daily/
+          git add namecode_grid/daily/ namecode/
           git commit -m "daily: APOD artwork ${{ steps.gen.outputs.date }}" || echo "nothing to commit"
           # Rebase-before-push so we don't lose to concurrent uploaders.
           PUSHED=false
@@ -159,7 +162,7 @@ jobs:
           RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/namecode_grid/daily/namecode_apod_${{ steps.gen.outputs.date }}.png"
           echo "Hosting image at: $RAW"
           python fb_publish.py --image-url "$RAW" \
-            --caption-file "daily/caption_${{ steps.gen.outputs.date }}.txt" | tee /tmp/fbpub.txt
+            --caption-file "daily/caption_${{ steps.gen.outputs.date }}_facebook.txt" | tee /tmp/fbpub.txt
           echo "permalink=$(sed -n 's/^permalink: //p' /tmp/fbpub.txt)" >> "$GITHUB_OUTPUT"
 
       - name: Notify Telegram (status)

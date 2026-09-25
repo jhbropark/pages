@@ -34,7 +34,7 @@ concurrency:
 
 jobs:
   publish:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-$.04
     env:
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
@@ -77,6 +77,13 @@ jobs:
           echo "cover=$COVER" >> "$GITHUB_OUTPUT"
           echo "caption=$CAPTION" >> "$GITHUB_OUTPUT"
 
+      - name: Prepare independent reel captions (no generation)
+        env:
+          DATE: ${{ steps.res.outputs.date }}
+        run: |
+          python -m pip install Pillow --quiet
+          PYTHONPATH=namecode_grid python -c 'import json,os; from apod_namecode import write_captions; d=os.environ["DATE"]; b=json.load(open("namecode_grid/daily/brief_"+d+".json")); write_captions(b,"namecode_grid/daily/caption_"+d+".txt")'
+
       - name: Publish reel to Instagram
         id: ig
         continue-on-error: true
@@ -88,7 +95,7 @@ jobs:
           python namecode_grid/ig_publish.py --reel \
             --video-url "$RAW/${{ steps.res.outputs.reel }}" \
             --cover-url "$RAW/${{ steps.res.outputs.cover }}" \
-            --caption-file "${{ steps.res.outputs.caption }}" | tee /tmp/ig.txt
+            --caption-file "namecode_grid/daily/caption_${{ steps.res.outputs.date }}_reel_instagram.txt" | tee /tmp/ig.txt
           echo "permalink=$(sed -n 's/^permalink: //p' /tmp/ig.txt)" >> "$GITHUB_OUTPUT"
 
       - name: Publish reel to the Facebook Page
@@ -101,7 +108,7 @@ jobs:
           echo "video: $RAW/${{ steps.res.outputs.reel }}"
           python namecode_grid/fb_publish.py \
             --video-url "$RAW/${{ steps.res.outputs.reel }}" \
-            --caption-file "${{ steps.res.outputs.caption }}" | tee /tmp/fb.txt
+            --caption-file "namecode_grid/daily/caption_${{ steps.res.outputs.date }}_reel_facebook.txt" | tee /tmp/fb.txt
           echo "permalink=$(sed -n 's/^permalink: //p' /tmp/fb.txt)" >> "$GITHUB_OUTPUT"
 
       - name: Notify Telegram (status)
