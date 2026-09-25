@@ -81,32 +81,113 @@ def get_apod(date=None, retries=5):
     raise last
 
 
+APOD_ARCHIVE = "https://apod.nasa.gov/apod/ap{yy}{mm}{dd}.html"
+ISO_DATE = re.compile(r"^(\d{4})-(\d{2})-(\d{2})$")
+
+
+def apod_article_url(date):
+    """The APOD article page for an ISO date, or None when the date is not a
+    real APOD day ('manual', 'today', a --subject run).
+
+    APOD archives every day as apYYMMDD.html, so 2026-09-24 ->
+    https://apod.nasa.gov/apod/ap260924.html . Never guess: a non-ISO date
+    returns None and the caption simply omits the link."""
+    m = ISO_DATE.match((date or "").strip())
+    if not m:
+        return None
+    y, mm, dd = m.groups()
+    return APOD_ARCHIVE.format(yy=y[2:], mm=mm, dd=dd)
+
+
 # Recognizable astronomical phenomena make punchier work names than generic
-# title words; prefer them when present in the title or explanation.
+# title words.
+#
+# Two rules keep the name honest:
+#   1. the TITLE is scanned first — the title is what the APOD is *about*.
+#      The explanation is only a fallback for the (rare) title with no subject
+#      in it. Scanning "title + explanation" as one blob is what used to turn
+#      'The Cocoon Nebula Wide Field' into COMET, because a comet happened to
+#      be mentioned three sentences into the write-up.
+#   2. within the title, the list order decides. It runs specific -> generic,
+#      so 'Tycho: A Lunar Crater' resolves to CRATER (the subject) rather than
+#      LUNAR (a modifier), while 'Lunar Farside' still resolves to LUNAR.
 # (stem matched with a word boundary -> clean display name; stems catch plurals)
 PHENOMENA = [
-    ("occultation", "OCCULTATION"), ("eclipse", "ECLIPSE"), ("transit", "TRANSIT"),
-    ("conjunction", "CONJUNCTION"), ("opposition", "OPPOSITION"), ("comet", "COMET"),
-    ("supernova", "SUPERNOVA"), ("nebula", "NEBULA"), ("galax", "GALAXY"),
-    ("aurora", "AURORA"), ("eruption", "ERUPTION"), ("meteor", "METEOR"),
-    ("solstice", "SOLSTICE"), ("equinox", "EQUINOX"), ("corona", "CORONA"),
-    ("prominence", "PROMINENCE"), ("halo", "HALO"), ("nova", "NOVA"),
-    ("cluster", "CLUSTER"),
+    # named events / optical phenomena — always the subject when present
+    ("occult", "OCCULTATION"), ("analemma", "ANALEMMA"),
+    ("zodiacal", "ZODIACAL"), ("gegenschein", "GEGENSCHEIN"),
+    ("noctilucent", "NOCTILUCENT"), ("airglow", "AIRGLOW"),
+    ("sundog", "SUNDOG"), ("sun dog", "SUNDOG"), ("parhelion", "SUNDOG"),
+    ("eclipse", "ECLIPSE"), ("transit", "TRANSIT"),
+    ("conjunction", "CONJUNCTION"), ("opposition", "OPPOSITION"),
+    ("libration", "LIBRATION"), ("terminator", "TERMINATOR"),
+    # surface / structural features
+    ("crater", "CRATER"), ("caldera", "CALDERA"), ("canyon", "CANYON"),
+    ("pillar", "PILLAR"), ("filament", "FILAMENT"), ("prominence", "PROMINENCE"),
+    ("sunspot", "SUNSPOT"), ("flare", "FLARE"),
+    # objects and events
+    ("supernova", "SUPERNOVA"), ("comet", "COMET"), ("asteroid", "ASTEROID"),
+    ("meteor", "METEOR"), ("aurora", "AURORA"), ("eruption", "ERUPTION"),
+    ("solstice", "SOLSTICE"), ("equinox", "EQUINOX"),
+    ("corona", "CORONA"), ("halo", "HALO"), ("rainbow", "RAINBOW"),
+    ("nova", "NOVA"), ("quasar", "QUASAR"), ("pulsar", "PULSAR"),
+    ("nebula", "NEBULA"), ("galax", "GALAXY"), ("cluster", "CLUSTER"),
+    ("milky way", "MILKYWAY"),
+    # generic bodies — last, so they only win when nothing sharper is in the title
+    ("lunar", "LUNAR"), ("moon", "MOON"), ("solar", "SOLAR"), ("sun", "SUN"),
 ]
 
 
-def derive_name(title, explanation=""):
-    """Turn an APOD into a namecode work name. Prefer a known phenomenon term
-    (e.g. 'OCCULTATION'); otherwise fall back to the salient title words
-    ('Daytime Moon Meets Evening Star' -> 'MOON.STAR')."""
-    blob = f"{title} {explanation}".lower()
+# Words that look like a phenomenon but are place or constellation names.
+# 'The Corona Australis Molecular Cloud' is not the solar corona.
+FALSE_FRIENDS = {
+    "CORONA": r"\bcorona\s+(?:australis|borealis)",
+    "NOVA": r"\bnova\s+scotia",
+    "SUN": r"\bsun\s+(?:valley|city)",
+}
+
+
+def _phenomenon(text):
+    """First PHENOMENA entry (specific -> generic) whose stem is in `text` and
+    is not a known false friend."""
+    low = (text or "").lower()
     for stem, name in PHENOMENA:
-        if re.search(rf"\b{stem}", blob):
-            return name
-    words = [w for w in re.findall(r"[A-Za-z]+", title) if w.lower() not in STOPWORDS]
+        m = re.search(rf"\b{re.escape(stem)}", low)
+        if not m:
+            continue
+        trap = FALSE_FRIENDS.get(name)
+        if trap and re.search(trap, low) and len(re.findall(rf"\b{re.escape(stem)}", low)) == \
+                len(re.findall(trap, low)):
+            continue  # every occurrence is the place name
+        return name
+    return None
+
+
+def _title_words(title):
+    """The salient words of a title: the two longest non-stopwords, kept in the
+    order they appear ('Daytime Moon Meets Evening Star' -> DAYTIME.EVENING)."""
+    words = [w for w in re.findall(r"[A-Za-z]+", title or "") if w.lower() not in STOPWORDS]
     words = sorted(set(words), key=lambda w: (-len(w), title.lower().index(w.lower())))[:2]
-    words = sorted(words, key=lambda w: title.lower().index(w.lower()))
-    return ".".join(w.upper() for w in words) or "APOD"
+    return sorted(words, key=lambda w: title.lower().index(w.lower()))
+
+
+def derive_name(title, explanation=""):
+    """Turn an APOD into a namecode work name.
+
+    Priority, highest first:
+      1. a known phenomenon in the TITLE  ('Cocoon Nebula Wide Field' -> NEBULA)
+      2. the salient words of the title   ('Daytime Moon ...' -> DAYTIME.EVENING)
+      3. a known phenomenon in the EXPLANATION — only when the title carries no
+         subject at all (empty title, or nothing but stopwords)
+      4. 'APOD'
+    """
+    from_title = _phenomenon(title)
+    if from_title:
+        return from_title
+    words = _title_words(title)
+    if words:
+        return ".".join(w.upper() for w in words)
+    return _phenomenon(explanation) or "APOD"
 
 
 def sim_value(seed):
@@ -138,8 +219,30 @@ def astro_value(text):
     return None
 
 
-# Instagram 2026: 3-5 targeted hashtags (not 30). 4 base + 1 per-work topical.
-HASHTAGS_BASE = ["#namecode", "#newmediaart", "#generativeart", "#creativecodeart"]
+# ---------------------------------------------------------------- caption
+# 3-5 targeted hashtags, all of which describe what the post actually is.
+# (#creativecodeart is gone: nothing here is hand-written creative code — the
+# frame comes out of an image model and is then duotoned.)
+HASHTAGS_BASE = ["#namecode", "#nasaapod", "#generativeart"]
+
+CHANNELS = ("instagram", "facebook")
+FORMATS = ("image", "reel")
+
+# per surface: Instagram carries the tag load, Facebook keeps it minimal.
+CHANNEL_TAGS = {
+    ("instagram", "image"): ["#namecode", "#nasaapod", "#aiart", "#generativeart"],
+    ("instagram", "reel"): ["#namecode", "#nasaapod", "#aiart"],
+    ("facebook", "image"): ["#namecode", "#nasaapod"],
+    ("facebook", "reel"): ["#namecode", "#nasaapod"],
+}
+
+# filename suffix -> (channel, format). "" is the legacy caption_<date>.txt.
+CAPTION_VARIANTS = (
+    ("", "instagram", "image"),
+    ("_facebook", "facebook", "image"),
+    ("_reel_instagram", "instagram", "reel"),
+    ("_reel_facebook", "facebook", "reel"),
+)
 
 
 def topical_tag(name):
@@ -147,17 +250,128 @@ def topical_tag(name):
     return "#" + re.sub(r"[^a-z0-9]", "", word)
 
 
-def build_caption(brief):
-    """Front-load the hook in the first ~125 chars (visible before '…more');
-    nudge sends + saves (the top 2026 signals)."""
-    tags = " ".join(HASHTAGS_BASE + [topical_tag(brief["work_name"])])
-    return (
-        f"{brief['work_name']} — today's sky, rendered in code.\n"
-        f"{brief['apod_title']}.\n\n"
-        f"Source: NASA APOD · {brief['date']}.\n"
-        f"Save this sky ✦ send it to someone who looks up.\n\n"
-        f"{tags}"
+def _tags(channel, fmt, work_name):
+    """3-5 tags: the surface's base set plus one topical tag, deduped."""
+    tags = list(CHANNEL_TAGS[(channel, fmt)])
+    topical = topical_tag(work_name or "namecode")
+    if topical not in tags and len(topical) > 1:
+        tags.append(topical)
+    for filler in HASHTAGS_BASE:  # never fall under three
+        if len(tags) >= 3:
+            break
+        if filler not in tags:
+            tags.append(filler)
+    return " ".join(tags[:5])
+
+
+def _credit(brief):
+    """Photographer credit for the source image, when APOD supplied one."""
+    who = (brief.get("attribution") or "").strip()
+    return f"Original image: {who} / NASA APOD" if who else None
+
+
+def _lines(*parts):
+    """Join non-empty caption blocks with a single blank line between them."""
+    return "\n\n".join(p for p in parts if p)
+
+
+def build_caption(brief, channel="instagram", format="image"):
+    """The post caption for one surface.
+
+    Backwards compatible: build_caption(brief) is unchanged in signature and
+    still returns the Instagram feed-image caption (the text that lands in
+    caption_<date>.txt).
+
+    What the text may and may not say:
+      - the APOD title comes first; it is the subject of the post
+      - the picture is described for what it is — an AI image made from the
+        APOD description, then reduced to two tones. It is not presented as a
+        telescope photograph, and not as something "rendered in code"
+      - the APOD article URL is derived from the ISO date and omitted entirely
+        when there is no real APOD day behind the run
+      - no invented science, no invented personal experience, no engagement
+        bait ("save this", "send this to someone")
+    """
+    fmt = format
+    if channel not in CHANNELS:
+        raise ValueError(f"unknown channel: {channel!r} (expected one of {CHANNELS})")
+    if fmt not in FORMATS:
+        raise ValueError(f"unknown format: {fmt!r} (expected one of {FORMATS})")
+
+    title = (brief.get("apod_title") or "APOD").strip()
+    date = (brief.get("date") or "").strip()
+    name = brief.get("work_name") or "APOD"
+    label = brief.get("label") or f"namecode - {name}"
+    url = brief.get("apod_url") or apod_article_url(date)
+    credit = _credit(brief)
+    dateline = f"NASA APOD {date}" if ISO_DATE.match(date) else "NASA APOD"
+    tags = _tags(channel, fmt, name)
+
+    if fmt == "image" and channel == "instagram":
+        return _lines(
+            f"{title} — {dateline}.\n{label}",
+            "사진이 아니라, APOD 설명문에서 출발한 AI 이미지입니다. 두 개의 톤만 남겼습니다.\n"
+            "Not the photograph: an AI image made from the APOD description, "
+            "then reduced to two tones.",
+            credit,
+            f"APOD: {url}" if url else None,
+            tags,
+        )
+
+    if fmt == "image" and channel == "facebook":
+        return _lines(
+            f"{title}\n{dateline} · {label}",
+            "APOD 설명문을 읽고 AI로 다시 그린 이미지입니다. 원본 사진과 해설은 아래 링크에 있습니다.\n"
+            "An AI reinterpretation of the APOD description. The original image "
+            "and the full write-up are linked below.",
+            credit,
+            url,
+            tags,
+        )
+
+    if fmt == "reel" and channel == "instagram":
+        return _lines(
+            f"{name} — {title}.\n{dateline}.",
+            "APOD 설명문으로 만든 AI 이미지 한 장을 9:16으로 움직였습니다.\n"
+            "One AI frame from today's APOD description, set in motion at 9:16.",
+            credit,
+            f"APOD: {url}" if url else None,
+            tags,
+        )
+
+    # reel / facebook
+    return _lines(
+        f"{name} — {title}. {dateline}.",
+        "AI 이미지 한 장에서 출발한 9:16 영상입니다. 망원경 사진이 아닙니다.\n"
+        "A 9:16 clip built from a single AI frame — not from the telescope image.",
+        credit,
+        f"원본과 해설 / original and write-up: {url}" if url else None,
+        tags,
     )
+
+
+def caption_variant_path(caption_out, suffix):
+    """caption_2026-09-24.txt + '_facebook' -> caption_2026-09-24_facebook.txt"""
+    if not suffix:
+        return caption_out
+    root, ext = os.path.splitext(caption_out)
+    return f"{root}{suffix}{ext}"
+
+
+def write_captions(brief, caption_out):
+    """Write every surface's caption next to --caption-out and return
+    {path: (channel, format)}.
+
+    The legacy path is written unchanged in name and meaning (Instagram feed
+    image), so the workflow's --caption-file wiring keeps working; the three
+    siblings are additive."""
+    written = {}
+    for suffix, channel, fmt in CAPTION_VARIANTS:
+        path = caption_variant_path(caption_out, suffix)
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(build_caption(brief, channel=channel, format=fmt))
+        written[path] = (channel, fmt)
+    return written
 
 
 def build_prompt(subject, explanation=""):
@@ -171,6 +385,28 @@ def build_prompt(subject, explanation=""):
         "background, volumetric, dramatic, monochrome white on black, lots of "
         "negative space, high detail."
     )
+
+
+def build_brief(date, title, name, value, prompt, src_url=None,
+                explanation="", attribution=None):
+    """The brief JSON.
+
+    'source' keeps its original meaning (the APOD image file). The additions
+    are metadata only, and each is omitted when there is nothing true to put
+    in it: 'apod_url' (the article page for that ISO date), 'explanation'
+    (APOD's own text, the caption's only factual source) and 'attribution'
+    (APOD's copyright line, when the image is not public domain)."""
+    brief = {"date": date, "apod_title": title, "work_name": name,
+             "label": f"namecode - {name} | {value}", "source": src_url,
+             "prompt": prompt}
+    url = apod_article_url(date)
+    if url:
+        brief["apod_url"] = url
+    if explanation:
+        brief["explanation"] = explanation
+    if attribution:
+        brief["attribution"] = attribution
+    return brief
 
 
 # ---------------------------------------------------------------- Krea
@@ -227,9 +463,12 @@ def main():
     ap.add_argument("--out")
     ap.add_argument("--reel-out", help="also compose a 9:16 still (reel start_image)")
     ap.add_argument("--brief-out", help="write the brief JSON to this path")
-    ap.add_argument("--caption-out", help="write the post caption to this path")
+    ap.add_argument("--caption-out", help="write the post captions to this path "
+                                          "(plus _facebook / _reel_instagram / "
+                                          "_reel_facebook siblings)")
     a = ap.parse_args()
 
+    attribution = None
     if a.subject:
         subject, explanation, date, src_url = a.subject, "", a.date or "manual", None
         title = a.subject
@@ -243,19 +482,20 @@ def main():
         explanation = apod.get("explanation", "")
         date = apod.get("date", a.date or "today")
         src_url = apod.get("hdurl") or apod.get("url")
+        attribution = apod.get("copyright")
 
     name = a.name or derive_name(title, explanation)
     value = astro_value(explanation) or astro_value(title) or sim_value(f"{date}:{name}")
     prompt = build_prompt(subject, explanation)
-    brief = {"date": date, "apod_title": title, "work_name": name,
-             "label": f"namecode - {name} | {value}", "source": src_url, "prompt": prompt}
+    brief = build_brief(date, title, name, value, prompt, src_url=src_url,
+                        explanation=explanation, attribution=attribution)
     print(json.dumps(brief, ensure_ascii=False, indent=2))
     if a.brief_out:
         with open(a.brief_out, "w", encoding="utf-8") as fh:
             json.dump(brief, fh, ensure_ascii=False, indent=2)
     if a.caption_out:
-        with open(a.caption_out, "w", encoding="utf-8") as fh:
-            fh.write(build_caption(brief))
+        for path in write_captions(brief, a.caption_out):
+            print(f"[ok] caption {path}", file=sys.stderr)
 
     if a.dry_run:
         return
