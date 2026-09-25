@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>namecode 스카이 스터디</title>
+  <link>https://jhbropark.github.io/pages/namecode/</link>
+  <atom:link href="https://jhbropark.github.io/pages/namecode/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>NASA APOD에서 출발한 매일 한 점의 AI 생성 흑백 이미지 아카이브.</description>
+  <language>ko</language>
+  <lastBuildDate>Fri, 25 Sep 2026 04:44:28 GMT</lastBuildDate>
+  <item>
+    <title>The Ghosts of Five Supernovas (2026-09-24)</title>
+    <link>https://jhbropark.github.io/pages/namecode/artwork/2026-09-24.html</link>
+    <guid isPermaLink="true">https://jhbropark.github.io/pages/namecode/artwork/2026-09-24.html</guid>
+    <description>2026년 9월 24일 namecode 스카이 스터디. NASA APOD &quot;The Ghosts of Five Supernovas&quot;에서 출발한 AI 생성 흑백 이미지와 원본 출처, 이미지에 새겨진 레이블(namecode - SUPERNOVA | 200 hr) 기록.</description>
+  </item>
+  <item>
+    <title>A New Lunar Crater: McGetchin (2026-09-23)</title>
+    <link>https://jhbropark.github.io/pages/namecode/artwork/2026-09-23.html</link>
+    <guid isPermaLink="true">https://jhbropark.github.io/pages/namecode/artwork/2026-09-23.html</guid>
+    <description>2026년 9월 23일 namecode 스카이 스터디. NASA APOD &quot;A New Lunar Crater: McGetchin&quot;에서 출발한 AI 생성 흑백 이미지와 원본 출처, 이미지에 새겨진 레이블(namecode - COMET | 96.628) 기록.</description>
+  </item>
+  <item>
+    <title>Chance Triple Alignment: Plane, Space Station, Sun (2026-09-22)</title>
+    <link>https://jhbropark.github.io/pages/namecode/artwork/2026-09-22.html</link>
+    <guid isPermaLink="true">https://jhbropark.github.io/pages/namecode/artwork/2026-09-22.html</guid>
+    <description>2026년 9월 22일 namecode 스카이 스터디. NASA APOD &quot;Chance Triple Alignment: Plane, Space Station, Sun&quot;에서 출발한 AI 생성 흑백 이미지와 원본 출처, 이미지에 새겨진 레이블(namecode - ECLIPSE | 36.759) 기록.</description>
+  </item>
+  <item>
+    <title>Cocoon Nebula Wide Field (2026-09-21)</title>
+    <link>https://jhbropark.github.io/pages/namecode/artwork/2026-09-21.html</link>
+    <guid isPermaLink="true">https://jhbropark.github.io/pages/namecode/artwork/2026-09-21.html</guid>
+    <description>2026년 9월 21일 namecode 스카이 스터디. NASA APOD &quot;Cocoon Nebula Wide Field&quot;에서 출발한 AI 생성 흑백 이미지와 원본 출처, 이미지에 새겨진 레이블(namecode - COMET | 10 ly) 기록.</description>
+  </item>
+  <item>
+    <title>Analemma over the Callanish Stones (2026-09-20)</title>
+    <link>https://jhbropark.github.io/pages/namecode/artwork/2026-09-20.html</link>
+    <guid isPermaLink="true">https://jhbropark.github.io/pages/namecode/artwork/2026-09-20.html</guid>
+    <description>2026년 9월 20일 namecode 스카이 스터디. NASA APOD &quot;Analemma over the Callanish Stones&quot;에서 출발한 AI 생성 흑백 이미지와 원본 출처, 이미지에 새겨진 레이블(namecode - SOLSTICE | 23.627) 기록.</description>
+  </item>
+  <item>
+    <title>A Zodiacal Night (2026-09-19)</title>
+    <link>https://jhbropark.github.io/pages/namecode/artwork/2026-09-19.html</link>
+    <guid isPermaLink="true">https://jhbropark.github.io/pages/namecode/artwork/2026-09-19.html</guid>
+    <description>2026년 9월 19일 namecode 스카이 스터디. NASA APOD &quot;A Zodiacal Night&quot;에서 출발한 AI 생성 흑백 이미지와 원본 출처, 이미지에 새겨진 레이블(namecode - METEOR | 73.161) 기록.</description>
+  </item>
+</channel>
+</rss>
