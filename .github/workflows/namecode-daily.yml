@@ -213,6 +213,12 @@ jobs:
             namecode_grid/fb_publish.py \
             namecode_grid/notify_telegram.py
 
+      - name: Test namecode captions and archive without publishing
+        run: |
+          python -m unittest discover -s namecode_grid -p test_apod_namecode.py -v
+          node --check namecode_grid/build_namecode_archive.mjs
+          node namecode_grid/build_namecode_archive.mjs --repo-root . --out "$RUNNER_TEMP/namecode-archive-check"
+
       - name: Run APOD dry-run
         working-directory: namecode_grid
         run: |

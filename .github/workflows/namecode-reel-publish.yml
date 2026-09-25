@@ -34,7 +34,7 @@ concurrency:
 
 jobs:
   publish:
-    runs-on: ubuntu-$.04
+    runs-on: ubuntu-24.04
     env:
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
