@@ -1,10 +1,12 @@
-METEOR — Mirrored Meteor and Milky Way. NASA APOD 2026-09-26.
+198장의 육각 거울 중 몇 장에, 같은 유성이 한 번씩 되비친 밤이 있었습니다.
 
-AI 이미지 한 장에서 출발한 9:16 영상입니다. 망원경 사진이 아닙니다.
-A 9:16 clip built from a single AI frame — not from the telescope image.
+8월 15일 스페인 카나리아 제도 라팔마의 로케 데 로스 무차초스 천문대. 지름 23m의 LST-1은 10억분의 1초짜리 대기 섬광을 잡으려고 만든 망원경인데, 그날은 페르세우스자리 유성의 빛까지 반사면에 담겼습니다.
 
-Original image: Jeff Dai / NASA APOD
+namecode는 이 장면을 다시 촬영한 것이 아닙니다. APOD 해설문에서 출발해 흰 입자와 빛의 결로 재구성한 AI 이미지 한 장을, 6초 세로 영상으로 움직였습니다.
 
-원본과 해설 / original and write-up: https://apod.nasa.gov/apod/ap260926.html
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 페이지를 팔로우해 주세요.
 
-#namecode #nasaapod #meteor
+원본 사진: Jeff Dai / NASA APOD
+원문과 해설: https://apod.nasa.gov/apod/ap260926.html
+
+#namecode #perseids #mediaart

@@ -1,11 +1,10 @@
-METEOR — Mirrored Meteor and Milky Way.
-NASA APOD 2026-09-26.
+거울 여러 장에 같은 유성이 한 번씩 되비쳤습니다.
 
-APOD 설명문으로 만든 AI 이미지 한 장을 9:16으로 움직였습니다.
-One AI frame from today's APOD description, set in motion at 9:16.
+8월 15일 라팔마 상공을 지난 페르세우스자리 유성, 그 아래 지름 23m의 LST-1 망원경 반사면. APOD 해설만 읽고 흰 입자와 빛의 결로 다시 그린 뒤 6초 동안 움직였습니다. 실제 촬영본이 아니라 AI 재해석입니다.
 
-Original image: Jeff Dai / NASA APOD
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
 
-APOD: https://apod.nasa.gov/apod/ap260926.html
+원본 사진: Jeff Dai / NASA APOD
+https://apod.nasa.gov/apod/ap260926.html
 
-#namecode #nasaapod #aiart #meteor
+#namecode #perseids #generativeart
