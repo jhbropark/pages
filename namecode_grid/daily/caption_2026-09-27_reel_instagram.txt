@@ -1,9 +1,10 @@
-ANDROMEDA.PHOTOSHOP — Andromeda before Photoshop.
-NASA APOD 2026-09-27.
+오늘 NASA APOD의 제목은 "Andromeda before Photoshop"입니다.
 
-APOD 설명문으로 만든 AI 이미지 한 장을 9:16으로 움직였습니다.
-One AI frame from today's APOD description, set in motion at 9:16.
+보정 전의 안드로메다에는 비행기 항적과 인공위성 궤적, 짧은 우주선 입자 자국이 그대로 남아 있었습니다. 그 설명만 읽고 흰 입자와 빛의 결로 다시 그린 뒤, 알아채기 어려울 만큼 천천히 6초 동안 돌렸습니다. 실제 촬영본이 아니라 AI 재해석입니다.
 
-APOD: https://apod.nasa.gov/apod/ap260927.html
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
 
-#namecode #nasaapod #aiart #andromeda
+원본 사진: Kees Scherer / NASA APOD
+https://apod.nasa.gov/apod/ap260927.html
+
+#namecode #andromeda #generativeart
