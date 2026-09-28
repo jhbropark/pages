@@ -1,0 +1,118 @@
+name: namecode growth insights (read only)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: namecode-growth-insights
+  cancel-in-progress: false
+
+jobs:
+  observe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Observe verified namecode accounts (GET only)
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const now = new Date();
+          const unavailable = (reason, extra={}) => ({status:'unavailable', reason, ...extra});
+          const igToken = process.env.IG_ACCESS_TOKEN, fbToken = process.env.FB_PAGE_TOKEN;
+          const report = {schema_version:1, observed_at:now.toISOString(), target:'namecode_original', ig:{}, facebook:{}, notes:[
+          'All requests are GET; no generation, publishing, profile edits or engagement.',
+          'Lifetime snapshots are not exact 24h/72h measurements; use published_at and age_hours.',
+          'Missing/unsupported metrics are unavailable, not zero. Account follows are not post-attributed follows.',
+          'Nonfollower view share is not nonfollower reach share. Never substitute denominators.',
+          'Lifetime reach summed across posts is non-deduplicated. A/B is directional and topic/time-confounded.'
+          ]};
+          async function get(endpoint, params, token) {
+           if (!token) return unavailable('missing_token');
+           const url = new URL('https://graph.facebook.com/v23.0/'+endpoint);
+           Object.entries(params||{}).forEach(([k,v])=>url.searchParams.set(k,String(v)));
+           try {
+            const r=await fetch(url,{method:'GET',headers:{Authorization:'Bearer '+token},signal:AbortSignal.timeout(25000)});
+            const j=await r.json();
+            if (!r.ok || j.error) return unavailable('graph_error',{http_status:r.status,code:j.error?.code,subcode:j.error?.error_subcode});
+            return {status:'available', data:j};
+           } catch { return unavailable('network_or_timeout'); }
+          }
+          async function metrics(id, names, token, extra={}) {
+           const pairs=[];
+           for(const name of names){
+            const x=await get(id+'/insights',{metric:name,...extra},token);
+            pairs.push([name,x.status==='available' && x.data.data?.length ? {status:'available',data:x.data.data} : x.status==='available'? unavailable('empty_response'):x]);
+           }
+           return Object.fromEntries(pairs);
+          }
+          const account=await get(process.env.IG_USER_ID,{fields:'id,username,followers_count,follows_count,media_count'},igToken);
+          let verified=false;
+          if(account.status==='available' && account.data.username==='namecode_original') {
+           verified=true; report.ig.account={status:'available',...account.data};
+           const since=Math.floor(now.getTime()/1000)-7*86400, until=Math.floor(now.getTime()/1000);
+           report.ig.account_window={since:new Date(since*1000).toISOString(),until:now.toISOString(),scope:'account_aggregate_not_post_attribution'};
+           report.ig.account_insights=await metrics(process.env.IG_USER_ID,['reach','views','profile_views','accounts_engaged','total_interactions','follows_and_unfollows'],igToken,{period:'day',metric_type:'total_value',since,until});
+           report.ig.audience_views_breakdown=await metrics(process.env.IG_USER_ID,['views'],igToken,{period:'day',metric_type:'total_value',breakdown:'follow_type',since,until});
+           const media=await get(process.env.IG_USER_ID+'/media',{fields:'id,caption,media_type,media_product_type,permalink,timestamp,like_count,comments_count',limit:100},igToken);
+           report.ig.media_status=media.status;
+           if(media.status==='available'){
+            const recent=media.data.data.filter(m=>now-new Date(m.timestamp)<=10*86400000);
+            report.ig.recent_posts=recent.map(m=>({...m,caption:undefined,caption_first_line:(m.caption||'').split('\n')[0]}));
+            report.ig.media_list_truncated=Boolean(media.data.paging?.next && media.data.data.length && now-new Date(media.data.data.at(-1).timestamp)<10*86400000);
+            report.ig.reels=[];
+            for(const m of recent.filter(m=>m.media_product_type==='REELS').slice(0,20)){
+             const age=(now-new Date(m.timestamp))/3600000;
+             const experiment=m.permalink.includes('DdwpUzSDVix')?'A':m.permalink.includes('DdzOZCqkcr6')?'B':'unassigned';
+             const row={id:m.id,permalink:m.permalink,published_at:m.timestamp,observed_at:now.toISOString(),age_hours:Number(age.toFixed(3)),experiment,like_count:m.like_count??'unavailable',comments_count:m.comments_count??'unavailable'};
+             row.insights=await metrics(m.id,['views','reach','likes','comments','saved','shares','total_interactions','follows','profile_visits','ig_reels_avg_watch_time','ig_reels_video_view_total_time'],igToken);
+             row.audience_views_breakdown=await metrics(m.id,['views'],igToken,{breakdown:'follow_type',metric_type:'total_value'});
+             report.ig.reels.push(row);
+            }
+           }
+          } else report.ig.account=account.status==='available'?unavailable('identity_mismatch'):account;
+          const fb=await get(process.env.FB_PAGE_ID,{fields:'id,name,link,followers_count,fan_count'},fbToken);
+          if(fb.status==='available' && (/namecode\.original/i.test(fb.data.link||'') || /^namecode(?:[. ]original)?$/i.test(fb.data.name||''))) {
+           report.facebook.account={status:'available',...fb.data};
+           const vids=await get(process.env.FB_PAGE_ID+'/videos',{fields:'id,permalink_url,created_time',limit:15},fbToken);
+           report.facebook.videos_status=vids.status;
+           if(vids.status==='available'){
+            report.facebook.videos=[];
+            for(const v of vids.data.data.filter(v=>now-new Date(v.created_time)<=10*86400000).slice(0,10)){
+             const x=await get(v.id+'/video_insights',{metric:'total_video_views,total_video_impressions_unique,total_video_avg_time_watched'},fbToken);
+             report.facebook.videos.push({...v,observed_at:now.toISOString(),age_hours:Number(((now-new Date(v.created_time))/3600000).toFixed(3)),insights:x});
+            }
+           }
+          } else report.facebook.account=fb.status==='available'?unavailable('identity_mismatch'):fb;
+          fs.mkdirSync('growth-output',{recursive:true});
+          fs.writeFileSync('growth-output/insights.json',JSON.stringify(report,null,2));
+          const short=(x)=>x?.status==='available' ? JSON.stringify(x.data?.map(v=>({name:v.name,values:v.values,total_value:v.total_value}))||x) : 'unavailable('+ (x?.reason||'missing') +')';
+          const summary=['# namecode read-only growth observation','Observed: '+report.observed_at,'IG identity verified: '+verified,'Followers: '+(report.ig.account.followers_count??'unavailable'),'','## Instagram account (7 days; not post attribution)'];
+          for(const [k,v] of Object.entries(report.ig.account_insights||{})) summary.push(k+': '+short(v));
+          summary.push('','## Reels (lifetime snapshots at actual age)');
+          for(const r of report.ig.reels||[]){summary.push('\n'+r.permalink+' | published '+r.published_at+' | age '+r.age_hours+'h | variant '+r.experiment);for(const [k,v] of Object.entries(r.insights))summary.push(k+': '+short(v)); summary.push('audience views breakdown: '+short(r.audience_views_breakdown?.views));}
+          summary.push('\n## Facebook (separate channel)','Account: '+JSON.stringify(report.facebook.account));
+          for(const v of report.facebook.videos||[])summary.push(v.permalink_url+' | age '+v.age_hours+'h | '+(v.insights.status==='available'?JSON.stringify(v.insights.data):short(v.insights)));
+          summary.push('\nDetailed JSON is stored in the run artifact. No account tokens are logged.');
+          fs.writeFileSync('growth-output/summary.md',summary.join('\n\n'));
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,summary.join('\n\n'));
+          console.log('IG_IDENTITY_VERIFIED='+verified+'; REELS_MEASURED='+(report.ig.reels?.length??0)+'; detailed observations in summary/artifact.');
+          if(!verified) process.exitCode=1;
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: namecode-growth-observation-${{ github.run_id }}
+          path: growth-output/
+          retention-days: 90
+          if-no-files-found: error
