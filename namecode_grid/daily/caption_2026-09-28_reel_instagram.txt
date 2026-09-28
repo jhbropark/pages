@@ -1,9 +1,11 @@
-AVERAGE.UNIVERSE — Cosmic Latte: The Average Color of the Universe.
-NASA APOD 2026-09-28.
+20만 개 은하의 빛을 전부 섞으면, 남는 건 아주 옅은 베이지 한 색입니다.
 
-APOD 설명문으로 만든 AI 이미지 한 장을 9:16으로 움직였습니다.
-One AI frame from today's APOD description, set in motion at 9:16.
+2dF 은하 적색편이 탐사의 은하 20만 개를 평균 낸 값이 #FFF8E7, 이름은 '코스믹 라테'입니다. 색에 관한 이야기지만 저는 색을 지우고 흑백으로 옮겼습니다. 색이 빠지면 밝기와 움직임만 남습니다.
 
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
+
+망원경 사진이 아니라 APOD 설명문에서 출발한 AI 재해석입니다.
+Image Color Credit: Karl Glazebrook & Ivan Baldry (JHU)
 APOD: https://apod.nasa.gov/apod/ap260928.html
 
-#namecode #nasaapod #aiart #average
+#namecode #cosmiclatte #generativeart
