@@ -1,13 +1,8 @@
-우주의 평균 색은 아주 옅은 베이지, #FFF8E7입니다.
+AVERAGE.UNIVERSE — Cosmic Latte: The Average Color of the Universe. NASA APOD 2026-09-28.
 
-천문학자들이 2dF 은하 적색편이 탐사에서 분석한 은하 20만 개의 빛을 계산으로 평균 내어 얻은 값입니다. 이 색은 지난 100억 년 동안 점점 덜 푸르러졌는데, 붉은 별이 더 흔해지고 있다는 뜻이라고 합니다. 이름 공모에서는 skyvory, univeige 같은 후보를 제치고 '코스믹 라테'가 뽑혔습니다.
+AI 이미지 한 장에서 출발한 9:16 영상입니다. 망원경 사진이 아닙니다.
+A 9:16 clip built from a single AI frame — not from the telescope image.
 
-색에 관한 이야기인데 저는 색을 전부 지우고 흑백으로 만들었습니다. 남는 것은 밝기와 입자의 움직임뿐입니다.
+원본과 해설 / original and write-up: https://apod.nasa.gov/apod/ap260928.html
 
-매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
-
-망원경 사진이 아니라 APOD 설명문을 바탕으로 만든 AI 재해석 영상입니다.
-Image Color Credit: Karl Glazebrook & Ivan Baldry (JHU)
-원본과 해설: https://apod.nasa.gov/apod/ap260928.html
-
-#namecode #cosmiclatte #mediaart
+#namecode #nasaapod #average
