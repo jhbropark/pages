@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://jhbropark.github.io/pages/namecode/</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jhbropark.github.io/pages/namecode/artwork/2026-09-29.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://jhbropark.github.io/pages/namecode_grid/daily/namecode_apod_2026-09-29.png</image:loc>
+      <image:title>Sh2-188: The Shrimp Nebula</image:title>
+      <image:caption>Sh2-188: The Shrimp Nebula에서 출발한 흑백 생성 이미지. 검은 배경 위에 흰 입자와 가느다란 빛줄기가 퍼져 있고 여백이 넓다. 2026-09-29 namecode 스카이 스터디.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://jhbropark.github.io/pages/namecode/artwork/2026-09-28.html</loc>
@@ -293,16 +303,6 @@
       <image:loc>https://jhbropark.github.io/pages/namecode_grid/daily/namecode_apod_2026-08-31.png</image:loc>
       <image:title>Launch of the Roman Space Telescope</image:title>
       <image:caption>Launch of the Roman Space Telescope에서 출발한 흑백 생성 이미지. 검은 배경 위에 흰 입자와 가느다란 빛줄기가 퍼져 있고 여백이 넓다. 2026-08-31 namecode 스카이 스터디.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://jhbropark.github.io/pages/namecode/artwork/2026-08-30.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://jhbropark.github.io/pages/namecode_grid/daily/namecode_apod_2026-08-30.png</image:loc>
-      <image:title>M74: A Grand Design Spiral</image:title>
-      <image:caption>M74: A Grand Design Spiral에서 출발한 흑백 생성 이미지. 검은 배경 위에 흰 입자와 가느다란 빛줄기가 퍼져 있고 여백이 넓다. 2026-08-30 namecode 스카이 스터디.</image:caption>
     </image:image>
   </url>
 </urlset>
