@@ -1,10 +1,12 @@
-NEBULA — Sh2-188: The Shrimp Nebula. NASA APOD 2026-09-29.
+오늘 NASA APOD의 제목은 "Sh2-188: The Shrimp Nebula"입니다.
 
-AI 이미지 한 장에서 출발한 9:16 영상입니다. 망원경 사진이 아닙니다.
-A 9:16 clip built from a single AI frame — not from the telescope image.
+각지름으로 보면 밤하늘에서 큰 편에 속하는 행성상성운으로, 보름달 지름의 절반 정도를 덮습니다. 바깥 대기를 벗어던진 태양 같은 별이 남긴 백색왜성 중심부가 성간 공간을 유난히 빠르게 통과하고 있어서, 배가 물살을 가르듯 왼쪽 위에 활 모양 충격파가 생겼습니다. 성운 자체는 어둡지만 진행 방향 앞쪽의 가스가 압축되면서 그만큼 밝아집니다. 원본은 폴란드 크라쿠프의 개인 망원경으로 수소·황·산소의 빛을 담아 촬영한 뒤 실제 색에 가깝게 조정한 사진입니다.
 
-Original image: Pawel Piechnik / NASA APOD
+namecode는 이 사진을 다시 찍은 것이 아닙니다. APOD 해설문에서 출발해 흰 입자와 빛의 결로 재구성한 AI 이미지 한 장을, 6초 세로 영상으로 천천히 돌렸습니다.
 
-원본과 해설 / original and write-up: https://apod.nasa.gov/apod/ap260929.html
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 페이지를 팔로우해 주세요.
 
-#namecode #nasaapod #nebula
+원본 사진: Pawel Piechnik / NASA APOD
+원문과 해설: https://apod.nasa.gov/apod/ap260929.html
+
+#namecode #planetarynebula #mediaart
