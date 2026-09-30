@@ -1,8 +1,13 @@
-NASA.SCIENCE — NASA Science. NASA APOD 2026-09-30.
+양자리 방향으로 1억 광년 떨어진 곳에, 한쪽 나선팔만 비정상적으로 길게 자란 은하가 있습니다.
 
-AI 이미지 한 장에서 출발한 9:16 영상입니다. 망원경 사진이 아닙니다.
-A 9:16 clip built from a single AI frame — not from the telescope image.
+Arp 78, 다른 이름으로 NGC 772입니다. 지름은 약 20만 광년입니다. 길게 뻗은 팔을 따라 먼지 띠가 이어지고 그 위로 젊고 푸른 별 무리가 늘어서 있습니다. 한쪽만 이렇게 부풀어 오른 이유는 은하 규모의 중력 조석으로 봅니다. 큰 나선 바로 아래에 보이는 더 작고 단단한 동반 은하 NGC 770이 유력한 원인입니다. 깊게 노출한 사진에서는 두 은하 사이에 희미한 별의 흐름도 드러납니다.
 
-원본과 해설 / original and write-up: https://apod.nasa.gov/apod/ap260930.html
+오늘 작업은 이 설명을 근거로 만든 흑백 재해석입니다. 색과 질감을 덜어내고 한쪽으로 끌려 나가는 움직임만 남겼습니다.
 
-#namecode #nasaapod #nasa
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
+
+원본 사진: Robert Eder
+NASA APOD 2026년 9월 30일 https://apod.nasa.gov/apod/ap260930.html
+실제 촬영 영상이 아니라 APOD 설명문을 근거로 AI가 생성한 이미지와 영상입니다.
+
+#namecode #spiralgalaxy #mediaart

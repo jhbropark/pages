@@ -1,9 +1,11 @@
-NASA.SCIENCE — NASA Science.
-NASA APOD 2026-09-30.
+한쪽 나선팔만 유난히 길게 늘어난 은하가 있습니다.
 
-APOD 설명문으로 만든 AI 이미지 한 장을 9:16으로 움직였습니다.
-One AI frame from today's APOD description, set in motion at 9:16.
+양자리 방향으로 1억 광년 떨어진 Arp 78, 다른 이름은 NGC 772입니다. 지름 20만 광년. 바로 아래 있는 작은 동반 은하 NGC 770의 중력이 한쪽 팔만 끌어당겨 늘여 놓은 것으로 봅니다.
 
-APOD: https://apod.nasa.gov/apod/ap260930.html
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
 
-#namecode #nasaapod #aiart #nasa
+원본 사진: Robert Eder
+NASA APOD 2026.09.30 https://apod.nasa.gov/apod/ap260930.html
+실제 촬영 영상이 아니라 APOD 설명문을 근거로 AI가 재해석한 이미지와 영상입니다.
+
+#namecode #spiralgalaxy #generativeart
