@@ -1,15 +1,8 @@
-오늘 NASA APOD의 제목은 "Harvest Moon with Erupting Mount Etna"입니다.
+NASA.SCIENCE — NASA Science. NASA APOD 2026-10-01.
 
-이탈리아 시칠리아, 니코시아 바로 외곽에서 촬영된 합성 사진입니다. 하늘이 점점 어두워지는 동안 보름달이 떠오르는 과정을 한 장면에 모았습니다. 낮은 구름에는 반박명(antitwilight)의 색이 비치고, 그보다 높은 배경에는 에트나 화산에서 나온 화산재와 가스가 걸쳐 있습니다. 하늘 아래쪽의 분홍색 띠는 '비너스의 띠'라고 부릅니다.
+AI 이미지 한 장에서 출발한 9:16 영상입니다. 망원경 사진이 아닙니다.
+A 9:16 clip built from a single AI frame — not from the telescope image.
 
-보름달일 때 달과 태양은 하늘에서 서로 반대편에 놓입니다. 그래서 해가 질 때 달이 떠오릅니다. 달의 위상 주기는 약 29.5일이고, 달이 지구를 한 바퀴 도는 데 걸리는 시간은 약 27일입니다. 북반구의 일부 문화권에서는 9월의 보름달을 Harvest Moon이라고 부릅니다.
+원본과 해설 / original and write-up: https://apod.nasa.gov/apod/ap261001.html
 
-제가 만든 영상은 이 설명문을 읽고 다시 구성한 흑백 작업입니다. 원본의 색과 풍경은 남기지 않고, 어두운 하늘에서 천천히 떠오르는 달 하나만 남겼습니다.
-
-매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
-
-실제 천체 촬영이 아니라 APOD 설명문을 바탕으로 만든 AI 이미지를 움직인 결과입니다.
-원본 사진 Credit & Copyright: Dario Giannobile
-APOD 원문: https://apod.nasa.gov/apod/ap261001.html
-
-#namecode #harvestmoon #mediaart
+#namecode #nasaapod #nasa
