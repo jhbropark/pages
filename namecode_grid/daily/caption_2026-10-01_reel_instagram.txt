@@ -1,9 +1,11 @@
-NASA.SCIENCE — NASA Science.
-NASA APOD 2026-10-01.
+오늘 NASA APOD의 제목은 "Harvest Moon with Erupting Mount Etna"입니다.
 
-APOD 설명문으로 만든 AI 이미지 한 장을 9:16으로 움직였습니다.
-One AI frame from today's APOD description, set in motion at 9:16.
+이탈리아 시칠리아, 니코시아 외곽에서 하늘이 어두워지는 동안 보름달이 올라오는 과정을 모은 합성 사진입니다. 낮은 구름에는 반박명의 색이, 그보다 높은 배경에는 에트나 화산의 화산재와 가스가 걸려 있었습니다. 제 영상에는 그 색이 남지 않고, 어두운 하늘에서 떠오르는 달 하나만 흑백으로 남았습니다.
 
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
+
+실제 천체 촬영이 아니라 APOD 설명문을 바탕으로 만든 AI 이미지를 움직인 재해석입니다.
+원본 사진 Credit & Copyright: Dario Giannobile
 APOD: https://apod.nasa.gov/apod/ap261001.html
 
-#namecode #nasaapod #aiart #nasa
+#namecode #harvestmoon #generativeart
