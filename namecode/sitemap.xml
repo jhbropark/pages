@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://jhbropark.github.io/pages/namecode/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jhbropark.github.io/pages/namecode/artwork/2026-10-01.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://jhbropark.github.io/pages/namecode_grid/daily/namecode_apod_2026-10-01.png</image:loc>
+      <image:title>NASA Science</image:title>
+      <image:caption>NASA Science에서 출발한 흑백 생성 이미지. 검은 배경 위에 흰 입자와 가느다란 빛줄기가 퍼져 있고 여백이 넓다. 2026-10-01 namecode 스카이 스터디.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://jhbropark.github.io/pages/namecode/artwork/2026-09-30.html</loc>
@@ -293,16 +303,6 @@
       <image:loc>https://jhbropark.github.io/pages/namecode_grid/daily/namecode_apod_2026-09-02.png</image:loc>
       <image:title>Solar Eclipses and Culture</image:title>
       <image:caption>Solar Eclipses and Culture에서 출발한 흑백 생성 이미지. 검은 배경 위에 흰 입자와 가느다란 빛줄기가 퍼져 있고 여백이 넓다. 2026-09-02 namecode 스카이 스터디.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://jhbropark.github.io/pages/namecode/artwork/2026-09-01.html</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://jhbropark.github.io/pages/namecode_grid/daily/namecode_apod_2026-09-01.png</image:loc>
-      <image:title>A Plane Lunar Eclipse</image:title>
-      <image:caption>A Plane Lunar Eclipse에서 출발한 흑백 생성 이미지. 검은 배경 위에 흰 입자와 가느다란 빛줄기가 퍼져 있고 여백이 넓다. 2026-09-01 namecode 스카이 스터디.</image:caption>
     </image:image>
   </url>
 </urlset>
