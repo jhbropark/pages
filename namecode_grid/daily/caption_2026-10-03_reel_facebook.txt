@@ -1,8 +1,15 @@
-NASA.SCIENCE — NASA Science. NASA APOD 2026-10-03.
+오늘 NASA APOD의 제목은 "Selfie at Vera Rubin Ridge"입니다.
 
-AI 이미지 한 장에서 출발한 9:16 영상입니다. 망원경 사진이 아닙니다.
-A 9:16 clip built from a single AI frame — not from the telescope image.
+화성의 하루는 '솔'이라고 부르고 지구의 하루보다 약 40분 깁니다. 큐리오시티의 솔 1943은 지구 날짜로 2018년 1월 23일이었고, 그날 탐사차는 베라 루빈 리지 남쪽 능선에서 자기 모습을 찍었습니다.
 
-원본과 해설 / original and write-up: https://apod.nasa.gov/apod/ap261003.html
+한 장처럼 보이지만 실제로는 로봇팔 끝의 MAHLI 카메라로 찍은 61장을 이어 붙인 모자이크입니다. 팔이 들어간 프레임은 지워냈고, 넓은 배경은 솔 1903에 Mastcam으로 찍어둔 것을 붙였습니다. 마스트 꼭대기의 ChemCam 몸체가 멀리 5km 높이의 샤프산 정상을 가리고 있습니다. 2026년 8월 26일 기준으로 큐리오시티는 게일 크레이터 바닥에서 샤프산 사면을 오르며 누적 1km를 올라왔습니다.
 
-#namecode #nasaapod #nasa
+이 영상은 그 사진이 아닙니다. APOD 설명문만 읽고 AI로 다시 세운 흑백 장면이라 탐사차도, 360도 파노라마도 남지 않았습니다. 남은 것은 자갈이 깔린 바닥과 멀리 낮게 누운 능선, 그리고 거의 알아채기 어려울 만큼 느린 회전뿐입니다.
+
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
+
+실제 촬영이 아니라 APOD 설명문을 읽고 AI로 재해석한 이미지입니다.
+원본 이미지 크레딧: NASA / JPL-Caltech / MSSS — 파노라마 Andrew Bodrov
+https://apod.nasa.gov/apod/ap261003.html
+
+#namecode #curiosityrover #mediaart

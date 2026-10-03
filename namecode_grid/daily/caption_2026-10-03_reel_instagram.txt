@@ -1,9 +1,11 @@
-NASA.SCIENCE — NASA Science.
-NASA APOD 2026-10-03.
+오늘 NASA APOD의 제목은 "Selfie at Vera Rubin Ridge"입니다.
+화성 탐사차 큐리오시티가 베라 루빈 리지 남쪽 능선에서 찍은 자기 모습이고, 로봇팔 카메라로 찍은 61장을 이어 붙인 파노라마입니다.
+설명문만 읽고 만든 흑백 장면이라 탐사차는 남지 않았습니다. 자갈 덮인 바닥과 멀리 낮게 누운 능선만 남았습니다.
 
-APOD 설명문으로 만든 AI 이미지 한 장을 9:16으로 움직였습니다.
-One AI frame from today's APOD description, set in motion at 9:16.
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
 
-APOD: https://apod.nasa.gov/apod/ap261003.html
+실제 촬영이 아니라 APOD 설명문을 읽고 AI로 재해석한 이미지입니다.
+원본 크레딧: NASA / JPL-Caltech / MSSS, 파노라마 Andrew Bodrov
+https://apod.nasa.gov/apod/ap261003.html
 
-#namecode #nasaapod #aiart #nasa
+#namecode #curiosityrover #generativeart
