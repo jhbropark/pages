@@ -1,8 +1,15 @@
-NASA.SCIENCE — NASA Science. NASA APOD 2026-10-04.
+2018년 뉴저지 해안에서 반 시간 동안, 무지개가 여러 겹으로 떴다 사라지기를 반복했습니다.
 
-AI 이미지 한 장에서 출발한 9:16 영상입니다. 망원경 사진이 아닙니다.
-A 9:16 clip built from a single AI frame — not from the telescope image.
+허리케인 플로렌스의 잔해가 지나간 직후였습니다. 한쪽 하늘에서 해가 나왔고, 반대쪽 하늘에 과잉무지개가 나타났습니다. 사진가 John Entwistle은 딸과 함께 그 장면을 지켜봤고, 한 장의 사진에 적어도 다섯 겹을 담았습니다.
 
-원본과 해설 / original and write-up: https://apod.nasa.gov/apod/ap261004.html
+과잉무지개는 떨어지는 물방울 크기가 거의 같고 대개 1밀리미터보다 작을 때만 생깁니다. 햇빛이 빗방울 안에서 반사될 뿐 아니라 서로 간섭하기 때문인데, 연못에 돌을 던졌을 때 퍼지는 잔물결과 같은 파동 현상입니다. 그래서 이 무지개는 파동으로만 설명됩니다. 1800년대 초에 이 현상이 기록된 것은 빛이 파동이라는 초기 증거로 받아들여졌습니다.
 
-#namecode #nasaapod #nasa
+오늘 작업에는 색도, 겹겹의 호도 남지 않았습니다. 검은 바탕에 빛줄기 하나가 파문처럼 흔들리며 내려올 뿐입니다.
+
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
+
+실제 촬영이 아니라 NASA APOD 설명문을 바탕으로 한 AI 재해석입니다.
+원본 사진 John Entwistle
+https://apod.nasa.gov/apod/ap261004.html
+
+#namecode #supernumeraryrainbow #mediaart
