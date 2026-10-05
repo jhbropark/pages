@@ -1,9 +1,13 @@
-NASA.SCIENCE — NASA Science.
-NASA APOD 2026-10-05.
+오늘 NASA APOD의 제목은 "M104: The Sombrero Galaxy's Tidal Streams"입니다.
 
-APOD 설명문으로 만든 AI 이미지 한 장을 9:16으로 움직였습니다.
-One AI frame from today's APOD description, set in motion at 9:16.
+짧게 노출하면 챙 넓은 모자처럼 보이고, 길게 노출하면 원반 바깥으로 희뿌연 헤일로와 비스듬한 고리가 드러난다고 합니다. 오늘 작업물에는 그 흐릿한 바깥이 남지 않았습니다. 먼지 띠를 두른 원반 하나가 천천히 돌 뿐입니다.
 
+빛이 닿는 데 약 3,000만 년, 지름은 약 15만 광년입니다.
+
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
+
+촬영한 사진이 아니라 APOD 설명문에서 출발한 AI 재해석입니다.
+원본 Credit & Copyright: Engelbert Vollmer
 APOD: https://apod.nasa.gov/apod/ap261005.html
 
-#namecode #nasaapod #aiart #nasa
+#namecode #sombrerogalaxy #generativeart
