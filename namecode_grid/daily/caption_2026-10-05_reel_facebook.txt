@@ -1,15 +1,8 @@
-오늘 NASA APOD의 제목은 "M104: The Sombrero Galaxy's Tidal Streams"입니다.
+NASA.SCIENCE — NASA Science. NASA APOD 2026-10-05.
 
-M104는 짧은 노출에서 챙 넓은 모자처럼 보여 솜브레로 은하로 불립니다. 원반 중심을 두르는 어두운 먼지 띠가 그 모자챙 역할을 합니다. 노출을 훨씬 길게 주면 이야기가 달라집니다. 원반 바깥으로 밝고 희뿌연 헤일로가 드러나고, 그 안에서 개별로 분해되지 않는 별들과 비스듬한 고리 같은 구조가 보인다고 합니다. APOD는 이 구조와 조류 흐름(tidal streams)을 M104가 작은 은하들과 충돌하고 병합한 과거의 증거로 설명합니다.
+AI 이미지 한 장에서 출발한 9:16 영상입니다. 망원경 사진이 아닙니다.
+A 9:16 clip built from a single AI frame — not from the telescope image.
 
-빛이 우리에게 닿는 데 약 3,000만 년, 은하의 지름은 약 15만 광년입니다. 오늘 원본 사진은 2026년 중반 나미비아에서 7일에 걸쳐 촬영됐습니다.
+원본과 해설 / original and write-up: https://apod.nasa.gov/apod/ap261005.html
 
-오늘 작업물에는 그 희뿌연 바깥도, 비스듬한 고리도 남지 않았습니다. 먼지 띠를 두른 원반 하나가 천천히 도는 6초만 남겼습니다.
-
-매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
-
-촬영한 사진이 아니라 APOD 설명문을 바탕으로 만든 AI 재해석 영상입니다.
-원본 Credit & Copyright: Engelbert Vollmer
-원본과 해설: https://apod.nasa.gov/apod/ap261005.html
-
-#namecode #sombrerogalaxy #mediaart
+#namecode #nasaapod #nasa
