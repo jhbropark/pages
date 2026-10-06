@@ -1,9 +1,14 @@
-NASA.SCIENCE — NASA Science.
-NASA APOD 2026-10-06.
+오로라가 끊기지 않고 지구 자기극을 한 바퀴 두른 모습이 통째로 찍혔습니다.
 
-APOD 설명문으로 만든 AI 이미지 한 장을 9:16으로 움직였습니다.
-One AI frame from today's APOD description, set in motion at 9:16.
+땅 위에서는 그 원이 너무 커서 전체를 볼 수 없고, ESA와 CAS의 탐사선 SMILE이 높은 궤도에서 자외선으로 담았습니다. 약 한 시간의 타임랩스에, 낮에 일어난 고리까지 들어갔습니다.
 
-APOD: https://apod.nasa.gov/apod/ap261006.html
+오늘 작업물에는 어두운 구체를 두른 빛의 가장자리만 남았습니다. 닫힌 고리 한 바퀴도, 자외선도, 한 시간의 변화도 여기에는 없습니다.
 
-#namecode #nasaapod #aiart #nasa
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
+
+이 영상은 실제 촬영이 아니라 APOD 설명문을 바탕으로 한 AI 재해석입니다.
+원출처: NASA APOD 2026-10-06 "A Complete Auroral Oval from SMILE"
+Credit: ESA, CAS, SMILE, UVI
+https://apod.nasa.gov/apod/ap261006.html
+
+#namecode #aurora #generativeart

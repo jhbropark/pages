@@ -1,8 +1,18 @@
-NASA.SCIENCE — NASA Science. NASA APOD 2026-10-06.
+지상에서는 볼 수 없는 오로라 고리 전체가, 한 시간짜리 타임랩스에 통째로 담겼습니다.
 
-AI 이미지 한 장에서 출발한 9:16 영상입니다. 망원경 사진이 아닙니다.
-A 9:16 clip built from a single AI frame — not from the telescope image.
+오로라는 지구 자기극 둘레로 원을 그리며 나타납니다. 다만 그 원이 너무 커서, 땅에 서 있는 사람은 고리의 일부만 올려다볼 수 있습니다. 전체를 보려면 지구에서 충분히 멀리 떨어진 곳에서 내려다봐야 합니다.
 
-원본과 해설 / original and write-up: https://apod.nasa.gov/apod/ap261006.html
+ESA와 중국과학원(CAS)의 탐사선 SMILE은 자외선으로 이 고리를 관측했습니다. 가시광이 아니라 자외선이기 때문에, 햇빛이 비치는 낮 쪽에서 일어난 오로라까지 기록됐습니다. 공개된 타임랩스는 7월 말의 약 한 시간을 압축한 것이고, 그 사이 고리는 쉬지 않고 모양을 바꿉니다. 화면 가장자리의 광점들은 멀리 있는 별이며, 별이 움직이는 것이 아니라 궤도를 도는 탐사선의 시야가 돌아가는 것입니다.
 
-#namecode #nasaapod #nasa
+SMILE의 목적은 태양풍이 지구 자기권과 어떻게 부딪히는지 더 잘 아는 것입니다. 그 이해가 우주인과 위성, 지상 전력망을 태양 폭풍에서 지키는 일로 이어집니다.
+
+오늘 작업물에는 어두운 구체와 그 둘레에 번지는 빛만 남았습니다. 닫힌 고리 한 바퀴도, 자외선이 보여준 낮 쪽도, 한 시간의 변화도 여기에는 없습니다.
+
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
+
+이 영상은 실제 촬영이 아니라 APOD 설명문을 바탕으로 한 AI 재해석입니다.
+원출처: NASA APOD 2026-10-06 "A Complete Auroral Oval from SMILE"
+Credit: ESA, CAS, SMILE, UVI
+https://apod.nasa.gov/apod/ap261006.html
+
+#namecode #aurora #mediaart
