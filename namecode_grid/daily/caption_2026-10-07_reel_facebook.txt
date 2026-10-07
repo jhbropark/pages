@@ -1,18 +1,8 @@
-오늘 NASA APOD의 제목은 "Supernova Remnant Pa 30"입니다.
+NASA.SCIENCE — NASA Science. NASA APOD 2026-10-07.
 
-서기 1181년, 중국과 일본과 아랍의 천문 기록에는 각각 하늘에 185일 동안 머물다 사라진 "손님별" 이야기가 남아 있습니다. 천문학자들은 그 밝은 점이 성운 Pa 30을 만든 초신성 폭발에서 왔다고 봅니다.
+AI 이미지 한 장에서 출발한 9:16 영상입니다. 망원경 사진이 아닙니다.
+A 9:16 clip built from a single AI frame — not from the telescope image.
 
-하와이의 제미니 노스 망원경이 관측한 이 성운은 중심에서 사방으로 뻗은 필라멘트가 특징입니다. 중심별은 대단히 뜨겁고 강한 항성풍을 내뿜는데, 이 바람이 방사형 필라멘트를 만든 것으로 추정됩니다. 필라멘트를 꿰고 있는 진주 같은 매듭들은 하나의 지름이 4광일입니다.
+원본과 해설 / original and write-up: https://apod.nasa.gov/apod/ap261007.html
 
-폭발 자체는 Iax형 초신성으로 분류되고, 백색왜성 두 개가 합쳐지며 일어난 것으로 여겨집니다. 다만 정확히 무슨 일이 있었는지는 아직 아무도 모릅니다. 845년째 풀리지 않은 질문입니다.
-
-namecode는 이 설명문을 흑백의 움직임으로 옮깁니다. 남은 것은 중심에서 터져 나온 방사형 빛줄기뿐이고, 진주처럼 꿰인 매듭도 845년의 시간도 여기에는 없습니다.
-
-매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
-
-원본 사진이 아니라 APOD 설명문을 바탕으로 한 AI 재해석입니다.
-원출처: NASA Astronomy Picture of the Day, 2026년 10월 7일
-Credit & License: International Gemini Observatory / NOIRLab / NSF / AURA (PI: T. Cunningham, Center for Astrophysics | Harvard & Smithsonian)
-https://apod.nasa.gov/apod/ap261007.html
-
-#namecode #supernovaremnant #mediaart
+#namecode #nasaapod #nasa
