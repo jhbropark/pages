@@ -1,9 +1,14 @@
-NASA.SCIENCE — NASA Science.
-NASA APOD 2026-10-07.
+오늘 NASA APOD의 제목은 "Supernova Remnant Pa 30"입니다.
 
-APOD 설명문으로 만든 AI 이미지 한 장을 9:16으로 움직였습니다.
-One AI frame from today's APOD description, set in motion at 9:16.
+1181년, 중국과 일본과 아랍의 천문 기록에는 하늘에 185일 동안 머물다 사라진 "손님별"이 각각 남아 있습니다. 그 폭발의 잔해로 여겨지는 성운이 Pa 30이고, 하와이의 제미니 노스 망원경이 중심에서 사방으로 뻗은 필라멘트를 담았습니다. 필라멘트를 꿰고 있는 진주 같은 매듭은 하나의 지름이 4광일입니다.
 
-APOD: https://apod.nasa.gov/apod/ap261007.html
+흑백으로 옮기니 중심에서 터져 나온 빛줄기만 남았습니다. 진주처럼 꿰인 매듭도, 845년의 시간도 여기에는 없습니다.
 
-#namecode #nasaapod #aiart #nasa
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
+
+원본 사진이 아니라 APOD 설명문을 바탕으로 한 AI 재해석입니다.
+원출처: NASA APOD 2026.10.07
+Credit: International Gemini Observatory / NOIRLab / NSF / AURA
+https://apod.nasa.gov/apod/ap261007.html
+
+#namecode #supernovaremnant #generativeart
