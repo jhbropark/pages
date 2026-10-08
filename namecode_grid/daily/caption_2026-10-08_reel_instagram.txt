@@ -1,9 +1,14 @@
-NASA.SCIENCE — NASA Science.
-NASA APOD 2026-10-08.
+토성 하나가 아니라 타이탄과 엔켈라두스의 얼음 줄무늬, 고리의 틈과 바큇살 무늬까지 한 장에 같이 담겼습니다.
 
-APOD 설명문으로 만든 AI 이미지 한 장을 9:16으로 움직였습니다.
-One AI frame from today's APOD description, set in motion at 9:16.
+영국 상공의 공기가 유난히 잔잔했던 하룻밤이었습니다. 온도와 밀도가 다른 공기 덩어리가 빛을 휘게 하는 이 조건을 천문학에서는 "시상"이라 부르는데, 천체사진가 Tom Williams는 고속 카메라로 짧은 노출 수천 장을 찍고 그중 가장 선명한 것만 골라 겹쳤습니다. 흔들림을 없애는 대신 흔들리지 않은 찰나만 모은 셈입니다.
 
-APOD: https://apod.nasa.gov/apod/ap261008.html
+흑백으로 옮기니 고리를 두른 구체 하나만 남았습니다. 고리의 틈도, 위성도, 얼음 줄무늬도 여기에는 없습니다.
 
-#namecode #nasaapod #aiart #nasa
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
+
+원본 사진이 아니라 APOD 설명문을 바탕으로 한 AI 재해석입니다.
+원출처: NASA APOD 2026.10.08 "The Saturn System Smörgåsbord"
+Credit: Tom Williams
+https://apod.nasa.gov/apod/ap261008.html
+
+#namecode #saturn #generativeart
