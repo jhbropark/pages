@@ -1,16 +1,8 @@
-오늘 NASA APOD의 제목은 "Stickney Crater"입니다.
+NASA.SCIENCE — NASA Science. NASA APOD 2026-10-09.
 
-1877년 화성의 두 위성을 발견한 천문학자 아사프 홀, 그의 아내이자 수학자였던 클로이 안젤린 스티크니 홀의 이름이 붙은 구덩이입니다. 지름은 9km가 넘고 포보스 자체 지름의 절반에 가깝습니다. 그만큼 큰 충돌이라 이 작은 위성을 거의 부술 뻔했다고 봅니다.
+AI 이미지 한 장에서 출발한 9:16 영상입니다. 망원경 사진이 아닙니다.
+A 9:16 clip built from a single AI frame — not from the telescope image.
 
-원본 사진은 2008년 3월, 화성 정찰 궤도선(MRO)의 HiRISE 카메라가 포보스에서 약 6,000km 거리를 지나며 찍은 강조색 이미지입니다. 포보스의 표면 중력은 지구의 1,000분의 1에도 미치지 않지만, 구덩이 안쪽 벽에는 느슨한 물질이 오랜 시간에 걸쳐 흘러내린 듯한 줄무늬가 남아 있습니다. 가장자리의 푸르스름한 부분은 비교적 최근에 드러난 표면일 가능성이 있고, 표면을 가로지르는 홈들의 기원은 조석력 때문인지 충돌 자체 때문인지 아직 정해지지 않았습니다.
+원본과 해설 / original and write-up: https://apod.nasa.gov/apod/ap261009.html
 
-이 영상은 그 설명문을 읽고 만든 흑백 재해석입니다. 극단적인 클로즈업에서 천천히 물러나며 전체를 드러내는 움직임 하나만 넣었습니다. 파인 자국 하나가 남았을 뿐, 위성의 몸체도 홈도 색도 여기에는 없습니다.
-
-매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
-
-AI로 재해석한 영상이며 실제 촬영 이미지가 아닙니다.
-원본: NASA APOD 2026년 10월 9일
-Credit: HiRISE, MRO, LPL (U. Arizona), NASA
-https://apod.nasa.gov/apod/ap261009.html
-
-#namecode #phobos #mediaart
+#namecode #nasaapod #nasa

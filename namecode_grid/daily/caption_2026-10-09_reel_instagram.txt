@@ -1,14 +1,9 @@
-오늘 NASA APOD의 제목은 "Stickney Crater"입니다.
+NASA.SCIENCE — NASA Science.
+NASA APOD 2026-10-09.
 
-화성의 위성 포보스에 난 가장 큰 구덩이입니다. 지름 9km가 넘어 포보스 자체 지름의 절반에 가깝고, 그 충돌은 이 작은 위성을 거의 부술 뻔했습니다.
+APOD 설명문으로 만든 AI 이미지 한 장을 9:16으로 움직였습니다.
+One AI frame from today's APOD description, set in motion at 9:16.
 
-움직임은 아주 가까운 한 지점에서 천천히 물러나며 전체를 드러내는 방식 하나만 넣었습니다. 파인 자국이 남았을 뿐, 위성의 몸체도 표면을 가로지르는 홈도 갓 드러난 밝은 기운도 여기에는 없습니다.
+APOD: https://apod.nasa.gov/apod/ap261009.html
 
-매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
-
-APOD 설명문을 바탕으로 AI로 재해석한 영상입니다. 실제 촬영 이미지가 아닙니다.
-원본: NASA APOD 2026년 10월 9일
-Credit: HiRISE, MRO, LPL (U. Arizona), NASA
-https://apod.nasa.gov/apod/ap261009.html
-
-#namecode #phobos #generativeart
+#namecode #nasaapod #aiart #nasa
