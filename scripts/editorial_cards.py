@@ -431,21 +431,70 @@ def _luminance(rgb) -> float:
     return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2]
 
 
-def _knockout_is_legible(photo, mask, ground, threshold=52.0) -> bool:
+def _relative_luminance(value: int) -> float:
+    """WCAG relative luminance for one 8-bit grey level."""
+    channel = value / 255
+    if channel <= 0.04045:
+        return channel / 12.92
+    return ((channel + 0.055) / 1.055) ** 2.4
+
+
+def contrast_ratio(a: int, b: int) -> float:
+    """The WCAG contrast ratio between two grey levels, 1.0 to 21.0."""
+    high, low = sorted((_relative_luminance(a), _relative_luminance(b)), reverse=True)
+    return (high + 0.05) / (low + 0.05)
+
+
+# WCAG 2.1 puts large text at 3:1. A knockout headline is always large, and it
+# is read by the brighter parts of its letterforms rather than by their average,
+# so a quarter of the area clearing 3:1 is the bar.
+KNOCKOUT_MIN_RATIO = 3.0
+KNOCKOUT_MIN_AREA = 0.25
+
+
+def _levels_under(photo, mask) -> list[int]:
+    """The grey levels of ``photo`` where ``mask`` would let it through.
+
+    Sampled at a sixth scale: this decides between two treatments, and a card
+    whose verdict turns on a sixth of a pixel is one where either reads.
+    """
+    small_mask = mask.resize((W // 6, H // 6), Image.BILINEAR)
+    small_photo = photo.resize((W // 6, H // 6), Image.BILINEAR).convert("L")
+    return [p for p, m in zip(list(small_photo.tobytes()), list(small_mask.tobytes()))
+            if m > 140]
+
+
+def _knockout_is_legible(photo, mask, ground,
+                         min_ratio=KNOCKOUT_MIN_RATIO,
+                         min_area=KNOCKOUT_MIN_AREA) -> bool:
     """Would type cut out of this photograph actually be readable?
 
     A knockout is only as legible as the picture behind the letters. Cutting
     type out of a uniformly dark photograph on a dark ground yields an
     invisible headline, and nothing downstream would notice.
+
+    Two things were wrong with the first version, and the 2026-09-21 afternoon
+    card needed both fixed to be caught.
+
+    It asked for a gap of 52 grey levels, which is not a legibility threshold at
+    all. That card's duotone mapped the photo to a near-flat level 85 against a
+    ground of 16 — a gap of 71, comfortably past the bar, and still only 2.55:1,
+    under the 3:1 WCAG minimum for large text. A ratio is the measure that says
+    whether two tones read apart; a subtraction is not.
+
+    It also took the mean level under the mask, and a knockout is not read by its
+    average. The morning card of the same day had a mean of 116 against that same
+    ground, but it earned it honestly: 45% of its letter area cleared 3:1. The
+    afternoon card's mean of 87 came from a flat wash where 2.7% cleared it. The
+    means were 29 apart; the cards were not remotely alike. Asking what fraction
+    of the area is actually readable separates them.
     """
-    small_mask = mask.resize((W // 6, H // 6), Image.BILINEAR)
-    small_photo = photo.resize((W // 6, H // 6), Image.BILINEAR).convert("L")
-    photo_px = list(small_photo.convert("L").tobytes())
-    mask_px = list(small_mask.tobytes())
-    values = [p for p, m in zip(photo_px, mask_px) if m > 140]
+    values = _levels_under(photo, mask)
     if not values:
         return True
-    return abs(sum(values) / len(values) - _luminance(ground)) >= threshold
+    ground_level = round(_luminance(ground))
+    legible = sum(1 for v in values if contrast_ratio(v, ground_level) >= min_ratio)
+    return legible / len(values) >= min_area
 
 
 def _text_mask(lines, base, emph, x, top, lh, centred=False) -> Image.Image:

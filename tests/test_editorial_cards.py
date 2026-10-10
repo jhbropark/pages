@@ -166,6 +166,70 @@ class KnockoutLegibility(unittest.TestCase):
         bright = Image.new("RGB", (cards.W, cards.H), (238, 232, 226))
         self.assertTrue(cards._knockout_is_legible(bright, self.mask, cards.BLACK))
 
+    def test_the_flat_midtone_that_shipped_is_rejected(self):
+        """The 2026-09-21 afternoon card, pinned.
+
+        Its duotone mapped the photo to a near-flat level 85 against a ground of
+        16. The first guard compared mean levels and asked for a gap of 52; 71
+        cleared it, so a headline at 2.55:1 shipped looking like dark grey on
+        near-black. Nothing about that card was dark enough to trip a gap test.
+        """
+        flat = Image.new("RGB", (cards.W, cards.H), (85, 85, 85))
+        self.assertGreater(abs(85 - cards._luminance(cards.BLACK)), 52.0)
+        self.assertLess(cards.contrast_ratio(85, 16), 3.0)
+        self.assertFalse(cards._knockout_is_legible(flat, self.mask, cards.BLACK))
+
+    def test_a_similar_mean_does_not_mean_a_similar_card(self):
+        """Both cards of 2026-09-21 had means the old gap test waved through.
+
+        The difference was never the average — it was how much of the letter
+        area was actually readable. A flat wash and a photograph can sit 29
+        levels apart in the mean and look nothing alike.
+        """
+        flat = Image.new("RGB", (cards.W, cards.H), (87, 87, 87))
+        photo = Image.new("RGB", (cards.W, cards.H), (85, 85, 85))
+        photo.paste(Image.new("RGB", (cards.W, cards.H // 2), (194, 194, 194)),
+                    (0, 300))
+        ground = cards._luminance(cards.BLACK)
+        for image in (flat, photo):       # both clear the old 52-level gap
+            levels = cards._levels_under(image, self.mask)
+            self.assertGreater(abs(sum(levels) / len(levels) - ground), 52.0)
+        self.assertFalse(cards._knockout_is_legible(flat, self.mask, cards.BLACK))
+        self.assertTrue(cards._knockout_is_legible(photo, self.mask, cards.BLACK))
+
+    def test_a_photograph_carries_the_knockout_on_its_bright_quarter(self):
+        # Mostly dark, but a quarter of the frame is bright enough to read —
+        # that is what a photographed knockout actually looks like, and the
+        # mean would drag it under.
+        mixed = Image.new("RGB", (cards.W, cards.H), (70, 70, 70))
+        mixed.paste(Image.new("RGB", (cards.W, cards.H // 2), (236, 232, 228)),
+                    (0, 300))
+        self.assertTrue(cards._knockout_is_legible(mixed, self.mask, cards.BLACK))
+
+
+class ContrastRatio(unittest.TestCase):
+    """Perceived contrast, not a difference in grey levels."""
+
+    def test_black_on_white_is_the_maximum(self):
+        self.assertAlmostEqual(cards.contrast_ratio(255, 0), 21.0, places=1)
+
+    def test_a_colour_against_itself_is_one(self):
+        self.assertAlmostEqual(cards.contrast_ratio(120, 120), 1.0, places=6)
+
+    def test_it_is_symmetric(self):
+        self.assertAlmostEqual(cards.contrast_ratio(30, 200),
+                               cards.contrast_ratio(200, 30), places=9)
+
+    def test_a_gap_in_levels_does_not_predict_the_ratio(self):
+        """Why a subtraction was never the right test.
+
+        The same 71-level gap is 2.63:1 down in the shadows and 2.18:1 in the
+        midtones — neither reaches the 3:1 a large headline needs, and the gap
+        alone tells you nothing about which is which.
+        """
+        for low in (16, 150):
+            self.assertLess(cards.contrast_ratio(low + 71, low), 3.0)
+
 
 class SourceImagery(unittest.TestCase):
     def test_the_brand_renders_are_found(self):
