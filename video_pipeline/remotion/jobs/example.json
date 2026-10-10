@@ -1,0 +1,22 @@
+{
+  "id": "sample-001",
+  "preset": "vertical",
+  "sourceAbsolutePath": "E:\\00_Project_Videos\\REPLACE_WITH_VIDEO.mp4",
+  "title": "VARIS 프로젝트 영상",
+  "subtitle": "Work with AI",
+  "accent": "#f2b544",
+  "watermark": "@varis.kr",
+  "fit": "cover",
+  "channels": [
+    "youtube",
+    "instagram",
+    "facebook",
+    "tiktok"
+  ],
+  "description": "VARIS 프로젝트 영상",
+  "tags": [
+    "VARIS",
+    "AI",
+    "video"
+  ]
+}

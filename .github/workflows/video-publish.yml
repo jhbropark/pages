@@ -1,0 +1,134 @@
+name: Rendered video publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      media_url:
+        description: Public or signed HTTPS URL of the rendered MP4
+        required: true
+        type: string
+      title:
+        description: Base title for YouTube and TikTok
+        required: true
+        type: string
+      description:
+        description: YouTube description fallback
+        required: false
+        default: ''
+        type: string
+      instagram_caption:
+        description: Independent Instagram caption
+        required: false
+        default: ''
+        type: string
+      facebook_caption:
+        description: Independent Facebook caption
+        required: false
+        default: ''
+        type: string
+      tiktok_title:
+        description: Independent TikTok title
+        required: false
+        default: ''
+        type: string
+      tags:
+        description: Comma-separated YouTube tags
+        required: false
+        default: ''
+        type: string
+      channels:
+        description: youtube,instagram,facebook,tiktok
+        required: true
+        default: youtube,instagram,facebook,tiktok
+        type: string
+      dry_run:
+        description: Validate without publishing
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rendered-video-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    env:
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+      YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+      YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+      YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+      YOUTUBE_PRIVACY: ${{ vars.YOUTUBE_PRIVACY || 'private' }}
+      TIKTOK_ACCESS_TOKEN: ${{ secrets.TIKTOK_ACCESS_TOKEN }}
+      TIKTOK_PRIVACY_LEVEL: ${{ vars.TIKTOK_PRIVACY_LEVEL || 'SELF_ONLY' }}
+      TIKTOK_USE_FILE_UPLOAD: '1'
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Install upload dependencies
+        run: python -m pip install --disable-pip-version-check --no-input -r video_pipeline/requirements.txt
+
+      - name: Download rendered MP4
+        env:
+          MEDIA_URL: ${{ inputs.media_url }}
+        run: curl --fail --location --retry 3 --connect-timeout 20 --output rendered.mp4 "$MEDIA_URL"
+
+      - name: Upload MP4 as a public release asset
+        id: release
+        if: ${{ inputs.dry_run == false }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: video-${{ github.run_id }}
+          name: Rendered video ${{ github.run_id }}
+          prerelease: true
+          files: rendered.mp4
+          generate_release_notes: false
+
+      - name: Resolve public video URL
+        id: public_url
+        env:
+          INPUT_URL: ${{ inputs.media_url }}
+          REPOSITORY: ${{ github.repository }}
+          TAG: video-${{ github.run_id }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+        run: |
+          if [ "$DRY_RUN" = "1" ]; then
+            echo "url=$INPUT_URL" >> "$GITHUB_OUTPUT"
+          else
+            echo "url=https://github.com/$REPOSITORY/releases/download/$TAG/rendered.mp4" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish to selected channels
+        env:
+          PUBLIC_URL: ${{ steps.public_url.outputs.url }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+          TITLE: ${{ inputs.title }}
+          DESCRIPTION: ${{ inputs.description }}
+          IG_CAPTION: ${{ inputs.instagram_caption }}
+          FB_CAPTION: ${{ inputs.facebook_caption }}
+          TIKTOK_TITLE: ${{ inputs.tiktok_title }}
+          TAGS: ${{ inputs.tags }}
+          CHANNELS: ${{ inputs.channels }}
+        run: |
+          ARGS=(--file rendered.mp4 --video-url "$PUBLIC_URL" --title "$TITLE" --description "$DESCRIPTION" --instagram-caption "$IG_CAPTION" --facebook-caption "$FB_CAPTION" --tiktok-title "$TIKTOK_TITLE" --tags "$TAGS" --channels "$CHANNELS")
+          if [ "$DRY_RUN" = "1" ]; then ARGS+=(--dry-run); fi
+          python video_pipeline/publish.py "${ARGS[@]}"
+
+      - name: Save upload input and result artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered-video-${{ github.run_id }}
+          path: rendered.mp4
+          if-no-files-found: ignore
