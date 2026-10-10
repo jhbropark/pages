@@ -86,7 +86,7 @@ jobs:
 
       - name: Upload MP4 as a public release asset
         id: release
-        if: ${{ inputs.dry_run == false }}
+        if: ${{ inputs.dry_run == false && !contains(inputs.media_url, '/releases/download/') }}
         uses: softprops/action-gh-release@v2
         with:
           tag_name: video-${{ github.run_id }}
@@ -103,7 +103,7 @@ jobs:
           TAG: video-${{ github.run_id }}
           DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
         run: |
-          if [ "$DRY_RUN" = "1" ]; then
+          if [ "$DRY_RUN" = "1" ] || [[ "$INPUT_URL" == */releases/download/* ]]; then
             echo "url=$INPUT_URL" >> "$GITHUB_OUTPUT"
           else
             echo "url=https://github.com/$REPOSITORY/releases/download/$TAG/rendered.mp4" >> "$GITHUB_OUTPUT"

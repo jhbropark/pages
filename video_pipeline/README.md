@@ -5,12 +5,19 @@
 ## 실행 순서
 
 1. 로컬에서 Remotion 렌더링
-2. 렌더 MP4를 공개 HTTPS URL에 업로드
-3. GitHub Actions의 `Rendered video publish` 실행
-4. 첫 실행은 `dry_run=true`
-5. 결과 확인 후 `dry_run=false`
+2. `dispatch-local.mjs`가 MP4를 임시 GitHub Release asset으로 업로드
+3. GitHub Actions의 `Rendered video publish` 자동 실행
+4. 기본값은 `dry_run=true`
+5. 확인 후 `--live`로 실제 게시
 
-실제 게시 실행에서는 MP4를 이 저장소의 임시 GitHub Release asset으로 올려 Meta/TikTok이 읽을 수 있는 URL로 사용합니다.
+직접 실행:
+
+```powershell
+node video_pipeline/dispatch-local.mjs --file outputs\sample-001-vertical.mp4 --title "VARIS 프로젝트" --description "프로젝트 영상" --channels youtube,instagram,facebook,tiktok
+node video_pipeline/dispatch-local.mjs --file outputs\sample-001-vertical.mp4 --title "VARIS 프로젝트" --live
+```
+
+GitHub Actions는 Release asset URL을 그대로 사용하므로 별도 파일 서버가 필요하지 않습니다.
 
 ## 기존 Secrets 연결
 
