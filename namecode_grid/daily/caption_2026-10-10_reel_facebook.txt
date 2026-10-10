@@ -1,8 +1,14 @@
-NASA.SCIENCE — NASA Science. NASA APOD 2026-10-10.
+달 뒷면에는 앞면처럼 검고 매끈한 바다가 거의 없습니다. 대신 충돌 자국이 가득합니다.
 
-AI 이미지 한 장에서 출발한 9:16 영상입니다. 망원경 사진이 아닙니다.
-A 9:16 clip built from a single AI frame — not from the telescope image.
+달은 조석 고정(동주기 자전) 상태여서 지구에서는 언제나 같은 면만 보입니다. 뒷면은 달 궤도에 들어간 탐사선만 제대로 볼 수 있습니다. 오늘 APOD의 사진은 Lunar Reconnaissance Orbiter의 광각 카메라가 2009년 11월부터 2011년 2월 사이에 촬영한 15,000장 넘는 이미지를 이어 붙인 전구 모자이크에서 뒷면을 중심에 둔 것이고, 가장 높은 해상도 버전에서는 픽셀 하나가 100미터에 해당합니다.
 
-원본과 해설 / original and write-up: https://apod.nasa.gov/apod/ap261010.html
+앞뒤의 생김새는 전혀 다릅니다. 앞면은 어둡고 매끈한 바다(maria)로 덮여 있지만 뒷면은 거칠게 패여 있습니다. 유력한 설명은 뒷면의 지각이 더 두꺼워서, 내부의 녹은 물질이 표면까지 흘러나와 어두운 평원을 만들기 어려웠다는 것입니다.
 
-#namecode #nasaapod #nasa
+이 영상은 탐사선 사진이 아니라 APOD 설명문에서 출발해 만든 AI 이미지 한 장을 9:16으로 움직인 것입니다. 화면의 어두운 얼룩은 오히려 앞면의 바다에 가깝고, 뒷면을 뒤덮은 크레이터 벌판은 여기에 없습니다.
+
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
+
+Credit: NASA / GSFC / Arizona State Univ. / Lunar Reconnaissance Orbiter
+APOD 원문: https://apod.nasa.gov/apod/ap261010.html
+
+#namecode #moon #mediaart
