@@ -1,8 +1,13 @@
-NASA.SCIENCE — NASA Science. NASA APOD 2026-10-16.
+10월 13일 새벽, 플로리다 인디언하버비치에서 찍은 30초 타임랩스 한 편에 밝은 궤적 두 개가 함께 담겼습니다.
 
-AI 이미지 한 장에서 출발한 9:16 영상입니다. 망원경 사진이 아닙니다.
-A 9:16 clip built from a single AI frame — not from the telescope image.
+케이프커내버럴 SLC-40에서 떠오른 팰컨 9과 드래건이 NASA의 35번째 상업 재보급 임무로 저궤도를 향해 올라가고, 8초쯤 화면 위에서 국제우주정거장이 들어와 지평선 쪽으로 내려갑니다. 1단과 2단이 분리되며 퍼진 배기 구름은 떠오르는 해의 빛을 먼저 받아 해파리 모양으로 커지고, 20초 무렵부터 1단의 부스트백·재진입·착륙 분사가 이어집니다. 1단은 착륙장 LZ-40에 내려앉았습니다.
 
-원본과 해설 / original and write-up: https://apod.nasa.gov/apod/ap261016.html
+이 작업에는 로켓도, 정거장도, 해안의 지평선도 없습니다. 빛이 한 번 지나간 자리와 그 뒤에 남은 입자만 있습니다.
 
-#namecode #nasaapod #nasa
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
+
+오늘 APOD 원본은 사진이 아니라 영상이며, 이 이미지는 그 설명문을 바탕으로 만든 AI 재해석입니다. 실제 촬영물이 아닙니다.
+Video Credit: Eric Holland
+APOD: https://apod.nasa.gov/apod/ap261016.html
+
+#namecode #iss #mediaart

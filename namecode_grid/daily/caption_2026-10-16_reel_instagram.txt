@@ -1,9 +1,11 @@
-NASA.SCIENCE — NASA Science.
-NASA APOD 2026-10-16.
+새벽 하늘을 밝은 줄 두 개가 거의 동시에 지나갔습니다. 하나는 올라가는 로켓의 배기 구름, 하나는 위에서 내려오는 국제우주정거장이었습니다.
 
-APOD 설명문으로 만든 AI 이미지 한 장을 9:16으로 움직였습니다.
-One AI frame from today's APOD description, set in motion at 9:16.
+30초 타임랩스에서 8초쯤 정거장이 화면 위로 들어와 지평선 쪽으로 흘러가고, 1·2단이 분리되며 퍼진 배기 구름이 떠오르는 햇빛을 먼저 받습니다. 여기에는 로켓도 정거장도 없고, 빛이 한 번 쓸고 지나간 자리만 남겼습니다.
 
+매일 다른 우주를 흑백의 움직임으로 봅니다. 이어서 보려면 팔로우.
+
+오늘 APOD 원본은 사진이 아니라 영상이고, 이 작업은 그 설명문에서 출발한 AI 재해석입니다.
+Video Credit: Eric Holland
 APOD: https://apod.nasa.gov/apod/ap261016.html
 
-#namecode #nasaapod #aiart #nasa
+#namecode #iss #generativeart
