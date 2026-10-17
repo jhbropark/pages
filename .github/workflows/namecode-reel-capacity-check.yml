@@ -39,7 +39,8 @@ jobs:
         run: |
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
-          const E=process.env, num=v=>Number.isFinite(v)?v:null;
+          const E={...process.env}, num=v=>Number.isFinite(v)?v:null;
+          for(const key of ['IG_USER_ID','IG_ACCESS_TOKEN','FB_PAGE_ID','FB_PAGE_TOKEN']) E[key]=(E[key]||'').trim();
           const secrets=[E.IG_USER_ID,E.IG_ACCESS_TOKEN,E.FB_PAGE_ID,E.FB_PAGE_TOKEN].filter(s=>s&&s.length>=4);
           const redact=s=>secrets.reduce((a,x)=>a.split(x).join('[redacted]'),s);
           const report={schema_version:1,observed_at:new Date().toISOString(),read_only:true,
@@ -93,14 +94,17 @@ jobs:
            if(a.status!=='available') {report.ig.identity=a;report.ig.status='identity_unavailable';bad=true;}
            else {
             const ok=a.data.username==='namecode_original', idm=String(a.data.id)===String(E.IG_USER_ID);
-            report.ig.identity={status:'available',username:a.data.username,idMatchesSecret:idm};
-            report.ig.status=ok&&idm?'verified':'identity_mismatch'; if(!(ok&&idm)) bad=true;
-            if(ok&&idm){
+            report.ig.identity={status:'available',username:a.data.username,idMatchesSecret:idm,configuredIdResolvesExpectedUsername:ok,responseIdDiffersFromConfigured:ok&&!idm};
+            // The configured endpoint must resolve to the exact unique target handle.
+            // Response id can use a different Instagram scope; retain the comparison as diagnostic only.
+            report.ig.status=ok?'verified':'identity_mismatch'; if(!ok) bad=true;
+            if(ok){
              const q=await get(E.IG_USER_ID+'/content_publishing_limit',{fields:'quota_usage,config'},E.IG_ACCESS_TOKEN);
              const row=q.status==='available'?q.data.data?.[0]:null;
              report.ig.publishing_limit=row?{status:'available',quota_usage:num(row.quota_usage),quota_total:num(row.config?.quota_total),quota_duration_seconds:num(row.config?.quota_duration)}:(q.status==='available'?{status:'unavailable',reason:'empty_response'}:q);
              const m=await pages(E.IG_USER_ID+'/media',{fields:'id,caption,media_product_type,permalink,timestamp',limit:100},E.IG_ACCESS_TOKEN);
              report.ig.media_scan={status:m.status,...meta(m,'timestamp'),...(m.error?{error:m.error}:{})};
+             report.ig.latest_reels=m.items.filter(i=>i.media_product_type==='REELS').slice(0,5).map(i=>({permalink:i.permalink,published_at:i.timestamp}));
              scan(m.items.filter(i=>i.media_product_type==='REELS'),'caption','timestamp','permalink','instagram');
             }
            }
@@ -111,13 +115,15 @@ jobs:
            const f=await get(E.FB_PAGE_ID,{fields:'id,name,link'},E.FB_PAGE_TOKEN);
            if(f.status!=='available'){report.facebook.identity=f;report.facebook.status='identity_unavailable';bad=true;}
            else {
-            let canon=false; try{const u=new URL(f.data.link||'');canon=/^(www\.)?facebook\.com$/i.test(u.hostname)&&u.pathname.replace(/\/+$/,'').toLowerCase()==='/namecode.original';}catch{}
-            const fidm=String(f.data.id)===String(E.FB_PAGE_ID);
-            report.facebook.identity={status:'available',name:f.data.name,link:redact(String(f.data.link||'')),idMatchesSecret:fidm};
-            report.facebook.status=canon&&fidm?'verified':'UNVERIFIED'; if(!(canon&&fidm)) bad=true;
-            if(canon&&fidm){
+            const fidm=String(f.data.id)===String(E.FB_PAGE_ID), nameMatch=/^namecode(?:[. ]original)?$/i.test(f.data.name||'');
+            let canon=false,numeric=false; try{const u=new URL(f.data.link||''),host=/^(www\.)?facebook\.com$/i.test(u.hostname),p=u.pathname.replace(/\/+$/,'');canon=host&&p.toLowerCase()==='/namecode.original';numeric=host&&(p==='/'+E.FB_PAGE_ID||(p==='/profile.php'&&u.searchParams.get('id')===E.FB_PAGE_ID));}catch{}
+            const pageVerified=fidm&&(canon||(numeric&&nameMatch));
+            report.facebook.identity={status:'available',name:f.data.name,link:redact(String(f.data.link||'')),idMatchesSecret:fidm,canonicalHandleVerified:canon,numericPageUrlMatchesConfiguredId:numeric,nameMatchesExpected:nameMatch};
+            report.facebook.status=pageVerified?'verified':'UNVERIFIED'; if(!pageVerified) bad=true;
+            if(pageVerified){
              const v=await pages(E.FB_PAGE_ID+'/videos',{fields:'id,description,permalink_url,created_time',limit:100},E.FB_PAGE_TOKEN);
              report.facebook.video_scan={status:v.status,...meta(v,'created_time'),...(v.error?{error:v.error}:{})};
+             report.facebook.latest_videos=v.items.slice(0,5).map(i=>({video_id:i.id,permalink:i.permalink_url,published_at:i.created_time}));
              scan(v.items.map(i=>({...i,permalink_url:String(i.permalink_url||'').startsWith('/')?'https://www.facebook.com'+i.permalink_url:i.permalink_url})),'description','created_time','permalink_url','facebook');
             }
            }
