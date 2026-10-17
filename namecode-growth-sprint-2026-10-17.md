@@ -48,3 +48,18 @@
 - [Stickney 10/09 캡션](https://github.com/jhbropark/pages/blob/main/namecode_grid/daily/caption_2026-10-09_reel_instagram.txt) · [날짜 고정 APOD](https://science.nasa.gov/apod/?date=261009)
 - [Aurora 10/06 캡션](https://github.com/jhbropark/pages/blob/main/namecode_grid/daily/caption_2026-10-06_reel_instagram.txt) · [날짜 고정 APOD](https://science.nasa.gov/apod/?date=261006)
 - [Saturn 10/08 캡션](https://github.com/jhbropark/pages/blob/main/namecode_grid/daily/caption_2026-10-08_reel_instagram.txt) · [날짜 고정 APOD](https://science.nasa.gov/apod/?date=261008)
+
+
+## 실행 로그 (2026-10-17 업데이트)
+
+- **2026-10-17T05:18:50Z — 맞춤 댓글 1건 게시 확인.** Jeff Dai의 [A Pink Aurora Outburst](https://www.instagram.com/p/DeM88klDUb4/) 게시물(10/08)을 라이브 모자이크 8장과 캡션까지 확인한 뒤 작성. 댓글: “The pink lower edge is so distinct in the 1:00 frame, then almost gone by 2:30 while the green curtain remains. Did you keep exposure and white balance fixed across the sequence?” [댓글 URL](https://www.instagram.com/p/DeM88klDUb4/c/18466837618140572/). 게시자와 날짜를 화면에서 확인했고, 답글은 관측되지 않음. 홍보 링크 없음. 이 1건을 팔로워 증가에 귀속하지 않는다.
+- **핀 3건은 blocked (웹 UI).** Stickney의 본인 게시물 메뉴를 확인했으나 삭제/수정/좋아요 숨기기/댓글 해제/공유/링크/퍼가기만 있고 핀 메뉴는 없음. 모바일 앱에서 사용자가 3건을 고정해야 한다. 새 콘텐츠 게시나 핀 완료로 기록하지 않음.
+- 10/19 과정 콘텐츠 1건 및 10/21 보조 콘텐츠 1건은 기존 자산 기반으로 routine 연결 예정(schedule pending). 추가 Krea 생성 없음. 실제 게시/QA 전까지 완료로 세지 않는다.
+
+
+
+
+
+
+**현재 상태 정정:** 캠페인은 진행 중이며 완료가 아니다. 맞춤 댓글 1건은 실제 게시 확인, 핀 3건은 웹 UI에서 blocked, 과정 콘텐츠 2건은 scheduled/pending이다. 이 상태가 문서 첫머리의 계획 대기 표현보다 최신이다.
+
