@@ -1,0 +1,52 @@
+"""Offline outage regressions; no Krea/publication calls."""
+import tempfile
+import unittest
+from pathlib import Path
+from unittest.mock import patch, Mock
+from test_apod_namecode import apod
+
+HTML = '''<h1>Chasing the International Space Station</h1>
+<p><strong>Explanation:</strong>Blasting into the predawn sky, a rocket and Dragon spacecraft are headed for low Earth orbit in a stunning video. Complete scientific explanation continues here.<br><br><strong>Tomorrow's picture:</strong>space</p>
+<table><tr><th>Date</th><td>October 16, 2026</td></tr><tr><th>Video Credit:</th><td>Eric Holland</td></tr></table>'''
+
+class Recovery(unittest.TestCase):
+    def test_api500_falls_back_to_dated_html(self):
+        response = Mock(text=HTML)
+        with patch.object(apod.requests, 'get', side_effect=[apod.requests.RequestException('500'), response]), patch.object(apod.time, 'sleep'):
+            data = apod.get_apod('2026-10-16', retries=1)
+        self.assertEqual(data['title'], 'Chasing the International Space Station')
+        self.assertEqual(data['copyright'], 'Eric Holland')
+        self.assertEqual(data['media_type'], 'video')
+
+    def test_corrupt_api200_uses_html(self):
+        bad = Mock()
+        bad.json.return_value = dict(date='2026-10-16', title='NASA Science', explanation='cut')
+        good = Mock(text=HTML)
+        with patch.object(apod.requests, 'get', side_effect=[bad, good]) as get:
+            result = apod.get_apod('2026-10-16')
+        self.assertEqual(result['title'], 'Chasing the International Space Station')
+        self.assertIn('?date=261016', get.call_args.args[0])
+
+    def test_wrong_day_is_rejected(self):
+        with self.assertRaises(ValueError):
+            apod.parse_apod_html(HTML, '2026-10-17')
+
+    def test_invalid_day_is_rejected(self):
+        with self.assertRaises(ValueError):
+            apod.get_apod('2026-02-30')
+
+    def test_curated_captions_are_preserved(self):
+        with tempfile.TemporaryDirectory() as d:
+            out = str(Path(d) / 'caption.txt')
+            curated = apod.caption_variant_path(out, '_reel_instagram')
+            Path(curated).write_text('Human curated', encoding='utf-8')
+            apod.write_captions({'date':'2026-10-16', 'work_name':'TEST', 'apod_title':'Test', 'label':'test'}, out)
+            self.assertEqual(Path(curated).read_text(encoding='utf-8'), 'Human curated')
+
+    def test_workflow_checks_existing_assets_before_generator(self):
+        text = (Path(__file__).parent.parent / '.github/workflows/namecode-daily.yml').read_text(encoding='utf-8')
+        self.assertLess(text.index('compgen -G'), text.index('python apod_namecode.py'))
+        self.assertIn("steps.gen.outputs.fresh == 'true'", text)
+
+if __name__ == '__main__':
+    unittest.main()

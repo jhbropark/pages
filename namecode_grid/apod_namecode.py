@@ -27,6 +27,8 @@ Usage:
 """
 import argparse, hashlib, io, os, re, sys, time, json
 import requests
+from datetime import date as Date, datetime, timezone
+from html import unescape
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 import krea
 
@@ -61,25 +63,67 @@ def load_dotenv(path=None):
 
 
 # ---------------------------------------------------------------- NASA APOD
-def get_apod(date=None, retries=5):
+def _html_text(value):
+    return " ".join(unescape(re.sub(r"<[^>]+>", " ", value)).split())
+
+
+def parse_apod_html(html, date):
+    """Fail closed on NASA's date-dropping redirects or a changed template."""
+    expected = Date.fromisoformat(date)
+    rows = re.findall(r'<th\b[^>]*>(.*?)</th>\s*<td\b[^>]*>(.*?)</td>', html, re.S)
+    meta = {_html_text(k).rstrip(":"): _html_text(v) for k, v in rows}
+    actual = datetime.strptime(meta.get("Date", ""), "%B %d, %Y").date()
+    if actual != expected:
+        raise ValueError(f"APOD article date mismatch: {actual} != {expected}")
+    heading = re.search(r'<h1\b[^>]*>(.*?)</h1>', html, re.S)
+    explanation = re.search(r'<strong>Explanation:</strong>(.*?)(?:<br\s*/?>\s*<br\s*/?>|</p>)', html, re.S)
+    title = _html_text(heading.group(1)) if heading else ""
+    text = _html_text(explanation.group(1)) if explanation else ""
+    if not title or title in ("NASA Science", "Astronomy Picture of the Day") or len(text) < 80:
+        raise ValueError("APOD article missing verified title/explanation")
+    # Keep only media in the article hero, never the page's NASA logo.
+    hero = html[heading.end():explanation.start()]
+    image = re.search(r'<img\b[^>]*\bsrc="([^"]+)"', hero, re.S)
+    credit = next((v for k, v in meta.items() if "Credit" in k), None)
+    return {"date": date, "title": title, "explanation": text,
+            "media_type": "video" if "Video Credit" in meta else "image",
+            "url": unescape(image.group(1)) if image else None,
+            "copyright": credit}
+
+
+def get_apod_html(date):
+    # Legacy apYYMMDD.html now redirects to *today*, dropping the requested date.
+    url = "https://science.nasa.gov/apod/?date=" + Date.fromisoformat(date).strftime("%y%m%d")
+    for attempt in range(3):
+        try:
+            r = requests.get(url, timeout=30)
+            r.raise_for_status()
+            return parse_apod_html(r.text, date)
+        except requests.RequestException:
+            if attempt == 2:
+                raise
+            time.sleep(2 ** attempt)
+
+
+def get_apod(date=None, retries=2):
+    date = date or datetime.now(timezone.utc).date().isoformat()
+    Date.fromisoformat(date)
     base = os.environ.get("NASA_APOD_BASE", "https://api.nasa.gov/planetary/apod")
-    params = {"api_key": os.environ.get("NASA_API_KEY", "DEMO_KEY"), "thumbs": "true"}
-    if date:
-        params["date"] = date
-    last = None
+    params = {"api_key": os.environ.get("NASA_API_KEY", "DEMO_KEY"), "thumbs": "true", "date": date}
     for i in range(retries):
         try:
             r = requests.get(base, params=params, timeout=30)
-            if r.status_code >= 500 or r.status_code == 429:
-                raise requests.HTTPError(f"{r.status_code} from APOD", response=r)
             r.raise_for_status()
-            return r.json()
-        except requests.RequestException as e:  # transient 5xx/429/timeout/conn
-            last = e
+            data = r.json()
+            if (data.get("date") != date or data.get("title") in (None, "", "NASA Science")
+                    or len(data.get("explanation", "")) < 80):
+                break  # Known upstream parser corruption: use the dated article.
+            return data
+        except (requests.RequestException, ValueError):
             if i < retries - 1:
-                time.sleep(2 ** i)  # 1, 2, 4, 8s
-    raise last
-
+                time.sleep(2 ** i)
+    print("[APOD] API unavailable/invalid; reading date-verified NASA article", file=sys.stderr)
+    return get_apod_html(date)
 
 APOD_ARCHIVE = "https://apod.nasa.gov/apod/ap{yy}{mm}{dd}.html"
 ISO_DATE = re.compile(r"^(\d{4})-(\d{2})-(\d{2})$")
@@ -368,6 +412,8 @@ def write_captions(brief, caption_out):
     written = {}
     for suffix, channel, fmt in CAPTION_VARIANTS:
         path = caption_variant_path(caption_out, suffix)
+        if os.path.exists(path):
+            continue  # Preserve human-curated and previously committed captions.
         with open(path, "w", encoding="utf-8") as fh:
             fh.write(build_caption(brief, channel=channel, format=fmt))
         written[path] = (channel, fmt)
