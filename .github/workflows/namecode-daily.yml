@@ -13,8 +13,9 @@ name: namecode daily (APOD → artwork → publish)
 
 on:
   schedule:
-    - cron: "15 13 * * *"     # 13:15 UTC daily — off the top of the hour so it
-                              # doesn't race the hourly INSTAGRAM/LinkedIn pushers.
+    # Oct 11-16 runs started 4-8.5 hours late. Leave room before the 18:00
+    # UTC reel routine; one run/day only, after APOD's usual 04/05 UTC release.
+    - cron: "17 8 * * *"
   workflow_dispatch:          # manual "Run workflow" button
     inputs:
       date:
@@ -110,6 +111,7 @@ jobs:
           echo "image=namecode_grid/daily/namecode_apod_${DATE}.png" >> "$GITHUB_OUTPUT"
 
       - name: Build searchable namecode archive
+        if: ${{ steps.gen.outputs.fresh == 'true' }}
         run: node namecode_grid/build_namecode_archive.mjs --repo-root . --out ./namecode
 
       - name: Upload artifact
@@ -119,6 +121,7 @@ jobs:
           path: namecode_grid/daily/*${{ steps.gen.outputs.date }}*
 
       - name: Commit daily image
+        if: ${{ steps.gen.outputs.fresh == 'true' }}
         run: |
           git config user.name "namecode-bot"
           git config user.email "bot@namecode.kr"
@@ -190,6 +193,8 @@ jobs:
           if [ "$GEN" != "success" ]; then
             MSG="🛰 namecode daily ${DATE:-?}
           ❌ generation FAILED — check the run logs."
+          elif [ "${{ steps.gen.outputs.fresh }}" != "true" ]; then
+            MSG="namecode daily ${DATE}: existing artwork preserved; generation and publishing skipped."
           else
             MSG="🛰 namecode daily ${DATE}
           ✅ generated: ${LABEL:-?}

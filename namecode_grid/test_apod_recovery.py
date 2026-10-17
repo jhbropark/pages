@@ -27,6 +27,18 @@ class Recovery(unittest.TestCase):
         self.assertEqual(result['title'], 'Chasing the International Space Station')
         self.assertIn('?date=261016', get.call_args.args[0])
 
+    def test_truncated_api200_uses_html(self):
+        bad = Mock()
+        bad.json.return_value = dict(date='2026-10-16', title='Real title', explanation='cut')
+        with patch.object(apod.requests, 'get', side_effect=[bad, Mock(text=HTML)]):
+            self.assertEqual(apod.get_apod('2026-10-16')['copyright'], 'Eric Holland')
+
+    def test_future_day_is_rejected_before_network(self):
+        with patch.object(apod.requests, 'get') as get:
+            with self.assertRaises(ValueError):
+                apod.get_apod('2099-01-01')
+            get.assert_not_called()
+
     def test_wrong_day_is_rejected(self):
         with self.assertRaises(ValueError):
             apod.parse_apod_html(HTML, '2026-10-17')

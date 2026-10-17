@@ -107,7 +107,8 @@ def get_apod_html(date):
 
 def get_apod(date=None, retries=2):
     date = date or datetime.now(timezone.utc).date().isoformat()
-    Date.fromisoformat(date)
+    if Date.fromisoformat(date) > datetime.now(timezone.utc).date():
+        raise ValueError("Future APOD dates are unavailable")
     base = os.environ.get("NASA_APOD_BASE", "https://api.nasa.gov/planetary/apod")
     params = {"api_key": os.environ.get("NASA_API_KEY", "DEMO_KEY"), "thumbs": "true", "date": date}
     for i in range(retries):
