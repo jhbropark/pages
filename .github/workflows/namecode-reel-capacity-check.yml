@@ -1,0 +1,145 @@
+name: namecode reel capacity check (read only)
+
+# GET-only preflight. No checkout, no POST/PUT/PATCH/DELETE, no publishing.
+# NOT proof of publish permission: a canary reel is still required.
+# Default source_dates = first 28 planned unrendered dates from
+# tmp/bulk-preflight/source-inventory.json (10/14, 9/22, 9/20..9/01, 8/31..8/26).
+# Missing secrets => channel skipped (no-op, exit 0). Bad identity => exit 1, artifact still uploaded.
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_dates:
+        description: "Candidate dates CSV, strict YYYY-MM-DD, max 50"
+        required: false
+        default: "2026-10-14,2026-09-22,2026-09-20,2026-09-19,2026-09-18,2026-09-17,2026-09-16,2026-09-15,2026-09-14,2026-09-13,2026-09-12,2026-09-11,2026-09-10,2026-09-09,2026-09-08,2026-09-07,2026-09-06,2026-09-05,2026-09-04,2026-09-03,2026-09-02,2026-09-01,2026-08-31,2026-08-30,2026-08-29,2026-08-28,2026-08-27,2026-08-26"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: namecode-reel-capacity-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Capacity and duplicate check (GET only)
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          SOURCE_DATES: ${{ github.event.inputs.source_dates }}
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const E=process.env, num=v=>Number.isFinite(v)?v:null;
+          const secrets=[E.IG_USER_ID,E.IG_ACCESS_TOKEN,E.FB_PAGE_ID,E.FB_PAGE_TOKEN].filter(s=>s&&s.length>=4);
+          const redact=s=>secrets.reduce((a,x)=>a.split(x).join('[redacted]'),s);
+          const report={schema_version:1,observed_at:new Date().toISOString(),read_only:true,
+           notes:['GET only. Not proof of publish permission; a canary reel is required.',
+           'Duplicate candidates are text matches, not proof; absence is not proof if scan truncated.'],
+           source_dates:[],ig:{},facebook:{},duplicate_candidates:[]};
+          let bad=false;
+          const dates=(E.SOURCE_DATES||'').split(',').map(s=>s.trim()).filter(Boolean);
+          const okDate=d=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(d))return false;const ms=Date.parse(d+'T00:00:00Z');return Number.isFinite(ms)&&new Date(ms).toISOString().slice(0,10)===d;};
+          if(!dates.length||dates.length>50||new Set(dates).size!==dates.length||!dates.every(okDate)){report.source_dates_error='invalid_source_dates';bad=true;}
+          else report.source_dates=dates;
+          async function get(ep,params,token){
+           if(!token) return {status:'unavailable',reason:'missing_token'};
+           const host=token.startsWith('IG')?'graph.instagram.com':'graph.facebook.com';
+           const url=new URL('https://'+host+'/v23.0/'+ep);
+           for(const [k,v] of Object.entries(params||{})) url.searchParams.set(k,String(v));
+           try{
+            const r=await fetch(url,{method:'GET',headers:{Authorization:'Bearer '+token},signal:AbortSignal.timeout(20000)});
+            let j; try{j=await r.json();}catch{return {status:'unavailable',reason:'bad_response',http_status:r.status};}
+            if(!r.ok||j.error) return {status:'unavailable',reason:'graph_error',http_status:r.status,code:num(j.error?.code),subcode:num(j.error?.error_subcode)};
+            return {status:'available',data:j};
+           }catch{return {status:'unavailable',reason:'network_or_timeout'};}
+          }
+          async function pages(ep,params,token,max=2){
+           const out={status:'available',items:[],pages:0,truncated:false};
+           let after;
+           for(let p=0;p<max;p++){
+            const x=await get(ep,{...params,...(after?{after}:{})},token);
+            if(x.status!=='available'){out.status='unavailable';out.error=x;break;}
+            out.pages++; out.items.push(...(Array.isArray(x.data.data)?x.data.data:[]));
+            after=x.data.paging?.cursors?.after;
+            if(!x.data.paging?.next||!after) break;
+            if(p===max-1) out.truncated=true;
+           }
+           return out;
+          }
+          const keys=d=>{const c=d.replace(/-/g,''),y=c.slice(2);return [d,c,'ap'+y,'apod'+y,'apod_'+y];};
+          function scan(items,text,time,link,src){
+           for(const it of items){
+            const t=(it[text]||'').toLowerCase();
+            for(const d of report.source_dates) if(keys(d).some(k=>t.includes(k)))
+             report.duplicate_candidates.push({date:d,channel:src,permalink:redact(String(it[link]||'')),published_at:it[time]||null});
+           }
+          }
+          const meta=(r,time)=>({pages:r.pages,items_scanned:r.items.length,truncated:r.truncated,
+           oldest_scanned:r.items.map(i=>i[time]).filter(Boolean).sort()[0]||null});
+          // Instagram
+          if(!E.IG_ACCESS_TOKEN||!E.IG_USER_ID) report.ig.status='skipped_missing_secrets';
+          else {
+           const a=await get(E.IG_USER_ID,{fields:'id,username'},E.IG_ACCESS_TOKEN);
+           if(a.status!=='available') {report.ig.identity=a;report.ig.status='identity_unavailable';bad=true;}
+           else {
+            const ok=a.data.username==='namecode_original', idm=String(a.data.id)===String(E.IG_USER_ID);
+            report.ig.identity={status:'available',username:a.data.username,idMatchesSecret:idm};
+            report.ig.status=ok&&idm?'verified':'identity_mismatch'; if(!(ok&&idm)) bad=true;
+            if(ok&&idm){
+             const q=await get(E.IG_USER_ID+'/content_publishing_limit',{fields:'quota_usage,config'},E.IG_ACCESS_TOKEN);
+             const row=q.status==='available'?q.data.data?.[0]:null;
+             report.ig.publishing_limit=row?{status:'available',quota_usage:num(row.quota_usage),quota_total:num(row.config?.quota_total),quota_duration_seconds:num(row.config?.quota_duration)}:(q.status==='available'?{status:'unavailable',reason:'empty_response'}:q);
+             const m=await pages(E.IG_USER_ID+'/media',{fields:'id,caption,media_product_type,permalink,timestamp',limit:100},E.IG_ACCESS_TOKEN);
+             report.ig.media_scan={status:m.status,...meta(m,'timestamp'),...(m.error?{error:m.error}:{})};
+             scan(m.items.filter(i=>i.media_product_type==='REELS'),'caption','timestamp','permalink','instagram');
+            }
+           }
+          }
+          // Facebook
+          if(!E.FB_PAGE_TOKEN||!E.FB_PAGE_ID) report.facebook.status='skipped_missing_secrets';
+          else {
+           const f=await get(E.FB_PAGE_ID,{fields:'id,name,link'},E.FB_PAGE_TOKEN);
+           if(f.status!=='available'){report.facebook.identity=f;report.facebook.status='identity_unavailable';bad=true;}
+           else {
+            let canon=false; try{const u=new URL(f.data.link||'');canon=/^(www\.)?facebook\.com$/i.test(u.hostname)&&u.pathname.replace(/\/+$/,'').toLowerCase()==='/namecode.original';}catch{}
+            const fidm=String(f.data.id)===String(E.FB_PAGE_ID);
+            report.facebook.identity={status:'available',name:f.data.name,link:redact(String(f.data.link||'')),idMatchesSecret:fidm};
+            report.facebook.status=canon&&fidm?'verified':'UNVERIFIED'; if(!(canon&&fidm)) bad=true;
+            if(canon&&fidm){
+             const v=await pages(E.FB_PAGE_ID+'/videos',{fields:'id,description,permalink_url,created_time',limit:100},E.FB_PAGE_TOKEN);
+             report.facebook.video_scan={status:v.status,...meta(v,'created_time'),...(v.error?{error:v.error}:{})};
+             scan(v.items.map(i=>({...i,permalink_url:String(i.permalink_url||'').startsWith('/')?'https://www.facebook.com'+i.permalink_url:i.permalink_url})),'description','created_time','permalink_url','facebook');
+            }
+           }
+          }
+          const allVerified=report.ig.status==='verified'&&report.facebook.status==='verified';
+          report.verdict=bad?'identity_or_input_problem':allVerified?'identity_ok_publish_permission_unproven':'incomplete_missing_secrets';
+          fs.mkdirSync('capacity-output',{recursive:true});
+          const json=redact(JSON.stringify(report,null,2));
+          fs.writeFileSync('capacity-output/report.json',json);
+          const md=['# namecode reel capacity check (read only)','Verdict: '+report.verdict,'IG: '+report.ig.status,'FB: '+report.facebook.status,
+           'IG publishing limit: '+JSON.stringify(report.ig.publishing_limit??null),'IG scan: '+JSON.stringify(report.ig.media_scan??null),'FB scan: '+JSON.stringify(report.facebook.video_scan??null),
+           'Duplicate candidates ('+report.duplicate_candidates.length+'): '+JSON.stringify(report.duplicate_candidates),'Not proof of publish permission; canary required.'].join('\n\n');
+          fs.writeFileSync('capacity-output/summary.md',redact(md));
+          if(process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,redact(md));
+          console.log('VERDICT='+report.verdict+' IG='+report.ig.status+' FB='+report.facebook.status);
+          if(bad) process.exitCode=1;
+          NODE
+      - name: Upload report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v6
+        with:
+          name: namecode-reel-capacity-check
+          path: capacity-output/
+          retention-days: 90
+          if-no-files-found: ignore
