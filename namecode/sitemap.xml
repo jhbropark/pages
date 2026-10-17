@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://jhbropark.github.io/pages/namecode/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jhbropark.github.io/pages/namecode/artwork/2026-10-17.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://jhbropark.github.io/pages/namecode_grid/daily/namecode_apod_2026-10-17.png</image:loc>
+      <image:title>3D 67P</image:title>
+      <image:caption>3D 67P에서 출발한 흑백 생성 이미지. 검은 배경 위에 흰 입자와 가느다란 빛줄기가 퍼져 있고 여백이 넓다. 2026-10-17 namecode 스카이 스터디.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://jhbropark.github.io/pages/namecode/artwork/2026-10-16.html</loc>
@@ -293,16 +303,6 @@
       <image:loc>https://jhbropark.github.io/pages/namecode_grid/daily/namecode_apod_2026-09-14.png</image:loc>
       <image:title>Where Your Elements Came From</image:title>
       <image:caption>Where Your Elements Came From에서 출발한 흑백 생성 이미지. 검은 배경 위에 흰 입자와 가느다란 빛줄기가 퍼져 있고 여백이 넓다. 2026-09-14 namecode 스카이 스터디.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://jhbropark.github.io/pages/namecode/artwork/2026-09-13.html</loc>
-    <lastmod>2026-09-13</lastmod>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://jhbropark.github.io/pages/namecode_grid/daily/namecode_apod_2026-09-13.png</image:loc>
-      <image:title>Comet NEOWISE Rising over the Adriatic Sea</image:title>
-      <image:caption>Comet NEOWISE Rising over the Adriatic Sea에서 출발한 흑백 생성 이미지. 검은 배경 위에 흰 입자와 가느다란 빛줄기가 퍼져 있고 여백이 넓다. 2026-09-13 namecode 스카이 스터디.</image:caption>
     </image:image>
   </url>
 </urlset>
