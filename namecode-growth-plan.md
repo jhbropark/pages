@@ -1,3 +1,7 @@
+> **최신 7일 캠페인 (2026-10-17~24):** [namecode-growth-sprint-2026-10-17.md](namecode-growth-sprint-2026-10-17.md). 기준선은 Actions run #33을 사용합니다. 아래 내용은 2026-09-28 기준의 역사적 계획이며, 과거 날짜·실험·계정 상태는 현재 실행 지시가 아닙니다. 이번 캠페인의 범위와 pending 상태는 최신 문서를 따릅니다.
+
+---
+
 # namecode: 팔로워 1,000명 성장 실행계획
 
 업데이트: 2026-09-28. 대상은 Instagram @namecode_original, Facebook namecode.original만. 다른 namecode 브랜드 및 parkjunhyukxyz/VARIS와 분리.
