@@ -67,6 +67,58 @@ def _html_text(value):
     return " ".join(unescape(re.sub(r"<[^>]+>", " ", value)).split())
 
 
+GENERIC_APOD_TITLES = {"", "apod", "nasa science", "astronomy picture of the day"}
+PLAYER_PLACEHOLDER = re.compile(
+    r"to view this video|please enable javascript|supports? html5 video|"
+    r"javascript (?:is )?(?:required|disabled)", re.I)
+
+
+def _subject_title(title):
+    """Keep the source title, not a made-up astronomical subject or site label."""
+    title = _html_text(title) if isinstance(title, str) else ""
+    normalized = re.sub(r"[\W_]+", " ", title.casefold(), flags=re.UNICODE).strip()
+    if normalized in GENERIC_APOD_TITLES or PLAYER_PLACEHOLDER.search(title):
+        raise ValueError("Missing specific APOD subject; generic title/player text refused")
+    return title
+
+
+def _source_content_ok(title, explanation):
+    try:
+        _subject_title(title)
+    except ValueError:
+        return False
+    return (isinstance(explanation, str) and len(_html_text(explanation)) >= 80
+            and not PLAYER_PLACEHOLDER.search(explanation))
+
+
+def visual_context(explanation, max_chars=800, max_sentences=3):
+    """Bound source context at sentence boundaries, never at character 200.
+
+    This is source text, not an automatic claim that the generated scene matches
+    it. If no whole sentence fits, omit the context instead of inventing or
+    splicing a sentence fragment into the rendering instructions.
+    """
+    text = _html_text(explanation or "")
+    if PLAYER_PLACEHOLDER.search(text):
+        raise ValueError("Video player placeholder is not APOD scene context")
+    if len(text) <= max_chars:
+        return text
+    selected = []
+    used = 0
+    for sentence in re.split(r'(?<=[.!?])\s+(?=[A-Z0-9"“])', text):
+        if not re.search(r'[.!?]["”)]?$', sentence):
+            continue
+        if len(sentence) > max_chars:
+            continue
+        if used + len(sentence) + bool(selected) > max_chars:
+            break
+        selected.append(sentence)
+        used += len(sentence) + (1 if len(selected) > 1 else 0)
+        if len(selected) >= max_sentences:
+            break
+    return " ".join(selected)
+
+
 def parse_apod_html(html, date):
     """Fail closed on NASA's date-dropping redirects or a changed template."""
     expected = Date.fromisoformat(date)
@@ -79,7 +131,7 @@ def parse_apod_html(html, date):
     explanation = re.search(r'<strong>Explanation:</strong>(.*?)(?:<br\s*/?>\s*<br\s*/?>|</p>)', html, re.S)
     title = _html_text(heading.group(1)) if heading else ""
     text = _html_text(explanation.group(1)) if explanation else ""
-    if not title or title in ("NASA Science", "Astronomy Picture of the Day") or len(text) < 80:
+    if not _source_content_ok(title, text):
         raise ValueError("APOD article missing verified title/explanation")
     # Keep only media in the article hero, never the page's NASA logo.
     hero = html[heading.end():explanation.start()]
@@ -116,8 +168,8 @@ def get_apod(date=None, retries=2):
             r = requests.get(base, params=params, timeout=30)
             r.raise_for_status()
             data = r.json()
-            if (data.get("date") != date or data.get("title") in (None, "", "NASA Science")
-                    or len(data.get("explanation", "")) < 80):
+            if (data.get("date") != date
+                    or not _source_content_ok(data.get("title"), data.get("explanation"))):
                 break  # Known upstream parser corruption: use the dated article.
             return data
         except (requests.RequestException, ValueError):
@@ -422,12 +474,15 @@ def write_captions(brief, caption_out):
 
 
 def build_prompt(subject, explanation=""):
-    snippet = (explanation or "").strip().replace("\n", " ")
-    if len(snippet) > 200:
-        snippet = snippet[:200].rsplit(" ", 1)[0]
+    subject = _subject_title(subject)
+    context = visual_context(explanation)
     return (
-        f"Cinematic dark monochrome generative art inspired by {subject}. "
-        f"{snippet} "
+        f"Visual subject: {subject}.\n"
+        f"Scene context from the APOD description: {context or 'No scene context supplied.'}\n"
+        "Keep the named subject and its source-described distinguishing features "
+        "visually legible; do not replace it with an unrelated generic space scene. "
+        "This is an AI interpretation of text, not a reconstruction of a source photograph.\n"
+        "Style: Cinematic dark monochrome generative art. "
         "Rendered as fine white particles and light filaments on a pure black "
         "background, volumetric, dramatic, monochrome white on black, lots of "
         "negative space, high detail."
@@ -446,6 +501,13 @@ def build_brief(date, title, name, value, prompt, src_url=None,
     brief = {"date": date, "apod_title": title, "work_name": name,
              "label": f"namecode - {name} | {value}", "source": src_url,
              "prompt": prompt}
+    # The title/context are explicit review targets, not a semantic QA pass.
+    brief["visual_subject"] = _subject_title(title)
+    brief["visual_context"] = visual_context(explanation)
+    brief["visual_review"] = {
+        "status": "pending", "required": True,
+        "reason": "Check first-frame subject against source context and caption before publication"
+    }
     url = apod_article_url(date)
     if url:
         brief["apod_url"] = url
