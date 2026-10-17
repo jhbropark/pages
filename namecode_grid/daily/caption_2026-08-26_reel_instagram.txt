@@ -1,0 +1,11 @@
+별이 지나간 자리에는 백색왜성이 남아 있습니다.
+
+2026년 8월 26일 APOD는 태양과 비슷한 별의 잔해인 NGC 2392를 소개합니다. 원본은 제임스 웹 우주망원경의 NIRCam과 MIRI로 담은 합성 이미지입니다.
+
+NEBULA는 이 설명문을 바탕으로 만든 흑백 AI 이미지에 입자와 카메라 움직임을 더했습니다. 실제 망원경 사진이나 성운을 연속 관측한 영상은 아닙니다.
+
+참고 원문: NASA APOD 2026-08-26 「JWST Images The Lion’s Head Nebula」
+https://science.nasa.gov/apod/?date=260826
+참고 원문 크레딧: Image: NASA, ESA, CSA, STScI; image processing: Alyssa Pagan (STScI)
+
+#namecode #generativeart

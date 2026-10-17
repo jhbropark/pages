@@ -1,0 +1,11 @@
+AURORA의 출발점은 한 장의 사진을 설명하는 글입니다.
+
+참고 자료는 2026년 8월 27일 APOD의 「Colorful Aurora over an Icelandic Waterfall」입니다. 여기의 날짜는 원문 게시일이며, 이번 생성 작업의 촬영일을 뜻하지 않습니다.
+
+namecode는 설명문을 바탕으로 흑백 AI 프레임을 만들고 미세한 입자와 카메라 움직임을 더했습니다. 원본 사진이나 실제 오로라를 관측한 영상이 아닌, 별도의 AI 재해석입니다.
+
+참고 원문: NASA APOD 2026-08-27 「Colorful Aurora over an Icelandic Waterfall」
+https://science.nasa.gov/apod/?date=260827
+참고 원문 크레딧: Victor Lima
+
+#namecode #generativeart

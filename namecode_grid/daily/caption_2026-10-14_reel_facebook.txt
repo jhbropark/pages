@@ -1,8 +1,7 @@
-NASA.SCIENCE — NASA Science. NASA APOD 2026-10-14.
+한 장의 이미지에서는 멈춰 있던 빛이, 영상에서는 배경과 다른 속도로 지나갑니다. 색보다 밝기의 차이, 형태보다 입자 사이의 간격에 머무는 짧은 작업입니다.
 
-AI 이미지 한 장에서 출발한 9:16 영상입니다. 망원경 사진이 아닙니다.
-A 9:16 clip built from a single AI frame — not from the telescope image.
+아카이브의 〈NASA.SCIENCE〉 AI 프레임에 움직임을 덧붙였습니다.
 
-원본과 해설 / original and write-up: https://apod.nasa.gov/apod/ap261014.html
+이 영상은 AI 이미지에 움직임을 더한 생성 작업이며, 실제 촬영물이나 특정 천체의 관측 자료가 아닙니다.
 
-#namecode #nasaapod #nasa
+#namecode #mediaart #monochrome

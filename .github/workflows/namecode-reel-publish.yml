@@ -115,7 +115,7 @@ jobs:
           set -o pipefail
           RAW="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}"
           echo "video: $RAW/${{ steps.res.outputs.reel }}"
-          python namecode_grid/fb_publish.py \
+          python namecode_grid/fb_publish.py --strict-video \
             --video-url "$RAW/${{ steps.res.outputs.reel }}" \
             --caption-file "namecode_grid/daily/caption_${{ steps.res.outputs.date }}_reel_facebook.txt" | tee /tmp/fb.txt
           echo "permalink=$(sed -n 's/^permalink: //p' /tmp/fb.txt)" >> "$GITHUB_OUTPUT"

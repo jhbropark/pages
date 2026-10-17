@@ -1,0 +1,11 @@
+명왕성의 이 색은 표면의 차이를 구분하기 위해 강화한 색입니다.
+
+참고 원문은 New Horizons가 2015년 근접 통과 때 얻은 색 자료와 고해상도 이미지를 합친 모습을 소개합니다. 색을 강화해 화학적 조성이 다른 영역을 구별하도록 했습니다.
+
+PLUTO.ENHANCED는 그 설명에서 출발한 흑백의 AI 이미지 기반 애니메이션입니다. 탐사선의 실제 촬영 영상도, 명왕성 표면의 색과 성분을 옮긴 과학 자료도 아닙니다.
+
+참고 원문: NASA APOD 2026-09-06 「Pluto in Enhanced Color」
+참고 원문 크레딧: NASA, Johns Hopkins Univ./APL, Southwest Research Inst.
+https://science.nasa.gov/apod/?date=260906
+
+#namecode #generativeart

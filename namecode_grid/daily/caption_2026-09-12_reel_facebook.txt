@@ -1,0 +1,13 @@
+태양풍을 지구로 가져와 분석하기 위해, 달 표면에서 포일을 펼쳤습니다.
+
+2026년 9월 12일 NASA APOD가 소개한 Apollo 11 사진에는 달 착륙선 Eagle과 Buzz Aldrin이 함께 있습니다. Aldrin이 펼치는 긴 포일은 Solar Wind Composition Experiment입니다. 태양에서 바깥쪽으로 흐르는 입자를 포일에 붙잡아 귀환 후 분석하기 위한 실험이었습니다.
+
+사진의 배경을 설명하는 문장에서 시작한 작업이 APOLLO.CATCHING입니다. 원본 사진을 영상으로 복원한 것이 아니라, 해설을 바탕으로 생성한 AI 이미지 한 장을 흑백 입자의 움직임으로 전개했습니다.
+
+따라서 화면의 움직임은 Aldrin의 동작이나 실험 과정을 기록한 자료가 아닙니다. 실제 탐사의 기록은 아래 원문에서, 그 설명을 다른 시각 언어로 옮긴 작업은 이 영상에서 따로 볼 수 있습니다.
+
+참고 원문: NASA APOD 2026-09-12 「Apollo 11: Catching Some Sun」
+참고 원문 크레딧: Image Credit: Apollo 11, NASA (Image scanned by Kipp Teague)
+https://science.nasa.gov/apod/?date=260912
+
+#namecode #mediaart

@@ -1,0 +1,13 @@
+Hubble 합성 이미지에서 X는 토성의 남극을 가리킵니다. 그 주위를 두른 구름에는 열 개의 변을 가진 무늬가 있습니다.
+
+2026년 9월 8일 NASA APOD의 주제는 이 십각형 구조입니다. 원문에 따르면 무늬는 합성 이미지의 어두운 안쪽 영역에서 가장 두드러집니다. 여기서 말하는 X 표시와 구름의 형태는 참고 원본에 대한 설명이지, 이 작품의 화면을 해설하는 말은 아닙니다.
+
+HUBBLE.DECAGON에서는 그 천문 해설을 바탕으로 AI 이미지를 생성하고, 한 장의 이미지를 흑백 입자 애니메이션으로 전개했습니다. 관측 자료를 그대로 영상화하거나 대기의 움직임을 계산한 작업과는 구분됩니다.
+
+영상에 흐르는 입자는 토성 구름의 이동 속도나 경로를 나타내지 않습니다. 관측의 근거와 합성 이미지의 맥락은 아래 NASA APOD에 남겨 두고, 이 작업은 그 설명을 다른 형태로 읽습니다.
+
+참고 원문: NASA APOD 2026-09-08 「Hubble: Decagon Around Saturn's South Pole」
+참고 원문 크레딧: NASA, ESA, STScI, HST; A. Sánchez-Lavega, A. Simon, M. Wong; Processing: A. Pagan
+https://science.nasa.gov/apod/?date=260908
+
+#namecode #mediaart

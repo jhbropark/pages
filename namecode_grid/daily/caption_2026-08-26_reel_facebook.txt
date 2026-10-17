@@ -1,0 +1,11 @@
+서로 다른 두 관측 기기가 한 합성 이미지에 쓰였습니다. 2026년 8월 26일 APOD가 소개한 NGC 2392는 제임스 웹 우주망원경의 NIRCam과 MIRI로 담은 자료입니다.
+
+원문에서 사자의 머리에 빗댄 이 성운은 태양과 비슷한 별이 남긴 잔해이며, 그 구조 안에는 백색왜성이 남아 있습니다. 이러한 설명은 참고한 관측 대상에 관한 것입니다. 생성 영상의 형태가 해당 천체의 실제 구조를 정확하게 재현한다는 의미는 아닙니다.
+
+namecode의 NEBULA는 관측 이미지를 직접 애니메이션화하지 않았습니다. 설명문에서 출발해 별도의 흑백 AI 프레임을 생성하고, 미세한 입자와 카메라 움직임을 더했습니다. 화면은 실제 망원경 촬영물도, 성운의 변화를 시간 순서로 기록한 관측 영상도 아닙니다. 원문의 관측 맥락을 참고한 AI 재해석으로 소개합니다.
+
+참고 원문: NASA APOD 2026-08-26 「JWST Images The Lion’s Head Nebula」
+https://science.nasa.gov/apod/?date=260826
+참고 원문 크레딧: Image: NASA, ESA, CSA, STScI; image processing: Alyssa Pagan (STScI)
+
+#namecode #mediaart

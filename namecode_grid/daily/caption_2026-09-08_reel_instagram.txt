@@ -1,0 +1,11 @@
+토성의 남극 주변에서 열 변을 가진 구름 무늬가 관측됐습니다.
+
+2026년 9월 8일 NASA APOD가 소개한 Hubble 합성 이미지의 내용입니다. 원문은 남극을 X로 표시하고, 십각형 무늬가 어두운 안쪽 영역에서 가장 두드러진다고 설명합니다.
+
+HUBBLE.DECAGON은 이 해설을 바탕으로 만든 AI 이미지에 흑백 입자의 움직임을 더했습니다. Hubble 관측 사진 자체도, 토성 대기의 실제 움직임을 보여주는 영상도 아닙니다.
+
+참고 원문: NASA APOD 2026-09-08 「Hubble: Decagon Around Saturn's South Pole」
+참고 원문 크레딧: NASA, ESA, STScI, HST; A. Sánchez-Lavega, A. Simon, M. Wong; Processing: A. Pagan
+https://science.nasa.gov/apod/?date=260908
+
+#namecode #generativeart

@@ -1,0 +1,11 @@
+한 이미지에 담긴 범위와 그 대상까지의 거리는 다른 숫자입니다. M74는 물고기자리 방향으로 약 3,200만 광년 떨어져 있고, 2026년 8월 30일 APOD의 정면 합성 이미지가 보여 주는 범위는 약 3만 광년입니다.
+
+원본은 수소 방출광을 통해 별이 태어나는 영역을 강조합니다. 이 설명은 관측 자료를 어떻게 읽을지에 관한 정보입니다. 새로 만든 흑백 영상에서 같은 관측 정보를 그대로 확인할 수 있다는 뜻은 아닙니다.
+
+GALAXY는 APOD 설명문을 참고해 AI 이미지 한 장을 만든 뒤, 작은 입자와 카메라 움직임을 더한 작업입니다. 원본 합성 이미지를 직접 움직인 결과가 아니며, 은하가 실제로 회전하는 모습을 촬영한 것도 아닙니다. 과학적 수치와 관측 맥락은 아래 원문에, 움직임을 구성한 방식은 이 AI 작업에 각각 속합니다.
+
+참고 원문: NASA APOD 2026-08-30 「M74: A Grand Design Spiral」
+https://science.nasa.gov/apod/?date=260830
+참고 원문 크레딧: NASA, ESA, and the Hubble Heritage (STScI / AURA) - ESA / Hubble Collaboration; acknowledgment: R. Chandar (U. Toledo) and J. Miller (U. Michigan)
+
+#namecode #mediaart

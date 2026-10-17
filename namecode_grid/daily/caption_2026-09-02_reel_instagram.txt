@@ -1,0 +1,11 @@
+두 시간의 일식이 한 장에 모였습니다.
+
+2026년 9월 2일 APOD의 합성 이미지는 8월 12일 일식의 두 시간을 잇습니다. 해설은 같은 현상이 문화에 따라 어떻게 다르게 받아들여지는지도 다룹니다.
+
+이 작업의 이름은 ECLIPSE. 원문 설명에서 출발한 흑백 AI 프레임을 입자와 느린 카메라 움직임으로 옮겼습니다. 원본 합성 사진을 움직인 것이 아니며, 실제 일식 촬영 영상도 아닙니다.
+
+참고 원문: NASA APOD 2026-09-02 「Solar Eclipses and Culture」
+https://science.nasa.gov/apod/?date=260902
+참고 원문 크레딧: Javier Castro
+
+#namecode #generativeart

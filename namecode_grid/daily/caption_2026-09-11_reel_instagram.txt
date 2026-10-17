@@ -1,0 +1,11 @@
+약 1,200만 광년 거리의 은하, M83. 지름은 약 4만 광년입니다.
+
+바다뱀자리 방향에 있는 이 은하를 NASA APOD는 “The Southern Pinwheel”이라는 제목으로 소개했습니다. Aldo Zanetti의 원본 이미지가 참고한 기록입니다.
+
+GALAXY는 그 해설을 흑백 입자의 움직임으로 바꾼 AI 재해석입니다. 생성 이미지 한 장에서 만든 영상으로, 망원경의 실제 관측 영상이나 은하의 운동을 재현한 시뮬레이션은 아닙니다.
+
+참고 원문: NASA APOD 2026-09-11 「M83: The Southern Pinwheel」
+참고 원문 크레딧: Aldo Zanetti
+https://science.nasa.gov/apod/?date=260911
+
+#namecode #generativeart

@@ -1,0 +1,11 @@
+M64의 안쪽과 바깥쪽 기체 영역은 서로 반대 방향으로 회전합니다. 원문은 작은 은하와 합쳐진 일이 그 원인일 가능성을 제시합니다. 확정된 장면을 보여주는 설명이 아니라, 지금 보이는 구조를 해석하는 가설입니다.
+
+제임스웹의 중적외선 장비 MIRI는 주변의 어린 별빛을 흡수했다가 다시 내보내는 먼지를 봅니다. 원문 이미지에서는 이 먼지를 붉게 표시했습니다.
+
+〈GALAXY〉는 그 설명을 바탕으로 만든 AI 프레임에 움직임을 더한 영상입니다. 관측 데이터를 직접 애니메이션화하거나 기체의 실제 회전을 모사한 결과가 아닙니다.
+
+원작 프레임 2026-09-16
+참고 원문 크레딧: NASA, CSA, ESA, F. Belfiore (ESO), J. Lee (STScI), A. Leroy (OSU), and D. Thilker (JHU); processing: G. Kober (NASA/Catholic University)
+https://science.nasa.gov/apod/?date=260916
+
+#namecode #mediaart #m64

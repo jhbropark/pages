@@ -1,0 +1,13 @@
+XZ Andromedae의 광도곡선은 어두워졌다가 다시 밝아지는 변화를 보여줍니다. NASA APOD는 이를 두 별이 서로를 가리는 관계로 설명합니다.
+
+이 계는 Algol형 식쌍성이며, 지구에서는 궤도를 거의 옆으로 보게 됩니다. 더 차가운 별이 더 뜨겁고 밝은 동반성을 가릴 때 밝기가 줄어듭니다. 2026년 9월 9일 원문은 애니메이션으로 소개됐고, 크레딧은 Ogetay Kayali (MTU, Starfront Observatories)입니다.
+
+여기 올리는 ECLIPSE는 그 원본 애니메이션을 편집한 영상이 아닙니다. 설명을 읽고 AI 이미지 한 장을 생성한 뒤, 흑백 입자의 움직임을 더한 별도의 작업입니다.
+
+실제 광도곡선의 수치나 식의 시간 간격을 화면에 옮긴 시뮬레이션으로 읽어서는 안 됩니다. 두 별에 대한 관측 설명은 아래 기록에 있고, 작품은 그 설명에서 가져온 시각적 출발점을 다룹니다.
+
+참고 원문: NASA APOD 2026-09-09 「Witness XZ Andromedae Wink」
+참고 원문 크레딧: Ogetay Kayali (MTU, Starfront Observatories)
+https://science.nasa.gov/apod/?date=260909
+
+#namecode #mediaart

@@ -1,0 +1,11 @@
+25시간의 노출을 모은 펠리컨 성운 이미지가 출발점입니다.
+
+Mark Killion의 원본 사진을 소개한 NASA APOD는 IC 5070과 북아메리카 성운 사이에 어두운 먼지가 가득한 분자 구름이 있다고 설명합니다.
+
+이 작업의 이름은 NEBULA입니다. 사진을 그대로 움직인 것이 아니라 해설에서 만든 AI 이미지 한 장을 흑백 입자의 흐름으로 전개했습니다. 영상 속 움직임은 실제 성운의 변화나 25시간의 촬영 과정을 뜻하지 않습니다.
+
+참고 원문: NASA APOD 2026-09-07 「The Pelican Nebula in Gas, Dust, and Stars」
+참고 원문 크레딧: Mark Killion
+https://science.nasa.gov/apod/?date=260907
+
+#namecode #generativeart

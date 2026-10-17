@@ -1,9 +1,8 @@
-NASA.SCIENCE — NASA Science.
-NASA APOD 2026-10-14.
+검은 바탕을 가로지르는 빛의 결.
+아카이브에 남아 있던 흑백 프레임에 움직임을 더했습니다.
 
-APOD 설명문으로 만든 AI 이미지 한 장을 9:16으로 움직였습니다.
-One AI frame from today's APOD description, set in motion at 9:16.
+〈NASA.SCIENCE〉
 
-APOD: https://apod.nasa.gov/apod/ap261014.html
+AI로 생성한 이미지에서 출발한 영상입니다. 실제 천체의 관측 기록이 아닙니다.
 
-#namecode #nasaapod #aiart #nasa
+#namecode #generativeart #monochrome

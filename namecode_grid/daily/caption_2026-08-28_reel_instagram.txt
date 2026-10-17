@@ -1,0 +1,11 @@
+25초씩, 300장의 노출이 하늘에 호를 남겼습니다.
+
+2026년 8월 28일 APOD의 별 궤적 이미지는 삼각대에 고정한 카메라로 연속 촬영한 사진을 쌓아 만든 것입니다. 호의 중심은 남천구의 극입니다.
+
+TURNS.PARANAL은 이 설명문에서 만든 흑백 AI 프레임을 작은 입자와 카메라 움직임으로 구성한 작업입니다. 원본의 장노출 사진이나 실제 별의 이동을 연속 촬영한 영상은 아닙니다.
+
+참고 원문: NASA APOD 2026-08-28 「The Sky Turns Above Paranal」
+https://science.nasa.gov/apod/?date=260828
+참고 원문 크레딧: Osvaldo Castillo
+
+#namecode #generativeart

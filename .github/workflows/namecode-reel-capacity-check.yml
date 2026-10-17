@@ -1,6 +1,6 @@
 name: namecode reel capacity check (read only)
 
-# GET-only preflight. No checkout, no POST/PUT/PATCH/DELETE, no publishing.
+# GET-only preflight. Syntax-only checkout; no POST/PUT/PATCH/DELETE, no publishing.
 # NOT proof of publish permission: a canary reel is still required.
 # Default source_dates = first 28 planned unrendered dates from
 # tmp/bulk-preflight/source-inventory.json (10/14, 9/22, 9/20..9/01, 8/31..8/26).
@@ -14,6 +14,11 @@ on:
         required: false
         default: "2026-10-14,2026-09-22,2026-09-20,2026-09-19,2026-09-18,2026-09-17,2026-09-16,2026-09-15,2026-09-14,2026-09-13,2026-09-12,2026-09-11,2026-09-10,2026-09-09,2026-09-08,2026-09-07,2026-09-06,2026-09-05,2026-09-04,2026-09-03,2026-09-02,2026-09-01,2026-08-31,2026-08-30,2026-08-29,2026-08-28,2026-08-27,2026-08-26"
 
+      verify_facebook_ids:
+        description: "Optional published Facebook video IDs CSV (numeric, unique, max 28)"
+        required: false
+        default: ""
+
 permissions:
   contents: read
 
@@ -26,6 +31,12 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Compile Facebook helper (syntax only, before Graph GET)
+        run: python -m py_compile namecode_grid/fb_publish.py
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
@@ -36,6 +47,7 @@ jobs:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
           SOURCE_DATES: ${{ github.event.inputs.source_dates }}
+          VERIFY_FACEBOOK_IDS: ${{ github.event.inputs.verify_facebook_ids }}
         run: |
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
@@ -48,6 +60,16 @@ jobs:
            'Duplicate candidates are text matches, not proof; absence is not proof if scan truncated.'],
            source_dates:[],ig:{},facebook:{},duplicate_candidates:[]};
           let bad=false;
+          const verificationInput=(E.VERIFY_FACEBOOK_IDS||'').trim();
+          const expectedVideoIds=verificationInput?verificationInput.split(',').map(s=>s.trim()):[];
+          const verificationInputOK=!verificationInput||(expectedVideoIds.length<=28&&
+           expectedVideoIds.every(id=>/^[0-9]+$/.test(id))&&new Set(expectedVideoIds).size===expectedVideoIds.length);
+          let verificationFailed=false;
+          if(verificationInput){
+           report.facebook.video_verification={status:'not_verified',results:[]};
+           if(!verificationInputOK){report.facebook.video_verification.input_error='invalid_video_ids_csv';bad=true;}
+           else report.facebook.video_verification.results=expectedVideoIds.map(video_id=>({video_id,classification:'ownership_unverified'}));
+          }
           const dates=(E.SOURCE_DATES||'').split(',').map(s=>s.trim()).filter(Boolean);
           const okDate=d=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(d))return false;const ms=Date.parse(d+'T00:00:00Z');return Number.isFinite(ms)&&new Date(ms).toISOString().slice(0,10)===d;};
           if(!dates.length||dates.length>50||new Set(dates).size!==dates.length||!dates.every(okDate)){report.source_dates_error='invalid_source_dates';bad=true;}
@@ -87,6 +109,30 @@ jobs:
           }
           const meta=(r,time)=>({pages:r.pages,items_scanned:r.items.length,truncated:r.truncated,
            oldest_scanned:r.items.map(i=>i[time]).filter(Boolean).sort()[0]||null});
+          // Only allow known public status enums and a credential-free Facebook permalink.
+          const safeState=v=>typeof v==='string'&&/^(ready|processing|pending|in_progress|not_started|started|uploading|publishing|complete|completed|published|error|failed|failure)$/i.test(v)?v.toLowerCase():'unknown';
+          function publicPermalink(value){
+           try{
+            if(typeof value!=='string'||!value) return null;
+            const u=new URL(value,'https://www.facebook.com');
+            if(u.protocol!=='https:'||!/^(www\.)?facebook\.com$/i.test(u.hostname)||u.username||u.password||u.port) return null;
+            if(!/^\/(?:reel\/[0-9]+|[a-zA-Z0-9._]+\/videos\/[0-9]+)\/?$/.test(u.pathname)) return null;
+            return 'https://www.facebook.com'+u.pathname;
+           }catch{return null;}
+          }
+          function classifyVideo(video_id,data){
+           if(String(data.id)!==video_id) return {video_id,classification:'id_mismatch'};
+           const status=data.status&&typeof data.status==='object'?data.status:{};
+           const states={video_status:safeState(status.video_status),
+            processing_phase:safeState(status.processing_phase?.status),publishing_phase:safeState(status.publishing_phase?.status)};
+           const permalink=publicPermalink(data.permalink_url);
+           const result={video_id,status:states,permalink_url:permalink,classification:'type_unverified'};
+           if(Object.values(states).some(s=>['error','failed','failure'].includes(s))) result.classification='error';
+           else if(states.video_status!=='ready'||[states.processing_phase,states.publishing_phase].some(s=>['processing','pending','in_progress','not_started','started','uploading','publishing'].includes(s)))
+            result.classification=Object.values(states).some(s=>['processing','pending','in_progress','not_started','started','uploading','publishing'].includes(s))?'pending':'status_unverified';
+           else if(permalink&&new URL(permalink).pathname.replace(/\/$/,'')==='/reel/'+video_id) result.classification='ready_reel';
+           return result;
+          }
           // Instagram
           if(!E.IG_ACCESS_TOKEN||!E.IG_USER_ID) report.ig.status='skipped_missing_secrets';
           else {
@@ -124,22 +170,42 @@ jobs:
              const v=await pages(E.FB_PAGE_ID+'/videos',{fields:'id,description,permalink_url,created_time',limit:100},E.FB_PAGE_TOKEN);
              report.facebook.video_scan={status:v.status,...meta(v,'created_time'),...(v.error?{error:v.error}:{})};
              report.facebook.latest_videos=v.items.slice(0,5).map(i=>({video_id:i.id,permalink:i.permalink_url,published_at:i.created_time}));
+             if(verificationInput&&verificationInputOK){
+              // Membership in the configured Page's existing listing is mandatory.
+              // A truncated/unavailable scan cannot establish ownership by absence.
+              const owned=new Set(v.items.map(i=>String(i.id)));
+              const results=[];
+              for(const video_id of expectedVideoIds){
+               if(v.status!=='available'||!owned.has(video_id)){results.push({video_id,classification:'ownership_unverified'});continue;}
+               const detail=await get(video_id,{fields:'id,status,permalink_url'},E.FB_PAGE_TOKEN);
+               if(detail.status!=='available'){
+                const missing=detail.http_status===404||[100,803].includes(detail.code);
+                results.push({video_id,classification:missing?'missing':'unavailable',reason:detail.reason,
+                 ...(detail.http_status?{http_status:detail.http_status}:{})});
+               }else results.push(classifyVideo(video_id,detail.data));
+              }
+              report.facebook.video_verification={status:results.every(r=>r.classification==='ready_reel')?'ready_reels':'not_verified',results};
+             }
              scan(v.items.map(i=>({...i,permalink_url:String(i.permalink_url||'').startsWith('/')?'https://www.facebook.com'+i.permalink_url:i.permalink_url})),'description','created_time','permalink_url','facebook');
             }
            }
           }
           const allVerified=report.ig.status==='verified'&&report.facebook.status==='verified';
-          report.verdict=bad?'identity_or_input_problem':allVerified?'identity_ok_publish_permission_unproven':'incomplete_missing_secrets';
+          if(verificationInput){
+           verificationFailed=report.facebook.video_verification.status!=='ready_reels';
+          }
+          report.verdict=bad?'identity_or_input_problem':verificationFailed?'facebook_video_verification_not_ready':allVerified?'identity_ok_publish_permission_unproven':'incomplete_missing_secrets';
           fs.mkdirSync('capacity-output',{recursive:true});
           const json=redact(JSON.stringify(report,null,2));
           fs.writeFileSync('capacity-output/report.json',json);
+          fs.writeFileSync('capacity-output/capacity-report.json',json);
           const md=['# namecode reel capacity check (read only)','Verdict: '+report.verdict,'IG: '+report.ig.status,'FB: '+report.facebook.status,
            'IG publishing limit: '+JSON.stringify(report.ig.publishing_limit??null),'IG scan: '+JSON.stringify(report.ig.media_scan??null),'FB scan: '+JSON.stringify(report.facebook.video_scan??null),
            'Duplicate candidates ('+report.duplicate_candidates.length+'): '+JSON.stringify(report.duplicate_candidates),'Not proof of publish permission; canary required.'].join('\n\n');
           fs.writeFileSync('capacity-output/summary.md',redact(md));
           if(process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,redact(md));
           console.log('VERDICT='+report.verdict+' IG='+report.ig.status+' FB='+report.facebook.status);
-          if(bad) process.exitCode=1;
+          if(bad||verificationFailed) process.exitCode=1;
           NODE
       - name: Upload report
         if: ${{ always() }}

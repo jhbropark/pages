@@ -1,0 +1,13 @@
+이 은하 쌍을 관측 대상으로 고르고 하와이어 이름을 붙인 사람들은 Project Hōkūlani의 고등학생들이었습니다.
+
+2026년 9월 4일 NASA APOD의 제목은 Nā ʻUhane Māhoe Huki Pū i ke Ola입니다. NGC 7253 또는 Arp 278로 알려진 이 쌍은 페가수스자리 방향으로 약 2억 광년 떨어져 있습니다. 원문은 두 나선은하가 서로의 중력으로 얽혀 있다고 설명합니다.
+
+작품명 GALAXY는 그 해설을 출발점으로 삼습니다. 관측 이미지를 그대로 애니메이션으로 만든 것이 아니라, AI로 생성한 이미지 한 장에 흑백 입자의 흐름을 더했습니다. 은하 간 상호작용을 계산해 재현한 과학 영상과도 다릅니다.
+
+이름을 붙인 과정과 은하에 대한 정보는 참고 원문의 맥락입니다. 작품의 입자 움직임은 그와 구분되는 생성 표현입니다. 관측 이미지의 제작 및 처리 크레딧은 아래에 원문 그대로 남깁니다.
+
+참고 원문: NASA APOD 2026-09-04 「Nā ʻUhane Māhoe Huki Pū i ke Ola」
+참고 원문 크레딧: Image Credit: International Gemini Observatory / NOIRLab/NSF/AURA; Image Processing: J. Miller & M. Rodriguez, T.A. Rector, D. de Martin & M. Zamani
+https://science.nasa.gov/apod/?date=260904
+
+#namecode #mediaart

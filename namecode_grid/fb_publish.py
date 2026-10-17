@@ -14,7 +14,7 @@ Env:
 Usage:
   python fb_publish.py --image-url https://.../post.png --caption-file caption.txt
 """
-import argparse, hashlib, os, sys
+import argparse, hashlib, os, re, sys
 import requests
 
 
@@ -206,16 +206,20 @@ def publish_photo(image_url, caption, dry=False):
     return post_id, permalink(base, ver, post_id, tok)
 
 
-def publish_video(video_url, caption, dry=False):
+def publish_video(video_url, caption, dry=False, strict_video=False):
     """Post a video to the Page via /{page}/videos with a remote file_url.
 
     Same fallback shape as publish_photo: if the video edge is unavailable on
     this Page, post the video URL as a /feed link instead.
+    Opt-in strict_video disables that fallback and requires a numeric video id.
     """
     base, ver, pid, tok = cfg()
     if dry:
         print(f"POST {base}/{ver}/{pid}/videos  file_url={video_url}", file=sys.stderr)
-        print(f"  fallback: POST {base}/{ver}/{pid}/feed  link={video_url}", file=sys.stderr)
+        if strict_video:
+            print("  fallback: disabled (--strict-video)", file=sys.stderr)
+        else:
+            print(f"  fallback: POST {base}/{ver}/{pid}/feed  link={video_url}", file=sys.stderr)
         return "DRYRUN", ""
     tok = resolve_page_token(base, ver, pid, tok)
 
@@ -223,7 +227,15 @@ def publish_video(video_url, caption, dry=False):
                   {"file_url": video_url, "description": caption, "access_token": tok}, 120)
     if j is not None:
         vid = j.get("id")
+        if strict_video and (isinstance(vid, bool) or
+                             not isinstance(vid, (str, int)) or
+                             not re.fullmatch(r"[0-9]+", str(vid))):
+            raise RuntimeError("facebook /videos returned no valid numeric video id; "
+                               "strict mode forbids /feed fallback")
         return vid, (f"https://www.facebook.com/{pid}/videos/{vid}" if vid else "")
+
+    if strict_video:
+        raise RuntimeError("facebook /videos publish failed; strict mode forbids /feed fallback")
 
     print("[info] falling back to /feed (New Pages Experience)", file=sys.stderr)
     j = _try_post(base, ver, pid, "feed",
@@ -242,6 +254,8 @@ def main():
     ap.add_argument("--caption", default="")
     ap.add_argument("--caption-file")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--strict-video", action="store_true",
+                    help="require a numeric /videos id; never fall back to /feed (video only)")
     ap.add_argument("--diagnose", action="store_true",
                     help="report who FB_PAGE_TOKEN is and what it may do, then exit")
     a = ap.parse_args()
@@ -260,7 +274,7 @@ def main():
         sys.exit("ERROR: set FB_PAGE_ID and FB_PAGE_TOKEN (or use --dry-run).")
 
     if a.video_url:
-        post_id, link = publish_video(a.video_url, caption, a.dry_run)
+        post_id, link = publish_video(a.video_url, caption, a.dry_run, strict_video=a.strict_video)
         print(f"[ok] facebook video id: {post_id}")
     elif a.image_url:
         post_id, link = publish_photo(a.image_url, caption, a.dry_run)

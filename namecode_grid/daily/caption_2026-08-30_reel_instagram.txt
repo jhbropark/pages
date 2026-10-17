@@ -1,0 +1,11 @@
+M74까지의 거리는 약 3,200만 광년입니다.
+
+2026년 8월 30일 APOD의 정면 합성 이미지는 약 3만 광년의 범위를 담고, 수소 방출광으로 별이 태어나는 영역을 드러냅니다.
+
+GALAXY는 이 설명문을 바탕으로 생성한 흑백 프레임에 미세한 입자와 카메라 움직임을 더한 AI 작업입니다. 원본 관측 이미지나 실제 은하의 움직임을 촬영한 영상은 아닙니다.
+
+참고 원문: NASA APOD 2026-08-30 「M74: A Grand Design Spiral」
+https://science.nasa.gov/apod/?date=260830
+참고 원문 크레딧: NASA, ESA, and the Hubble Heritage (STScI / AURA) - ESA / Hubble Collaboration; acknowledgment: R. Chandar (U. Toledo) and J. Miller (U. Michigan)
+
+#namecode #generativeart

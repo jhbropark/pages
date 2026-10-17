@@ -1,0 +1,11 @@
+별 하나가 깜박이는 듯한 밝기 변화 뒤에 두 별의 겹침이 있습니다.
+
+XZ Andromedae는 지구에서 궤도를 거의 옆으로 보는 Algol형 식쌍성입니다. 더 차가운 별이 더 뜨겁고 밝은 동반성을 가리면서 밝기가 달라집니다.
+
+ECLIPSE의 출발점은 이 NASA APOD 해설입니다. 참고 원문은 애니메이션이지만, 이 영상은 별도로 만든 AI 이미지 한 장을 흑백 입자로 움직인 작품입니다. 원문의 광도 변화나 실제 관측을 재현한 영상은 아닙니다.
+
+참고 원문: NASA APOD 2026-09-09 「Witness XZ Andromedae Wink」
+참고 원문 크레딧: Ogetay Kayali (MTU, Starfront Observatories)
+https://science.nasa.gov/apod/?date=260909
+
+#namecode #generativeart

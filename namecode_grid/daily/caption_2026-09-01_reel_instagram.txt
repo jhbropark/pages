@@ -1,0 +1,11 @@
+월식은 한 장소에만 열리는 장면이 아닙니다.
+
+달을 향한 지구의 절반에서 볼 수 있고, 대체로 몇 시간 이어집니다. 2026년 9월 1일 APOD는 포르투갈에서 촬영한 사진을 통해 이 관측 범위를 설명합니다.
+
+ECLIPSE에서는 그 설명문을 흑백 AI 이미지의 출발점으로 삼았습니다. 한 장의 생성 이미지에 미세한 입자와 카메라 움직임을 더한 것으로, 원본 사진이나 실제 월식의 관측 영상이 아닙니다.
+
+참고 원문: NASA APOD 2026-09-01 「A Plane Lunar Eclipse」
+https://science.nasa.gov/apod/?date=260901
+참고 원문 크레딧: Paulo Ferreira
+
+#namecode #generativeart

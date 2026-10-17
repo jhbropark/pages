@@ -1,0 +1,13 @@
+Sputnik Planitia는 참고 이미지에서 유난히 매끄럽게 보입니다. 명왕성을 소개한 2026년 9월 6일 NASA APOD 해설에 담긴 내용입니다.
+
+그 이미지는 New Horizons가 2015년 근접 통과 때 얻은 색 자료와 고해상도 이미지를 디지털로 결합한 것입니다. 색을 강화한 목적은 화학적 조성이 다른 영역을 시각적으로 구분하는 데 있습니다. 이 색은 표면의 화학적 차이를 드러내는 표현이므로, 해설에서 이미지의 처리 방식까지 함께 읽게 됩니다.
+
+PLUTO.ENHANCED는 이 설명을 바탕으로 AI 이미지를 생성하고, 한 장의 이미지를 흑백 입자의 움직임으로 바꾼 작업입니다. 원본의 색 자료를 변환해 성분을 표시하거나 표면을 측량한 영상이 아닙니다.
+
+New Horizons의 관측 기록과 이 생성 영상은 역할이 다릅니다. 표면에 관한 근거는 아래 원문에, 그 해설을 시각적으로 다시 읽은 결과는 이 작품에 두었습니다.
+
+참고 원문: NASA APOD 2026-09-06 「Pluto in Enhanced Color」
+참고 원문 크레딧: NASA, Johns Hopkins Univ./APL, Southwest Research Inst.
+https://science.nasa.gov/apod/?date=260906
+
+#namecode #mediaart
