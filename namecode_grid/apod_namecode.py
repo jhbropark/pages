@@ -126,7 +126,7 @@ def get_apod(date=None, retries=2):
     print("[APOD] API unavailable/invalid; reading date-verified NASA article", file=sys.stderr)
     return get_apod_html(date)
 
-APOD_ARCHIVE = "https://apod.nasa.gov/apod/ap{yy}{mm}{dd}.html"
+APOD_ARCHIVE = "https://science.nasa.gov/apod/?date={yy}{mm}{dd}"
 ISO_DATE = re.compile(r"^(\d{4})-(\d{2})-(\d{2})$")
 
 
@@ -134,9 +134,9 @@ def apod_article_url(date):
     """The APOD article page for an ISO date, or None when the date is not a
     real APOD day ('manual', 'today', a --subject run).
 
-    APOD archives every day as apYYMMDD.html, so 2026-09-24 ->
-    https://apod.nasa.gov/apod/ap260924.html . Never guess: a non-ISO date
-    returns None and the caption simply omits the link."""
+    Use NASA's date-fixed query because the legacy apYYMMDD.html endpoint
+    redirects to today's page, dropping the date. A non-ISO date returns
+    None and the caption simply omits the link."""
     m = ISO_DATE.match((date or "").strip())
     if not m:
         return None

@@ -77,7 +77,7 @@ def sample_brief(**over):
         "label": "namecode - SUPERNOVA | 200 hr",
         "source": "https://apod.nasa.gov/apod/image/2609/5SNR_Auriga_2000.jpg",
         "prompt": "…",
-        "apod_url": "https://apod.nasa.gov/apod/ap260924.html",
+        "apod_url": "https://science.nasa.gov/apod/?date=260924",
         "explanation": "The ghosts of five supernovas haunt this image.",
     }
     brief.update(over)
@@ -163,9 +163,9 @@ class TheExplanationIsOnlyAFallback(unittest.TestCase):
 class TheApodLink(unittest.TestCase):
     def test_the_url_is_derived_exactly_from_the_iso_date(self):
         self.assertEqual(apod.apod_article_url("2026-09-24"),
-                         "https://apod.nasa.gov/apod/ap260924.html")
+                         "https://science.nasa.gov/apod/?date=260924")
         self.assertEqual(apod.apod_article_url("2026-06-01"),
-                         "https://apod.nasa.gov/apod/ap260601.html")
+                         "https://science.nasa.gov/apod/?date=260601")
 
     def test_a_date_that_is_not_a_day_has_no_article(self):
         for date in ("manual", "today", "", None, "2026-9-4"):
@@ -204,12 +204,12 @@ class TheCaptionTellsTheTruth(unittest.TestCase):
                     self.assertTrue("AI" in text, text)
 
     def test_it_links_the_exact_apod_article(self):
-        self.assertIn("https://apod.nasa.gov/apod/ap260924.html", self.caption)
+        self.assertIn("https://science.nasa.gov/apod/?date=260924", self.caption)
 
     def test_a_manual_run_links_nothing(self):
         text = apod.build_caption(sample_brief(date="manual", apod_url=None,
                                                apod_title="Validation subject"))
-        self.assertNotIn("apod.nasa.gov", text)
+        self.assertNotIn("science.nasa.gov/apod/?date=", text)
         self.assertNotIn("None", text)
 
     def test_it_carries_the_photographer_when_apod_names_one(self):
@@ -313,7 +313,7 @@ class TheBrief(unittest.TestCase):
     def test_the_new_metadata_is_added(self):
         brief = apod.build_brief("2026-09-24", "T", "N", "v", "p",
                                  explanation="text", attribution="Jane Doe")
-        self.assertEqual(brief["apod_url"], "https://apod.nasa.gov/apod/ap260924.html")
+        self.assertEqual(brief["apod_url"], "https://science.nasa.gov/apod/?date=260924")
         self.assertEqual(brief["explanation"], "text")
         self.assertEqual(brief["attribution"], "Jane Doe")
         self.assertIsInstance(json.dumps(brief), str)
