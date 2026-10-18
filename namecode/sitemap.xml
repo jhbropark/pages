@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://jhbropark.github.io/pages/namecode/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jhbropark.github.io/pages/namecode/artwork/2026-10-18.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://jhbropark.github.io/pages/namecode_grid/daily/namecode_apod_2026-10-18.png</image:loc>
+      <image:title>Sonified: Eagle Nebula Pillars</image:title>
+      <image:caption>Sonified: Eagle Nebula Pillars에서 출발한 흑백 생성 이미지. 검은 배경 위에 흰 입자와 가느다란 빛줄기가 퍼져 있고 여백이 넓다. 2026-10-18 namecode 스카이 스터디.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://jhbropark.github.io/pages/namecode/artwork/2026-10-17.html</loc>
@@ -293,16 +303,6 @@
       <image:loc>https://jhbropark.github.io/pages/namecode_grid/daily/namecode_apod_2026-09-15.png</image:loc>
       <image:title>A Daytime Eclipse: Moon Occults Venus</image:title>
       <image:caption>A Daytime Eclipse: Moon Occults Venus에서 출발한 흑백 생성 이미지. 검은 배경 위에 흰 입자와 가느다란 빛줄기가 퍼져 있고 여백이 넓다. 2026-09-15 namecode 스카이 스터디.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://jhbropark.github.io/pages/namecode/artwork/2026-09-14.html</loc>
-    <lastmod>2026-09-14</lastmod>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://jhbropark.github.io/pages/namecode_grid/daily/namecode_apod_2026-09-14.png</image:loc>
-      <image:title>Where Your Elements Came From</image:title>
-      <image:caption>Where Your Elements Came From에서 출발한 흑백 생성 이미지. 검은 배경 위에 흰 입자와 가느다란 빛줄기가 퍼져 있고 여백이 넓다. 2026-09-14 namecode 스카이 스터디.</image:caption>
     </image:image>
   </url>
 </urlset>
