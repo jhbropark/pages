@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-19",
+  "apod_title": "Treble Clef: Unusual X-ray Hot Radio Source",
+  "work_name": "TREBLE.UNUSUAL",
+  "label": "namecode - TREBLE.UNUSUAL | 2 ly",
+  "source": null,
+  "prompt": "Visual subject: Treble Clef: Unusual X-ray Hot Radio Source.\nScene context from the APOD description: Explanation : What is Treble Clef? This unusual radio structure extends over 2 million light-years and resembles a common musical symbol -- but has its visible light hidden by our own Milky Way Galaxy . Examined in 2004, the nature of VLSS J0318.9+5755, dubbed Treble Clef , remained unknown.\nKeep the named subject and its source-described distinguishing features visually legible; do not replace it with an unrelated generic space scene. This is an AI interpretation of text, not a reconstruction of a source photograph.\nStyle: Cinematic dark monochrome generative art. Rendered as fine white particles and light filaments on a pure black background, volumetric, dramatic, monochrome white on black, lots of negative space, high detail.",
+  "visual_subject": "Treble Clef: Unusual X-ray Hot Radio Source",
+  "visual_context": "Explanation : What is Treble Clef? This unusual radio structure extends over 2 million light-years and resembles a common musical symbol -- but has its visible light hidden by our own Milky Way Galaxy . Examined in 2004, the nature of VLSS J0318.9+5755, dubbed Treble Clef , remained unknown.",
+  "visual_review": {
+    "status": "pending",
+    "required": true,
+    "reason": "Check first-frame subject against source context and caption before publication"
+  },
+  "apod_url": "https://science.nasa.gov/apod/?date=261019",
+  "explanation": "Explanation : What is Treble Clef? This unusual radio structure extends over 2 million light-years and resembles a common musical symbol -- but has its visible light hidden by our own Milky Way Galaxy . Examined in 2004, the nature of VLSS J0318.9+5755, dubbed Treble Clef , remained unknown. Recent observations by the Chandra X-ray Observatory and eROSITA , however, have led to the hypothesis that the Treble Clef central cloud of charged particles was originally expelled by a supermassive black hole at the center of a galaxy. After the radio emission from those particles faded, they may have been reinvigorated by a shock wave from the collision of two clusters of galaxies . The featured composite image shows radio emission in red, while recently discovered X-rays are shown in blue. Unusual objects like Treble Clef give humanity unexpected clues about how whole clusters of galaxies interact as well as the general evolution of our universe .",
+  "attribution": "X-ray: NASA / CXC / INAF-IRA / A. Botteon et al. ; Infrared: UKIDSS - GPS ; Radio: ASTRON LOFAR ; Image processing: NASA / CXC / SAO / N. Wolk"
+}
