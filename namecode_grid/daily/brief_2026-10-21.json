@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-21",
+  "apod_title": "New Ghosts Revealed in Cassiopeia",
+  "work_name": "REVEALED.CASSIOPEIA",
+  "label": "namecode - REVEALED.CASSIOPEIA | 100 hr",
+  "source": null,
+  "prompt": "Visual subject: New Ghosts Revealed in Cassiopeia.\nScene context from the APOD description: Jinkies, look at all those ghosts! It took 100 hours of observation and a special oxygen filter for today’s image to capture three faint nebulas hidden in the Cassiopeia constellation . IC 59 and IC 63 , the original Ghosts of Cassiopeia , haunt the region near multi-star system γ Cassiopeia .\nKeep the named subject and its source-described distinguishing features visually legible; do not replace it with an unrelated generic space scene. This is an AI interpretation of text, not a reconstruction of a source photograph.\nStyle: Cinematic dark monochrome generative art. Rendered as fine white particles and light filaments on a pure black background, volumetric, dramatic, monochrome white on black, lots of negative space, high detail.",
+  "visual_subject": "New Ghosts Revealed in Cassiopeia",
+  "visual_context": "Jinkies, look at all those ghosts! It took 100 hours of observation and a special oxygen filter for today’s image to capture three faint nebulas hidden in the Cassiopeia constellation . IC 59 and IC 63 , the original Ghosts of Cassiopeia , haunt the region near multi-star system γ Cassiopeia .",
+  "visual_review": {
+    "status": "pending",
+    "required": true,
+    "reason": "Check first-frame subject against source context and caption before publication"
+  },
+  "apod_url": "https://science.nasa.gov/apod/?date=261021",
+  "explanation": "Jinkies, look at all those ghosts! It took 100 hours of observation and a special oxygen filter for today’s image to capture three faint nebulas hidden in the Cassiopeia constellation . IC 59 and IC 63 , the original Ghosts of Cassiopeia , haunt the region near multi-star system γ Cassiopeia . Energetic light from γ Cassiopeia causes the hydrogen gas in IC 59 and 63 to glow red. Their dust reflects and scatters some blue-ish white starlight. Newly discovered Objects 1, 2, and 3 appear as blue phantoms, revealing the presence of ionized oxygen. But ionized by what? Like at the bow of a speeding boat, γ Cassiopeia may be piling up material as the system moves through interstellar gas and dust. It follows that Object 3 may be the compressed and heated oxygen of that bow shock . Object 1 could be a planetary nebula if a central white dwarf is identified. The origins of these astronomical apparitions remain a mystery to be solved.",
+  "attribution": "Louis Leroux-Géré , Thibault Rouillée , Vincent Martin , Cédric de Decker ( Starfront Observatories )"
+}
