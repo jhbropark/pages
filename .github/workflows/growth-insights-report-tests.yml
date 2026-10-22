@@ -1,0 +1,22 @@
+name: Growth insights report tests
+
+on:
+  pull_request:
+    paths:
+      - "namecode_grid/growth_insights_report.mjs"
+      - "tests/growth-insights-report.test.mjs"
+      - ".github/workflows/namecode-growth-insights.yml"
+      - ".github/workflows/growth-insights-report-tests.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  report-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+      - run: node --test tests/growth-insights-report.test.mjs
