@@ -146,7 +146,8 @@ def parse_apod_html(html, date):
     explanation_html = body[label.end():] if label else ""
     if explanation_html:
         boundary = re.search(
-            r'(?:<br\s*/?>\s*){2}|Tomorrow[’\']s\s+picture\s*:|<h[23]\b',
+            r'(?:<br\s*/?>\s*){2}|</p\s*>|</article\s*>|</main\s*>|'
+            r'Tomorrow[’\']s\s+picture\s*:|<h[23]\b',
             explanation_html, re.S | re.I)
         if boundary:
             explanation_html = explanation_html[:boundary.start()]

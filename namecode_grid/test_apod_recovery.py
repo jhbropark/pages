@@ -52,6 +52,19 @@ class Recovery(unittest.TestCase):
         self.assertEqual(result['title'], "An Anticrepuscular Rainbow Fan")
         self.assertGreaterEqual(len(result['explanation']), 80)
 
+
+    def test_short_explanation_cannot_borrow_text_from_following_paragraph(self):
+        html = """<main><article>
+        <h1>A Specific APOD Subject</h1>
+        <p>Explanation: Too short.</p>
+        <p>Unrelated sidebar and credit text that is intentionally long enough to
+        cross the eighty character validation threshold, but is not part of the
+        explanation and must never be accepted as source content.</p>
+        <table><tr><th>Date</th><td>October 20, 2026</td></tr></table>
+        </article></main>"""
+        with self.assertRaisesRegex(ValueError, "verified title/explanation"):
+            apod.parse_apod_html(html, "2026-10-20")
+
     def test_2026_10_20_nasa_article_fixture_plain_explanation_label(self):
         fixture = Path(__file__).parent / "fixtures" / "apod_2026-10-20.html"
         html = fixture.read_text(encoding="utf-8")
