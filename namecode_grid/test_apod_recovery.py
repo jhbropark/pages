@@ -47,6 +47,29 @@ class Recovery(unittest.TestCase):
         with self.assertRaises(ValueError):
             apod.get_apod('2026-02-30')
 
+
+    def test_three_api_500s_fall_back_to_date_verified_html(self):
+        with patch.object(apod.requests, 'get', side_effect=[
+            apod.requests.HTTPError('500'),
+            apod.requests.HTTPError('500'),
+            apod.requests.HTTPError('500'),
+            Mock(text=HTML),
+        ]), patch.object(apod.time, 'sleep'):
+            result = apod.get_apod('2026-10-16', retries=3)
+        self.assertEqual(result['date'], '2026-10-16')
+        self.assertEqual(result['title'], 'Chasing the International Space Station')
+
+    def test_timeout_and_html_404s_fail_closed_after_retries(self):
+        with patch.object(apod.requests, 'get', side_effect=[
+            apod.requests.Timeout('timed out'),
+            apod.requests.HTTPError('404'),
+            apod.requests.HTTPError('404'),
+            apod.requests.HTTPError('404'),
+            apod.requests.HTTPError('404'),
+        ]), patch.object(apod.time, 'sleep'):
+            with self.assertRaises(apod.requests.RequestException):
+                apod.get_apod('2026-10-16', retries=1)
+
     def test_curated_captions_are_preserved(self):
         with tempfile.TemporaryDirectory() as d:
             out = str(Path(d) / 'caption.txt')

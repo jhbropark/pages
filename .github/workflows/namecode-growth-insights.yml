@@ -49,9 +49,13 @@ jobs:
             return {status:'available', data:j};
            } catch { return unavailable('network_or_timeout'); }
           }
-          async function metrics(id, names, token, extra={}) {
+          async function metrics(id, names, token, extra={}, unsupported=[]) {
            const pairs=[];
            for(const name of names){
+            if(unsupported.includes(name)) {
+             pairs.push([name,{status:'not_supported',reason:extra.breakdown?'not_supported_for_media_insights_breakdown':'not_supported_for_reels_media_insights',api_version:'v23.0'}]);
+             continue;
+            }
             const x=await get(id+'/insights',{metric:name,...extra},token);
             pairs.push([name,x.status==='available' && x.data.data?.length ? {status:'available',data:x.data.data} : x.status==='available'? unavailable('empty_response'):x]);
            }
@@ -80,8 +84,8 @@ jobs:
              const age=(now-new Date(m.timestamp))/3600000;
              const experiment=m.permalink.includes('DdwpUzSDVix')?'A':m.permalink.includes('DdzOZCqkcr6')?'B':'unassigned';
              const row={id:m.id,permalink:m.permalink,published_at:m.timestamp,observed_at:now.toISOString(),age_hours:Number(age.toFixed(3)),experiment,like_count:m.like_count??'unavailable',comments_count:m.comments_count??'unavailable'};
-             row.insights=await metrics(m.id,['views','reach','likes','comments','saved','shares','total_interactions','follows','profile_visits','ig_reels_avg_watch_time','ig_reels_video_view_total_time'],igToken);
-             row.audience_views_breakdown=await metrics(m.id,['views'],igToken,{breakdown:'follow_type',metric_type:'total_value'});
+             row.insights=await metrics(m.id,['views','reach','likes','comments','saved','shares','total_interactions','follows','profile_visits','ig_reels_avg_watch_time','ig_reels_video_view_total_time'],igToken,{},['follows','profile_visits']);
+             row.audience_views_breakdown=await metrics(m.id,['views'],igToken,{breakdown:'follow_type',metric_type:'total_value'},['views']);
              report.ig.reels.push(row);
             }
            }
@@ -100,10 +104,21 @@ jobs:
             }
            }
           } else report.facebook.account=fb.status==='available'?unavailable('identity_mismatch'):fb;
+          function collectStatuses(value, out=[]) {
+           if(value && typeof value==='object') {
+            if(['available','unavailable','not_supported'].includes(value.status)) out.push(value.status);
+            for(const [key,child] of Object.entries(value)) if(key!=='status') collectStatuses(child,out);
+           }
+           return out;
+          }
+          const metricStatuses=collectStatuses({ig:report.ig,facebook:report.facebook});
+          report.collection_status=metricStatuses.includes('unavailable')?'partial':metricStatuses.includes('not_supported')?'partial':'complete';
+          report.freshness={status:'observed_now',observed_at:report.observed_at,window_end:report.observed_at,notes:'The report was fetched during this run; per-value windows and age_hours express value recency. Unavailable and not_supported values were not converted to zero.'};
+          report.metric_status_counts=Object.fromEntries(['available','unavailable','not_supported'].map(s=>[s,metricStatuses.filter(x=>x===s).length]));
           fs.mkdirSync('growth-output',{recursive:true});
           fs.writeFileSync('growth-output/insights.json',JSON.stringify(report,null,2));
-          const short=(x)=>x?.status==='available' ? JSON.stringify(x.data?.map(v=>({name:v.name,values:v.values,total_value:v.total_value}))||x) : 'unavailable('+ (x?.reason||'missing') +')';
-          const summary=['# namecode read-only growth observation','Observed: '+report.observed_at,'IG identity verified: '+verified,'IG account: '+JSON.stringify(report.ig.account),'Followers: '+(report.ig.account.followers_count??'unavailable'),'','## Instagram account (7 days; not post attribution)'];
+          const short=(x)=>x?.status==='available' ? JSON.stringify(x.data?.map(v=>({name:v.name,values:v.values,total_value:v.total_value}))||x) : x?.status==='not_supported' ? 'not_supported('+ (x.reason||'endpoint limitation') +')' : 'unavailable('+ (x?.reason||'missing') + (x?.http_status?'; HTTP '+x.http_status:'') + (x?.code?'; code '+x.code:'') + (x?.message?'; '+x.message:'') +')';
+          const summary=['# namecode read-only growth observation','Observed: '+report.observed_at,'Collection status: '+report.collection_status,'Freshness: '+report.freshness.status+' at '+report.freshness.observed_at,'Metric statuses: '+JSON.stringify(report.metric_status_counts),'IG identity verified: '+verified,'IG account: '+JSON.stringify(report.ig.account),'Followers: '+(report.ig.account.followers_count??'unavailable'),'','## Instagram account (7 days; not post attribution)'];
           for(const [k,v] of Object.entries(report.ig.account_insights||{})) summary.push(k+': '+short(v));
           summary.push('','## Reels (lifetime snapshots at actual age)');
           for(const r of report.ig.reels||[]){summary.push('\n'+r.permalink+' | published '+r.published_at+' | age '+r.age_hours+'h | variant '+r.experiment);for(const [k,v] of Object.entries(r.insights))summary.push(k+': '+short(v)); summary.push('audience views breakdown: '+short(r.audience_views_breakdown?.views));}
@@ -113,7 +128,7 @@ jobs:
           fs.writeFileSync('growth-output/summary.md',summary.join('\n\n'));
           fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,summary.join('\n\n'));
           console.log('IG_IDENTITY_VERIFIED='+verified+'; REELS_MEASURED='+(report.ig.reels?.length??0)+'; detailed observations in summary/artifact.');
-          if(!verified) process.exitCode=1;
+          if(!verified || report.collection_status==='partial') process.exitCode=1;
           NODE
       - uses: actions/upload-artifact@v6
         if: always()
