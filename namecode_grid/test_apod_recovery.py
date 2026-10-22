@@ -40,7 +40,19 @@ class Recovery(unittest.TestCase):
             get.assert_not_called()
 
 
-    def test_official_2026_10_20_nasa_article_plain_explanation_label(self):
+
+    def test_2026_10_20_api_error_uses_updated_article_parser(self):
+        fixture = Path(__file__).parent / "fixtures" / "apod_2026-10-20.html"
+        with patch.object(apod.requests, 'get', side_effect=[
+            apod.requests.HTTPError('500'),
+            Mock(text=fixture.read_text(encoding="utf-8")),
+        ]), patch.object(apod.time, 'sleep'):
+            result = apod.get_apod('2026-10-20', retries=1)
+        self.assertEqual(result['date'], '2026-10-20')
+        self.assertEqual(result['title'], "An Anticrepuscular Rainbow Fan")
+        self.assertGreaterEqual(len(result['explanation']), 80)
+
+    def test_2026_10_20_nasa_article_fixture_plain_explanation_label(self):
         fixture = Path(__file__).parent / "fixtures" / "apod_2026-10-20.html"
         html = fixture.read_text(encoding="utf-8")
         result = apod.parse_apod_html(html, "2026-10-20")
