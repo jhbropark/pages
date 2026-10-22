@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-22",
+  "apod_title": "The First Green Star, WD J1330+6435",
+  "work_name": "FIRST.GREEN",
+  "label": "namecode - FIRST.GREEN | 95.914",
+  "source": null,
+  "prompt": "Visual subject: The First Green Star, WD J1330+6435.\nScene context from the APOD description: Star light, star bright: is there a green star out tonight? Other than the Sun , all stars are so far from Earth that they appear as points in the sky. They are mostly white, but sometimes noticeably red or blue .\nKeep the named subject and its source-described distinguishing features visually legible; do not replace it with an unrelated generic space scene. This is an AI interpretation of text, not a reconstruction of a source photograph.\nStyle: Cinematic dark monochrome generative art. Rendered as fine white particles and light filaments on a pure black background, volumetric, dramatic, monochrome white on black, lots of negative space, high detail.",
+  "visual_subject": "The First Green Star, WD J1330+6435",
+  "visual_context": "Star light, star bright: is there a green star out tonight? Other than the Sun , all stars are so far from Earth that they appear as points in the sky. They are mostly white, but sometimes noticeably red or blue .",
+  "visual_review": {
+    "status": "pending",
+    "required": true,
+    "reason": "Check first-frame subject against source context and caption before publication"
+  },
+  "apod_url": "https://science.nasa.gov/apod/?date=261022",
+  "explanation": "Star light, star bright: is there a green star out tonight? Other than the Sun , all stars are so far from Earth that they appear as points in the sky. They are mostly white, but sometimes noticeably red or blue . This color typically relates to the temperature: blue stars are hotter than red stars. What about other colors? The featured image is an illustration showing WD J1330+6435 , a white dwarf star , surrounded by an accretion disk with gas and rocks orbiting the star. White dwarfs are small, faint stars that are left over when a star like the Sun exhausts its nuclear fuel . Astronomers recently found that some white dwarf stars, despite their name, would appear yellow, green, cyan, pink, or purple . In these cases , trace elements that were accreted to these stars interact with the stellar atmosphere and shift its normally white color. But, alas! I wish I may, I wish I might, but they are too faint to see tonight ...",
+  "attribution": "Mark A. Garlick / University of Warwick"
+}
