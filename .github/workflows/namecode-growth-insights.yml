@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 12
     steps:
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
@@ -27,6 +28,7 @@ jobs:
         run: |
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
+          import { summarizeStatuses } from './scripts/growth_insights_status.mjs';
           const now = new Date();
           const unavailable = (reason, extra={}) => ({status:'unavailable', reason, ...extra});
           const igToken = process.env.IG_ACCESS_TOKEN, fbToken = process.env.FB_PAGE_TOKEN;
@@ -67,14 +69,14 @@ jobs:
            verified=true; report.ig.account={status:'available',...account.data};
            for(const field of ['followers_count','follows_count','media_count']) {
             const v=await get(process.env.IG_USER_ID,{fields:field},igToken);
-            report.ig.account[field]=v.status==='available'?(v.data[field]??'unavailable'):v;
+            report.ig.account[field]=v.status==='available'?(v.data[field]??unavailable('missing_field',{field})):v;
            }
            const since=Math.floor(now.getTime()/1000)-7*86400, until=Math.floor(now.getTime()/1000);
            report.ig.account_window={since:new Date(since*1000).toISOString(),until:now.toISOString(),scope:'account_aggregate_not_post_attribution'};
            report.ig.account_insights=await metrics(process.env.IG_USER_ID,['reach','views','profile_views','accounts_engaged','total_interactions','follows_and_unfollows'],igToken,{period:'day',metric_type:'total_value',since,until});
            report.ig.audience_views_breakdown=await metrics(process.env.IG_USER_ID,['views'],igToken,{period:'day',metric_type:'total_value',breakdown:'follow_type',since,until});
            const media=await get(process.env.IG_USER_ID+'/media',{fields:'id,caption,media_type,media_product_type,permalink,timestamp,like_count,comments_count',limit:100},igToken);
-           report.ig.media_status=media.status;
+           report.ig.media_status=media.status==='available'?{status:'available'}:media;
            if(media.status==='available'){
             const recent=media.data.data.filter(m=>now-new Date(m.timestamp)<=10*86400000);
             report.ig.recent_posts=recent.map(m=>({...m,caption:undefined,caption_first_line:(m.caption||'').split('\n')[0]}));
@@ -94,7 +96,7 @@ jobs:
           if(fb.status==='available' && (/namecode\.original/i.test(fb.data.link||'') || /^namecode(?:[. ]original)?$/i.test(fb.data.name||''))) {
            report.facebook.account={status:'available',...fb.data};
            const vids=await get(process.env.FB_PAGE_ID+'/videos',{fields:'id,permalink_url,created_time',limit:15},fbToken);
-           report.facebook.videos_status=vids.status;
+           report.facebook.videos_status=vids.status==='available'?{status:'available'}:vids;
            if(vids.status==='available'){
             report.facebook.videos=[];
             for(const v of vids.data.data.filter(v=>now-new Date(v.created_time)<=10*86400000).slice(0,10)){
@@ -104,21 +106,15 @@ jobs:
             }
            }
           } else report.facebook.account=fb.status==='available'?unavailable('identity_mismatch'):fb;
-          function collectStatuses(value, out=[]) {
-           if(value && typeof value==='object') {
-            if(['available','unavailable','not_supported'].includes(value.status)) out.push(value.status);
-            for(const [key,child] of Object.entries(value)) if(key!=='status') collectStatuses(child,out);
-           }
-           return out;
-          }
-          const metricStatuses=collectStatuses({ig:report.ig,facebook:report.facebook});
-          report.collection_status=metricStatuses.includes('unavailable')?'partial':metricStatuses.includes('not_supported')?'partial':'complete';
-          report.freshness={status:'observed_now',observed_at:report.observed_at,window_end:report.observed_at,notes:'The report was fetched during this run; per-value windows and age_hours express value recency. Unavailable and not_supported values were not converted to zero.'};
-          report.metric_status_counts=Object.fromEntries(['available','unavailable','not_supported'].map(s=>[s,metricStatuses.filter(x=>x===s).length]));
+          const statusSummary=summarizeStatuses({ig:report.ig,facebook:report.facebook});
+          report.collection_status=statusSummary.collection_status;
+          report.support_coverage=statusSummary.support_coverage;
+          report.metric_status_counts=statusSummary.metric_status_counts;
+          report.freshness={status:'observed_now',observed_at:report.observed_at,window_end:report.observed_at,notes:'The report was fetched during this run; per-value windows and age_hours express value recency. Unavailable values were not converted to zero.'};
           fs.mkdirSync('growth-output',{recursive:true});
           fs.writeFileSync('growth-output/insights.json',JSON.stringify(report,null,2));
           const short=(x)=>x?.status==='available' ? JSON.stringify(x.data?.map(v=>({name:v.name,values:v.values,total_value:v.total_value}))||x) : x?.status==='not_supported' ? 'not_supported('+ (x.reason||'endpoint limitation') +')' : 'unavailable('+ (x?.reason||'missing') + (x?.http_status?'; HTTP '+x.http_status:'') + (x?.code?'; code '+x.code:'') + (x?.message?'; '+x.message:'') +')';
-          const summary=['# namecode read-only growth observation','Observed: '+report.observed_at,'Collection status: '+report.collection_status,'Freshness: '+report.freshness.status+' at '+report.freshness.observed_at,'Metric statuses: '+JSON.stringify(report.metric_status_counts),'IG identity verified: '+verified,'IG account: '+JSON.stringify(report.ig.account),'Followers: '+(report.ig.account.followers_count??'unavailable'),'','## Instagram account (7 days; not post attribution)'];
+          const summary=['# namecode read-only growth observation','Observed: '+report.observed_at,'Collection status: '+report.collection_status,'Support coverage: '+report.support_coverage,'Freshness: '+report.freshness.status+' at '+report.freshness.observed_at,'Metric statuses: '+JSON.stringify(report.metric_status_counts),'IG identity verified: '+verified,'IG account: '+JSON.stringify(report.ig.account),'Followers: '+(report.ig.account.followers_count??'unavailable'),'','## Instagram account (7 days; not post attribution)'];
           for(const [k,v] of Object.entries(report.ig.account_insights||{})) summary.push(k+': '+short(v));
           summary.push('','## Reels (lifetime snapshots at actual age)');
           for(const r of report.ig.reels||[]){summary.push('\n'+r.permalink+' | published '+r.published_at+' | age '+r.age_hours+'h | variant '+r.experiment);for(const [k,v] of Object.entries(r.insights))summary.push(k+': '+short(v)); summary.push('audience views breakdown: '+short(r.audience_views_breakdown?.views));}

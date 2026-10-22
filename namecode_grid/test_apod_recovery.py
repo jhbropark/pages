@@ -39,6 +39,21 @@ class Recovery(unittest.TestCase):
                 apod.get_apod('2099-01-01')
             get.assert_not_called()
 
+
+    def test_official_2026_10_20_nasa_article_plain_explanation_label(self):
+        fixture = Path(__file__).parent / "fixtures" / "apod_2026-10-20.html"
+        html = fixture.read_text(encoding="utf-8")
+        result = apod.parse_apod_html(html, "2026-10-20")
+        self.assertEqual(result["title"], "An Anticrepuscular Rainbow Fan")
+        self.assertGreaterEqual(len(result["explanation"]), 80)
+        self.assertIn("sunlit fan", result["explanation"])
+
+    def test_official_article_fixture_still_rejects_wrong_date(self):
+        fixture = Path(__file__).parent / "fixtures" / "apod_2026-10-20.html"
+        html = fixture.read_text(encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "date mismatch"):
+            apod.parse_apod_html(html, "2026-10-21")
+
     def test_wrong_day_is_rejected(self):
         with self.assertRaises(ValueError):
             apod.parse_apod_html(HTML, '2026-10-17')
