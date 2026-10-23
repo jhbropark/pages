@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-23",
+  "apod_title": "Andromeda in Southern Spring",
+  "work_name": "ANDROMEDA.SOUTHERN",
+  "label": "namecode - ANDROMEDA.SOUTHERN | 19.494",
+  "source": null,
+  "prompt": "Visual subject: Andromeda in Southern Spring.\nScene context from the APOD description: Looking toward the north from Mullion, New South Wales, Australia, the Andromeda Galaxy never gets more than a few degrees above the horizon. During the southern hemisphere spring, Andromeda is highest in the sky around midnight though. And in this telephoto scene from October 10/11, multiple exposures were used to reveal the spiral galaxy in tantalizing detail as it climbed above rolling Australian hills.\nKeep the named subject and its source-described distinguishing features visually legible; do not replace it with an unrelated generic space scene. This is an AI interpretation of text, not a reconstruction of a source photograph.\nStyle: Cinematic dark monochrome generative art. Rendered as fine white particles and light filaments on a pure black background, volumetric, dramatic, monochrome white on black, lots of negative space, high detail.",
+  "visual_subject": "Andromeda in Southern Spring",
+  "visual_context": "Looking toward the north from Mullion, New South Wales, Australia, the Andromeda Galaxy never gets more than a few degrees above the horizon. During the southern hemisphere spring, Andromeda is highest in the sky around midnight though. And in this telephoto scene from October 10/11, multiple exposures were used to reveal the spiral galaxy in tantalizing detail as it climbed above rolling Australian hills.",
+  "visual_review": {
+    "status": "pending",
+    "required": true,
+    "reason": "Check first-frame subject against source context and caption before publication"
+  },
+  "apod_url": "https://science.nasa.gov/apod/?date=261023",
+  "explanation": "Looking toward the north from Mullion, New South Wales, Australia, the Andromeda Galaxy never gets more than a few degrees above the horizon. During the southern hemisphere spring, Andromeda is highest in the sky around midnight though. And in this telephoto scene from October 10/11, multiple exposures were used to reveal the spiral galaxy in tantalizing detail as it climbed above rolling Australian hills. Also known as M31 , the Andromeda Galaxy is one of the brightest objects in the Messier catalog , but is only visible to the unaided eye as a small, faint, fuzzy patch. Digitally tracked and stacked frames were combined with a foreground shot in the deep astro-image composite to reveal the galaxy's greater extent in planet Earth's night. In the springtime night skyscape,the closest large spiral galaxy spans nearly 6 full moons .",
+  "attribution": "Lucy Yunxi Hu"
+}
