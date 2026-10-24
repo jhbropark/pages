@@ -39,6 +39,46 @@ class Recovery(unittest.TestCase):
                 apod.get_apod('2099-01-01')
             get.assert_not_called()
 
+
+
+    def test_2026_10_20_api_error_uses_updated_article_parser(self):
+        fixture = Path(__file__).parent / "fixtures" / "apod_2026-10-20.html"
+        with patch.object(apod.requests, 'get', side_effect=[
+            apod.requests.HTTPError('500'),
+            Mock(text=fixture.read_text(encoding="utf-8")),
+        ]), patch.object(apod.time, 'sleep'):
+            result = apod.get_apod('2026-10-20', retries=1)
+        self.assertEqual(result['date'], '2026-10-20')
+        self.assertEqual(result['title'], "An Anticrepuscular Rainbow Fan")
+        self.assertGreaterEqual(len(result['explanation']), 80)
+
+
+    def test_short_explanation_cannot_borrow_text_from_following_paragraph(self):
+        html = """<main><article>
+        <h1>A Specific APOD Subject</h1>
+        <p>Explanation: Too short.</p>
+        <p>Unrelated sidebar and credit text that is intentionally long enough to
+        cross the eighty character validation threshold, but is not part of the
+        explanation and must never be accepted as source content.</p>
+        <table><tr><th>Date</th><td>October 20, 2026</td></tr></table>
+        </article></main>"""
+        with self.assertRaisesRegex(ValueError, "verified title/explanation"):
+            apod.parse_apod_html(html, "2026-10-20")
+
+    def test_2026_10_20_nasa_article_fixture_plain_explanation_label(self):
+        fixture = Path(__file__).parent / "fixtures" / "apod_2026-10-20.html"
+        html = fixture.read_text(encoding="utf-8")
+        result = apod.parse_apod_html(html, "2026-10-20")
+        self.assertEqual(result["title"], "An Anticrepuscular Rainbow Fan")
+        self.assertGreaterEqual(len(result["explanation"]), 80)
+        self.assertIn("sunlit fan", result["explanation"])
+
+    def test_official_article_fixture_still_rejects_wrong_date(self):
+        fixture = Path(__file__).parent / "fixtures" / "apod_2026-10-20.html"
+        html = fixture.read_text(encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "date mismatch"):
+            apod.parse_apod_html(html, "2026-10-21")
+
     def test_wrong_day_is_rejected(self):
         with self.assertRaises(ValueError):
             apod.parse_apod_html(HTML, '2026-10-17')
@@ -46,6 +86,29 @@ class Recovery(unittest.TestCase):
     def test_invalid_day_is_rejected(self):
         with self.assertRaises(ValueError):
             apod.get_apod('2026-02-30')
+
+
+    def test_three_api_500s_fall_back_to_date_verified_html(self):
+        with patch.object(apod.requests, 'get', side_effect=[
+            apod.requests.HTTPError('500'),
+            apod.requests.HTTPError('500'),
+            apod.requests.HTTPError('500'),
+            Mock(text=HTML),
+        ]), patch.object(apod.time, 'sleep'):
+            result = apod.get_apod('2026-10-16', retries=3)
+        self.assertEqual(result['date'], '2026-10-16')
+        self.assertEqual(result['title'], 'Chasing the International Space Station')
+
+    def test_timeout_and_html_404s_fail_closed_after_retries(self):
+        with patch.object(apod.requests, 'get', side_effect=[
+            apod.requests.Timeout('timed out'),
+            apod.requests.HTTPError('404'),
+            apod.requests.HTTPError('404'),
+            apod.requests.HTTPError('404'),
+            apod.requests.HTTPError('404'),
+        ]), patch.object(apod.time, 'sleep'):
+            with self.assertRaises(apod.requests.RequestException):
+                apod.get_apod('2026-10-16', retries=1)
 
     def test_curated_captions_are_preserved(self):
         with tempfile.TemporaryDirectory() as d:
