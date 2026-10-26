@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-26",
+  "apod_title": "M42: The Great Nebula in Orion",
+  "work_name": "NEBULA",
+  "label": "namecode - NEBULA | 1500 ly",
+  "source": null,
+  "prompt": "Visual subject: M42: The Great Nebula in Orion.\nScene context from the APOD description: The Great Nebula in Orion , an immense, nearby starbirth region , is one of the most famous of all astronomical nebulas . Here, glowing gas surrounds hot young stars at the edge of an immense interstellar molecular cloud only 1500 light-years away. In the featured deep image in assigned colors highlighted by emission in hydrogen , wisps and sheets of dust and gas are particularly evident.\nKeep the named subject and its source-described distinguishing features visually legible; do not replace it with an unrelated generic space scene. This is an AI interpretation of text, not a reconstruction of a source photograph.\nStyle: Cinematic dark monochrome generative art. Rendered as fine white particles and light filaments on a pure black background, volumetric, dramatic, monochrome white on black, lots of negative space, high detail.",
+  "visual_subject": "M42: The Great Nebula in Orion",
+  "visual_context": "The Great Nebula in Orion , an immense, nearby starbirth region , is one of the most famous of all astronomical nebulas . Here, glowing gas surrounds hot young stars at the edge of an immense interstellar molecular cloud only 1500 light-years away. In the featured deep image in assigned colors highlighted by emission in hydrogen , wisps and sheets of dust and gas are particularly evident.",
+  "visual_review": {
+    "status": "pending",
+    "required": true,
+    "reason": "Check first-frame subject against source context and caption before publication"
+  },
+  "apod_url": "https://science.nasa.gov/apod/?date=261026",
+  "explanation": "The Great Nebula in Orion , an immense, nearby starbirth region , is one of the most famous of all astronomical nebulas . Here, glowing gas surrounds hot young stars at the edge of an immense interstellar molecular cloud only 1500 light-years away. In the featured deep image in assigned colors highlighted by emission in hydrogen , wisps and sheets of dust and gas are particularly evident. The Great Nebula in Orion can be found with the unaided eye near the easily identifiable belt of three stars in the popular constellation Orion . In addition to housing a bright open cluster of stars known as the Trapezium , the Orion Nebula contains many stellar nurseries . These nurseries contain much hydrogen gas, hot young stars, proplyds , and stellar jets spewing material at high speeds. Also known as M42 , the Orion Nebula spans about 40 light years and is located in the same spiral arm of our Galaxy as the Sun .",
+  "attribution": "Roberto Palaia"
+}
