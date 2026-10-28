@@ -120,22 +120,43 @@ def visual_context(explanation, max_chars=800, max_sentences=3):
 
 
 def parse_apod_html(html, date):
-    """Fail closed on NASA's date-dropping redirects or a changed template."""
+    """Parse both the legacy APOD template and NASA's newer archive article."""
     expected = Date.fromisoformat(date)
     rows = re.findall(r'<th\b[^>]*>(.*?)</th>\s*<td\b[^>]*>(.*?)</td>', html, re.S)
     meta = {_html_text(k).rstrip(":"): _html_text(v) for k, v in rows}
+    date_row = re.search(
+        r'<th\b[^>]*>\s*Date\s*:?[\s]*</th>\s*<td\b[^>]*>.*?</td>',
+        html, re.S | re.I)
+    if not date_row:
+        raise ValueError("APOD article date missing")
     actual = datetime.strptime(meta.get("Date", ""), "%B %d, %Y").date()
     if actual != expected:
         raise ValueError(f"APOD article date mismatch: {actual} != {expected}")
-    heading = re.search(r'<h1\b[^>]*>(.*?)</h1>', html, re.S)
-    explanation = re.search(r'<strong>Explanation:</strong>(.*?)(?:<br\s*/?>\s*<br\s*/?>|</p>)', html, re.S)
+    heading = re.search(r'<h1\b[^>]*>(.*?)</h1>', html, re.S | re.I)
     title = _html_text(heading.group(1)) if heading else ""
-    text = _html_text(explanation.group(1)) if explanation else ""
+
+    # NASA's newer image-article pages render the label as plain text instead
+    # of <strong>Explanation:</strong>. Scope extraction to the article between
+    # its title and verified date metadata; never consume site chrome.
+    body_start = heading.end() if heading else 0
+    body = html[body_start:date_row.start()]
+    label = re.search(
+        r'(?:<strong\b[^>]*>\s*)?Explanation\s*:\s*(?:</strong>\s*)?',
+        body, re.S | re.I)
+    explanation_html = body[label.end():] if label else ""
+    if explanation_html:
+        boundary = re.search(
+            r'(?:<br\s*/?>\s*){2}|</p\s*>|</article\s*>|</main\s*>|'
+            r'Tomorrow[’\']s\s+picture\s*:|<h[23]\b',
+            explanation_html, re.S | re.I)
+        if boundary:
+            explanation_html = explanation_html[:boundary.start()]
+    text = _html_text(explanation_html)
     if not _source_content_ok(title, text):
         raise ValueError("APOD article missing verified title/explanation")
     # Keep only media in the article hero, never the page's NASA logo.
-    hero = html[heading.end():explanation.start()]
-    image = re.search(r'<img\b[^>]*\bsrc="([^"]+)"', hero, re.S)
+    hero = html[body_start:body_start + label.start()] if label else ""
+    image = re.search(r'<img\b[^>]*\bsrc="([^"]+)"', hero, re.S | re.I)
     credit = next((v for k, v in meta.items() if "Credit" in k), None)
     return {"date": date, "title": title, "explanation": text,
             "media_type": "video" if "Video Credit" in meta else "image",
