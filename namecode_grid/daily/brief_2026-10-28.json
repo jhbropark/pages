@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-28",
+  "apod_title": "The Mutual Occultation of Ganymede and Io",
+  "work_name": "OCCULTATION",
+  "label": "namecode - OCCULTATION | 92.779",
+  "source": null,
+  "prompt": "Visual subject: The Mutual Occultation of Ganymede and Io.\nScene context from the APOD description: Jupiter is one of the least lonely planets in the Solar System, at least when it comes to natural satellites . 115 moons have been discovered orbiting Jupiter so far! ( Saturn has the most with 293, but who’s counting . ) Ganymede and Io , two of Jupiter’s Galilean moons , met in the sky on October 20th, 2026. Today’s video captures the meeting, with Ganymede briefly blocking Io from view.\nKeep the named subject and its source-described distinguishing features visually legible; do not replace it with an unrelated generic space scene. This is an AI interpretation of text, not a reconstruction of a source photograph.\nStyle: Cinematic dark monochrome generative art. Rendered as fine white particles and light filaments on a pure black background, volumetric, dramatic, monochrome white on black, lots of negative space, high detail.",
+  "visual_subject": "The Mutual Occultation of Ganymede and Io",
+  "visual_context": "Jupiter is one of the least lonely planets in the Solar System, at least when it comes to natural satellites . 115 moons have been discovered orbiting Jupiter so far! ( Saturn has the most with 293, but who’s counting . ) Ganymede and Io , two of Jupiter’s Galilean moons , met in the sky on October 20th, 2026. Today’s video captures the meeting, with Ganymede briefly blocking Io from view.",
+  "visual_review": {
+    "status": "pending",
+    "required": true,
+    "reason": "Check first-frame subject against source context and caption before publication"
+  },
+  "apod_url": "https://science.nasa.gov/apod/?date=261028",
+  "explanation": "Jupiter is one of the least lonely planets in the Solar System, at least when it comes to natural satellites . 115 moons have been discovered orbiting Jupiter so far! ( Saturn has the most with 293, but who’s counting . ) Ganymede and Io , two of Jupiter’s Galilean moons , met in the sky on October 20th, 2026. Today’s video captures the meeting, with Ganymede briefly blocking Io from view. This event, when an astronomical object passes in front of another and either completely or partially blocks it, is called a mutual occultation. The mutual occultations of Galilean moons are rare to witness because they require Earth’s edge-on view of their orbits. This occurs once every 6 years when Jupiter reaches its equinox and appears less “tilted”. Ganymede is also casting its shadow on Jupiter’s right side. Any fictional Jovian species within the shadow would experience a solar eclipse !",
+  "attribution": "Michael Wong"
+}
