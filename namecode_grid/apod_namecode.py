@@ -295,14 +295,15 @@ def sim_value(seed):
 # Label value = real astronomical data pulled from the APOD text (option D).
 # Ordered by preference; first match wins. Falls back to sim_value().
 ASTRO_PATTERNS = [
-    (r"magnitude[s]?\s+(?:of\s+)?(-?\d+(?:\.\d+)?)", "mag {0}"),
-    (r"(-?\d+(?:\.\d+)?)\s*magnitude", "mag {0}"),
-    (r"(\d+(?:\.\d+)?)\s*(million|billion)?\s*light[- ]?years?", "{0} ly"),
-    (r"(\d+(?:\.\d+)?)\s*arc\s*minutes?", "{0}'"),
-    (r"(\d+(?:\.\d+)?)\s*degrees?", "{0} deg"),
-    (r"(\d+(?:\.\d+)?)\s*(?:million\s*)?km\b", "{0} km"),
-    (r"(\d+(?:\.\d+)?)\s*AU\b", "{0} AU"),
-    (r"(\d+(?:\.\d+)?)\s*[- ]?hours?\b", "{0} hr"),
+    # Preserve thousands separators so "1,200 light-years" cannot become "200 ly".
+    (r"magnitude[s]?\s+(?:of\s+)?(-?[\d,]+(?:\.\d+)?)", "mag {0}"),
+    (r"(-?[\d,]+(?:\.\d+)?)\s*magnitude", "mag {0}"),
+    (r"([\d,]+(?:\.\d+)?)\s*(million|billion)?\s*light[- ]?years?", "{0}{1} ly"),
+    (r"([\d,]+(?:\.\d+)?)\s*arc\s*minutes?", "{0}'"),
+    (r"([\d,]+(?:\.\d+)?)\s*degrees?", "{0} deg"),
+    (r"([\d,]+(?:\.\d+)?)\s*(?:million\s*)?km\b", "{0} km"),
+    (r"([\d,]+(?:\.\d+)?)\s*AU\b", "{0} AU"),
+    (r"([\d,]+(?:\.\d+)?)\s*[- ]?hours?\b", "{0} hr"),
     (r"hour[\s-]?long", "1 hr"),
 ]
 
@@ -312,6 +313,9 @@ def astro_value(text):
     for pat, fmt in ASTRO_PATTERNS:
         m = re.search(pat, text or "", re.I)
         if m:
+            if "{1}" in fmt:
+                scale = f" {m.group(2)}" if m.lastindex and m.lastindex >= 2 and m.group(2) else ""
+                return fmt.format(m.group(1), scale)
             return fmt.format(m.group(1)) if "{0}" in fmt else fmt
     return None
 
